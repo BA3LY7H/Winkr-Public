@@ -1,0 +1,177 @@
+{
+  "date": "2026-09-30",
+  "scope": "Secondcallofgate-messagefollowup; three-slot encodedstate update,notanewmodule",
+  "normalization": {
+    "start": 140695634439840,
+    "end": 140695634440301,
+    "label": "wow_a006_gate_followup_state_update",
+    "original_bytes": "48895c241048894c2408574883ec20488d3dfaaa7c064533c04c8bcf48bba715ba65ecff1e4349bab46116807f56380c49bb87f5a1e9142c57f2660f1f44000080cf0086ed7130e841a40000c6c64a0f310f8a3db70100784281eb8546b18b0f8f2a3f010081c3db21cba15b83c69183c35e83c00283b2907100498b114881f2c9000000492bd2660f1f8400000000007e278af67f3e909080c5fec7c182a27e385ae80afb00000f884cd70000e88d42010080c194c7c13dd07ee40f82af1c00000f315080c692722c81c33cdb649780eb3d81ac907f0240a8488b0588de3504488bca48c1e92048c1e220480bca48334810482bcb48894c2430488d4c2430e80c040000488b4c2430488bc148c1e91648c1e02a480bc1493bc3742441ffc04983c1084183f8030f8213ffffff488b5c24384883c4205fc30f1f8400000000007d0b7c2e909081c6a06f21c9e87d2a010081ed5e3ce3c6e80481010080e9f181c1518a5f23e8d0160000c6c6c4f6dec7c1047c0a97f6de6b8beb034a63f8488d055be60d004933c3488d4c243048c1c82a4889442430e805030000488b4c243048b82748308134b971144803cb488b5c24384833c848c1c9204903ca4881f1c90000004a890cc74883c4205fc3",
+    "sha256_before": "1f8cf190b2b18577be41186d96ce07281f59ff4568fc9f31f766b73df5d1aa46",
+    "old_name": "sub_7FF6414FEEA0",
+    "old_type": "void()",
+    "old_comment": null,
+    "old_chunks": [
+      [
+        140695634439840,
+        140695634440301
+      ]
+    ],
+    "patches": [
+      {
+        "ea": 140695634439909,
+        "old": "7130",
+        "new": "eb30",
+        "selected": 140695634439959
+      },
+      {
+        "ea": 140695634439960,
+        "old": "7100",
+        "new": "9090",
+        "selected": 140695634439962
+      },
+      {
+        "ea": 140695634439988,
+        "old": "7f3e",
+        "new": "eb3e",
+        "selected": 140695634440052
+      },
+      {
+        "ea": 140695634439999,
+        "old": "7e38",
+        "new": "eb38",
+        "selected": 140695634440057
+      },
+      {
+        "ea": 140695634440025,
+        "old": "7ee4",
+        "new": "ebe4",
+        "selected": 140695634439999
+      },
+      {
+        "ea": 140695634440053,
+        "old": "7f02",
+        "new": "eb02",
+        "selected": 140695634440057
+      },
+      {
+        "ea": 140695634440162,
+        "old": "7c2e",
+        "new": "eb2e",
+        "selected": 140695634440210
+      },
+      {
+        "ea": 140695634440173,
+        "old": "7d2a",
+        "new": "eb2a",
+        "selected": 140695634440217
+      },
+      {
+        "ea": 140695634440210,
+        "old": "7c0a",
+        "new": "eb0a",
+        "selected": 140695634440222
+      }
+    ],
+    "old_frame": {
+      "frsize": 40,
+      "frregs": 0,
+      "fpd": 0,
+      "serialized": [
+        "0d19f180080a30f180200440012002402002400208",
+        "115f5f72657475726e5f61646472657373066172675f30066172675f38",
+        null
+      ]
+    },
+    "after": {
+      "failure": "no error",
+      "failure_ea": 18446744073709551615,
+      "pseudocode": "void wow_a006_gate_followup_state_update()\n{\n  JUMPOUT(0x7FF6414FEF19LL);\n}\n",
+      "sha256": "544a64aa2ce0cac5f56060e0f26530d194ba3ac79f7c531b473b6d27f7a6cf03"
+    }
+  },
+  "new_pseudocode": "void __fastcall wow_a006_gate_followup_state_update()\n{\n  unsigned __int64 v0; // rcx\n  __int64 v1; // r8\n  _QWORD *i; // r9\n  unsigned __int64 v3; // [rsp+30h] [rbp+8h] BYREF\n\n  v3 = v0;\n  v1 = 0;\n  for ( i = qword_7FF647CC99B0; ; ++i )\n  {\n    v3 = (*(_QWORD *)(qword_7FF64585CE08 + 16)\n        ^ ((((*i ^ 0xC9LL) - 0xC38567F801661B4LL) << 32) | (((*i ^ 0xC9uLL) - 0xC38567F801661B4LL) >> 32)))\n       - 0x431EFFEC65BA15A7LL;\n    wow_rotate_qword_inplace_ror19(&v3);\n    if ( ((v3 >> 22) | (v3 << 42)) == 0xF2572C14E9A1F587uLL )\n      break;\n    v1 = (unsigned int)(v1 + 1);\n    if ( (unsigned int)v1 >= 3 )\n      return;\n  }\n  v3 = __ROR8__((unsigned __int64)qword_7FF6415DD680 ^ 0xF2572C14E9A1F587uLL, 42);\n  wow_rotate_qword_inplace_ror45(&v3);\n  qword_7FF647CC99B0[v1] = (__ROR8__((v3 + 0x431EFFEC65BA15A7LL) ^ 0x1471B93481304827LL, 32) + 0xC38567F801661B4LL)\n                         ^ 0xC9;\n}\n",
+  "frame_repair": "set_frame_size20/8 autoanalyzedtofrsize28/frregs0 butlost__return_address. Inspectedframefieldsarg0@48,arg8@56; readdedQWORD__return_address@40; F5noerror. No instructionbytesmodifiedbyframecorrection.",
+  "leaf_helpers": [
+    {
+      "ea": "0x7ff6414ff3b0",
+      "bytes": "488b0148c1c813488901c3",
+      "prototype": "unsigned __int64 __fastcall __spoils<rax>(unsigned __int64 *value)",
+      "semantics": "*RCX=ROR64(*RCX,19); RAXsamevalue; otherGPRpreserved"
+    },
+    {
+      "ea": "0x7ff6414ff340",
+      "bytes": "488b0148c1c82d488901c3",
+      "prototype": "unsigned __int64 __fastcall __spoils<rax>(unsigned __int64 *value)",
+      "semantics": "*RCX=ROR64(*RCX,45); RAXsamevalue; otherGPRpreserved"
+    }
+  ],
+  "spoils_reason": "Native4instructionleaveswriteonlyRAXandpointedQWORD; noR8/R9/R10/R11write. __spoils<rax> removes inventedloopstateclobbers; stack/flagsandmemoryeffectsnotclaimedidenticaltoemptyfunction.",
+  "slot_table": {
+    "address": "0x7ff647cc99b0",
+    "size": 24,
+    "captured_bytes": "50182baf5ee989a150189213ddcd5aa150189213ddcd5aa1"
+  },
+  "key_object_pointer": {
+    "address": "0x7ff64585ce08",
+    "value": "0x7ffaf42810a0",
+    "field_offset": 16,
+    "caveat": "Do not dereference guessed/unmapped externalobject or replacekeywithencodeconstant withoutproof."
+  },
+  "replacement_global": {
+    "address": "0x7ff6415dd680",
+    "value": "0xe8a7d56f05eb9e63",
+    "interpretation": "ADDRESS taken by nativeLEA4FF01E; QWORDstoredcontentisNOTtheregisteredvalue."
+  },
+  "contract": "For3slots decodep=ROL64(ROR64((ROR64((entry^C9)-0C38567F801661B4,32)^QWORD(keyobject+16))-431EFFEC65BA15A7,19),42)^F2572C14E9A1F587. Firstp0 isempty; encode ADDRESS7FF6415DD680,NOTitsstoredQWORD, usinginverseformulaandwritefirstempty slot; noempty ->returnwithoutwrite. No duplicatechecklocal. Capturedkeyequals1471B93481304827.",
+  "not_proved": [
+    "Meaning/ownershipof3slots",
+    "Meaningofreplacementglobal/marker",
+    "Externalkey_object+16initialization/lifetime",
+    "Firstcall4FBD90behavior"
+  ],
+  "first_call_gap": {
+    "ea": "0x7ff6414fbd90",
+    "bytes": "390dde1b063171d7e190e907cfd7b85af5d52fce3a00722058cce3c705531e809b94edd2e199f6fc",
+    "graph_nodes": 4,
+    "outside": [
+      "0x7ff5fa278ca6",
+      "0x7ff6414fbd6f"
+    ],
+    "runtime_record": "Recordedpdataend4FEE92isnotcurrentIDAfalse15bytefunctionend4FBD9F. Extendingencrypted/invalidgraphnotperformed. No validclosednativevieworplaintextalternateestablished."
+  },
+  "saved": true,
+  "captured_key_resolution": {
+    "pointer": "0x7ffaf42810a0",
+    "mapped": true,
+    "object32bytes": "de9a638282d5895c1c8e95505ab8e81b2748308134b97114051fd673e1873aa9",
+    "field16": "0x1471b93481304827",
+    "equality": "Capturedfieldmatchesencodeconstant1471B93481304827; no guessed substitution",
+    "slots_decoded": [
+      "0xf25753e2a8fc2307",
+      "0xf2572c14e9a1f587",
+      "0xf2572c14e9a1f587"
+    ],
+    "matching_indices": [
+      1,
+      2
+    ],
+    "encoded_replacement": "0xa189e95eaf2b1850",
+    "decoded_replacement": "0xf25753e2a8fc2307",
+    "expected_replacement": "0x1af0f97bec4a6be4",
+    "scope": "Read-only concreteevaluationundercapturedkeyobject/table; actualhelperexecution/notlivepatching NOT performed.",
+    "pointers_decoded": [
+      "0x7ff6415dd680",
+      "0x0",
+      "0x0"
+    ],
+    "first_empty_index": 1,
+    "expected_pointer": "0x7ff6415dd680",
+    "rejected_value_based_interpretation": "InitialF5castofqwordlabelwasmistakenforloadedQWORD. NativeLEA4FF01E provesaddress7FF6415DD680 isused. CalculationusingQWORDcontentwasrejectedbefore documentationcheckpoint."
+  },
+  "open_remaining": [
+    "Meaning/lifetimeofencodedpointerregistry",
+    "Semantics/valid entryofregisteredaddress5DD680",
+    "Firstcall4FBD90behavior",
+    "Gate8byte-messageorigin/caller/reset"
+  ]
+}

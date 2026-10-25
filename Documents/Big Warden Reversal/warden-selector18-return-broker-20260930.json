@@ -1,0 +1,45 @@
+{
+  "date": "2026-09-30",
+  "native_entry": "0x7ff697b9ce54",
+  "source": "Request dispatcher body125",
+  "trace": [
+    {
+      "ea": "0x7ff697b9ce54",
+      "bytes": "89442440",
+      "asm": "mov     [rsp+840h+var_800], eax"
+    },
+    {
+      "ea": "0x7ff697b9ce58",
+      "bytes": "8b442440",
+      "asm": "mov     eax, [rsp+840h+var_800]"
+    },
+    {
+      "ea": "0x7ff697b9ce5c",
+      "bytes": "c70502e2010000000000",
+      "asm": "mov     cs:dword_7FF697BBB068, 0"
+    },
+    {
+      "ea": "0x7ff697b9ce66",
+      "bytes": "85c0",
+      "asm": "test    eax, eax"
+    },
+    {
+      "ea": "0x7ff697b9ce68",
+      "bytes": "0f8449080000",
+      "asm": "jz      loc_7FF697B9D6B7"
+    },
+    {
+      "ea": "0x7ff697b9ce6e",
+      "bytes": "898424c4000000",
+      "asm": "mov     [rsp+840h+var_77C], eax"
+    }
+  ],
+  "finding": "Selector18 return EAX stored atB9CE54, reloaded B9CE58; clearBBB068 atB9CE5C; TESTEAX/JZB9D6B7 atB9CE66/68. Nonzero saved into separate status slot atB9CE6E and enters generic error construction. This discriminator does not inspect whether fixed report bytes were appended.",
+  "limits": "Later response construction/encryption/transport and server interpretation remain unresolved. Current dispatcher F5 omits the named selector18 call despite a complete native case/call xref; do not substitute that F5 view for native dispatch evidence.",
+  "comment": {
+    "ea": "0x7ff697b9ce54",
+    "old": null,
+    "new": "Common handler-return broker: store/reload EAX, clearBBB068, TEST/JZ B9D6B7 on0. Nonzero enters generic error construction. No test of report appended/used delta here; return0 is not proof a37-byte record was produced. Later response protocol still unresolved."
+  },
+  "save_success": true
+}

@@ -1,0 +1,530 @@
+{
+  "body": "0x7ff697b4feb0",
+  "reference_view": "warden-selector6-handler-inspection-20260930.json/helper_views",
+  "matches": [
+    {
+      "compare": "0x7ff697b51eea",
+      "candidate": "\\windows\\system32\\",
+      "units": 18,
+      "bytes": 36,
+      "hash": "0xbd41ffc"
+    },
+    {
+      "compare": "0x7ff697b51712",
+      "candidate": "\\windows\\syswow64\\",
+      "units": 18,
+      "bytes": 36,
+      "hash": "0xe0dbe47e"
+    },
+    {
+      "compare": "0x7ff697b51a54",
+      "candidate": "\\systemroot\\system32\\",
+      "units": 21,
+      "bytes": 42,
+      "hash": "0xf0214d7a"
+    },
+    {
+      "compare": "0x7ff697b52b32",
+      "candidate": "\\systemroot\\syswow64\\",
+      "units": 21,
+      "bytes": 42,
+      "hash": "0x9d02aabc"
+    }
+  ],
+  "fourth_concrete_length": {
+    "seed_ea": "0x7ff697bba8b8",
+    "seed": "0xaa8c63e5ba30d2a3",
+    "v34": "0x5fc92a1c3170f826",
+    "length_bytes": 42,
+    "wchar_units": 21
+  },
+  "fourth_concrete_hash_seed": {
+    "seed_ea": "0x7ff697bba8c0",
+    "seed": "0xf31776ce",
+    "v201": "0x71fe7620",
+    "v144": "0x4a6e7a3d",
+    "v143": "0xd9568ab1",
+    "v140": "0xf9fefeb1",
+    "v142": "0x2a070922",
+    "computed_hash_seed": 0
+  },
+  "limitation": "All four captured length/seed expressions now evaluated; hash-collision limits, substring traversal ordering, path normalization, complete native transition verification and all final-return routing remain open.",
+  "comment_journal": [
+    {
+      "ea": "0x7ff697b51eea",
+      "old": null,
+      "new": "UTF16 ASCII-fold FNV candidate '\\\\windows\\\\system32\\\\' (18 WCHAR units), default-seed hash 0xbd41ffc. Native seed/length and final return flow still need closure; do not label a server verdict.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b51712",
+      "old": null,
+      "new": "UTF16 ASCII-fold FNV candidate '\\\\windows\\\\syswow64\\\\' (18 WCHAR units), default-seed hash 0xe0dbe47e. Native seed/length and final return flow still need closure; do not label a server verdict.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b51a54",
+      "old": null,
+      "new": "UTF16 ASCII-fold FNV candidate '\\\\systemroot\\\\system32\\\\' (21 WCHAR units), default-seed hash 0xf0214d7a. Native seed/length and final return flow still need closure; do not label a server verdict.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b52b32",
+      "old": null,
+      "new": "UTF16 ASCII-fold FNV candidate '\\\\systemroot\\\\syswow64\\\\' (21 WCHAR units), default-seed hash 0x9d02aabc. Captured length42bytes and default-seed expression0 independently evaluated; match leads BYTEresult0 atB52B3D.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b51eea",
+      "old": "UTF16 ASCII-fold FNV candidate '\\\\windows\\\\system32\\\\' (18 WCHAR units), default-seed hash 0xbd41ffc. Native seed/length and final return flow still need closure; do not label a server verdict.",
+      "new": "Captured WCHAR hash call: 36 inputbytes / 18 units, seed0(default). Hash0xbd41ffc independently matches'\\\\windows\\\\system32\\\\'. Constants evaluated fixedwidth from saved classifier view; substring loop/policy ownership still under review.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b51712",
+      "old": "UTF16 ASCII-fold FNV candidate '\\\\windows\\\\syswow64\\\\' (18 WCHAR units), default-seed hash 0xe0dbe47e. Native seed/length and final return flow still need closure; do not label a server verdict.",
+      "new": "Captured WCHAR hash call: 36 inputbytes / 18 units, seed0(default). Hash0xe0dbe47e independently matches'\\\\windows\\\\syswow64\\\\'. Constants evaluated fixedwidth from saved classifier view; substring loop/policy ownership still under review.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b51a54",
+      "old": "UTF16 ASCII-fold FNV candidate '\\\\systemroot\\\\system32\\\\' (21 WCHAR units), default-seed hash 0xf0214d7a. Native seed/length and final return flow still need closure; do not label a server verdict.",
+      "new": "Captured WCHAR hash call: 42 inputbytes / 21 units, seed0(default). Hash0xf0214d7a independently matches'\\\\systemroot\\\\system32\\\\'. Constants evaluated fixedwidth from saved classifier view; substring loop/policy ownership still under review.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b52b32",
+      "old": "UTF16 ASCII-fold FNV candidate '\\\\systemroot\\\\syswow64\\\\' (21 WCHAR units), default-seed hash 0x9d02aabc. Captured length42bytes and default-seed expression0 independently evaluated; match leads BYTEresult0 atB52B3D.",
+      "new": "Captured WCHAR hash call: 42 inputbytes / 21 units, seed0(default). Hash0x9d02aabc independently matches'\\\\systemroot\\\\syswow64\\\\'. Constants evaluated fixedwidth from saved classifier view; substring loop/policy ownership still under review.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b5149d",
+      "old": null,
+      "new": "Captured NtQueryVirtualMemory dependent query: currentprocess -1; class2(MemoryMappedFilenameInformation); length1040bytes; returnLengthNULL. Pure captured-constant dependency evaluation recorded. Pathpatterns later hashed are mapped-filename classification leads; not server ownership proof.",
+      "ok": true
+    }
+  ],
+  "saved": true,
+  "all_captured_arguments": {
+    "hash_calls": [
+      {
+        "compare": "0x7ff697b51eea",
+        "length_bytes": 36,
+        "seed": 0
+      },
+      {
+        "compare": "0x7ff697b51712",
+        "length_bytes": 36,
+        "seed": 0
+      },
+      {
+        "compare": "0x7ff697b51a54",
+        "length_bytes": 42,
+        "seed": 0
+      },
+      {
+        "compare": "0x7ff697b52b32",
+        "length_bytes": 42,
+        "seed": 0
+      }
+    ],
+    "query_call": "0x7ff697b5149d",
+    "info_class": 2,
+    "output_length": 1040,
+    "source_view": "helper_views/0x7ff697b4feb0 in selector6 evidence",
+    "pure_constant_dependencies": [
+      {
+        "name": "v34",
+        "width": 64,
+        "expression": "(qword_7FF697BBA8B8 ^ 0x835414088212247 | 0xE782BEB937CEDD18) - (qword_7FF697BBA8B8 ^ 0xD2CA08874392C9A8) - (qword_7FF697BBA8B8 ^ 0xD2CA08874392C9A8) - 4 * ((qword_7FF697BBA8B8 ^ 0x835414088212247) & 0x187D4146C83122E7) - 3 * ((qword_7FF697BBA8B8 ^ 0x2500B638344C1410) & 0xE782BEB937CEDD18)",
+        "value": "0x5fc92a1c3170f826"
+      },
+      {
+        "name": "v55",
+        "width": 64,
+        "expression": "(qword_7FF697BBA8B8 ^ 0xD2CA08874392C9A8) - (v34 - 0x3034CD5DF65CBF54 + v34) - (v34 - 0x3034CD5DF65CBF54) + 0x46AB7835ADF74EE9",
+        "value": "0x2a"
+      },
+      {
+        "name": "v16",
+        "width": 64,
+        "expression": "(~qword_7FF697BBA8A8 | 0x54FCFFB15A1B7D86) - qword_7FF697BBA8A8 - qword_7FF697BBA8A8 - 4 * (~qword_7FF697BBA8A8 & 0x2B03004EA5E48279) - 3 * (~qword_7FF697BBA8A8 & 0x54FCFFB15A1B7D86) - 0x73C0F3D10D2360A6",
+        "value": "0x1c7a802c3a578138"
+      },
+      {
+        "name": "v57",
+        "width": 64,
+        "expression": "qword_7FF697BBA8A8 ^ ((v16 ^ 0x4BC274541DE1648F) - v16)",
+        "value": "0x2a"
+      },
+      {
+        "name": "v121",
+        "width": 64,
+        "expression": "(qword_7FF697BBA898 + 0x5268A915D5C93093) ^ 0x6E2D4315E2DB9E2C",
+        "value": "0xb3d4e3b267f0cd9a"
+      },
+      {
+        "name": "v120",
+        "width": 64,
+        "expression": "v121 - 0x7793D4A36E453D13",
+        "value": "0x3c410f0ef9ab9087"
+      },
+      {
+        "name": "v122",
+        "width": 64,
+        "expression": "qword_7FF697BBA898 - 0x67A7A7D7D5B98C2F",
+        "value": "0x23e94fb9d9a896f4"
+      },
+      {
+        "name": "v60",
+        "width": 64,
+        "expression": "~v122",
+        "value": "0xdc16b0462657690b"
+      },
+      {
+        "name": "v66",
+        "width": 64,
+        "expression": "qword_7FF697BBA898 + 0x7C6008C9FB0B329",
+        "value": "0x9356f81e4f12d64c"
+      },
+      {
+        "name": "v63",
+        "width": 64,
+        "expression": "(v120 & 0x2EEF799005E2A34C) + 11 * (v120 & 0xD110866FFA1D5CB3) - 11 * ~(v120 & 0x2EEF799005E2A34C) + 10 * (~v120 & 0x2EEF799005E2A34C) + ~v120 + 9 * (~v120 & 0xD110866FFA1D5CB3)",
+        "value": "0x6b30889eff8e33d4"
+      },
+      {
+        "name": "v65",
+        "width": 64,
+        "expression": "qword_7FF697BBA898 + 0x5268A915D5C93093",
+        "value": "0xddf9a0a7852b53b6"
+      },
+      {
+        "name": "v119",
+        "width": 64,
+        "expression": "0x7F2F36ABBEBA3E0E - v65",
+        "value": "0xa1359604398eea58"
+      },
+      {
+        "name": "v62",
+        "width": 64,
+        "expression": "~(0x7F2F36ABBEBA3E0E - v65)",
+        "value": "0x5eca69fbc67115a7"
+      },
+      {
+        "name": "v61",
+        "width": 64,
+        "expression": "3 * v62",
+        "value": "0x1c5f3df3535340f5"
+      },
+      {
+        "name": "v64",
+        "width": 64,
+        "expression": "v121 + 0x218FADCAFA68B383",
+        "value": "0xd564917d6259811d"
+      },
+      {
+        "name": "v59",
+        "width": 64,
+        "expression": "v120 + (v63 ^ (3 * ~(v122 | v119) + 7 * (v122 ^ v119) + 2 * (v122 & v119) - 6 * (v119 & ~v122) - 3 * ~(v60 | v119) - v61 - v66 - v64 - v121))",
+        "value": "0x24"
+      },
+      {
+        "name": "v124",
+        "width": 64,
+        "expression": "qword_7FF697BBA888 - 0x37A106207DD86068",
+        "value": "0x15719d5bad55a9ba"
+      },
+      {
+        "name": "v70",
+        "width": 64,
+        "expression": "qword_7FF697BBA888",
+        "value": "0x4d12a37c2b2e0a22"
+      },
+      {
+        "name": "v69",
+        "width": 64,
+        "expression": "qword_7FF697BBA888 + 0x40DF69C31B6D3DCF",
+        "value": "0x8df20d3f469b47f1"
+      },
+      {
+        "name": "v68",
+        "width": 64,
+        "expression": "v70 - v124 - v69 + 0x5651071EC8C2E7AD",
+        "value": "0x24"
+      },
+      {
+        "name": "v8",
+        "width": 32,
+        "expression": "7 * ~(dword_7FF697BBA86C | 0xD606E207)",
+        "value": "0x19c77118"
+      },
+      {
+        "name": "v9",
+        "width": 32,
+        "expression": "17 * (~dword_7FF697BBA86C & 0xD606E207) + 19 * (dword_7FF697BBA86C & 0x29F91DF8) + 12 * (dword_7FF697BBA86C & 0xD606E207) - 11 * (dword_7FF697BBA86C | 0xD606E207) - 6 * ~(dword_7FF697BBA86C & 0xD606E207)",
+        "value": "0xe7ec9ab1"
+      },
+      {
+        "name": "v10",
+        "width": 32,
+        "expression": "2 * ((v9 + v8) & 0x220D17A5) - 6 * ((v9 + v8) & 0x5DF2E85A) + 3 * (~(v9 + v8) & 0xDDF2E85A) + 7 * ((v9 + v8) ^ 0x220D17A5) - 3 * (~(v9 + v8) & 0x220D17A5) - 3 * ~(v9 + v8)",
+        "value": "0x23c1236e"
+      },
+      {
+        "name": "v187",
+        "width": 32,
+        "expression": "(v10 ^ (v9 + v8 - 1894277894)) - ((~v10 & 0x8F49683D) + (v10 & 0x8F49683D) + 2 * (v10 & 0x70B697C2) - v10 + 2 * (v10 ^ 0x70B697C2) - 2 * (~v10 & 0x70B697C2))",
+        "value": "0x2"
+      },
+      {
+        "name": "v98",
+        "width": 64,
+        "expression": "4 * ((qword_7FF697BBA870 + 0x2E617EBC0D2FAC1B) & 0x13118D14F0D22BCD) + 2 * ((qword_7FF697BBA870 + 0x2E617EBC0D2FAC1B) & 0x2CEE72EB0F2DD432) - ((qword_7FF697BBA870 + 0x2E617EBC0D2FAC1B) ^ 0xACEE72EB0F2DD432) - ((2 * (qword_7FF697BBA870 + 0x2E617EBC0D2FAC1B)) | 0x59DCE5D61E5BA864) + 4 * (~(qword_7FF697BBA870 + 0x2E617EBC0D2FAC1B) & 0x2CEE72EB0F2DD432)",
+        "value": "0xb871e77389099bfb"
+      },
+      {
+        "name": "v11",
+        "width": 64,
+        "expression": "9 * (v98 & 0xECD288A1DCC8303E) + 4 * (v98 & 0x132D775E2337CFC1) - 3 * (v98 | 0xECD288A1DCC8303E) + 10 * (~v98 & 0x6CD288A1DCC8303E)",
+        "value": "0xe192a39d8272cd39"
+      },
+      {
+        "name": "v97",
+        "width": 64,
+        "expression": "v11 + 0x7310CC34D34EDE8C",
+        "value": "0x54a36fd255c1abc5"
+      },
+      {
+        "name": "v95",
+        "width": 64,
+        "expression": "v11 + 0x88831E69D87D543",
+        "value": "0xea1ad5841ffaa27c"
+      },
+      {
+        "name": "v99",
+        "width": 64,
+        "expression": "qword_7FF697BBA870 + 0x2E617EBC0D2FAC1B",
+        "value": "0x149f959886244fc9"
+      },
+      {
+        "name": "v96",
+        "width": 64,
+        "expression": "v11 - 0x15B1F08E13C1969D",
+        "value": "0xcbe0b30f6eb1369c"
+      },
+      {
+        "name": "v100",
+        "width": 64,
+        "expression": "qword_7FF697BBA870",
+        "value": "0xe63e16dc78f4a3ae"
+      },
+      {
+        "name": "v158",
+        "width": 32,
+        "expression": "~(dword_7FF697BBA8B0 - 760656124) | 0x5CE32C9B",
+        "value": "0x5eebeddb"
+      },
+      {
+        "name": "v157",
+        "width": 32,
+        "expression": "-3",
+        "value": "0xfffffffd"
+      },
+      {
+        "name": "v159",
+        "width": 32,
+        "expression": "4 * (~(dword_7FF697BBA8B0 - 760656124) & 0x231CD364)",
+        "value": "0x8230500"
+      },
+      {
+        "name": "v160",
+        "width": 32,
+        "expression": "3 * (~(dword_7FF697BBA8B0 - 760656124) & 0x5CE32C9B)",
+        "value": "0xdaa30030"
+      },
+      {
+        "name": "v215",
+        "width": 32,
+        "expression": "dword_7FF697BBA8B0 - 760656124",
+        "value": "0xb5163eaf"
+      },
+      {
+        "name": "v156",
+        "width": 32,
+        "expression": "2 * (v215 & 0x231CD364)",
+        "value": "0x42282448"
+      },
+      {
+        "name": "v155",
+        "width": 32,
+        "expression": "-2 * (v215 & 0x5CE32C9B)",
+        "value": "0xd7fba6ea"
+      },
+      {
+        "name": "v154",
+        "width": 32,
+        "expression": "v155 - v156",
+        "value": "0x95d382a2"
+      },
+      {
+        "name": "v204",
+        "width": 32,
+        "expression": "(v158 + v157 + v154 - v159 - v160) ^ 0x95EC9960",
+        "value": "0x8415f22a"
+      },
+      {
+        "name": "v203",
+        "width": 32,
+        "expression": "-1691820100 - (v215 + v204 + 1001836444 + v204 + 1001836444)",
+        "value": "0x66791d81"
+      },
+      {
+        "name": "v151",
+        "width": 32,
+        "expression": "6 * (v204 | v203)",
+        "value": "0x66f3fe02"
+      },
+      {
+        "name": "v152",
+        "width": 32,
+        "expression": "-7",
+        "value": "0xfffffff9"
+      },
+      {
+        "name": "v150",
+        "width": 32,
+        "expression": "-(v204 & v203)",
+        "value": "0xfbeef000"
+      },
+      {
+        "name": "v149",
+        "width": 32,
+        "expression": "v152 + v150 - v151",
+        "value": "0x94faf1f7"
+      },
+      {
+        "name": "v153",
+        "width": 32,
+        "expression": "7 * ~(v204 | v203)",
+        "value": "0xb28e024c"
+      },
+      {
+        "name": "v205",
+        "width": 32,
+        "expression": "dword_7FF697BBA8B0",
+        "value": "0xe26cefab"
+      },
+      {
+        "name": "v31",
+        "width": 32,
+        "expression": "(dword_7FF697BBA890 - 2098107792) ^ 0x6A5FD8DB",
+        "value": "0xe2d5171f"
+      },
+      {
+        "name": "v32",
+        "width": 32,
+        "expression": "(v31 + 137422048) ^ 0x979D7CA4",
+        "value": "0x7c98875b"
+      },
+      {
+        "name": "v33",
+        "width": 32,
+        "expression": "v32 ^ dword_7FF697BBA890 ^ (335828073 - (dword_7FF697BBA890 + v31 - 2098107792))",
+        "value": "0xd1a58f89"
+      },
+      {
+        "name": "v176",
+        "width": 32,
+        "expression": "~v33",
+        "value": "0x2e5a7076"
+      },
+      {
+        "name": "v175",
+        "width": 32,
+        "expression": "9 * ~(~(v32 + 1426917422) | v33)",
+        "value": "0x0"
+      },
+      {
+        "name": "v174",
+        "width": 32,
+        "expression": "10 * ~((v32 + 1426917422) | v33)",
+        "value": "0xcf88649c"
+      },
+      {
+        "name": "v172",
+        "width": 32,
+        "expression": "v33 & ~(v32 + 1426917422)",
+        "value": "0x0"
+      },
+      {
+        "name": "v171",
+        "width": 32,
+        "expression": "11 * ((v32 + 1426917422) & v33)",
+        "value": "0x21d2ae3"
+      },
+      {
+        "name": "v173",
+        "width": 32,
+        "expression": "11 * ~v172",
+        "value": "0xfffffff5"
+      },
+      {
+        "name": "v207",
+        "width": 32,
+        "expression": "(dword_7FF697BBA8A0 ^ 0x38F5E51F) + 320189219",
+        "value": "0x6bd8a3dd"
+      },
+      {
+        "name": "v166",
+        "width": 32,
+        "expression": "v207 ^ 0x71206ED0",
+        "value": "0x1af8cd0d"
+      },
+      {
+        "name": "v164",
+        "width": 32,
+        "expression": "(v207 ^ 0x26F6F7CC) + 900679055",
+        "value": "0x82dd99a0"
+      },
+      {
+        "name": "v165",
+        "width": 32,
+        "expression": "v207 ^ 0x26F6F7CC",
+        "value": "0x4d2e5411"
+      },
+      {
+        "name": "v206",
+        "width": 32,
+        "expression": "(dword_7FF697BBA8A0 ^ 0x38F5E51F) - 1107714022",
+        "value": "0x16bc90d4"
+      },
+      {
+        "name": "v167",
+        "width": 32,
+        "expression": "dword_7FF697BBA8A0",
+        "value": "0x603715a5"
+      }
+    ],
+    "constant_inputs": {
+      "qword_7FF697BBA878": "0xf281247ba468df75",
+      "dword_7FF697BBA8C0": "0xf31776ce",
+      "dword_7FF697BBA890": "0x5996554",
+      "dword_7FF697BBA86C": "0xd7baedd1",
+      "qword_7FF697BBA888": "0x4d12a37c2b2e0a22",
+      "qword_7FF697BBA8C8": "0x15094acd71cdcc0",
+      "dword_7FF697BBA8A0": "0x603715a5",
+      "qword_7FF697BBA8A8": "0x3b3e744bed5f6455",
+      "qword_7FF697BBA8B8": "0xaa8c63e5ba30d2a3",
+      "qword_7FF697BBA898": "0x8b90f791af622323",
+      "qword_7FF697BBA8D0": "0xac52cf5701fc6065",
+      "dword_7FF697BBA8C4": "0x6306f581",
+      "qword_7FF697BBA870": "0xe63e16dc78f4a3ae",
+      "dword_7FF697BBA8B0": "0xe26cefab",
+      "dword_7FF697BBA868": "0xae1dea29",
+      "dword_7FF697BBA880": "0xe96fad4b"
+    },
+    "scope": "fixed-width concrete evaluation of single-definition pure arithmetic dependencies in saved pseudocode. Not arbitrary-seed SMT proof or complete path proof. An early diagnostic parser that matched assignment lines as declarations produced a wrong 64-bit length; corrected declaration-only widths give36. No bytes were changed on that diagnostic basis."
+  }
+}

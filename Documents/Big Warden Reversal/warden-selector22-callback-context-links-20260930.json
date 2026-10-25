@@ -1,0 +1,1032 @@
+{
+  "scope": "Native callback context chain, specific effects still partial.",
+  "abi_journal": [
+    {
+      "ea": 140697083310672,
+      "old": "__int64 __fastcall(__int64, __int64)",
+      "new": "unsigned int __fastcall wmp1_selector22_callback_wrapper(void *input, void *context);",
+      "ok": true
+    },
+    {
+      "ea": 140697083609200,
+      "old": null,
+      "new": "unsigned int __fastcall wmp1_selector22_callback_body(void **context_descriptor, unsigned int mode, unsigned __int64 key1, unsigned __int64 key2, void *input);",
+      "ok": true
+    }
+  ],
+  "constant_evaluations": {
+    "B08AE1": {
+      "source": "BBA320",
+      "captured": 1964523007,
+      "arg2_u32": 4294967292,
+      "arg2_i32": -4
+    },
+    "B089EE": {
+      "source": "BBA31C",
+      "captured": 1441646513,
+      "arg3_u32": 100
+    },
+    "scope": "Concrete captured constants with native modulo32 arithmetic. Not all-seed or path proof."
+  },
+  "notes": {
+    "140697083622793": "Descriptor[0] is callback context: wrapper ABF292/ABF2D1 (or ABF314/ABF31E) stores its original RDX at descriptor[0]. Body saves descriptor at B08092 and loads RSI here.",
+    "140697083620438": "Context+40h slot pointer; caller B6F8FE stores RSI, the SfcIsFileProtected name-lookup result from B6F6F9/B6F781. Native B0BF0B calls through this slot with RCX=0,RDX=UTF-16 buffer.",
+    "140697083625227": "Calls the context+40h function from SfcIsFileProtected name lookup (selector22 B6F6F9). RCX=0; RDX=R14 UTF-16 buffer. Return nonzero saved as byte at B0BF0F. Actual resolved address not captured; full report semantics unfinished.",
+    "140697083611026": "DWORD returned through B0877D output pointer is compared with GS:30 pointer+40h (TEB ClientId.UniqueProcess layout). Mismatch branches B0D9C8. Actual requested API identity not captured.",
+    "140697083611873": "Captured native modulo32 arithmetic decodes EDX=FFFFFFFC (-4). GetWindowLongPtr WNDPROC-index hypothesis; request-resolved API identity not proved. Returned pointer/value feeds unary context+38h call B08B69.",
+    "140697083611630": "Captured native modulo32 arithmetic decodes R8D=100. Call receives original callback input and second stack buffer. Identity not yet proved.",
+    "140697084033278": "Callback context+40h = RSI from SfcIsFileProtected name lookup; native callback B0AC56/B0BF0B follows this exact slot.",
+    "140697084033294": "Callback context+48h = pointer to prefix helper output+8; verify helper counter/output offset interpretation before naming whole layout."
+  },
+  "context_base": "caller RSP+B00h-180h, passed at B6F91D",
+  "fields_partial": {
+    "0": "caller local var_7E8 (identity pending)",
+    "8": "encoded output-like caller var_3A0 XOR A3AAF3D0E420947D",
+    "16": "caller R13, consumed at B0BB50 as PID-output-like API",
+    "24": "caller RBP, callback first buffer API via B0879B",
+    "32": "caller R15, callback second buffer API via B0BB33/B089EE",
+    "40": "caller R12, indexed handle-like API candidate",
+    "48": "caller R14, identity pending",
+    "56": "caller local var_7C8, unary API consumed B0BE64/B08B69",
+    "64": "caller RSI from B6F6F9/B6F781 SFC name lookup, consumed B0AC56/B0BF0B",
+    "72": "caller prefix helper output+8 pointer B6F906/B6F90E"
+  },
+  "wrapper_native": [
+    [
+      140697083310672,
+      "push    r15"
+    ],
+    [
+      140697083310674,
+      "push    r14"
+    ],
+    [
+      140697083310676,
+      "push    rsi"
+    ],
+    [
+      140697083310677,
+      "push    rdi"
+    ],
+    [
+      140697083310678,
+      "push    rbx"
+    ],
+    [
+      140697083310679,
+      "sub     rsp, 40h"
+    ],
+    [
+      140697083310683,
+      "mov     rdi, rdx"
+    ],
+    [
+      140697083310686,
+      "mov     rsi, rcx"
+    ],
+    [
+      140697083310689,
+      "mov     [rsp+68h+var_34], 2151CEFDh"
+    ],
+    [
+      140697083310697,
+      "lea     rbx, wmp1_protected_029_seed; Per-body seed. Offline decoded 29224 bytes via local LFSR/Fisher-Yates/inverse substitution; marker and exact re-encode validated. Original SHA256=d91adb97517c398e692ad5aeec2e2fa3bb069e4ae8bfe727737caeb468521b04. Protected extent end=7FF697B0F280. Not a full CFG/semantic reversal."
+    ],
+    [
+      140697083310704,
+      "lea     r14, qword_7FF697B0F280"
+    ],
+    [
+      140697083310711,
+      "lea     r15, byte_7FF697BC040E"
+    ],
+    [
+      140697083310718,
+      "xchg    ax, ax"
+    ],
+    [
+      140697083310720,
+      "mov     eax, [rsp+68h+var_34]"
+    ],
+    [
+      140697083310724,
+      "cmp     eax, 2151CEFDh"
+    ],
+    [
+      140697083310729,
+      "jz      short loc_7FF697ABF2B0"
+    ],
+    [
+      140697083310731,
+      "cmp     eax, 418BCB4Bh"
+    ],
+    [
+      140697083310736,
+      "jnz     short loc_7FF697ABF2CC"
+    ],
+    [
+      140697083310738,
+      "mov     [rsp+68h+var_30], rdi"
+    ],
+    [
+      140697083310743,
+      "mov     [rsp+68h+var_34], 1B25602Ah"
+    ],
+    [
+      140697083310751,
+      "jmp     short loc_7FF697ABF280"
+    ],
+    [
+      140697083310768,
+      "mov     rcx, rbx; header"
+    ],
+    [
+      140697083310771,
+      "mov     rdx, r14; end"
+    ],
+    [
+      140697083310774,
+      "mov     r8, r15; cache"
+    ],
+    [
+      140697083310777,
+      "call    wmp1_decode_body_if_needed"
+    ],
+    [
+      140697083310782,
+      "test    al, 1"
+    ],
+    [
+      140697083310784,
+      "jz      short loc_7FF697ABF314"
+    ],
+    [
+      140697083310786,
+      "mov     [rsp+68h+var_34], 418BCB4Bh"
+    ],
+    [
+      140697083310794,
+      "jmp     short loc_7FF697ABF280"
+    ],
+    [
+      140697083310796,
+      "mov     [rsp+68h+var_48], rsi"
+    ],
+    [
+      140697083310801,
+      "lea     rcx, [rsp+68h+var_30]"
+    ],
+    [
+      140697083310806,
+      "mov     r8, 509BC3620B69C14Fh"
+    ],
+    [
+      140697083310816,
+      "mov     r9, 0ACDA467BAD59C6EAh"
+    ],
+    [
+      140697083310826,
+      "mov     edx, 57h ; 'W'"
+    ],
+    [
+      140697083310831,
+      "call    wmp1_selector22_callback_body"
+    ],
+    [
+      140697083310836,
+      "mov     esi, eax"
+    ],
+    [
+      140697083310838,
+      "lea     rcx, wmp1_protected_029_seed; Per-body seed. Offline decoded 29224 bytes via local LFSR/Fisher-Yates/inverse substitution; marker and exact re-encode validated. Original SHA256=d91adb97517c398e692ad5aeec2e2fa3bb069e4ae8bfe727737caeb468521b04. Protected extent end=7FF697B0F280. Not a full CFG/semantic reversal."
+    ],
+    [
+      140697083310845,
+      "lea     rdx, qword_7FF697B0F280"
+    ],
+    [
+      140697083310852,
+      "lea     r8, byte_7FF697BC040E"
+    ],
+    [
+      140697083310859,
+      "call    sub_7FF697AECE00"
+    ],
+    [
+      140697083310864,
+      "mov     eax, esi"
+    ],
+    [
+      140697083310866,
+      "jmp     short loc_7FF697ABF341"
+    ],
+    [
+      140697083310868,
+      "mov     [rsp+68h+var_30], rdi"
+    ],
+    [
+      140697083310873,
+      "mov     [rsp+68h+var_48], rsi"
+    ],
+    [
+      140697083310878,
+      "lea     rcx, [rsp+68h+var_30]"
+    ],
+    [
+      140697083310883,
+      "mov     r8, 509BC3620B69C145h"
+    ],
+    [
+      140697083310893,
+      "mov     r9, 0ACDA467BAD59C6CEh"
+    ],
+    [
+      140697083310903,
+      "mov     edx, 31h ; '1'"
+    ],
+    [
+      140697083310908,
+      "call    wmp1_selector22_callback_body"
+    ],
+    [
+      140697083310913,
+      "nop"
+    ],
+    [
+      140697083310914,
+      "add     rsp, 40h"
+    ],
+    [
+      140697083310918,
+      "pop     rbx"
+    ],
+    [
+      140697083310919,
+      "pop     rdi"
+    ],
+    [
+      140697083310920,
+      "pop     rsi"
+    ],
+    [
+      140697083310921,
+      "pop     r14"
+    ],
+    [
+      140697083310923,
+      "pop     r15"
+    ],
+    [
+      140697083310925,
+      "retn"
+    ]
+  ],
+  "caller_bundle_native": [
+    {
+      "ea": 140697084032750,
+      "text": "call    sub_7FF697ABDB10",
+      "bytes": "e81de4f4ff"
+    },
+    {
+      "ea": 140697084032755,
+      "text": "mov     rcx, rdi",
+      "bytes": "4889f9"
+    },
+    {
+      "ea": 140697084032758,
+      "text": "mov     rdx, rsi",
+      "bytes": "4889f2"
+    },
+    {
+      "ea": 140697084032761,
+      "text": "call    [rsp+0B08h+var_7E0]",
+      "bytes": "ff942428030000"
+    },
+    {
+      "ea": 140697084032768,
+      "text": "test    dl, 99h",
+      "bytes": "f6c299"
+    },
+    {
+      "ea": 140697084032771,
+      "text": "mov     ah, ah",
+      "bytes": "8ae4"
+    },
+    {
+      "ea": 140697084032773,
+      "text": "jmp     short loc_7FF697B6F778",
+      "bytes": "eb71"
+    },
+    {
+      "ea": 140697084032888,
+      "text": "test    rax, rax",
+      "bytes": "4885c0"
+    },
+    {
+      "ea": 140697084032891,
+      "text": "jz      loc_7FF697B6F927",
+      "bytes": "0f84a6010000"
+    },
+    {
+      "ea": 140697084032897,
+      "text": "mov     rsi, rax",
+      "bytes": "4889c6"
+    },
+    {
+      "ea": 140697084032900,
+      "text": "mov     rdx, 1C11355DE063C070h",
+      "bytes": "48ba70c063e05d35111c"
+    },
+    {
+      "ea": 140697084032910,
+      "text": "lea     rax, [rsp+0B08h+var_108]",
+      "bytes": "488d8424000a0000"
+    },
+    {
+      "ea": 140697084032918,
+      "text": "xor     rdx, rax",
+      "bytes": "4831c2"
+    },
+    {
+      "ea": 140697084032921,
+      "text": "mov     rax, 6FD63FD325B024EEh",
+      "bytes": "48b8ee24b025d33fd66f"
+    },
+    {
+      "ea": 140697084032931,
+      "text": "mov     [rsp+0B08h+var_3B0], rax",
+      "bytes": "4889842458070000"
+    },
+    {
+      "ea": 140697084032939,
+      "text": "mov     rcx, 0B2A00ADE3A4EF424h",
+      "bytes": "48b924f44e3ade0aa0b2"
+    },
+    {
+      "ea": 140697084032949,
+      "text": "lea     r8, [rsp+0B08h+var_3B0]",
+      "bytes": "4c8d842458070000"
+    },
+    {
+      "ea": 140697084032957,
+      "text": "mov     r9d, 45h ; 'E'",
+      "bytes": "41b945000000"
+    },
+    {
+      "ea": 140697084032963,
+      "text": "call    near ptr sub_7FF697AE8E70",
+      "bytes": "e8a896f7ff"
+    },
+    {
+      "ea": 140697084032968,
+      "text": "mov     rax, [rsp+0B00h+var_7E8]",
+      "bytes": "488b842418030000"
+    },
+    {
+      "ea": 140697084032976,
+      "text": "mov     qword ptr [rsp+0B00h+var_188+8], rax",
+      "bytes": "4889842480090000"
+    },
+    {
+      "ea": 140697084032984,
+      "text": "mov     rax, 0A3AAF3D0E420947Dh",
+      "bytes": "48b87d9420e4d0f3aaa3"
+    },
+    {
+      "ea": 140697084032994,
+      "text": "xor     rax, [rsp+0B00h+var_3A0]",
+      "bytes": "4833842460070000"
+    },
+    {
+      "ea": 140697084033002,
+      "text": "ja      short loc_7FF697B6F82E",
+      "bytes": "7742"
+    },
+    {
+      "ea": 140697084033004,
+      "text": "xchg    dh, dh",
+      "bytes": "86f6"
+    },
+    {
+      "ea": 140697084033006,
+      "text": "xchg    al, al",
+      "bytes": "86c0"
+    },
+    {
+      "ea": 140697084033008,
+      "text": "jmp     short loc_7FF697B6F82E",
+      "bytes": "eb3c"
+    },
+    {
+      "ea": 140697084033070,
+      "text": "mov     qword ptr [rsp+0B00h+var_178], rax",
+      "bytes": "4889842488090000"
+    },
+    {
+      "ea": 140697084033078,
+      "text": "mov     qword ptr [rsp+0B00h+var_178+8], r13",
+      "bytes": "4c89ac2490090000"
+    },
+    {
+      "ea": 140697084033086,
+      "text": "or      bl, 0",
+      "bytes": "80cb00"
+    },
+    {
+      "ea": 140697084033089,
+      "text": "jmp     short loc_7FF697B6F87F",
+      "bytes": "eb3c"
+    },
+    {
+      "ea": 140697084033151,
+      "text": "mov     qword ptr [rsp+0B00h+var_168], rbp",
+      "bytes": "4889ac2498090000"
+    },
+    {
+      "ea": 140697084033159,
+      "text": "mov     qword ptr [rsp+0B00h+var_168+8], r15",
+      "bytes": "4c89bc24a0090000"
+    },
+    {
+      "ea": 140697084033167,
+      "text": "mov     qword ptr [rsp+0B00h+var_158], r12",
+      "bytes": "4c89a424a8090000"
+    },
+    {
+      "ea": 140697084033175,
+      "text": "mov     qword ptr [rsp+0B00h+var_158+8], r14",
+      "bytes": "4c89b424b0090000"
+    },
+    {
+      "ea": 140697084033183,
+      "text": "mov     rax, [rsp+0B00h+var_7C8]",
+      "bytes": "488b842438030000"
+    },
+    {
+      "ea": 140697084033191,
+      "text": "mov     qword ptr [rsp+0B00h+var_148], rax",
+      "bytes": "48898424b8090000"
+    },
+    {
+      "ea": 140697084033199,
+      "text": "test    esp, ecx",
+      "bytes": "85cc"
+    },
+    {
+      "ea": 140697084033201,
+      "text": "mov     cl, cl",
+      "bytes": "8ac9"
+    },
+    {
+      "ea": 140697084033203,
+      "text": "jmp     short loc_7FF697B6F8FE",
+      "bytes": "eb49"
+    },
+    {
+      "ea": 140697084033278,
+      "text": "mov     qword ptr [rsp+0B00h+var_148+8], rsi",
+      "bytes": "4889b424c0090000"
+    },
+    {
+      "ea": 140697084033286,
+      "text": "lea     rax, [rsp+0B00h+var_108+8]",
+      "bytes": "488d8424000a0000"
+    },
+    {
+      "ea": 140697084033294,
+      "text": "mov     [rsp+0B00h+var_138], rax",
+      "bytes": "48898424c8090000"
+    },
+    {
+      "ea": 140697084033302,
+      "text": "mov     rcx, qword ptr cs:unk_7FF697BBA010",
+      "bytes": "488b0df3a60400"
+    },
+    {
+      "ea": 140697084033309,
+      "text": "lea     rdx, [rsp+0B00h+var_188+8]",
+      "bytes": "488d942480090000"
+    },
+    {
+      "ea": 140697084033317,
+      "text": "call    rbx",
+      "bytes": "ffd3"
+    }
+  ],
+  "callback_native": [
+    [
+      140697083610995,
+      "mov     rcx, r12"
+    ],
+    [
+      140697083610998,
+      "lea     rdx, [rbp+0B00h+var_124]"
+    ],
+    [
+      140697083611005,
+      "call    [rbp+0B00h+var_2E0]"
+    ],
+    [
+      140697083611011,
+      "mov     rax, gs:30h"
+    ],
+    [
+      140697083611020,
+      "mov     ecx, [rbp+0B00h+var_124]"
+    ],
+    [
+      140697083611026,
+      "cmp     ecx, [rax+40h]"
+    ],
+    [
+      140697083611029,
+      "jnz     loc_7FF697B0D9C8"
+    ],
+    [
+      140697083611562,
+      "mov     ecx, cs:dword_7FF697BBA31C"
+    ],
+    [
+      140697083611568,
+      "mov     edx, ecx"
+    ],
+    [
+      140697083611570,
+      "xor     edx, 12620841h"
+    ],
+    [
+      140697083611576,
+      "lea     r8d, [rdx+0F2D913Ah]"
+    ],
+    [
+      140697083611583,
+      "lea     r9d, [rdx+57DF0CF5h]"
+    ],
+    [
+      140697083611590,
+      "xor     r9d, r8d"
+    ],
+    [
+      140697083611593,
+      "add     ecx, edx"
+    ],
+    [
+      140697083611595,
+      "mov     r8d, 50EABF75h"
+    ],
+    [
+      140697083611601,
+      "sub     r8d, ecx"
+    ],
+    [
+      140697083611604,
+      "xor     r8d, r9d"
+    ],
+    [
+      140697083611607,
+      "add     r8d, edx"
+    ],
+    [
+      140697083611610,
+      "add     r8d, edx"
+    ],
+    [
+      140697083611613,
+      "add     r8d, 0F621C669h"
+    ],
+    [
+      140697083611620,
+      "mov     rcx, r12"
+    ],
+    [
+      140697083611623,
+      "lea     rdx, [rbp+0B00h+var_530]"
+    ],
+    [
+      140697083611630,
+      "call    qword ptr [rax]"
+    ],
+    [
+      140697083611632,
+      "mov     rax, [rbp+0B00h+var_2E8]"
+    ],
+    [
+      140697083611639,
+      "mov     rax, [rax]"
+    ],
+    [
+      140697083611642,
+      "mov     ecx, cs:dword_7FF697BBA320"
+    ],
+    [
+      140697083611648,
+      "lea     r8d, [rcx-3A71316h]"
+    ],
+    [
+      140697083611655,
+      "test    ecx, 282A6D33h"
+    ],
+    [
+      140697083611661,
+      "jmp     short loc_7FF697B08A6D"
+    ],
+    [
+      140697083611757,
+      "mov     r9d, r8d"
+    ],
+    [
+      140697083611760,
+      "xor     r9d, 83370D5h"
+    ],
+    [
+      140697083611767,
+      "lea     edx, [r9+rcx]"
+    ],
+    [
+      140697083611771,
+      "add     edx, 96E5259Ah"
+    ],
+    [
+      140697083611777,
+      "xor     edx, r8d"
+    ],
+    [
+      140697083611780,
+      "stc"
+    ],
+    [
+      140697083611781,
+      "mov     ch, ch"
+    ],
+    [
+      140697083611783,
+      "jmp     short loc_7FF697B08AD3"
+    ],
+    [
+      140697083611859,
+      "add     edx, r9d"
+    ],
+    [
+      140697083611862,
+      "sub     edx, ecx"
+    ],
+    [
+      140697083611864,
+      "add     edx, 7874C83h"
+    ],
+    [
+      140697083611870,
+      "mov     rcx, r12"
+    ],
+    [
+      140697083611873,
+      "call    rax"
+    ],
+    [
+      140697083611875,
+      "mov     rsi, rax"
+    ],
+    [
+      140697083611878,
+      "mov     rax, [rbp+0B00h+var_258]"
+    ],
+    [
+      140697083611885,
+      "mov     rax, [rax]"
+    ],
+    [
+      140697083611888,
+      "jg      short loc_7FF697B08B66"
+    ],
+    [
+      140697083611890,
+      "mov     ch, ch"
+    ],
+    [
+      140697083611892,
+      "jmp     short loc_7FF697B08B66"
+    ],
+    [
+      140697083612006,
+      "mov     rcx, rsi"
+    ],
+    [
+      140697083612009,
+      "call    rax"
+    ],
+    [
+      140697083612011,
+      "cmp     eax, 1"
+    ],
+    [
+      140697083612014,
+      "jnz     loc_7FF697B0DE59"
+    ],
+    [
+      140697083620431,
+      "mov     rax, [rbp+0B00h+var_C8]"
+    ],
+    [
+      140697083620438,
+      "lea     rcx, [rax+40h]"
+    ],
+    [
+      140697083620442,
+      "mov     [rbp+0B00h+var_2F0], rcx"
+    ],
+    [
+      140697083620449,
+      "mov     rax, [rax+40h]"
+    ],
+    [
+      140697083622786,
+      "mov     rax, [rbp+0B00h+var_2D0]"
+    ],
+    [
+      140697083622793,
+      "mov     rsi, [rax]"
+    ],
+    [
+      140697083622796,
+      "jmp     short loc_7FF697B0B5DB"
+    ],
+    [
+      140697083622875,
+      "stc"
+    ],
+    [
+      140697083622876,
+      "jmp     short loc_7FF697B0B625"
+    ],
+    [
+      140697083622889,
+      "jmp     short loc_7FF697B0B647"
+    ],
+    [
+      140697083622949,
+      "jmp     short loc_7FF697B0B5E9"
+    ],
+    [
+      140697083622983,
+      "mov     [rbp+0B00h+var_124], 0"
+    ],
+    [
+      140697083622993,
+      "stc"
+    ],
+    [
+      140697083622994,
+      "mov     dh, dh"
+    ],
+    [
+      140697083622996,
+      "jmp     short loc_7FF697B0B69D"
+    ],
+    [
+      140697083623069,
+      "movaps  [rbp+0B00h+var_80], xmm6"
+    ],
+    [
+      140697083623076,
+      "mov     [rbp+0B00h+var_70], 0"
+    ],
+    [
+      140697083623083,
+      "movaps  [rbp+0B00h+var_480], xmm6"
+    ],
+    [
+      140697083623090,
+      "movaps  [rbp+0B00h+var_490], xmm6"
+    ],
+    [
+      140697083623097,
+      "movaps  [rbp+0B00h+var_4A0], xmm6"
+    ],
+    [
+      140697083623104,
+      "movaps  [rbp+0B00h+var_4B0], xmm6"
+    ],
+    [
+      140697083623111,
+      "movaps  [rbp+0B00h+var_4C0], xmm6"
+    ],
+    [
+      140697083623118,
+      "movaps  [rbp+0B00h+var_4D0], xmm6"
+    ],
+    [
+      140697083623125,
+      "movaps  [rbp+0B00h+var_4E0], xmm6"
+    ],
+    [
+      140697083623132,
+      "movaps  [rbp+0B00h+var_4F0], xmm6"
+    ],
+    [
+      140697083623139,
+      "movaps  [rbp+0B00h+var_500], xmm6"
+    ],
+    [
+      140697083623146,
+      "movaps  [rbp+0B00h+var_510], xmm6"
+    ],
+    [
+      140697083623153,
+      "movaps  [rbp+0B00h+var_520], xmm6"
+    ],
+    [
+      140697083623160,
+      "movaps  [rbp+0B00h+var_530], xmm6"
+    ],
+    [
+      140697083623167,
+      "mov     [rbp+0B00h+var_470], 0"
+    ],
+    [
+      140697083623178,
+      "movaps  [rbp+0B00h+var_3B0], xmm6"
+    ],
+    [
+      140697083623185,
+      "movaps  [rbp+0B00h+var_3C0], xmm6"
+    ],
+    [
+      140697083623192,
+      "movaps  [rbp+0B00h+var_3D0], xmm6"
+    ],
+    [
+      140697083623199,
+      "movaps  [rbp+0B00h+var_3E0], xmm6"
+    ],
+    [
+      140697083623206,
+      "movaps  [rbp+0B00h+var_3F0], xmm6"
+    ],
+    [
+      140697083623213,
+      "movaps  [rbp+0B00h+var_400], xmm6"
+    ],
+    [
+      140697083623220,
+      "movaps  [rbp+0B00h+var_410], xmm6"
+    ],
+    [
+      140697083623227,
+      "movaps  [rbp+0B00h+var_420], xmm6"
+    ],
+    [
+      140697083623234,
+      "movaps  [rbp+0B00h+var_430], xmm6"
+    ],
+    [
+      140697083623241,
+      "movaps  [rbp+0B00h+var_440], xmm6"
+    ],
+    [
+      140697083623248,
+      "movaps  [rbp+0B00h+var_450], xmm6"
+    ],
+    [
+      140697083623255,
+      "movaps  [rbp+0B00h+var_460], xmm6"
+    ],
+    [
+      140697083623262,
+      "mov     [rbp+0B00h+var_3A0], 0"
+    ],
+    [
+      140697083623273,
+      "jge     short loc_7FF697B0B7C2"
+    ],
+    [
+      140697083623275,
+      "mov     ah, ah"
+    ],
+    [
+      140697083623277,
+      "jmp     short loc_7FF697B0B776"
+    ],
+    [
+      140697083623286,
+      "jmp     short loc_7FF697B0B7C2"
+    ],
+    [
+      140697083623362,
+      "mov     r8d, 410h"
+    ],
+    [
+      140697083623368,
+      "lea     rcx, [rbp+0B00h+var_B50]"
+    ],
+    [
+      140697083623372,
+      "xor     edx, edx"
+    ],
+    [
+      140697083623374,
+      "call    sub_7FF697ADFAE0"
+    ],
+    [
+      140697083623379,
+      "jle     short loc_7FF697B0B831"
+    ],
+    [
+      140697083623381,
+      "sal     dl, 0"
+    ],
+    [
+      140697083623384,
+      "jmp     short loc_7FF697B0B831"
+    ],
+    [
+      140697083623473,
+      "mov     r8d, 208h"
+    ],
+    [
+      140697083623479,
+      "mov     rcx, r14"
+    ],
+    [
+      140697083623482,
+      "xor     edx, edx"
+    ],
+    [
+      140697083623484,
+      "call    sub_7FF697ADFAE0"
+    ],
+    [
+      140697083623489,
+      "movaps  [rbp+0B00h+var_370], xmm6"
+    ],
+    [
+      140697083623496,
+      "movaps  [rbp+0B00h+var_380], xmm6"
+    ],
+    [
+      140697083623503,
+      "movaps  [rbp+0B00h+var_390], xmm6"
+    ],
+    [
+      140697083623510,
+      "test    rsi, rsi"
+    ],
+    [
+      140697083623513,
+      "jz      loc_7FF697B0D9E6"
+    ],
+    [
+      140697083623519,
+      "jmp     short loc_7FF697B0B8CE"
+    ],
+    [
+      140697083623630,
+      "mov     [rbp+0B00h+var_C8], rsi"
+    ],
+    [
+      140697083623637,
+      "add     rsi, 18h"
+    ],
+    [
+      140697083623641,
+      "mov     [rbp+0B00h+var_248], rsi"
+    ],
+    [
+      140697083625206,
+      "mov     [rbp+0B00h+var_53A], 0"
+    ],
+    [
+      140697083625215,
+      "mov     rax, [rbp+0B00h+var_2F0]"
+    ],
+    [
+      140697083625222,
+      "xor     ecx, ecx"
+    ],
+    [
+      140697083625224,
+      "mov     rdx, r14"
+    ],
+    [
+      140697083625227,
+      "call    qword ptr [rax]"
+    ],
+    [
+      140697083625229,
+      "test    eax, eax"
+    ],
+    [
+      140697083625231,
+      "setnz   [rbp+0B00h+var_55]"
+    ],
+    [
+      140697083625238,
+      "movzx   edx, [rbp+0B00h+var_55]"
+    ]
+  ],
+  "limits": [
+    "Lookup API identity/request hashes not captured; actual SFC address not captured. This proves pointer provenance through a named lookup, not an observed OS API execution.",
+    "Callback frame still oversized and no F5; no force repair. Native ABI corrected only.",
+    "Context/data pointer chain confirmed; full file-path origin/translation, output format, lifetime and continuation not finished."
+  ],
+  "saved": true
+}

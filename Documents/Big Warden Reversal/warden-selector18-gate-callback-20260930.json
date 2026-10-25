@@ -1,0 +1,177 @@
+{
+  "date": "2026-09-30",
+  "captured_context_callback": "0x7ff6415e0ed0",
+  "getter_repair": {
+    "start": 140695635365584,
+    "end": 140695635365657,
+    "label": "wow_a006_gate_flag_query",
+    "original_bytes": "669079128ae47826c6c6df0f8a03160000c6c7d60f8679290000c7c580a1f57cc7c7ff9f0d8e81c6907816a381c18adb78f67bbbf6db81c6afc5dff58082e28e8b0fb6053abf2704c3",
+    "sha256_before": "a80fd524c8af8e769d44bb2c71f7bea5faa26fd05003c1086398a44594becd10",
+    "old_name": "",
+    "old_type": null,
+    "old_comment": null,
+    "old_chunks": [],
+    "patches": [
+      {
+        "ea": 140695635365590,
+        "old": "7826",
+        "new": "eb26",
+        "selected": 140695635365630
+      },
+      {
+        "ea": 140695635365606,
+        "old": "7929",
+        "new": "eb29",
+        "selected": 140695635365649
+      },
+      {
+        "ea": 140695635365625,
+        "old": "7816",
+        "new": "eb16",
+        "selected": 140695635365649
+      },
+      {
+        "ea": 140695635365632,
+        "old": "78f6",
+        "new": "ebf6",
+        "selected": 140695635365624
+      }
+    ],
+    "after": {
+      "failure": "no error",
+      "failure_ea": 18446744073709551615,
+      "pseudocode": "__int64 wow_a006_gate_flag_query()\n{\n  return (unsigned __int8)byte_7FF64585CE52;\n}\n",
+      "sha256": "cf99579c132bb80148dfb98cbd11c2f0179f22764b22847a80a1018b82e5ab22"
+    }
+  },
+  "getter_pseudocode": "unsigned __int8 __fastcall wow_a006_gate_flag_query()\n{\n  return byte_7FF64585CE52;\n}\n",
+  "getter_graph_nodes": 11,
+  "stop_flag": {
+    "address": "0x7ff64585ce52",
+    "captured_value": 0,
+    "old_name": "byte_7FF64585CE52"
+  },
+  "setter_repair": {
+    "start": 140695635362400,
+    "end": 140695635362843,
+    "label": "wow_a006_gate_flag_set_on_message",
+    "original_bytes": "4883ec284c8bc1660f1f8400000000007013c0f3007130909081c2fb51c931f6d981e84d57700b6aa9f6d8c7c269439d2ae87016010068aa6e710ff6dfc6c04380c286f696c0e59071ef83fa080f8561010000f8c0e2007349909066900f874cd90000c6c5650f88aab8010083c72281c55908f22277470f8fe208000083c1970f310f3181c07a1300b981ef912bed315a0f8736ae01000f85a2aa0000c6c7800f827307000069b20a51000fb60135c59d1c8169c893010001410fb6400133c8410fb6400269d19301000133d0410fb6400369ca9301000133c869c193010001413940040f85ca000000660f1f440000f8c0f000731a909081c07e7d07930f84cffc00000f3180c59bc6c29d6ad081eb86c9730a732bc7c1ef63b64681c0907310755d0f8325db010081e8f089dd3910bb410fb60035c59d1c81c605b1ca27040169c893010001410fb6400133c8410fb6400269d19301000133d0410fb6400369ca9301000133c8410fb6400469d19301000133d0410fb6400569ca9301000133c8410fb6400669d19301000133d0410fb6400769ca9301000133c869c1930100018905a8d62704e873f8ffffb0014883c428c332c04883c428c3",
+    "sha256_before": "96ec907a89c231719a8966bd0492dab35fe00d47987d6cbcadfa3c5b19d12bc8",
+    "old_name": "sub_7FF6415E0260",
+    "old_type": "char __fastcall(__int64)",
+    "old_comment": null,
+    "old_chunks": [
+      [
+        140695635362400,
+        140695635362843
+      ],
+      [
+        140695635418127,
+        140695635418143
+      ],
+      [
+        140695635427379,
+        140695635427386
+      ]
+    ],
+    "patches": [
+      {
+        "ea": 140695635362421,
+        "old": "7130",
+        "new": "eb30",
+        "selected": 140695635362471
+      },
+      {
+        "ea": 140695635362437,
+        "old": "700b",
+        "new": "eb0b",
+        "selected": 140695635362450
+      },
+      {
+        "ea": 140695635362450,
+        "old": "7016",
+        "new": "eb16",
+        "selected": 140695635362474
+      },
+      {
+        "ea": 140695635362457,
+        "old": "710f",
+        "new": "eb0f",
+        "selected": 140695635362474
+      },
+      {
+        "ea": 140695635362472,
+        "old": "71ef",
+        "new": "ebef",
+        "selected": 140695635362457
+      },
+      {
+        "ea": 140695635362487,
+        "old": "7349",
+        "new": "eb49",
+        "selected": 140695635362562
+      },
+      {
+        "ea": 140695635362562,
+        "old": "7307",
+        "new": "eb07",
+        "selected": 140695635362571
+      },
+      {
+        "ea": 140695635362644,
+        "old": "731a",
+        "new": "eb1a",
+        "selected": 140695635362672
+      },
+      {
+        "ea": 140695635362674,
+        "old": "730a",
+        "new": "eb0a",
+        "selected": 140695635362686
+      },
+      {
+        "ea": 140695635362687,
+        "old": "7310",
+        "new": "eb10",
+        "selected": 140695635362705
+      }
+    ],
+    "old_frame": {
+      "frsize": 40,
+      "frregs": 0,
+      "fpd": 0,
+      "serialized": [
+        "0d09f180080a30f180200440010208",
+        "115f5f72657475726e5f61646472657373",
+        null
+      ]
+    },
+    "after": {
+      "failure": "no error",
+      "failure_ea": 18446744073709551615,
+      "pseudocode": "char __fastcall wow_a006_gate_flag_set_on_message(unsigned __int8 *a1, int a2)\n{\n  unsigned int v2; // eax\n\n  if ( a2 != 8\n    || *((_DWORD *)a1 + 1) != 16777619\n                            * (a1[3] ^ (16777619 * (a1[2] ^ (16777619 * (a1[1] ^ (16777619 * (*a1 ^ 0x811C9DC5))))))) )\n  {\n    return 0;\n  }\n  v2 = *a1 ^ 0x811C9DC5;\n  byte_7FF64585CE52 = 1;\n  dword_7FF64585DAB0 = 16777619\n                     * (a1[7]\n                      ^ (16777619\n                       * (a1[6]\n                        ^ (16777619\n                         * (a1[5]\n                          ^ (16777619\n                           * (a1[4]\n                            ^ (16777619 * (a1[3] ^ (16777619 * (a1[2] ^ (16777619 * (a1[1] ^ (16777619 * v2))))))))))))));\n  sub_7FF6415DFC80();\n  return 1;\n}\n",
+      "sha256": "f47805480577a9fde7cf568bf52656a16c555a8a943ce72a3b78a54a8e2ad65c"
+    }
+  },
+  "setter_pseudocode": "unsigned __int8 __fastcall wow_a006_gate_flag_set_on_message(const unsigned __int8 *message, unsigned int length)\n{\n  unsigned int v2; // eax\n\n  if ( length != 8\n    || *((_DWORD *)message + 1) != 16777619\n                                 * (message[3]\n                                  ^ (16777619\n                                   * (message[2] ^ (16777619 * (message[1] ^ (16777619 * (*message ^ 0x811C9DC5))))))) )\n  {\n    return 0;\n  }\n  v2 = *message ^ 0x811C9DC5;\n  byte_7FF64585CE52 = 1;\n  dword_7FF64585DAB0 = 16777619\n                     * (message[7]\n                      ^ (16777619\n                       * (message[6]\n                        ^ (16777619\n                         * (message[5]\n                          ^ (16777619\n                           * (message[4]\n                            ^ (16777619\n                             * (message[3] ^ (16777619 * (message[2] ^ (16777619 * (message[1] ^ (16777619 * v2))))))))))))));\n  sub_7FF6415DFC80();\n  return 1;\n}\n",
+  "setter_nodes": 72,
+  "setter_abi": "RCXconstbyte*message,EDXuint32length; R8isinternalcopyofRCX,NOTthirdargument",
+  "rejected_prototype": "Initially guessedthree-argument context/unused/message; native MOVR8,RCX and CMPEDX,8 disproved it; replaced withtwo-argument ABI before finalsave.",
+  "setter_contract": "length8 and DWORDmessage+4 ==FNV1a32(first4,seed811C9DC5) =>stopflag1, store FNV1a32(all8) at7FF64585DAB0,call5DFC80,return1; failure0 and noflagwrite on shownpath. This is a checksum, NOT authenticated-message proof.",
+  "hash_storage_old_name": "dword_7FF64585DAB0",
+  "getter_no_args": true,
+  "shared_gate_caller_contract": {
+    "source": "4__(v25 - 1934650103, a2);\n                v350[0] = 6 * ~(a2 | v308);\n                v350[1] = 6 * (v308 | ~(_DWORD)a2);\n                v350[2] = a2 ^ v308;\n                a1 = (unsigned int)~(_DWORD)a2;\n                v351 = ~(_DWORD)a2;\n                v233 = 1404130456;\n              }\n              else\n              {\n                if ( v233 == 15118157 )\n                  goto LABEL_266;\n                *output_descriptor = v290;\n                v295 = v376;\n                *v335 = v310;\n                *v377 = v310;\n                *(_BYTE *)v378 = 0;\n                descriptor = *v379;\n                v420 = 0x57C6A5BFA9BE29D4LL;\n                v419 = 5;\n                v4 = wmp1_dispatch_gate_normal_stack_view(&descriptor);\n                if ( v4 )\n                {\n                  if ( v4 == 1030 )\n                  {\nLABEL_260:\n                    v292 = v4;\n                    goto LABEL_261;\n                  }\n                  v288 = v4;\n                  goto LABEL_199;\n                }\n                v207 = wmp1_request_header_decode_call_wrapper(\n                         (unsigned __int16 **)&v295,\n                         (__int64)v335,\n                         &v332,\n                         (__int64)&v341,\n                         (__int64)&v305,\n                         (__int64)&v342);\n                request_ptr = v332;\n                v291 = v341;\n                a1 = v305;\n                v306 = v305;\n                if ( (v207 & 1) != 0 )\n                {\n                  v292 = v342;\n                  goto LABEL_261;\n                }\n                v233 = 1969490239;\n              }\n            }\n            else if ( v233 <= 367232960 )\n            {\n              if ( v233 > 333094820 )\n              {\n                if ( v233 == 333094821 )\n                  goto LABEL_2;\nLABEL_209:\n                qmemcpy(\n                  &wmp1_input_cbc_feedback_snapshot,\n                  &dword_7FF697BBA000,\n                  8 * (unsigned int)(unsigned __int8)wmp1_cbc_snapshot_enabled);\n                v330 = (__int64)&v329[v406];\n                v355 = ~HIDWORD(v284);\n                a2 = 11 * ~(HIDWORD(v284) & ~size);\n                a4 = HIDWORD(v284) & ~size;\n                a3 = (unsigned int)a4 + 11 * (size & HIDWORD(v284)) - (unsigned int)a2;\n                a1 = 9 * ~(HIDWORD(v284) | ~size) + (_DWORD)a3 + 10 * ~(size | HIDWORD(v284));\n                v356 = 9 * ~(HIDWORD(v284) | ~size) + a3 + 10 * ~(size | HID",
+    "return0": "proceed to request-header validation/selector dispatch",
+    "return1030": "construct encrypted report header with status1030 viaLABEL260/261",
+    "other_nonzero": "propagate v288 throughLABEL199/200 cleanup; adopted flag getter!=0 leads gate6 and doesNOTrunselector18",
+    "qualification": "Outer exactfinalreturn/cleanup/outputlength still needsnativeend-to-endtrace; donotclaimserver-responseforstatus6."
+  },
+  "open": [
+    "Setterfunctionpointer callers/message origin",
+    "5DFC80 helper semantics",
+    "Other flag writes via aliases/concurrency/reset",
+    "Failure-path and host-copy extent contract"
+  ],
+  "saved": true
+}

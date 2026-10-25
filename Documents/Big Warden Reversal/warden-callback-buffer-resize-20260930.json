@@ -1,0 +1,3643 @@
+{
+  "scope": "Captured-globals normal-stack-domain buffer helper reconstruction; not unrestricted/full system reversal.",
+  "start": 140697083396816,
+  "end": 140697083401115,
+  "unwind": [
+    148176,
+    152475,
+    1087688
+  ],
+  "before": "void sub_7FF697AD42D0()\n{\n  int i; // [rsp+38h] [rbp-1A0h]\n\n  for ( i = 666823395; i > 556960468; i = 543067817 )\n    ;\n  JUMPOUT(0x7FF697AD4F52LL);\n}\n",
+  "unrestricted_reconstruction": {
+    "start": 140697083396816,
+    "end": 140697083401115,
+    "label": "wmp1_callback_buffer_resize_encoded",
+    "original_bytes": "41574156565755534881ec980100004889cbc7442428e3eabe27bd85bb221441bea95ca0fb41bf54cce779e9a00000008b4c244c488bbc2470010000488bb42490010000f3a4f6c634736483c6927f856857e159f50f8b1f860000e89633000081e90f6cbf4b5680e88e81e9232fb30280c0cd83c501f6d880e80081c12a4f1d8783c283c6c0b783c3ee81c0015276ac80ea0457c6c3d5f6dee8df7b010077fd72eac6c35dc6c68080edd56b8be6a9488b4424604883c0104889842478010000c7442428bf9a58110f1f8400000000008b4424283d68ce80517f653dd48a32210f8faa0000003db4275e120f8f500100003d05baf2040f8e850400003d1fcff80f0f8fa40600003d06baf2040f853e0e00008b8424580100002b84245c01000089842460010000c7442428e563512beb9f6666666666662e0f1f8400000000003dcaef62660f8fa50000003dfea82c580f8ef80100003d1dd36a600f8e8c0300003dd01480640f8f290500003d1ed36a600f854b0c0000c744242864dc8e73e94cffffff6666662e0f1f8400000000003d2e3cf6300f8fe50000003d0a8dc82a0f8efe0300003db94c412e0f8fcd0600003d0b8dc82a0f85c50d00008b8424e8000000f7d0898424ec000000c78424f0000000ffffffffc7442428bd20d177e9ecfeffff6666662e0f1f8400000000003d251051710f8ec30100003d0dd47e750f8e200300003d41cb85790f8f020500003d0ed47e750f85e70b00008b8424040100002b8424dc0000003944244c0f85370e0000c74424282a2bbc70e98ffeffff3d4c74a21b0f8f140200003d7bafe6150f8eab0600003d7cafe6150f85b90d00008b84242c0100008d04c089842430010000c744242807b45b02e950feffff3d4510183e0f8f1a0200003d1f83db320f8e940600003d2083db320f848ffdffff8b442454234424506bc0f5038424a4000000038424a0000000775dc0e20076589090f6d983c1970f84b6f500000f315780c1bf80efad83c04f5ec7c0958e652e77db0f8bb082010081ebbd1cdd745b0f8de97a0000e871800100f6dbe8ebf2010080ea7781e872b781cb83c76ce8048e0100f69dfb3a08022b84249c0000002b8424980000000384248c000000894424688b4c243cf7d109c1898c24a8000000c7442428b55c0861e982fdffff3d03dac3530f8faf0200003d69ce80510f84600300003db8aca4510f853b0c00008b84241c01000003842414010000898424200100008b8424100100004401f889442438f7d08d0cc50000000029c1898c24240100008b442444f7d089842428010000c7442428421f7953e912fdffff3dc0f084690f8f850200003dcbef62660f84020700003d801fd9660f85ec0b00008b4424382384243c01000080e5ff715b9090e8b88c0100f6daf6d9c6c18683c64b81c3f4b08b8a81ef8640678fe866f1000081ef727b6e3ae83c74000080c52be806c100000f87c0f3010083c60758c6c03883c3a60f8456ea00005280c3e881c13e90826bc09ebdd98bc701c089842440010000c7442428d58a3221e970fcffff3d4d74a21b0f84080500003dc3161e1c0f850c0800008b8424e0000000c1e002898424e40000008b442434f7d02344245c898424e8000000c74424280b8dc82ae92bfcffff3d4610183e0f84f10400003da7f6054c0f85040800008b44245c8b8c24f800000021c101c9898c24fc0000002344243401c0f7d889842400010000c744242804dac353e9e3fbffff3dffa82c580f84f00400003de88996580f85f60700008b4424380b442444f7d001c08d048089842434010000c744242886e7317ce9aafbffff3d261051710f84ee0400003d64dc8e730f85de0700008b05ea5f0e008984240801000035c3af8721894424448d88dbe09d84898c240c010000056cc97aa589842410010000355703ed4789442470c7442428495c3a4ee94ffbffff3d3f06e3000f84a00400003d07b45b020f8569090000c7442428e8899658e92cfbffff3dd58a32210f84090500003de30212230f857a0900008b8424940000008d0c808d0448898424980000008b4424508b4c245489ca09c2f7d28994249c0000008d14808d1450899424a0000000f7d021c8898424a4000000c744242871e86a38e9c8faffff3d04dac3530f848c0500003df1e415540f85db0900008b8424cc000000c1e0038b4c2458234c2440898424d00000006bc1f5898424d4000000c744242822e3701ae982faffff3dc1f084690f847d0500003d0830c16a0f85e2f9ffff8b8424d8000000f7d08d04408b4c245c0b4c2434898424dc000000f7d1898c24e0000000c7442428c3161e1ce93bfaffff3dd11480640f858e070000448b44246c488b8c248001000031d2e85cb10000488b442460488b004889842488010000488b8c2488010000488b442478c70000000000ff15137e0e00488b442460488b8c2470010000488908488b4424788b4c244c89088b442430488b8c24680100008901c7442428b5275e12e9bdf9ffff3d42cb85790f85b60700008b44243c89c1f7d18b54246821d121c28d04d281fc00220000770383ec9a74087506e800000000c35090ffc058f7c73927c99a710b9090c6c319e8c83a0000e871260000e8fd0b010072705c81e965979c7fc6c0e683c35081ef79c616a0e883ab010080a169c14b8d04882b8424b40000002b8424b0000000898424b8000000c74424284610183ee925f9ffff3d20cff80f0f85d8070000f97261909080eb5d80c35880ebea81e997b66cac0f808433010081ee6817d847c7c05b753f7480c15381ee9a088d28797780e93081c7a0e484c081ef0c448edb51728780c5360f8b55db010053f6ddc6c3d6e8ae0a000081ee5e5cd560f6a985822c997f8b8424c00000008d0c808d0448898424c40000007241c0f400c0e1007339909081c241116e0480c1fe5683c1d4684a630f8381ee717de8630f316a465d83c7a181eb2e5d0bd4c7c0663f497183c36558f68ad5d7f2b495c7442428ca470830e952f8ffff3dba4c412e0f84bdf7ffff8b4424583344244001c0898424c800000081fc000d0000770383eccf75087406e800000000c35090ffc05884eb732983c251c6c29e83c5e3e8191c000081c377aea61b0f8fad270100719680ee716ae0f6db517c45c1b6a37301f58b442440f7d023442458898424cc000000c7442428f1e41554e9cef7ffff3d161dc8150f8585070000488b8424800100004889842488010000c744242869ce8051e9a6f7ffff3d2f3cf6300f856a0700008b44243c01e88944243435cc73f5ed894424408d88a7233cae898c248400000005fc3b905235f7d076a189842488000000c7442428c1f08469e95df7ffff8b84244c010000f7d001c0898424500100008b4424742344244889842454010000c744242896a08f64e92ff7ffff8b8424b8000000038424ac0000002b842484000000894424588b4c244089caf7d209c2f7d201d28d1492899424bc00000009c8898424c0000000c744242820cff80fe9e8f6ffff8b8424440100002b842440010000038424380100002b8424340100002b84243001000089842448010000c74424282bf82e0be9b1f6ffffc7442428ba4c412ee9a4f6ffff8b84241801000001c08d04408b4c244889ca81f2d2c141504189c84181e02d3ebe2f478d04404501c081e1d2c141508d0c49743c753a66906690c7c3dd662d640f843893000081ee122c9151e89245000068497a34d481ed227848c981eb683d58a95a80eef076794fc181fc214d7a03418d0c4801d129c1898c241c010000c7442428b8aca451e918f6ffff8b4424382344244401c089842444010000c7442428ffa82c58e9faf5ffff8b4c2430ff15f8790e00488984247001000081fc00190000770383ec8874087506e800000000c35090ffc058740886f6753290905ae8744100000f316aeac7c6d9cb8a6bc7c199c2dee370930f815ffb010058777081c0fdeb41b2c6c00b6a6bf6d80f877508000083c52281c31490750fc7c1a982b8d781e87405d2b64c23aa4885c00f8452050000488b4424788b008b4c243039c10f42c18944244c8b05af590e00898424800000003530ca2402894424500534aa765e8944243cc74424282f3cf630e931f5ffff8b8424000100002b8424fc000000038424f4000000038424ec0000002b8424e400000089842404010000c74424280ed47e75e9faf4ffff8b84248000000003842488000000b9b195b47a29c1894c2454f7d17c6ec0ff007d699090669081c6bdbf167781c1a94df9b25e81eff07261aff6daf6d983c2e780c09e0f317ab881c7b7c083465081ee130039be80ea900f850dcc01000f8322b4010080c16580c7f780e9a9c6c66155c6c6d481edec351b516a2ff6dd0f3183c23881efafdcf4cf4c29b7898c248c0000008b442450f7d089842490000000c7442428989c215ee94ef4ffff488b442460488d480848894c2478488d500c8b4c24303b480848899424680100000f83b50300003b480c0f83ac030000c744242804691532e911f4ffff8b4424704401f08944244889c1f7d181e12d3ebe2f01c98d0c49898c24140100000d2d3ebeaf89842418010000c74424283f06e300e9d7f3ffff8b4424540b842490000000f7d089842494000000c7442428e3021223e9b6f3ffff7e3d86e47f3966906690e8778f0100c7c35fe4e0dd83c74cc7c3a180bee681ee67c607270f88801b0100c7c7af19be7a83c64681c1e76617466b9a59e84c04807c242f000f8479f9ffff488b8424680100008b008944246c7b2ac0f9007a0ee8fafd010081ea6241b54d81ea7d7a2c2783c1840f3181ed8b9c1c0bc6c265c6c331c7c0927b15a680e9ee7ba1e84e7e00005781ede761482b389ffac74424281ed36a60e90ef3ffff8b8424a8000000f7d001c08d0480898424ac0000008b44243c8d0c008d0c490b442468898c24b00000008d0440898424b4000000c744242842cb8579e9cdf2ffff8b8424f00000008d0440898424f40000008b442434f7d0898424f8000000c7442428a7f6054ce9a2f2ffff8b842454010000f7d0a91f21f45471719090c6c04dc6c2d981c2e4c253de0f89f4200000c6c62183c58c7e0281eecce06110f6d8f6d968c779ee4b6ab673bf81c0f5897d810f31540f808347010071350f8a93b1010081ef0637588f80c61bf6dd6a720f80ed2f0000e8da0d000080c5e0c6c571e844f6010081ebfc33b3ae809401c0898424580100008b442474334424488984245c010000c744242806baf204e9fcf1ffff8b4424448b4c243821c1f7d18d0c49898c2438010000f7d08984243c010000c7442428801fd966e9d0f1ffff8b8424600100002b84245001000033842408010000034424702b84240c01000089842464010000c7442428f32cbc68e99cf1ffff488b0348894424608b430889442430c7442428a98e5e20e980f1ffff8b8424480100000384242401000003842420010000894424740b4424488984244c010000c74424284d74a21be94ff1ffffc7442428ae758a03e942f1ffff488b8424780100000fb6008844242fc7442428d6321e74e926f1ffff8b4424380b842428010000f7d08984242c010000c74424287cafe615e905f1ffff8b44246c488b4c2460488b0948898c24800100003b8424640100000f858c000000c7442428161dc815e9d7f0ffff488b442460488b0048898424900100004885c07477c74424282083db32e9b5f0ffff8b8424d40000002b8424d00000002b8424c8000000038424c40000002b8424bc0000008944245c8b4c2434f7d109c1898c24d8000000c74424280830c16ae972f0ffffc7442428cbef6266e965f0ffffc74424288ac06554e958f0ffffc7442428d1148064e94bf0ffffc744242826105171e93ef0ffff488b842478010000c60001eb0b8b442430488b4c24788901c644242e01eb05c644242e000fb644242e4881c4980100005b5d5f5e415e415fc3",
+    "sha256_before": "c6602e71e1b6e0d041a5442947886008a53858d366b24b3cc558228b7b1568c6",
+    "old_name": "sub_7FF697AD42D0",
+    "old_type": "void()",
+    "old_comment": null,
+    "old_chunks": [
+      [
+        140697083396816,
+        140697083401115
+      ]
+    ],
+    "patches": [
+      {
+        "ea": 140697083396889,
+        "old": "7364",
+        "new": "eb64",
+        "selected": 140697083396991
+      },
+      {
+        "ea": 140697083397519,
+        "old": "7658",
+        "new": "eb58",
+        "selected": 140697083397609
+      },
+      {
+        "ea": 140697083397821,
+        "old": "715b",
+        "new": "eb5b",
+        "selected": 140697083397914
+      },
+      {
+        "ea": 140697083398670,
+        "old": "7506",
+        "new": "eb06",
+        "selected": 140697083398678
+      },
+      {
+        "ea": 140697083398689,
+        "old": "710b",
+        "new": "eb0b",
+        "selected": 140697083398702
+      },
+      {
+        "ea": 140697083398702,
+        "old": "7126",
+        "new": "eb26",
+        "selected": 140697083398742
+      },
+      {
+        "ea": 140697083398791,
+        "old": "7261",
+        "new": "eb61",
+        "selected": 140697083398890
+      },
+      {
+        "ea": 140697083398910,
+        "old": "7241",
+        "new": "eb41",
+        "selected": 140697083398977
+      },
+      {
+        "ea": 140697083399031,
+        "old": "7406",
+        "new": "eb06",
+        "selected": 140697083399039
+      },
+      {
+        "ea": 140697083399046,
+        "old": "7329",
+        "new": "eb29",
+        "selected": 140697083399089
+      },
+      {
+        "ea": 140697083399089,
+        "old": "7301",
+        "new": "eb01",
+        "selected": 140697083399092
+      },
+      {
+        "ea": 140697083399472,
+        "old": "753a",
+        "new": "eb3a",
+        "selected": 140697083399532
+      },
+      {
+        "ea": 140697083399621,
+        "old": "7506",
+        "new": "eb06",
+        "selected": 140697083399629
+      },
+      {
+        "ea": 140697083399638,
+        "old": "7532",
+        "new": "eb32",
+        "selected": 140697083399690
+      },
+      {
+        "ea": 140697083399644,
+        "old": "7441",
+        "new": "eb41",
+        "selected": 140697083399711
+      },
+      {
+        "ea": 140697083399690,
+        "old": "7508",
+        "new": "eb08",
+        "selected": 140697083399700
+      },
+      {
+        "ea": 140697083399701,
+        "old": "750f",
+        "new": "eb0f",
+        "selected": 140697083399718
+      },
+      {
+        "ea": 140697083399711,
+        "old": "7405",
+        "new": "eb05",
+        "selected": 140697083399718
+      },
+      {
+        "ea": 140697083399878,
+        "old": "7d69",
+        "new": "eb69",
+        "selected": 140697083399985
+      },
+      {
+        "ea": 140697083400174,
+        "old": "7f39",
+        "new": "eb39",
+        "selected": 140697083400233
+      },
+      {
+        "ea": 140697083400263,
+        "old": "7a0e",
+        "new": "eb0e",
+        "selected": 140697083400279
+      },
+      {
+        "ea": 140697083400279,
+        "old": "7a2c",
+        "new": "eb2c",
+        "selected": 140697083400325
+      },
+      {
+        "ea": 140697083400302,
+        "old": "7b15",
+        "new": "eb15",
+        "selected": 140697083400325
+      },
+      {
+        "ea": 140697083400460,
+        "old": "7171",
+        "new": "eb71",
+        "selected": 140697083400575
+      }
+    ],
+    "old_frame": {
+      "frsize": 472,
+      "frregs": 0,
+      "fpd": 0,
+      "serialized": [
+        "0d8105f180082102802102802102c02102202102202102202102202102202102202102202002202002402102402102202002202102402102202102202102202102202102402102202102202102402102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202002202102402102202002202002402002402002402002402002402002402002402002400a30f1802004c0010208",
+        "087661725f314338087661725f314238087661725f314130087661725f313943087661725f313938087661725f313934087661725f313930087661725f313843087661725f313838087661725f313834087661725f313830087661725f313738087661725f313730087661725f313643087661725f313638087661725f313630087661725f313543087661725f313538087661725f313534087661725f313530087661725f313438087661725f313434087661725f313430087661725f313338087661725f313334087661725f313330087661725f313243087661725f313238087661725f313234087661725f313230087661725f313143087661725f313138087661725f313134087661725f313130087661725f313043087661725f313038087661725f313034087661725f313030077661725f4643077661725f4638077661725f4634077661725f4630077661725f4543077661725f4538077661725f4534077661725f4530077661725f4443077661725f4438077661725f4434077661725f4430077661725f4343077661725f4338077661725f4334077661725f4330077661725f4243077661725f4238077661725f4234077661725f4230077661725f4143077661725f4138077661725f4134077661725f4130077661725f3943077661725f3938077661725f3934077661725f3930077661725f3843077661725f3838077661725f3830077661725f3743077661725f3738077661725f3730077661725f3638077661725f3630077661725f3538077661725f3530077661725f3438077661725f3430077661725f3338115f5f72657475726e5f61646472657373",
+        null
+      ]
+    },
+    "after": {
+      "failure": "no error",
+      "failure_ea": 18446744073709551615,
+      "pseudocode": "__int64 __fastcall wmp1_callback_buffer_resize_encoded(\n        __int64 *a1,\n        __int64 a2,\n        __int64 a3,\n        __int64 a4,\n        __int64 a5,\n        __int64 a6,\n        __int64 a7,\n        __int64 a8,\n        __int64 a9,\n        __int64 a10,\n        __int64 a11,\n        __int64 a12,\n        __int64 a13,\n        __int64 a14,\n        int *a15,\n        __int64 a16,\n        __int64 a17,\n        __int64 a18,\n        __int64 a19,\n        __int64 a20,\n        __int64 a21,\n        __int64 a22,\n        __int64 a23,\n        __int64 a24,\n        __int64 a25,\n        __int64 a26,\n        __int64 a27,\n        __int64 a28,\n        __int64 a29,\n        __int64 a30,\n        __int64 a31,\n        __int64 a32,\n        __int64 a33,\n        __int64 a34,\n        __int64 a35,\n        __int64 a36,\n        __int64 a37,\n        __int64 a38,\n        __int64 a39,\n        __int64 a40,\n        __int64 a41,\n        __int64 a42,\n        __int64 a43,\n        __int64 a44,\n        _DWORD *a45,\n        void *a46,\n        _BYTE *a47,\n        __int64 a48,\n        const void *a49,\n        const void *a50)\n{\n  int v51; // eax\n  _UNKNOWN *retaddr; // [rsp+1C8h] [rbp+0h]\n\n  for ( LODWORD(a5) = 666823395; ; LODWORD(a5) = 821443631 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( 1 )\n        {\n          while ( 1 )\n          {\n            while ( (int)a5 <= 1367395944 )\n            {\n              if ( (int)a5 > 556960468 )\n              {\n                if ( (int)a5 > 821443630 )\n                {\n                  if ( (int)a5 > 1041764421 )\n                  {\n                    if ( (_DWORD)a5 == 1041764422 )\n                    {\n                      LODWORD(a11) = HIDWORD(a21) + a23 - HIDWORD(a16);\n                      HIDWORD(a23) = 10 * ~(a11 | ~(_DWORD)a8);\n                      LODWORD(a24) = a8 | a11;\n                      LODWORD(a5) = 267964192;\n                    }\n                    else if ( (_DWORD)a5 == 1275459239 )\n                    {\n                      HIDWORD(a31) = 2 * (HIDWORD(a11) & a31);\n                      LODWORD(a32) = -2 * (HIDWORD(a6) & HIDWORD(a11));\n                      LODWORD(a5) = 1405344260;\n                    }\n                    else\n                    {\n                      LODWORD(a9) = a14 - 73376599;\n                      HIDWORD(a34) = 6 * (~(a14 - 73376599) & 0x2FBE3E2D);\n                      LODWORD(a35) = (a14 - 73376599) | 0xAFBE3E2D;\n                      LODWORD(a5) = 14878271;\n                    }\n                  }\n                  else if ( (int)a5 <= 853246751 )\n                  {\n                    if ( (_DWORD)a5 != 821443631 )\n                    {\n                      *a15 = a6;\n                      return 1;\n                    }\n                    HIDWORD(a6) = HIDWORD(a7) + 337820549;\n                    LODWORD(a8) = (HIDWORD(a7) + 337820549) ^ 0xEDF573CC;\n                    HIDWORD(a16) = a8 - 1371790425;\n                    LODWORD(a17) = (a8 + 1385184252) ^ 0xA176D0F7;\n                    LODWORD(a5) = 1770320065;\n                  }\n                  else\n                  {\n                    if ( (_DWORD)a5 == 853246752 )\n                    {\n                      qmemcpy(a46, a50, HIDWORD(a9));\n                      goto LABEL_3;\n                    }\n                    LODWORD(a13) = HIDWORD(a17) + a20 + HIDWORD(a20) - 11 * (a10 & HIDWORD(a10)) - HIDWORD(a19) - a19;\n                    LODWORD(a21) = a13 | ~HIDWORD(a7);\n                    LODWORD(a5) = 1627937973;\n                  }\n                }\n                else if ( (int)a5 <= 717786378 )\n                {\n                  if ( (_DWORD)a5 == 556960469 )\n                  {\n                    HIDWORD(a40) = 2 * (HIDWORD(a8) & a7);\n                    LODWORD(a5) = 1479321855;\n                  }\n                  else if ( (_DWORD)a5 == 588382947 )\n                  {\n                    LODWORD(a19) = 11 * HIDWORD(a18);\n                    HIDWORD(a19) = ~(a10 | HIDWORD(a10));\n                    LODWORD(a20) = 11 * a10;\n                    HIDWORD(a20) = HIDWORD(a10) & ~(_DWORD)a10;\n                    LODWORD(a5) = 946530417;\n                  }\n                  else\n                  {\n                    a12 = *a1;\n                    LODWORD(a6) = *((_DWORD *)a1 + 2);\n                    LODWORD(a5) = 543067817;\n                  }\n                }\n                else if ( (int)a5 > 776031417 )\n                {\n                  if ( (_DWORD)a5 == 776031418 )\n                  {\nLABEL_3:\n                    a47 = (_BYTE *)(a12 + 16);\n                    LODWORD(a5) = 291019455;\n                  }\n                  else\n                  {\n                    LODWORD(a25) = 2 * (a8 ^ a11);\n                    HIDWORD(a25) = a11 & ~(_DWORD)a8;\n                    LODWORD(a5) = 1410721009;\n                  }\n                }\n                else if ( (_DWORD)a5 == 717786379 )\n                {\n                  HIDWORD(a29) = ~(_DWORD)a29;\n                  LODWORD(a30) = -1;\n                  LODWORD(a5) = 2010194109;\n                }\n                else\n                {\n                  LODWORD(a5) = 59405742;\n                }\n              }\n              else if ( (int)a5 > 308160436 )\n              {\n                if ( (int)a5 > 463631436 )\n                {\n                  if ( (_DWORD)a5 == 463631437 )\n                  {\n                    LODWORD(a42) = 2 * ~HIDWORD(a41);\n                    HIDWORD(a42) = a9 & HIDWORD(a14);\n                    LODWORD(a5) = 1687134358;\n                  }\n                  else if ( (_DWORD)a5 == 471733955 )\n                  {\n                    HIDWORD(a28) = 4 * a28;\n                    LODWORD(a29) = HIDWORD(a11) & ~HIDWORD(a6);\n                    LODWORD(a5) = 717786379;\n                  }\n                  else\n                  {\n                    a15 = (int *)(a12 + 8);\n                    a45 = (_DWORD *)(a12 + 12);\n                    if ( (unsigned int)a6 >= *(_DWORD *)(a12 + 8) || (unsigned int)a6 >= *(_DWORD *)(a12 + 12) )\n                      LODWORD(a5) = 1717759947;\n                    else\n                      LODWORD(a5) = 840263940;\n                  }\n                }\n                else if ( (int)a5 <= 367439739 )\n                {\n                  if ( (_DWORD)a5 != 365436182 )\n                  {\n                    *a47 = 1;\n                    return 1;\n                  }\n                  a49 = (const void *)a48;\n                  LODWORD(a5) = 1367395945;\n                }\n                else if ( (_DWORD)a5 == 367439740 )\n                {\n                  LODWORD(a38) = 9 * HIDWORD(a37);\n                  LODWORD(a5) = 39564295;\n                }\n                else\n                {\n                  HIDWORD(a11) = HIDWORD(a24) + HIDWORD(a26) - a26 - a25 - HIDWORD(a23);\n                  LODWORD(a27) = HIDWORD(a11) | ~HIDWORD(a6);\n                  LODWORD(a5) = 1791045640;\n                }\n              }\n              else if ( (int)a5 <= 83016197 )\n              {\n                if ( (_DWORD)a5 == 14878271 )\n                {\n                  HIDWORD(a35) = (a9 ^ 0x5041C1D2) + 6 * (a9 & 0x2FBE3E2D) + 6 * (a9 & 0x5041C1D2) - 6 * a35;\n                  LODWORD(a5) = 1369746616;\n                }\n                else if ( (_DWORD)a5 == 39564295 )\n                {\n                  LODWORD(a5) = 1486260712;\n                }\n                else\n                {\n                  HIDWORD(a44) = a14 + (a33 ^ (a44 - a42)) - HIDWORD(a33);\n                  LODWORD(a5) = 1757162739;\n                }\n              }\n              else if ( (int)a5 > 267964191 )\n              {\n                if ( (_DWORD)a5 == 267964192 )\n                {\n                  HIDWORD(a24) = 11 * a24;\n                  LODWORD(a5) = 805849034;\n                }\n                else\n                {\n                  HIBYTE(a5) = *a47;\n                  LODWORD(a5) = 1948136150;\n                }\n              }\n              else if ( (_DWORD)a5 == 83016198 )\n              {\n                LODWORD(a44) = a43 - HIDWORD(a43);\n                LODWORD(a5) = 726754277;\n              }\n              else\n              {\n                HIDWORD(a14) = a36 + HIDWORD(a36) + a41;\n                HIDWORD(a41) = a9 | HIDWORD(a14);\n                LODWORD(a5) = 463631437;\n              }\n            }\n            if ( (int)a5 > 1717759946 )\n              break;\n            if ( (int)a5 <= 1479321854 )\n            {\n              if ( (int)a5 > 1405344259 )\n              {\n                if ( (_DWORD)a5 == 1405344260 )\n                {\n                  HIDWORD(a32) = HIDWORD(a29) + HIDWORD(a30) + a32 - HIDWORD(a31) - HIDWORD(a28);\n                  LODWORD(a5) = 1971246094;\n                }\n                else if ( (_DWORD)a5 == 1410721009 )\n                {\n                  LODWORD(a26) = 8 * HIDWORD(a25);\n                  HIDWORD(a26) = -11 * (a8 & a11);\n                  LODWORD(a5) = 443605794;\n                }\n                else\n                {\n                  a50 = *(const void **)a12;\n                  if ( *(_QWORD *)a12 )\n                    LODWORD(a5) = 853246752;\n                  else\n                    LODWORD(a5) = 1901137958;\n                }\n              }\n              else\n              {\n                if ( (_DWORD)a5 == 1367395945 )\n                  goto LABEL_70;\n                if ( (_DWORD)a5 == 1369746616 )\n                {\n                  LODWORD(a36) = HIDWORD(a34) + HIDWORD(a35);\n                  LODWORD(a7) = a34 + 2045234260;\n                  HIDWORD(a36) = 7 * ~(a34 + 2045234260);\n                  LODWORD(a37) = ~HIDWORD(a8);\n                  LODWORD(a5) = 1400446786;\n                }\n                else\n                {\n                  HIDWORD(a37) = ~(a37 | a7);\n                  LODWORD(a5) = 367439740;\n                }\n              }\n            }\n            else if ( (int)a5 <= 1617613597 )\n            {\n              if ( (_DWORD)a5 == 1479321855 )\n              {\n                LODWORD(a41) = a39 + HIDWORD(a40) - a40 - HIDWORD(a38) - a38;\n                LODWORD(a5) = 187627563;\n              }\n              else if ( (_DWORD)a5 == 1486260712 )\n              {\n                HIDWORD(a38) = 10 * ~(HIDWORD(a8) | a7);\n                LODWORD(a5) = 2083645318;\n              }\n              else\n              {\n                HIDWORD(a18) = ~(a18 | HIDWORD(a10));\n                LODWORD(a5) = 588382947;\n              }\n            }\n            else if ( (int)a5 > 1686115536 )\n            {\n              if ( (_DWORD)a5 == 1686115537 )\n              {\n                sub_7FF697ADFAE0(a48, 0, HIDWORD(a13));\n                a49 = *(const void **)a12;\nLABEL_70:\n                *a15 = 0;\n                wmp1_context_free(a49);\n                goto LABEL_71;\n              }\n              LODWORD(a43) = 2 * ~HIDWORD(a42);\n              HIDWORD(a43) = a9 ^ HIDWORD(a14);\n              LODWORD(a5) = 83016198;\n            }\n            else if ( (_DWORD)a5 == 1617613598 )\n            {\n              LODWORD(a5) = 1938742372;\n            }\n            else\n            {\n              HIDWORD(a21) = 10 * ~(_DWORD)a21;\n              LODWORD(a22) = 6 * HIDWORD(a7);\n              HIDWORD(a22) = 3 * (a13 | HIDWORD(a7));\n              LODWORD(a5) = 2038811458;\n            }\n          }\n          if ( (int)a5 <= 1901137957 )\n            break;\n          if ( (int)a5 <= 1971246093 )\n          {\n            if ( (_DWORD)a5 == 1901137958 )\n            {\n              LODWORD(a5) = 776031418;\n            }\n            else if ( (_DWORD)a5 == 1938742372 )\n            {\n              LODWORD(a33) = dword_7FF697BBA7FC;\n              HIDWORD(a8) = dword_7FF697BBA7FC ^ 0x2187AFC3;\n              HIDWORD(a33) = (dword_7FF697BBA7FC ^ 0x2187AFC3) - 2070028069;\n              LODWORD(a34) = (dword_7FF697BBA7FC ^ 0x2187AFC3) - 1518679700;\n              LODWORD(a14) = a34 ^ 0x47ED0357;\n              LODWORD(a5) = 1312447561;\n            }\n            else if ( HIBYTE(a5) )\n            {\n              HIDWORD(a13) = *a45;\n              LODWORD(a5) = 1617613598;\n            }\n            else\n            {\nLABEL_71:\n              *(_QWORD *)a12 = a46;\n              *a15 = HIDWORD(a9);\n              *a45 = a6;\n              LODWORD(a5) = 308160437;\n            }\n          }\n          else if ( (int)a5 > 2038811457 )\n          {\n            if ( (_DWORD)a5 == 2038811458 )\n            {\n              LODWORD(a23) = (_DWORD)retaddr + 4 * (a13 & ~HIDWORD(a7)) - HIDWORD(a22) - a22;\n              LODWORD(a5) = 1041764422;\n            }\n            else\n            {\n              LODWORD(a39) = 3 * ~(HIDWORD(a8) & a7);\n              HIDWORD(a39) = ~HIDWORD(a8);\n              LODWORD(a5) = 1725505408;\n            }\n          }\n          else if ( (_DWORD)a5 == 1971246094 )\n          {\n            if ( HIDWORD(a9) == HIDWORD(a32) - HIDWORD(a27) )\n              LODWORD(a5) = 1891380010;\n            else\n              LODWORD(a5) = 1415954570;\n          }\n          else\n          {\n            HIDWORD(a30) = 3 * a30;\n            LODWORD(a31) = ~HIDWORD(a6);\n            LODWORD(a5) = 1275459239;\n          }\n        }\n        if ( (int)a5 <= 1770320064 )\n          break;\n        if ( (_DWORD)a5 == 1770320065 )\n        {\n          HIDWORD(a10) = 2058655153 - (a17 + a16);\n          HIDWORD(a17) = ~HIDWORD(a10);\n          LODWORD(a18) = ~(_DWORD)a10;\n          LODWORD(a5) = 1579261080;\n        }\n        else\n        {\n          if ( (_DWORD)a5 != 1791045640 )\n            goto LABEL_3;\n          HIDWORD(a27) = 3 * ~(_DWORD)a27;\n          LODWORD(a28) = ~(HIDWORD(a6) | HIDWORD(a11));\n          LODWORD(a5) = 471733955;\n        }\n      }\n      if ( (_DWORD)a5 == 1717759947 )\n        break;\n      if ( (_DWORD)a5 == 1725505408 )\n      {\n        LODWORD(a40) = 2 * (HIDWORD(a39) & a7);\n        LODWORD(a5) = 556960469;\n      }\n      else\n      {\n        a48 = *(_QWORD *)a12;\n        if ( HIDWORD(a13) == HIDWORD(a44) )\n          LODWORD(a5) = 365436182;\n        else\n          LODWORD(a5) = 1686115537;\n      }\n    }\n    a46 = (void *)wmp1_context_allocator((unsigned int)a6);\n    if ( !retaddr )\n      break;\n    v51 = *a15;\n    if ( (unsigned int)a6 < *a15 )\n      v51 = a6;\n    HIDWORD(a9) = v51;\n    LODWORD(a16) = dword_7FF697BBA7F8;\n    LODWORD(a10) = dword_7FF697BBA7F8 ^ 0x224CA30;\n    HIDWORD(a7) = (dword_7FF697BBA7F8 ^ 0x224CA30) + 1584835124;\n  }\n  return 0;\n}\n",
+      "sha256": "0e2d3aff1ec2df58bbd02640ec42047f80bb959782afaa8a7c3cc2bce828f241"
+    }
+  },
+  "overlap_repairs": [
+    {
+      "ea": 140697083398679,
+      "old": "ebff",
+      "new": "90",
+      "reason": "Preserve embedded FF instruction/flags"
+    },
+    {
+      "ea": 140697083399040,
+      "old": "ebff",
+      "new": "90",
+      "reason": "Preserve embedded FF instruction/flags"
+    },
+    {
+      "ea": 140697083399630,
+      "old": "ebff",
+      "new": "90",
+      "reason": "Preserve embedded FF instruction/flags"
+    }
+  ],
+  "native_prototype_journal": {
+    "ea": 140697083396816,
+    "old": "__int64 __fastcall(__int64 *, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, int *, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, _DWORD *, void *, _BYTE *, __int64, const void *, const void *)",
+    "new": "unsigned int __fastcall wmp1_callback_buffer_resize_encoded(void *descriptor);",
+    "ok": true
+  },
+  "normal_stack_view": {
+    "precondition": "Unsigned ESP>2200h at each of three guards, ABI-preserving calls and no low32 stack wrap. Restricted analysis view only.",
+    "patches": [
+      {
+        "cmp": 140697083398657,
+        "ea": 140697083398663,
+        "old": "7703",
+        "new": "eb03",
+        "target": 140697083398668
+      },
+      {
+        "cmp": 140697083399018,
+        "ea": 140697083399024,
+        "old": "7703",
+        "new": "eb03",
+        "target": 140697083399029
+      },
+      {
+        "cmp": 140697083399608,
+        "ea": 140697083399614,
+        "old": "7703",
+        "new": "eb03",
+        "target": 140697083399619
+      }
+    ],
+    "sp_proof": {
+      "states": 663,
+      "conflicts": [],
+      "unknown": [],
+      "returns": [
+        [
+          140697083401114,
+          0
+        ]
+      ],
+      "min": -464
+    }
+  },
+  "normal_stack_normalization": {
+    "start": 140697083396816,
+    "end": 140697083401115,
+    "label": "wmp1_callback_buffer_resize_normal_stack_view",
+    "original_bytes": "41574156565755534881ec980100004889cbc7442428e3eabe27bd85bb221441bea95ca0fb41bf54cce779e9a00000008b4c244c488bbc2470010000488bb42490010000f3a4f6c634eb6483c6927f856857e159f50f8b1f860000e89633000081e90f6cbf4b5680e88e81e9232fb30280c0cd83c501f6d880e80081c12a4f1d8783c283c6c0b783c3ee81c0015276ac80ea0457c6c3d5f6dee8df7b010077fd72eac6c35dc6c68080edd56b8be6a9488b4424604883c0104889842478010000c7442428bf9a58110f1f8400000000008b4424283d68ce80517f653dd48a32210f8faa0000003db4275e120f8f500100003d05baf2040f8e850400003d1fcff80f0f8fa40600003d06baf2040f853e0e00008b8424580100002b84245c01000089842460010000c7442428e563512beb9f6666666666662e0f1f8400000000003dcaef62660f8fa50000003dfea82c580f8ef80100003d1dd36a600f8e8c0300003dd01480640f8f290500003d1ed36a600f854b0c0000c744242864dc8e73e94cffffff6666662e0f1f8400000000003d2e3cf6300f8fe50000003d0a8dc82a0f8efe0300003db94c412e0f8fcd0600003d0b8dc82a0f85c50d00008b8424e8000000f7d0898424ec000000c78424f0000000ffffffffc7442428bd20d177e9ecfeffff6666662e0f1f8400000000003d251051710f8ec30100003d0dd47e750f8e200300003d41cb85790f8f020500003d0ed47e750f85e70b00008b8424040100002b8424dc0000003944244c0f85370e0000c74424282a2bbc70e98ffeffff3d4c74a21b0f8f140200003d7bafe6150f8eab0600003d7cafe6150f85b90d00008b84242c0100008d04c089842430010000c744242807b45b02e950feffff3d4510183e0f8f1a0200003d1f83db320f8e940600003d2083db320f848ffdffff8b442454234424506bc0f5038424a4000000038424a0000000775dc0e200eb589090f6d983c1970f84b6f500000f315780c1bf80efad83c04f5ec7c0958e652e77db0f8bb082010081ebbd1cdd745b0f8de97a0000e871800100f6dbe8ebf2010080ea7781e872b781cb83c76ce8048e0100f69dfb3a08022b84249c0000002b8424980000000384248c000000894424688b4c243cf7d109c1898c24a8000000c7442428b55c0861e982fdffff3d03dac3530f8faf0200003d69ce80510f84600300003db8aca4510f853b0c00008b84241c01000003842414010000898424200100008b8424100100004401f889442438f7d08d0cc50000000029c1898c24240100008b442444f7d089842428010000c7442428421f7953e912fdffff3dc0f084690f8f850200003dcbef62660f84020700003d801fd9660f85ec0b00008b4424382384243c01000080e5ffeb5b9090e8b88c0100f6daf6d9c6c18683c64b81c3f4b08b8a81ef8640678fe866f1000081ef727b6e3ae83c74000080c52be806c100000f87c0f3010083c60758c6c03883c3a60f8456ea00005280c3e881c13e90826bc09ebdd98bc701c089842440010000c7442428d58a3221e970fcffff3d4d74a21b0f84080500003dc3161e1c0f850c0800008b8424e0000000c1e002898424e40000008b442434f7d02344245c898424e8000000c74424280b8dc82ae92bfcffff3d4610183e0f84f10400003da7f6054c0f85040800008b44245c8b8c24f800000021c101c9898c24fc0000002344243401c0f7d889842400010000c744242804dac353e9e3fbffff3dffa82c580f84f00400003de88996580f85f60700008b4424380b442444f7d001c08d048089842434010000c744242886e7317ce9aafbffff3d261051710f84ee0400003d64dc8e730f85de0700008b05ea5f0e008984240801000035c3af8721894424448d88dbe09d84898c240c010000056cc97aa589842410010000355703ed4789442470c7442428495c3a4ee94ffbffff3d3f06e3000f84a00400003d07b45b020f8569090000c7442428e8899658e92cfbffff3dd58a32210f84090500003de30212230f857a0900008b8424940000008d0c808d0448898424980000008b4424508b4c245489ca09c2f7d28994249c0000008d14808d1450899424a0000000f7d021c8898424a4000000c744242871e86a38e9c8faffff3d04dac3530f848c0500003df1e415540f85db0900008b8424cc000000c1e0038b4c2458234c2440898424d00000006bc1f5898424d4000000c744242822e3701ae982faffff3dc1f084690f847d0500003d0830c16a0f85e2f9ffff8b8424d8000000f7d08d04408b4c245c0b4c2434898424dc000000f7d1898c24e0000000c7442428c3161e1ce93bfaffff3dd11480640f858e070000448b44246c488b8c248001000031d2e85cb10000488b442460488b004889842488010000488b8c2488010000488b442478c70000000000ff15137e0e00488b442460488b8c2470010000488908488b4424788b4c244c89088b442430488b8c24680100008901c7442428b5275e12e9bdf9ffff3d42cb85790f85b60700008b44243c89c1f7d18b54246821d121c28d04d281fc00220000eb0383ec9a7408eb06e800000000c35090ffc058f7c73927c99aeb0b9090c6c319e8c83a0000e8eb260000e8fd0b010072705c81e965979c7fc6c0e683c35081ef79c616a0e883ab010080a169c14b8d04882b8424b40000002b8424b0000000898424b8000000c74424284610183ee925f9ffff3d20cff80f0f85d8070000f9eb61909080eb5d80c35880ebea81e997b66cac0f808433010081ee6817d847c7c05b753f7480c15381ee9a088d28797780e93081c7a0e484c081ef0c448edb51728780c5360f8b55db010053f6ddc6c3d6e8ae0a000081ee5e5cd560f6a985822c997f8b8424c00000008d0c808d0448898424c4000000eb41c0f400c0e1007339909081c241116e0480c1fe5683c1d4684a630f8381ee717de8630f316a465d83c7a181eb2e5d0bd4c7c0663f497183c36558f68ad5d7f2b495c7442428ca470830e952f8ffff3dba4c412e0f84bdf7ffff8b4424583344244001c0898424c800000081fc000d0000eb0383eccf7508eb06e800000000c35090ffc05884ebeb2983c251c6c29e83c5e3e8191c000081c377aea61b0f8fad270100719680ee716ae0f6db517c45c1b6a3eb01f58b442440f7d023442458898424cc000000c7442428f1e41554e9cef7ffff3d161dc8150f8585070000488b8424800100004889842488010000c744242869ce8051e9a6f7ffff3d2f3cf6300f856a0700008b44243c01e88944243435cc73f5ed894424408d88a7233cae898c248400000005fc3b905235f7d076a189842488000000c7442428c1f08469e95df7ffff8b84244c010000f7d001c0898424500100008b4424742344244889842454010000c744242896a08f64e92ff7ffff8b8424b8000000038424ac0000002b842484000000894424588b4c244089caf7d209c2f7d201d28d1492899424bc00000009c8898424c0000000c744242820cff80fe9e8f6ffff8b8424440100002b842440010000038424380100002b8424340100002b84243001000089842448010000c74424282bf82e0be9b1f6ffffc7442428ba4c412ee9a4f6ffff8b84241801000001c08d04408b4c244889ca81f2d2c141504189c84181e02d3ebe2f478d04404501c081e1d2c141508d0c49743ceb3a66906690c7c3dd662d640f843893000081ee122c9151e89245000068497a34d481ed227848c981eb683d58a95a80eef076794fc181fc214d7a03418d0c4801d129c1898c241c010000c7442428b8aca451e918f6ffff8b4424382344244401c089842444010000c7442428ffa82c58e9faf5ffff8b4c2430ff15f8790e00488984247001000081fc00190000eb0383ec887408eb06e800000000c35090ffc058740886f6eb3290905ae8eb4100000f316aeac7c6d9cb8a6bc7c199c2dee370930f815ffb010058777081c0fdeb41b2c6c00b6a6bf6d80f87eb08000083c52281c31490eb0fc7c1a982b8d781e8eb05d2b64c23aa4885c00f8452050000488b4424788b008b4c243039c10f42c18944244c8b05af590e00898424800000003530ca2402894424500534aa765e8944243cc74424282f3cf630e931f5ffff8b8424000100002b8424fc000000038424f4000000038424ec0000002b8424e400000089842404010000c74424280ed47e75e9faf4ffff8b84248000000003842488000000b9b195b47a29c1894c2454f7d17c6ec0ff00eb699090669081c6bdbf167781c1a94df9b25e81eff07261aff6daf6d983c2e780c09e0f317ab881c7b7c083465081ee130039be80ea900f850dcc01000f8322b4010080c16580c7f780e9a9c6c66155c6c6d481edec351b516a2ff6dd0f3183c23881efafdcf4cf4c29b7898c248c0000008b442450f7d089842490000000c7442428989c215ee94ef4ffff488b442460488d480848894c2478488d500c8b4c24303b480848899424680100000f83b50300003b480c0f83ac030000c744242804691532e911f4ffff8b4424704401f08944244889c1f7d181e12d3ebe2f01c98d0c49898c24140100000d2d3ebeaf89842418010000c74424283f06e300e9d7f3ffff8b4424540b842490000000f7d089842494000000c7442428e3021223e9b6f3ffff7e3d86e4eb3966906690e8778f0100c7c35fe4e0dd83c74cc7c3a180bee681ee67c607270f88801b0100c7c7af19be7a83c64681c1e76617466b9a59e84c04807c242f000f8479f9ffff488b8424680100008b008944246c7b2ac0f900eb0ee8fafd010081ea6241b54d81ea7deb2c2783c1840f3181ed8b9c1c0bc6c265c6c331c7c092eb15a680e9ee7ba1e84e7e00005781ede761482b389ffac74424281ed36a60e90ef3ffff8b8424a8000000f7d001c08d0480898424ac0000008b44243c8d0c008d0c490b442468898c24b00000008d0440898424b4000000c744242842cb8579e9cdf2ffff8b8424f00000008d0440898424f40000008b442434f7d0898424f8000000c7442428a7f6054ce9a2f2ffff8b842454010000f7d0a91f21f454eb719090c6c04dc6c2d981c2e4c253de0f89f4200000c6c62183c58c7e0281eecce06110f6d8f6d968c779ee4b6ab673bf81c0f5897d810f31540f808347010071350f8a93b1010081ef0637588f80c61bf6dd6a720f80ed2f0000e8da0d000080c5e0c6c571e844f6010081ebfc33b3ae809401c0898424580100008b442474334424488984245c010000c744242806baf204e9fcf1ffff8b4424448b4c243821c1f7d18d0c49898c2438010000f7d08984243c010000c7442428801fd966e9d0f1ffff8b8424600100002b84245001000033842408010000034424702b84240c01000089842464010000c7442428f32cbc68e99cf1ffff488b0348894424608b430889442430c7442428a98e5e20e980f1ffff8b8424480100000384242401000003842420010000894424740b4424488984244c010000c74424284d74a21be94ff1ffffc7442428ae758a03e942f1ffff488b8424780100000fb6008844242fc7442428d6321e74e926f1ffff8b4424380b842428010000f7d08984242c010000c74424287cafe615e905f1ffff8b44246c488b4c2460488b0948898c24800100003b8424640100000f858c000000c7442428161dc815e9d7f0ffff488b442460488b0048898424900100004885c07477c74424282083db32e9b5f0ffff8b8424d40000002b8424d00000002b8424c8000000038424c40000002b8424bc0000008944245c8b4c2434f7d109c1898c24d8000000c74424280830c16ae972f0ffffc7442428cbef6266e965f0ffffc74424288ac06554e958f0ffffc7442428d1148064e94bf0ffffc744242826105171e93ef0ffff488b842478010000c60001eb0b8b442430488b4c24788901c644242e01eb05c644242e000fb644242e4881c4980100005b5d5f5e415e415fc3",
+    "sha256_before": "33cd8eaf9f1f1d820828f589a6b77d60d87ddbd144cada715e22348c230b1148",
+    "old_name": "wmp1_callback_buffer_resize_encoded",
+    "old_type": "unsigned int __fastcall(void *descriptor)",
+    "old_comment": null,
+    "old_chunks": [
+      [
+        140697083396816,
+        140697083401115
+      ]
+    ],
+    "patches": [],
+    "old_frame": {
+      "frsize": 456,
+      "frregs": 0,
+      "fpd": 0,
+      "serialized": [
+        "0db105f18008210440011102301102082102082102202102202102202102202102202102202102202102202102202102202102202002202102402102202102202102202002202102402102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202002202102402102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202102202002202002402002402002402002402002400a30f1802004c0010a2104400b0208",
+        "087661725f314130087661725f313941087661725f313939087661725f313938087661725f313934087661725f313930087661725f313843087661725f313838087661725f313834087661725f313830087661725f313743087661725f313738087661725f313734087661725f313730087661725f313643087661725f313638087661725f313630087661725f313543087661725f313538087661725f313534087661725f313530087661725f313438087661725f313434087661725f313430087661725f313343087661725f313338087661725f313334087661725f313330087661725f313243087661725f313238087661725f313234087661725f313230087661725f313143087661725f313138087661725f313134087661725f313130087661725f313043087661725f313038087661725f313034087661725f313030077661725f4643077661725f4638077661725f4634077661725f4630077661725f4543077661725f4538077661725f4534077661725f4530077661725f4443077661725f4438077661725f4430077661725f4343077661725f4338077661725f4334077661725f4330077661725f4243077661725f4238077661725f4234077661725f4230077661725f4143077661725f4138077661725f4134077661725f4130077661725f3943077661725f3938077661725f3934077661725f3930077661725f3843077661725f3838077661725f3834077661725f3830077661725f3743077661725f3738077661725f3734077661725f3730077661725f3643077661725f3638077661725f3634077661725f3630077661725f3538077661725f3530077661725f3438077661725f3430077661725f3338115f5f72657475726e5f61646472657373086172675f313630",
+        null
+      ]
+    },
+    "after": {
+      "failure": "no error",
+      "failure_ea": 18446744073709551615,
+      "pseudocode": "unsigned int __fastcall wmp1_callback_buffer_resize_normal_stack_view(void *descriptor)\n{\n  int v2; // eax\n  _UNKNOWN *retaddr; // [rsp+1C8h] [rbp+0h]\n  int i; // [rsp+1F0h] [rbp+28h]\n  char v7; // [rsp+1F7h] [rbp+2Fh]\n  __int64 v8; // [rsp+1F8h] [rbp+30h]\n  __int64 v9; // [rsp+200h] [rbp+38h]\n  __int64 v10; // [rsp+208h] [rbp+40h]\n  __int64 v11; // [rsp+210h] [rbp+48h]\n  __int64 v12; // [rsp+218h] [rbp+50h]\n  __int64 v13; // [rsp+220h] [rbp+58h]\n  __int64 v14; // [rsp+228h] [rbp+60h]\n  __int64 v15; // [rsp+230h] [rbp+68h]\n  __int64 v16; // [rsp+238h] [rbp+70h]\n  int *v17; // [rsp+240h] [rbp+78h]\n  __int64 v18; // [rsp+248h] [rbp+80h]\n  __int64 v19; // [rsp+250h] [rbp+88h]\n  __int64 v20; // [rsp+258h] [rbp+90h]\n  __int64 v21; // [rsp+260h] [rbp+98h]\n  __int64 v22; // [rsp+268h] [rbp+A0h]\n  __int64 v23; // [rsp+270h] [rbp+A8h]\n  __int64 v24; // [rsp+278h] [rbp+B0h]\n  __int64 v25; // [rsp+280h] [rbp+B8h]\n  __int64 v26; // [rsp+288h] [rbp+C0h]\n  __int64 v27; // [rsp+290h] [rbp+C8h]\n  __int64 v28; // [rsp+298h] [rbp+D0h]\n  __int64 v29; // [rsp+2A0h] [rbp+D8h]\n  __int64 v30; // [rsp+2A8h] [rbp+E0h]\n  __int64 v31; // [rsp+2B0h] [rbp+E8h]\n  __int64 v32; // [rsp+2B8h] [rbp+F0h]\n  __int64 v33; // [rsp+2C0h] [rbp+F8h]\n  __int64 v34; // [rsp+2C8h] [rbp+100h]\n  __int64 v35; // [rsp+2D0h] [rbp+108h]\n  __int64 v36; // [rsp+2D8h] [rbp+110h]\n  __int64 v37; // [rsp+2E0h] [rbp+118h]\n  __int64 v38; // [rsp+2E8h] [rbp+120h]\n  __int64 v39; // [rsp+2F0h] [rbp+128h]\n  __int64 v40; // [rsp+2F8h] [rbp+130h]\n  __int64 v41; // [rsp+300h] [rbp+138h]\n  __int64 v42; // [rsp+308h] [rbp+140h]\n  __int64 v43; // [rsp+310h] [rbp+148h]\n  __int64 v44; // [rsp+318h] [rbp+150h]\n  __int64 v45; // [rsp+320h] [rbp+158h]\n  __int64 v46; // [rsp+328h] [rbp+160h]\n  _DWORD *v47; // [rsp+330h] [rbp+168h]\n  void *v48; // [rsp+338h] [rbp+170h]\n  char *v49; // [rsp+340h] [rbp+178h]\n  __int64 v50; // [rsp+348h] [rbp+180h]\n  const void *v51; // [rsp+350h] [rbp+188h]\n  const void *v52; // [rsp+358h] [rbp+190h]\n\n  for ( i = 666823395; ; i = 821443631 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( 1 )\n        {\n          while ( 1 )\n          {\n            while ( i <= 1367395944 )\n            {\n              if ( i > 556960468 )\n              {\n                if ( i > 821443630 )\n                {\n                  if ( i > 1041764421 )\n                  {\n                    if ( i == 1041764422 )\n                    {\n                      LODWORD(v13) = HIDWORD(v23) + v25 - HIDWORD(v18);\n                      HIDWORD(v25) = 10 * ~(v13 | ~(_DWORD)v10);\n                      LODWORD(v26) = v10 | v13;\n                      i = 267964192;\n                    }\n                    else if ( i == 1275459239 )\n                    {\n                      HIDWORD(v33) = 2 * (HIDWORD(v13) & v33);\n                      LODWORD(v34) = -2 * (HIDWORD(v8) & HIDWORD(v13));\n                      i = 1405344260;\n                    }\n                    else\n                    {\n                      LODWORD(v11) = v16 - 73376599;\n                      HIDWORD(v36) = 6 * (~(v16 - 73376599) & 0x2FBE3E2D);\n                      LODWORD(v37) = (v16 - 73376599) | 0xAFBE3E2D;\n                      i = 14878271;\n                    }\n                  }\n                  else if ( i <= 853246751 )\n                  {\n                    if ( i != 821443631 )\n                    {\n                      *v17 = v8;\n                      return 1;\n                    }\n                    HIDWORD(v8) = HIDWORD(v9) + 337820549;\n                    LODWORD(v10) = (HIDWORD(v9) + 337820549) ^ 0xEDF573CC;\n                    HIDWORD(v18) = v10 - 1371790425;\n                    LODWORD(v19) = (v10 + 1385184252) ^ 0xA176D0F7;\n                    i = 1770320065;\n                  }\n                  else\n                  {\n                    if ( i == 853246752 )\n                    {\n                      qmemcpy(v48, v52, HIDWORD(v11));\n                      goto LABEL_3;\n                    }\n                    LODWORD(v15) = HIDWORD(v19) + v22 + HIDWORD(v22) - 11 * (v12 & HIDWORD(v12)) - HIDWORD(v21) - v21;\n                    LODWORD(v23) = v15 | ~HIDWORD(v9);\n                    i = 1627937973;\n                  }\n                }\n                else if ( i <= 717786378 )\n                {\n                  if ( i == 556960469 )\n                  {\n                    HIDWORD(v42) = 2 * (HIDWORD(v10) & v9);\n                    i = 1479321855;\n                  }\n                  else if ( i == 588382947 )\n                  {\n                    LODWORD(v21) = 11 * HIDWORD(v20);\n                    HIDWORD(v21) = ~(v12 | HIDWORD(v12));\n                    LODWORD(v22) = 11 * v12;\n                    HIDWORD(v22) = HIDWORD(v12) & ~(_DWORD)v12;\n                    i = 946530417;\n                  }\n                  else\n                  {\n                    v14 = *(_QWORD *)descriptor;\n                    LODWORD(v8) = *((_DWORD *)descriptor + 2);\n                    i = 543067817;\n                  }\n                }\n                else if ( i > 776031417 )\n                {\n                  if ( i == 776031418 )\n                  {\nLABEL_3:\n                    v49 = (char *)(v14 + 16);\n                    i = 291019455;\n                  }\n                  else\n                  {\n                    LODWORD(v27) = 2 * (v10 ^ v13);\n                    HIDWORD(v27) = v13 & ~(_DWORD)v10;\n                    i = 1410721009;\n                  }\n                }\n                else if ( i == 717786379 )\n                {\n                  HIDWORD(v31) = ~(_DWORD)v31;\n                  LODWORD(v32) = -1;\n                  i = 2010194109;\n                }\n                else\n                {\n                  i = 59405742;\n                }\n              }\n              else if ( i > 308160436 )\n              {\n                if ( i > 463631436 )\n                {\n                  if ( i == 463631437 )\n                  {\n                    LODWORD(v44) = 2 * ~HIDWORD(v43);\n                    HIDWORD(v44) = v11 & HIDWORD(v16);\n                    i = 1687134358;\n                  }\n                  else if ( i == 471733955 )\n                  {\n                    HIDWORD(v30) = 4 * v30;\n                    LODWORD(v31) = HIDWORD(v13) & ~HIDWORD(v8);\n                    i = 717786379;\n                  }\n                  else\n                  {\n                    v17 = (int *)(v14 + 8);\n                    v47 = (_DWORD *)(v14 + 12);\n                    if ( (unsigned int)v8 >= *(_DWORD *)(v14 + 8) || (unsigned int)v8 >= *(_DWORD *)(v14 + 12) )\n                      i = 1717759947;\n                    else\n                      i = 840263940;\n                  }\n                }\n                else if ( i <= 367439739 )\n                {\n                  if ( i != 365436182 )\n                  {\n                    *v49 = 1;\n                    return 1;\n                  }\n                  v51 = (const void *)v50;\n                  i = 1367395945;\n                }\n                else if ( i == 367439740 )\n                {\n                  LODWORD(v40) = 9 * HIDWORD(v39);\n                  i = 39564295;\n                }\n                else\n                {\n                  HIDWORD(v13) = HIDWORD(v26) + HIDWORD(v28) - v28 - v27 - HIDWORD(v25);\n                  LODWORD(v29) = HIDWORD(v13) | ~HIDWORD(v8);\n                  i = 1791045640;\n                }\n              }\n              else if ( i <= 83016197 )\n              {\n                if ( i == 14878271 )\n                {\n                  HIDWORD(v37) = (v11 ^ 0x5041C1D2) + 6 * (v11 & 0x2FBE3E2D) + 6 * (v11 & 0x5041C1D2) - 6 * v37;\n                  i = 1369746616;\n                }\n                else if ( i == 39564295 )\n                {\n                  i = 1486260712;\n                }\n                else\n                {\n                  HIDWORD(v46) = v16 + (v35 ^ (v46 - v44)) - HIDWORD(v35);\n                  i = 1757162739;\n                }\n              }\n              else if ( i > 267964191 )\n              {\n                if ( i == 267964192 )\n                {\n                  HIDWORD(v26) = 11 * v26;\n                  i = 805849034;\n                }\n                else\n                {\n                  v7 = *v49;\n                  i = 1948136150;\n                }\n              }\n              else if ( i == 83016198 )\n              {\n                LODWORD(v46) = v45 - HIDWORD(v45);\n                i = 726754277;\n              }\n              else\n              {\n                HIDWORD(v16) = v38 + HIDWORD(v38) + v43;\n                HIDWORD(v43) = v11 | HIDWORD(v16);\n                i = 463631437;\n              }\n            }\n            if ( i > 1717759946 )\n              break;\n            if ( i <= 1479321854 )\n            {\n              if ( i > 1405344259 )\n              {\n                if ( i == 1405344260 )\n                {\n                  HIDWORD(v34) = HIDWORD(v31) + HIDWORD(v32) + v34 - HIDWORD(v33) - HIDWORD(v30);\n                  i = 1971246094;\n                }\n                else if ( i == 1410721009 )\n                {\n                  LODWORD(v28) = 8 * HIDWORD(v27);\n                  HIDWORD(v28) = -11 * (v10 & v13);\n                  i = 443605794;\n                }\n                else\n                {\n                  v52 = *(const void **)v14;\n                  if ( *(_QWORD *)v14 )\n                    i = 853246752;\n                  else\n                    i = 1901137958;\n                }\n              }\n              else\n              {\n                if ( i == 1367395945 )\n                  goto LABEL_70;\n                if ( i == 1369746616 )\n                {\n                  LODWORD(v38) = HIDWORD(v36) + HIDWORD(v37);\n                  LODWORD(v9) = v36 + 2045234260;\n                  HIDWORD(v38) = 7 * ~(v36 + 2045234260);\n                  LODWORD(v39) = ~HIDWORD(v10);\n                  i = 1400446786;\n                }\n                else\n                {\n                  HIDWORD(v39) = ~(v39 | v9);\n                  i = 367439740;\n                }\n              }\n            }\n            else if ( i <= 1617613597 )\n            {\n              if ( i == 1479321855 )\n              {\n                LODWORD(v43) = v41 + HIDWORD(v42) - v42 - HIDWORD(v40) - v40;\n                i = 187627563;\n              }\n              else if ( i == 1486260712 )\n              {\n                HIDWORD(v40) = 10 * ~(HIDWORD(v10) | v9);\n                i = 2083645318;\n              }\n              else\n              {\n                HIDWORD(v20) = ~(v20 | HIDWORD(v12));\n                i = 588382947;\n              }\n            }\n            else if ( i > 1686115536 )\n            {\n              if ( i == 1686115537 )\n              {\n                sub_7FF697ADFAE0(v50, 0, HIDWORD(v15));\n                v51 = *(const void **)v14;\nLABEL_70:\n                *v17 = 0;\n                wmp1_context_free(v51);\n                goto LABEL_71;\n              }\n              LODWORD(v45) = 2 * ~HIDWORD(v44);\n              HIDWORD(v45) = v11 ^ HIDWORD(v16);\n              i = 83016198;\n            }\n            else if ( i == 1617613598 )\n            {\n              i = 1938742372;\n            }\n            else\n            {\n              HIDWORD(v23) = 10 * ~(_DWORD)v23;\n              LODWORD(v24) = 6 * HIDWORD(v9);\n              HIDWORD(v24) = 3 * (v15 | HIDWORD(v9));\n              i = 2038811458;\n            }\n          }\n          if ( i <= 1901137957 )\n            break;\n          if ( i <= 1971246093 )\n          {\n            if ( i == 1901137958 )\n            {\n              i = 776031418;\n            }\n            else if ( i == 1938742372 )\n            {\n              LODWORD(v35) = dword_7FF697BBA7FC;\n              HIDWORD(v10) = dword_7FF697BBA7FC ^ 0x2187AFC3;\n              HIDWORD(v35) = (dword_7FF697BBA7FC ^ 0x2187AFC3) - 2070028069;\n              LODWORD(v36) = (dword_7FF697BBA7FC ^ 0x2187AFC3) - 1518679700;\n              LODWORD(v16) = v36 ^ 0x47ED0357;\n              i = 1312447561;\n            }\n            else if ( v7 )\n            {\n              HIDWORD(v15) = *v47;\n              i = 1617613598;\n            }\n            else\n            {\nLABEL_71:\n              *(_QWORD *)v14 = v48;\n              *v17 = HIDWORD(v11);\n              *v47 = v8;\n              i = 308160437;\n            }\n          }\n          else if ( i > 2038811457 )\n          {\n            if ( i == 2038811458 )\n            {\n              LODWORD(v25) = (_DWORD)retaddr + 4 * (v15 & ~HIDWORD(v9)) - HIDWORD(v24) - v24;\n              i = 1041764422;\n            }\n            else\n            {\n              LODWORD(v41) = 3 * ~(HIDWORD(v10) & v9);\n              HIDWORD(v41) = ~HIDWORD(v10);\n              i = 1725505408;\n            }\n          }\n          else if ( i == 1971246094 )\n          {\n            if ( HIDWORD(v11) == HIDWORD(v34) - HIDWORD(v29) )\n              i = 1891380010;\n            else\n              i = 1415954570;\n          }\n          else\n          {\n            HIDWORD(v32) = 3 * v32;\n            LODWORD(v33) = ~HIDWORD(v8);\n            i = 1275459239;\n          }\n        }\n        if ( i <= 1770320064 )\n          break;\n        if ( i == 1770320065 )\n        {\n          HIDWORD(v12) = 2058655153 - (v19 + v18);\n          HIDWORD(v19) = ~HIDWORD(v12);\n          LODWORD(v20) = ~(_DWORD)v12;\n          i = 1579261080;\n        }\n        else\n        {\n          if ( i != 1791045640 )\n            goto LABEL_3;\n          HIDWORD(v29) = 3 * ~(_DWORD)v29;\n          LODWORD(v30) = ~(HIDWORD(v8) | HIDWORD(v13));\n          i = 471733955;\n        }\n      }\n      if ( i == 1717759947 )\n        break;\n      if ( i == 1725505408 )\n      {\n        LODWORD(v42) = 2 * (HIDWORD(v41) & v9);\n        i = 556960469;\n      }\n      else\n      {\n        v50 = *(_QWORD *)v14;\n        if ( HIDWORD(v15) == HIDWORD(v46) )\n          i = 365436182;\n        else\n          i = 1686115537;\n      }\n    }\n    v48 = (void *)wmp1_context_allocator((unsigned int)v8);\n    if ( !retaddr )\n      break;\n    v2 = *v17;\n    if ( (unsigned int)v8 < *v17 )\n      v2 = v8;\n    HIDWORD(v11) = v2;\n    LODWORD(v18) = dword_7FF697BBA7F8;\n    LODWORD(v12) = dword_7FF697BBA7F8 ^ 0x224CA30;\n    HIDWORD(v9) = (dword_7FF697BBA7F8 ^ 0x224CA30) + 1584835124;\n  }\n  return 0;\n}\n",
+      "sha256": "33cd8eaf9f1f1d820828f589a6b77d60d87ddbd144cada715e22348c230b1148"
+    }
+  },
+  "current": "// Restricted analysis-only normal-stack view: unsigned ESP>2200h at three guards, ABI-preserving calls, no low32 wrap. Original branches/metadata journaled. Full low-ESP semantics not recovered.\nunsigned int __fastcall wmp1_callback_buffer_resize_normal_stack_view(void *descriptor)\n{\n  unsigned int v2; // eax\n  int i; // [rsp+28h] [rbp-1A0h]\n  char was_owned; // [rsp+2Fh] [rbp-199h]\n  unsigned int requested_size; // [rsp+30h] [rbp-198h]\n  int v8; // [rsp+34h] [rbp-194h]\n  int v9; // [rsp+38h] [rbp-190h]\n  int v10; // [rsp+3Ch] [rbp-18Ch]\n  unsigned int v11; // [rsp+40h] [rbp-188h]\n  int v12; // [rsp+44h] [rbp-184h]\n  int v13; // [rsp+48h] [rbp-180h]\n  unsigned int copy_length; // [rsp+4Ch] [rbp-17Ch]\n  int v15; // [rsp+50h] [rbp-178h]\n  int v16; // [rsp+54h] [rbp-174h]\n  unsigned int v17; // [rsp+58h] [rbp-170h]\n  int v18; // [rsp+5Ch] [rbp-16Ch]\n  __int64 buffer_descriptor; // [rsp+60h] [rbp-168h]\n  int v20; // [rsp+68h] [rbp-160h]\n  unsigned int old_capacity; // [rsp+6Ch] [rbp-15Ch]\n  int v22; // [rsp+70h] [rbp-158h]\n  int v23; // [rsp+74h] [rbp-154h]\n  unsigned int *used_length_slot; // [rsp+78h] [rbp-150h]\n  int v25; // [rsp+80h] [rbp-148h]\n  unsigned int v26; // [rsp+84h] [rbp-144h]\n  unsigned int v27; // [rsp+88h] [rbp-140h]\n  int v28; // [rsp+8Ch] [rbp-13Ch]\n  int v29; // [rsp+90h] [rbp-138h]\n  int v30; // [rsp+94h] [rbp-134h]\n  int v31; // [rsp+98h] [rbp-130h]\n  int v32; // [rsp+9Ch] [rbp-12Ch]\n  int v33; // [rsp+A0h] [rbp-128h]\n  int v34; // [rsp+A4h] [rbp-124h]\n  int v35; // [rsp+A8h] [rbp-120h]\n  int v36; // [rsp+ACh] [rbp-11Ch]\n  int v37; // [rsp+B0h] [rbp-118h]\n  int v38; // [rsp+B4h] [rbp-114h]\n  int v39; // [rsp+B8h] [rbp-110h]\n  int v40; // [rsp+BCh] [rbp-10Ch]\n  int v41; // [rsp+C0h] [rbp-108h]\n  int v42; // [rsp+C4h] [rbp-104h]\n  int v43; // [rsp+C8h] [rbp-100h]\n  int v44; // [rsp+CCh] [rbp-FCh]\n  int v45; // [rsp+D0h] [rbp-F8h]\n  int v46; // [rsp+D4h] [rbp-F4h]\n  int v47; // [rsp+D8h] [rbp-F0h]\n  int v48; // [rsp+DCh] [rbp-ECh]\n  int v49; // [rsp+E0h] [rbp-E8h]\n  int v50; // [rsp+E4h] [rbp-E4h]\n  int v51; // [rsp+E8h] [rbp-E0h]\n  int v52; // [rsp+ECh] [rbp-DCh]\n  int v53; // [rsp+F0h] [rbp-D8h]\n  int v54; // [rsp+F4h] [rbp-D4h]\n  int v55; // [rsp+F8h] [rbp-D0h]\n  int v56; // [rsp+FCh] [rbp-CCh]\n  int v57; // [rsp+100h] [rbp-C8h]\n  int v58; // [rsp+104h] [rbp-C4h]\n  int v59; // [rsp+108h] [rbp-C0h]\n  int v60; // [rsp+10Ch] [rbp-BCh]\n  int v61; // [rsp+110h] [rbp-B8h]\n  int v62; // [rsp+114h] [rbp-B4h]\n  unsigned int v63; // [rsp+118h] [rbp-B0h]\n  int v64; // [rsp+11Ch] [rbp-ACh]\n  int v65; // [rsp+120h] [rbp-A8h]\n  int v66; // [rsp+124h] [rbp-A4h]\n  int v67; // [rsp+128h] [rbp-A0h]\n  int v68; // [rsp+12Ch] [rbp-9Ch]\n  int v69; // [rsp+130h] [rbp-98h]\n  int v70; // [rsp+134h] [rbp-94h]\n  int v71; // [rsp+138h] [rbp-90h]\n  int v72; // [rsp+13Ch] [rbp-8Ch]\n  int v73; // [rsp+140h] [rbp-88h]\n  int v74; // [rsp+144h] [rbp-84h]\n  int v75; // [rsp+148h] [rbp-80h]\n  int v76; // [rsp+14Ch] [rbp-7Ch]\n  int v77; // [rsp+150h] [rbp-78h]\n  int v78; // [rsp+154h] [rbp-74h]\n  int v79; // [rsp+158h] [rbp-70h]\n  int v80; // [rsp+15Ch] [rbp-6Ch]\n  int v81; // [rsp+160h] [rbp-68h]\n  int v82; // [rsp+164h] [rbp-64h]\n  unsigned int *capacity_slot; // [rsp+168h] [rbp-60h]\n  void *new_buffer; // [rsp+170h] [rbp-58h]\n  char *ownership_flag_slot; // [rsp+178h] [rbp-50h]\n  __int64 old_buffer_to_clear; // [rsp+180h] [rbp-48h]\n  const void *old_buffer_to_free; // [rsp+188h] [rbp-40h]\n  const void *old_buffer_to_copy; // [rsp+190h] [rbp-38h]\n\n  for ( i = 666823395; ; i = 821443631 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( 1 )\n        {\n          while ( 1 )\n          {\n            while ( i <= 1367395944 )\n            {\n              if ( i > 556960468 )\n              {\n                if ( i > 821443630 )\n                {\n                  if ( i > 1041764421 )\n                  {\n                    if ( i == 1041764422 )\n                    {\n                      v17 = v36 + v39 - v26;\n                      v40 = 10 * ~(v17 | ~v11);\n                      v41 = v11 | v17;\n                      i = 267964192;\n                    }\n                    else if ( i == 1275459239 )\n                    {\n                      v56 = 2 * (v18 & v55);\n                      v57 = -2 * (v8 & v18);\n                      i = 1405344260;\n                    }\n                    else\n                    {\n                      v13 = v22 - 73376599;\n                      v62 = 6 * (~(v22 - 73376599) & 0x2FBE3E2D);\n                      v63 = (v22 - 73376599) | 0xAFBE3E2D;\n                      i = 14878271;\n                    }\n                  }\n                  else if ( i <= 853246751 )\n                  {\n                    if ( i != 821443631 )\n                    {\n                      *used_length_slot = requested_size;\n                      return 1;\n                    }\n                    v8 = v10 + 337820549;\n                    v11 = (v10 + 337820549) ^ 0xEDF573CC;\n                    v26 = v11 - 1371790425;\n                    v27 = (v11 + 1385184252) ^ 0xA176D0F7;\n                    i = 1770320065;\n                  }\n                  else\n                  {\n                    if ( i == 853246752 )\n                    {\n                      qmemcpy(new_buffer, old_buffer_to_copy, copy_length);\n                      goto LABEL_3;\n                    }\n                    v20 = v28 + v33 + v34 - 11 * (v15 & v16) - v32 - v31;\n                    v35 = v20 | ~v10;\n                    i = 1627937973;\n                  }\n                }\n                else if ( i <= 717786378 )\n                {\n                  if ( i == 556960469 )\n                  {\n                    v74 = 2 * (v12 & v9);\n                    i = 1479321855;\n                  }\n                  else if ( i == 588382947 )\n                  {\n                    v31 = 11 * v30;\n                    v32 = ~(v15 | v16);\n                    v33 = 11 * v15;\n                    v34 = v16 & ~v15;\n                    i = 946530417;\n                  }\n                  else\n                  {\n                    buffer_descriptor = *(_QWORD *)descriptor;\n                    requested_size = *((_DWORD *)descriptor + 2);\n                    i = 543067817;\n                  }\n                }\n                else if ( i > 776031417 )\n                {\n                  if ( i == 776031418 )\n                  {\nLABEL_3:\n                    ownership_flag_slot = (char *)(buffer_descriptor + 16);\n                    i = 291019455;\n                  }\n                  else\n                  {\n                    v43 = 2 * (v11 ^ v17);\n                    v44 = v17 & ~v11;\n                    i = 1410721009;\n                  }\n                }\n                else if ( i == 717786379 )\n                {\n                  v52 = ~v51;\n                  v53 = -1;\n                  i = 2010194109;\n                }\n                else\n                {\n                  i = 59405742;\n                }\n              }\n              else if ( i > 308160436 )\n              {\n                if ( i > 463631436 )\n                {\n                  if ( i == 463631437 )\n                  {\n                    v77 = 2 * ~v76;\n                    v78 = v13 & v23;\n                    i = 1687134358;\n                  }\n                  else if ( i == 471733955 )\n                  {\n                    v50 = 4 * v49;\n                    v51 = v18 & ~v8;\n                    i = 717786379;\n                  }\n                  else\n                  {\n                    used_length_slot = (unsigned int *)(buffer_descriptor + 8);\n                    capacity_slot = (unsigned int *)(buffer_descriptor + 12);\n                    if ( requested_size >= *(_DWORD *)(buffer_descriptor + 8)\n                      || requested_size >= *(_DWORD *)(buffer_descriptor + 12) )\n                    {\n                      i = 1717759947;\n                    }\n                    else\n                    {\n                      i = 840263940;\n                    }\n                  }\n                }\n                else if ( i <= 367439739 )\n                {\n                  if ( i != 365436182 )\n                  {\n                    *ownership_flag_slot = 1;\n                    return 1;\n                  }\n                  old_buffer_to_free = (const void *)old_buffer_to_clear;\n                  i = 1367395945;\n                }\n                else if ( i == 367439740 )\n                {\n                  v69 = 9 * v68;\n                  i = 39564295;\n                }\n                else\n                {\n                  v18 = v42 + v46 - v45 - v43 - v40;\n                  v47 = v18 | ~v8;\n                  i = 1791045640;\n                }\n              }\n              else if ( i <= 83016197 )\n              {\n                if ( i == 14878271 )\n                {\n                  v64 = (v13 ^ 0x5041C1D2) + 6 * (v13 & 0x2FBE3E2D) + 6 * (v13 & 0x5041C1D2) - 6 * v63;\n                  i = 1369746616;\n                }\n                else if ( i == 39564295 )\n                {\n                  i = 1486260712;\n                }\n                else\n                {\n                  v82 = v22 + (v59 ^ (v81 - v77)) - v60;\n                  i = 1757162739;\n                }\n              }\n              else if ( i > 267964191 )\n              {\n                if ( i == 267964192 )\n                {\n                  v42 = 11 * v41;\n                  i = 805849034;\n                }\n                else\n                {\n                  was_owned = *ownership_flag_slot;\n                  i = 1948136150;\n                }\n              }\n              else if ( i == 83016198 )\n              {\n                v81 = v79 - v80;\n                i = 726754277;\n              }\n              else\n              {\n                v23 = v65 + v66 + v75;\n                v76 = v13 | v23;\n                i = 463631437;\n              }\n            }\n            if ( i > 1717759946 )\n              break;\n            if ( i <= 1479321854 )\n            {\n              if ( i > 1405344259 )\n              {\n                if ( i == 1405344260 )\n                {\n                  v58 = v52 + v54 + v57 - v56 - v50;\n                  i = 1971246094;\n                }\n                else if ( i == 1410721009 )\n                {\n                  v45 = 8 * v44;\n                  v46 = -11 * (v11 & v17);\n                  i = 443605794;\n                }\n                else\n                {\n                  old_buffer_to_copy = *(const void **)buffer_descriptor;\n                  if ( *(_QWORD *)buffer_descriptor )\n                    i = 853246752;\n                  else\n                    i = 1901137958;\n                }\n              }\n              else\n              {\n                if ( i == 1367395945 )\n                  goto LABEL_70;\n                if ( i == 1369746616 )\n                {\n                  v65 = v62 + v64;\n                  v9 = v61 + 2045234260;\n                  v66 = 7 * ~(v61 + 2045234260);\n                  v67 = ~v12;\n                  i = 1400446786;\n                }\n                else\n                {\n                  v68 = ~(v67 | v9);\n                  i = 367439740;\n                }\n              }\n            }\n            else if ( i <= 1617613597 )\n            {\n              if ( i == 1479321855 )\n              {\n                v75 = v71 + v74 - v73 - v70 - v69;\n                i = 187627563;\n              }\n              else if ( i == 1486260712 )\n              {\n                v70 = 10 * ~(v12 | v9);\n                i = 2083645318;\n              }\n              else\n              {\n                v30 = ~(v29 | v16);\n                i = 588382947;\n              }\n            }\n            else if ( i > 1686115536 )\n            {\n              if ( i == 1686115537 )\n              {\n                sub_7FF697ADFAE0(old_buffer_to_clear, 0, old_capacity);\n                old_buffer_to_free = *(const void **)buffer_descriptor;\nLABEL_70:\n                *used_length_slot = 0;\n                wmp1_context_free(old_buffer_to_free);\n                goto LABEL_71;\n              }\n              v79 = 2 * ~v78;\n              v80 = v13 ^ v23;\n              i = 83016198;\n            }\n            else if ( i == 1617613598 )\n            {\n              i = 1938742372;\n            }\n            else\n            {\n              v36 = 10 * ~v35;\n              v37 = 6 * v10;\n              v38 = 3 * (v20 | v10);\n              i = 2038811458;\n            }\n          }\n          if ( i <= 1901137957 )\n            break;\n          if ( i <= 1971246093 )\n          {\n            if ( i == 1901137958 )\n            {\n              i = 776031418;\n            }\n            else if ( i == 1938742372 )\n            {\n              v59 = dword_7FF697BBA7FC;\n              v12 = dword_7FF697BBA7FC ^ 0x2187AFC3;\n              v60 = (dword_7FF697BBA7FC ^ 0x2187AFC3) - 2070028069;\n              v61 = (dword_7FF697BBA7FC ^ 0x2187AFC3) - 1518679700;\n              v22 = v61 ^ 0x47ED0357;\n              i = 1312447561;\n            }\n            else if ( was_owned )\n            {\n              old_capacity = *capacity_slot;\n              i = 1617613598;\n            }\n            else\n            {\nLABEL_71:\n              *(_QWORD *)buffer_descriptor = new_buffer;\n              *used_length_slot = copy_length;\n              *capacity_slot = requested_size;\n              i = 308160437;\n            }\n          }\n          else if ( i > 2038811457 )\n          {\n            if ( i == 2038811458 )\n            {\n              v39 = 9 * (v10 & v20) + 4 * (v20 & ~v10) - v38 - v37;\n              i = 1041764422;\n            }\n            else\n            {\n              v71 = 3 * ~(v12 & v9);\n              v72 = ~v12;\n              i = 1725505408;\n            }\n          }\n          else if ( i == 1971246094 )\n          {\n            if ( copy_length == v58 - v48 )\n              i = 1891380010;\n            else\n              i = 1415954570;\n          }\n          else\n          {\n            v54 = 3 * v53;\n            v55 = ~v8;\n            i = 1275459239;\n          }\n        }\n        if ( i <= 1770320064 )\n          break;\n        if ( i == 1770320065 )\n        {\n          v16 = 2058655153 - (v27 + v25);\n          v28 = ~v16;\n          v29 = ~v15;\n          i = 1579261080;\n        }\n        else\n        {\n          if ( i != 1791045640 )\n            goto LABEL_3;\n          v48 = 3 * ~v47;\n          v49 = ~(v8 | v18);\n          i = 471733955;\n        }\n      }\n      if ( i == 1717759947 )\n        break;\n      if ( i == 1725505408 )\n      {\n        v73 = 2 * (v72 & v9);\n        i = 556960469;\n      }\n      else\n      {\n        old_buffer_to_clear = *(_QWORD *)buffer_descriptor;\n        if ( old_capacity == v82 )\n          i = 365436182;\n        else\n          i = 1686115537;\n      }\n    }\n    new_buffer = (void *)wmp1_context_allocator(requested_size);\n    if ( !new_buffer )\n      break;\n    v2 = *used_length_slot;\n    if ( requested_size < *used_length_slot )\n      v2 = requested_size;\n    copy_length = v2;\n    v25 = dword_7FF697BBA7F8;\n    v15 = dword_7FF697BBA7F8 ^ 0x224CA30;\n    v10 = (dword_7FF697BBA7F8 ^ 0x224CA30) + 1584835124;\n  }\n  return 0;\n}\n",
+  "lvar_journal": [
+    {
+      "old": "v19",
+      "new": "buffer_descriptor",
+      "ok": true
+    },
+    {
+      "old": "v7",
+      "new": "requested_size",
+      "ok": true
+    },
+    {
+      "old": "v24",
+      "new": "used_length_slot",
+      "ok": true
+    },
+    {
+      "old": "v83",
+      "new": "capacity_slot",
+      "ok": true
+    },
+    {
+      "old": "v84",
+      "new": "new_buffer",
+      "ok": true
+    },
+    {
+      "old": "v14",
+      "new": "copy_length",
+      "ok": true
+    },
+    {
+      "old": "v85",
+      "new": "ownership_flag_slot",
+      "ok": true
+    },
+    {
+      "old": "v6",
+      "new": "was_owned",
+      "ok": true
+    },
+    {
+      "old": "v21",
+      "new": "old_capacity",
+      "ok": true
+    },
+    {
+      "old": "v86",
+      "new": "old_buffer_to_clear",
+      "ok": true
+    },
+    {
+      "old": "v87",
+      "new": "old_buffer_to_free",
+      "ok": true
+    },
+    {
+      "old": "v88",
+      "new": "old_buffer_to_copy",
+      "ok": true
+    }
+  ],
+  "native": [
+    [
+      140697083396816,
+      "push    r15"
+    ],
+    [
+      140697083396818,
+      "push    r14"
+    ],
+    [
+      140697083396820,
+      "push    rsi"
+    ],
+    [
+      140697083396821,
+      "push    rdi"
+    ],
+    [
+      140697083396822,
+      "push    rbp"
+    ],
+    [
+      140697083396823,
+      "push    rbx"
+    ],
+    [
+      140697083396824,
+      "sub     rsp, 198h"
+    ],
+    [
+      140697083396831,
+      "mov     rbx, rcx"
+    ],
+    [
+      140697083396834,
+      "mov     [rsp+1C8h+var_1A0], 27BEEAE3h"
+    ],
+    [
+      140697083396842,
+      "mov     ebp, 1422BB85h"
+    ],
+    [
+      140697083396847,
+      "mov     r14d, 0FBA05CA9h"
+    ],
+    [
+      140697083396853,
+      "mov     r15d, 79E7CC54h"
+    ],
+    [
+      140697083396859,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083396864,
+      "mov     ecx, [rsp+1C8h+var_17C]"
+    ],
+    [
+      140697083396868,
+      "mov     rdi, [rsp+1C8h+var_58]"
+    ],
+    [
+      140697083396876,
+      "mov     rsi, [rsp+1C8h+var_38]"
+    ],
+    [
+      140697083396884,
+      "rep movsb"
+    ],
+    [
+      140697083396886,
+      "test    dh, 34h"
+    ],
+    [
+      140697083396889,
+      "jmp     short loc_7FF697AD437F"
+    ],
+    [
+      140697083396991,
+      "mov     rax, [rsp+1C8h+var_168]"
+    ],
+    [
+      140697083396996,
+      "add     rax, 10h"
+    ],
+    [
+      140697083397000,
+      "mov     [rsp+1C8h+var_50], rax"
+    ],
+    [
+      140697083397008,
+      "mov     [rsp+1C8h+var_1A0], 11589ABFh"
+    ],
+    [
+      140697083397016,
+      "nop     dword ptr [rax+rax+00000000h]"
+    ],
+    [
+      140697083397024,
+      "mov     eax, [rsp+1C8h+var_1A0]"
+    ],
+    [
+      140697083397028,
+      "cmp     eax, 5180CE68h"
+    ],
+    [
+      140697083397033,
+      "jg      short loc_7FF697AD4410"
+    ],
+    [
+      140697083397035,
+      "cmp     eax, 21328AD4h"
+    ],
+    [
+      140697083397040,
+      "jg      loc_7FF697AD4460"
+    ],
+    [
+      140697083397046,
+      "cmp     eax, 125E27B4h"
+    ],
+    [
+      140697083397051,
+      "jg      loc_7FF697AD4511"
+    ],
+    [
+      140697083397057,
+      "cmp     eax, 4F2BA05h"
+    ],
+    [
+      140697083397062,
+      "jle     loc_7FF697AD4851"
+    ],
+    [
+      140697083397068,
+      "cmp     eax, 0FF8CF1Fh"
+    ],
+    [
+      140697083397073,
+      "jg      loc_7FF697AD4A7B"
+    ],
+    [
+      140697083397079,
+      "cmp     eax, 4F2BA06h"
+    ],
+    [
+      140697083397084,
+      "jnz     loc_7FF697AD5220"
+    ],
+    [
+      140697083397090,
+      "mov     eax, [rsp+1C8h+var_70]"
+    ],
+    [
+      140697083397097,
+      "sub     eax, [rsp+1C8h+var_6C]"
+    ],
+    [
+      140697083397104,
+      "mov     [rsp+1C8h+var_68], eax"
+    ],
+    [
+      140697083397111,
+      "mov     [rsp+1C8h+var_1A0], 2B5163E5h"
+    ],
+    [
+      140697083397119,
+      "jmp     short loc_7FF697AD43A0"
+    ],
+    [
+      140697083397136,
+      "cmp     eax, 6662EFCAh"
+    ],
+    [
+      140697083397141,
+      "jg      loc_7FF697AD44C0"
+    ],
+    [
+      140697083397147,
+      "cmp     eax, 582CA8FEh"
+    ],
+    [
+      140697083397152,
+      "jle     loc_7FF697AD461E"
+    ],
+    [
+      140697083397158,
+      "cmp     eax, 606AD31Dh"
+    ],
+    [
+      140697083397163,
+      "jle     loc_7FF697AD47BD"
+    ],
+    [
+      140697083397169,
+      "cmp     eax, 648014D0h"
+    ],
+    [
+      140697083397174,
+      "jg      loc_7FF697AD4965"
+    ],
+    [
+      140697083397180,
+      "cmp     eax, 606AD31Eh"
+    ],
+    [
+      140697083397185,
+      "jnz     loc_7FF697AD5092"
+    ],
+    [
+      140697083397191,
+      "mov     [rsp+1C8h+var_1A0], 738EDC64h"
+    ],
+    [
+      140697083397199,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083397216,
+      "cmp     eax, 30F63C2Eh"
+    ],
+    [
+      140697083397221,
+      "jg      loc_7FF697AD4550"
+    ],
+    [
+      140697083397227,
+      "cmp     eax, 2AC88D0Ah"
+    ],
+    [
+      140697083397232,
+      "jle     loc_7FF697AD4874"
+    ],
+    [
+      140697083397238,
+      "cmp     eax, 2E414CB9h"
+    ],
+    [
+      140697083397243,
+      "jg      loc_7FF697AD4B4E"
+    ],
+    [
+      140697083397249,
+      "cmp     eax, 2AC88D0Bh"
+    ],
+    [
+      140697083397254,
+      "jnz     loc_7FF697AD5251"
+    ],
+    [
+      140697083397260,
+      "mov     eax, [rsp+1C8h+var_E0]"
+    ],
+    [
+      140697083397267,
+      "not     eax"
+    ],
+    [
+      140697083397269,
+      "mov     [rsp+1C8h+var_DC], eax"
+    ],
+    [
+      140697083397276,
+      "mov     [rsp+1C8h+var_D8], 0FFFFFFFFh"
+    ],
+    [
+      140697083397287,
+      "mov     [rsp+1C8h+var_1A0], 77D120BDh"
+    ],
+    [
+      140697083397295,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083397312,
+      "cmp     eax, 71511025h"
+    ],
+    [
+      140697083397317,
+      "jle     loc_7FF697AD468E"
+    ],
+    [
+      140697083397323,
+      "cmp     eax, 757ED40Dh"
+    ],
+    [
+      140697083397328,
+      "jle     loc_7FF697AD47F6"
+    ],
+    [
+      140697083397334,
+      "cmp     eax, 7985CB41h"
+    ],
+    [
+      140697083397339,
+      "jg      loc_7FF697AD49E3"
+    ],
+    [
+      140697083397345,
+      "cmp     eax, 757ED40Eh"
+    ],
+    [
+      140697083397350,
+      "jnz     loc_7FF697AD50D3"
+    ],
+    [
+      140697083397356,
+      "mov     eax, [rsp+1C8h+var_C4]"
+    ],
+    [
+      140697083397363,
+      "sub     eax, [rsp+1C8h+var_EC]"
+    ],
+    [
+      140697083397370,
+      "cmp     [rsp+1C8h+var_17C], eax"
+    ],
+    [
+      140697083397374,
+      "jnz     loc_7FF697AD533B"
+    ],
+    [
+      140697083397380,
+      "mov     [rsp+1C8h+var_1A0], 70BC2B2Ah"
+    ],
+    [
+      140697083397388,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083397393,
+      "cmp     eax, 1BA2744Ch"
+    ],
+    [
+      140697083397398,
+      "jg      loc_7FF697AD4730"
+    ],
+    [
+      140697083397404,
+      "cmp     eax, 15E6AF7Bh"
+    ],
+    [
+      140697083397409,
+      "jle     loc_7FF697AD4BD2"
+    ],
+    [
+      140697083397415,
+      "cmp     eax, 15E6AF7Ch"
+    ],
+    [
+      140697083397420,
+      "jnz     loc_7FF697AD52EB"
+    ],
+    [
+      140697083397426,
+      "mov     eax, [rsp+1C8h+var_9C]"
+    ],
+    [
+      140697083397433,
+      "lea     eax, [rax+rax*8]"
+    ],
+    [
+      140697083397436,
+      "mov     [rsp+1C8h+var_98], eax"
+    ],
+    [
+      140697083397443,
+      "mov     [rsp+1C8h+var_1A0], 25BB407h"
+    ],
+    [
+      140697083397451,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083397456,
+      "cmp     eax, 3E181045h"
+    ],
+    [
+      140697083397461,
+      "jg      loc_7FF697AD4775"
+    ],
+    [
+      140697083397467,
+      "cmp     eax, 32DB831Fh"
+    ],
+    [
+      140697083397472,
+      "jle     loc_7FF697AD4BFA"
+    ],
+    [
+      140697083397478,
+      "cmp     eax, 32DB8320h"
+    ],
+    [
+      140697083397483,
+      "jz      loc_7FF697AD4300"
+    ],
+    [
+      140697083397489,
+      "mov     eax, [rsp+1C8h+var_174]"
+    ],
+    [
+      140697083397493,
+      "and     eax, [rsp+1C8h+var_178]"
+    ],
+    [
+      140697083397497,
+      "imul    eax, -0Bh"
+    ],
+    [
+      140697083397500,
+      "add     eax, [rsp+1C8h+var_124]"
+    ],
+    [
+      140697083397507,
+      "add     eax, [rsp+1C8h+var_128]"
+    ],
+    [
+      140697083397514,
+      "ja      short loc_7FF697AD45E9"
+    ],
+    [
+      140697083397516,
+      "shl     dl, 0"
+    ],
+    [
+      140697083397519,
+      "jmp     short loc_7FF697AD45E9"
+    ],
+    [
+      140697083397609,
+      "sub     eax, [rsp+1C8h+var_12C]"
+    ],
+    [
+      140697083397616,
+      "sub     eax, [rsp+1C8h+var_130]"
+    ],
+    [
+      140697083397623,
+      "add     eax, [rsp+1C8h+var_13C]"
+    ],
+    [
+      140697083397630,
+      "mov     [rsp+1C8h+var_160], eax"
+    ],
+    [
+      140697083397634,
+      "mov     ecx, [rsp+1C8h+var_18C]"
+    ],
+    [
+      140697083397638,
+      "not     ecx"
+    ],
+    [
+      140697083397640,
+      "or      ecx, eax"
+    ],
+    [
+      140697083397642,
+      "mov     [rsp+1C8h+var_120], ecx"
+    ],
+    [
+      140697083397649,
+      "mov     [rsp+1C8h+var_1A0], 61085CB5h"
+    ],
+    [
+      140697083397657,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083397662,
+      "cmp     eax, 53C3DA03h"
+    ],
+    [
+      140697083397667,
+      "jg      loc_7FF697AD48D8"
+    ],
+    [
+      140697083397673,
+      "cmp     eax, 5180CE69h"
+    ],
+    [
+      140697083397678,
+      "jz      loc_7FF697AD4994"
+    ],
+    [
+      140697083397684,
+      "cmp     eax, 51A4ACB8h"
+    ],
+    [
+      140697083397689,
+      "jnz     loc_7FF697AD527A"
+    ],
+    [
+      140697083397695,
+      "mov     eax, [rsp+1C8h+var_AC]"
+    ],
+    [
+      140697083397702,
+      "add     eax, [rsp+1C8h+var_B4]"
+    ],
+    [
+      140697083397709,
+      "mov     [rsp+1C8h+var_A8], eax"
+    ],
+    [
+      140697083397716,
+      "mov     eax, [rsp+1C8h+var_B8]"
+    ],
+    [
+      140697083397723,
+      "add     eax, r15d"
+    ],
+    [
+      140697083397726,
+      "mov     [rsp+1C8h+var_190], eax"
+    ],
+    [
+      140697083397730,
+      "not     eax"
+    ],
+    [
+      140697083397732,
+      "lea     ecx, ds:0[rax*8]"
+    ],
+    [
+      140697083397739,
+      "sub     ecx, eax"
+    ],
+    [
+      140697083397741,
+      "mov     [rsp+1C8h+var_A4], ecx"
+    ],
+    [
+      140697083397748,
+      "mov     eax, [rsp+1C8h+var_184]"
+    ],
+    [
+      140697083397752,
+      "not     eax"
+    ],
+    [
+      140697083397754,
+      "mov     [rsp+1C8h+var_A0], eax"
+    ],
+    [
+      140697083397761,
+      "mov     [rsp+1C8h+var_1A0], 53791F42h"
+    ],
+    [
+      140697083397769,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083397774,
+      "cmp     eax, 6984F0C0h"
+    ],
+    [
+      140697083397779,
+      "jg      loc_7FF697AD491E"
+    ],
+    [
+      140697083397785,
+      "cmp     eax, 6662EFCBh"
+    ],
+    [
+      140697083397790,
+      "jz      loc_7FF697AD4DA6"
+    ],
+    [
+      140697083397796,
+      "cmp     eax, 66D91F80h"
+    ],
+    [
+      140697083397801,
+      "jnz     loc_7FF697AD529B"
+    ],
+    [
+      140697083397807,
+      "mov     eax, [rsp+1C8h+var_190]"
+    ],
+    [
+      140697083397811,
+      "and     eax, [rsp+1C8h+var_8C]"
+    ],
+    [
+      140697083397818,
+      "and     ch, 0FFh"
+    ],
+    [
+      140697083397821,
+      "jmp     short loc_7FF697AD471A"
+    ],
+    [
+      140697083397914,
+      "add     eax, eax"
+    ],
+    [
+      140697083397916,
+      "mov     [rsp+1C8h+var_88], eax"
+    ],
+    [
+      140697083397923,
+      "mov     [rsp+1C8h+var_1A0], 21328AD5h"
+    ],
+    [
+      140697083397931,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083397936,
+      "cmp     eax, 1BA2744Dh"
+    ],
+    [
+      140697083397941,
+      "jz      loc_7FF697AD4C43"
+    ],
+    [
+      140697083397947,
+      "cmp     eax, 1C1E16C3h"
+    ],
+    [
+      140697083397952,
+      "jnz     loc_7FF697AD4F52"
+    ],
+    [
+      140697083397958,
+      "mov     eax, [rsp+1C8h+var_E8]"
+    ],
+    [
+      140697083397965,
+      "shl     eax, 2"
+    ],
+    [
+      140697083397968,
+      "mov     [rsp+1C8h+var_E4], eax"
+    ],
+    [
+      140697083397975,
+      "mov     eax, [rsp+1C8h+var_194]"
+    ],
+    [
+      140697083397979,
+      "not     eax"
+    ],
+    [
+      140697083397981,
+      "and     eax, [rsp+1C8h+var_16C]"
+    ],
+    [
+      140697083397985,
+      "mov     [rsp+1C8h+var_E0], eax"
+    ],
+    [
+      140697083397992,
+      "mov     [rsp+1C8h+var_1A0], 2AC88D0Bh"
+    ],
+    [
+      140697083398000,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083398005,
+      "cmp     eax, 3E181046h"
+    ],
+    [
+      140697083398010,
+      "jz      loc_7FF697AD4C71"
+    ],
+    [
+      140697083398016,
+      "cmp     eax, 4C05F6A7h"
+    ],
+    [
+      140697083398021,
+      "jnz     loc_7FF697AD4F8F"
+    ],
+    [
+      140697083398027,
+      "mov     eax, [rsp+1C8h+var_16C]"
+    ],
+    [
+      140697083398031,
+      "mov     ecx, [rsp+1C8h+var_D0]"
+    ],
+    [
+      140697083398038,
+      "and     ecx, eax"
+    ],
+    [
+      140697083398040,
+      "add     ecx, ecx"
+    ],
+    [
+      140697083398042,
+      "mov     [rsp+1C8h+var_CC], ecx"
+    ],
+    [
+      140697083398049,
+      "and     eax, [rsp+1C8h+var_194]"
+    ],
+    [
+      140697083398053,
+      "add     eax, eax"
+    ],
+    [
+      140697083398055,
+      "neg     eax"
+    ],
+    [
+      140697083398057,
+      "mov     [rsp+1C8h+var_C8], eax"
+    ],
+    [
+      140697083398064,
+      "mov     [rsp+1C8h+var_1A0], 53C3DA04h"
+    ],
+    [
+      140697083398072,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083398077,
+      "cmp     eax, 582CA8FFh"
+    ],
+    [
+      140697083398082,
+      "jz      loc_7FF697AD4CB8"
+    ],
+    [
+      140697083398088,
+      "cmp     eax, 589689E8h"
+    ],
+    [
+      140697083398093,
+      "jnz     loc_7FF697AD4FC9"
+    ],
+    [
+      140697083398099,
+      "mov     eax, [rsp+1C8h+var_190]"
+    ],
+    [
+      140697083398103,
+      "or      eax, [rsp+1C8h+var_184]"
+    ],
+    [
+      140697083398107,
+      "not     eax"
+    ],
+    [
+      140697083398109,
+      "add     eax, eax"
+    ],
+    [
+      140697083398111,
+      "lea     eax, [rax+rax*4]"
+    ],
+    [
+      140697083398114,
+      "mov     [rsp+1C8h+var_94], eax"
+    ],
+    [
+      140697083398121,
+      "mov     [rsp+1C8h+var_1A0], 7C31E786h"
+    ],
+    [
+      140697083398129,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083398134,
+      "cmp     eax, 71511026h"
+    ],
+    [
+      140697083398139,
+      "jz      loc_7FF697AD4CEF"
+    ],
+    [
+      140697083398145,
+      "cmp     eax, 738EDC64h"
+    ],
+    [
+      140697083398150,
+      "jnz     loc_7FF697AD4FEA"
+    ],
+    [
+      140697083398156,
+      "mov     eax, cs:dword_7FF697BBA7FC"
+    ],
+    [
+      140697083398162,
+      "mov     [rsp+1C8h+var_C0], eax"
+    ],
+    [
+      140697083398169,
+      "xor     eax, 2187AFC3h"
+    ],
+    [
+      140697083398174,
+      "mov     [rsp+1C8h+var_184], eax"
+    ],
+    [
+      140697083398178,
+      "lea     ecx, [rax-7B621F25h]"
+    ],
+    [
+      140697083398184,
+      "mov     [rsp+1C8h+var_BC], ecx"
+    ],
+    [
+      140697083398191,
+      "add     eax, 0A57AC96Ch"
+    ],
+    [
+      140697083398196,
+      "mov     [rsp+1C8h+var_B8], eax"
+    ],
+    [
+      140697083398203,
+      "xor     eax, 47ED0357h"
+    ],
+    [
+      140697083398208,
+      "mov     [rsp+1C8h+var_158], eax"
+    ],
+    [
+      140697083398212,
+      "mov     [rsp+1C8h+var_1A0], 4E3A5C49h"
+    ],
+    [
+      140697083398220,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083398225,
+      "cmp     eax, 0E3063Fh"
+    ],
+    [
+      140697083398230,
+      "jz      loc_7FF697AD4CFC"
+    ],
+    [
+      140697083398236,
+      "cmp     eax, 25BB407h"
+    ],
+    [
+      140697083398241,
+      "jnz     loc_7FF697AD51D0"
+    ],
+    [
+      140697083398247,
+      "mov     [rsp+1C8h+var_1A0], 589689E8h"
+    ],
+    [
+      140697083398255,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083398260,
+      "cmp     eax, 21328AD5h"
+    ],
+    [
+      140697083398265,
+      "jz      loc_7FF697AD4D88"
+    ],
+    [
+      140697083398271,
+      "cmp     eax, 231202E3h"
+    ],
+    [
+      140697083398276,
+      "jnz     loc_7FF697AD5204"
+    ],
+    [
+      140697083398282,
+      "mov     eax, [rsp+1C8h+var_134]"
+    ],
+    [
+      140697083398289,
+      "lea     ecx, [rax+rax*4]"
+    ],
+    [
+      140697083398292,
+      "lea     eax, [rax+rcx*2]"
+    ],
+    [
+      140697083398295,
+      "mov     [rsp+1C8h+var_130], eax"
+    ],
+    [
+      140697083398302,
+      "mov     eax, [rsp+1C8h+var_178]"
+    ],
+    [
+      140697083398306,
+      "mov     ecx, [rsp+1C8h+var_174]"
+    ],
+    [
+      140697083398310,
+      "mov     edx, ecx"
+    ],
+    [
+      140697083398312,
+      "or      edx, eax"
+    ],
+    [
+      140697083398314,
+      "not     edx"
+    ],
+    [
+      140697083398316,
+      "mov     [rsp+1C8h+var_12C], edx"
+    ],
+    [
+      140697083398323,
+      "lea     edx, [rax+rax*4]"
+    ],
+    [
+      140697083398326,
+      "lea     edx, [rax+rdx*2]"
+    ],
+    [
+      140697083398329,
+      "mov     [rsp+1C8h+var_128], edx"
+    ],
+    [
+      140697083398336,
+      "not     eax"
+    ],
+    [
+      140697083398338,
+      "and     eax, ecx"
+    ],
+    [
+      140697083398340,
+      "mov     [rsp+1C8h+var_124], eax"
+    ],
+    [
+      140697083398347,
+      "mov     [rsp+1C8h+var_1A0], 386AE871h"
+    ],
+    [
+      140697083398355,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083398360,
+      "cmp     eax, 53C3DA04h"
+    ],
+    [
+      140697083398365,
+      "jz      loc_7FF697AD4E6F"
+    ],
+    [
+      140697083398371,
+      "cmp     eax, 5415E4F1h"
+    ],
+    [
+      140697083398376,
+      "jnz     loc_7FF697AD52C9"
+    ],
+    [
+      140697083398382,
+      "mov     eax, [rsp+1C8h+var_FC]"
+    ],
+    [
+      140697083398389,
+      "shl     eax, 3"
+    ],
+    [
+      140697083398392,
+      "mov     ecx, [rsp+1C8h+var_170]"
+    ],
+    [
+      140697083398396,
+      "and     ecx, [rsp+1C8h+var_188]"
+    ],
+    [
+      140697083398400,
+      "mov     [rsp+1C8h+var_F8], eax"
+    ],
+    [
+      140697083398407,
+      "imul    eax, ecx, -0Bh"
+    ],
+    [
+      140697083398410,
+      "mov     [rsp+1C8h+var_F4], eax"
+    ],
+    [
+      140697083398417,
+      "mov     [rsp+1C8h+var_1A0], 1A70E322h"
+    ],
+    [
+      140697083398425,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083398430,
+      "cmp     eax, 6984F0C1h"
+    ],
+    [
+      140697083398435,
+      "jz      loc_7FF697AD4EA6"
+    ],
+    [
+      140697083398441,
+      "cmp     eax, 6AC13008h"
+    ],
+    [
+      140697083398446,
+      "jnz     loc_7FF697AD4316"
+    ],
+    [
+      140697083398452,
+      "mov     eax, [rsp+1C8h+var_F0]"
+    ],
+    [
+      140697083398459,
+      "not     eax"
+    ],
+    [
+      140697083398461,
+      "lea     eax, [rax+rax*2]"
+    ],
+    [
+      140697083398464,
+      "mov     ecx, [rsp+1C8h+var_16C]"
+    ],
+    [
+      140697083398468,
+      "or      ecx, [rsp+1C8h+var_194]"
+    ],
+    [
+      140697083398472,
+      "mov     [rsp+1C8h+var_EC], eax"
+    ],
+    [
+      140697083398479,
+      "not     ecx"
+    ],
+    [
+      140697083398481,
+      "mov     [rsp+1C8h+var_E8], ecx"
+    ],
+    [
+      140697083398488,
+      "mov     [rsp+1C8h+var_1A0], 1C1E16C3h"
+    ],
+    [
+      140697083398496,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083398501,
+      "cmp     eax, 648014D1h"
+    ],
+    [
+      140697083398506,
+      "jnz     loc_7FF697AD50FE"
+    ],
+    [
+      140697083398512,
+      "mov     r8d, [rsp+1C8h+var_15C]"
+    ],
+    [
+      140697083398517,
+      "mov     rcx, [rsp+1C8h+var_48]"
+    ],
+    [
+      140697083398525,
+      "xor     edx, edx"
+    ],
+    [
+      140697083398527,
+      "call    sub_7FF697ADFAE0"
+    ],
+    [
+      140697083398532,
+      "mov     rax, [rsp+1C8h+var_168]"
+    ],
+    [
+      140697083398537,
+      "mov     rax, [rax]"
+    ],
+    [
+      140697083398540,
+      "mov     [rsp+1C8h+var_40], rax"
+    ],
+    [
+      140697083398548,
+      "mov     rcx, [rsp+1C8h+var_40]"
+    ],
+    [
+      140697083398556,
+      "mov     rax, [rsp+1C8h+var_150]"
+    ],
+    [
+      140697083398561,
+      "mov     dword ptr [rax], 0"
+    ],
+    [
+      140697083398567,
+      "call    cs:wmp1_context_free"
+    ],
+    [
+      140697083398573,
+      "mov     rax, [rsp+1C8h+var_168]"
+    ],
+    [
+      140697083398578,
+      "mov     rcx, [rsp+1C8h+var_58]"
+    ],
+    [
+      140697083398586,
+      "mov     [rax], rcx"
+    ],
+    [
+      140697083398589,
+      "mov     rax, [rsp+1C8h+var_150]"
+    ],
+    [
+      140697083398594,
+      "mov     ecx, [rsp+1C8h+var_17C]"
+    ],
+    [
+      140697083398598,
+      "mov     [rax], ecx"
+    ],
+    [
+      140697083398600,
+      "mov     eax, [rsp+1C8h+var_198]"
+    ],
+    [
+      140697083398604,
+      "mov     rcx, [rsp+1C8h+var_60]"
+    ],
+    [
+      140697083398612,
+      "mov     [rcx], eax"
+    ],
+    [
+      140697083398614,
+      "mov     [rsp+1C8h+var_1A0], 125E27B5h"
+    ],
+    [
+      140697083398622,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083398627,
+      "cmp     eax, 7985CB42h"
+    ],
+    [
+      140697083398632,
+      "jnz     loc_7FF697AD51A4"
+    ],
+    [
+      140697083398638,
+      "mov     eax, [rsp+1C8h+var_18C]"
+    ],
+    [
+      140697083398642,
+      "mov     ecx, eax"
+    ],
+    [
+      140697083398644,
+      "not     ecx"
+    ],
+    [
+      140697083398646,
+      "mov     edx, [rsp+1C8h+var_160]"
+    ],
+    [
+      140697083398650,
+      "and     ecx, edx"
+    ],
+    [
+      140697083398652,
+      "and     edx, eax"
+    ],
+    [
+      140697083398654,
+      "lea     eax, [rdx+rdx*8]"
+    ],
+    [
+      140697083398657,
+      "cmp     esp, 2200h"
+    ],
+    [
+      140697083398663,
+      "jmp     short loc_7FF697AD4A0C"
+    ],
+    [
+      140697083398668,
+      "jz      short loc_7FF697AD4A16"
+    ],
+    [
+      140697083398670,
+      "jmp     short loc_7FF697AD4A16"
+    ],
+    [
+      140697083398678,
+      "push    rax"
+    ],
+    [
+      140697083398679,
+      "nop"
+    ],
+    [
+      140697083398680,
+      "inc     eax"
+    ],
+    [
+      140697083398682,
+      "pop     rax"
+    ],
+    [
+      140697083398683,
+      "test    edi, 9AC92739h"
+    ],
+    [
+      140697083398689,
+      "jmp     short loc_7FF697AD4A2E"
+    ],
+    [
+      140697083398702,
+      "jmp     short loc_7FF697AD4A56"
+    ],
+    [
+      140697083398742,
+      "lea     eax, [rax+rcx*4]"
+    ],
+    [
+      140697083398745,
+      "sub     eax, [rsp+1C8h+var_114]"
+    ],
+    [
+      140697083398752,
+      "sub     eax, [rsp+1C8h+var_118]"
+    ],
+    [
+      140697083398759,
+      "mov     [rsp+1C8h+var_110], eax"
+    ],
+    [
+      140697083398766,
+      "mov     [rsp+1C8h+var_1A0], 3E181046h"
+    ],
+    [
+      140697083398774,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083398779,
+      "cmp     eax, 0FF8CF20h"
+    ],
+    [
+      140697083398784,
+      "jnz     loc_7FF697AD525E"
+    ],
+    [
+      140697083398790,
+      "stc"
+    ],
+    [
+      140697083398791,
+      "jmp     short loc_7FF697AD4AEA"
+    ],
+    [
+      140697083398890,
+      "mov     eax, [rsp+1C8h+var_108]"
+    ],
+    [
+      140697083398897,
+      "lea     ecx, [rax+rax*4]"
+    ],
+    [
+      140697083398900,
+      "lea     eax, [rax+rcx*2]"
+    ],
+    [
+      140697083398903,
+      "mov     [rsp+1C8h+var_104], eax"
+    ],
+    [
+      140697083398910,
+      "jmp     short loc_7FF697AD4B41"
+    ],
+    [
+      140697083398977,
+      "mov     [rsp+1C8h+var_1A0], 300847CAh"
+    ],
+    [
+      140697083398985,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083398990,
+      "cmp     eax, 2E414CBAh"
+    ],
+    [
+      140697083398995,
+      "jz      loc_7FF697AD4316"
+    ],
+    [
+      140697083399001,
+      "mov     eax, [rsp+1C8h+var_170]"
+    ],
+    [
+      140697083399005,
+      "xor     eax, [rsp+1C8h+var_188]"
+    ],
+    [
+      140697083399009,
+      "add     eax, eax"
+    ],
+    [
+      140697083399011,
+      "mov     [rsp+1C8h+var_100], eax"
+    ],
+    [
+      140697083399018,
+      "cmp     esp, 0D00h"
+    ],
+    [
+      140697083399024,
+      "jmp     short loc_7FF697AD4B75"
+    ],
+    [
+      140697083399029,
+      "jnz     short loc_7FF697AD4B7F"
+    ],
+    [
+      140697083399031,
+      "jmp     short loc_7FF697AD4B7F"
+    ],
+    [
+      140697083399039,
+      "push    rax"
+    ],
+    [
+      140697083399040,
+      "nop"
+    ],
+    [
+      140697083399041,
+      "inc     eax"
+    ],
+    [
+      140697083399043,
+      "pop     rax"
+    ],
+    [
+      140697083399044,
+      "test    bl, ch"
+    ],
+    [
+      140697083399046,
+      "jmp     short loc_7FF697AD4BB1"
+    ],
+    [
+      140697083399089,
+      "jmp     short loc_7FF697AD4BB4"
+    ],
+    [
+      140697083399092,
+      "mov     eax, [rsp+1C8h+var_188]"
+    ],
+    [
+      140697083399096,
+      "not     eax"
+    ],
+    [
+      140697083399098,
+      "and     eax, [rsp+1C8h+var_170]"
+    ],
+    [
+      140697083399102,
+      "mov     [rsp+1C8h+var_FC], eax"
+    ],
+    [
+      140697083399109,
+      "mov     [rsp+1C8h+var_1A0], 5415E4F1h"
+    ],
+    [
+      140697083399117,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083399122,
+      "cmp     eax, 15C81D16h"
+    ],
+    [
+      140697083399127,
+      "jnz     loc_7FF697AD5362"
+    ],
+    [
+      140697083399133,
+      "mov     rax, [rsp+1C8h+var_48]"
+    ],
+    [
+      140697083399141,
+      "mov     [rsp+1C8h+var_40], rax"
+    ],
+    [
+      140697083399149,
+      "mov     [rsp+1C8h+var_1A0], 5180CE69h"
+    ],
+    [
+      140697083399157,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083399162,
+      "cmp     eax, 30F63C2Fh"
+    ],
+    [
+      140697083399167,
+      "jnz     loc_7FF697AD536F"
+    ],
+    [
+      140697083399173,
+      "mov     eax, [rsp+1C8h+var_18C]"
+    ],
+    [
+      140697083399177,
+      "add     eax, ebp"
+    ],
+    [
+      140697083399179,
+      "mov     [rsp+1C8h+var_194], eax"
+    ],
+    [
+      140697083399183,
+      "xor     eax, 0EDF573CCh"
+    ],
+    [
+      140697083399188,
+      "mov     [rsp+1C8h+var_188], eax"
+    ],
+    [
+      140697083399192,
+      "lea     ecx, [rax-51C3DC59h]"
+    ],
+    [
+      140697083399198,
+      "mov     [rsp+1C8h+var_144], ecx"
+    ],
+    [
+      140697083399205,
+      "add     eax, 52903BFCh"
+    ],
+    [
+      140697083399210,
+      "xor     eax, 0A176D0F7h"
+    ],
+    [
+      140697083399215,
+      "mov     [rsp+1C8h+var_140], eax"
+    ],
+    [
+      140697083399222,
+      "mov     [rsp+1C8h+var_1A0], 6984F0C1h"
+    ],
+    [
+      140697083399230,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083399235,
+      "mov     eax, [rsp+1C8h+var_7C]"
+    ],
+    [
+      140697083399242,
+      "not     eax"
+    ],
+    [
+      140697083399244,
+      "add     eax, eax"
+    ],
+    [
+      140697083399246,
+      "mov     [rsp+1C8h+var_78], eax"
+    ],
+    [
+      140697083399253,
+      "mov     eax, [rsp+1C8h+var_154]"
+    ],
+    [
+      140697083399257,
+      "and     eax, [rsp+1C8h+var_180]"
+    ],
+    [
+      140697083399261,
+      "mov     [rsp+1C8h+var_74], eax"
+    ],
+    [
+      140697083399268,
+      "mov     [rsp+1C8h+var_1A0], 648FA096h"
+    ],
+    [
+      140697083399276,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083399281,
+      "mov     eax, [rsp+1C8h+var_110]"
+    ],
+    [
+      140697083399288,
+      "add     eax, [rsp+1C8h+var_11C]"
+    ],
+    [
+      140697083399295,
+      "sub     eax, [rsp+1C8h+var_144]"
+    ],
+    [
+      140697083399302,
+      "mov     [rsp+1C8h+var_170], eax"
+    ],
+    [
+      140697083399306,
+      "mov     ecx, [rsp+1C8h+var_188]"
+    ],
+    [
+      140697083399310,
+      "mov     edx, ecx"
+    ],
+    [
+      140697083399312,
+      "not     edx"
+    ],
+    [
+      140697083399314,
+      "or      edx, eax"
+    ],
+    [
+      140697083399316,
+      "not     edx"
+    ],
+    [
+      140697083399318,
+      "add     edx, edx"
+    ],
+    [
+      140697083399320,
+      "lea     edx, [rdx+rdx*4]"
+    ],
+    [
+      140697083399323,
+      "mov     [rsp+1C8h+var_10C], edx"
+    ],
+    [
+      140697083399330,
+      "or      eax, ecx"
+    ],
+    [
+      140697083399332,
+      "mov     [rsp+1C8h+var_108], eax"
+    ],
+    [
+      140697083399339,
+      "mov     [rsp+1C8h+var_1A0], 0FF8CF20h"
+    ],
+    [
+      140697083399347,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083399352,
+      "mov     eax, [rsp+1C8h+var_84]"
+    ],
+    [
+      140697083399359,
+      "sub     eax, [rsp+1C8h+var_88]"
+    ],
+    [
+      140697083399366,
+      "add     eax, [rsp+1C8h+var_90]"
+    ],
+    [
+      140697083399373,
+      "sub     eax, [rsp+1C8h+var_94]"
+    ],
+    [
+      140697083399380,
+      "sub     eax, [rsp+1C8h+var_98]"
+    ],
+    [
+      140697083399387,
+      "mov     [rsp+1C8h+var_80], eax"
+    ],
+    [
+      140697083399394,
+      "mov     [rsp+1C8h+var_1A0], 0B2EF82Bh"
+    ],
+    [
+      140697083399402,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083399407,
+      "mov     [rsp+1C8h+var_1A0], 2E414CBAh"
+    ],
+    [
+      140697083399415,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083399420,
+      "mov     eax, [rsp+1C8h+var_B0]"
+    ],
+    [
+      140697083399427,
+      "add     eax, eax"
+    ],
+    [
+      140697083399429,
+      "lea     eax, [rax+rax*2]"
+    ],
+    [
+      140697083399432,
+      "mov     ecx, [rsp+1C8h+var_180]"
+    ],
+    [
+      140697083399436,
+      "mov     edx, ecx"
+    ],
+    [
+      140697083399438,
+      "xor     edx, 5041C1D2h"
+    ],
+    [
+      140697083399444,
+      "mov     r8d, ecx"
+    ],
+    [
+      140697083399447,
+      "and     r8d, 2FBE3E2Dh"
+    ],
+    [
+      140697083399454,
+      "lea     r8d, [r8+r8*2]"
+    ],
+    [
+      140697083399458,
+      "add     r8d, r8d"
+    ],
+    [
+      140697083399461,
+      "and     ecx, 5041C1D2h"
+    ],
+    [
+      140697083399467,
+      "lea     ecx, [rcx+rcx*2]"
+    ],
+    [
+      140697083399470,
+      "jz      short loc_7FF697AD4D6C"
+    ],
+    [
+      140697083399472,
+      "jmp     short loc_7FF697AD4D6C"
+    ],
+    [
+      140697083399532,
+      "lea     ecx, [r8+rcx*2]"
+    ],
+    [
+      140697083399536,
+      "add     ecx, edx"
+    ],
+    [
+      140697083399538,
+      "sub     ecx, eax"
+    ],
+    [
+      140697083399540,
+      "mov     [rsp+1C8h+var_AC], ecx"
+    ],
+    [
+      140697083399547,
+      "mov     [rsp+1C8h+var_1A0], 51A4ACB8h"
+    ],
+    [
+      140697083399555,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083399560,
+      "mov     eax, [rsp+1C8h+var_190]"
+    ],
+    [
+      140697083399564,
+      "and     eax, [rsp+1C8h+var_184]"
+    ],
+    [
+      140697083399568,
+      "add     eax, eax"
+    ],
+    [
+      140697083399570,
+      "mov     [rsp+1C8h+var_84], eax"
+    ],
+    [
+      140697083399577,
+      "mov     [rsp+1C8h+var_1A0], 582CA8FFh"
+    ],
+    [
+      140697083399585,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083399590,
+      "mov     ecx, [rsp+1C8h+var_198]"
+    ],
+    [
+      140697083399594,
+      "call    cs:wmp1_context_allocator"
+    ],
+    [
+      140697083399600,
+      "mov     [rsp+1C8h+var_58], rax"
+    ],
+    [
+      140697083399608,
+      "cmp     esp, 1900h"
+    ],
+    [
+      140697083399614,
+      "jmp     short loc_7FF697AD4DC3"
+    ],
+    [
+      140697083399619,
+      "jz      short loc_7FF697AD4DCD"
+    ],
+    [
+      140697083399621,
+      "jmp     short loc_7FF697AD4DCD"
+    ],
+    [
+      140697083399629,
+      "push    rax"
+    ],
+    [
+      140697083399630,
+      "nop"
+    ],
+    [
+      140697083399631,
+      "inc     eax"
+    ],
+    [
+      140697083399633,
+      "pop     rax"
+    ],
+    [
+      140697083399634,
+      "jz      short loc_7FF697AD4DDC"
+    ],
+    [
+      140697083399636,
+      "xchg    dh, dh"
+    ],
+    [
+      140697083399638,
+      "jmp     short loc_7FF697AD4E0A"
+    ],
+    [
+      140697083399644,
+      "jmp     short loc_7FF697AD4E1F"
+    ],
+    [
+      140697083399690,
+      "jmp     short loc_7FF697AD4E14"
+    ],
+    [
+      140697083399700,
+      "nop"
+    ],
+    [
+      140697083399701,
+      "jmp     short loc_7FF697AD4E26"
+    ],
+    [
+      140697083399711,
+      "jmp     short loc_7FF697AD4E26"
+    ],
+    [
+      140697083399718,
+      "test    rax, rax"
+    ],
+    [
+      140697083399721,
+      "jz      loc_7FF697AD5381"
+    ],
+    [
+      140697083399727,
+      "mov     rax, [rsp+1C8h+var_150]"
+    ],
+    [
+      140697083399732,
+      "mov     eax, [rax]"
+    ],
+    [
+      140697083399734,
+      "mov     ecx, [rsp+1C8h+var_198]"
+    ],
+    [
+      140697083399738,
+      "cmp     ecx, eax"
+    ],
+    [
+      140697083399740,
+      "cmovb   eax, ecx"
+    ],
+    [
+      140697083399743,
+      "mov     [rsp+1C8h+var_17C], eax"
+    ],
+    [
+      140697083399747,
+      "mov     eax, cs:dword_7FF697BBA7F8"
+    ],
+    [
+      140697083399753,
+      "mov     [rsp+1C8h+var_148], eax"
+    ],
+    [
+      140697083399760,
+      "xor     eax, 224CA30h"
+    ],
+    [
+      140697083399765,
+      "mov     [rsp+1C8h+var_178], eax"
+    ],
+    [
+      140697083399769,
+      "add     eax, 5E76AA34h"
+    ],
+    [
+      140697083399774,
+      "mov     [rsp+1C8h+var_18C], eax"
+    ],
+    [
+      140697083399778,
+      "mov     [rsp+1C8h+var_1A0], 30F63C2Fh"
+    ],
+    [
+      140697083399786,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083399791,
+      "mov     eax, [rsp+1C8h+var_C8]"
+    ],
+    [
+      140697083399798,
+      "sub     eax, [rsp+1C8h+var_CC]"
+    ],
+    [
+      140697083399805,
+      "add     eax, [rsp+1C8h+var_D4]"
+    ],
+    [
+      140697083399812,
+      "add     eax, [rsp+1C8h+var_DC]"
+    ],
+    [
+      140697083399819,
+      "sub     eax, [rsp+1C8h+var_E4]"
+    ],
+    [
+      140697083399826,
+      "mov     [rsp+1C8h+var_C4], eax"
+    ],
+    [
+      140697083399833,
+      "mov     [rsp+1C8h+var_1A0], 757ED40Eh"
+    ],
+    [
+      140697083399841,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083399846,
+      "mov     eax, [rsp+1C8h+var_148]"
+    ],
+    [
+      140697083399853,
+      "add     eax, [rsp+1C8h+var_140]"
+    ],
+    [
+      140697083399860,
+      "mov     ecx, 7AB495B1h"
+    ],
+    [
+      140697083399865,
+      "sub     ecx, eax"
+    ],
+    [
+      140697083399867,
+      "mov     [rsp+1C8h+var_174], ecx"
+    ],
+    [
+      140697083399871,
+      "not     ecx"
+    ],
+    [
+      140697083399873,
+      "jl      short loc_7FF697AD4F31"
+    ],
+    [
+      140697083399875,
+      "sar     bh, 0"
+    ],
+    [
+      140697083399878,
+      "jmp     short loc_7FF697AD4F31"
+    ],
+    [
+      140697083399985,
+      "mov     [rsp+1C8h+var_13C], ecx"
+    ],
+    [
+      140697083399992,
+      "mov     eax, [rsp+1C8h+var_178]"
+    ],
+    [
+      140697083399996,
+      "not     eax"
+    ],
+    [
+      140697083399998,
+      "mov     [rsp+1C8h+var_138], eax"
+    ],
+    [
+      140697083400005,
+      "mov     [rsp+1C8h+var_1A0], 5E219C98h"
+    ],
+    [
+      140697083400013,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400018,
+      "mov     rax, [rsp+1C8h+var_168]"
+    ],
+    [
+      140697083400023,
+      "lea     rcx, [rax+8]"
+    ],
+    [
+      140697083400027,
+      "mov     [rsp+1C8h+var_150], rcx"
+    ],
+    [
+      140697083400032,
+      "lea     rdx, [rax+0Ch]"
+    ],
+    [
+      140697083400036,
+      "mov     ecx, [rsp+1C8h+var_198]"
+    ],
+    [
+      140697083400040,
+      "cmp     ecx, [rax+8]"
+    ],
+    [
+      140697083400043,
+      "mov     [rsp+1C8h+var_60], rdx"
+    ],
+    [
+      140697083400051,
+      "jnb     loc_7FF697AD532E"
+    ],
+    [
+      140697083400057,
+      "cmp     ecx, [rax+0Ch]"
+    ],
+    [
+      140697083400060,
+      "jnb     loc_7FF697AD532E"
+    ],
+    [
+      140697083400066,
+      "mov     [rsp+1C8h+var_1A0], 32156904h"
+    ],
+    [
+      140697083400074,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400079,
+      "mov     eax, [rsp+1C8h+var_158]"
+    ],
+    [
+      140697083400083,
+      "add     eax, r14d"
+    ],
+    [
+      140697083400086,
+      "mov     [rsp+1C8h+var_180], eax"
+    ],
+    [
+      140697083400090,
+      "mov     ecx, eax"
+    ],
+    [
+      140697083400092,
+      "not     ecx"
+    ],
+    [
+      140697083400094,
+      "and     ecx, 2FBE3E2Dh"
+    ],
+    [
+      140697083400100,
+      "add     ecx, ecx"
+    ],
+    [
+      140697083400102,
+      "lea     ecx, [rcx+rcx*2]"
+    ],
+    [
+      140697083400105,
+      "mov     [rsp+1C8h+var_B4], ecx"
+    ],
+    [
+      140697083400112,
+      "or      eax, 0AFBE3E2Dh"
+    ],
+    [
+      140697083400117,
+      "mov     [rsp+1C8h+var_B0], eax"
+    ],
+    [
+      140697083400124,
+      "mov     [rsp+1C8h+var_1A0], 0E3063Fh"
+    ],
+    [
+      140697083400132,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400137,
+      "mov     eax, [rsp+1C8h+var_174]"
+    ],
+    [
+      140697083400141,
+      "or      eax, [rsp+1C8h+var_138]"
+    ],
+    [
+      140697083400148,
+      "not     eax"
+    ],
+    [
+      140697083400150,
+      "mov     [rsp+1C8h+var_134], eax"
+    ],
+    [
+      140697083400157,
+      "mov     [rsp+1C8h+var_1A0], 231202E3h"
+    ],
+    [
+      140697083400165,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400170,
+      "jle     short loc_7FF697AD5029"
+    ],
+    [
+      140697083400172,
+      "xchg    ah, ah"
+    ],
+    [
+      140697083400174,
+      "jmp     short loc_7FF697AD5029"
+    ],
+    [
+      140697083400233,
+      "cmp     [rsp+1C8h+var_199], 0"
+    ],
+    [
+      140697083400238,
+      "jz      loc_7FF697AD49AD"
+    ],
+    [
+      140697083400244,
+      "mov     rax, [rsp+1C8h+var_60]"
+    ],
+    [
+      140697083400252,
+      "mov     eax, [rax]"
+    ],
+    [
+      140697083400254,
+      "mov     [rsp+1C8h+var_15C], eax"
+    ],
+    [
+      140697083400258,
+      "jnp     short loc_7FF697AD506E"
+    ],
+    [
+      140697083400260,
+      "sar     cl, 0"
+    ],
+    [
+      140697083400263,
+      "jmp     short loc_7FF697AD5057"
+    ],
+    [
+      140697083400279,
+      "jmp     short loc_7FF697AD5085"
+    ],
+    [
+      140697083400302,
+      "jmp     short loc_7FF697AD5085"
+    ],
+    [
+      140697083400325,
+      "mov     [rsp+1C8h+var_1A0], 606AD31Eh"
+    ],
+    [
+      140697083400333,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400338,
+      "mov     eax, [rsp+1C8h+var_120]"
+    ],
+    [
+      140697083400345,
+      "not     eax"
+    ],
+    [
+      140697083400347,
+      "add     eax, eax"
+    ],
+    [
+      140697083400349,
+      "lea     eax, [rax+rax*4]"
+    ],
+    [
+      140697083400352,
+      "mov     [rsp+1C8h+var_11C], eax"
+    ],
+    [
+      140697083400359,
+      "mov     eax, [rsp+1C8h+var_18C]"
+    ],
+    [
+      140697083400363,
+      "lea     ecx, [rax+rax]"
+    ],
+    [
+      140697083400366,
+      "lea     ecx, [rcx+rcx*2]"
+    ],
+    [
+      140697083400369,
+      "or      eax, [rsp+1C8h+var_160]"
+    ],
+    [
+      140697083400373,
+      "mov     [rsp+1C8h+var_118], ecx"
+    ],
+    [
+      140697083400380,
+      "lea     eax, [rax+rax*2]"
+    ],
+    [
+      140697083400383,
+      "mov     [rsp+1C8h+var_114], eax"
+    ],
+    [
+      140697083400390,
+      "mov     [rsp+1C8h+var_1A0], 7985CB42h"
+    ],
+    [
+      140697083400398,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400403,
+      "mov     eax, [rsp+1C8h+var_D8]"
+    ],
+    [
+      140697083400410,
+      "lea     eax, [rax+rax*2]"
+    ],
+    [
+      140697083400413,
+      "mov     [rsp+1C8h+var_D4], eax"
+    ],
+    [
+      140697083400420,
+      "mov     eax, [rsp+1C8h+var_194]"
+    ],
+    [
+      140697083400424,
+      "not     eax"
+    ],
+    [
+      140697083400426,
+      "mov     [rsp+1C8h+var_D0], eax"
+    ],
+    [
+      140697083400433,
+      "mov     [rsp+1C8h+var_1A0], 4C05F6A7h"
+    ],
+    [
+      140697083400441,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400446,
+      "mov     eax, [rsp+1C8h+var_74]"
+    ],
+    [
+      140697083400453,
+      "not     eax"
+    ],
+    [
+      140697083400455,
+      "test    eax, 54F4211Fh"
+    ],
+    [
+      140697083400460,
+      "jmp     short loc_7FF697AD517F"
+    ],
+    [
+      140697083400575,
+      "add     eax, eax"
+    ],
+    [
+      140697083400577,
+      "mov     [rsp+1C8h+var_70], eax"
+    ],
+    [
+      140697083400584,
+      "mov     eax, [rsp+1C8h+var_154]"
+    ],
+    [
+      140697083400588,
+      "xor     eax, [rsp+1C8h+var_180]"
+    ],
+    [
+      140697083400592,
+      "mov     [rsp+1C8h+var_6C], eax"
+    ],
+    [
+      140697083400599,
+      "mov     [rsp+1C8h+var_1A0], 4F2BA06h"
+    ],
+    [
+      140697083400607,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400612,
+      "mov     eax, [rsp+1C8h+var_184]"
+    ],
+    [
+      140697083400616,
+      "mov     ecx, [rsp+1C8h+var_190]"
+    ],
+    [
+      140697083400620,
+      "and     ecx, eax"
+    ],
+    [
+      140697083400622,
+      "not     ecx"
+    ],
+    [
+      140697083400624,
+      "lea     ecx, [rcx+rcx*2]"
+    ],
+    [
+      140697083400627,
+      "mov     [rsp+1C8h+var_90], ecx"
+    ],
+    [
+      140697083400634,
+      "not     eax"
+    ],
+    [
+      140697083400636,
+      "mov     [rsp+1C8h+var_8C], eax"
+    ],
+    [
+      140697083400643,
+      "mov     [rsp+1C8h+var_1A0], 66D91F80h"
+    ],
+    [
+      140697083400651,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400656,
+      "mov     eax, [rsp+1C8h+var_68]"
+    ],
+    [
+      140697083400663,
+      "sub     eax, [rsp+1C8h+var_78]"
+    ],
+    [
+      140697083400670,
+      "xor     eax, [rsp+1C8h+var_C0]"
+    ],
+    [
+      140697083400677,
+      "add     eax, [rsp+1C8h+var_158]"
+    ],
+    [
+      140697083400681,
+      "sub     eax, [rsp+1C8h+var_BC]"
+    ],
+    [
+      140697083400688,
+      "mov     [rsp+1C8h+var_64], eax"
+    ],
+    [
+      140697083400695,
+      "mov     [rsp+1C8h+var_1A0], 68BC2CF3h"
+    ],
+    [
+      140697083400703,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400708,
+      "mov     rax, [rbx]"
+    ],
+    [
+      140697083400711,
+      "mov     [rsp+1C8h+var_168], rax"
+    ],
+    [
+      140697083400716,
+      "mov     eax, [rbx+8]"
+    ],
+    [
+      140697083400719,
+      "mov     [rsp+1C8h+var_198], eax"
+    ],
+    [
+      140697083400723,
+      "mov     [rsp+1C8h+var_1A0], 205E8EA9h"
+    ],
+    [
+      140697083400731,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400736,
+      "mov     eax, [rsp+1C8h+var_80]"
+    ],
+    [
+      140697083400743,
+      "add     eax, [rsp+1C8h+var_A4]"
+    ],
+    [
+      140697083400750,
+      "add     eax, [rsp+1C8h+var_A8]"
+    ],
+    [
+      140697083400757,
+      "mov     [rsp+1C8h+var_154], eax"
+    ],
+    [
+      140697083400761,
+      "or      eax, [rsp+1C8h+var_180]"
+    ],
+    [
+      140697083400765,
+      "mov     [rsp+1C8h+var_7C], eax"
+    ],
+    [
+      140697083400772,
+      "mov     [rsp+1C8h+var_1A0], 1BA2744Dh"
+    ],
+    [
+      140697083400780,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400785,
+      "mov     [rsp+1C8h+var_1A0], 38A75AEh"
+    ],
+    [
+      140697083400793,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400798,
+      "mov     rax, [rsp+1C8h+var_50]"
+    ],
+    [
+      140697083400806,
+      "movzx   eax, byte ptr [rax]"
+    ],
+    [
+      140697083400809,
+      "mov     [rsp+1C8h+var_199], al"
+    ],
+    [
+      140697083400813,
+      "mov     [rsp+1C8h+var_1A0], 741E32D6h"
+    ],
+    [
+      140697083400821,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400826,
+      "mov     eax, [rsp+1C8h+var_190]"
+    ],
+    [
+      140697083400830,
+      "or      eax, [rsp+1C8h+var_A0]"
+    ],
+    [
+      140697083400837,
+      "not     eax"
+    ],
+    [
+      140697083400839,
+      "mov     [rsp+1C8h+var_9C], eax"
+    ],
+    [
+      140697083400846,
+      "mov     [rsp+1C8h+var_1A0], 15E6AF7Ch"
+    ],
+    [
+      140697083400854,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400859,
+      "mov     eax, [rsp+1C8h+var_15C]"
+    ],
+    [
+      140697083400863,
+      "mov     rcx, [rsp+1C8h+var_168]"
+    ],
+    [
+      140697083400868,
+      "mov     rcx, [rcx]"
+    ],
+    [
+      140697083400871,
+      "mov     [rsp+1C8h+var_48], rcx"
+    ],
+    [
+      140697083400879,
+      "cmp     eax, [rsp+1C8h+var_64]"
+    ],
+    [
+      140697083400886,
+      "jnz     loc_7FF697AD5348"
+    ],
+    [
+      140697083400892,
+      "mov     [rsp+1C8h+var_1A0], 15C81D16h"
+    ],
+    [
+      140697083400900,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400905,
+      "mov     rax, [rsp+1C8h+var_168]"
+    ],
+    [
+      140697083400910,
+      "mov     rax, [rax]"
+    ],
+    [
+      140697083400913,
+      "mov     [rsp+1C8h+var_38], rax"
+    ],
+    [
+      140697083400921,
+      "test    rax, rax"
+    ],
+    [
+      140697083400924,
+      "jz      short loc_7FF697AD5355"
+    ],
+    [
+      140697083400926,
+      "mov     [rsp+1C8h+var_1A0], 32DB8320h"
+    ],
+    [
+      140697083400934,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083400939,
+      "mov     eax, [rsp+1C8h+var_F4]"
+    ],
+    [
+      140697083400946,
+      "sub     eax, [rsp+1C8h+var_F8]"
+    ],
+    [
+      140697083400953,
+      "sub     eax, [rsp+1C8h+var_100]"
+    ],
+    [
+      140697083400960,
+      "add     eax, [rsp+1C8h+var_104]"
+    ],
+    [
+      140697083400967,
+      "sub     eax, [rsp+1C8h+var_10C]"
+    ],
+    [
+      140697083400974,
+      "mov     [rsp+1C8h+var_16C], eax"
+    ],
+    [
+      140697083400978,
+      "mov     ecx, [rsp+1C8h+var_194]"
+    ],
+    [
+      140697083400982,
+      "not     ecx"
+    ],
+    [
+      140697083400984,
+      "or      ecx, eax"
+    ],
+    [
+      140697083400986,
+      "mov     [rsp+1C8h+var_F0], ecx"
+    ],
+    [
+      140697083400993,
+      "mov     [rsp+1C8h+var_1A0], 6AC13008h"
+    ],
+    [
+      140697083401001,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083401006,
+      "mov     [rsp+1C8h+var_1A0], 6662EFCBh"
+    ],
+    [
+      140697083401014,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083401019,
+      "mov     [rsp+1C8h+var_1A0], 5465C08Ah"
+    ],
+    [
+      140697083401027,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083401032,
+      "mov     [rsp+1C8h+var_1A0], 648014D1h"
+    ],
+    [
+      140697083401040,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083401045,
+      "mov     [rsp+1C8h+var_1A0], 71511026h"
+    ],
+    [
+      140697083401053,
+      "jmp     loc_7FF697AD43A0"
+    ],
+    [
+      140697083401058,
+      "mov     rax, [rsp+1C8h+var_50]"
+    ],
+    [
+      140697083401066,
+      "mov     byte ptr [rax], 1"
+    ],
+    [
+      140697083401069,
+      "jmp     short loc_7FF697AD537A"
+    ],
+    [
+      140697083401071,
+      "mov     eax, [rsp+1C8h+var_198]"
+    ],
+    [
+      140697083401075,
+      "mov     rcx, [rsp+1C8h+var_150]"
+    ],
+    [
+      140697083401080,
+      "mov     [rcx], eax"
+    ],
+    [
+      140697083401082,
+      "mov     [rsp+1C8h+var_19A], 1"
+    ],
+    [
+      140697083401087,
+      "jmp     short loc_7FF697AD5386"
+    ],
+    [
+      140697083401089,
+      "mov     [rsp+1C8h+var_19A], 0"
+    ],
+    [
+      140697083401094,
+      "movzx   eax, [rsp+1C8h+var_19A]"
+    ],
+    [
+      140697083401099,
+      "add     rsp, 198h"
+    ],
+    [
+      140697083401106,
+      "pop     rbx"
+    ],
+    [
+      140697083401107,
+      "pop     rbp"
+    ],
+    [
+      140697083401108,
+      "pop     rdi"
+    ],
+    [
+      140697083401109,
+      "pop     rsi"
+    ],
+    [
+      140697083401110,
+      "pop     r14"
+    ],
+    [
+      140697083401112,
+      "pop     r15"
+    ],
+    [
+      140697083401114,
+      "retn"
+    ]
+  ],
+  "constants": {
+    "BBA7F8": 43275663,
+    "BBA7FC": 2980469234,
+    "copy_skip_value": 0,
+    "wipe_skip_value": 0,
+    "expressions": [
+      {
+        "name": "v53",
+        "expression": "-1",
+        "value": 4294967295,
+        "width": 32
+      },
+      {
+        "name": "v59",
+        "expression": "dword_7FF697BBA7FC",
+        "value": 2980469234,
+        "width": 32
+      },
+      {
+        "name": "v12",
+        "expression": "dword_7FF697BBA7FC ^ 0x2187AFC3",
+        "value": 2418144817,
+        "width": 32
+      },
+      {
+        "name": "v60",
+        "expression": "(dword_7FF697BBA7FC ^ 0x2187AFC3) - 2070028069",
+        "value": 348116748,
+        "width": 32
+      },
+      {
+        "name": "v61",
+        "expression": "(dword_7FF697BBA7FC ^ 0x2187AFC3) - 1518679700",
+        "value": 899465117,
+        "width": 32
+      },
+      {
+        "name": "v22",
+        "expression": "v61 ^ 0x47ED0357",
+        "value": 1920056522,
+        "width": 32
+      },
+      {
+        "name": "v72",
+        "expression": "~v12",
+        "value": 1876822478,
+        "width": 32
+      },
+      {
+        "name": "v54",
+        "expression": "3 * v53",
+        "value": 4294967293,
+        "width": 32
+      },
+      {
+        "name": "v25",
+        "expression": "dword_7FF697BBA7F8",
+        "value": 43275663,
+        "width": 32
+      },
+      {
+        "name": "v15",
+        "expression": "dword_7FF697BBA7F8 ^ 0x224CA30",
+        "value": 11575231,
+        "width": 32
+      },
+      {
+        "name": "v10",
+        "expression": "(dword_7FF697BBA7F8 ^ 0x224CA30) + 1584835124",
+        "value": 1596410355,
+        "width": 32
+      },
+      {
+        "name": "v13",
+        "expression": "v22 - 73376599",
+        "value": 1846679923,
+        "width": 32
+      },
+      {
+        "name": "v62",
+        "expression": "6 * (~(v22 - 73376599) & 0x2FBE3E2D)",
+        "value": 168354888,
+        "width": 32
+      },
+      {
+        "name": "v63",
+        "expression": "(v22 - 73376599) | 0xAFBE3E2D",
+        "value": 4022222719,
+        "width": 32
+      },
+      {
+        "name": "v8",
+        "expression": "v10 + 337820549",
+        "value": 1934230904,
+        "width": 32
+      },
+      {
+        "name": "v11",
+        "expression": "(v10 + 337820549) ^ 0xEDF573CC",
+        "value": 2663347892,
+        "width": 32
+      },
+      {
+        "name": "v26",
+        "expression": "v11 - 1371790425",
+        "value": 1291557467,
+        "width": 32
+      },
+      {
+        "name": "v27",
+        "expression": "(v11 + 1385184252) ^ 0xA176D0F7",
+        "value": 1345937991,
+        "width": 32
+      },
+      {
+        "name": "v33",
+        "expression": "11 * v15",
+        "value": 127327541,
+        "width": 32
+      },
+      {
+        "name": "v64",
+        "expression": "(v13 ^ 0x5041C1D2) + 6 * (v13 & 0x2FBE3E2D) + 6 * (v13 & 0x5041C1D2) - 6 * v63",
+        "value": 877327449,
+        "width": 32
+      },
+      {
+        "name": "v65",
+        "expression": "v62 + v64",
+        "value": 1045682337,
+        "width": 32
+      },
+      {
+        "name": "v9",
+        "expression": "v61 + 2045234260",
+        "value": 2944699377,
+        "width": 32
+      },
+      {
+        "name": "v66",
+        "expression": "7 * ~(v61 + 2045234260)",
+        "value": 861940834,
+        "width": 32
+      },
+      {
+        "name": "v67",
+        "expression": "~v12",
+        "value": 1876822478,
+        "width": 32
+      },
+      {
+        "name": "v68",
+        "expression": "~(v67 | v9)",
+        "value": 270627840,
+        "width": 32
+      },
+      {
+        "name": "v70",
+        "expression": "10 * ~(v12 | v9)",
+        "value": 2206466188,
+        "width": 32
+      },
+      {
+        "name": "v37",
+        "expression": "6 * v10",
+        "value": 988527538,
+        "width": 32
+      },
+      {
+        "name": "v71",
+        "expression": "3 * ~(v12 & v9)",
+        "value": 2147383658,
+        "width": 32
+      },
+      {
+        "name": "v55",
+        "expression": "~v8",
+        "value": 2360736391,
+        "width": 32
+      },
+      {
+        "name": "v16",
+        "expression": "2058655153 - (v27 + v25)",
+        "value": 669441499,
+        "width": 32
+      },
+      {
+        "name": "v28",
+        "expression": "~v16",
+        "value": 3625525796,
+        "width": 32
+      },
+      {
+        "name": "v29",
+        "expression": "~v15",
+        "value": 4283392064,
+        "width": 32
+      },
+      {
+        "name": "v73",
+        "expression": "2 * (v72 & v9)",
+        "value": 1594364800,
+        "width": 32
+      },
+      {
+        "name": "v74",
+        "expression": "2 * (v12 & v9)",
+        "value": 66658,
+        "width": 32
+      },
+      {
+        "name": "v32",
+        "expression": "~(v15 | v16)",
+        "value": 3624476672,
+        "width": 32
+      },
+      {
+        "name": "v34",
+        "expression": "v16 & ~v15",
+        "value": 658915392,
+        "width": 32
+      },
+      {
+        "name": "v69",
+        "expression": "9 * v68",
+        "value": 2435650560,
+        "width": 32
+      },
+      {
+        "name": "v75",
+        "expression": "v71 + v74 - v73 - v70 - v69",
+        "value": 205936064,
+        "width": 32
+      },
+      {
+        "name": "v30",
+        "expression": "~(v29 | v16)",
+        "value": 1049124,
+        "width": 32
+      },
+      {
+        "name": "v31",
+        "expression": "11 * v30",
+        "value": 11540364,
+        "width": 32
+      },
+      {
+        "name": "v23",
+        "expression": "v65 + v66 + v75",
+        "value": 2113559235,
+        "width": 32
+      },
+      {
+        "name": "v76",
+        "expression": "v13 | v23",
+        "value": 2147113971,
+        "width": 32
+      },
+      {
+        "name": "v80",
+        "expression": "v13 ^ v23",
+        "value": 333988784,
+        "width": 32
+      },
+      {
+        "name": "v20",
+        "expression": "v28 + v33 + v34 - 11 * (v15 & v16) - v32 - v31",
+        "value": 659964516,
+        "width": 32
+      },
+      {
+        "name": "v35",
+        "expression": "v20 | ~v10",
+        "value": 2816407148,
+        "width": 32
+      },
+      {
+        "name": "v77",
+        "expression": "2 * ~v76",
+        "value": 739352,
+        "width": 32
+      },
+      {
+        "name": "v78",
+        "expression": "v13 & v23",
+        "value": 1813125187,
+        "width": 32
+      },
+      {
+        "name": "v79",
+        "expression": "2 * ~v78",
+        "value": 668716920,
+        "width": 32
+      },
+      {
+        "name": "v36",
+        "expression": "10 * ~v35",
+        "value": 1900699582,
+        "width": 32
+      },
+      {
+        "name": "v38",
+        "expression": "3 * (v20 | v10)",
+        "value": 2120606693,
+        "width": 32
+      },
+      {
+        "name": "v39",
+        "expression": "9 * (v10 & v20) + 4 * (v20 & ~v10) - v38 - v37",
+        "value": 119974873,
+        "width": 32
+      },
+      {
+        "name": "v17",
+        "expression": "v36 + v39 - v26",
+        "value": 729116988,
+        "width": 32
+      },
+      {
+        "name": "v40",
+        "expression": "10 * ~(v17 | ~v11)",
+        "value": 3445899520,
+        "width": 32
+      },
+      {
+        "name": "v41",
+        "expression": "v11 | v17",
+        "value": 3221190588,
+        "width": 32
+      },
+      {
+        "name": "v43",
+        "expression": "2 * (v11 ^ v17)",
+        "value": 1804865296,
+        "width": 32
+      },
+      {
+        "name": "v44",
+        "expression": "v17 & ~v11",
+        "value": 557842696,
+        "width": 32
+      },
+      {
+        "name": "v42",
+        "expression": "11 * v41",
+        "value": 1073358100,
+        "width": 32
+      },
+      {
+        "name": "v81",
+        "expression": "v79 - v80",
+        "value": 334728136,
+        "width": 32
+      },
+      {
+        "name": "v45",
+        "expression": "8 * v44",
+        "value": 167774272,
+        "width": 32
+      },
+      {
+        "name": "v46",
+        "expression": "-11 * (v11 & v17)",
+        "value": 2410950084,
+        "width": 32
+      },
+      {
+        "name": "v18",
+        "expression": "v42 + v46 - v45 - v43 - v40",
+        "value": 2360736392,
+        "width": 32
+      },
+      {
+        "name": "v47",
+        "expression": "v18 | ~v8",
+        "value": 2360736399,
+        "width": 32
+      },
+      {
+        "name": "v82",
+        "expression": "v22 + (v59 ^ (v81 - v77)) - v60",
+        "value": 0,
+        "width": 32
+      },
+      {
+        "name": "v48",
+        "expression": "3 * ~v47",
+        "value": 1507725392,
+        "width": 32
+      },
+      {
+        "name": "v49",
+        "expression": "~(v8 | v18)",
+        "value": 7,
+        "width": 32
+      },
+      {
+        "name": "v56",
+        "expression": "2 * (v18 & v55)",
+        "value": 426505472,
+        "width": 32
+      },
+      {
+        "name": "v57",
+        "expression": "-2 * (v8 & v18)",
+        "value": 4294967280,
+        "width": 32
+      },
+      {
+        "name": "v50",
+        "expression": "4 * v49",
+        "value": 28,
+        "width": 32
+      },
+      {
+        "name": "v51",
+        "expression": "v18 & ~v8",
+        "value": 2360736384,
+        "width": 32
+      },
+      {
+        "name": "v52",
+        "expression": "~v51",
+        "value": 1934230911,
+        "width": 32
+      },
+      {
+        "name": "v58",
+        "expression": "v52 + v54 + v57 - v56 - v50",
+        "value": 1507725392,
+        "width": 32
+      }
+    ]
+  },
+  "limits": [
+    "Strict n<used AND n<capacity truncation; other branch allocates even equality.",
+    "Core local descriptor is buffer QWORD+0, used DWORD+8, capacity DWORD+C, ownership byte+10. Outer argument descriptor has descriptor pointer+0 and requested size DWORD+8.",
+    "Null/size/inconsistent-descriptor invariants and caller capacity policy not fully proved. Arbitrary global seeds and low-ESP cases unproved.",
+    "Context allocate/free implementations themselves not fully reversed.",
+    "Initial prototype-corrected F5 collapsed to a prefix before the restricted guard view; it was not accepted as a full helper."
+  ],
+  "saved": true,
+  "fill_primitive": {
+    "ea": 140697083443936,
+    "end": 140697083444109,
+    "old_name": "sub_7FF697ADFAE0",
+    "old_type": "__int64 __fastcall(__int64, unsigned __int8, unsigned __int64)",
+    "extent_source": "Existing leaf extent independently checked by bounded closed native graph and normal RET; no runtime-function entry for this stackless leaf.",
+    "native": [
+      [
+        140697083443936,
+        "mov     rax, rcx"
+      ],
+      [
+        140697083443939,
+        "test    r8, r8"
+      ],
+      [
+        140697083443942,
+        "jz      locret_7FF697ADFB8C"
+      ],
+      [
+        140697083443948,
+        "cmp     r8, 3"
+      ],
+      [
+        140697083443952,
+        "ja      short loc_7FF697ADFAF9"
+      ],
+      [
+        140697083443954,
+        "xor     ecx, ecx"
+      ],
+      [
+        140697083443956,
+        "jmp     loc_7FF697ADFB81"
+      ],
+      [
+        140697083443961,
+        "movzx   r9d, dl"
+      ],
+      [
+        140697083443965,
+        "cmp     r8, 20h ; ' '"
+      ],
+      [
+        140697083443969,
+        "jnb     short loc_7FF697ADFB07"
+      ],
+      [
+        140697083443971,
+        "xor     ecx, ecx"
+      ],
+      [
+        140697083443973,
+        "jmp     short loc_7FF697ADFB51"
+      ],
+      [
+        140697083443975,
+        "mov     rcx, r8"
+      ],
+      [
+        140697083443978,
+        "and     rcx, 0FFFFFFFFFFFFFFE0h"
+      ],
+      [
+        140697083443982,
+        "movd    xmm0, r9d"
+      ],
+      [
+        140697083443987,
+        "punpcklbw xmm0, xmm0"
+      ],
+      [
+        140697083443991,
+        "pshuflw xmm0, xmm0, 0"
+      ],
+      [
+        140697083443996,
+        "pshufd  xmm0, xmm0, 0"
+      ],
+      [
+        140697083444001,
+        "xor     r10d, r10d"
+      ],
+      [
+        140697083444004,
+        "nop     word ptr [rax+rax+00000000h]"
+      ],
+      [
+        140697083444016,
+        "movdqu  xmmword ptr [rax+r10], xmm0"
+      ],
+      [
+        140697083444022,
+        "movdqu  xmmword ptr [rax+r10+10h], xmm0"
+      ],
+      [
+        140697083444029,
+        "add     r10, 20h ; ' '"
+      ],
+      [
+        140697083444033,
+        "cmp     rcx, r10"
+      ],
+      [
+        140697083444036,
+        "jnz     short loc_7FF697ADFB30"
+      ],
+      [
+        140697083444038,
+        "cmp     r8, rcx"
+      ],
+      [
+        140697083444041,
+        "jz      short locret_7FF697ADFB8C"
+      ],
+      [
+        140697083444043,
+        "test    r8b, 1Ch"
+      ],
+      [
+        140697083444047,
+        "jz      short loc_7FF697ADFB81"
+      ],
+      [
+        140697083444049,
+        "mov     r10, rcx"
+      ],
+      [
+        140697083444052,
+        "mov     rcx, r8"
+      ],
+      [
+        140697083444055,
+        "and     rcx, 0FFFFFFFFFFFFFFFCh"
+      ],
+      [
+        140697083444059,
+        "movd    xmm0, r9d"
+      ],
+      [
+        140697083444064,
+        "punpcklbw xmm0, xmm0"
+      ],
+      [
+        140697083444068,
+        "pshuflw xmm0, xmm0, 0"
+      ],
+      [
+        140697083444073,
+        "nop     dword ptr [rax+00000000h]"
+      ],
+      [
+        140697083444080,
+        "movd    dword ptr [rax+r10], xmm0"
+      ],
+      [
+        140697083444086,
+        "add     r10, 4"
+      ],
+      [
+        140697083444090,
+        "cmp     rcx, r10"
+      ],
+      [
+        140697083444093,
+        "jnz     short loc_7FF697ADFB70"
+      ],
+      [
+        140697083444095,
+        "jmp     short loc_7FF697ADFB87"
+      ],
+      [
+        140697083444097,
+        "mov     [rax+rcx], dl"
+      ],
+      [
+        140697083444100,
+        "inc     rcx"
+      ],
+      [
+        140697083444103,
+        "cmp     r8, rcx"
+      ],
+      [
+        140697083444106,
+        "jnz     short loc_7FF697ADFB81"
+      ],
+      [
+        140697083444108,
+        "retn"
+      ]
+    ],
+    "name_ok": true,
+    "new_type": "void *__fastcall wmp1_fill_bytes(void *destination, unsigned char value, unsigned __int64 byte_count);",
+    "type_ok": true,
+    "pseudocode": "void *__fastcall wmp1_fill_bytes(void *destination, unsigned __int8 value, unsigned __int64 byte_count)\n{\n  void *result; // rax\n  unsigned __int64 v4; // rcx\n  __m128i v5; // xmm0\n  __m128i v6; // xmm0\n  __int64 v7; // r10\n  unsigned __int64 v8; // r10\n  __m128i v9; // xmm0\n  __m128i v10; // xmm0\n\n  result = destination;\n  if ( !byte_count )\n    return result;\n  if ( byte_count > 3 )\n  {\n    if ( byte_count >= 0x20 )\n    {\n      v4 = byte_count & 0xFFFFFFFFFFFFFFE0uLL;\n      v5 = _mm_cvtsi32_si128(value);\n      v6 = _mm_shuffle_epi32(_mm_shufflelo_epi16(_mm_unpacklo_epi8(v5, v5), 0), 0);\n      v7 = 0;\n      do\n      {\n        *(__m128i *)((char *)result + v7) = v6;\n        *(__m128i *)((char *)result + v7 + 16) = v6;\n        v7 += 32;\n      }\n      while ( v4 != v7 );\n      if ( byte_count == v4 )\n        return result;\n      if ( (byte_count & 0x1C) == 0 )\n        goto LABEL_13;\n    }\n    else\n    {\n      v4 = 0;\n    }\n    v8 = v4;\n    v4 = byte_count & 0xFFFFFFFFFFFFFFFCuLL;\n    v9 = _mm_cvtsi32_si128(value);\n    v10 = _mm_shufflelo_epi16(_mm_unpacklo_epi8(v9, v9), 0);\n    do\n    {\n      *(_DWORD *)((char *)result + v8) = _mm_cvtsi128_si32(v10);\n      v8 += 4LL;\n    }\n    while ( v4 != v8 );\n    goto LABEL_14;\n  }\n  v4 = 0;\n  do\n  {\nLABEL_13:\n    *((_BYTE *)result + v4++) = value;\nLABEL_14:\n    ;\n  }\n  while ( byte_count != v4 );\n  return result;\n}\n",
+    "failure": "no error"
+  }
+}

@@ -1,0 +1,80 @@
+-- STARTING MINT DEBUG LOG --
+[00:13]: Loading Mint Files (Branch: main) 
+[00:13]: Using enhanced module configuration 
+[00:57]: Successfully initialized Settings 
+[01:38]: Successfully initialized FriendManager 
+[01:44]: Successfully initialized UnitManager 
+[01:48]: Successfully initialized ObjectManager 
+[02:30]: Successfully initialized TotemManager 
+[05:15]: Successfully initialized Interface 
+[06:15]: Successfully initialized NotificationManager 
+[06:20]: Successfully initialized Queue 
+[06:39]: Successfully initialized Reactions 
+[06:49]: Successfully initialized Dispel 
+[06:54]: Successfully initialized SmartTarget 
+[07:16]: Module class 'hunter' does not match mint.class 'deathknight' 
+[07:16]: Module class 'hunter' does not match mint.class 'deathknight' 
+[07:16]: Module class 'hunter' does not match mint.class 'deathknight' 
+[07:16]: Module class 'hunter' does not match mint.class 'deathknight' 
+[07:17]: Module class 'paladin' does not match mint.class 'deathknight' 
+[07:17]: Module class 'paladin' does not match mint.class 'deathknight' 
+[07:17]: Module class 'paladin' does not match mint.class 'deathknight' 
+[07:20]: Module class 'paladin' does not match mint.class 'deathknight' 
+[07:20]: Module class 'paladin' does not match mint.class 'deathknight' 
+[07:22]: Module class 'paladin' does not match mint.class 'deathknight' 
+[07:22]: Module class 'paladin' does not match mint.class 'deathknight' 
+[07:25]: Module class 'paladin' does not match mint.class 'deathknight' 
+[07:25]: Module class 'paladin' does not match mint.class 'deathknight' 
+[07:28]: Module class 'mage' does not match mint.class 'deathknight' 
+[07:28]: Module class 'mage' does not match mint.class 'deathknight' 
+[07:28]: Module class 'mage' does not match mint.class 'deathknight' 
+[07:29]: Module class 'monk' does not match mint.class 'deathknight' 
+[07:31]: Module class 'monk' does not match mint.class 'deathknight' 
+[07:32]: Module class 'monk' does not match mint.class 'deathknight' 
+[07:34]: Module class 'monk' does not match mint.class 'deathknight' 
+[07:35]: Module class 'priest' does not match mint.class 'deathknight' 
+[07:35]: Module class 'priest' does not match mint.class 'deathknight' 
+[07:35]: Module class 'priest' does not match mint.class 'deathknight' 
+[07:38]: Module class 'priest' does not match mint.class 'deathknight' 
+[07:38]: Module class 'priest' does not match mint.class 'deathknight' 
+[07:41]: Module class 'priest' does not match mint.class 'deathknight' 
+[07:41]: Module class 'priest' does not match mint.class 'deathknight' 
+[07:41]: Module class 'shaman' does not match mint.class 'deathknight' 
+[07:41]: Module class 'shaman' does not match mint.class 'deathknight' 
+[07:44]: Module class 'shaman' does not match mint.class 'deathknight' 
+[07:44]: Module class 'shaman' does not match mint.class 'deathknight' 
+[08:00]: Module spec 'unholy' does not match mint.specName 'blood' 
+[08:00]: Module spec 'unholy' does not match mint.specName 'blood' 
+[08:00]: Module spec 'unholy' does not match mint.specName 'blood' 
+[08:01]: Module class 'druid' does not match mint.class 'deathknight' 
+[08:03]: Module class 'druid' does not match mint.class 'deathknight' 
+[08:04]: Module class 'druid' does not match mint.class 'deathknight' 
+[08:04]: Module class 'druid' does not match mint.class 'deathknight' 
+[08:04]: Module class 'druid' does not match mint.class 'deathknight' 
+[08:07]: Module class 'druid' does not match mint.class 'deathknight' 
+[08:07]: Module class 'warrior' does not match mint.class 'deathknight' 
+[08:10]: Module class 'warrior' does not match mint.class 'deathknight' 
+[08:10]: Module class 'warrior' does not match mint.class 'deathknight' 
+[08:13]: Module class 'warrior' does not match mint.class 'deathknight' 
+[08:13]: Module class 'warlock' does not match mint.class 'deathknight' 
+[08:16]: Module class 'warlock' does not match mint.class 'deathknight' 
+[08:16]: Module class 'warlock' does not match mint.class 'deathknight' 
+[08:16]: Module class 'warlock' does not match mint.class 'deathknight' 
+[08:17]: Module class 'evoker' does not match mint.class 'deathknight' 
+[08:20]: Module class 'evoker' does not match mint.class 'deathknight' 
+[08:20]: Module class 'evoker' does not match mint.class 'deathknight' 
+[08:20]: Module class 'evoker' does not match mint.class 'deathknight' 
+[08:20]: Module class 'evoker' does not match mint.class 'deathknight' 
+[08:23]: Module class 'evoker' does not match mint.class 'deathknight' 
+[08:23]: Module class 'evoker' does not match mint.class 'deathknight' 
+[08:23]: Module class 'evoker' does not match mint.class 'deathknight' 
+[08:24]: Module class 'evoker' does not match mint.class 'deathknight' 
+[08:27]: Module class 'evoker' does not match mint.class 'deathknight' 
+[08:27]: Attempting to build interface options. 
+[08:37]: Building general 
+[08:37]: Building keybinds 
+[08:41]: Building utility 
+[08:44]: Building reactions 
+[08:46]: Building lists 
+[08:56]: Building deathknight.blood 
+[08:56]: Attempting to build quickbar. 

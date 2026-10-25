@@ -1,0 +1,1684 @@
+{
+  "body": "0x7ff697b026d0",
+  "selector": 24,
+  "length_proof": {
+    "seed": "0x6d7ee1b2",
+    "derived_k": "0x25",
+    "z3_result": "unknown",
+    "claim": "used_length + 37 modulo 2^32",
+    "expression": "11*(x|k)-9*(x&k)-21*((~k)&x)+11*(~(x&k))-11*(~(x|k))-21*(~(x|(~k)))",
+    "sites": [
+      "0x7ff697b061db",
+      "0x7ff697b06453"
+    ],
+    "algebra_proof": "Let A=x&k, B=x&~k, C=~x&k, D=~(x|k). These partition bits. Native expression reduces to 2A+B+C = x+k modulo 2^32. Captured k=0x25. SMT timeout unknown is not counted as proof."
+  },
+  "comments": [
+    {
+      "ea": "0x7ff697b05d9e",
+      "old": null,
+      "new": "Selector24 response +0/+8: UNPCKLPS with zero XMM6 expands adjacent state4/state5wait5 DWORD counters to zero-extended QWORDs. Stack response base RBP-0x60.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b05dad",
+      "old": null,
+      "new": "Selector24 response +16 receives zero-extended other-state count on B05986 path; fallback B05D38 supplies zero.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b05dfc",
+      "old": null,
+      "new": "Selector24 response +24 receives flags/status QWORD, not another thread counter. B059CC ORs two sources; fallback supplies 6. Flag semantics incomplete.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b030ee",
+      "old": null,
+      "new": "Selector24 response +33: writes unaligned zero DWORD. Combined with byte +32 at B05E00, trailing five bytes are zero.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b04195",
+      "old": null,
+      "new": "Unsigned comparison: other-state count < request BYTE at +8 -> SETB. Boolean flows to var428/var230; report/error routing must be traced separately.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b05e46",
+      "old": null,
+      "new": "Output descriptor layout: QWORD buffer +0, DWORD used length +8, DWORD capacity +12. Native checks capacity>=37 then (used+37 modulo 2^32)<=capacity; no independent overflow assertion here.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b061d2",
+      "old": null,
+      "new": "Selector24 copies exactly 37 bytes from stack response RBP-0x60 into buffer+old_used_length.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b06453",
+      "old": null,
+      "new": "Native MBA updates DWORD used length to old_used+37 modulo 2^32. Captured seed BBA2C0=6D7EE1B2 derives k=25; bit-partition algebra proves x+k. Bounded SMT attempt timed out, not a solver proof.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b0431b",
+      "old": null,
+      "new": "FNV1a byte|0x20 export-name hash E054604A = NtQuerySystemInformation. Match state31B96FE5 -> B02F2C ordinal/RVA resolution -> slotBBC2C0 atB02F9A.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697ba5eaf",
+      "old": null,
+      "new": "NtQuerySystemInformation: captured class expression evaluates5 (SystemProcessInformation), bufferRDX, lengthR8D, ReturnLengthR9. Compare C0000004 leads resize helperAD8110 and retry; allocation failure returns C0000017.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b13e28",
+      "old": null,
+      "new": "SYSTEM_PROCESS_INFORMATION record +0x50 UniqueProcessId; compared to current TEB ClientId.UniqueProcess. +0 NextEntryOffset governs record walk. No thread-start or creator ancestry information is established by this helper.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b4fe00",
+      "old": null,
+      "new": "Body94: descriptor+8 points to owned buffer variable. Free existing nonnull buffer and zero it; allocate DWORD required length decoded via XOR5783605C7DD60A3D; store allocation to decoded output pointer XOR80967D0E3816C9A3 and owned variable. AL=1 on allocation failure, AL=0 on success. Destructive replacement, not content-preserving realloc.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b138a0",
+      "old": null,
+      "new": "Find current process in SystemProcessInformation linked records: NextEntryOffset DWORD+0; processID QWORD+50h versus TEB.UniqueProcess. Captured seedBBA3D8=60DCD402 makes obfuscated decrement-stop expression0. Initial counterFFFFFFFF. Pointer/buffer bounds remain OS/caller preconditions.",
+      "ok": true
+    }
+  ],
+  "native_windows": [
+    {
+      "start": "0x7ff697b05d4e",
+      "end": "0x7ff697b05e0e",
+      "lines": [
+        [
+          "0x7ff697b05d4e",
+          "mov     rax, [rbp+450h+var_250]"
+        ],
+        [
+          "0x7ff697b05d55",
+          "mov     rcx, [rbp+450h+var_248]"
+        ],
+        [
+          "0x7ff697b05d5c",
+          "jge     short loc_7FF697B05D9E"
+        ],
+        [
+          "0x7ff697b05d5e",
+          "sal     dh, 0"
+        ],
+        [
+          "0x7ff697b05d61",
+          "jmp     short loc_7FF697B05D9E"
+        ],
+        [
+          "0x7ff697b05d9e",
+          "movsd   xmm0, qword ptr cs:wmp1_thread_state4_count; Selector24 response +0/+8: UNPCKLPS with zero XMM6 expands adjacent state4/state5wait5 DWORD counters to zero-extended QWORDs. Stack response base RBP-0x60."
+        ],
+        [
+          "0x7ff697b05da6",
+          "unpcklps xmm0, xmm6"
+        ],
+        [
+          "0x7ff697b05da9",
+          "movaps  [rbp+450h+var_4B0], xmm0"
+        ],
+        [
+          "0x7ff697b05dad",
+          "mov     [rbp+450h+var_4A0], rcx; Selector24 response +16 receives zero-extended other-state count on B05986 path; fallback B05D38 supplies zero."
+        ],
+        [
+          "0x7ff697b05db1",
+          "clc"
+        ],
+        [
+          "0x7ff697b05db2",
+          "sal     cl, 0"
+        ],
+        [
+          "0x7ff697b05db5",
+          "jmp     short loc_7FF697B05DFC"
+        ],
+        [
+          "0x7ff697b05dfc",
+          "mov     [rbp+450h+var_498], rax; Selector24 response +24 receives flags/status QWORD, not another thread counter. B059CC ORs two sources; fallback supplies 6. Flag semantics incomplete."
+        ],
+        [
+          "0x7ff697b05e00",
+          "mov     [rbp+450h+var_490], 0"
+        ],
+        [
+          "0x7ff697b05e04",
+          "mov     [rbp+450h+var_54], 3A2B72B2h"
+        ]
+      ]
+    },
+    {
+      "start": "0x7ff697b030ee",
+      "end": "0x7ff697b03108",
+      "lines": [
+        [
+          "0x7ff697b030ee",
+          "mov     [rbp+450h+var_48F], 0; Selector24 response +33: writes unaligned zero DWORD. Combined with byte +32 at B05E00, trailing five bytes are zero."
+        ],
+        [
+          "0x7ff697b030f5",
+          "mov     rax, [rbp+450h+var_E8]"
+        ],
+        [
+          "0x7ff697b030fc",
+          "mov     eax, [rax+0Ch]"
+        ],
+        [
+          "0x7ff697b030ff",
+          "cmp     eax, 25h ; '%'"
+        ],
+        [
+          "0x7ff697b03102",
+          "jnb     loc_7FF697B05E46"
+        ]
+      ]
+    },
+    {
+      "start": "0x7ff697b05e46",
+      "end": "0x7ff697b05e76",
+      "lines": [
+        [
+          "0x7ff697b05e46",
+          "mov     rcx, [rbp+450h+var_E8]; Output descriptor layout: QWORD buffer +0, DWORD used length +8, DWORD capacity +12. Native checks capacity>=37 then (used+37 modulo 2^32)<=capacity; no independent overflow assertion here."
+        ],
+        [
+          "0x7ff697b05e4d",
+          "lea     rdx, [rcx+8]"
+        ],
+        [
+          "0x7ff697b05e51",
+          "mov     [rbp+450h+var_1D8], rdx"
+        ],
+        [
+          "0x7ff697b05e58",
+          "mov     ecx, [rcx+8]"
+        ],
+        [
+          "0x7ff697b05e5b",
+          "mov     [rbp+450h+var_130], ecx"
+        ],
+        [
+          "0x7ff697b05e61",
+          "add     ecx, 25h ; '%'"
+        ],
+        [
+          "0x7ff697b05e64",
+          "cmp     ecx, eax"
+        ],
+        [
+          "0x7ff697b05e66",
+          "jbe     loc_7FF697B0600A"
+        ],
+        [
+          "0x7ff697b05e6c",
+          "mov     [rbp+450h+var_54], 3268F91Ch"
+        ]
+      ]
+    },
+    {
+      "start": "0x7ff697b0617a",
+      "end": "0x7ff697b0645a",
+      "lines": [
+        [
+          "0x7ff697b0617a",
+          "mov     rax, [rbp+450h+var_E8]"
+        ],
+        [
+          "0x7ff697b06181",
+          "mov     edi, [rbp+450h+var_130]"
+        ],
+        [
+          "0x7ff697b06187",
+          "add     rdi, [rax]"
+        ],
+        [
+          "0x7ff697b0618a",
+          "stc"
+        ],
+        [
+          "0x7ff697b0618b",
+          "mov     ch, ch"
+        ],
+        [
+          "0x7ff697b0618d",
+          "jmp     short loc_7FF697B061C9"
+        ],
+        [
+          "0x7ff697b061c9",
+          "lea     rsi, [rbp+450h+var_4B0]"
+        ],
+        [
+          "0x7ff697b061cd",
+          "mov     ecx, 25h ; '%'"
+        ],
+        [
+          "0x7ff697b061d2",
+          "rep movsb; Selector24 copies exactly 37 bytes from stack response RBP-0x60 into buffer+old_used_length."
+        ],
+        [
+          "0x7ff697b061d4",
+          "mov     rax, [rbp+450h+var_1D8]"
+        ],
+        [
+          "0x7ff697b061db",
+          "mov     eax, [rax]"
+        ],
+        [
+          "0x7ff697b061dd",
+          "mov     edx, cs:dword_7FF697BBA2C0"
+        ],
+        [
+          "0x7ff697b061e3",
+          "lea     r8d, [rdx+0D497356h]"
+        ],
+        [
+          "0x7ff697b061ea",
+          "mov     r9d, r8d"
+        ],
+        [
+          "0x7ff697b061ed",
+          "xor     r9d, 6438F673h"
+        ],
+        [
+          "0x7ff697b061f4",
+          "lea     r10d, [r9-271DD300h]"
+        ],
+        [
+          "0x7ff697b061fb",
+          "lea     ecx, [r9+27A1E816h]"
+        ],
+        [
+          "0x7ff697b06202",
+          "xor     ecx, 0D08DCCD5h"
+        ],
+        [
+          "0x7ff697b06208",
+          "mov     r11d, ecx"
+        ],
+        [
+          "0x7ff697b0620b",
+          "sub     r11d, r9d"
+        ],
+        [
+          "0x7ff697b0620e",
+          "sub     r11d, r8d"
+        ],
+        [
+          "0x7ff697b06211",
+          "sub     r11d, edx"
+        ],
+        [
+          "0x7ff697b06214",
+          "sub     r11d, edx"
+        ],
+        [
+          "0x7ff697b06217",
+          "add     r11d, 40650BBDh"
+        ],
+        [
+          "0x7ff697b0621e",
+          "xor     ecx, r10d"
+        ],
+        [
+          "0x7ff697b06221",
+          "xor     ecx, r11d"
+        ],
+        [
+          "0x7ff697b06224",
+          "mov     r8d, ecx"
+        ],
+        [
+          "0x7ff697b06227",
+          "not     r8d"
+        ],
+        [
+          "0x7ff697b0622a",
+          "mov     edx, eax"
+        ],
+        [
+          "0x7ff697b0622c",
+          "or      edx, r8d"
+        ],
+        [
+          "0x7ff697b0622f",
+          "not     edx"
+        ],
+        [
+          "0x7ff697b06231",
+          "lea     r9d, [rdx+rdx*4]"
+        ],
+        [
+          "0x7ff697b06235",
+          "lea     edx, [rdx+r9*4]"
+        ],
+        [
+          "0x7ff697b06239",
+          "test    eax, 0B3AA3C8Fh"
+        ],
+        [
+          "0x7ff697b0623e",
+          "xchg    al, al"
+        ],
+        [
+          "0x7ff697b06240",
+          "jmp     short loc_7FF697B06284"
+        ],
+        [
+          "0x7ff697b06284",
+          "mov     r10d, eax"
+        ],
+        [
+          "0x7ff697b06287",
+          "or      r10d, ecx"
+        ],
+        [
+          "0x7ff697b0628a",
+          "lea     r9d, [r10+r10*4]"
+        ],
+        [
+          "0x7ff697b0628e",
+          "lea     r9d, [r10+r9*2]"
+        ],
+        [
+          "0x7ff697b06292",
+          "not     r10d"
+        ],
+        [
+          "0x7ff697b06295",
+          "lea     r11d, [r10+r10*4]"
+        ],
+        [
+          "0x7ff697b06299",
+          "lea     r10d, [r10+r11*2]"
+        ],
+        [
+          "0x7ff697b0629d",
+          "and     ecx, eax"
+        ],
+        [
+          "0x7ff697b0629f",
+          "lea     r11d, [rcx+rcx*8]"
+        ],
+        [
+          "0x7ff697b062a3",
+          "not     ecx"
+        ],
+        [
+          "0x7ff697b062a5",
+          "nop"
+        ],
+        [
+          "0x7ff697b062a6",
+          "nop"
+        ],
+        [
+          "0x7ff697b062a7",
+          "mov     bl, bl"
+        ],
+        [
+          "0x7ff697b062a9",
+          "jmp     short loc_7FF697B0630F"
+        ],
+        [
+          "0x7ff697b0630f",
+          "lea     esi, [rcx+rcx*4]"
+        ],
+        [
+          "0x7ff697b06312",
+          "lea     ecx, [rcx+rsi*2]"
+        ],
+        [
+          "0x7ff697b06315",
+          "test    eax, 40EE42CEh"
+        ],
+        [
+          "0x7ff697b0631a",
+          "jmp     short loc_7FF697B0637F"
+        ],
+        [
+          "0x7ff697b0637f",
+          "and     r8d, eax"
+        ],
+        [
+          "0x7ff697b06382",
+          "lea     eax, [r8+r8*4]"
+        ],
+        [
+          "0x7ff697b06386",
+          "lea     eax, [r8+rax*4]"
+        ],
+        [
+          "0x7ff697b0638a",
+          "add     r11d, eax"
+        ],
+        [
+          "0x7ff697b0638d",
+          "test    eax, 0D5B26E4h"
+        ],
+        [
+          "0x7ff697b06392",
+          "shl     dh, 0"
+        ],
+        [
+          "0x7ff697b06395",
+          "jmp     short loc_7FF697B063E3"
+        ],
+        [
+          "0x7ff697b063e3",
+          "sub     r9d, r11d"
+        ],
+        [
+          "0x7ff697b063e6",
+          "add     r9d, ecx"
+        ],
+        [
+          "0x7ff697b063e9",
+          "sub     r9d, r10d"
+        ],
+        [
+          "0x7ff697b063ec",
+          "sub     r9d, edx"
+        ],
+        [
+          "0x7ff697b063ef",
+          "jbe     short loc_7FF697B0644C"
+        ],
+        [
+          "0x7ff697b063f1",
+          "jmp     short loc_7FF697B0644C"
+        ],
+        [
+          "0x7ff697b0644c",
+          "mov     rax, [rbp+450h+var_1D8]"
+        ],
+        [
+          "0x7ff697b06453",
+          "mov     [rax], r9d; Native MBA updates DWORD used length to old_used+37 modulo 2^32. Captured seed BBA2C0=6D7EE1B2 derives k=25; bit-partition algebra proves x+k. Bounded SMT attempt timed out, not a solver proof."
+        ],
+        [
+          "0x7ff697b06456",
+          "mov     [rbp+450h+var_74], 0"
+        ]
+      ]
+    },
+    {
+      "start": "0x7ff697b04175",
+      "end": "0x7ff697b04227",
+      "lines": [
+        [
+          "0x7ff697b04175",
+          "mov     rcx, [rbp+450h+var_450]"
+        ],
+        [
+          "0x7ff697b04179",
+          "mov     [rbp+450h+var_8C], 0"
+        ],
+        [
+          "0x7ff697b04183",
+          "call    sub_7FF697AD6480"
+        ],
+        [
+          "0x7ff697b04188",
+          "mov     rax, [rbp+450h+var_300]"
+        ],
+        [
+          "0x7ff697b0418f",
+          "movzx   eax, byte ptr [rax+8]"
+        ],
+        [
+          "0x7ff697b04193",
+          "xor     ecx, ecx"
+        ],
+        [
+          "0x7ff697b04195",
+          "cmp     cs:wmp1_thread_other_state_count, eax; Unsigned comparison: other-state count < request BYTE at +8 -> SETB. Boolean flows to var428/var230; report/error routing must be traced separately."
+        ],
+        [
+          "0x7ff697b0419b",
+          "setb    cl"
+        ],
+        [
+          "0x7ff697b0419e",
+          "and     cl, 0FFh"
+        ],
+        [
+          "0x7ff697b041a1",
+          "xchg    cl, cl"
+        ],
+        [
+          "0x7ff697b041a3",
+          "jmp     short loc_7FF697B04216"
+        ],
+        [
+          "0x7ff697b04216",
+          "mov     [rbp+450h+var_78], 0"
+        ],
+        [
+          "0x7ff697b04220",
+          "mov     [rbp+450h+var_98], rcx"
+        ]
+      ]
+    },
+    {
+      "start": "0x7ff697b05940",
+      "end": "0x7ff697b059ef",
+      "lines": [
+        [
+          "0x7ff697b05940",
+          "mov     cs:wmp1_pOpenThread, 0"
+        ],
+        [
+          "0x7ff697b0594b",
+          "mov     cs:wmp1_pCloseHandle, 0"
+        ],
+        [
+          "0x7ff697b05956",
+          "mov     cs:qword_7FF697BBC2C0, 0"
+        ],
+        [
+          "0x7ff697b05961",
+          "mov     cs:wmp1_pNtQueryInformationThread, 0"
+        ],
+        [
+          "0x7ff697b0596c",
+          "mov     rax, [rbp+450h+var_230]"
+        ],
+        [
+          "0x7ff697b05973",
+          "test    rax, rax"
+        ],
+        [
+          "0x7ff697b05976",
+          "jz      loc_7FF697B05A58"
+        ],
+        [
+          "0x7ff697b0597c",
+          "cmp     rax, 2"
+        ],
+        [
+          "0x7ff697b05980",
+          "jz      loc_7FF697B0616B"
+        ],
+        [
+          "0x7ff697b05986",
+          "mov     eax, cs:wmp1_thread_other_state_count"
+        ],
+        [
+          "0x7ff697b0598c",
+          "jmp     short loc_7FF697B059CC"
+        ],
+        [
+          "0x7ff697b059cc",
+          "mov     rcx, [rbp+450h+var_230]"
+        ],
+        [
+          "0x7ff697b059d3",
+          "or      rcx, [rbp+450h+var_438]"
+        ],
+        [
+          "0x7ff697b059d7",
+          "mov     [rbp+450h+var_248], rax"
+        ],
+        [
+          "0x7ff697b059de",
+          "mov     [rbp+450h+var_250], rcx"
+        ],
+        [
+          "0x7ff697b059e5",
+          "mov     [rbp+450h+var_54], 20924FA0h"
+        ]
+      ]
+    },
+    {
+      "start": "0x7ff697b05cfe",
+      "end": "0x7ff697b05d4e",
+      "lines": [
+        [
+          "0x7ff697b05cfe",
+          "mov     rax, [rbp+450h+var_60]"
+        ],
+        [
+          "0x7ff697b05d05",
+          "mov     qword ptr [rax], 0"
+        ],
+        [
+          "0x7ff697b05d0c",
+          "mov     cs:wmp1_pOpenThread, 0"
+        ],
+        [
+          "0x7ff697b05d17",
+          "mov     cs:wmp1_pCloseHandle, 0"
+        ],
+        [
+          "0x7ff697b05d22",
+          "mov     cs:qword_7FF697BBC2C0, 0"
+        ],
+        [
+          "0x7ff697b05d2d",
+          "mov     cs:wmp1_pNtQueryInformationThread, 0"
+        ],
+        [
+          "0x7ff697b05d38",
+          "mov     [rbp+450h+var_248], 0"
+        ],
+        [
+          "0x7ff697b05d43",
+          "mov     [rbp+450h+var_250], 6"
+        ]
+      ]
+    }
+  ],
+  "open": [
+    "flags composition and error routing",
+    "query/allocation helper semantics",
+    "caller lifetime/overflow invariants",
+    "transport destination"
+  ],
+  "saved": true,
+  "helper_normalizations": [
+    {
+      "start": 140697083457312,
+      "end": 140697083458359,
+      "label": "selector24_dependency_0x7ff697ae2f20",
+      "original_bytes": "4157415641554154565755534881ec880000004889ce49bf68107f422e1d78fd49bc97ef80bdd1e28702c7442420c6b19449488d3d972d0c00488d1d80330c004c8d350c9f0e0049bd909d0571ea502f0f4889cd4c31fdeb27488b44244848f7d04801c0488d04804889442450c7442420ef15f566662e0f1f840000000000908b4424203d37b098537e453d68a2da627e6e3d708038680f8f570100003d69a2da620f8589020000488b4424704803442460482b44245848034424504c01e84889442478c7442420ebf77c54ebb266903d4b7e5f450f8fa50000003def0112160f8e2b0100003df00112160f8596010000c7442420652f4a5feb850f1f4400003d38b098530f844effffff3debf77c540f858c0100007b4486ff7a406690669080edf581eba42e7424e85e88000081ef22b07d2881e993329dd0c7c19617e77b80e8220f8a169a00000f31520f81cf4c0000c7c561be7f54c0bf4e9b488b4424784889842480000000c74424204c7e5f45e90affffff662e0f1f8400000000003d4c7e5f450f84900100003d301bed460f85ec010000488b4424384c09e0488944244885cbc0fa00713d909081c1006bb17c83c19483c70381ee56a7baa681c614349ae380c65b5983c2400f8af74d0100e8a91a0000f6d96a880f8d61a60000c08343ae2c156fc744242038b09853e98cfeffff3d718038680f856a01000048896c2440c7442420587cf001e96ffeffff3d03cb6c090f85800100008b44243483e001884424277e51c0f100c0e7007f49669066900f315881e894bb37175081c3c56c4df55e80c684f6dbc6c3be80c6aa0f83f75701000f88e6e6010080c53581ee13a7afbc0f3181ef2ffdb6aee884fa00004d80a077f19976c74424200ad12e6ee9f9fdffff488b442468488d04c04889442470c744242069a2da62e9defdffff80c900733c81c5cd9ef5480f8d786101000f3181eaece41a720f887ef2000081e9096ecdfcc7c054447b46e848690000f6d980e9dcc6c1d680c39bf6df81ea98d8730980c0ca7779c6c06fe8730c0000c7c0fcaad97f6983534a4889f94889da4d89f0e8a6a3000089442434c744242003cb6c09e965fdffff48c744242835000000c744242087499c11e94ffdffff488b4424384889c14c09f9488d0c4948894c24584889c14c21e148c1e10248894c24604c21f84889442468c7442420751ad929e917fdffff807c242700741f4889742438c7442420301bed46e9fefcffffc7442420f0011216e9f1fcffffc744242071803868e9e4fcffff3d587cf001752548c744242826000000488b4c24404c8d442428ba5e00000041b93d000000e82a2a0c00eb3b488b8c24800000004c8d442428ba2000000041b90d000000e80b2a0c0089c6488d0de2290c00488d15cb2f0c004c8d05579b0e00e8df9a000089f04881c4880000005b5d5f5e415c415d415e415fc3",
+      "sha256_before": "6da514268faa53793ad1d5d0b8ef58f825bdf45bc61179742e74e0ea005acd16",
+      "old_name": "sub_7FF697AE2F20",
+      "old_type": "void()",
+      "old_comment": null,
+      "old_chunks": [
+        [
+          140697083457312,
+          140697083458359
+        ]
+      ],
+      "patches": [
+        {
+          "ea": 140697083457594,
+          "old": "7a40",
+          "new": "eb40",
+          "selected": 140697083457660
+        },
+        {
+          "ea": 140697083457736,
+          "old": "713d",
+          "new": "eb3d",
+          "selected": 140697083457799
+        },
+        {
+          "ea": 140697083457871,
+          "old": "7f49",
+          "new": "eb49",
+          "selected": 140697083457946
+        },
+        {
+          "ea": 140697083457989,
+          "old": "733c",
+          "new": "eb3c",
+          "selected": 140697083458051
+        },
+        {
+          "ea": 140697083458051,
+          "old": "7309",
+          "new": "eb09",
+          "selected": 140697083458062
+        },
+        {
+          "ea": 140697083458062,
+          "old": "730c",
+          "new": "eb0c",
+          "selected": 140697083458076
+        }
+      ],
+      "old_frame": {
+        "frsize": 200,
+        "frregs": 0,
+        "fpd": 0,
+        "serialized": [
+          "0d8101f1800811012103011102382002082102602002202002402002402002402002402002402002402002402002402002400a30f180200440020208",
+          "077661725f4338077661725f4138077661725f4131077661725f4130077661725f3934077661725f3930077661725f3838077661725f3830077661725f3738077661725f3730077661725f3638077661725f3630077661725f3538077661725f3530077661725f3438115f5f72657475726e5f61646472657373",
+          null
+        ]
+      },
+      "after": {
+        "failure": "no error",
+        "failure_ea": 18446744073709551615,
+        "pseudocode": "__int64 __fastcall selector24_dependency_0x7ff697ae2f20(\n        __int64 a1,\n        __int64 a2,\n        __int64 a3,\n        __int64 a4,\n        __int64 a5,\n        __int64 a6,\n        __int64 a7,\n        unsigned __int64 a8,\n        __int64 a9,\n        __int64 a10,\n        unsigned __int64 a11,\n        __int64 a12,\n        unsigned __int64 a13,\n        __int64 a14,\n        __int64 a15,\n        __int64 a16)\n{\n  unsigned __int64 v17; // rbp\n  unsigned int v19; // esi\n  int v20; // [rsp+E8h] [rbp+20h]\n  char v21; // [rsp+EFh] [rbp+27h]\n\n  v20 = 1234481606;\n  v17 = a1 ^ 0xFD781D2E427F1068uLL;\n  while ( 1 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( v20 > 1402515511 )\n        {\n          if ( v20 <= 1658495592 )\n          {\n            if ( v20 == 1402515512 )\n            {\n              a10 = 10 * ~a9;\n              v20 = 1727337967;\n            }\n            else if ( v20 == 1417476075 )\n            {\n              a16 = a15;\n              v20 = 1163886156;\n            }\n            else\n            {\n              HIDWORD(a6) = wmp1_decode_body_if_needed(\n                              (unsigned __int8 *)&wmp1_protected_128_seed,\n                              (unsigned __int8 *)qword_7FF697BA62E0,\n                              byte_7FF697BCCE73);\n              v20 = 158124803;\n            }\n          }\n          else if ( v20 > 1748533360 )\n          {\n            if ( v20 == 1748533361 )\n            {\n              a8 = v17;\n              v20 = 32537688;\n            }\n            else if ( v21 )\n            {\n              a7 = a1;\n              v20 = 1189944112;\n            }\n            else\n            {\n              v20 = 1748533361;\n            }\n          }\n          else if ( v20 == 1658495593 )\n          {\n            a15 = a10 + a12 + a14 - a11 + 0xF2F50EA71059D90LL;\n            v20 = 1417476075;\n          }\n          else\n          {\n            a11 = 3 * (a7 | 0xFD781D2E427F1068uLL);\n            a12 = 4 * (a7 & 0x287E2D1BD80EF97LL);\n            a13 = a7 & 0xFD781D2E427F1068uLL;\n            v20 = 702093941;\n          }\n        }\n        if ( v20 <= 1163886155 )\n          break;\n        if ( v20 == 1163886156 )\n        {\n          a5 = 53;\n          v20 = 295455111;\n        }\n        else if ( v20 == 1189944112 )\n        {\n          a9 = a7 | 0x287E2D1BD80EF97LL;\n          v20 = 1402515512;\n        }\n        else\n        {\n          v20 = 370278896;\n        }\n      }\n      if ( v20 <= 370278895 )\n        break;\n      if ( v20 == 370278896 )\n      {\n        v20 = 1598697317;\n      }\n      else\n      {\n        a14 = 9 * a13;\n        v20 = 1658495593;\n      }\n    }\n    if ( v20 != 158124803 )\n      break;\n    v21 = BYTE4(a6) & 1;\n    v20 = 1848561930;\n  }\n  if ( v20 == 32537688 )\n  {\n    a5 = 38;\n    return wmp1_body_128(a8, 94, &a5, 61);\n  }\n  else\n  {\n    v19 = wmp1_body_128(a16, 32, &a5, 13);\n    sub_7FF697AECE00(&wmp1_protected_128_seed, qword_7FF697BA62E0, byte_7FF697BCCE73);\n    return v19;\n  }\n}\n",
+        "sha256": "9e0e3014be0475c054b8fa2c4fd2613dac113b04509d5a1ae60c9dbd36fd2911"
+      }
+    },
+    {
+      "start": 140697083323184,
+      "end": 140697083323810,
+      "label": "selector24_dependency_0x7ff697ac2330",
+      "original_bytes": "4157415641554154565755534883ec784889cec744242c500b3027488d3d2e150500488d1de71e05004c8d35b5ee0f00488d6c24484c8d64244049bd42a0e5db779b7dab4c8d7c2430eb15488b4424504889304c89642458c744242c7e04232b8b44242c3d944453437e253d2124815c7f5e3d9544534374d23d81009b480f85b5000000c744242c2224815cebd266903d7d04232b7f793dcb6c4c160f845d0100003d500b30270f85a90100004889f94889da4d89f0e8e5b10200a8010f8465010000c744242c404d6f6eeb930f1f003d2224815c0f84f90000003d404d6f6e0f854f010000488974243048c74424405b000000c744242cf09a4554e95fffffff662e0f1f8400000000000f1f4400003d7e04232b0f85cb000000488b44245848c7001b00000048896c2460c744242ccb6c4c16e927ffffff4c896c244880cd00716e6690669081e8d085c20c81e864abd8d180e835c7c67e117577c7c5f5cdfabcc7c2da21b59f0f8f4e660000c7c02ce1c040c7c34925658c0f89df87010081c24f490c8c5083c5525ae8b196000080e92c80eeaa81eb75aab9d583c0bc6a8ff6db81c2524764a3c0a5e93cf771e60d48c7442438100000004c89f9e8ae1305004889442470c744242c8618e77be98cfeffff4c897c2450c744242c95445343e97afeffff488b44246848c7000a000000c744242c6148551ee961feffff488b44246048b906a0e5db779b7dab488908488d4424384889442468c744242ca9f47a2ce938feffffc744242c81009b48e92bfeffff488d0d14130500488d15cd1c05004c8d059bec0f00e881a80200488b442470eb0a488d4c2430e810130500904883c4785b5d5f5e415c415d415e415fc3",
+      "sha256_before": "763dfb1765b7a39ac4ed737ef4b171dc3c18039a7dfaba85e0293577975dd6bb",
+      "old_name": "sub_7FF697AC2330",
+      "old_type": "__int64(void)",
+      "old_comment": null,
+      "old_chunks": [
+        [
+          140697083323184,
+          140697083323810
+        ]
+      ],
+      "patches": [
+        {
+          "ea": 140697083323505,
+          "old": "716e",
+          "new": "eb6e",
+          "selected": 140697083323617
+        }
+      ],
+      "old_frame": {
+        "frsize": 184,
+        "frregs": 0,
+        "fpd": 112,
+        "serialized": [
+          "0d61f18008210460012002201102402002402002402002402002402002402002402002400a30f180200440021120c8e3b98f030201",
+          "077661725f3843077661725f3838077661725f3830077661725f3738077661725f3730077661725f3638077661725f3630077661725f3538077661725f3530077661725f3438115f5f72657475726e5f616464726573730d6172675f3731463733433731",
+          null
+        ]
+      },
+      "after": {
+        "failure": "no error",
+        "failure_ea": 18446744073709551615,
+        "pseudocode": "__int64 __fastcall selector24_dependency_0x7ff697ac2330(\n        __int64 a1,\n        __int64 a2,\n        __int64 a3,\n        __int64 a4,\n        __int64 a5,\n        __int64 a6,\n        __int64 a7,\n        __int64 a8,\n        unsigned __int64 a9,\n        __int64 *a10,\n        __int64 *a11,\n        __int64 *a12,\n        __int64 *a13,\n        __int64 a14)\n{\n  __int64 v16; // [rsp+48h] [rbp+0h] BYREF\n  int v17; // [rsp+E4h] [rbp+9Ch]\n\n  v17 = 657460048;\n  while ( 1 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( v17 > 1129530516 )\n        {\n          if ( v17 > 1551967265 )\n          {\n            if ( v17 == 1551967266 )\n            {\n              a10 = &a6;\n              v17 = 1129530517;\n            }\n            else\n            {\n              if ( v17 != 1852788032 )\n              {\n                sub_7FF697AECE00(&wmp1_protected_036_seed, &qword_7FF697B14240, &byte_7FF697BC1215);\n                return a14;\n              }\n              a6 = a1;\n              a8 = 91;\n              v17 = 1413847792;\n            }\n          }\n          else if ( v17 == 1129530517 )\n          {\n            *a10 = a1;\n            a11 = &a8;\n            v17 = 723715198;\n          }\n          else if ( v17 == 1218117761 )\n          {\n            v17 = 1551967266;\n          }\n          else\n          {\n            a9 = 0xAB7D9B77DBE5A042uLL;\n            a7 = 16;\n            a14 = wmp1_body_036(&a6);\n            v17 = 2078742662;\n          }\n        }\n        if ( v17 <= 723715197 )\n          break;\n        if ( v17 == 723715198 )\n        {\n          *a11 = 27;\n          a12 = &v16;\n          v17 = 374107339;\n        }\n        else\n        {\n          *a13 = 10;\n          v17 = 508905569;\n        }\n      }\n      if ( v17 != 374107339 )\n        break;\n      *a12 = 0xAB7D9B77DBE5A006uLL;\n      a13 = &a7;\n      v17 = 746255529;\n    }\n    if ( v17 != 657460048 )\n      break;\n    if ( (wmp1_decode_body_if_needed(\n            (unsigned __int8 *)&wmp1_protected_036_seed,\n            (unsigned __int8 *)&qword_7FF697B14240,\n            &byte_7FF697BC1215)\n        & 1) != 0 )\n      v17 = 1852788032;\n    else\n      v17 = 1218117761;\n  }\n  return wmp1_body_036(&a6);\n}\n",
+        "sha256": "a13081d7fddd6397c627f154127220d5983855b167e8543bf1985f7007f154d5"
+      }
+    },
+    {
+      "start": 140697083656352,
+      "end": 140697083658816,
+      "label": "selector24_dependency_0x7ff697b138a0",
+      "original_bytes": "56574881ecd8000000c74424089309e528b84e876104488d511841b85996854d41b9599685cd41ba069b49baeb2248c78424a000000000000000c7442408f7887e6c66666666662e0f1f840000000000448b5c24084181fbea470c487e624181fbc6c3f5660f8eb50000004181fb886d88720f8fae0100004181fbf6887e6c0f8e010400004181fb28a8ff6d0f84bf0600004181fb59333d720f85ed080000448b5c246441f7d344895c2468c744240831844d6ceb9a662e0f1f8400000000004181fb7bc4aa160f8e130100004181fb38783f370f8f920100004181fb9209e5280f8f670200004181fb7cc4aa160f852e040000448b5c24784501db478d1c5b8b7424144421c601f64429de8974247cc7442408d381a301e933ffffff0f1f004181fb7af5c15a0f8f8a0100004181fb6f4d74530f8f5b0200004181fbeb470c480f853c0400004c8b9c24b8000000488bb424b0000000493b73400f841108000078188ad2795d9090669081efc9ec293483c10df6d980e97fc7c6eb47dfe5779353e8c403010080c57783c20780ef07c6c7910f8fe60c0100c6c1ae80c703e8ed5c000081eacbce98a00f85fc790000f6dec6c75483c1680f87a1ab0000c0baaa40ff14c74424087bf5c15ae97ffeffff6666666666662e0f1f8400000000004181fb32552b090f8ff10000004181fbf48329030f8fba0200004181fbd381a3010f858c060000448b5c247c44035c247044899c2480000000c7442408704d7453e92afeffff4181fbb677ec790f8fdf0000004181fb896d88720f85eefdffff448b5c241041f7d3440b5c241841f7d34501db478d1c9b44899c2484000000c744240833552b09e9e4fdffff4181fb1fd7fe3d0f8ffa0000004181fb39783f370f85a9020000448b9c248c000000478d1c5b44899c2490000000448b5c241041f7d344899c2494000000c744240828a8ff6de999fdffff4181fb7251f15e0f8f090100004181fb7bf5c15a0f85e1020000c744240845d42f12e972fdffff4181fbe24027110f8eeb0100004181fbe34027110f8554030000448b5c241441f7d344895c2474c744240815a6982ee93efdffff4181fbb777ec790f85d10100004c8b5c24284c039c24c00000004c899c24c8000000448b5c243041ffcb44895c2420c7442408540e3d06e902fdffff4181fb9309e5280f85e10100004c8b194c899c24a8000000c7442408f5832903e9ddfcffff4181fb20d7fe3d0f85d60100004c8b9c24a8000000c7442424ffffffffe9d40400004181fb704d74530f8574020000448b9c248000000044035c246c442b5c24604181c30ec3906844895c2418c7442408896d8872e983fcffff4181fb7351f15e0f8549020000448b5c243c8b742454428d3c1e897c24584101f34181c3031cc91644895c2414727086ed736c909081ef2cae223255c7c7c603c0c1c7c075aa2a7480c60480ed9f5981c61f960f9281c036e88c1857c7c1b5ab4c5680c30a81c08fb9e35583c27481c37adbfa5e0f8304c701005dc6c1dd83c24f80c71df6d880c2030f84e631000080c08483c192500f8fb3c30100849485448b5c241441f7d344895c245cc74424083bdf327de9cafbffff4181fbc7c3f5660f8539020000448b5c245044035c2444442b5c244044895c2454c74424087351f15ee99cfbffff4181fbf58329030f857804000048899424d0000000c7442408a969291ee97afbffff4181fb33552b090f859c040000c7442408a650193ee960fbffff448b5c245c41f7d34181e3a6697a32478d1c5b44895c2460448b5c24144509cb44895c2464c744240859333d72e92efbffffc744240820d7fe3de921fbffffc74424086a488155e914fbffff448b5c24744521cb44895c2478c74424087cc4aa16e9fafaffff448b5c2410438d341b8d347689b42488000000440b5c241844899c248c000000c744240839783f37e9cdfaffff4c8b5c24284d8b5b504c899c24b0000000654c8b1c25300000004c899c24b8000000c7442408eb470c48e99efaffff448b5c243841c1e30344895c243c448b5c241c4489def7d681e6b1789e3bc1e602897424404489de81f6b1789e3bc1e602897424444489de81f64e8761048d3cf50000000029f7897c24484181e3b1789efb44895c244cc74424082bb5a902e93afaffffc744240874e4db5de92dfaffff448b5c24104501d344895c241c41f7d34181e34e87610444895c2438c74424085d97f13ae904faffff4c8b5c2428458b1b4d85db0f9444240f4c899c24c0000000a834715781ed11a85be95281edee79683e81eb38703a36e84dcb000053f6de5e0f8569a60100e8eec2000081c04522b244f6dfe879fa010083c6d3c6c79c80e9c581ea0915d914e8e7550000c6c1685781c60d9cee21488083936ec7442408b777ec79e984f9ffff448b5c2468478d1c5b44895c246c448b5c24144531cb428d34dd000000004429de897424707c5186ed7d4d90906a79f6dde8f2a30000c7c055d9c3ffe81bcf0000e89bea0100705a83c675e8e69a010081eb0f44857ce833260000e80652000080eb4ac6c7205b7df379410f8eef22010081a3a945aef6e4c7442408e3402711e9fff8ffff712686d270136690669083c0b35680eda80f8b57c901000f867024000080c35fc7c5ec1871190f8571fa0000c7c1ff97e8b96afee87a98010069b3ceab89c880f2008ae4716980e93972336ae9c6c53c0f8cd1a900000f875c470000e8c9aa0000786680c71f5580e85c5a0f31c7c505c6381381c33b374cc881c78078744b7e8f0f3181ef16ad1b20760cc6c3b4c7c21f1a85655280c3390f828e6d00007b5cc6c1a180e97c7de180ee14819fbd31807c240f000f855a010000448b5c241844239c24940000008b742418237424108d34f6468d1c9e442b9c2490000000442b9c248800000044039c248400000044035c241c442b5c2458442b5c243444395c24200f840c0100004c8b9c24c80000008b742420897424244c899c24980000004c8b9c24980000008b7424244c895c242889742430c74424087451d749e9bdf7ffff448b5c244c41c1e303753a86c07436909081eb17cd6222e8f9320100e85d1a0000680f08db206ae50f8eb02f0100e8904c010083c0dcc7c73dc3c038e83d4e00004f878d138b74241c21c601f64129f37f3d86f67e399090510f8aab740100c6c26d52c6c75780c1af81c7eddf9c24c7c5d9b2377381ebf10c08a6c6c778c6c796c7c6567a71b380ea1e83b3622c0a442b5c244844895c2450c7442408c7c3f566e917f7ffff448b1df8610a0044895c24344181f39713a3e84181c3e89be35a44895c2410c74424082573f561e9ebf6ffffc7442408d8162578e9def6ffffc7442408f2823a0fe9d1f6ffff488b44242848898424a0000000488b8424a00000004881c4d80000005f5ec3cccc",
+      "sha256_before": "bb2873ecd6e8e103c0d82ba996e5597129200daa34ff570f32e4870269cc53e3",
+      "old_name": "wmp1_body_036",
+      "old_type": "__int64 __fastcall(_QWORD)",
+      "old_comment": null,
+      "old_chunks": [
+        [
+          140697083656352,
+          140697083658816
+        ],
+        [
+          140697083736337,
+          140697083736416
+        ]
+      ],
+      "patches": [
+        {
+          "ea": 140697083656709,
+          "old": "795d",
+          "new": "eb5d",
+          "selected": 140697083656804
+        },
+        {
+          "ea": 140697083657374,
+          "old": "736c",
+          "new": "eb6c",
+          "selected": 140697083657484
+        },
+        {
+          "ea": 140697083657990,
+          "old": "7157",
+          "new": "eb57",
+          "selected": 140697083658079
+        },
+        {
+          "ea": 140697083658133,
+          "old": "7d4d",
+          "new": "eb4d",
+          "selected": 140697083658212
+        },
+        {
+          "ea": 140697083658229,
+          "old": "7013",
+          "new": "eb13",
+          "selected": 140697083658250
+        },
+        {
+          "ea": 140697083658250,
+          "old": "7024",
+          "new": "eb24",
+          "selected": 140697083658288
+        },
+        {
+          "ea": 140697083658261,
+          "old": "7119",
+          "new": "eb19",
+          "selected": 140697083658288
+        },
+        {
+          "ea": 140697083658265,
+          "old": "71fa",
+          "new": "ebfa",
+          "selected": 140697083658261
+        },
+        {
+          "ea": 140697083658293,
+          "old": "7169",
+          "new": "eb69",
+          "selected": 140697083658400
+        },
+        {
+          "ea": 140697083658560,
+          "old": "7436",
+          "new": "eb36",
+          "selected": 140697083658616
+        },
+        {
+          "ea": 140697083658631,
+          "old": "7e39",
+          "new": "eb39",
+          "selected": 140697083658690
+        }
+      ],
+      "old_frame": {
+        "frsize": 256,
+        "frregs": 0,
+        "fpd": 0,
+        "serialized": [
+          "0dd102f180082102c02102402102202102202102202102202102202002202002402102402102202002202102402102202102202102202102202102202102202102202102202102202102202102202102202102202102402102202102202102202102202102202102202002202002402002402002402002402002402002402002400a30f1802002c00208",
+          "077661725f4538077661725f4530077661725f4443077661725f4438077661725f4434077661725f4430077661725f4343077661725f4338077661725f4330077661725f4238077661725f4234077661725f4230077661725f4138077661725f4134077661725f4130077661725f3943077661725f3938077661725f3934077661725f3930077661725f3843077661725f3838077661725f3834077661725f3830077661725f3743077661725f3738077661725f3734077661725f3643077661725f3638077661725f3634077661725f3630077661725f3543077661725f3538077661725f3534077661725f3530077661725f3438077661725f3430077661725f3338077661725f3330077661725f3238077661725f3230077661725f3138115f5f72657475726e5f61646472657373",
+          null
+        ]
+      },
+      "after": {
+        "failure": "no error",
+        "failure_ea": 18446744073709551615,
+        "pseudocode": "unsigned int *__fastcall selector24_dependency_0x7ff697b138a0(\n        unsigned int **a1,\n        __int64 a2,\n        __int64 a3,\n        __int64 a4,\n        unsigned int *a5,\n        __int64 a6,\n        __int64 a7,\n        __int64 a8,\n        __int64 a9,\n        __int64 a10,\n        __int64 a11,\n        __int64 a12,\n        __int64 a13,\n        __int64 a14,\n        __int64 a15,\n        __int64 a16,\n        __int64 a17,\n        __int64 a18,\n        __int64 a19,\n        __int64 a20,\n        unsigned int *a21,\n        HANDLE a22,\n        struct _TEB *a23,\n        __int64 a24,\n        char *a25)\n{\n  unsigned int *v25; // r11\n  int i; // [rsp+F0h] [rbp+8h]\n  bool v28; // [rsp+F7h] [rbp+Fh]\n  unsigned int v29; // [rsp+F8h] [rbp+10h]\n  int v30; // [rsp+FCh] [rbp+14h]\n  int v31; // [rsp+100h] [rbp+18h]\n  unsigned int v32; // [rsp+104h] [rbp+1Ch]\n  int v33; // [rsp+108h] [rbp+20h]\n  int v34; // [rsp+10Ch] [rbp+24h]\n\n  for ( i = 686098835; ; i = 1041846438 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( 1 )\n        {\n          while ( i > 1208764394 )\n          {\n            if ( i <= 1727382470 )\n            {\n              if ( i > 1522660730 )\n              {\n                if ( i > 1592873330 )\n                {\n                  if ( i == 1592873331 )\n                  {\n                    LODWORD(a11) = HIDWORD(a10) + HIDWORD(a7);\n                    v30 = HIDWORD(a10) + HIDWORD(a7) + 382278659;\n                    HIDWORD(a11) = ~v30;\n                    i = 2100485947;\n                  }\n                  else\n                  {\n                    v32 = v29 - 1169581306;\n                    LODWORD(a7) = ~(v29 - 1169581306) & 0x461874E;\n                    i = 988911453;\n                  }\n                }\n                else if ( i == 1522660731 )\n                {\n                  i = 305124421;\n                }\n                else\n                {\n                  HIDWORD(a7) = 8 * a7;\n                  LODWORD(a8) = 4 * (~v32 & 0x3B9E78B1);\n                  HIDWORD(a8) = 4 * (v32 ^ 0x3B9E78B1);\n                  LODWORD(a9) = 7 * (v32 ^ 0x461874E);\n                  HIDWORD(a9) = v32 & 0xFB9E78B1;\n                  i = 44676395;\n                }\n              }\n              else if ( i > 1400130927 )\n              {\n                if ( i == 1400130928 )\n                {\n                  v31 = HIDWORD(a13) + a16 - a12 + 1754317582;\n                  i = 1921543561;\n                }\n                else\n                {\n                  i = 1574691956;\n                }\n              }\n              else if ( i == 1208764395 )\n              {\n                if ( a22 == a23->ClientId.UniqueProcess )\n                  i = 255492850;\n                else\n                  i = 1522660731;\n              }\n              else\n              {\n                a22 = *((HANDLE *)a5 + 10);\n                a23 = NtCurrentTeb();\n                i = 1208764395;\n              }\n            }\n            else if ( i > 1921543560 )\n            {\n              if ( i > 2045540278 )\n              {\n                if ( i == 2045540279 )\n                {\n                  a25 = (char *)a5 + a24;\n                  v33 = a6 - 1;\n                  i = 104664660;\n                }\n                else\n                {\n                  LODWORD(a12) = 3 * (~HIDWORD(a11) & 0x327A69A6);\n                  HIDWORD(a12) = v30 | 0xCD859659;\n                  i = 1916613465;\n                }\n              }\n              else if ( i == 1921543561 )\n              {\n                HIDWORD(a16) = 10 * ~(v31 | ~v29);\n                i = 153834803;\n              }\n              else\n              {\n                a20 = 0;\n                i = 1820231927;\n              }\n            }\n            else if ( i <= 1820231926 )\n            {\n              if ( i == 1727382471 )\n              {\n                HIDWORD(a10) = HIDWORD(a8) + a10 - a8;\n                i = 1592873331;\n              }\n              else\n              {\n                HIDWORD(a13) = 3 * a13;\n                LODWORD(a14) = 7 * (v30 ^ 0xCD859659);\n                i = 287785187;\n              }\n            }\n            else if ( i == 1845471272 )\n            {\n              if ( v28\n                || v33 == v32\n                        + HIDWORD(a16)\n                        + 9 * (v29 & v31)\n                        + 4 * (HIDWORD(a18) & v31)\n                        - (_DWORD)a18\n                        - (_DWORD)a17\n                        - (_DWORD)a11\n                        - HIDWORD(a6) )\n              {\n                i = 2015696600;\n              }\n              else\n              {\n                v25 = (unsigned int *)a25;\n                v34 = v33;\nLABEL_66:\n                a5 = v25;\n                LODWORD(a6) = v34;\n                i = 1238847860;\n              }\n            }\n            else\n            {\n              if ( i != 1916613465 )\n                return (unsigned int *)a20;\n              LODWORD(a13) = ~HIDWORD(a12);\n              i = 1817019441;\n            }\n          }\n          if ( i <= 380290171 )\n            break;\n          if ( i > 926906424 )\n          {\n            if ( i > 1040111391 )\n            {\n              if ( i == 1040111392 )\n              {\n                v25 = a21;\n                v34 = -1;\n                goto LABEL_66;\n              }\n              LODWORD(a17) = 6 * v29;\n              HIDWORD(a17) = v31 | v29;\n              i = 926906425;\n            }\n            else if ( i == 926906425 )\n            {\n              LODWORD(a18) = 3 * HIDWORD(a17);\n              HIDWORD(a18) = ~v29;\n              i = 1845471272;\n            }\n            else\n            {\n              i = 1434536042;\n            }\n          }\n          else if ( i > 686098834 )\n          {\n            if ( i == 686098835 )\n            {\n              a21 = *a1;\n              i = 53052405;\n            }\n            else\n            {\n              LODWORD(a15) = HIDWORD(a14) & 0xCD859659;\n              i = 380290172;\n            }\n          }\n          else if ( i == 380290172 )\n          {\n            HIDWORD(a15) = 2 * (v30 & 0x4D859659) - 6 * a15;\n            i = 27492819;\n          }\n          else\n          {\n            i = 1040111392;\n          }\n        }\n        if ( i > 153834802 )\n          break;\n        if ( i > 53052404 )\n        {\n          if ( i == 53052405 )\n          {\n            i = 506030505;\n          }\n          else\n          {\n            HIDWORD(a6) = dword_7FF697BBA3D8;\n            v29 = (dword_7FF697BBA3D8 ^ 0xE8A31397) + 1524866024;\n            i = 1643475749;\n          }\n        }\n        else if ( i == 27492819 )\n        {\n          LODWORD(a16) = a14 + HIDWORD(a15);\n          i = 1400130928;\n        }\n        else\n        {\n          LODWORD(a10) = 8 * HIDWORD(a9) - 2 * (v32 & 0x461874E) - a9;\n          i = 1727382471;\n        }\n      }\n      if ( i <= 287785186 )\n        break;\n      if ( i == 287785187 )\n      {\n        HIDWORD(a14) = ~v30;\n        i = 781755925;\n      }\n      else\n      {\n        v28 = *a5 == 0;\n        a24 = *a5;\n        i = 2045540279;\n      }\n    }\n    if ( i != 153834803 )\n      break;\n  }\n  return a5;\n}\n",
+        "sha256": "366dab6052e93d34bb8efcc191d5885708b2be4b485b38fb83f46d3e8775f9e5"
+      }
+    },
+    {
+      "start": 140697084255504,
+      "end": 140697084256992,
+      "label": "wmp1_body_128",
+      "original_bytes": "4156565755534883ec304889ce84dd731a9090f6dfc6c1edc6c5ac81eb7cec090c6a32c6c29280e8460f84730c01000f8686a4000081c0fb40730f5e83c07df6dd5b0f8f80580100098dc74424240000000048bf68107f422e1d78fd4831cf488b17488d5c24244c8d7424280f1f4000488b0539650100448b442424448b0df5500100706886f671646accc6c2e780eb2c0f84132c01000f82c4cb00000f8ac25c01000f8e29f50100e804140000e88092000080c2485b81c3b905fec75980c6515380e8c580c1485781ead2b3defb80c53481c1c2fd971ac7c223a5924a81e9fbea28e568189798254ba2a2fe4489c981f197e4bc944589ca4181f2931e5bf64129ca4589d34489d14409c9438d2c124521ca41f7d14509cbf7d14501d24429d57e6f86c97f6b81c29e9cd996c6c6e1e8947a000051e83a42000081e849eb3eb4f6de83c2a0c6c0167ab281ef987ccb1d5881edc601a161c6c6bff6d95483c60d80c7445d81ee9ca207f383c07680c0d483c54e80ee2083c33581eb4b73fc8e80edce7555f6d9f6da6ab280c6204e2b99f14401d901e94429c9ffc14989d9ffd03d040000c00f858f000000f8c0f4007364909066900f83a722010081eff9d9e82e81eb5c08d0d881e9a5d98b8868c9f0bc7581ee0fb30a2c6a5ee8a04401005680c7ad7dda5fc7c36ad22b8381c047f88ef7f6d980e97f80c22681eaa733f11d5cf6dae8bd11000080edfac7c328da0f1f818aecd84889f94889da4d89f0e8dc21f3ff488b542428a8010f843ffeffffb8170000c0e98803000085c00f8480030000488b0f4885c90f847403000089c7ff155968010089f84c8b15204f01004c89d148f7d1488d140949b8afc55b96574bf4f94989c94d21c17e49c0eb007f4466906690f6d90f8e01b60000c7c18ff9e70a83c20580e93880c58281e813b92c16c6c1f579aa5a81c0376dbfaa5ef6dbc7c7f5039c1681c37ebda69e81aafa2403be5c4f49f7d04c21c14d21d0498d0c484c01c94829d149b97964aa98fb5192c84901c980e5ffc0ee007135e83e6f00006ade80eb84e8c20f010081ede2af5c2d80ee5479b980eba981ebd8cc0b4080efba81ebce90712583c31fc6c29f683d2a71037e48e871ed0100c7c7671355a571e27abff6d981c360a6ee15a3f986f6723e9090669081e9772c28d96a8de8d41c01000f8a77de0000c7c0783d7eb780c6d480c22f81c19abb3cff80e8db80eab7c6c29281ea5c2eab06c0bfd9fbed0948ba977b0ce7c6aad8124c31ca49bb655b911059801aba4901d349b8f909121292f995b44d31d84d01d04d89cb49f7d34c89c74c09df4d89c24c89c34c31cb488d1c5b4d21c34d21c84d29d84901d84929f848f7d748c1e7024d09ca49f7d2a9e2a871e986c071589090c7c7495ee8447c8b6ac083c04580c58cf6df81ed41317b7c5d0f861599000083c0c10f823763010080e886c6c6e481c29e06fe890f8562590100e865c0000081c7918456c8c7c0b712445df6dd0f879298000018973e7b528aed7a4e90900f8f59a60100e8f8840100720b80ed5fc7c14f5031dc83c3a0c7c14e214a7474fe81c7c60b85bce8b88600000f8fdaa40100c7c343eed18d0f8b8848000081c122f106ca80c2f481bd0255fe80e3ff86c0716951c6c09352c6c2570f8d9c710100f6dd83c1ade8d74e0000e81e860100c7c213f5de72f6df6a57e81e210000c7c780ade3abc7c5f239db6dc6c2fe83c23481c671cdf6fa556ab75681e875ddbd1380c2765981c09830ce166a0ac6c5e154c7c2bd2c2e4a4d6994d4a081fc00260000770383eca674087506e800000000c35090ffc058780b7915909051c6c1fb81ef909078020f8eeb1d00006abfe87916000083c616c7c305a120b380e8e180c6b34a69b83b277d34c0e0007c52909066900f8eeb4e000080c13e81c1a4a0d27a81c175af976d0f31e8676f0000f6d981c3e67738c66a290f3181c214907dd45a81ebf27ad61c80c53080e8b15f81c7fc0ed011c6c37b6830433d504b818f318aff7c004d01d04929f84929c84831d64c31c648c706000000004883c4305b5d5f5e415ec3cccc",
+      "sha256_before": "754d530f6984b13f9e8385322c0e6b7e6edd25ecdc147b6a6840207b0266c765",
+      "old_name": "wmp1_body_128",
+      "old_type": "__int64 __fastcall(_QWORD, _QWORD, _QWORD, _QWORD)",
+      "old_comment": null,
+      "old_chunks": [
+        [
+          140697084255504,
+          140697084256992
+        ],
+        [
+          140697084297675,
+          140697084298023
+        ],
+        [
+          140697084302750,
+          140697084302773
+        ]
+      ],
+      "patches": [
+        {
+          "ea": 140697084255519,
+          "old": "731a",
+          "new": "eb1a",
+          "selected": 140697084255547
+        },
+        {
+          "ea": 140697084255547,
+          "old": "730c",
+          "new": "eb0c",
+          "selected": 140697084255561
+        },
+        {
+          "ea": 140697084255561,
+          "old": "730f",
+          "new": "eb0f",
+          "selected": 140697084255578
+        },
+        {
+          "ea": 140697084255635,
+          "old": "7068",
+          "new": "9090",
+          "selected": 140697084255637
+        },
+        {
+          "ea": 140697084255639,
+          "old": "7164",
+          "new": "eb64",
+          "selected": 140697084255741
+        },
+        {
+          "ea": 140697084255797,
+          "old": "7f6b",
+          "new": "eb6b",
+          "selected": 140697084255906
+        },
+        {
+          "ea": 140697084255936,
+          "old": "7364",
+          "new": "eb64",
+          "selected": 140697084256038
+        },
+        {
+          "ea": 140697084256143,
+          "old": "7f44",
+          "new": "eb44",
+          "selected": 140697084256213
+        },
+        {
+          "ea": 140697084256251,
+          "old": "7135",
+          "new": "eb35",
+          "selected": 140697084256306
+        },
+        {
+          "ea": 140697084256295,
+          "old": "7125",
+          "new": "eb25",
+          "selected": 140697084256334
+        },
+        {
+          "ea": 140697084256306,
+          "old": "7103",
+          "new": "eb03",
+          "selected": 140697084256311
+        },
+        {
+          "ea": 140697084256311,
+          "old": "71ed",
+          "new": "ebed",
+          "selected": 140697084256294
+        },
+        {
+          "ea": 140697084256337,
+          "old": "723e",
+          "new": "eb3e",
+          "selected": 140697084256401
+        },
+        {
+          "ea": 140697084256503,
+          "old": "7158",
+          "new": "eb58",
+          "selected": 140697084256593
+        },
+        {
+          "ea": 140697084256597,
+          "old": "7a4e",
+          "new": "eb4e",
+          "selected": 140697084256677
+        },
+        {
+          "ea": 140697084256682,
+          "old": "7169",
+          "new": "eb69",
+          "selected": 140697084256789
+        },
+        {
+          "ea": 140697084256802,
+          "old": "7506",
+          "new": "eb06",
+          "selected": 140697084256810
+        },
+        {
+          "ea": 140697084256817,
+          "old": "7915",
+          "new": "eb15",
+          "selected": 140697084256840
+        },
+        {
+          "ea": 140697084256829,
+          "old": "7802",
+          "new": "eb02",
+          "selected": 140697084256833
+        },
+        {
+          "ea": 140697084256840,
+          "old": "7916",
+          "new": "eb16",
+          "selected": 140697084256864
+        },
+        {
+          "ea": 140697084256869,
+          "old": "7c52",
+          "new": "eb52",
+          "selected": 140697084256953
+        },
+        {
+          "ea": 140697084256919,
+          "old": "7dd4",
+          "new": "ebd4",
+          "selected": 140697084256877
+        },
+        {
+          "ea": 140697084256955,
+          "old": "7c00",
+          "new": "9090",
+          "selected": 140697084256957
+        }
+      ],
+      "old_frame": {
+        "frsize": 88,
+        "frregs": 0,
+        "fpd": 0,
+        "serialized": [
+          "0d19f180080a30f1802004c0022102e02002200208",
+          "115f5f72657475726e5f61646472657373066172675f43076172675f3130",
+          null
+        ]
+      },
+      "after": {
+        "failure": "no error",
+        "failure_ea": 18446744073709551615,
+        "pseudocode": "void wmp1_body_128()\n{\n  JUMPOUT(0x7FF697BA5D94LL);\n}\n",
+        "sha256": "a7e9d062389684e4f27cb28a421a67f894aff4c420099e0ff7425056873bc269"
+      }
+    },
+    {
+      "start": 140697083412752,
+      "end": 140697083413518,
+      "label": "wmp1_query_buffer_dependency_0x7ff697ad8110",
+      "original_bytes": "4157415641554154565755534881ec980000004d89c64989d54889cb48b8a3c916380e7d968048b93d0ad67d5c608357c744242ce5776c4c4889d74831cf4c89c64831c64c8d25f5060f004c8d7c2430488d6c2438eb2948c74424302300000048c74424401b000000c744242c5d44db66662e0f1f8400000000000f1f4400008b44242c3d2eb0894e7e453d47557c710f8e8a0000003d48557c710f847e0100003d37daf8730f85be01000048b8371272a72c4baa8448894424484c89bc2480000000c744242c105fbc58ebb30f1f003dfb96de2b0f8e840000003dfc96de2b0f8471ffffff3de5776c4c0f8543010000488d0dd87b0700488d15617c07004d89e0e8b9530100a8010f8477010000c744242cb5f94f04e964ffffff0f1f40003d0f5fbc580f8fcd0000003d2fb0894e0f855d010000488b44245048b93d0ad67d5c6083574831c848894424584c89742460c744242ce3c3854de921ffffff3db5f94f040f85ee0000004889bc2488000000f9c0eb00725790905c81ef4c77bbdd81c344d86a0e80c39d80c31a5c80eb3ff6d9f6da50f6dae842e7000080e99d0f842f070000c7c021cf1179e87e95010083c2dd0f85e78f000081c1e011dd1881e91c20785b80c03b69871a3a38544889b4249000000048895c243848b87c1272a72c4baa844889442448c744242cfc96de2be988feffff3d105fbc580f85af000000488b84248000000048c70027000000c744242cb9516c54e961feffff488b442478488918c744242c37daf873e94cfeffff488b44246048b9a3c916380e7d96804831c84889442468c744242c04e05e75e928feffff4c896c2450c744242c2fb0894ee916feffff488b442468488944247048896c2478c744242c48557c71e9fafdffffc744242cc1554315e9edfdffff48c7442440570000004c8b442458488b542470488d4c2430e8407a0700eb384c8b842488000000488b942490000000488d4c2430e8247a070089c3488d0dfb790700488d15847a07004c8d055d040f00e8084a010089d84881c4980000005b5d5f5e415c415d415e415fc3",
+      "sha256_before": "2e778e37589a9dac11b71e7cf209d925213120ec046d19ee08658e45d3376b5b",
+      "old_name": "sub_7FF697AD8110",
+      "old_type": null,
+      "old_comment": null,
+      "old_chunks": [
+        [
+          140697083412752,
+          140697083413518
+        ]
+      ],
+      "patches": [
+        {
+          "ea": 140697083413126,
+          "old": "7257",
+          "new": "eb57",
+          "selected": 140697083413215
+        }
+      ],
+      "old_frame": {
+        "frsize": 216,
+        "frregs": 0,
+        "fpd": 160,
+        "serialized": [
+          "0d79f18008210460012102202102402002402002402002402002402002402002402002402002402002402002402002400a30f180200440020208",
+          "077661725f4143077661725f4138077661725f4130077661725f3938077661725f3930077661725f3838077661725f3830077661725f3738077661725f3730077661725f3638077661725f3630077661725f3538077661725f3530077661725f3438115f5f72657475726e5f61646472657373",
+          null
+        ]
+      },
+      "after": {
+        "failure": "no error",
+        "failure_ea": 18446744073709551615,
+        "pseudocode": "_BOOL8 __fastcall wmp1_query_buffer_dependency_0x7ff697ad8110(\n        __int64 a1,\n        __int64 a2,\n        __int64 a3,\n        __int64 a4,\n        __int64 a5,\n        __int64 a6,\n        __int64 a7,\n        __int64 a8,\n        unsigned __int64 a9,\n        __int64 a10,\n        __int64 a11,\n        __int64 a12,\n        unsigned __int64 a13,\n        unsigned __int64 a14,\n        __int64 *a15,\n        __int64 *a16,\n        __int64 a17,\n        unsigned __int64 a18)\n{\n  __int64 v21; // rdi\n  unsigned __int64 v22; // rsi\n  BOOL v24; // ebx\n  __int64 v25; // [rsp+38h] [rbp+0h] BYREF\n  int v26; // [rsp+104h] [rbp+CCh]\n\n  v26 = 1282176997;\n  v21 = a2 ^ 0x5783605C7DD60A3DLL;\n  v22 = a3 ^ 0x80967D0E3816C9A3uLL;\n  while ( 1 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( v26 <= 1317646382 )\n        {\n          if ( v26 <= 736007931 )\n          {\n            if ( v26 == 72350133 )\n            {\n              a17 = v21;\n              a18 = v22;\n              a7 = a1;\n              a9 = 0x84AA4B2CA772127CuLL;\n              v26 = 736007932;\n            }\n            else\n            {\n              a10 = a2;\n              v26 = 1317646383;\n            }\n          }\n          else if ( v26 == 736007932 )\n          {\n            a6 = 35;\n            a8 = 27;\n            v26 = 1725645917;\n          }\n          else if ( v26 == 1282176997 )\n          {\n            if ( (wmp1_decode_body_if_needed(\n                    (unsigned __int8 *)&wmp1_protected_094_seed,\n                    (unsigned __int8 *)&qword_7FF697B4FE70,\n                    &byte_7FF697BC8850)\n                & 1) != 0 )\n              v26 = 72350133;\n            else\n              v26 = 356734401;\n          }\n          else\n          {\n            a13 = a12 ^ 0x80967D0E3816C9A3uLL;\n            v26 = 1969152004;\n          }\n        }\n        if ( v26 <= 1903973703 )\n          break;\n        if ( v26 == 1903973704 )\n        {\n          *a15 = a1;\n          v26 = 1945688631;\n        }\n        else if ( v26 == 1945688631 )\n        {\n          a9 = 0x84AA4B2CA7721237uLL;\n          a16 = &a6;\n          v26 = 1488740112;\n        }\n        else\n        {\n          a14 = a13;\n          a15 = &v25;\n          v26 = 1903973704;\n        }\n      }\n      if ( v26 > 1488740111 )\n        break;\n      if ( v26 != 1317646383 )\n      {\n        a8 = 87;\n        return wmp1_body_094((__int64)&a6, a14, a11);\n      }\n      a11 = a10 ^ 0x5783605C7DD60A3DLL;\n      a12 = a3;\n      v26 = 1300612067;\n    }\n    if ( v26 != 1488740112 )\n      break;\n    *a16 = 39;\n    v26 = 1416384953;\n  }\n  v24 = wmp1_body_094((__int64)&a6, a18, a17);\n  sub_7FF697AECE00(&wmp1_protected_094_seed, &qword_7FF697B4FE70, &byte_7FF697BC8850);\n  return v24;\n}\n",
+        "sha256": "4207af3e7f07d453afb9391178cc1345394918d27cff4a4465540be1ef854f6e"
+      }
+    },
+    {
+      "start": 140697083903488,
+      "end": 140697083903600,
+      "label": "wmp1_query_buffer_dependency_0x7ff697b4fe00",
+      "original_bytes": "5657534883ec204c89c74889d6488b5908488b0b4883f900740dff15a0c9060048c7030000000048b83d0ad67d5c6083574831c78b0789c1ff156ac9060048b9a3c916380e7d96804831ce4889064889034883f800750ab0014883c4205b5f5ec331c04883c4205b5f5ec3cccccccccc",
+      "sha256_before": "f0c0b21e7cda767c2dfe0fb837cb75b57cb8cf3c74dd6d0a99befbd8afd2cd2d",
+      "old_name": "wmp1_body_094",
+      "old_type": "_BOOL8 __fastcall(__int64, __int64, __int64)",
+      "old_comment": null,
+      "old_chunks": [
+        [
+          140697083903488,
+          140697083903600
+        ]
+      ],
+      "patches": [],
+      "old_frame": {
+        "frsize": 56,
+        "frregs": 0,
+        "fpd": 0,
+        "serialized": [
+          "0d09f180080a30f1802004c0010208",
+          "115f5f72657475726e5f61646472657373",
+          null
+        ]
+      },
+      "after": {
+        "failure": "no error",
+        "failure_ea": 18446744073709551615,
+        "pseudocode": "_BOOL8 __fastcall wmp1_query_buffer_dependency_0x7ff697b4fe00(__int64 a1, __int64 a2, __int64 a3)\n{\n  __int64 *v5; // rbx\n  __int64 v6; // rax\n\n  v5 = *(__int64 **)(a1 + 8);\n  if ( *v5 )\n  {\n    wmp1_context_free(*v5);\n    *v5 = 0;\n  }\n  v6 = wmp1_context_allocator(*(unsigned int *)(a3 ^ 0x5783605C7DD60A3DLL));\n  *(_QWORD *)(a2 ^ 0x80967D0E3816C9A3uLL) = v6;\n  *v5 = v6;\n  return v6 == 0;\n}\n",
+        "sha256": "f0c0b21e7cda767c2dfe0fb837cb75b57cb8cf3c74dd6d0a99befbd8afd2cd2d"
+      }
+    }
+  ],
+  "body128_overlap": {
+    "body_index": 128,
+    "start": 140697084255504,
+    "end": 140697084256992,
+    "original_bytes": "4156565755534883ec304889ce84dd731a9090f6dfc6c1edc6c5ac81eb7cec090c6a32c6c29280e8460f84730c01000f8686a4000081c0fb40730f5e83c07df6dd5b0f8f80580100098dc74424240000000048bf68107f422e1d78fd4831cf488b17488d5c24244c8d7424280f1f4000488b0539650100448b442424448b0df5500100706886f671646accc6c2e780eb2c0f84132c01000f82c4cb00000f8ac25c01000f8e29f50100e804140000e88092000080c2485b81c3b905fec75980c6515380e8c580c1485781ead2b3defb80c53481c1c2fd971ac7c223a5924a81e9fbea28e568189798254ba2a2fe4489c981f197e4bc944589ca4181f2931e5bf64129ca4589d34489d14409c9438d2c124521ca41f7d14509cbf7d14501d24429d57e6f86c97f6b81c29e9cd996c6c6e1e8947a000051e83a42000081e849eb3eb4f6de83c2a0c6c0167ab281ef987ccb1d5881edc601a161c6c6bff6d95483c60d80c7445d81ee9ca207f383c07680c0d483c54e80ee2083c33581eb4b73fc8e80edce7555f6d9f6da6ab280c6204e2b99f14401d901e94429c9ffc14989d9ffd03d040000c00f858f000000f8c0f4007364909066900f83a722010081eff9d9e82e81eb5c08d0d881e9a5d98b8868c9f0bc7581ee0fb30a2c6a5ee8a04401005680c7ad7dda5fc7c36ad22b8381c047f88ef7f6d980e97f80c22681eaa733f11d5cf6dae8bd11000080edfac7c328da0f1f818aecd84889f94889da4d89f0e8dc21f3ff488b542428a8010f843ffeffffb8170000c0e98803000085c00f8480030000488b0f4885c90f847403000089c7ff155968010089f84c8b15204f01004c89d148f7d1488d140949b8afc55b96574bf4f94989c94d21c17e49c0eb007f4466906690f6d90f8e01b60000c7c18ff9e70a83c20580e93880c58281e813b92c16c6c1f579aa5a81c0376dbfaa5ef6dbc7c7f5039c1681c37ebda69e81aafa2403be5c4f49f7d04c21c14d21d0498d0c484c01c94829d149b97964aa98fb5192c84901c980e5ffc0ee007135e83e6f00006ade80eb84e8c20f010081ede2af5c2d80ee5479b980eba981ebd8cc0b4080efba81ebce90712583c31fc6c29f683d2a71037e48e871ed0100c7c7671355a571e27abff6d981c360a6ee15a3f986f6723e9090669081e9772c28d96a8de8d41c01000f8a77de0000c7c0783d7eb780c6d480c22f81c19abb3cff80e8db80eab7c6c29281ea5c2eab06c0bfd9fbed0948ba977b0ce7c6aad8124c31ca49bb655b911059801aba4901d349b8f909121292f995b44d31d84d01d04d89cb49f7d34c89c74c09df4d89c24c89c34c31cb488d1c5b4d21c34d21c84d29d84901d84929f848f7d748c1e7024d09ca49f7d2a9e2a871e986c071589090c7c7495ee8447c8b6ac083c04580c58cf6df81ed41317b7c5d0f861599000083c0c10f823763010080e886c6c6e481c29e06fe890f8562590100e865c0000081c7918456c8c7c0b712445df6dd0f879298000018973e7b528aed7a4e90900f8f59a60100e8f8840100720b80ed5fc7c14f5031dc83c3a0c7c14e214a7474fe81c7c60b85bce8b88600000f8fdaa40100c7c343eed18d0f8b8848000081c122f106ca80c2f481bd0255fe80e3ff86c0716951c6c09352c6c2570f8d9c710100f6dd83c1ade8d74e0000e81e860100c7c213f5de72f6df6a57e81e210000c7c780ade3abc7c5f239db6dc6c2fe83c23481c671cdf6fa556ab75681e875ddbd1380c2765981c09830ce166a0ac6c5e154c7c2bd2c2e4a4d6994d4a081fc00260000770383eca674087506e800000000c350ebffc058780b7915909051c6c1fb81ef909078020f8eeb1d00006abfe87916000083c616c7c305a120b380e8e180c6b34a69b83b277d34c0e0007c52909066900f8eeb4e000080c13e81c1a4a0d27a81c175af976d0f31e8676f0000f6d981c3e67738c66a290f3181c214907dd45a81ebf27ad61c80c53080e8b15f81c7fc0ed011c6c37b6830433d504b818f318aff7c004d01d04929f84929c84831d64c31c648c706000000004883c4305b5d5f5e415ec3cccc",
+    "sha256_before": "16b36156948770a585b9c843c41b4106917370720792d37d400256dd4593f9ec",
+    "patches": [
+      {
+        "ea": 140697084256811,
+        "old_first_byte": "eb",
+        "new_first_byte": "90",
+        "original_path_bytes": "ebffc0",
+        "target": 140697084256812,
+        "reason": "Replace JMP to own second byte with flag-preserving NOP, preserve alternate entry instruction bytes."
+      }
+    ]
+  },
+  "type_journal": [
+    {
+      "ea": "0x7ff697bbc2c0",
+      "old_name": "qword_7FF697BBC2C0",
+      "old_type": null,
+      "new_name": "wmp1_pNtQuerySystemInformation",
+      "new_type": "long (__fastcall *wmp1_pNtQuerySystemInformation)(unsigned int, void *, unsigned int, unsigned int *);",
+      "name_ok": true,
+      "type_ok": true
+    },
+    {
+      "ea": "0x7ff697ba5d10",
+      "old_name": "wmp1_body_128",
+      "old_type": "void __fastcall(__int64)",
+      "new_name": "wmp1_query_process_information",
+      "new_type": "long __fastcall wmp1_query_process_information(unsigned __int64 encoded_out_buffer);",
+      "name_ok": true,
+      "type_ok": true
+    },
+    {
+      "ea": "0x7ff697ae2f20",
+      "old_name": "selector24_dependency_0x7ff697ae2f20",
+      "old_type": "__int64 __fastcall(__int64, __int64, __int64, __int64)",
+      "new_name": "wmp1_query_process_information_wrapper",
+      "new_type": "long __fastcall wmp1_query_process_information_wrapper(void **out_buffer);",
+      "name_ok": true,
+      "type_ok": true
+    },
+    {
+      "ea": "0x7ff697b138a0",
+      "old_name": "selector24_dependency_0x7ff697b138a0",
+      "old_type": "unsigned int *__fastcall(unsigned int **, __int64, __int64, __int64)",
+      "new_name": "wmp1_find_current_process_record",
+      "new_type": "void *__fastcall wmp1_find_current_process_record(void **buffer_descriptor);",
+      "name_ok": true,
+      "type_ok": true
+    },
+    {
+      "ea": "0x7ff697ac2330",
+      "old_name": "selector24_dependency_0x7ff697ac2330",
+      "old_type": "unsigned int *__fastcall(unsigned int *, __int64, __int64, __int64)",
+      "new_name": "wmp1_find_current_process_record_wrapper",
+      "new_type": "void *__fastcall wmp1_find_current_process_record_wrapper(void *buffer);",
+      "name_ok": true,
+      "type_ok": true
+    },
+    {
+      "ea": "0x7ff697b4fe00",
+      "old_name": "wmp1_query_buffer_dependency_0x7ff697b4fe00",
+      "old_type": "_BOOL8 __fastcall(__int64, __int64, __int64)",
+      "new_name": "wmp1_replace_query_buffer",
+      "new_type": "unsigned char __fastcall wmp1_replace_query_buffer(unsigned __int64 *descriptor, unsigned __int64 encoded_out_buffer, unsigned __int64 encoded_required_length);",
+      "name_ok": true,
+      "type_ok": true
+    },
+    {
+      "ea": "0x7ff697ad8110",
+      "old_name": "wmp1_query_buffer_dependency_0x7ff697ad8110",
+      "old_type": "_BOOL8 __fastcall(__int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, unsigned __int64, __int64, __int64, __int64, unsigned __int64, unsigned __int64, __int64 *, __int64 *, __int64, unsigned __int64)",
+      "new_name": "wmp1_replace_query_buffer_wrapper",
+      "new_type": "unsigned char __fastcall wmp1_replace_query_buffer_wrapper(void **owned_buffer, unsigned int *required_length, void **out_buffer);",
+      "name_ok": true,
+      "type_ok": true
+    }
+  ],
+  "api_resolution": {
+    "name": "NtQuerySystemInformation",
+    "ascii_or20_hash": "0xe054604a",
+    "hash_call": "0x7ff697b0430b",
+    "compare": "0x7ff697b0431b",
+    "match_state": "0x31b96fe5",
+    "dispatcher_trace": {
+      "state": 834236389,
+      "block": 140697083588396,
+      "trace": [
+        {
+          "ea": 140697083586432,
+          "bytes": "8b85fc030000",
+          "mnemonic": "mov",
+          "next": 140697083586438
+        },
+        {
+          "ea": 140697083586438,
+          "bytes": "3d1bf96832",
+          "mnemonic": "cmp",
+          "immediate": 845740315,
+          "next": 140697083586443
+        },
+        {
+          "ea": 140697083586443,
+          "bytes": "7e53",
+          "mnemonic": "jle",
+          "taken": true,
+          "next": 140697083586528
+        },
+        {
+          "ea": 140697083586528,
+          "bytes": "3d8081fb1d",
+          "mnemonic": "cmp",
+          "immediate": 503021952,
+          "next": 140697083586533
+        },
+        {
+          "ea": 140697083586533,
+          "bytes": "7f49",
+          "mnemonic": "jg",
+          "taken": true,
+          "next": 140697083586608
+        },
+        {
+          "ea": 140697083586608,
+          "bytes": "3dca335428",
+          "mnemonic": "cmp",
+          "immediate": 676606922,
+          "next": 140697083586613
+        },
+        {
+          "ea": 140697083586613,
+          "bytes": "0f8e23010000",
+          "mnemonic": "jle",
+          "taken": false,
+          "next": 140697083586619
+        },
+        {
+          "ea": 140697083586619,
+          "bytes": "3d05c1432d",
+          "mnemonic": "cmp",
+          "immediate": 759415045,
+          "next": 140697083586624
+        },
+        {
+          "ea": 140697083586624,
+          "bytes": "0f8e19040000",
+          "mnemonic": "jle",
+          "taken": false,
+          "next": 140697083586630
+        },
+        {
+          "ea": 140697083586630,
+          "bytes": "3d53d5a531",
+          "mnemonic": "cmp",
+          "immediate": 832951635,
+          "next": 140697083586635
+        },
+        {
+          "ea": 140697083586635,
+          "bytes": "0f8fc5060000",
+          "mnemonic": "jg",
+          "taken": true,
+          "next": 140697083588374
+        },
+        {
+          "ea": 140697083588374,
+          "bytes": "3d54d5a531",
+          "mnemonic": "cmp",
+          "immediate": 832951636,
+          "next": 140697083588379
+        },
+        {
+          "ea": 140697083588379,
+          "bytes": "0f84f3080000",
+          "mnemonic": "jz",
+          "taken": false,
+          "next": 140697083588385
+        },
+        {
+          "ea": 140697083588385,
+          "bytes": "3de56fb931",
+          "mnemonic": "cmp",
+          "immediate": 834236389,
+          "next": 140697083588390
+        },
+        {
+          "ea": 140697083588390,
+          "bytes": "0f85e02d0000",
+          "mnemonic": "jnz",
+          "taken": false,
+          "next": 140697083588396
+        }
+      ]
+    },
+    "ordinal_lookup": "0x7ff697b02f37",
+    "function_rva_lookup": "0x7ff697b02f42",
+    "base_add": "0x7ff697b02f97",
+    "slot_store": "0x7ff697b02f9a",
+    "captured_class_seed": "0x2165e9ff",
+    "evaluated_class": 5,
+    "external_reference": "https://learn.microsoft.com/en-us/windows/win32/api/winternl/nf-winternl-ntquerysysteminformation"
+  },
+  "helper_pseudocode": {
+    "0x7ff697ba5d10": "// positive sp value has been detected, the output may be wrong!\nint __fastcall wmp1_query_process_information(unsigned __int64 encoded_out_buffer)\n{\n  __int64 *v2; // rdi\n  void *v3; // rdx\n  int result; // eax\n  char v5; // al\n  __int64 v6; // rcx\n  int v7; // edi\n  unsigned __int64 v8; // rcx\n  unsigned __int64 v9; // r9\n  unsigned __int64 v10; // rdi\n  unsigned __int64 v11; // r10\n  unsigned int v12; // [rsp+22h] [rbp-36h] BYREF\n  void *v13; // [rsp+26h] [rbp-32h] BYREF\n\n  v12 = 0;\n  v2 = (__int64 *)(encoded_out_buffer ^ 0xFD781D2E427F1068uLL);\n  v3 = *(void **)(encoded_out_buffer ^ 0xFD781D2E427F1068uLL);\n  while ( 1 )\n  {\n    result = wmp1_pNtQuerySystemInformation(\n               2 * ((dword_7FF697BBAE88 ^ 0xF65B1E93) - (dword_7FF697BBAE88 ^ 0x94BCE497))\n             - 2 * (dword_7FF697BBAE88 & ((dword_7FF697BBAE88 ^ 0xF65B1E93) - (dword_7FF697BBAE88 ^ 0x94BCE497)))\n             + (~dword_7FF697BBAE88 | ((dword_7FF697BBAE88 ^ 0xF65B1E93) - (dword_7FF697BBAE88 ^ 0x94BCE497)))\n             + ~(dword_7FF697BBAE88 | ((dword_7FF697BBAE88 ^ 0xF65B1E93) - (dword_7FF697BBAE88 ^ 0x94BCE497)))\n             + dword_7FF697BBAE88\n             + 1\n             + 1,\n               v3,\n               v12,\n               &v12);\n    if ( result != -1073741820 )\n      break;\n    v5 = ((__int64 (__fastcall *)(__int64 *, unsigned int *, void **))sub_7FF697AD8110)(v2, &v12, &v13);\n    v3 = v13;\n    if ( (v5 & 1) != 0 )\n      return -1073741801;\n  }\n  if ( result )\n  {\n    v6 = *v2;\n    if ( *v2 )\n    {\n      v7 = result;\n      wmp1_context_free(v6);\n      result = v7;\n      v8 = (~qword_7FF697BBAE90 & 0xF9F44B57965BC5AFuLL)\n         + (qword_7FF697BBAE90 & 0x60BB4A869A43A50LL)\n         + 2 * (~qword_7FF697BBAE90 & 0x60BB4A869A43A50LL)\n         - 2 * ~qword_7FF697BBAE90;\n      v9 = v8 - 0x376DAE0467559B87LL;\n      v10 = ~v9 | (qword_7FF697BBAE90 + (((v9 ^ 0x12D8AAC6E70C7B97LL) - 0x45E57FA6EF6EA49BLL) ^ 0xB495F992121209F9uLL));\n      v11 = qword_7FF697BBAE90\n          + ((((v8 - 0x376DAE0467559B87LL) ^ 0x12D8AAC6E70C7B97LL) - 0x45E57FA6EF6EA49BLL) ^ 0xB495F992121209F9uLL);\n      *(_QWORD *)((~((v8 - 0x376DAE0467559B87LL) | v11) + 3 * (v9 ^ v11) + (v9 & v11) - (v11 & ~v9) - v10 - 4 * ~v10 - v8)\n                ^ v9\n                ^ 0x12D8AAC6E70C7B97LL\n                ^ encoded_out_buffer) = 0;\n    }\n  }\n  return result;\n}\n",
+    "0x7ff697ae2f20": "// positive sp value has been detected, the output may be wrong!\nint __fastcall wmp1_query_process_information_wrapper(void **out_buffer)\n{\n  unsigned __int64 v2; // rbp\n  int process_information; // esi\n  int v5; // [rsp+18h] [rbp-B0h]\n  char v6; // [rsp+1Fh] [rbp-A9h]\n  char v7; // [rsp+2Ch] [rbp-9Ch]\n  void **v8; // [rsp+30h] [rbp-98h]\n  unsigned __int64 v9; // [rsp+38h] [rbp-90h]\n  __int64 v10; // [rsp+40h] [rbp-88h]\n  __int64 v11; // [rsp+48h] [rbp-80h]\n  unsigned __int64 v12; // [rsp+50h] [rbp-78h]\n  __int64 v13; // [rsp+58h] [rbp-70h]\n  unsigned __int64 v14; // [rsp+60h] [rbp-68h]\n  __int64 v15; // [rsp+68h] [rbp-60h]\n  __int64 v16; // [rsp+70h] [rbp-58h]\n  unsigned __int64 v17; // [rsp+78h] [rbp-50h]\n\n  v5 = 1234481606;\n  v2 = (unsigned __int64)out_buffer ^ 0xFD781D2E427F1068uLL;\n  while ( 1 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( v5 > 1402515511 )\n        {\n          if ( v5 <= 1658495592 )\n          {\n            if ( v5 == 1402515512 )\n            {\n              v11 = 10 * ~v10;\n              v5 = 1727337967;\n            }\n            else if ( v5 == 1417476075 )\n            {\n              v17 = v16;\n              v5 = 1163886156;\n            }\n            else\n            {\n              v7 = wmp1_decode_body_if_needed(\n                     (unsigned __int8 *)&wmp1_protected_128_seed,\n                     (unsigned __int8 *)&qword_7FF697BA62E0,\n                     byte_7FF697BCCE73);\n              v5 = 158124803;\n            }\n          }\n          else if ( v5 > 1748533360 )\n          {\n            if ( v5 == 1748533361 )\n            {\n              v9 = v2;\n              v5 = 32537688;\n            }\n            else if ( v6 )\n            {\n              v8 = out_buffer;\n              v5 = 1189944112;\n            }\n            else\n            {\n              v5 = 1748533361;\n            }\n          }\n          else if ( v5 == 1658495593 )\n          {\n            v16 = v11 + v13 + v15 - v12 + 0xF2F50EA71059D90LL;\n            v5 = 1417476075;\n          }\n          else\n          {\n            v12 = 3 * ((unsigned __int64)v8 | 0xFD781D2E427F1068uLL);\n            v13 = 4 * ((unsigned __int64)v8 & 0x287E2D1BD80EF97LL);\n            v14 = (unsigned __int64)v8 & 0xFD781D2E427F1068uLL;\n            v5 = 702093941;\n          }\n        }\n        if ( v5 <= 1163886155 )\n          break;\n        if ( v5 == 1163886156 )\n        {\n          v5 = 295455111;\n        }\n        else if ( v5 == 1189944112 )\n        {\n          v10 = (unsigned __int64)v8 | 0x287E2D1BD80EF97LL;\n          v5 = 1402515512;\n        }\n        else\n        {\n          v5 = 370278896;\n        }\n      }\n      if ( v5 <= 370278895 )\n        break;\n      if ( v5 == 370278896 )\n      {\n        v5 = 1598697317;\n      }\n      else\n      {\n        v15 = 9 * v14;\n        v5 = 1658495593;\n      }\n    }\n    if ( v5 != 158124803 )\n      break;\n    v6 = v7 & 1;\n    v5 = 1848561930;\n  }\n  if ( v5 == 32537688 )\n    return wmp1_query_process_information(v9);\n  process_information = wmp1_query_process_information(v17);\n  sub_7FF697AECE00(&wmp1_protected_128_seed, &qword_7FF697BA62E0, byte_7FF697BCCE73);\n  return process_information;\n}\n",
+    "0x7ff697b138a0": "void *__fastcall wmp1_find_current_process_record(void **buffer_descriptor)\n{\n  _QWORD *v1; // r11\n  int i; // [rsp+8h] [rbp-E0h]\n  bool v4; // [rsp+Fh] [rbp-D9h]\n  unsigned int v5; // [rsp+10h] [rbp-D8h]\n  int v6; // [rsp+14h] [rbp-D4h]\n  int v7; // [rsp+18h] [rbp-D0h]\n  unsigned int v8; // [rsp+1Ch] [rbp-CCh]\n  int v9; // [rsp+20h] [rbp-C8h]\n  int v10; // [rsp+24h] [rbp-C4h]\n  _QWORD *v11; // [rsp+28h] [rbp-C0h]\n  int v12; // [rsp+30h] [rbp-B8h]\n  int v13; // [rsp+34h] [rbp-B4h]\n  int v14; // [rsp+38h] [rbp-B0h]\n  int v15; // [rsp+3Ch] [rbp-ACh]\n  int v16; // [rsp+40h] [rbp-A8h]\n  int v17; // [rsp+44h] [rbp-A4h]\n  int v18; // [rsp+48h] [rbp-A0h]\n  unsigned int v19; // [rsp+4Ch] [rbp-9Ch]\n  unsigned int v20; // [rsp+50h] [rbp-98h]\n  int v21; // [rsp+54h] [rbp-94h]\n  int v22; // [rsp+58h] [rbp-90h]\n  int v23; // [rsp+5Ch] [rbp-8Ch]\n  int v24; // [rsp+60h] [rbp-88h]\n  unsigned int v25; // [rsp+64h] [rbp-84h]\n  int v26; // [rsp+68h] [rbp-80h]\n  int v27; // [rsp+6Ch] [rbp-7Ch]\n  unsigned int v28; // [rsp+70h] [rbp-78h]\n  int v29; // [rsp+74h] [rbp-74h]\n  unsigned int v30; // [rsp+78h] [rbp-70h]\n  int v31; // [rsp+7Ch] [rbp-6Ch]\n  unsigned int v32; // [rsp+80h] [rbp-68h]\n  int v33; // [rsp+84h] [rbp-64h]\n  int v34; // [rsp+88h] [rbp-60h]\n  int v35; // [rsp+8Ch] [rbp-5Ch]\n  int v36; // [rsp+90h] [rbp-58h]\n  int v37; // [rsp+94h] [rbp-54h]\n  void *v38; // [rsp+A0h] [rbp-48h]\n  _QWORD *v39; // [rsp+A8h] [rbp-40h]\n  HANDLE v40; // [rsp+B0h] [rbp-38h]\n  struct _TEB *v41; // [rsp+B8h] [rbp-30h]\n  __int64 v42; // [rsp+C0h] [rbp-28h]\n  char *v43; // [rsp+C8h] [rbp-20h]\n\n  for ( i = 686098835; ; i = 1041846438 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( 1 )\n        {\n          while ( i > 1208764394 )\n          {\n            if ( i <= 1727382470 )\n            {\n              if ( i > 1522660730 )\n              {\n                if ( i > 1592873330 )\n                {\n                  if ( i == 1592873331 )\n                  {\n                    v22 = v21 + v15;\n                    v6 = v21 + v15 + 382278659;\n                    v23 = ~v6;\n                    i = 2100485947;\n                  }\n                  else\n                  {\n                    v8 = v5 - 1169581306;\n                    v14 = ~(v5 - 1169581306) & 0x461874E;\n                    i = 988911453;\n                  }\n                }\n                else if ( i == 1522660731 )\n                {\n                  i = 305124421;\n                }\n                else\n                {\n                  v15 = 8 * v14;\n                  v16 = 4 * (~v8 & 0x3B9E78B1);\n                  v17 = 4 * (v8 ^ 0x3B9E78B1);\n                  v18 = 7 * (v8 ^ 0x461874E);\n                  v19 = v8 & 0xFB9E78B1;\n                  i = 44676395;\n                }\n              }\n              else if ( i > 1400130927 )\n              {\n                if ( i == 1400130928 )\n                {\n                  v7 = v27 + v32 - v24 + 1754317582;\n                  i = 1921543561;\n                }\n                else\n                {\n                  i = 1574691956;\n                }\n              }\n              else if ( i == 1208764395 )\n              {\n                if ( v40 == v41->ClientId.UniqueProcess )\n                  i = 255492850;\n                else\n                  i = 1522660731;\n              }\n              else\n              {\n                v40 = (HANDLE)v11[10];\n                v41 = NtCurrentTeb();\n                i = 1208764395;\n              }\n            }\n            else if ( i > 1921543560 )\n            {\n              if ( i > 2045540278 )\n              {\n                if ( i == 2045540279 )\n                {\n                  v43 = (char *)v11 + v42;\n                  v9 = v12 - 1;\n                  i = 104664660;\n                }\n                else\n                {\n                  v24 = 3 * (~v23 & 0x327A69A6);\n                  v25 = v6 | 0xCD859659;\n                  i = 1916613465;\n                }\n              }\n              else if ( i == 1921543561 )\n              {\n                v33 = 10 * ~(v7 | ~v5);\n                i = 153834803;\n              }\n              else\n              {\n                v38 = nullptr;\n                i = 1820231927;\n              }\n            }\n            else if ( i <= 1820231926 )\n            {\n              if ( i == 1727382471 )\n              {\n                v21 = v17 + v20 - v16;\n                i = 1592873331;\n              }\n              else\n              {\n                v27 = 3 * v26;\n                v28 = 7 * (v6 ^ 0xCD859659);\n                i = 287785187;\n              }\n            }\n            else if ( i == 1845471272 )\n            {\n              if ( v4 || v9 == v8 + v33 + 9 * (v5 & v7) + 4 * (v37 & v7) - v36 - v34 - v22 - v13 )\n              {\n                i = 2015696600;\n              }\n              else\n              {\n                v1 = v43;\n                v10 = v9;\nLABEL_66:\n                v11 = v1;\n                v12 = v10;\n                i = 1238847860;\n              }\n            }\n            else\n            {\n              if ( i != 1916613465 )\n                return v38;\n              v26 = ~v25;\n              i = 1817019441;\n            }\n          }\n          if ( i <= 380290171 )\n            break;\n          if ( i > 926906424 )\n          {\n            if ( i > 1040111391 )\n            {\n              if ( i == 1040111392 )\n              {\n                v1 = v39;\n                v10 = -1;\n                goto LABEL_66;\n              }\n              v34 = 6 * v5;\n              v35 = v7 | v5;\n              i = 926906425;\n            }\n            else if ( i == 926906425 )\n            {\n              v36 = 3 * v35;\n              v37 = ~v5;\n              i = 1845471272;\n            }\n            else\n            {\n              i = 1434536042;\n            }\n          }\n          else if ( i > 686098834 )\n          {\n            if ( i == 686098835 )\n            {\n              v39 = *buffer_descriptor;\n              i = 53052405;\n            }\n            else\n            {\n              v30 = v29 & 0xCD859659;\n              i = 380290172;\n            }\n          }\n          else if ( i == 380290172 )\n          {\n            v31 = 2 * (v6 & 0x4D859659) - 6 * v30;\n            i = 27492819;\n          }\n          else\n          {\n            i = 1040111392;\n          }\n        }\n        if ( i > 153834802 )\n          break;\n        if ( i > 53052404 )\n        {\n          if ( i == 53052405 )\n          {\n            i = 506030505;\n          }\n          else\n          {\n            v13 = dword_7FF697BBA3D8;\n            v5 = (dword_7FF697BBA3D8 ^ 0xE8A31397) + 1524866024;\n            i = 1643475749;\n          }\n        }\n        else if ( i == 27492819 )\n        {\n          v32 = v28 + v31;\n          i = 1400130928;\n        }\n        else\n        {\n          v20 = 8 * v19 - 2 * (v8 & 0x461874E) - v18;\n          i = 1727382471;\n        }\n      }\n      if ( i <= 287785186 )\n        break;\n      if ( i == 287785187 )\n      {\n        v29 = ~v6;\n        i = 781755925;\n      }\n      else\n      {\n        v4 = *(unsigned int *)v11 == 0;\n        v42 = *(unsigned int *)v11;\n        i = 2045540279;\n      }\n    }\n    if ( i != 153834803 )\n      break;\n  }\n  return v11;\n}\n",
+    "0x7ff697ac2330": "void *__fastcall wmp1_find_current_process_record_wrapper(void *buffer)\n{\n  int v3; // [rsp+2Ch] [rbp-1Ch]\n  void *v4; // [rsp+30h] [rbp-18h] BYREF\n  __int64 v5; // [rsp+38h] [rbp-10h] BYREF\n  __int64 v6; // [rsp+40h] [rbp-8h] BYREF\n  unsigned __int64 v7; // [rsp+48h] [rbp+0h] BYREF\n  void **v8; // [rsp+50h] [rbp+8h]\n  __int64 *v9; // [rsp+58h] [rbp+10h]\n  unsigned __int64 *v10; // [rsp+60h] [rbp+18h]\n  __int64 *v11; // [rsp+68h] [rbp+20h]\n  void *current_process_record; // [rsp+70h] [rbp+28h]\n\n  v3 = 657460048;\n  while ( 1 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( v3 > 1129530516 )\n        {\n          if ( v3 > 1551967265 )\n          {\n            if ( v3 == 1551967266 )\n            {\n              v8 = &v4;\n              v3 = 1129530517;\n            }\n            else\n            {\n              if ( v3 != 1852788032 )\n              {\n                sub_7FF697AECE00(&wmp1_protected_036_seed, &qword_7FF697B14240, &byte_7FF697BC1215);\n                return current_process_record;\n              }\n              v4 = buffer;\n              v6 = 91;\n              v3 = 1413847792;\n            }\n          }\n          else if ( v3 == 1129530517 )\n          {\n            *v8 = buffer;\n            v9 = &v6;\n            v3 = 723715198;\n          }\n          else if ( v3 == 1218117761 )\n          {\n            v3 = 1551967266;\n          }\n          else\n          {\n            v7 = 0xAB7D9B77DBE5A042uLL;\n            v5 = 16;\n            current_process_record = wmp1_find_current_process_record(&v4);\n            v3 = 2078742662;\n          }\n        }\n        if ( v3 <= 723715197 )\n          break;\n        if ( v3 == 723715198 )\n        {\n          *v9 = 27;\n          v10 = &v7;\n          v3 = 374107339;\n        }\n        else\n        {\n          *v11 = 10;\n          v3 = 508905569;\n        }\n      }\n      if ( v3 != 374107339 )\n        break;\n      *v10 = 0xAB7D9B77DBE5A006uLL;\n      v11 = &v5;\n      v3 = 746255529;\n    }\n    if ( v3 != 657460048 )\n      break;\n    if ( (wmp1_decode_body_if_needed(\n            (unsigned __int8 *)&wmp1_protected_036_seed,\n            (unsigned __int8 *)&qword_7FF697B14240,\n            &byte_7FF697BC1215)\n        & 1) != 0 )\n      v3 = 1852788032;\n    else\n      v3 = 1218117761;\n  }\n  return wmp1_find_current_process_record(&v4);\n}\n",
+    "0x7ff697b4fe00": "unsigned __int8 __fastcall wmp1_replace_query_buffer(\n        unsigned __int64 *descriptor,\n        unsigned __int64 encoded_out_buffer,\n        unsigned __int64 encoded_required_length)\n{\n  __int64 *v5; // rbx\n  __int64 v6; // rax\n\n  v5 = (__int64 *)descriptor[1];\n  if ( *v5 )\n  {\n    wmp1_context_free(*v5);\n    *v5 = 0;\n  }\n  v6 = wmp1_context_allocator(*(unsigned int *)(encoded_required_length ^ 0x5783605C7DD60A3DLL));\n  *(_QWORD *)(encoded_out_buffer ^ 0x80967D0E3816C9A3uLL) = v6;\n  *v5 = v6;\n  return v6 == 0;\n}\n",
+    "0x7ff697ad8110": "unsigned __int8 __fastcall wmp1_replace_query_buffer_wrapper(\n        void **owned_buffer,\n        unsigned int *required_length,\n        void **out_buffer)\n{\n  unsigned __int64 v6; // rdi\n  unsigned __int64 v7; // rsi\n  unsigned __int8 v9; // bl\n  int v10; // [rsp+2Ch] [rbp-Ch]\n  unsigned __int64 v11; // [rsp+30h] [rbp-8h] BYREF\n  void **v12; // [rsp+38h] [rbp+0h] BYREF\n  __int64 v13; // [rsp+40h] [rbp+8h]\n  unsigned __int64 v14; // [rsp+48h] [rbp+10h]\n  unsigned int *v15; // [rsp+50h] [rbp+18h]\n  unsigned __int64 v16; // [rsp+58h] [rbp+20h]\n  void **v17; // [rsp+60h] [rbp+28h]\n  unsigned __int64 v18; // [rsp+68h] [rbp+30h]\n  unsigned __int64 v19; // [rsp+70h] [rbp+38h]\n  void ***v20; // [rsp+78h] [rbp+40h]\n  unsigned __int64 *v21; // [rsp+80h] [rbp+48h]\n  unsigned __int64 v22; // [rsp+88h] [rbp+50h]\n  unsigned __int64 v23; // [rsp+90h] [rbp+58h]\n\n  v10 = 1282176997;\n  v6 = (unsigned __int64)required_length ^ 0x5783605C7DD60A3DLL;\n  v7 = (unsigned __int64)out_buffer ^ 0x80967D0E3816C9A3uLL;\n  while ( 1 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( v10 <= 1317646382 )\n        {\n          if ( v10 <= 736007931 )\n          {\n            if ( v10 == 72350133 )\n            {\n              v22 = v6;\n              v23 = v7;\n              v12 = owned_buffer;\n              v14 = 0x84AA4B2CA772127CuLL;\n              v10 = 736007932;\n            }\n            else\n            {\n              v15 = required_length;\n              v10 = 1317646383;\n            }\n          }\n          else if ( v10 == 736007932 )\n          {\n            v11 = 35;\n            v13 = 27;\n            v10 = 1725645917;\n          }\n          else if ( v10 == 1282176997 )\n          {\n            if ( (wmp1_decode_body_if_needed(\n                    (unsigned __int8 *)&wmp1_protected_094_seed,\n                    (unsigned __int8 *)&qword_7FF697B4FE70,\n                    &byte_7FF697BC8850)\n                & 1) != 0 )\n              v10 = 72350133;\n            else\n              v10 = 356734401;\n          }\n          else\n          {\n            v18 = (unsigned __int64)v17 ^ 0x80967D0E3816C9A3uLL;\n            v10 = 1969152004;\n          }\n        }\n        if ( v10 <= 1903973703 )\n          break;\n        if ( v10 == 1903973704 )\n        {\n          *v20 = owned_buffer;\n          v10 = 1945688631;\n        }\n        else if ( v10 == 1945688631 )\n        {\n          v14 = 0x84AA4B2CA7721237uLL;\n          v21 = &v11;\n          v10 = 1488740112;\n        }\n        else\n        {\n          v19 = v18;\n          v20 = &v12;\n          v10 = 1903973704;\n        }\n      }\n      if ( v10 > 1488740111 )\n        break;\n      if ( v10 != 1317646383 )\n      {\n        v13 = 87;\n        return wmp1_replace_query_buffer(&v11, v19, v16);\n      }\n      v16 = (unsigned __int64)v15 ^ 0x5783605C7DD60A3DLL;\n      v17 = out_buffer;\n      v10 = 1300612067;\n    }\n    if ( v10 != 1488740112 )\n      break;\n    *v21 = 39;\n    v10 = 1416384953;\n  }\n  v9 = wmp1_replace_query_buffer(&v11, v23, v22);\n  sub_7FF697AECE00(&wmp1_protected_094_seed, &qword_7FF697B4FE70, &byte_7FF697BC8850);\n  return v9;\n}\n"
+  },
+  "buffer_helper": {
+    "start": "0x7ff697b4fe00",
+    "wrapper": "0x7ff697ad8110",
+    "native": [
+      [
+        "0x7ff697b4fe00",
+        "push    rsi; Body94: descriptor+8 points to owned buffer variable. Free existing nonnull buffer and zero it; allocate DWORD required length decoded via XOR5783605C7DD60A3D; store allocation to decoded output pointer XOR80967D0E3816C9A3 and owned variable. AL=1 on allocation failure, AL=0 on success. Destructive replacement, not content-preserving realloc."
+      ],
+      [
+        "0x7ff697b4fe01",
+        "push    rdi"
+      ],
+      [
+        "0x7ff697b4fe02",
+        "push    rbx"
+      ],
+      [
+        "0x7ff697b4fe03",
+        "sub     rsp, 20h"
+      ],
+      [
+        "0x7ff697b4fe07",
+        "mov     rdi, r8"
+      ],
+      [
+        "0x7ff697b4fe0a",
+        "mov     rsi, rdx"
+      ],
+      [
+        "0x7ff697b4fe0d",
+        "mov     rbx, [rcx+8]"
+      ],
+      [
+        "0x7ff697b4fe11",
+        "mov     rcx, [rbx]"
+      ],
+      [
+        "0x7ff697b4fe14",
+        "cmp     rcx, 0"
+      ],
+      [
+        "0x7ff697b4fe18",
+        "jz      short loc_7FF697B4FE27"
+      ],
+      [
+        "0x7ff697b4fe1a",
+        "call    cs:wmp1_context_free"
+      ],
+      [
+        "0x7ff697b4fe20",
+        "mov     qword ptr [rbx], 0"
+      ],
+      [
+        "0x7ff697b4fe27",
+        "mov     rax, 5783605C7DD60A3Dh"
+      ],
+      [
+        "0x7ff697b4fe31",
+        "xor     rdi, rax"
+      ],
+      [
+        "0x7ff697b4fe34",
+        "mov     eax, [rdi]"
+      ],
+      [
+        "0x7ff697b4fe36",
+        "mov     ecx, eax"
+      ],
+      [
+        "0x7ff697b4fe38",
+        "call    cs:wmp1_context_allocator"
+      ],
+      [
+        "0x7ff697b4fe3e",
+        "mov     rcx, 80967D0E3816C9A3h"
+      ],
+      [
+        "0x7ff697b4fe48",
+        "xor     rsi, rcx"
+      ],
+      [
+        "0x7ff697b4fe4b",
+        "mov     [rsi], rax"
+      ],
+      [
+        "0x7ff697b4fe4e",
+        "mov     [rbx], rax"
+      ],
+      [
+        "0x7ff697b4fe51",
+        "cmp     rax, 0"
+      ],
+      [
+        "0x7ff697b4fe55",
+        "jnz     short loc_7FF697B4FE61"
+      ],
+      [
+        "0x7ff697b4fe57",
+        "mov     al, 1"
+      ],
+      [
+        "0x7ff697b4fe59",
+        "add     rsp, 20h"
+      ],
+      [
+        "0x7ff697b4fe5d",
+        "pop     rbx"
+      ],
+      [
+        "0x7ff697b4fe5e",
+        "pop     rdi"
+      ],
+      [
+        "0x7ff697b4fe5f",
+        "pop     rsi"
+      ],
+      [
+        "0x7ff697b4fe60",
+        "retn"
+      ],
+      [
+        "0x7ff697b4fe61",
+        "xor     eax, eax"
+      ],
+      [
+        "0x7ff697b4fe63",
+        "add     rsp, 20h"
+      ],
+      [
+        "0x7ff697b4fe67",
+        "pop     rbx"
+      ],
+      [
+        "0x7ff697b4fe68",
+        "pop     rdi"
+      ],
+      [
+        "0x7ff697b4fe69",
+        "pop     rsi"
+      ],
+      [
+        "0x7ff697b4fe6a",
+        "retn"
+      ]
+    ],
+    "claim": "free old/allocate required length/write both pointer variables; AL failure flag; no content copy",
+    "native_graph_instruction_count": 35,
+    "outside_targets": 0,
+    "bad_targets": 0,
+    "indirect_jumps": 0
+  },
+  "process_walk_constant_evaluation": {
+    "seed_ea": "0x7ff697bba3d8",
+    "seed": "0x60dcd402",
+    "assignments": [
+      [
+        "v22",
+        "v21 + v15"
+      ],
+      [
+        "v6",
+        "v21 + v15 + 382278659"
+      ],
+      [
+        "v23",
+        "~v6"
+      ],
+      [
+        "v8",
+        "v5 - 1169581306"
+      ],
+      [
+        "v14",
+        "~(v5 - 1169581306) & 0x461874E"
+      ],
+      [
+        "v15",
+        "8 * v14"
+      ],
+      [
+        "v16",
+        "4 * (~v8 & 0x3B9E78B1)"
+      ],
+      [
+        "v17",
+        "4 * (v8 ^ 0x3B9E78B1)"
+      ],
+      [
+        "v18",
+        "7 * (v8 ^ 0x461874E)"
+      ],
+      [
+        "v19",
+        "v8 & 0xFB9E78B1"
+      ],
+      [
+        "v7",
+        "v27 + v32 - v24 + 1754317582"
+      ],
+      [
+        "v24",
+        "3 * (~v23 & 0x327A69A6)"
+      ],
+      [
+        "v25",
+        "v6 | 0xCD859659"
+      ],
+      [
+        "v33",
+        "10 * ~(v7 | ~v5)"
+      ],
+      [
+        "v21",
+        "v17 + v20 - v16"
+      ],
+      [
+        "v27",
+        "3 * v26"
+      ],
+      [
+        "v28",
+        "7 * (v6 ^ 0xCD859659)"
+      ],
+      [
+        "v26",
+        "~v25"
+      ],
+      [
+        "v34",
+        "6 * v5"
+      ],
+      [
+        "v35",
+        "v7 | v5"
+      ],
+      [
+        "v36",
+        "3 * v35"
+      ],
+      [
+        "v37",
+        "~v5"
+      ],
+      [
+        "v30",
+        "v29 & 0xCD859659"
+      ],
+      [
+        "v31",
+        "2 * (v6 & 0x4D859659) - 6 * v30"
+      ],
+      [
+        "v13",
+        "dword_7FF697BBA3D8"
+      ],
+      [
+        "v5",
+        "(dword_7FF697BBA3D8 ^ 0xE8A31397) + 1524866024"
+      ],
+      [
+        "v32",
+        "v28 + v31"
+      ],
+      [
+        "v20",
+        "8 * v19 - 2 * (v8 & 0x461874E) - v18"
+      ],
+      [
+        "v29",
+        "~v6"
+      ]
+    ],
+    "values": {
+      "dword_7FF697BBA3D8": "0x60dcd402",
+      "v13": "0x60dcd402",
+      "v5": "0xe363637d",
+      "v8": "0x9dacfe83",
+      "v14": "0x41014c",
+      "v15": "0x2080a60",
+      "v16": "0x884800c0",
+      "v17": "0x98ca18c8",
+      "v18": "0x349e549b",
+      "v19": "0x998c7881",
+      "v34": "0x545454ee",
+      "v37": "0x1c9c9c82",
+      "v20": "0x8f846369",
+      "v21": "0xa0067b71",
+      "v22": "0xa20e85d1",
+      "v6": "0xb8d7a1d4",
+      "v23": "0x47285e2b",
+      "v24": "0x90f6648c",
+      "v25": "0xfdd7b7dd",
+      "v28": "0x353f84db",
+      "v26": "0x2284822",
+      "v29": "0x47285e2b",
+      "v27": "0x678d866",
+      "v30": "0x45001609",
+      "v31": "0x730a7c6a",
+      "v32": "0xa84a0145",
+      "v7": "0x865d382d",
+      "v33": "0xcb56a120",
+      "v35": "0xe77f7b7d",
+      "v36": "0xb67e7277"
+    },
+    "termination_comparison_expression": "v8 + v33 + 9 * (v5 & v7) + 4 * (v37 & v7) - v36 - v34 - v22 - v13",
+    "termination_comparison_value": "0x0",
+    "initial_iteration_counter": "0xffffffff",
+    "each_nonmatching_record": "NextEntryOffset traversal and decrement counter",
+    "scope": "constant evaluation from current warning-free pseudocode, not symbolic all-seed proof"
+  }
+}

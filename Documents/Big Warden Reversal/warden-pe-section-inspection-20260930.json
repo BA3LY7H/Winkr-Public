@@ -1,0 +1,470 @@
+{
+  "actual_entry": "0x7ff697b658d0",
+  "unwind_end": "0x7ff697b666d7",
+  "overlap_repairs": [
+    {
+      "start": "0x7ff697adb460",
+      "end": "0x7ff697adb676",
+      "original_bytes": "415741565657534883ec4089d64889cfc74424280321aa52488d1dd1a308004c8d355ab208004c8d3dcbe30e00eb13908b0532f60d008944242cc7442428c5fca1598b4424283dc4fca1597f333d19c1ca3874dc4889d94c89f24d89f8e80e210100a8010f8409010000c744242819c1ca38ebce662e0f1f84000000000066903dc5fca1590f85870000008b44242c8d88f9c4d97e81f16e59d33f894c243881fc00130000770383ecb674087506e800000000c350ebffc05824ff86c07316e842130000774881e9a9dcbac2c7c1ed699a5fc7c1b7732380c7c55040a31081ee1cd0971880c28580c25e55f6d9c7c72ad1d2d4e8f1570100a199b93faca14129c1894c243cc7442428b61d6974e930ffffff8b44243c2b44242c2b44243831c648c74424302300000048b87b8fd8e147d38bc14889442420488d4c243041b9350000004889fa4189f0e822a308004889c6488d0d98a20800488d1521b108004c8d0592e20e00e8351801004889f0e99600000081f6f8d3a19248c74424305f00000048b8478fd8e147d38bc14889442420488d4c243041b92a0000004889fa4189f0e8c9a208007a2686c07b0990900f3183c2340f827b28000053c6c0c2c6c6e080eb616a33f6dd83c76583c2cae87a0400006844907a3181c2df7fec43c7c5eb272abef6d8c6c72c0f8c77a600005183c1220f87d5d6010081e9f2d90af7f6df83c52d49c0b94458904883c4405b5f5e415e415fc3",
+      "patches": [
+        {
+          "ea": "0x7ff697adb515",
+          "old": "eb",
+          "new": "90",
+          "proof": "JMP -1 -> alternateFF instruction entry. NOP replaces firstbyteonly; original alternate-entry instruction bytes/effects preserved."
+        }
+      ]
+    },
+    {
+      "start": "0x7ff697b658d0",
+      "end": "0x7ff697b666d7",
+      "original_bytes": "415741565657534881ecb000000048c7c0ffffffff66813a4d5a0f85d80d000048634a3c7944c0e200783f90906690e8601d00000f882bcd000080ea4d80c1335e80ea770f84db3a0100e8688a01005683c5aa83c15df6da80c7b85d0f8eb89b010069bbccb06e1d9d444181f0f8d3a192746a86f675666690669080ef9d81eb9c20513080c2fe80ed42c7c7f38de67b81c150d6020a81c3043c55f3c7c77488d7c483c72783c05483c27281c21d487f1a80e8a30f31683cdc6ad20f81ffc5010081ed161ea7030f807c1b01005a0f8654ae01005ff6aeff3e427201f24439c10f8f120d000080cf00711b0f8b5154010058c7c3cd5d597bc7c01b3cc03df6db80e939510f877134000080c7a45080c39980efaa5a80c097e88f180000f6dac7c7a5a1b128c6c64f80eadd81ed0aed9ad268dfc792ecf68bd559de8b448b0c0a7c0cc0e2007d6a80e9e7c7c5ba397c61c6c204506a3480c5a3c6c67ef6db0f8adc5d01005d81ef2e7ed8cb81c6518ee8850f3181c3db70f48a83c2be0f8bb04600007caf81e897cf90680f8eb705000068abfada1d77dee87bed0100e8caa200006a905281c3dedcd49a0f31839366e3dc4181f9504500000f853a0c000085c90f9fc0a9ab9cabcd732b6a1a80ea79c6c2aec6c2385de83e960100f6d868a550819468eb480a81e878f10000c6c5adc6c7a07ff1e8732c000083c74881eb4932b8450f31f6df83c6980f80d2a4010081ef1e872d34f6d8c7c780b17b486b9def0946834c39c1410f9cc04484c00f84c30b00004801ca660fefc0660f7f842490000000660f7f842480000000660f7f442470660f7f442460660f7f442450660f7f442440660f7f442430660f7f44242048c78424a0000000000000008b4228f886db735c669066900f3180e8f581ebd219e4e680e82a80ee13e87b21010081c0c0e91f4b80ea26c7c7920bbd4980c72881c15cc5a9f9e8d4b20000f6d881eaf72ba353c6c38a0f8f678700000f8441390000c6c35d81ee350b2529c1b1696d15894424200fb772068974242473478aed720c9090669081ef73eaa38681c1907234b183c29c5e0f8368af00000f82f91c00007c5c81c090a7382c83c5d180ea6980c353c7c38791fe3b80e87be8409e000069a5305d85f60f84720300000fb74214488d3c024883c7188b470c894424288b4708725186c9734d83c2f25783c26580c0420f8b9e61010080c5056a1d6a6680ea5dc6c7d4555581c68536fe7c80c3dec6c593685907e6dec6c57bc6c64e6a94f6db81c68b546646e8b1b0000080c6fe4fc1a1d2128944242c8b4714894424308b47108944243483fe010f84ee02000081fc004d0000770383ecfc74087506e800000000c350ebffc058f886ff732b9090e8702a0000e801100100e8734e0100c7c2e2efa10480c0ae5ae82819000080c28583c71c4e699f09a07300f30f6f4730660f70c0b1f30f7f442438f9c0f9007253909081c0181b51fa81ea912b3f9c0f847dc2000083c5b7510f84ea1201006a2383c0807d25f6df0f310f8e98d1010081c1f9456bb880eec380c2a380c078e88607010055f6dff6dff6da0f31c09ddabf5a38f60fb7057f4d050089c181f145a0ffff89c281f22bcdffff448d82b91000004589c141f7d14589ca4181e2c082ffff478d14524181e13f7d0000478d0c894589c34181f3c00200004501db80c9007372909081c6000b734fc6c52381c1d43d1643c6c57483c5d2c7c1f4a882a4f6db0f846bdd0100c6c63980c01e6a2f7ad7530f3183c210e8247f000083c51781ef66ca8214e8d2b301000f81d416000081c39bd12f660f3180c0cd80c53380eb250f8a50f8010081c5016e55c7c0b6fbf505524e4181e03f1d000041c1e0034529d84501c8478d0c104181c1c58dffff4501d04181c0fdaeffff4531c8f8c0ed007365f6d8e84a690100e8bd9b010080ee1bc6c0f45681c61ef4ed47c6c181f6dff6d880e8a481c55971962a81c1c0e999bbc6c31ff6dbc7c3c7f8c42180e8bbe8a548000081ee21185fb9f6dbe858a1000080ef7883c0b181c2f9171c725c80ed6648f69f167c0e4131d04181f056caffff89c281f2ba5f00004589c14109d141f7d14589c24109ca4501d24589c34131cb4421c2c1e2024121c8f98adb764d669066900f8572f10000f6d85880e89c0f3183c0d080c1b180c5ec81ef00f07f736ad9688839d7867f4b80c2b381c37c25fc45c6c7e481c27c8b37f1e8fe2a00005681ef5ab0832983c6ed0f85760f000080c20d83c2ea4d80a56cb604b8428d0c424429d94429d1428d0c8929c16639ce7439f30f6f4758660f70c0b1f30f7f44244883fe037424488d4c24204889fa4189f0e8e5bdf5ffa8017510488d4c24204889fa4189f0e871d4f7ff488b054a4b0500a91e457ae57162e89add0000e85fb80100e879c5000074410f310f8b3bc30100f6d980c7525450c7c119818074726b80c21f5ec7c17eb22ba8f6da68ae0778c55783c141c7c7a14baef60f31e884110100c6c7c45c6af10f8599e10100c7c72957b0c66baf1f58bbbf48b980548e7197a108ff4801c184f286c9716b6690669080ee21f6d90f8c7851000083c12f0f895b480100725253c6c27080ebacc7c0f775bc3d80eb7dc7c2ced5e4ef81c3a3522ce3560f8e5c83010083c7c65683c20d6a705b7e1980c39e54f6dd83c617c6c59f81e89f86a644732883c3b580e95c81a52ead62269e8e49b8983311b25a4923164931c848ba9035a9d851ae5c1e4c01c24989d049f7d049b94022ab1f860c4aeb4989d24d09ca49bbbfdd54e079f3b5144889d64c21de49f7d34d21c34d01d34c8d04124801f64929f04d01d84d29c84d8d480149ba218fa6e135322bee4931ca4d31ca4901c24929d2f9c0e800724681c621cc1ab981c14d83abd883c50581c51a42d28780eaf881c5efc8c2f683c7d3c6c33181ed9cd1a22bc7c390330eea81c2577cd2447b9f80c22c80e928c7c0b3e0a7de19bca948ff58bac0ef0071636a2e5f0f80fb560000c6c6ee80ebba80e8370f8322f8000083c29f0f83ed2000000f31680da5e43d80ea0e57682e7e957cc6c0b580e9b37eb8e86714010081c183181368e8f8d50100e86b4201006a770f82d5d30100e8feb5000080ea46f6aff3d63f48ba66b20779a72835b24831ca4c31d24829c24a8d040248ffc048baa8869179b66c9b4e4801c2488b051149050049b93343a6b9f0f859474901c181fc00050000770383ec2474087506e800000000c350ebffc05834008ae4714d9090f6da80e90059f6d880e8450f31c6c31180eaa780ed06c6c5a30f8145de000080c6de68f01af31a5080c6fde8d84e0000e8fd740000f6da6a72c7c0449a114a83c5cbf6dbc09034b036dc4d48b988f4892380f1de484c31c949b815ad4a221557dcfc4989ca4d09c24f8d1c5249f7d24a8d34d5000000004c29d64921c84f8d14584901f249c7c0f9ffffff4d29d049bb681b15fef67cdf5d4d31c349baf41cdd5ced0c8b554d01da48be1cbe8cd820a0ec004c01de49bb8a9c1bcfc4aad7d34d31cb4c89df4809f748f7d7488d3c7f4889f348f7d34d89de4909de4d01f64f8d34764d89df4931f74c21db488d1c5b4801db4921f34f8d1c5b4e8d1c5b4d01fb4d29f34d8d1c7b4d31ca7620c0ec00772766906690c7c158c29fa380c67a80c7f483c0fa0f31f6df5281c7077623c483c5e280c0f5c7c7329077080f86ee13010081c186f6770580c059c0bc86c977016073678ae47263c6c71b80e8db0f3180e88681ee89c84eb783c7700f80e82d010081ee0a59e10083c0be56c7c2dc71d9377f6a81eff2fd68bc80ef6281ea5ad49b0d56f6dac7c13f47235d81c2996f645f83c32681ed5fc461ac54f6d97a97c6c0b5e82c72000013ab2a81fc00280000770383ecd775087406e800000000c350ebffc058f9760bf6dec6c37bc6c2106a06e8763f0100f6d881c1a6b253a3560f3181e8a005aa5d81c719a906b2f6d980efe60f8987410100c7c7fc4da20e81ea3448aaa480c1c580c2565a80c6dc4d6bab89e8f8734681c33db495d183c3d56a9f0f855e870100724f0f3181c708241dfbc7c0b8ed1075c6c0d8c6c67b5a81e83e3c1d0480c16f5583c16a83c65080c1b80f316a6e686c0b7c56a2b080e5ffc0e400710990900f8b5a4a0100e8715f010080c06df6d8c6c2d480ee83c7c1223b5dc480c68954c7c6496d3a2d81c71cb1063981c6bdd5a775e8d2ae000083c2b983c01e5480eaf6c6c1ac80eb74f6db81efe58e723dc6c1ea81e877a094f9f6dbe8450d000081c7a28177a801a0d87c658ae47d61c6c13153e802fe01000f85c7290000c6c7617b4e81ef91695db1e8015200000f3180c161c6c35d50e8e8f30000f6db5781e907de8ecaf6d9f6dae8229e010083c3d0712e0f83c6f6000081c28b54414a540f31c7c2e0a6059c0f31809b7c3cc036f886ed7362909083c2a15381c1296da9ae80c20d5b81c769ee0b3a5ac7c739399eff0f89f1d50000f6de81c256530cd50f8387680100f6d8c7c6535ca525e8c98e010080c39ee89ebe01005481c5352f07ce6a020f310f83fe6f0000e818650100699fb976638780f000735f9090f6d981e8e040a1a60f8fe91101000f84d04f010080ef0af6d9e89fa1010055685eb15cc25d81ea76f3517483c1825a81e92070650881c7eab849a681c6bf3612fe80c36c0f8987d4000077367ad46a8d81c7c0b836c94fc09d4b7e113b84ed733a909081ea2ba437cf0f8ac14d000083c149f6db5781c2f331f80280c52280eecec6c17580eb0dc7c0b0a7bd55e87739010083c2aa4c83978d477a49b963179b6265025bac4d31d14d31d94929c94901c04d01c87b5bc0ef007a5690900f8db6d3000080c11fc6c1dc81ee2e62afb9f6df77b4e84a51010081ed52fc9d4180c7ac0f8caaee01007412e84525000081e8b9639d550f865207000081ee4f0a48b880ef75c6c5150f310f3181a82edde97450488d4c2420e81c7ff7ffeb0231c04881c4b00000005b5f5e415e415fc3",
+      "patches": [
+        {
+          "ea": "0x7ff697b65ca7",
+          "old": "eb",
+          "new": "90",
+          "proof": "JMP -1 -> alternateFF instruction entry. NOP replaces firstbyteonly; original alternate-entry instruction bytes/effects preserved."
+        },
+        {
+          "ea": "0x7ff697b661ea",
+          "old": "eb",
+          "new": "90",
+          "proof": "JMP -1 -> alternateFF instruction entry. NOP replaces firstbyteonly; original alternate-entry instruction bytes/effects preserved."
+        },
+        {
+          "ea": "0x7ff697b663c6",
+          "old": "eb",
+          "new": "90",
+          "proof": "JMP -1 -> alternateFF instruction entry. NOP replaces firstbyteonly; original alternate-entry instruction bytes/effects preserved."
+        }
+      ]
+    }
+  ],
+  "normalizations": [
+    {
+      "start": 140697083425888,
+      "end": 140697083426422,
+      "label": "wmp1_query_setup_dependency_0x7ff697adb460",
+      "original_bytes": "415741565657534883ec4089d64889cfc74424280321aa52488d1dd1a308004c8d355ab208004c8d3dcbe30e00eb13908b0532f60d008944242cc7442428c5fca1598b4424283dc4fca1597f333d19c1ca3874dc4889d94c89f24d89f8e80e210100a8010f8409010000c744242819c1ca38ebce662e0f1f84000000000066903dc5fca1590f85870000008b44242c8d88f9c4d97e81f16e59d33f894c243881fc00130000770383ecb674087506e800000000c35090ffc05824ff86c07316e842130000774881e9a9dcbac2c7c1ed699a5fc7c1b7732380c7c55040a31081ee1cd0971880c28580c25e55f6d9c7c72ad1d2d4e8f1570100a199b93faca14129c1894c243cc7442428b61d6974e930ffffff8b44243c2b44242c2b44243831c648c74424302300000048b87b8fd8e147d38bc14889442420488d4c243041b9350000004889fa4189f0e822a308004889c6488d0d98a20800488d1521b108004c8d0592e20e00e8351801004889f0e99600000081f6f8d3a19248c74424305f00000048b8478fd8e147d38bc14889442420488d4c243041b92a0000004889fa4189f0e8c9a208007a2686c07b0990900f3183c2340f827b28000053c6c0c2c6c6e080eb616a33f6dd83c76583c2cae87a0400006844907a3181c2df7fec43c7c5eb272abef6d8c6c72c0f8c77a600005183c1220f87d5d6010081e9f2d90af7f6df83c52d49c0b94458904883c4405b5f5e415e415fc3",
+      "sha256_before": "60ee246001f8b0c64c1aa6990b3a0e623401d25ba958ce09f4d9ab1d4f7ba6ae",
+      "old_name": "sub_7FF697ADB460",
+      "old_type": "void __fastcall(__int64, int)",
+      "old_comment": null,
+      "old_chunks": [
+        [
+          140697083425888,
+          140697083426422
+        ]
+      ],
+      "patches": [
+        {
+          "ea": 140697083426060,
+          "old": "7506",
+          "new": "eb06",
+          "selected": 140697083426068
+        },
+        {
+          "ea": 140697083426077,
+          "old": "7316",
+          "new": "eb16",
+          "selected": 140697083426101
+        },
+        {
+          "ea": 140697083426101,
+          "old": "7323",
+          "new": "eb23",
+          "selected": 140697083426138
+        },
+        {
+          "ea": 140697083426315,
+          "old": "7b09",
+          "new": "eb09",
+          "selected": 140697083426326
+        },
+        {
+          "ea": 140697083426326,
+          "old": "7b28",
+          "new": "eb28",
+          "selected": 140697083426368
+        },
+        {
+          "ea": 140697083426351,
+          "old": "7a04",
+          "new": "eb04",
+          "selected": 140697083426357
+        },
+        {
+          "ea": 140697083426358,
+          "old": "7a31",
+          "new": "eb31",
+          "selected": 140697083426409
+        }
+      ],
+      "old_frame": {
+        "frsize": 104,
+        "frregs": 0,
+        "fpd": 0,
+        "serialized": [
+          "0d41f180082003012102402102202002202102402102202002300a30f180200430010208",
+          "077661725f3438077661725f3430077661725f3343077661725f3338077661725f3330077661725f3243077661725f3236115f5f72657475726e5f61646472657373",
+          null
+        ]
+      },
+      "after": {
+        "failure": "no error",
+        "failure_ea": 18446744073709551615,
+        "pseudocode": "__int64 __fastcall wmp1_query_setup_dependency_0x7ff697adb460(\n        __int64 a1,\n        unsigned int a2,\n        __int64 a3,\n        __int64 a4,\n        __int64 a5,\n        __int64 a6,\n        __int64 a7)\n{\n  __int64 v9; // rsi\n  _UNKNOWN *retaddr; // [rsp+68h] [rbp+0h]\n\n  for ( LODWORD(a5) = 1386881283; ; LODWORD(a5) = 952811801 )\n  {\n    while ( 1 )\n    {\n      while ( (int)a5 > 1503788228 )\n      {\n        if ( (_DWORD)a5 != 1503788229 )\n        {\n          a6 = 35;\n          v9 = ((__int64 (__fastcall *)(__int64 *, __int64, _QWORD, __int64))unk_7FF697B658D0)(\n                 &a6,\n                 a1,\n                 (HIDWORD(a7) - HIDWORD(a5) - (_DWORD)a7) ^ a2,\n                 53);\n          sub_7FF697AECE00(&wmp1_protected_102_seed, &qword_7FF697B666E0, &byte_7FF697BC9858);\n          return v9;\n        }\n        LODWORD(a7) = (HIDWORD(a5) + 2128200953) ^ 0x3FD3596E;\n        HIDWORD(a7) = 1101114431 - (_DWORD)retaddr;\n        LODWORD(a5) = 1953045942;\n      }\n      if ( (_DWORD)a5 != 952811801 )\n        break;\n      HIDWORD(a5) = dword_7FF697BBAAC8;\n      LODWORD(a5) = 1503788229;\n    }\n    if ( (wmp1_decode_body_if_needed(\n            (unsigned __int8 *)&wmp1_protected_102_seed,\n            (unsigned __int8 *)&qword_7FF697B666E0,\n            &byte_7FF697BC9858)\n        & 1) == 0 )\n      break;\n  }\n  a6 = 95;\n  return ((__int64 (__fastcall *)(__int64 *, __int64, _QWORD, __int64))unk_7FF697B658D0)(&a6, a1, a2 ^ 0x92A1D3F8, 42);\n}\n",
+        "sha256": "4d78241d058a0264f89922c16bab66db7db60d5b9df1e827caece43f5259b61b"
+      }
+    },
+    {
+      "start": 140697083992272,
+      "end": 140697083995863,
+      "label": "wmp1_query_setup_dependency_0x7ff697b658d0",
+      "original_bytes": "415741565657534881ecb000000048c7c0ffffffff66813a4d5a0f85d80d000048634a3c7944c0e200783f90906690e8601d00000f882bcd000080ea4d80c1335e80ea770f84db3a0100e8688a01005683c5aa83c15df6da80c7b85d0f8eb89b010069bbccb06e1d9d444181f0f8d3a192746a86f675666690669080ef9d81eb9c20513080c2fe80ed42c7c7f38de67b81c150d6020a81c3043c55f3c7c77488d7c483c72783c05483c27281c21d487f1a80e8a30f31683cdc6ad20f81ffc5010081ed161ea7030f807c1b01005a0f8654ae01005ff6aeff3e427201f24439c10f8f120d000080cf00711b0f8b5154010058c7c3cd5d597bc7c01b3cc03df6db80e939510f877134000080c7a45080c39980efaa5a80c097e88f180000f6dac7c7a5a1b128c6c64f80eadd81ed0aed9ad268dfc792ecf68bd559de8b448b0c0a7c0cc0e2007d6a80e9e7c7c5ba397c61c6c204506a3480c5a3c6c67ef6db0f8adc5d01005d81ef2e7ed8cb81c6518ee8850f3181c3db70f48a83c2be0f8bb04600007caf81e897cf90680f8eb705000068abfada1d77dee87bed0100e8caa200006a905281c3dedcd49a0f31839366e3dc4181f9504500000f853a0c000085c90f9fc0a9ab9cabcd732b6a1a80ea79c6c2aec6c2385de83e960100f6d868a550819468eb480a81e878f10000c6c5adc6c7a07ff1e8732c000083c74881eb4932b8450f31f6df83c6980f80d2a4010081ef1e872d34f6d8c7c780b17b486b9def0946834c39c1410f9cc04484c00f84c30b00004801ca660fefc0660f7f842490000000660f7f842480000000660f7f442470660f7f442460660f7f442450660f7f442440660f7f442430660f7f44242048c78424a0000000000000008b4228f886db735c669066900f3180e8f581ebd219e4e680e82a80ee13e87b21010081c0c0e91f4b80ea26c7c7920bbd4980c72881c15cc5a9f9e8d4b20000f6d881eaf72ba353c6c38a0f8f678700000f8441390000c6c35d81ee350b2529c1b1696d15894424200fb772068974242473478aed720c9090669081ef73eaa38681c1907234b183c29c5e0f8368af00000f82f91c00007c5c81c090a7382c83c5d180ea6980c353c7c38791fe3b80e87be8409e000069a5305d85f60f84720300000fb74214488d3c024883c7188b470c894424288b4708725186c9734d83c2f25783c26580c0420f8b9e61010080c5056a1d6a6680ea5dc6c7d4555581c68536fe7c80c3dec6c593685907e6dec6c57bc6c64e6a94f6db81c68b546646e8b1b0000080c6fe4fc1a1d2128944242c8b4714894424308b47108944243483fe010f84ee02000081fc004d0000770383ecfc74087506e800000000c35090ffc058f886ff732b9090e8702a0000e801100100e8734e0100c7c2e2efa10480c0ae5ae82819000080c28583c71c4e699f09a07300f30f6f4730660f70c0b1f30f7f442438f9c0f9007253909081c0181b51fa81ea912b3f9c0f847dc2000083c5b7510f84ea1201006a2383c0807d25f6df0f310f8e98d1010081c1f9456bb880eec380c2a380c078e88607010055f6dff6dff6da0f31c09ddabf5a38f60fb7057f4d050089c181f145a0ffff89c281f22bcdffff448d82b91000004589c141f7d14589ca4181e2c082ffff478d14524181e13f7d0000478d0c894589c34181f3c00200004501db80c9007372909081c6000b734fc6c52381c1d43d1643c6c57483c5d2c7c1f4a882a4f6db0f846bdd0100c6c63980c01e6a2f7ad7530f3183c210e8247f000083c51781ef66ca8214e8d2b301000f81d416000081c39bd12f660f3180c0cd80c53380eb250f8a50f8010081c5016e55c7c0b6fbf505524e4181e03f1d000041c1e0034529d84501c8478d0c104181c1c58dffff4501d04181c0fdaeffff4531c8f8c0ed007365f6d8e84a690100e8bd9b010080ee1bc6c0f45681c61ef4ed47c6c181f6dff6d880e8a481c55971962a81c1c0e999bbc6c31ff6dbc7c3c7f8c42180e8bbe8a548000081ee21185fb9f6dbe858a1000080ef7883c0b181c2f9171c725c80ed6648f69f167c0e4131d04181f056caffff89c281f2ba5f00004589c14109d141f7d14589c24109ca4501d24589c34131cb4421c2c1e2024121c8f98adb764d669066900f8572f10000f6d85880e89c0f3183c0d080c1b180c5ec81ef00f07f736ad9688839d7867f4b80c2b381c37c25fc45c6c7e481c27c8b37f1e8fe2a00005681ef5ab0832983c6ed0f85760f000080c20d83c2ea4d80a56cb604b8428d0c424429d94429d1428d0c8929c16639ce7439f30f6f4758660f70c0b1f30f7f44244883fe037424488d4c24204889fa4189f0e8e5bdf5ffa8017510488d4c24204889fa4189f0e871d4f7ff488b054a4b0500a91e457ae57162e89add0000e85fb80100e879c5000074410f310f8b3bc30100f6d980c7525450c7c119818074726b80c21f5ec7c17eb22ba8f6da68ae0778c55783c141c7c7a14baef60f31e884110100c6c7c45c6af10f8599e10100c7c72957b0c66baf1f58bbbf48b980548e7197a108ff4801c184f286c9716b6690669080ee21f6d90f8c7851000083c12f0f895b480100725253c6c27080ebacc7c0f775bc3d80eb7dc7c2ced5e4ef81c3a3522ce3560f8e5c83010083c7c65683c20d6a705b7e1980c39e54f6dd83c617c6c59f81e89f86a644732883c3b580e95c81a52ead62269e8e49b8983311b25a4923164931c848ba9035a9d851ae5c1e4c01c24989d049f7d049b94022ab1f860c4aeb4989d24d09ca49bbbfdd54e079f3b5144889d64c21de49f7d34d21c34d01d34c8d04124801f64929f04d01d84d29c84d8d480149ba218fa6e135322bee4931ca4d31ca4901c24929d2f9c0e800724681c621cc1ab981c14d83abd883c50581c51a42d28780eaf881c5efc8c2f683c7d3c6c33181ed9cd1a22bc7c390330eea81c2577cd2447b9f80c22c80e928c7c0b3e0a7de19bca948ff58bac0ef0071636a2e5f0f80fb560000c6c6ee80ebba80e8370f8322f8000083c29f0f83ed2000000f31680da5e43d80ea0e57682e7e957cc6c0b580e9b37eb8e86714010081c183181368e8f8d50100e86b4201006a770f82d5d30100e8feb5000080ea46f6aff3d63f48ba66b20779a72835b24831ca4c31d24829c24a8d040248ffc048baa8869179b66c9b4e4801c2488b051149050049b93343a6b9f0f859474901c181fc00050000770383ec2474087506e800000000c35090ffc05834008ae4714d9090f6da80e90059f6d880e8450f31c6c31180eaa780ed06c6c5a30f8145de000080c6de68f01af31a5080c6fde8d84e0000e8fd740000f6da6a72c7c0449a114a83c5cbf6dbc09034b036dc4d48b988f4892380f1de484c31c949b815ad4a221557dcfc4989ca4d09c24f8d1c5249f7d24a8d34d5000000004c29d64921c84f8d14584901f249c7c0f9ffffff4d29d049bb681b15fef67cdf5d4d31c349baf41cdd5ced0c8b554d01da48be1cbe8cd820a0ec004c01de49bb8a9c1bcfc4aad7d34d31cb4c89df4809f748f7d7488d3c7f4889f348f7d34d89de4909de4d01f64f8d34764d89df4931f74c21db488d1c5b4801db4921f34f8d1c5b4e8d1c5b4d01fb4d29f34d8d1c7b4d31ca7620c0ec00772766906690c7c158c29fa380c67a80c7f483c0fa0f31f6df5281c7077623c483c5e280c0f5c7c7329077080f86ee13010081c186f6770580c059c0bc86c977016073678ae47263c6c71b80e8db0f3180e88681ee89c84eb783c7700f80e82d010081ee0a59e10083c0be56c7c2dc71d9377f6a81eff2fd68bc80ef6281ea5ad49b0d56f6dac7c13f47235d81c2996f645f83c32681ed5fc461ac54f6d97a97c6c0b5e82c72000013ab2a81fc00280000770383ecd775087406e800000000c35090ffc058f9760bf6dec6c37bc6c2106a06e8763f0100f6d881c1a6b253a3560f3181e8a005aa5d81c719a906b2f6d980efe60f8987410100c7c7fc4da20e81ea3448aaa480c1c580c2565a80c6dc4d6bab89e8f8734681c33db495d183c3d56a9f0f855e870100724f0f3181c708241dfbc7c0b8ed1075c6c0d8c6c67b5a81e83e3c1d0480c16f5583c16a83c65080c1b80f316a6e686c0b7c56a2b080e5ffc0e400710990900f8b5a4a0100e8715f010080c06df6d8c6c2d480ee83c7c1223b5dc480c68954c7c6496d3a2d81c71cb1063981c6bdd5a775e8d2ae000083c2b983c01e5480eaf6c6c1ac80eb74f6db81efe58e723dc6c1ea81e877a094f9f6dbe8450d000081c7a28177a801a0d87c658ae47d61c6c13153e802fe01000f85c7290000c6c7617b4e81ef91695db1e8015200000f3180c161c6c35d50e8e8f30000f6db5781e907de8ecaf6d9f6dae8229e010083c3d0712e0f83c6f6000081c28b54414a540f31c7c2e0a6059c0f31809b7c3cc036f886ed7362909083c2a15381c1296da9ae80c20d5b81c769ee0b3a5ac7c739399eff0f89f1d50000f6de81c256530cd50f8387680100f6d8c7c6535ca525e8c98e010080c39ee89ebe01005481c5352f07ce6a020f310f83fe6f0000e818650100699fb976638780f000735f9090f6d981e8e040a1a60f8fe91101000f84d04f010080ef0af6d9e89fa1010055685eb15cc25d81ea76f3517483c1825a81e92070650881c7eab849a681c6bf3612fe80c36c0f8987d4000077367ad46a8d81c7c0b836c94fc09d4b7e113b84ed733a909081ea2ba437cf0f8ac14d000083c149f6db5781c2f331f80280c52280eecec6c17580eb0dc7c0b0a7bd55e87739010083c2aa4c83978d477a49b963179b6265025bac4d31d14d31d94929c94901c04d01c87b5bc0ef007a5690900f8db6d3000080c11fc6c1dc81ee2e62afb9f6df77b4e84a51010081ed52fc9d4180c7ac0f8caaee01007412e84525000081e8b9639d550f865207000081ee4f0a48b880ef75c6c5150f310f3181a82edde97450488d4c2420e81c7ff7ffeb0231c04881c4b00000005b5f5e415e415fc3",
+      "sha256_before": "5298f6838d474b9147789eb375770dd9be1eaad2f9068618e86d27047dee3afb",
+      "old_name": "unk_7FF697B658D0",
+      "old_type": null,
+      "old_comment": null,
+      "old_chunks": [],
+      "patches": [
+        {
+          "ea": 140697083992313,
+          "old": "783f",
+          "new": "eb3f",
+          "selected": 140697083992378
+        },
+        {
+          "ea": 140697083992389,
+          "old": "7566",
+          "new": "eb66",
+          "selected": 140697083992493
+        },
+        {
+          "ea": 140697083992505,
+          "old": "711b",
+          "new": "eb1b",
+          "selected": 140697083992534
+        },
+        {
+          "ea": 140697083992534,
+          "old": "7134",
+          "new": "eb34",
+          "selected": 140697083992588
+        },
+        {
+          "ea": 140697083992597,
+          "old": "7d6a",
+          "new": "eb6a",
+          "selected": 140697083992705
+        },
+        {
+          "ea": 140697083992606,
+          "old": "7c61",
+          "new": "eb61",
+          "selected": 140697083992705
+        },
+        {
+          "ea": 140697083992728,
+          "old": "732b",
+          "new": "eb2b",
+          "selected": 140697083992773
+        },
+        {
+          "ea": 140697083992773,
+          "old": "732c",
+          "new": "eb2c",
+          "selected": 140697083992819
+        },
+        {
+          "ea": 140697083992914,
+          "old": "735c",
+          "new": "eb5c",
+          "selected": 140697083993008
+        },
+        {
+          "ea": 140697083993020,
+          "old": "7347",
+          "new": "eb47",
+          "selected": 140697083993093
+        },
+        {
+          "ea": 140697083993127,
+          "old": "734d",
+          "new": "eb4d",
+          "selected": 140697083993206
+        },
+        {
+          "ea": 140697083993246,
+          "old": "7506",
+          "new": "eb06",
+          "selected": 140697083993254
+        },
+        {
+          "ea": 140697083993262,
+          "old": "732b",
+          "new": "eb2b",
+          "selected": 140697083993307
+        },
+        {
+          "ea": 140697083993307,
+          "old": "7300",
+          "new": "9090",
+          "selected": 140697083993309
+        },
+        {
+          "ea": 140697083993329,
+          "old": "7253",
+          "new": "eb53",
+          "selected": 140697083993414
+        },
+        {
+          "ea": 140697083993491,
+          "old": "7372",
+          "new": "eb72",
+          "selected": 140697083993607
+        },
+        {
+          "ea": 140697083993652,
+          "old": "7365",
+          "new": "eb65",
+          "selected": 140697083993755
+        },
+        {
+          "ea": 140697083993809,
+          "old": "764d",
+          "new": "eb4d",
+          "selected": 140697083993888
+        },
+        {
+          "ea": 140697083993888,
+          "old": "760f",
+          "new": "eb0f",
+          "selected": 140697083993905
+        },
+        {
+          "ea": 140697083993995,
+          "old": "7162",
+          "new": "eb62",
+          "selected": 140697083994095
+        },
+        {
+          "ea": 140697083994112,
+          "old": "716b",
+          "new": "eb6b",
+          "selected": 140697083994221
+        },
+        {
+          "ea": 140697083994340,
+          "old": "7246",
+          "new": "eb46",
+          "selected": 140697083994412
+        },
+        {
+          "ea": 140697083994420,
+          "old": "7163",
+          "new": "eb63",
+          "selected": 140697083994521
+        },
+        {
+          "ea": 140697083994593,
+          "old": "7506",
+          "new": "eb06",
+          "selected": 140697083994601
+        },
+        {
+          "ea": 140697083994610,
+          "old": "714d",
+          "new": "eb4d",
+          "selected": 140697083994689
+        },
+        {
+          "ea": 140697083994885,
+          "old": "7727",
+          "new": "eb27",
+          "selected": 140697083994926
+        },
+        {
+          "ea": 140697083994914,
+          "old": "7623",
+          "new": "eb23",
+          "selected": 140697083994951
+        },
+        {
+          "ea": 140697083994927,
+          "old": "7708",
+          "new": "eb08",
+          "selected": 140697083994937
+        },
+        {
+          "ea": 140697083994939,
+          "old": "7705",
+          "new": "eb05",
+          "selected": 140697083994946
+        },
+        {
+          "ea": 140697083994948,
+          "old": "7701",
+          "new": "eb01",
+          "selected": 140697083994951
+        },
+        {
+          "ea": 140697083994951,
+          "old": "7367",
+          "new": "eb67",
+          "selected": 140697083995056
+        },
+        {
+          "ea": 140697083995069,
+          "old": "7406",
+          "new": "eb06",
+          "selected": 140697083995077
+        },
+        {
+          "ea": 140697083995083,
+          "old": "760b",
+          "new": "eb0b",
+          "selected": 140697083995096
+        },
+        {
+          "ea": 140697083995096,
+          "old": "763f",
+          "new": "eb3f",
+          "selected": 140697083995161
+        },
+        {
+          "ea": 140697083995162,
+          "old": "7346",
+          "new": "eb46",
+          "selected": 140697083995234
+        },
+        {
+          "ea": 140697083995240,
+          "old": "7109",
+          "new": "eb09",
+          "selected": 140697083995251
+        },
+        {
+          "ea": 140697083995251,
+          "old": "715f",
+          "new": "eb5f",
+          "selected": 140697083995348
+        },
+        {
+          "ea": 140697083995352,
+          "old": "7d61",
+          "new": "eb61",
+          "selected": 140697083995451
+        },
+        {
+          "ea": 140697083995454,
+          "old": "7362",
+          "new": "eb62",
+          "selected": 140697083995554
+        },
+        {
+          "ea": 140697083995557,
+          "old": "735f",
+          "new": "eb5f",
+          "selected": 140697083995654
+        },
+        {
+          "ea": 140697083995656,
+          "old": "733a",
+          "new": "eb3a",
+          "selected": 140697083995716
+        },
+        {
+          "ea": 140697083995746,
+          "old": "7a56",
+          "new": "eb56",
+          "selected": 140697083995834
+        }
+      ]
+    }
+  ],
+  "boundary_attempts": {
+    "ea": "0x7ff697b658d0",
+    "auto_created_end": "0x7ff697b664da",
+    "unwind_proven_end": "0x7ff697b666d7",
+    "reason": "IDA autoanalysis recreated a partial same-start function during instruction definition, making add_func return false. No other function starts inside independently closed extent. Extend existing end to exact pdata end; do not recreate frame or append tails.",
+    "set_end_ok": false
+  },
+  "ownership_attempts": {
+    "previous_partial_chunks": [
+      [
+        140697083992272,
+        140697083995354
+      ],
+      [
+        140697083995451,
+        140697083995456
+      ],
+      [
+        140697083995554,
+        140697083995559
+      ],
+      [
+        140697083995846,
+        140697083995863
+      ]
+    ],
+    "foreign_owner": "0x7ff697b565e0",
+    "foreign_old_chunks": [
+      [
+        140697083930080,
+        140697083991450
+      ],
+      [
+        140697083995560,
+        140697083995726
+      ]
+    ],
+    "foreign_tail": [
+      "0x7ff697b665a8",
+      "0x7ff697b6664e"
+    ],
+    "owner_graph": {
+      "nodes": 6516,
+      "outside": 0,
+      "bad": 0,
+      "indirect": 0
+    },
+    "proof": "Body99 native graph closes entirely within B565E0..B655A0 with no outgoing intraprocedural target; tailB665A8..B6664E is not reachable in that graph and lies in independently validated body102 pdata extent B658D0..B666D7. Tail has sole parent99. Remove false ownership, no tail appends/frame recreation.",
+    "detach_ok": false,
+    "detach_explicit_ok": false,
+    "detach_after_iterator_release": true,
+    "delete_partial_ok": true,
+    "add_explicit_ok": false,
+    "add_func_ex_ok": false,
+    "extend_after_clean_partial": false
+  },
+  "current_chunks": [
+    [
+      "0x7ff697b658d0",
+      "0x7ff697b664da"
+    ],
+    [
+      "0x7ff697b6653b",
+      "0x7ff697b66540"
+    ],
+    [
+      "0x7ff697b665a2",
+      "0x7ff697b665a7"
+    ],
+    [
+      "0x7ff697b66606",
+      "0x7ff697b6660a"
+    ],
+    [
+      "0x7ff697b66644",
+      "0x7ff697b66664"
+    ],
+    [
+      "0x7ff697b666ba",
+      "0x7ff697b666d7"
+    ]
+  ],
+  "pseudocode": "// positive sp value has been detected, the output may be wrong!\nunsigned __int64 __fastcall sub_7FF697B658D0(__int64 a1, __int64 a2, int a3)\n{\n  unsigned __int64 result; // rax\n  __int64 v4; // rcx\n  unsigned int v5; // r8d\n  __int64 v6; // rdx\n  unsigned int v7; // esi\n  __int64 v8; // rdi\n  __int16 v9; // dx\n  unsigned __int16 v10; // r8\n  __int64 v11; // rcx\n  unsigned __int64 v12; // r11\n  __int64 v13; // r9\n  unsigned __int64 v14; // r8\n  _DWORD v15[32]; // [rsp+16h] [rbp-C2h] BYREF\n  __int64 v16; // [rsp+96h] [rbp-42h]\n\n  result = -1;\n  if ( *(_WORD *)a2 == 23117 )\n  {\n    v4 = *(int *)(a2 + 60);\n    v5 = a3 ^ 0x92A1D3F8;\n    if ( (int)v4 <= (int)v5 && *(_DWORD *)(a2 + v4) == 17744 )\n    {\n      if ( v4 < v5 && (int)v4 > 0 )\n      {\n        v6 = v4 + a2;\n        memset(v15, 0, sizeof(v15));\n        v16 = 0;\n        v7 = *(unsigned __int16 *)(v6 + 6);\n        v15[1] = v7;\n        if ( v7 )\n        {\n          v8 = v6 + *(unsigned __int16 *)(v6 + 20) + 24;\n          v15[2] = *(_DWORD *)(v6 + *(unsigned __int16 *)(v6 + 20) + 36);\n          v15[3] = *(_DWORD *)(v8 + 8);\n          v15[4] = *(_DWORD *)(v8 + 20);\n          v15[5] = *(_DWORD *)(v8 + 16);\n          if ( v7 != 1 )\n          {\n            *(__m128i *)&v15[7] = _mm_shuffle_epi32(_mm_loadu_si128((const __m128i *)(v8 + 48)), 177);\n            v9 = word_7FF697BBAACC ^ 0xCD2B;\n            v10 = v9\n                ^ (5 * (~(v9 + 4281) & 0x7D3F)\n                 + 8 * ((v9 + 4281) & 0x1D3F)\n                 - 2 * ((v9 + 4281) ^ 0x2C0)\n                 + 3 * (~(v9 + 4281) & 0x82C0)\n                 - 29243)\n                ^ (5 * (~(v9 + 4281) & 0x7D3F)\n                 + 8 * ((v9 + 4281) & 0x1D3F)\n                 - 2 * ((v9 + 4281) ^ 0x2C0)\n                 + 3 * (~(v9 + 4281) & 0x82C0)\n                 - 20739)\n                ^ 0xCA56;\n            if ( (_WORD)v7 != 4 * (v10 & ((unsigned __int16)word_7FF697BBAACC ^ 0x5FBA))\n                            + 2 * (((unsigned __int16)word_7FF697BBAACC ^ 0xA045) & v10)\n                            - ((unsigned __int16)word_7FF697BBAACC ^ 0xA045 ^ v10)\n                            - 2 * ((unsigned __int16)word_7FF697BBAACC ^ 0xA045 | v10)\n                            + 4 * ~((unsigned __int16)word_7FF697BBAACC ^ 0x5FBA | v10)\n                            - word_7FF697BBAACC )\n            {\n              *(__m128i *)&v15[11] = _mm_shuffle_epi32(_mm_loadu_si128((const __m128i *)(v8 + 88)), 177);\n              if ( v7 != 3\n                && (((__int64 (__fastcall *)(_DWORD *, __int64, _QWORD))sub_7FF697AC1D50)(&v15[1], v8, v7) & 1) == 0 )\n              {\n                ((void (__fastcall *)(_DWORD *, __int64, _QWORD))sub_7FF697AE33F0)(&v15[1], v8, v7);\n              }\n            }\n          }\n        }\n        v11 = qword_7FF697BBAAD0 - 0xF75E688E71AB80LL;\n        v12 = (((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL) | 0xEB4A0C861FAB2240uLL)\n            + (~((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL) & 0xEB4A0C861FAB2240uLL);\n        v13 = qword_7FF697BBAAD8 + 0x4759F8F0B9A64333LL;\n        v14 = -7LL\n            - (7 * ~(v13 ^ 0x48DEF1802389F488LL | 0xFCDC5715224AAD15uLL)\n             + ((v13 ^ 0x48DEF1802389F488LL) & 0xFCDC5715224AAD15uLL)\n             + 6 * (v13 ^ 0x48DEF1802389F488LL | 0xFCDC5715224AAD15uLL));\n        return wmp1_fnv1a_raw_bytes64(\n                 (const unsigned __int8 *)&v15[2] + 2,\n                 ((qword_7FF697BBAAD0\n                 + ((v12\n                   + 2 * ((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL)\n                   - 2 * (((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL) & 0x14B5F379E054DDBFLL)\n                   + 0x14B5F379E054DDC1LL)\n                  ^ v11\n                  ^ 0xEE2B3235E1A68F21uLL)\n                 - ((v11 ^ 0x1623495AB2113398LL)\n                  + 0x1E5CAE51D8A93590LL))\n                ^ v11\n                ^ 0xB23528A77907B266uLL)\n               - qword_7FF697BBAAD0\n               + v12\n               + 2 * ((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL)\n               - 2 * (((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL) & 0x14B5F379E054DDBFLL)\n               + 0x14B5F379E054DDC0LL\n               + 0x4E9B6CB6799186A9LL,\n                 (((((v14 ^ 0x5DDF7CF6FE151B68LL) + 0xECA020D88CBE1CLL) ^ v13 ^ 0xD3D7AAC4CF1B9C8AuLL)\n                 + 6 * ((v13 ^ 0xD3D7AAC4CF1B9C8AuLL) & ~((v14 ^ 0x5DDF7CF6FE151B68LL) + 0xECA020D88CBE1CLL))\n                 + 6 * (((v14 ^ 0x5DDF7CF6FE151B68LL) + 0xECA020D88CBE1CLL) & (v13 ^ 0xD3D7AAC4CF1B9C8AuLL))\n                 - 6 * (~((v14 ^ 0x5DDF7CF6FE151B68LL) + 0xECA020D88CBE1CLL) | v13 ^ 0xD3D7AAC4CF1B9C8AuLL)\n                 + 6 * ~(((v14 ^ 0x5DDF7CF6FE151B68LL) + 0xECA020D88CBE1CLL) | v13 ^ 0xD3D7AAC4CF1B9C8AuLL))\n                ^ (qword_7FF697BBAAD8 + 0x4759F8F0B9A64333LL)\n                ^ ((v14 ^ 0x5DDF7CF6FE151B68LL) + 0x558B0CED5CDD1CF4LL)\n                ^ 0xAC5B0265629B1763uLL)\n               - (v13 ^ 0x48DEF1802389F488LL)\n               + qword_7FF697BBAAD8\n               + v14);\n      }\n      else\n      {\n        return 0;\n      }\n    }\n  }\n  return result;\n}\n"
+}

@@ -1,0 +1,42 @@
+{
+  "date": "2026-09-30",
+  "scope": "Static arithmetic proofs, not execution tests",
+  "proofs": [
+    {
+      "claim": "used-length MBA equals used+37 modulo2^32 for all inputs",
+      "expression": "(~u|0x25)-2u-4(~u&0x3FFFFFDA)-3(~u&0x25)-3",
+      "counterexample_solver": "unsat"
+    },
+    {
+      "claim": "section index MBA equals index+1 modulo2^64 for all inputs",
+      "counterexample_solver": "unknown",
+      "algebraic_proof": "Let M=2^64-1,p=x&1. Replace x&~1=x-p, x|~1=M-1+p, ~(x&~1)=M-x+p, ~(x|~1)=1-p, ~x&~1=M-1-x+p. Coefficients: x=12+6-17=1,p=19-12-11-6-7+17=0,M=-11-6+17=0,const=11+7-17=1. Therefore x+1 modulo2^64. Solver timeout unknown is not used as proof."
+    },
+    {
+      "claim": "header interleaved XOR MBA is x XOR y modulo2^64 for all inputs",
+      "counterexample_solver": "unsat"
+    }
+  ],
+  "append_expression": {
+    "expression": "v43\n       + dword_7FF697BBACC0\n       + (v44\n        ^ ((~((dword_7FF697BBACC0 ^ 0xE53757E) - 1830211031)\n          | ((dword_7FF697BBACC0 ^ 0xE53757E) - 2005277817) ^ 0x44A117D3)\n         + ~((v44 - 1830211031) | (v44 - 2005277817) ^ 0x44A117D3)\n         + 2 * (((dword_7FF697BBACC0 ^ 0xE53757E) - 2005277817) ^ 0x44A117D3)\n         - 2\n         * (((dword_7FF697BBACC0 ^ 0xE53757E) - 1830211031)\n          & (((dword_7FF697BBACC0 ^ 0xE53757E) - 2005277817)\n           ^ 0x44A117D3))\n         + (dword_7FF697BBACC0 ^ 0xE53757E)\n         - 1830211031\n         + 1\n         + 1))\n       + v44\n       - 2005277817",
+    "value": 37,
+    "dynamic_variable": "v43 is added exactly once; remainder expression uses captured constants only"
+  },
+  "comments": [
+    {
+      "ea": 140697084135672,
+      "old": null,
+      "new": "Used-length arithmetic proved equal to used+37 modulo2^32 by bitvector counterexample query UNSAT. Separate low-ESP/stack aliases and capacity overflow caller preconditions remain."
+    },
+    {
+      "ea": 140697084134790,
+      "old": null,
+      "new": "Capacity>=37 gate. Captured BBA CC0 seed makes following adjustment37; native unsigned check is (used+37 mod2^32)<=capacity. It is not a no-overflow guarantee."
+    },
+    {
+      "ea": 140697084131751,
+      "old": null,
+      "new": "Section-index arithmetic proved index+1 modulo2^64 by low-bit partition. Solver timeout UNKNOWN retained in evidence; algebraic coefficient proof establishes identity."
+    }
+  ]
+}

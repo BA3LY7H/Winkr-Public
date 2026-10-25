@@ -1,0 +1,628 @@
+diff --git a/src/common/CMakeLists.txt b/src/common/CMakeLists.txt
+index a8cd5913..ed278d9f 100644
+--- a/src/common/CMakeLists.txt
++++ b/src/common/CMakeLists.txt
+@@ -23,10 +23,16 @@ CollectAndAddSourceFiles(
+   ${CMAKE_CURRENT_SOURCE_DIR}/network)
+ 
+ if(WIN32)
+-  CollectAndAddSourceFiles(
+-    common
+-    ${CMAKE_CURRENT_SOURCE_DIR}/Debugging/Windows
+-    BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
++  # WheatyExceptionReport is the Windows crash reporter and includes <ehdata.h>,
++  # an MSVC-only CRT header. This block assumes WIN32 implies MSVC, which is not
++  # true for a MinGW build. It is a crash dumper, irrelevant to the extractor
++  # tools, so skip that directory entirely when the compiler is not MSVC.
++  if(MSVC)
++    CollectAndAddSourceFiles(
++      common
++      ${CMAKE_CURRENT_SOURCE_DIR}/Debugging/Windows
++      BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
++  endif()
+   CollectAndAddSourceFiles(
+     common
+     ${CMAKE_CURRENT_SOURCE_DIR}/Platform/Windows
+diff --git a/src/common/mmaps_common/Generator/TileBuilder.cpp b/src/common/mmaps_common/Generator/TileBuilder.cpp
+index 31ec90a8..0ae79849 100644
+--- a/src/common/mmaps_common/Generator/TileBuilder.cpp
++++ b/src/common/mmaps_common/Generator/TileBuilder.cpp
+@@ -16,6 +16,8 @@
+  */
+ 
+ #include "TileBuilder.h"
++
++#include <cmath>
+ #include "IntermediateValues.h"
+ #include "Log.h"
+ #include "MMapDefines.h"
+@@ -49,16 +51,17 @@ namespace MMAP
+ {
+     struct TileConfig
+     {
+-        TileConfig(bool bigBaseUnit)
++        TileConfig(bool bigBaseUnit, bool fineBaseUnit)
+         {
+             // these are WORLD UNIT based metrics
+             // this are basic unit dimentions
+             // value have to divide GRID_SIZE(533.3333f) ( aka: 0.5333, 0.2666, 0.3333, 0.1333, etc )
+-            BASE_UNIT_DIM = bigBaseUnit ? 0.5333333f : 0.2666666f;
++            BASE_UNIT_DIM = bigBaseUnit ? 0.5333333f : (fineBaseUnit ? 0.1333333f : 0.2666666f);
+ 
+             // All are in UNIT metrics!
+             VERTEX_PER_MAP = int(GRID_SIZE / BASE_UNIT_DIM + 0.5f);
+-            VERTEX_PER_TILE = bigBaseUnit ? 40 : 80; // must divide VERTEX_PER_MAP
++            // must divide VERTEX_PER_MAP: 1000/40, 2000/80, 4000/80
++            VERTEX_PER_TILE = bigBaseUnit ? 40 : 80;
+             TILES_PER_MAP = VERTEX_PER_MAP / VERTEX_PER_TILE;
+         }
+ 
+@@ -70,11 +73,12 @@ namespace MMAP
+ 
+     TileBuilder::TileBuilder(boost::filesystem::path const& inputDirectory, boost::filesystem::path const& outputDirectory,
+         Optional<float> maxWalkableAngle, Optional<float> maxWalkableAngleNotSteep,
+-        bool skipLiquid, bool bigBaseUnit, bool debugOutput, std::vector<OffMeshData> const* offMeshConnections) :
++        bool skipLiquid, bool bigBaseUnit, bool fineBaseUnit, bool debugOutput, std::vector<OffMeshData> const* offMeshConnections) :
+         m_outputDirectory(outputDirectory),
+         m_maxWalkableAngle(maxWalkableAngle),
+         m_maxWalkableAngleNotSteep(maxWalkableAngleNotSteep),
+         m_bigBaseUnit(bigBaseUnit),
++        m_fineBaseUnit(fineBaseUnit),
+         m_debugOutput(debugOutput),
+         m_terrainBuilder(inputDirectory, skipLiquid),
+         m_rcContext(false),
+@@ -166,7 +170,7 @@ namespace MMAP
+         int lTriCount = meshData.liquidTris.size() / 3;
+         uint8* lTriFlags = meshData.liquidType.data();
+ 
+-        const TileConfig tileConfig = TileConfig(m_bigBaseUnit);
++        const TileConfig tileConfig = TileConfig(m_bigBaseUnit, m_fineBaseUnit);
+         int TILES_PER_MAP = tileConfig.TILES_PER_MAP;
+         float BASE_UNIT_DIM = tileConfig.BASE_UNIT_DIM;
+         rcConfig config = GetMapSpecificConfig(mapID, bmin, bmax, tileConfig);
+@@ -529,18 +533,35 @@ namespace MMAP
+         config.walkableSlopeAngle = m_maxWalkableAngle.value_or(55.0f);
+         config.walkableSlopeAngleNotSteep = m_maxWalkableAngleNotSteep.value_or(55.0f);
+         config.tileSize = tileConfig.VERTEX_PER_TILE;
+-        config.walkableRadius = m_bigBaseUnit ? 1 : 2;
++        // Agent envelope in WORLD UNITS, converted to cells here. Recast takes
++        // these as cell counts, so hard-coding them ties the character's size
++        // to the bake resolution -- halving the cell size would halve the agent
++        // and the mesh would look tighter for the wrong reason. These yard
++        // values are exactly what the default resolution produced before, so a
++        // default bake is unchanged.
++        const float AGENT_RADIUS_YD = g_agentRadiusYd;   // default 2 cells at 0.2666
++        const float AGENT_HEIGHT_YD = g_agentHeightYd;   // default 6 cells at 0.2666
++        const float AGENT_CLIMB_YD  = g_agentClimbYd;    // default 6 cells at 0.2666
++
++        // lround, not ceil: 0.5333333 / 0.2666666 evaluates to 2.0000004 in
++        // float, and ceil turns that into 3 cells -- a silently wider agent and
++        // a different mesh at the DEFAULT resolution. Rounding to nearest
++        // reproduces TC's original 2/6/60/50 exactly and doubles cleanly.
++        config.walkableRadius = int(std::lround(AGENT_RADIUS_YD / tileConfig.BASE_UNIT_DIM));
+         config.borderSize = config.walkableRadius + 3;
+         config.maxEdgeLen = tileConfig.VERTEX_PER_TILE + 1;        // anything bigger than tileSize
+-        config.walkableHeight = m_bigBaseUnit ? 3 : 6;
++        config.walkableHeight = int(std::lround(AGENT_HEIGHT_YD / tileConfig.BASE_UNIT_DIM));
+         // a value >= 3|6 allows npcs to walk over some fences
+         // a value >= 4|8 allows npcs to walk over all fences
+-        config.walkableClimb = m_bigBaseUnit ? 3 : 6;
+-        config.minRegionArea = rcSqr(60);
+-        config.mergeRegionArea = rcSqr(50);
+-        config.maxSimplificationError = 1.8f;           // eliminates most jagged edges (tiny polygons)
+-        config.detailSampleDist = config.cs * 16;
+-        config.detailSampleMaxError = config.ch * 1;
++        config.walkableClimb = int(std::lround(AGENT_CLIMB_YD / tileConfig.BASE_UNIT_DIM));
++        // Also cell counts. 60 and 50 cells at 0.2666 yd are 16 and 13.3 yd;
++        // left literal, a fine bake would keep regions 16x smaller than the
++        // default one does and drown the mesh in slivers.
++        config.minRegionArea = rcSqr(int(std::lround(16.0f / tileConfig.BASE_UNIT_DIM)));
++        config.mergeRegionArea = rcSqr(int(std::lround(13.3333f / tileConfig.BASE_UNIT_DIM)));
++        config.maxSimplificationError = g_maxSimplificationError;   // eliminates most jagged edges (tiny polygons)
++        config.detailSampleDist = config.cs * g_detailSampleDist;
++        config.detailSampleMaxError = config.ch * g_detailSampleMaxError;
+ 
+         switch (mapID)
+         {
+diff --git a/src/common/mmaps_common/Generator/TileBuilder.h b/src/common/mmaps_common/Generator/TileBuilder.h
+index f3492e51..08079784 100644
+--- a/src/common/mmaps_common/Generator/TileBuilder.h
++++ b/src/common/mmaps_common/Generator/TileBuilder.h
+@@ -27,6 +27,32 @@
+ 
+ namespace MMAP
+ {
++    // Recast's contour simplification tolerance, in VOXELS. TC ships 1.8,
++    // which at the default 0.2666 yd cell lets a mesh border sit up to 0.48 yd
++    // away from the true walkable boundary -- half a yard, which in a city is
++    // far enough to put walkable surface inside a wall. Lowering it keeps the
++    // border on the geometry at the cost of more polys. Left at 1.8 unless
++    // --simplify says otherwise, so a default bake is unchanged.
++    inline float g_maxSimplificationError = 1.8f;
++
++    // Detail-mesh sampling, in CELLS. TC ships 16, which at the default 0.2666
++    // yd cell samples terrain height only every 4.27 yd -- the detail mesh is
++    // what getPolyHeight reads, so this is what decides whether the mesh sits on
++    // the ground or hovers over a dip between samples. It costs detail verts and
++    // triangles but NOT routing polys, so it buys height accuracy without
++    // touching the poly budget that --simplify 0.4 blew.
++    // Agent envelope in YARDS. TC's defaults describe a server-side NPC, not a
++    // player character -- and this repo's own LiveMesh disagrees with every one
++    // of them (dinkr_livemesh.cpp: height 2.0, climb 1.0, radius 0.6, slope 50).
++    // A mesh built to 1.6 yd height walks under arches a 2 yd player cannot fit
++    // through; one built to 1.6 yd climb bridges ledges a player cannot step up.
++    inline float g_agentHeightYd = 1.6f;
++    inline float g_agentClimbYd  = 1.6f;
++    inline float g_agentRadiusYd = 0.5333333f;
++
++    inline float g_detailSampleDist = 16.0f;
++    inline float g_detailSampleMaxError = 1.0f;
++
+ struct TileConfig;
+ 
+ using detour_unique_ptr = std::unique_ptr<unsigned char, decltype(Trinity::unique_ptr_deleter<unsigned char*, &::dtFree>())>;
+@@ -40,6 +66,7 @@ public:
+         Optional<float> maxWalkableAngleNotSteep,
+         bool skipLiquid,
+         bool bigBaseUnit,
++        bool fineBaseUnit,
+         bool debugOutput,
+         std::vector<OffMeshData> const* offMeshConnections);
+ 
+@@ -88,6 +115,7 @@ protected:
+     Optional<float> m_maxWalkableAngle;
+     Optional<float> m_maxWalkableAngleNotSteep;
+     bool m_bigBaseUnit;
++    bool m_fineBaseUnit;
+     bool m_debugOutput;
+ 
+     TerrainBuilder m_terrainBuilder;
+diff --git a/src/tools/CMakeLists.txt b/src/tools/CMakeLists.txt
+index db2cefd7..70f9c697 100644
+--- a/src/tools/CMakeLists.txt
++++ b/src/tools/CMakeLists.txt
+@@ -13,3 +13,4 @@ add_subdirectory(map_extractor)
+ add_subdirectory(vmap4_assembler)
+ add_subdirectory(vmap4_extractor)
+ add_subdirectory(mmaps_generator)
++add_subdirectory(mesh_audit)
+diff --git a/src/tools/extractor_common/ExtractorDB2LoadInfo.h b/src/tools/extractor_common/ExtractorDB2LoadInfo.h
+index 4aff83b9..ed43890e 100644
+--- a/src/tools/extractor_common/ExtractorDB2LoadInfo.h
++++ b/src/tools/extractor_common/ExtractorDB2LoadInfo.h
+@@ -60,17 +60,19 @@ struct CinematicCameraLoadInfo
+ 
+ struct GameobjectDisplayInfoLoadInfo
+ {
+-    static constexpr DB2MetaField MetaFields[9] =
++    // Classic Era 1.15.9, LAYOUT 7C5F0B90 (WoWDBDefs GameObjectDisplayInfo.dbd).
++    // Differs from retail 16D1DD61: Classic still carries the legacy ModelName
++    // string first, and has none of retail's AlternateDisplayType /
++    // ClientCreatureDisplayInfoID / ClientItemID trailer.
++    static constexpr DB2MetaField MetaFields[7] =
+     {
+-        { .Type = FT_FLOAT,                .ArraySize =  6, .IsSigned =  true },
+-        { .Type = FT_INT,                  .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_FLOAT,                .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_FLOAT,                .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_INT,                  .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_INT,                  .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_INT,                  .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned = false },
++        { .Type = FT_STRING_NOT_LOCALIZED, .ArraySize =  1, .IsSigned =  true },  // ModelName
++        { .Type = FT_FLOAT,                .ArraySize =  6, .IsSigned =  true },  // GeoBox
++        { .Type = FT_INT,                  .ArraySize =  1, .IsSigned =  true },  // FileDataID
++        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned =  true },  // ObjectEffectPackageID
++        { .Type = FT_FLOAT,                .ArraySize =  1, .IsSigned =  true },  // OverrideLootEffectScale
++        { .Type = FT_FLOAT,                .ArraySize =  1, .IsSigned =  true },  // OverrideNameScale
++        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned = false },  // Field_1_15_4_56400_006
+     };
+ 
+     static constexpr DB2Meta MetaInstance =
+@@ -78,15 +80,16 @@ struct GameobjectDisplayInfoLoadInfo
+         .FileDataId         = 1266277,
+         .IndexField         = -1,
+         .ParentIndexField   = -1,
+-        .FieldCount         = 9,
+-        .FileFieldCount     = 9,
+-        .LayoutHash         = 0x16D1DD61,
++        .FieldCount         = 7,
++        .FileFieldCount     = 7,
++        .LayoutHash         = 0x7C5F0B90,
+         .Fields             = MetaFields
+     };
+ 
+-    static constexpr DB2FieldMeta Fields[15] =
++    static constexpr DB2FieldMeta Fields[13] =
+     {
+         { .IsSigned = false, .Type = FT_INT, .Name = "ID" },
++        { .IsSigned = false, .Type = FT_STRING_NOT_LOCALIZED, .Name = "ModelName" },
+         { .IsSigned = false, .Type = FT_FLOAT, .Name = "GeoBoxMinX" },
+         { .IsSigned = false, .Type = FT_FLOAT, .Name = "GeoBoxMinY" },
+         { .IsSigned = false, .Type = FT_FLOAT, .Name = "GeoBoxMinZ" },
+@@ -97,13 +100,10 @@ struct GameobjectDisplayInfoLoadInfo
+         { .IsSigned = true, .Type = FT_SHORT, .Name = "ObjectEffectPackageID" },
+         { .IsSigned = false, .Type = FT_FLOAT, .Name = "OverrideLootEffectScale" },
+         { .IsSigned = false, .Type = FT_FLOAT, .Name = "OverrideNameScale" },
+-        { .IsSigned = true, .Type = FT_INT, .Name = "AlternateDisplayType" },
+-        { .IsSigned = true, .Type = FT_INT, .Name = "ClientCreatureDisplayInfoID" },
+-        { .IsSigned = true, .Type = FT_INT, .Name = "ClientItemID" },
+-        { .IsSigned = false, .Type = FT_SHORT, .Name = "Unknown1100" },
++        { .IsSigned = false, .Type = FT_SHORT, .Name = "Unknown1154" },
+     };
+ 
+-    static constexpr DB2FileLoadInfo Instance{ Fields, 15, &MetaInstance };
++    static constexpr DB2FileLoadInfo Instance{ Fields, 13, &MetaInstance };
+ };
+ 
+ struct LiquidMaterialLoadInfo
+@@ -294,33 +294,41 @@ struct LiquidTypeLoadInfo
+ 
+ struct MapLoadInfo
+ {
+-    static constexpr DB2MetaField MetaFields[25] =
++    // Classic Era 1.15.9, LAYOUT 32401DC5 / B47C6F05 (WoWDBDefs Map.dbd).
++    //
++    // Two differences from retail 75863E23 matter:
++    //   * retail's Corpse<float>[2] is absent; RaidOffset<32> sits further down
++    //     the record in its place.
++    //   * there is NO WdtFileDataID column. Retail locates a map's WDT through
++    //     that field, so ReadMapDBC cannot work as written -- the caller has to
++    //     resolve the WDT by name and read the id back off the CASC handle.
++    //     See ResolveWdtFileDataId in ClassicWdt.h. Name lookup works here
++    //     because the Classic Era root still ships filename hashes.
++    static constexpr DB2MetaField MetaFields[23] =
+     {
+-        { .Type = FT_STRING_NOT_LOCALIZED, .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_STRING,               .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_STRING,               .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_STRING,               .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_STRING,               .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_STRING,               .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_FLOAT,                .ArraySize =  2, .IsSigned =  true },
+-        { .Type = FT_BYTE,                 .ArraySize =  1, .IsSigned = false },
+-        { .Type = FT_BYTE,                 .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_BYTE,                 .ArraySize =  1, .IsSigned = false },
+-        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned = false },
+-        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_BYTE,                 .ArraySize =  1, .IsSigned = false },
+-        { .Type = FT_FLOAT,                .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_BYTE,                 .ArraySize =  1, .IsSigned = false },
+-        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_INT,                  .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_INT,                  .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_INT,                  .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_INT,                  .ArraySize =  1, .IsSigned =  true },
+-        { .Type = FT_INT,                  .ArraySize =  3, .IsSigned =  true },
++        { .Type = FT_STRING_NOT_LOCALIZED, .ArraySize =  1, .IsSigned =  true },  // Directory
++        { .Type = FT_STRING,               .ArraySize =  1, .IsSigned =  true },  // MapName_lang
++        { .Type = FT_STRING,               .ArraySize =  1, .IsSigned =  true },  // MapDescription0_lang
++        { .Type = FT_STRING,               .ArraySize =  1, .IsSigned =  true },  // MapDescription1_lang
++        { .Type = FT_STRING,               .ArraySize =  1, .IsSigned =  true },  // PvpShortDescription_lang
++        { .Type = FT_STRING,               .ArraySize =  1, .IsSigned =  true },  // PvpLongDescription_lang
++        { .Type = FT_BYTE,                 .ArraySize =  1, .IsSigned = false },  // MapType
++        { .Type = FT_BYTE,                 .ArraySize =  1, .IsSigned =  true },  // InstanceType
++        { .Type = FT_BYTE,                 .ArraySize =  1, .IsSigned = false },  // ExpansionID
++        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned = false },  // AreaTableID
++        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned =  true },  // LoadingScreenID
++        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned =  true },  // TimeOfDayOverride
++        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned =  true },  // ParentMapID
++        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned =  true },  // CosmeticParentMapID
++        { .Type = FT_BYTE,                 .ArraySize =  1, .IsSigned = false },  // TimeOffset
++        { .Type = FT_FLOAT,                .ArraySize =  1, .IsSigned =  true },  // MinimapIconScale
++        { .Type = FT_INT,                  .ArraySize =  1, .IsSigned =  true },  // RaidOffset
++        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned =  true },  // CorpseMapID
++        { .Type = FT_BYTE,                 .ArraySize =  1, .IsSigned = false },  // MaxPlayers
++        { .Type = FT_SHORT,                .ArraySize =  1, .IsSigned =  true },  // WindSettingsID
++        { .Type = FT_INT,                  .ArraySize =  1, .IsSigned =  true },  // ZmpFileDataID
++        { .Type = FT_INT,                  .ArraySize =  1, .IsSigned =  true },  // Field_1_15_4_56400_021
++        { .Type = FT_INT,                  .ArraySize =  3, .IsSigned =  true },  // Flags[3]
+     };
+ 
+     static constexpr DB2Meta MetaInstance =
+@@ -328,13 +336,13 @@ struct MapLoadInfo
+         .FileDataId         = 1349477,
+         .IndexField         = -1,
+         .ParentIndexField   = -1,
+-        .FieldCount         = 25,
+-        .FileFieldCount     = 25,
+-        .LayoutHash         = 0x75863E23,
++        .FieldCount         = 23,
++        .FileFieldCount     = 23,
++        .LayoutHash         = 0xB47C6F05,
+         .Fields             = MetaFields
+     };
+ 
+-    static constexpr DB2FieldMeta Fields[29] =
++    static constexpr DB2FieldMeta Fields[26] =
+     {
+         { .IsSigned = false, .Type = FT_INT, .Name = "ID" },
+         { .IsSigned = false, .Type = FT_STRING_NOT_LOCALIZED, .Name = "Directory" },
+@@ -343,8 +351,6 @@ struct MapLoadInfo
+         { .IsSigned = false, .Type = FT_STRING, .Name = "MapDescription1" },
+         { .IsSigned = false, .Type = FT_STRING, .Name = "PvpShortDescription" },
+         { .IsSigned = false, .Type = FT_STRING, .Name = "PvpLongDescription" },
+-        { .IsSigned = false, .Type = FT_FLOAT, .Name = "CorpseX" },
+-        { .IsSigned = false, .Type = FT_FLOAT, .Name = "CorpseY" },
+         { .IsSigned = false, .Type = FT_BYTE, .Name = "MapType" },
+         { .IsSigned = true, .Type = FT_BYTE, .Name = "InstanceType" },
+         { .IsSigned = false, .Type = FT_BYTE, .Name = "ExpansionID" },
+@@ -355,19 +361,18 @@ struct MapLoadInfo
+         { .IsSigned = true, .Type = FT_SHORT, .Name = "CosmeticParentMapID" },
+         { .IsSigned = false, .Type = FT_BYTE, .Name = "TimeOffset" },
+         { .IsSigned = false, .Type = FT_FLOAT, .Name = "MinimapIconScale" },
++        { .IsSigned = true, .Type = FT_INT, .Name = "RaidOffset" },
+         { .IsSigned = true, .Type = FT_SHORT, .Name = "CorpseMapID" },
+         { .IsSigned = false, .Type = FT_BYTE, .Name = "MaxPlayers" },
+         { .IsSigned = true, .Type = FT_SHORT, .Name = "WindSettingsID" },
+         { .IsSigned = true, .Type = FT_INT, .Name = "ZmpFileDataID" },
+-        { .IsSigned = true, .Type = FT_INT, .Name = "WdtFileDataID" },
+-        { .IsSigned = true, .Type = FT_INT, .Name = "NavigationMaxDistance" },
+-        { .IsSigned = true, .Type = FT_INT, .Name = "PreloadFileDataID" },
++        { .IsSigned = true, .Type = FT_INT, .Name = "Unknown1154" },
+         { .IsSigned = true, .Type = FT_INT, .Name = "Flags1" },
+         { .IsSigned = true, .Type = FT_INT, .Name = "Flags2" },
+         { .IsSigned = true, .Type = FT_INT, .Name = "Flags3" },
+     };
+ 
+-    static constexpr DB2FileLoadInfo Instance{ Fields, 29, &MetaInstance };
++    static constexpr DB2FileLoadInfo Instance{ Fields, 26, &MetaInstance };
+ };
+ 
+ #endif // TRINITYCORE_EXTRACTOR_DB2_LOAD_INFO_H
+diff --git a/src/tools/map_extractor/System.cpp b/src/tools/map_extractor/System.cpp
+index a3b5a5a0..ebf23014 100644
+--- a/src/tools/map_extractor/System.cpp
++++ b/src/tools/map_extractor/System.cpp
+@@ -22,6 +22,7 @@
+ #include "DB2Meta.h"
+ #include "DBFilesClientList.h"
+ #include "ExtractorDB2LoadInfo.h"
++#include "ClassicWdt.h"
+ #include "IteratorPair.h"
+ #include "Locales.h"
+ #include "MapDefines.h"
+@@ -290,9 +291,10 @@ void ReadMapDBC()
+ 
+         MapEntry map;
+         map.Id = record.GetId();
+-        map.WdtFileDataId = record.GetInt32("WdtFileDataID");
+         map.Name = record.GetString("MapName");
+         map.Directory = record.GetString("Directory");
++        // No WdtFileDataID column on Classic Era -- resolve the WDT by path.
++        map.WdtFileDataId = ResolveWdtFileDataId(CascStorage.get(), map.Directory);
+         idToIndex[map.Id] = map_ids.size();
+         map_ids.push_back(map);
+     }
+diff --git a/src/tools/mmaps_generator/MapBuilder.cpp b/src/tools/mmaps_generator/MapBuilder.cpp
+index 65a41d72..fa58ba00 100644
+--- a/src/tools/mmaps_generator/MapBuilder.cpp
++++ b/src/tools/mmaps_generator/MapBuilder.cpp
+@@ -36,8 +36,8 @@ static boost::filesystem::path vmtile = ".vmtile";
+ namespace MMAP
+ {
+     MapTileBuilder::MapTileBuilder(MapBuilder* mapBuilder, Optional<float> maxWalkableAngle, Optional<float> maxWalkableAngleNotSteep,
+-        bool skipLiquid, bool bigBaseUnit, bool debugOutput, std::vector<OffMeshData> const* offMeshConnections) :
+-        TileBuilder(mapBuilder->m_inputDirectory, mapBuilder->m_outputDirectory, maxWalkableAngle, maxWalkableAngleNotSteep, skipLiquid, bigBaseUnit, debugOutput, offMeshConnections),
++        bool skipLiquid, bool bigBaseUnit, bool fineBaseUnit, bool debugOutput, std::vector<OffMeshData> const* offMeshConnections) :
++        TileBuilder(mapBuilder->m_inputDirectory, mapBuilder->m_outputDirectory, maxWalkableAngle, maxWalkableAngleNotSteep, skipLiquid, bigBaseUnit, fineBaseUnit, debugOutput, offMeshConnections),
+         m_mapBuilder(mapBuilder),
+         m_workerThread(&MapTileBuilder::WorkerThread, this)
+     {
+@@ -62,7 +62,7 @@ namespace MMAP
+     MapBuilder::MapBuilder(boost::filesystem::path const& inputDirectory, boost::filesystem::path const& outputDirectory,
+         Optional<float> maxWalkableAngle, Optional<float> maxWalkableAngleNotSteep, bool skipLiquid,
+         bool skipContinents, bool skipJunkMaps, bool skipBattlegrounds,
+-        bool debugOutput, bool bigBaseUnit, int mapid, char const* offMeshFilePath, unsigned int threads) :
++        bool debugOutput, bool bigBaseUnit, bool fineBaseUnit, int mapid, char const* offMeshFilePath, unsigned int threads) :
+         m_inputDirectory     (inputDirectory),
+         m_outputDirectory    (outputDirectory),
+         m_debugOutput        (debugOutput),
+@@ -74,6 +74,7 @@ namespace MMAP
+         m_maxWalkableAngle   (maxWalkableAngle),
+         m_maxWalkableAngleNotSteep (maxWalkableAngleNotSteep),
+         m_bigBaseUnit        (bigBaseUnit),
++        m_fineBaseUnit       (fineBaseUnit),
+         m_mapid              (mapid),
+         m_totalTiles         (0u),
+         m_totalTilesProcessed(0u),
+@@ -255,7 +256,7 @@ namespace MMAP
+         m_tileBuilders.resize(m_threads);
+         for (unsigned int i = 0; i < m_threads; ++i)
+             m_tileBuilders[i].reset(new MapTileBuilder(this, m_maxWalkableAngle, m_maxWalkableAngleNotSteep,
+-                m_skipLiquid, m_bigBaseUnit, m_debugOutput, &m_offMeshConnections));
++                m_skipLiquid, m_bigBaseUnit, m_fineBaseUnit, m_debugOutput, &m_offMeshConnections));
+ 
+         if (mapID)
+         {
+@@ -330,7 +331,7 @@ namespace MMAP
+ 
+         // build navmesh tile
+         MapTileBuilder tileBuilder(this, m_maxWalkableAngle, m_maxWalkableAngleNotSteep,
+-            m_skipLiquid, m_bigBaseUnit, m_debugOutput, &m_offMeshConnections);
++            m_skipLiquid, m_bigBaseUnit, m_fineBaseUnit, m_debugOutput, &m_offMeshConnections);
+         TileBuilder::TileResult tileResult = tileBuilder.buildMoveMapTile(mapId, tileX, tileY, data, bmin, bmax, navMesh->getParams());
+         if (tileResult.data)
+             tileBuilder.saveMoveMapTileToFile(mapId, tileX, tileY, navMesh, tileResult);
+@@ -350,7 +351,7 @@ namespace MMAP
+         // ToDo: delete the old tile as the user clearly wants to rebuild it
+ 
+         MapTileBuilder tileBuilder(this, m_maxWalkableAngle, m_maxWalkableAngleNotSteep,
+-            m_skipLiquid, m_bigBaseUnit, m_debugOutput, &m_offMeshConnections);
++            m_skipLiquid, m_bigBaseUnit, m_fineBaseUnit, m_debugOutput, &m_offMeshConnections);
+         tileBuilder.buildTile(mapID, tileX, tileY, navMesh);
+         dtFreeNavMesh(navMesh);
+ 
+diff --git a/src/tools/mmaps_generator/MapBuilder.h b/src/tools/mmaps_generator/MapBuilder.h
+index d475280b..a44bb657 100644
+--- a/src/tools/mmaps_generator/MapBuilder.h
++++ b/src/tools/mmaps_generator/MapBuilder.h
+@@ -55,6 +55,7 @@ namespace MMAP
+                 Optional<float> maxWalkableAngleNotSteep,
+                 bool skipLiquid,
+                 bool bigBaseUnit,
++                bool fineBaseUnit,
+                 bool debugOutput,
+                 std::vector<OffMeshData> const* offMeshConnections);
+             ~MapTileBuilder();
+@@ -89,6 +90,7 @@ namespace MMAP
+                 bool skipBattlegrounds,
+                 bool debugOutput,
+                 bool bigBaseUnit,
++                bool fineBaseUnit,
+                 int mapid,
+                 char const* offMeshFilePath,
+                 unsigned int threads);
+@@ -139,6 +141,7 @@ namespace MMAP
+             Optional<float> m_maxWalkableAngle;
+             Optional<float> m_maxWalkableAngleNotSteep;
+             bool m_bigBaseUnit;
++            bool m_fineBaseUnit;
+ 
+             int32 m_mapid;
+ 
+diff --git a/src/tools/mmaps_generator/PathGenerator.cpp b/src/tools/mmaps_generator/PathGenerator.cpp
+index ff9f1a7a..133a8e65 100644
+--- a/src/tools/mmaps_generator/PathGenerator.cpp
++++ b/src/tools/mmaps_generator/PathGenerator.cpp
+@@ -23,6 +23,7 @@
+ #include "Locales.h"
+ #include "Log.h"
+ #include "MapBuilder.h"
++#include "Generator/TileBuilder.h"
+ #include "Memory.h"
+ #include "PathCommon.h"
+ #include "Timer.h"
+@@ -150,6 +151,7 @@ bool handleArgs(int argc, char** argv,
+                bool& debugOutput,
+                bool& silent,
+                bool& bigBaseUnit,
++               bool& fineBaseUnit,
+                char const*& offMeshInputPath,
+                char const*& file,
+                unsigned int& threads,
+@@ -289,6 +291,68 @@ bool handleArgs(int argc, char** argv,
+         {
+             silent = true;
+         }
++        else if (strcmp(argv[i], "--fineBaseUnit") == 0)
++        {
++            // Half the default cell size (0.1333 yd). Costs roughly 4x the
++            // memory and time per tile, and is worth it only where the audit
++            // shows the default cannot represent the geometry -- caves and
++            // tight interiors. The agent envelope is held in world units, so
++            // this changes resolution and nothing else.
++            char* param = argv[++i];
++            if (!param)
++                return false;
++
++            if (strcmp(param, "true") == 0)
++                fineBaseUnit = true;
++            else if (strcmp(param, "false") == 0)
++                fineBaseUnit = false;
++            else
++                TC_LOG_ERROR("tool.mmapgen.commandline", "invalid option for '--fineBaseUnit', using default false");
++        }
++        else if (strcmp(argv[i], "--agentHeight") == 0 || strcmp(argv[i], "--agentClimb") == 0
++              || strcmp(argv[i], "--agentRadius") == 0)
++        {
++            char const* which = argv[i];
++            char* param = argv[++i];
++            if (!param) return false;
++            float v = float(atof(param));
++            if (v > 0.05f && v <= 5.0f)
++            {
++                if (!strcmp(which, "--agentHeight")) MMAP::g_agentHeightYd = v;
++                else if (!strcmp(which, "--agentClimb")) MMAP::g_agentClimbYd = v;
++                else MMAP::g_agentRadiusYd = v;
++            }
++            else
++                TC_LOG_ERROR("tool.mmapgen.commandline", "invalid value for {}, keeping default", which);
++        }
++        else if (strcmp(argv[i], "--detailDist") == 0)
++        {
++            char* param = argv[++i];
++            if (!param) return false;
++            float v = float(atof(param));
++            if (v >= 1.0f && v <= 32.0f) MMAP::g_detailSampleDist = v;
++            else TC_LOG_ERROR("tool.mmapgen.commandline", "invalid --detailDist, using 16");
++        }
++        else if (strcmp(argv[i], "--detailError") == 0)
++        {
++            char* param = argv[++i];
++            if (!param) return false;
++            float v = float(atof(param));
++            if (v > 0.0f && v <= 4.0f) MMAP::g_detailSampleMaxError = v;
++            else TC_LOG_ERROR("tool.mmapgen.commandline", "invalid --detailError, using 1");
++        }
++        else if (strcmp(argv[i], "--simplify") == 0)
++        {
++            char* param = argv[++i];
++            if (!param)
++                return false;
++
++            float v = float(atof(param));
++            if (v >= 0.0f && v <= 8.0f)
++                MMAP::g_maxSimplificationError = v;
++            else
++                TC_LOG_ERROR("tool.mmapgen.commandline", "invalid option for '--simplify', using default 1.8");
++        }
+         else if (strcmp(argv[i], "--bigBaseUnit") == 0)
+         {
+             param = argv[++i];
+@@ -454,6 +518,7 @@ int main(int argc, char** argv)
+          debugOutput = false,
+          silent = false,
+          bigBaseUnit = false;
++    bool fineBaseUnit = false;
+     char const* offMeshInputPath = nullptr;
+     char const* file = nullptr;
+     boost::filesystem::path inputDirectory = boost::filesystem::current_path();
+@@ -462,7 +527,7 @@ int main(int argc, char** argv)
+     bool validParam = handleArgs(argc, argv, mapnum,
+                                  tileX, tileY, maxAngle, maxAngleNotSteep,
+                                  skipLiquid, skipContinents, skipJunkMaps, skipBattlegrounds,
+-                                 debugOutput, silent, bigBaseUnit, offMeshInputPath, file, threads,
++                                 debugOutput, silent, bigBaseUnit, fineBaseUnit, offMeshInputPath, file, threads,
+                                  inputDirectory, outputDirectory);
+ 
+     if (!validParam)
+@@ -491,7 +556,7 @@ int main(int argc, char** argv)
+     MMAP::CreateVMapManager = &MMAP::VMapFactory::CreateVMapManager;
+ 
+     MMAP::MapBuilder builder(inputDirectory, outputDirectory, maxAngle, maxAngleNotSteep, skipLiquid, skipContinents, skipJunkMaps,
+-                       skipBattlegrounds, debugOutput, bigBaseUnit, mapnum, offMeshInputPath, threads);
++                       skipBattlegrounds, debugOutput, bigBaseUnit, fineBaseUnit, mapnum, offMeshInputPath, threads);
+ 
+     uint32 start = getMSTime();
+     if (file)
+diff --git a/src/tools/vmap4_extractor/vmapexport.cpp b/src/tools/vmap4_extractor/vmapexport.cpp
+index 70489341..25a94b61 100644
+--- a/src/tools/vmap4_extractor/vmapexport.cpp
++++ b/src/tools/vmap4_extractor/vmapexport.cpp
+@@ -21,6 +21,7 @@
+ #include "Common.h"
+ #include "DB2CascFileSource.h"
+ #include "ExtractorDB2LoadInfo.h"
++#include "ClassicWdt.h"
+ #include "Locales.h"
+ #include "MapDefines.h"
+ #include "MapUtils.h"
+@@ -426,10 +427,11 @@ void ReadMapTable()
+ 
+         MapEntry& map = map_ids.emplace_back();
+         map.Id = record.GetId();
+-        map.WdtFileDataId = record.GetInt32("WdtFileDataID");
+         map.ParentMapID = int16(record.GetUInt16("ParentMapID"));
+         map.Name = record.GetString("MapName");
+         map.Directory = record.GetString("Directory");
++        // No WdtFileDataID column on Classic Era -- resolve the WDT by path.
++        map.WdtFileDataId = ResolveWdtFileDataId(CascStorage.get(), map.Directory);
+ 
+         if (map.ParentMapID < 0)
+             map.ParentMapID = int16(record.GetUInt16("CosmeticParentMapID"));

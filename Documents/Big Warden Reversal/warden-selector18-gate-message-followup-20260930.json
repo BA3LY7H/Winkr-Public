@@ -1,0 +1,368 @@
+{
+  "date": "2026-09-30",
+  "original_bytes": "4883ec2881fc000e0000770383ece274087506e800000000c350ebffc0587717c0f000761d6690669081c7400a1d8180ee19f6de81c6887716f380edae80c2fdc7c3907606c380ea15f6a69076018b803daa861204000f8491030000c6059d861204007f17c0f3007e249090f6daf6dd83c1cc83c3cb80c6bac7c6c8907f0980ed4d80e95a81c02a7f164968f4877e0e81c6117271fc0f85555e010081ae7e0075318aff741190906afa83c1f180c59bf6df80ea8a0f827421010080ef1280ee8883c33883c31f722e83c0465f5c80ebe10f8a750801004f6ba47401830f1f007925c0e100780780edc8c6c70e6890782ce381c581ec85e4c7c6c5599deb81ee38bc5464c7c17779143df6de58c7c33da1a27d81c5cc72bf514921a8130f1f007413c0f10075229090669081c5ffefaf1f80eb92e8740c000083c68bf6db83c2f90f8a7418010081eb8af6751081c23877dff0c7c71f6706474e8fb0bf488d0d0cd6ffffe8a7bff1ff0f1f800000000081fc001c0000770383ec9675087406e800000000c350ebffc0587e3ac0e0007f0781c393fcbb26e87f2e010080c2e880c1e081ee40907e205f777d0f8925a90000f6dae8616d000080eecdc7c582cf317dc6c2bb80987edd0f1f84000000000081fc00210000770383ec4175087406e800000000c350ebffc058f886ed73399090669081c6a0fda180c7c0d299f6cbc7c39a9128ef0f3180c06e81ea61f5ef02f6d9c7c2a858f283e8283e0100e8f4a3000049c094eb129c0f1f840000000000710a86ed7030909081c3ff21714a81c058ed91bf83c102e851ce00000f3180c648c7c5f4e1703181c5abb6490d5751c6c5a181eaa8da70ede8c73f0100c6c11e80eb1381ea431a3d2080c0bb81e81bfe1b6fc0bd0466a2f90f1f840000000000f6c125732b90900f8476de000083c67c51792880ed736a3068571b40cdc6c60fe8eb350100c7c1c028ab28c6c36b81e986c073edc7c3ee7dac7f81e93972beb4f6d9c7c0bdcb9b9080ef860f88215d0000f6a70768ca6f77e833eff1ff0f1f007e21c0e1007f04909059687f28d4c580efd380c7900f8803b70000c7c3fe5b7d3f0f8a7e18010080c7f15a81eabb674dfa81eea41d7f06c08996e096600f1f0085e08ac97133744f0f310f31f6db80c11580ef64c7c58af671230f8ce9a30000e8f4ff000083c7a1570f8a093d000080e88483c0adf6de698390ebdaf90f1f007e268aed7f0f909080c54b80c330c6c58c81c7304c7f26e8e993010080eee10f83d0540100c7c26f90eb0ff6da80ef47f6dd81c26fc05ff980827e01040f1f007f358adb7e020f827e3300000f310f8e7b26010059e8b849010083c680c7c714437e7580ea1e5281eb2eea37a65559f6dff6d880ed75e87f0401003ba84883c428c3",
+  "original_sha256": "123516ac1865c38b2366745d526dbfce4852d4eb250eed926705078608f11766",
+  "overlap_patches": [
+    {
+      "ea": 140695635360922,
+      "original5": "ebffc05877",
+      "newfirst": "90"
+    },
+    {
+      "ea": 140695635361286,
+      "original5": "ebffc0587e",
+      "newfirst": "90"
+    },
+    {
+      "ea": 140695635361382,
+      "original5": "ebffc058f8",
+      "newfirst": "90"
+    }
+  ],
+  "conditional_guards": [
+    {
+      "ea": 140695635360906,
+      "target": 140695635360911,
+      "bound": 3584,
+      "precondition": "uint32(entryRSP)>=4000h; immediate depth at least-30h =>current low32RSP>=3FD0h"
+    },
+    {
+      "ea": 140695635361270,
+      "target": 140695635361275,
+      "bound": 7168,
+      "precondition": "uint32(entryRSP)>=4000h; immediate depth at least-30h =>current low32RSP>=3FD0h"
+    },
+    {
+      "ea": 140695635361366,
+      "target": 140695635361371,
+      "bound": 8448,
+      "precondition": "uint32(entryRSP)>=4000h; immediate depth at least-30h =>current low32RSP>=3FD0h"
+    }
+  ],
+  "normalization": {
+    "start": 140695635360896,
+    "end": 140695635361906,
+    "label": "wow_a006_gate_message_followup_normal_stack_view",
+    "original_bytes": "4883ec2881fc000e0000770383ece274087506e800000000c35090ffc0587717c0f000761d6690669081c7400a1d8180ee19f6de81c6887716f380edae80c2fdc7c3907606c380ea15f6a69076018b803daa861204000f8491030000c6059d861204007f17c0f3007e249090f6daf6dd83c1cc83c3cb80c6bac7c6c8907f0980ed4d80e95a81c02a7f164968f4877e0e81c6117271fc0f85555e010081ae7e0075318aff741190906afa83c1f180c59bf6df80ea8a0f827421010080ef1280ee8883c33883c31f722e83c0465f5c80ebe10f8a750801004f6ba47401830f1f007925c0e100780780edc8c6c70e6890782ce381c581ec85e4c7c6c5599deb81ee38bc5464c7c17779143df6de58c7c33da1a27d81c5cc72bf514921a8130f1f007413c0f10075229090669081c5ffefaf1f80eb92e8740c000083c68bf6db83c2f90f8a7418010081eb8af6751081c23877dff0c7c71f6706474e8fb0bf488d0d0cd6ffffe8a7bff1ff0f1f800000000081fc001c0000770383ec9675087406e800000000c35090ffc0587e3ac0e0007f0781c393fcbb26e87f2e010080c2e880c1e081ee40907e205f777d0f8925a90000f6dae8616d000080eecdc7c582cf317dc6c2bb80987edd0f1f84000000000081fc00210000770383ec4175087406e800000000c35090ffc058f886ed73399090669081c6a0fda180c7c0d299f6cbc7c39a9128ef0f3180c06e81ea61f5ef02f6d9c7c2a858f283e8283e0100e8f4a3000049c094eb129c0f1f840000000000710a86ed7030909081c3ff21714a81c058ed91bf83c102e851ce00000f3180c648c7c5f4e1703181c5abb6490d5751c6c5a181eaa8da70ede8c73f0100c6c11e80eb1381ea431a3d2080c0bb81e81bfe1b6fc0bd0466a2f90f1f840000000000f6c125732b90900f8476de000083c67c51792880ed736a3068571b40cdc6c60fe8eb350100c7c1c028ab28c6c36b81e986c073edc7c3ee7dac7f81e93972beb4f6d9c7c0bdcb9b9080ef860f88215d0000f6a70768ca6f77e833eff1ff0f1f007e21c0e1007f04909059687f28d4c580efd380c7900f8803b70000c7c3fe5b7d3f0f8a7e18010080c7f15a81eabb674dfa81eea41d7f06c08996e096600f1f0085e08ac97133744f0f310f31f6db80c11580ef64c7c58af671230f8ce9a30000e8f4ff000083c7a1570f8a093d000080e88483c0adf6de698390ebdaf90f1f007e268aed7f0f909080c54b80c330c6c58c81c7304c7f26e8e993010080eee10f83d0540100c7c26f90eb0ff6da80ef47f6dd81c26fc05ff980827e01040f1f007f358adb7e020f827e3300000f310f8e7b26010059e8b849010083c680c7c714437e7580ea1e5281eb2eea37a65559f6dff6d880ed75e87f0401003ba84883c428c3",
+    "sha256_before": "8738565881a400644e8ecb59bee9cef5682f628e34afc9491f143c9cfd2c4d34",
+    "old_name": "sub_7FF6415DFC80",
+    "old_type": "void()",
+    "old_comment": null,
+    "old_chunks": [
+      [
+        140695635360896,
+        140695635361904
+      ]
+    ],
+    "patches": [
+      {
+        "ea": 140695635360906,
+        "old": "7703",
+        "new": "eb03",
+        "selected": 140695635360911
+      },
+      {
+        "ea": 140695635360913,
+        "old": "7506",
+        "new": "eb06",
+        "selected": 140695635360921
+      },
+      {
+        "ea": 140695635360931,
+        "old": "761d",
+        "new": "eb1d",
+        "selected": 140695635360962
+      },
+      {
+        "ea": 140695635360951,
+        "old": "7716",
+        "new": "eb16",
+        "selected": 140695635360975
+      },
+      {
+        "ea": 140695635360963,
+        "old": "7606",
+        "new": "eb06",
+        "selected": 140695635360971
+      },
+      {
+        "ea": 140695635360972,
+        "old": "7601",
+        "new": "eb01",
+        "selected": 140695635360975
+      },
+      {
+        "ea": 140695635361000,
+        "old": "7e24",
+        "new": "eb24",
+        "selected": 140695635361038
+      },
+      {
+        "ea": 140695635361021,
+        "old": "7f09",
+        "new": "eb09",
+        "selected": 140695635361032
+      },
+      {
+        "ea": 140695635361032,
+        "old": "7f16",
+        "new": "eb16",
+        "selected": 140695635361056
+      },
+      {
+        "ea": 140695635361038,
+        "old": "7e0e",
+        "new": "eb0e",
+        "selected": 140695635361054
+      },
+      {
+        "ea": 140695635361054,
+        "old": "7e00",
+        "new": "9090",
+        "selected": 140695635361056
+      },
+      {
+        "ea": 140695635361056,
+        "old": "7531",
+        "new": "eb31",
+        "selected": 140695635361107
+      },
+      {
+        "ea": 140695635361107,
+        "old": "7508",
+        "new": "eb08",
+        "selected": 140695635361117
+      },
+      {
+        "ea": 140695635361125,
+        "old": "7807",
+        "new": "eb07",
+        "selected": 140695635361134
+      },
+      {
+        "ea": 140695635361135,
+        "old": "782c",
+        "new": "eb2c",
+        "selected": 140695635361181
+      },
+      {
+        "ea": 140695635361159,
+        "old": "7914",
+        "new": "eb14",
+        "selected": 140695635361181
+      },
+      {
+        "ea": 140695635361184,
+        "old": "7413",
+        "new": "9090",
+        "selected": 140695635361186
+      },
+      {
+        "ea": 140695635361189,
+        "old": "7522",
+        "new": "eb22",
+        "selected": 140695635361225
+      },
+      {
+        "ea": 140695635361227,
+        "old": "7510",
+        "new": "eb10",
+        "selected": 140695635361245
+      },
+      {
+        "ea": 140695635361270,
+        "old": "7703",
+        "new": "eb03",
+        "selected": 140695635361275
+      },
+      {
+        "ea": 140695635361277,
+        "old": "7406",
+        "new": "eb06",
+        "selected": 140695635361285
+      },
+      {
+        "ea": 140695635361295,
+        "old": "7f07",
+        "new": "eb07",
+        "selected": 140695635361304
+      },
+      {
+        "ea": 140695635361304,
+        "old": "7f2e",
+        "new": "eb2e",
+        "selected": 140695635361352
+      },
+      {
+        "ea": 140695635361318,
+        "old": "7e20",
+        "new": "eb20",
+        "selected": 140695635361352
+      },
+      {
+        "ea": 140695635361350,
+        "old": "7edd",
+        "new": "ebdd",
+        "selected": 140695635361317
+      },
+      {
+        "ea": 140695635361366,
+        "old": "7703",
+        "new": "eb03",
+        "selected": 140695635361371
+      },
+      {
+        "ea": 140695635361373,
+        "old": "7406",
+        "new": "eb06",
+        "selected": 140695635361381
+      },
+      {
+        "ea": 140695635361389,
+        "old": "7339",
+        "new": "eb39",
+        "selected": 140695635361448
+      },
+      {
+        "ea": 140695635361460,
+        "old": "7030",
+        "new": "eb30",
+        "selected": 140695635361510
+      },
+      {
+        "ea": 140695635361468,
+        "old": "714a",
+        "new": "eb4a",
+        "selected": 140695635361544
+      },
+      {
+        "ea": 140695635361493,
+        "old": "7031",
+        "new": "eb31",
+        "selected": 140695635361544
+      },
+      {
+        "ea": 140695635361510,
+        "old": "70ed",
+        "new": "ebed",
+        "selected": 140695635361493
+      },
+      {
+        "ea": 140695635361555,
+        "old": "732b",
+        "new": "eb2b",
+        "selected": 140695635361600
+      },
+      {
+        "ea": 140695635361602,
+        "old": "73ed",
+        "new": "ebed",
+        "selected": 140695635361585
+      },
+      {
+        "ea": 140695635361653,
+        "old": "7f04",
+        "new": "eb04",
+        "selected": 140695635361659
+      },
+      {
+        "ea": 140695635361659,
+        "old": "7f28",
+        "new": "eb28",
+        "selected": 140695635361701
+      },
+      {
+        "ea": 140695635361683,
+        "old": "7e18",
+        "new": "eb18",
+        "selected": 140695635361709
+      },
+      {
+        "ea": 140695635361701,
+        "old": "7f06",
+        "new": "eb06",
+        "selected": 140695635361709
+      },
+      {
+        "ea": 140695635361716,
+        "old": "7133",
+        "new": "eb33",
+        "selected": 140695635361769
+      },
+      {
+        "ea": 140695635361736,
+        "old": "7123",
+        "new": "eb23",
+        "selected": 140695635361773
+      },
+      {
+        "ea": 140695635361780,
+        "old": "7f0f",
+        "new": "eb0f",
+        "selected": 140695635361797
+      },
+      {
+        "ea": 140695635361797,
+        "old": "7f26",
+        "new": "eb26",
+        "selected": 140695635361837
+      },
+      {
+        "ea": 140695635361834,
+        "old": "7e01",
+        "new": "eb01",
+        "selected": 140695635361837
+      },
+      {
+        "ea": 140695635361844,
+        "old": "7e02",
+        "new": "eb02",
+        "selected": 140695635361848
+      },
+      {
+        "ea": 140695635361848,
+        "old": "7e33",
+        "new": "eb33",
+        "selected": 140695635361901
+      },
+      {
+        "ea": 140695635361895,
+        "old": "7f04",
+        "new": "eb04",
+        "selected": 140695635361901
+      }
+    ],
+    "old_frame": {
+      "frsize": 40,
+      "frregs": 0,
+      "fpd": 0,
+      "serialized": [
+        "0d09f180080a30f180200440010208",
+        "115f5f72657475726e5f61646472657373",
+        null
+      ]
+    },
+    "after": {
+      "failure": "no error",
+      "failure_ea": 18446744073709551615,
+      "pseudocode": "void *wow_a006_gate_message_followup_normal_stack_view()\n{\n  void *result; // rax\n  bool v1; // cc\n  void *retaddr; // [rsp+28h] [rbp+0h]\n\n  result = retaddr;\n  v1 = byte_7FF645708380 <= 0;\n  if ( byte_7FF645708380 )\n  {\n    byte_7FF645708380 = 0;\n    if ( !v1 )\n      JUMPOUT(0x7FF6415DFDA1LL);\n    JUMPOUT(0x7FF6415DFD1FLL);\n  }\n  return result;\n}\n",
+      "sha256": "7cbfb58e3c586b698062ed78c29a9c754be024d3cb49d4e36e3997de5ae4aacc"
+    }
+  },
+  "fresh_pseudocode": "void __fastcall wow_a006_gate_message_followup_normal_stack_view()\n{\n  if ( byte_7FF645708380 )\n  {\n    byte_7FF645708380 = 0;\n    sub_7FF6414FBD90(qword_7FF6415DD3F0);\n    sub_7FF6414FEEA0();\n  }\n}\n",
+  "sp": {
+    "nodes": 118,
+    "min": -48,
+    "return_depth": 0,
+    "unknown": [],
+    "conflicts": []
+  },
+  "boundary_correction": "Oldfunctionend5E0070 truncated epilogue ADDRSP at5E006D. Validated instruction end5E0071 plusRET at5E0071 givesfunctionend5E0072. Extendedgraphcloses; oldbad5E006D was artificial boundarycut, NOT encrypted code.",
+  "local_contract": "IfBYTE7FF645708380 nonzero, clearbyte,call7FF6414FBD90(QWORD7FF6415DD3F0),then7FF6414FEEA0; otherwisereturn. No guessed names for full downstream actions.",
+  "open": [
+    "Ownership/meaning of two downstream calls",
+    "pendingbyte producer/reset/aliases",
+    "gate message source"
+  ],
+  "saved": true
+}

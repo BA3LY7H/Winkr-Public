@@ -1,0 +1,146 @@
+{
+  "date": "2026-09-30",
+  "scope": "Shared dispatcher feedback lifecycle supporting selector18; reconstructed captured initialized globals, offline only",
+  "input_disabled_count": {
+    "seed": "0xd004316b8ef46d64",
+    "expression": "(((q+2EC1BD50C4212827)^60DFC412EAC2D18D)-6B3D21D1F8AB433C)^(q+62D8D77132379366)",
+    "value": 0
+  },
+  "output_enabled_count": {
+    "seed": "0x83839c6fd7568d1",
+    "assignments": [
+      {
+        "target": "v410.m128i_i64[0]",
+        "expression": "qword_7FF697BBADF0 - 0x5FF5124D482344BDLL",
+        "value": "0xa8432779b5522414"
+      },
+      {
+        "target": "a3",
+        "expression": "(qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x80896B7CE9117AA4uLL",
+        "value": "0x28ca4c055c435eb0"
+      },
+      {
+        "target": "v226",
+        "expression": "((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x98BF80CE1A7B23EEuLL)\n                       + 11\n                       * ~(((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x893B5790D8E2F2E7uLL) & 0x7E985ADDF4BBA3DFLL)\n                       + 11\n                       * ((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x893B5790D8E2F2E7uLL | 0x7E985ADDF4BBA3DFLL)\n                       - (21\n                        * (((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x76C4A86F271D0D18LL) & 0x7E985ADDF4BBA3DFLL)\n                        + 9\n                        * (((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x893B5790D8E2F2E7uLL) & 0x7E985ADDF4BBA3DFLL))\n                       - 11\n                       * ~((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x893B5790D8E2F2E7uLL | 0x7E985ADDF4BBA3DFLL)\n                       - 21\n                       * ~((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x76C4A86F271D0D18LL | 0x7E985ADDF4BBA3DFLL)",
+        "value": "0xd10d737f119582cc"
+      },
+      {
+        "target": "v410.m128i_i64[1]",
+        "expression": "11 * ~((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x7F76948316EE855BLL | v226)",
+        "value": "0xc056840346d9f610"
+      },
+      {
+        "target": "a4",
+        "expression": "5 * (a3 | v226)",
+        "value": "0xe10d7d7cd5375aec"
+      },
+      {
+        "target": "v411",
+        "expression": "11 * (a3 | v226)",
+        "value": "0xbbea7a79084694d4"
+      },
+      {
+        "target": "a2",
+        "expression": "a3 ^ v226",
+        "value": "0xf9c73f7a4dd6dc7c"
+      },
+      {
+        "target": "v412",
+        "expression": "a3 ^ v226",
+        "value": "0xf9c73f7a4dd6dc7c"
+      },
+      {
+        "target": "v413",
+        "expression": "9 * (v226 & ((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x7F76948316EE855BLL))",
+        "value": "0x592ecf4a0e3882ac"
+      },
+      {
+        "target": "a1",
+        "expression": "a3 & v226",
+        "value": "0x8400510010280"
+      },
+      {
+        "target": "v414",
+        "expression": "-11LL * a1",
+        "value": "0xffa53fc84ff4e480"
+      }
+    ],
+    "value": 8
+  },
+  "initialization": "Body073 sets flagBBB0D0=1 and copies working8bytes BBA000 into both BBB0B0(input) and BBB0C0(output) before dispatcher.",
+  "direction": "Input restore B0, decrypt header then padded payload updating working feedback, save B0 atLABEL209. Output restore C0, encrypt entire padded packet updating working feedback, save C0 atstate1976813461. This is two direction snapshots in one execution, not a new IV per block.",
+  "caveat": "Disabled-flag fallback counts depend on captured constants. Central entry initialization can reset both snapshots; no claim of persistence across arbitrary module invocations or concurrent safety. Failure-path advancement still needs exhaustive trace.",
+  "saved": true,
+  "source_excerpts": [
+    " *)a3;\n  v233 = 1586754339;\n  while ( 1 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( 1 )\n        {\n          while ( 1 )\n          {\n            while ( v233 > 1217383305 )\n            {\n              if ( v233 > 1586754338 )\n              {\n                if ( v233 <= 1830857347 )\n                {\n                  if ( v233 > 1775801588 )\n                  {\n                    if ( v233 > 1791925671 )\n                    {\n                      if ( v233 == 1791925672 )\n                      {\n                        qmemcpy(&unk_7FF697BBB0C0, &dword_7FF697BBA000, v415);\n                        goto LABEL_106;\n                      }\n                      v326 = v369;\n                      v233 = 151357882;\n                    }\n                    else\n                    {\n                      if ( v233 != 1775801589 )\n                      {\n                        v323 = v367;\nLABEL_190:\n                        dword_7FF697BBC308 = 8253729 * v323 + 2396403;\n                        a2 = dword_7FF697BBC308 % 0x60u + 15;\n                        v368 = dword_7FF697BBC308 % 0x60u + 15;\n                        v324 = 8253729 * v323 + 2396403;\n                        v325 = 0;\n                        goto LABEL_191;\n                      }\n                      a1 = 3 * ~*v333;\n                      a2 = 3 * ~(*v333 | ~v312);\n                      a3 = v312;\n                      a4 = 6 * (*v333 & ~v312);\n                      v366 = 3 * ~(v312 | *v333) + 7 * (v312 ^ *v333) + 2 * (v312 & *v333) - a4 - a2 - a1;\n                      if ( v366 <= v365 )\n                      {\n                        v233 = 761331634;\n                      }\n                      else\n                      {\n                        v288 = 0;\n                        v235 = 1;\n                        v233 = 87733939;\n                      }\n                    }\n                  }\n                  else if ( v233 > 1647656018 )\n                  {\n                    if ( v233 != 1647656019 )\n                      goto LABEL_125;\n                    v13 = v411 + v414 - v413 - v412 - v410.m128i_i64[1] - v410.m128i_i64[0];\n                    if ( !v281 )\n                      v13 = 0;\n                    qmemcpy(&dword_7FF697BBA000, &unk_7FF697BBB0C0, v13);\n                    a1 = 0;\n                    if ( !v382 || (v302 & 7) != 0 )\n                    {\n                      v288 = 1028;\n                      goto LABEL_199;\n                    }\n                    if ( v302 )\n                    {\n                      v233 = 1206697998;\n                    }\n                    else\n                    {\n                      v415 = 8 * (unsigned int)(unsigned __int8)byte_7FF697BBB0D0;\n                      v233 = 1791925672;\n                    }\n                  }\n                  else if ( v233 == 1586754339 )\n                  {\n                    a1 = 0xF2B6CB58C7697BC8uLL;\n                    v343 = *(_DWORD *)((v331 ^ 0xF2B6CB58C7697BC8uLL) + 0xA8);\n                    if ( v343 < 0x11 )\n                      return 1027",
+    "         sub_7FF697AD22C0(request_ptr, v291, &output_buffer);\n                          goto wmp1_request_case_05;\n                      }\n                    }\n                  }\n                  else\n                  {\n                    if ( v233 != 1830857348 )\n                      goto LABEL_58;\nLABEL_106:\n                    v312 = *output_descriptor;\n                    a1 = *v374;\n                    v365 = a1;\n                    if ( v312 > (unsigned int)a1 )\n                      goto LABEL_107;\n                    v233 = 1775801589;\n                  }\n                }\n                else if ( v233 <= 2053355996 )\n                {\n                  if ( v233 == 1976813461 )\n                  {\n                    qmemcpy(\n                      &unk_7FF697BBB0C0,\n                      &dword_7FF697BBA000,\n                      8 * (unsigned int)(unsigned __int8)byte_7FF697BBB0D0);\n                    a1 = 0;\n                    v233 = 1830857348;\n                  }\n                  else\n                  {\n                    if ( !wmp1_input_span_is_zero(size) )\n                    {\n                      v241 = v272;\n                      v242 = v271;\n                      v243 = total_length_3;\n                      v244 = total_length_2;\n                      v245 = v239;\n                      v246 = total_length_1;\n                      v247 = v238;\n                      v248 = v237;\n                      v386 = v329;\n                      v387 = v376;\n                      v318 = size;\n                      goto LABEL_207;\n                    }\n  ",
+    "(__int64)&v305,\n                         (__int64)&v342);\n                request_ptr = v332;\n                v291 = v341;\n                a1 = v305;\n                v306 = v305;\n                if ( (v207 & 1) != 0 )\n                {\n                  v292 = v342;\n                  goto LABEL_261;\n                }\n                v233 = 1969490239;\n              }\n            }\n            else if ( v233 <= 367232960 )\n            {\n              if ( v233 > 333094820 )\n              {\n                if ( v233 == 333094821 )\n                  goto LABEL_2;\nLABEL_209:\n                qmemcpy(&unk_7FF697BBB0B0, &dword_7FF697BBA000, 8 * (unsigned int)(unsigned __int8)byte_7FF697BBB0D0);\n                v330 = &v329[v406];\n                v355 = ~HIDWORD(v284);\n                a2 = 11 * ~(HIDWORD(v284) & ~size);\n                a4 = HIDWORD(v284) & ~size;\n                a3 = (unsigned int)a4 + 11 * (size & HIDWORD(v284)) - (unsigned int)a2;\n                a1 = 9 * ~(HIDWORD(v284) | ~size) + (_DWORD)a3 + 10 * ~(size | HIDWORD(v284));\n                v356 = 9 * ~(HIDWORD(v284) | ~size) + a3 + 10 * ~(size | HIDWORD(v284));\n                v233 = 1865229219;\n              }\n              else if ( v233 == 230786547 )\n              {\n                v233 = 1836754441;\n              }\n              else\n              {\n                v96 = *output_descriptor;\n                v97 =",
+    "st __m128i *)((char *)&xmmword_7FF697BBC2A0 + 1));\n              xmmword_7FF697BBC2A0 = (__int128)_mm_xor_si128(\n                                                 _mm_or_si128(\n                                                   _mm_slli_si128(v41, 1),\n                                                   _mm_srli_si128(_mm_load_si128(&v421), 15)),\n                                                 v41);\n              byte_7FF697BBC2B0 ^= byte_7FF697BBC2B1;\n              v42 = (((qword_7FF697BBAD98 + 0x2EC1BD50C4212827LL) ^ 0x60DFC412EAC2D18DLL) - 0x6B3D21D1F8AB433CLL)\n                  ^ (qword_7FF697BBAD98 + 0x62D8D77132379366LL);\n              if ( byte_7FF697BBB0D0 )\n                v42 = 8;\n              byte_7FF697BBC2B1 ^= byte_7FF697BBC2B2;\n              qmemcpy(&dword_7FF697BBA000, &unk_7FF697BBB0B0, v42);\n              v43 = v289;\n              v44 = ~(v289[1] << 8);\n              v45 = 196608 * *((unsigned __int16 *)v289 + 1)\n                  + (v289[1] << 8)\n                  - v44\n                  + 2 * ~((v289[1] << 8) | (*((unsigned __int16 *)v289 + 1) << 16))\n                  - v44;\n              v46 = *v289;\n              v47 = (v46 | v45) ^ __ROR4__(*((_DWORD *)v289 + 1) + 1710220277, *v289);\n              v48 = __ROR4__(v45 + v46 + 2125622254, v47);\n              v49 = (v47 & v48) + 6 * (v48 & ~v47) - 5 * (v47 ^ v48) - v47 + 7 * ~(~v47 | v48);\n              v50 = v49 ^ __ROR4__(v47 + 114053548, v49);\n              v51 = v50 ^ __ROR4__(v49 - 452460610, v50);\n              v52 = v51 ^ __ROR4__(v50 - 621898256, v51);\n              v53 = v52 ^ __ROR4__(v51 - 1575698546, v52);\n              v54 = v53 ^ __ROR4__(v52 + 1807553314, v53);\n              v55 = v54\n                  ^ __ROR4__(\n                      19 * (v53 & 0x270A646B)\n                    + 12 * ",
+    "\n                a1 = ~v300 & 0xFFFFFFF0;\n                a4 = (unsigned __int8)v300 | 0xFFFFFFF0;\n                a3 = (unsigned int)a1 + 7 * (v300 ^ 0xF) + 2 * (v300 & 0xF) - 6 * (v300 & 0x7FFFFFF0) - (_DWORD)a4;\n                destination_4 = a3 - 7 * v225;\n                if ( destination_4 )\n                {\n                  v233 = 869960929;\n                }\n                else\n                {\n                  v29 = v300;\nLABEL_264:\n                  v321 = v29;\n                  v302 = v29;\n                  v382 = output_buffer;\n                  v281 = byte_7FF697BBB0D0;\n                  v410.m128i_i64[0] = qword_7FF697BBADF0 - 0x5FF5124D482344BDLL;\n                  a3 = (qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x80896B7CE9117AA4uLL;\n                  v226 = ((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x98BF80CE1A7B23EEuLL)\n                       + 11\n                       * ~(((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x893B5790D8E2F2E7uLL) & 0x7E985ADDF4BBA3DFLL)\n                       + 11\n                       * ((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x893B5790D8E2F2E7uLL | 0x7E985ADDF4BBA3DFLL)\n                       - (21\n                        * (((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x76C4A86F271D0D18LL) & 0x7E985ADDF4BBA3DFLL)\n                        + 9\n                        * (((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x893B5790D8E2F2E7uLL) & 0x7E985ADDF4BBA3DFLL))\n                       - 11\n                       * ~((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x893B5790D8E2F2E7uLL | 0x7E985ADDF4BBA3DFLL)\n                       - 21\n                       * ~((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x76C4A86F271D0D18LL | 0x7E985ADDF4BBA3DFLL);\n                  v410.m128i_i64[1] = 11 * ~((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x7F76948316EE855BLL | v226);\n                  a4 = 5 * (a3 | v226);\n                  v411 = 11 * (a3 | v226);\n                  a2 = a3 ^ v226;\n                  v412 = a3 ^ v226;\n                  v413 = 9 * (v226 & ((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x7F76948316EE855BLL));\n                  a1 = a3 & v226;\n                  v414 = -11LL * a1;\n                  v233 = 1647656019;\n                }\n              }\n            }\n            else\n            {\n              v324 = v5;\n              v325 = HIDWORD(v369) + 1;\nLABEL_191:\n    "
+  ],
+  "native_refs": {
+    "0x7ff697bbb0b0": [
+      {
+        "ea": "0x7ff697b2a55d",
+        "asm": "lea     rdi, unk_7FF697BBB0B0"
+      },
+      {
+        "ea": "0x7ff697b95dca",
+        "asm": "lea     rsi, unk_7FF697BBB0B0"
+      },
+      {
+        "ea": "0x7ff697b9bc86",
+        "asm": "lea     rdi, unk_7FF697BBB0B0"
+      }
+    ],
+    "0x7ff697bbb0c0": [
+      {
+        "ea": "0x7ff697b2a545",
+        "asm": "lea     rdi, unk_7FF697BBB0C0"
+      },
+      {
+        "ea": "0x7ff697b94939",
+        "asm": "lea     rdi, unk_7FF697BBB0C0"
+      },
+      {
+        "ea": "0x7ff697b949d6",
+        "asm": "lea     rsi, unk_7FF697BBB0C0"
+      },
+      {
+        "ea": "0x7ff697b94afc",
+        "asm": "lea     rdi, unk_7FF697BBB0C0"
+      }
+    ],
+    "0x7ff697bbb0d0": [
+      {
+        "ea": "0x7ff697b2a53e",
+        "asm": "mov     cs:byte_7FF697BBB0D0, 1"
+      },
+      {
+        "ea": "0x7ff697b9492f",
+        "asm": "movzx   ecx, cs:byte_7FF697BBB0D0"
+      },
+      {
+        "ea": "0x7ff697b95cf6",
+        "asm": "cmp     cs:byte_7FF697BBB0D0, 0"
+      },
+      {
+        "ea": "0x7ff697b9bc7c",
+        "asm": "movzx   ecx, cs:byte_7FF697BBB0D0"
+      },
+      {
+        "ea": "0x7ff697b9c18d",
+        "asm": "movzx   eax, cs:byte_7FF697BBB0D0"
+      },
+      {
+        "ea": "0x7ff697b9d474",
+        "asm": "movzx   r8d, cs:byte_7FF697BBB0D0"
+      }
+    ]
+  },
+  "old_names": {
+    "0x7ff697bbb0b0": "unk_7FF697BBB0B0",
+    "0x7ff697bbb0c0": "unk_7FF697BBB0C0",
+    "0x7ff697bbb0d0": "byte_7FF697BBB0D0"
+  }
+}

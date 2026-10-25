@@ -1,0 +1,928 @@
+{
+  "scope": "selector18 captured host/context/allocator integration",
+  "date": "2026-09-30",
+  "dispatcher_wrapper": {
+    "start": 140697083450592,
+    "end": 140697083451291,
+    "label": "wmp1_dispatch_request_call_wrapper",
+    "original_bytes": "415741565657534883ec404889d64889cfc74424303ea8ee64488d1d50240b004c8d35e9c30b004c8d3d61b10e00eb0d48897c2438c7442430003ae03a8b4424303d5d0c165d0f8ff40000003d492230540f8513010000f886d273606690669080eeb380eaf07bd680eb70f6dfe8bfc6000081c6191c139f81ed2caa538ff6dd0f8c8e37010083c753f6de81ed1264f5c581c66c5d12df0f8f4242000083c2d180c6d5c6c13280ea8a6a3c80c5a30f3180ed63732569b6012c57641c0fb64424347f6286f67e5ec6c65381efa5d3a3b080c52075a781c1b3d7c7f76a83c6c5965268b2568d6881c734e4a3fc0f8c9ac1010081e985ed21fd80ef1de8b295010083c1b20f8a0e44010080c61dc6c290f6dbc7c53c532b830f8704ec00007cfb6ba43039c994a8010f8403ffffffc74424305e0c165de903ffffff660f1f4400003d3ea8ee640f85a30000004889d94c89f24d89f8e897bf000089442434c744243049223054e9d3fefffff986ff764b83c1da81ed672b5b8c70b8c7c28f58da52758d81c1f12e4f3dc6c0aef6db83c61680c2ee68be32332f7d93e880d30000c7c5dec3724ec6c10d0f84627a000081c21e96812e6b952863b58c49b9c87b69c758cbb6f24c334c243848c74424204900000048ba551005defb73fb5bb9300000004989f0e8a7220b00e9c10000007671776fe807e100000f31c6c6c768450f9c347749e8962201005a0f8b4ad3000083c29680c1c268139dfd74f6dd83c7b181c5b11c0cff81ed33813cf580c18fe81511000081e8cc7b97ca68de1cf9ea80c6b30f8a53b0010081eaeffa257780c61680c69a81c097c7b0ba83c04f819f732c2748b8c87b69c758cbb6f24831c748c74424200e00000048ba4c1005defb73fb5bb90e0000004989f04989f9e8ff210b0089c6488d0dd6210b00488d156fc10b004c8d05e7ae0e00e873b6000089f04883c4405b5f5e415e415fc3",
+    "sha256_before": "f0a3b396305c23679f85a8c5c7c3166ebb3c2e5411182588864abc2a2fd5261f",
+    "old_name": "sub_7FF697AE14E0",
+    "old_type": "__int64 __fastcall(_QWORD, _QWORD, _QWORD)",
+    "old_comment": null,
+    "old_chunks": [
+      [
+        140697083450592,
+        140697083451291
+      ]
+    ],
+    "patches": [
+      {
+        "ea": 140697083450682,
+        "old": "7360",
+        "new": "eb60",
+        "selected": 140697083450780
+      },
+      {
+        "ea": 140697083450785,
+        "old": "7f62",
+        "new": "9090",
+        "selected": 140697083450787
+      },
+      {
+        "ea": 140697083450789,
+        "old": "7e5e",
+        "new": "eb5e",
+        "selected": 140697083450885
+      },
+      {
+        "ea": 140697083450957,
+        "old": "764b",
+        "new": "eb4b",
+        "selected": 140697083451034
+      },
+      {
+        "ea": 140697083451088,
+        "old": "776f",
+        "new": "eb6f",
+        "selected": 140697083451201
+      }
+    ],
+    "old_frame": {
+      "frsize": 104,
+      "frregs": 0,
+      "fpd": 0,
+      "serialized": [
+        "0d39f18008210480012102200a30f1802004a0012003012002c021083810012002400208",
+        "077661725f3338077661725f3334115f5f72657475726e5f61646472657373076172675f3130076172675f3238096172675f32323246096172675f32323337",
+        null
+      ]
+    },
+    "after": {
+      "failure": "no error",
+      "failure_ea": 18446744073709551615,
+      "pseudocode": "void wmp1_dispatch_request_call_wrapper()\n{\n  int i; // [rsp+98h] [rbp+30h]\n\n  for ( i = 1693362238; i > 1561726045; i = 1412440649 )\n    wmp1_decode_body_if_needed(\n      (unsigned __int8 *)&wmp1_protected_125_seed,\n      (unsigned __int8 *)&qword_7FF697B9D8F0,\n      &byte_7FF697BCC66F);\n  JUMPOUT(0x7FF697AE15A2LL);\n}\n",
+      "sha256": "7c506b9792c4b153d08fd097c452f2469fc26c529dcdedea34a8dffc6b1ba654"
+    },
+    "abi_fix": {
+      "old": "void()",
+      "native_args": "RCX=context,RDX=output object; third input unused",
+      "balanced_stack": {
+        "states": 74,
+        "conflicts": [],
+        "unknown": [],
+        "returns": [
+          [
+            140697083451290,
+            0
+          ]
+        ],
+        "min": -104
+      }
+    }
+  },
+  "dispatcher_sp_repair": {
+    "old_frame": {
+      "frsize": 2104,
+      "frregs": 0,
+      "fpd": 0
+    },
+    "old_type": "__int64 __fastcall(__int64, __int64, __int64, __int64)",
+    "before_f5": "// Recovered request dispatch with 35 bounded selectors 0..34. Header validator at 0x7ff697b72670: selector WORD+0, payload length WORD+2, total length=payload+4. Length error 0x401; selector>34 sets 0x7000 and clears 0x7ff697bbb068. Indirect table 0x7ff697bb84ec / JMP 0x7ff697b95c65. Wrapper pointer tokens checked for initialized reconstructed globals; not arbitrary mutated-state proof. Exact per-selector scan/report semantics remain open. See reversing-warden.md.\n__int64 __fastcall wmp1_dispatch_request_0_34(__int64 a1, __int64 a2, __int64 a3, __int64 a4)\n{\n  int v4; // ecx\n  __m128i v5; // xmm0\n  __int64 v6; // rax\n  __m128i v7; // xmm2\n  __int64 v8; // rax\n  __m128i v9; // xmm1\n  unsigned __int64 v10; // rcx\n  __int64 v11; // r10\n  int v12; // edx\n  int v13; // ecx\n  int v14; // eax\n  int v15; // edx\n  int v16; // r9d\n  int v17; // ecx\n  int v18; // edx\n  int v19; // r9d\n  int v20; // edx\n  int v21; // r9d\n  int v22; // edx\n  int v23; // r8d\n  int v24; // edx\n  int v25; // r8d\n  int v26; // edx\n  int v27; // esi\n  int v28; // ebx\n  int v29; // r15d\n  int v30; // ebx\n  int v31; // r8d\n  int v32; // r9d\n  int v33; // r8d\n  int v34; // edx\n  int v35; // r8d\n  int v36; // edx\n  int v37; // r8d\n  int v38; // edx\n  int v39; // r8d\n  int v40; // edx\n  int v41; // ecx\n  int v42; // edx\n  unsigned int v43; // r9d\n  unsigned int v44; // ecx\n  unsigned int v45; // r8d\n  unsigned int v46; // esi\n  char v47; // r11\n  int v48; // edx\n  int v49; // r9d\n  int v50; // ecx\n  int v51; // edx\n  int v52; // eax\n  int v53; // r8d\n  int v54; // eax\n  int v55; // r8d\n  int v56; // eax\n  int v57; // edx\n  int v58; // eax\n  int v59; // edx\n  int v60; // eax\n  int v61; // edx\n  int v62; // eax\n  int i; // [rsp+38h] [rbp-800h]\n  char *v65; // [rsp+58h] [rbp-7E0h]\n  char v66; // [rsp+68h] [rbp-7D0h] BYREF\n  char v67; // [rsp+6Ch] [rbp-7CCh] BYREF\n  char v68; // [rsp+70h] [rbp-7C8h] BYREF\n  unsigned __int8 *v69; // [rsp+A8h] [rbp-790h]\n  __int64 v70; // [rsp+B0h] [rbp-788h]\n  char v71; // [rsp+D8h] [rbp-760h] BYREF\n  char v72; // [rsp+DCh] [rbp-75Ch] BYREF\n  char v73; // [rsp+E0h] [rbp-758h] BYREF\n  int *v74; // [rsp+E8h] [rbp-750h]\n  int v75; // [rsp+130h] [rbp-708h]\n  int v76; // [rsp+134h] [rbp-704h]\n  int v77; // [rsp+138h] [rbp-700h]\n  __int64 v78; // [rsp+178h] [rbp-6C0h]\n  __int64 v79; // [rsp+180h] [rbp-6B8h]\n  _DWORD *v80; // [rsp+188h] [rbp-6B0h]\n  char *v81; // [rsp+190h] [rbp-6A8h]\n  char *v82; // [rsp+198h] [rbp-6A0h]\n  unsigned int v83; // [rsp+1C4h] [rbp-674h]\n  int v84; // [rsp+1C8h] [rbp-670h]\n  int v85; // [rsp+1CCh] [rbp-66Ch]\n  int v86; // [rsp+1D0h] [rbp-668h]\n  int v87; // [rsp+1D4h] [rbp-664h]\n  __int64 v88; // [rsp+248h] [rbp-5F0h]\n  __int64 v89; // [rsp+250h] [rbp-5E8h]\n  char *v90; // [rsp+258h] [rbp-5E0h]\n  char *v91; // [rsp+260h] [rbp-5D8h]\n  char *v92; // [rsp+268h] [rbp-5D0h]\n  char *v93; // [rsp+270h] [rbp-5C8h]\n  char *v94; // [rsp+278h] [rbp-5C0h]\n  _BYTE *v95; // [rsp+280h] [rbp-5B8h]\n  unsigned __int64 v96; // [rsp+288h] [rbp-5B0h]\n  __int64 v97; // [rsp+298h] [rbp-5A0h]\n  unsigned __int64 v98; // [rsp+2A0h] [rbp-598h]\n  __int64 j; // [rsp+2A8h] [rbp-590h]\n  _BYTE *v100; // [rsp+2C8h] [rbp-570h]\n  _BYTE *v101; // [rsp+2D0h] [rbp-568h]\n  _BYTE *v102; // [rsp+2D8h] [rbp-560h]\n  _BYTE *v103; // [rsp+2E0h] [rbp-558h]\n  _BYTE *v104; // [rsp+2E8h] [rbp-550h]\n  _BYTE *v105; // [rsp+2F0h] [rbp-548h]\n  _BYTE *v106; // [rsp+2F8h] [rbp-540h]\n  char *v107; // [rsp+300h] [rbp-538h]\n  _BYTE *v108; // [rsp+310h] [rbp-528h]\n  _BYTE *v109; // [rsp+318h] [rbp-520h]\n  _BYTE *v110; // [rsp+320h] [rbp-518h]\n  _BYTE *v111; // [rsp+328h] [rbp-510h]\n  unsigned __int8 *bytes; // [rsp+330h] [rbp-508h]\n  _BYTE *v113; // [rsp+338h] [rbp-500h]\n  unsigned __int8 *v114; // [rsp+340h] [rbp-4F8h]\n  __m128i v115; // [rsp+3B0h] [rbp-488h] BYREF\n  __m128i v116; // [rsp+3E0h] [rbp-458h] BYREF\n  _BYTE v117[7]; // [rsp+3F1h] [rbp-447h] BYREF\n  char v118; // [rsp+3F8h] [rbp-440h] BYREF\n  char v119; // [rsp+3F9h] [rbp-43Fh] BYREF\n  char v120; // [rsp+3FCh] [rbp-43Ch] BYREF\n  char v121; // [rsp+400h] [rbp-438h] BYREF\n  _BYTE v122[6]; // [rsp+402h] [rbp-436h] BYREF\n\n  v78 = a4;\n  v88 = a3;\n  for ( i = 1586754339; ; i = 1538915917 )\n  {\n    while ( 1 )\n    {\nLABEL_2:\n      while ( i <= 1217383305 )\n      {\n        if ( i <= 230786546 )\n        {\n          if ( i <= 107842353 )\n          {\n            while ( 1 )\n            {\n              v62 = 8253729 * v77 + 2396403;\n              dword_7FF697BBC308 = v62;\n              *((_BYTE *)&dword_7FF697BBB0E0 + v96) = 33 * v77 - 13;\n              if ( v96 == 4562 )\n              {\n                i = 428801239;\n                goto LABEL_2;\n              }\n              v76 = v62;\n              v98 = v96 + 1;\nLABEL_25:\n              v96 = v98;\n              v86 = v76;\n              if ( v76 )\n                break;\n              v77 = __rdtsc() % 0xFFFF;\n            }\n            i = 162147902;\n          }\n          else\n          {\n            v77 = v86;\n            i = 15118157;\n          }\n        }\n        else if ( i <= 476665867 )\n        {\n          v5 = _mm_slli_si128(_mm_cvtsi32_si128(dword_7FF697BBB0E0), 15);\n          for ( j = 0; ; j = v8 )\n          {\n            v115 = v5;\n            v6 = j;\n            v7 = _mm_loadu_si128((const __m128i *)((char *)&dword_7FF697BBB0E0 + j + 1));\n            v5 = _mm_loadu_si128((const __m128i *)((char *)&dword_7FF697BBB0E0 + j + 17));\n            *(__m128i *)((char *)&dword_7FF697BBB0E0 + j) = _mm_xor_si128(\n                                                              _mm_or_si128(\n                                                                _mm_srli_si128(_mm_load_si128(&v115), 15),\n                                                                _mm_slli_si128(v7, 1)),\n                                                              v7);\n            *(__m128i *)((char *)&dword_7FF697BBB0E0 + v6 + 16) = _mm_xor_si128(\n                                                                    _mm_or_si128(\n                                                                      _mm_slli_si128(v5, 1),\n                                                                      _mm_srli_si128(v7, 15)),\n                                                                    v5);\n            v8 = v6 + 32;\n            v116 = v5;\n            if ( v8 == 4544 )\n              break;\n          }\n          i = 476665868;\n        }\n        else\n        {\n          v9 = _mm_loadu_si128((const __m128i *)((char *)&xmmword_7FF697BBC2A0 + 1));\n          xmmword_7FF697BBC2A0 = (__int128)_mm_xor_si128(\n                                             _mm_or_si128(\n                                               _mm_slli_si128(v9, 1),\n                                               _mm_srli_si128(_mm_load_si128(&v116), 15)),\n                                             v9);\n          byte_7FF697BBC2B0 ^= byte_7FF697BBC2B1;\n          v10 = (((qword_7FF697BBAD98 + 0x2EC1BD50C4212827LL) ^ 0x60DFC412EAC2D18DLL) - 0x6B3D21D1F8AB433CLL)\n              ^ (qword_7FF697BBAD98 + 0x62D8D77132379366LL);\n          if ( byte_7FF697BBB0D0 )\n            v10 = 8;\n          byte_7FF697BBC2B1 ^= byte_7FF697BBC2B2;\n          qmemcpy(&dword_7FF697BBA000, &unk_7FF697BBB0B0, v10);\n          v11 = v70;\n          v12 = ~(v69[1] << 8);\n          v13 = 196608 * *(unsigned __int16 *)(v70 + 2)\n              + (v69[1] << 8)\n              - v12\n              + 2 * ~((v69[1] << 8) | (*(unsigned __int16 *)(v70 + 2) << 16))\n              - v12;\n          v14 = *v69;\n          v15 = (v14 | v13) ^ __ROR4__(*((_DWORD *)v69 + 1) + 1710220277, *v69);\n          v16 = __ROR4__(v13 + v14 + 2125622254, v15);\n          v17 = (v15 & v16) + 6 * (v16 & ~v15) - 5 * (v15 ^ v16) - v15 + 7 * ~(~v15 | v16);\n          v18 = v17 ^ __ROR4__(v15 + 114053548, v17);\n          v19 = v18 ^ __ROR4__(v17 - 452460610, v18);\n          v20 = v19 ^ __ROR4__(v18 - 621898256, v19);\n          v21 = v20 ^ __ROR4__(v19 - 1575698546, v20);\n          v22 = v21 ^ __ROR4__(v20 + 1807553314, v21);\n          v23 = v22\n              ^ __ROR4__(\n                  19 * (v21 & 0x270A646B)\n                + 12 * (v21 & 0xD8F59B94)\n                - 11 * (v21 | 0xD8F59B94)\n                - 6 * ~(v21 & 0xD8F59B94)\n                + 7 * ~(v21 | 0xD8F59B94)\n                + 17 * (~v21 & 0xD8F59B94),\n                  v22);\n          v24 = v23 ^ __ROR4__(v22 - 1328090688, v23);\n          v25 = v24 ^ __ROR4__(v23 - 2033275303, v24);\n          v26 = v25 ^ __ROR4__(v24 + 1243158984, v25);\n          v27 = 3 * (dword_7FF697BBADA0 & 0x137D3C9D)\n              + 2 * (dword_7FF697BBADA0 & 0x6C82C362)\n              + ~(2 * dword_7FF697BBADA0);\n          v28 = (dword_7FF697BBADA0 | 0x137D3C9D) + v27 + 1;\n          v29 = ~v28 & 0x35714CEB;\n          v30 = (v28 & 0x35714CEB) + 2 * (v28 & 0x4A8EB314) - v28 + 2 * (v28 ^ 0x4A8EB314) - 2 * (~v28 & 0x4A8EB314);\n          v31 = v26\n              ^ __ROR4__(\n                  8 * (v25 & 0x16D8187F)\n                - 2 * (v25 & 0x2927E780)\n                - 7 * (v25 ^ 0x2927E780)\n                + 4 * (v25 ^ 0x16D8187F)\n                - 4 * (~v25 & 0x16D8187F)\n                + 8 * (~v25 & 0x927E780),\n                  v26);\n          v32 = v31\n              ^ __ROR4__(\n                  v26\n                + ((v30 + v29 + 1268106144)\n                 ^ (((v30 + v29 + 987374976) ^ dword_7FF697BBADA0\n                                             ^ (v27 + (dword_7FF697BBADA0 | 0x137D3C9D) + 156368136))\n                  - (v29\n                   + v30)\n                  - 1123552033))\n                + 2 * (v29 + v30)\n                - 1264220624,\n                  v31);\n          v33 = v32 ^ __ROR4__(v31 + 1952287966, v32);\n          v34 = v33\n              ^ __ROR4__(\n                  v32\n                + (((((dword_7FF697BBADA4 | 0x6666233D)\n                    + 3 * (dword_7FF697BBADA4 & 0x6666233D)\n                    + 2 * (dword_7FF697BBADA4 & 0x1999DCC2)\n                    + ~(2 * dword_7FF697BBADA4)\n                    + 1)\n                   ^ 0x875EDF4B)\n                  + 2145405434)\n                 ^ 0xF7CC6BC4)\n                + dword_7FF697BBADA4\n                + (((dword_7FF697BBADA4 | 0x6666233D)\n                  + 3 * (dword_7FF697BBADA4 & 0x6666233D)\n                  + 2 * (dword_7FF697BBADA4 & 0x1999DCC2)\n                  + ~(2 * dword_7FF697BBADA4)\n                  + 1)\n                 ^ 0x3E08ECC4)\n                + (dword_7FF697BBADA4 | 0x6666233D)\n                + 3 * (dword_7FF697BBADA4 & 0x6666233D)\n                + 2 * (dword_7FF697BBADA4 & 0x1999DCC2)\n                + ~(2 * dword_7FF697BBADA4)\n                + 1,\n                  v33);\n          v35 = v34 ^ __ROR4__(v33 + 1011008155, v34);\n          v36 = v35 ^ __ROR4__(v34 + 1735808883, v35);\n          v37 = v36 ^ __ROR4__(v35 - 1934650103, v36);\n          v38 = v37 ^ __ROR4__(v36 - 1433706364, v37);\n          v39 = v38 ^ __ROR4__(v37 - 878744182, v38);\n          v40 = v39 ^ __ROR4__(v38 - 1584046468, v39);\n          v41 = v40 ^ __ROR4__(v39 - 1014243751, v40);\n          v42 = v41 ^ __ROR4__(v40 + 660532791, v41);\n          v43 = (v42\n               ^ __ROR4__(\n                   8 * (v41 & 0x9ED8F80)\n                 - 2 * (v41 & 0x5612707F)\n                 - 7 * (v41 ^ 0xD612707F)\n                 + 4 * (v41 ^ 0x29ED8F80)\n                 - 4 * (~v41 & 0x29ED8F80)\n                 + 8 * (~v41 & 0x1612707F),\n                   v42))\n              + 1497288132;\n          v42 -= 365685905;\n          v44 = HIBYTE(v43);\n          v45 = HIWORD(v43);\n          v46 = v43 >> 8;\n          LOBYTE(v43) = dword_7FF697BBA000 ^ v43;\n          LOBYTE(dword_7FF697BBA000) = *v69;\n          v116.m128i_i8[8] = v43;\n          LOBYTE(v46) = BYTE1(dword_7FF697BBA000) ^ v46;\n          BYTE1(dword_7FF697BBA000) = v69[1];\n          *v100 = v46;\n          LOBYTE(v44) = HIBYTE(dword_7FF697BBA000) ^ v44;\n          LOBYTE(v42) = dword_7FF697BBA004 ^ v42;\n          v47 = BYTE1(dword_7FF697BBA004) ^ BYTE1(v42);\n          LODWORD(v11) = *(_DWORD *)(v11 + 2);\n          *v101 = BYTE2(dword_7FF697BBA000) ^ v45;\n          *v102 = v44;\n          *v94 = v42;\n          *(int *)((char *)&dword_7FF697BBA000 + 2) = v11;\n          *v103 = v47;\n          LOBYTE(v43) = BYTE2(dword_7FF697BBA004) ^ BYTE2(v42);\n          BYTE2(dword_7FF697BBA004) = v69[6];\n          *v104 = v43;\n          LOBYTE(v14) = HIBYTE(dword_7FF697BBA004) ^ HIBYTE(v42);\n          HIBYTE(dword_7FF697BBA004) = v69[7];\n          *v105 = v14;\n          bytes = v69 + 10;\n          v48 = *((unsigned __int16 *)v69 + 5);\n          v113 = v69 + 9;\n          v49 = v69[9] << 8;\n          v50 = v69[8];\n          v114 = v69 + 12;\n          v51 = ((v48 << 16) | v49) + v50;\n          v52 = v51 ^ __ROR4__(*((_DWORD *)v69 + 3) + 1710220277, v50);\n          v53 = v52 ^ __ROR4__(v51 + 2125622254, v52);\n          v54 = v53 ^ __ROR4__(v52 + 114053548, v53);\n          v55 = v54 ^ __ROR4__(v53 - 452460610, v54);\n          v56 = v55 ^ __ROR4__(v54 - 621898256, v55);\n          v57 = v56\n              ^ __ROR4__((~v55 | 0xA214BF8E) - 2 * v55 - 4 * (~v55 & 0x1DEB4071) - 3 * (~v55 & 0xA214BF8E) - 3, v56);\n          v58 = v57 ^ __ROR4__(v56 + 1807553314, v57);\n          v59 = v58 ^ __ROR4__(v57 + 654992491, v58);\n          v60 = v59 ^ __ROR4__(v58 - 1328090688, v59);\n          v61 = __ROR4__(v59 - 2033275303, v60);\n          v86 = 10 * ~(~v60 | v61);\n          v85 = v60;\n          v87 = 9 * (v60 & v61) + 4 * (v61 & ~v60) - 3 * (v60 | v61) - 6 * v60;\n        }\n      }\n      if ( i > 1586754338 )\n        break;\n      if ( i <= 1380602973 )\n      {\n        v4 = v85 - *v80;\n        *(_DWORD *)v65 = 0;\n        *v74 = v4;\n        *v90 = 0;\n        v76 = dword_7FF697BBC308;\n        v98 = 0;\n        goto LABEL_25;\n      }\n      v89 = v88 + 12;\n      v80 = (_DWORD *)(v88 + 8);\n      v65 = &v66;\n      v74 = (int *)&v67;\n      v90 = &v68;\n      v81 = &v120;\n      v91 = &v121;\n      v82 = &v71;\n      v92 = &v72;\n      v93 = &v73;\n      v94 = &v118;\n      v95 = &v117[3];\n      v101 = v117;\n      v102 = &v117[1];\n      v103 = &v117[2];\n      v104 = &v117[4];\n      v105 = &v117[5];\n      v106 = &v117[6];\n      v107 = &v119;\n      v108 = v122;\n      v109 = &v122[1];\n      v110 = &v122[3];\n      v111 = &v122[4];\n      bytes = &v122[5];\n      v77 = v85;\n      v98 = (v79 ^ 0xF2B6CB58C7697BC8uLL) + 172;\n      v113 = &v117[3];\n      v70 = v97;\n      v84 = v75;\n      v85 = *(_DWORD *)(v88 + 12);\n      i = 1352076720;\n    }\n    v83 = *(_DWORD *)((v78 ^ 0xF2B6CB58C7697BC8uLL) + 0xA8);\n    if ( v83 < 0x11 )\n      break;\n  }\n  return 1027;\n}\n",
+    "changes": [
+      {
+        "post": 140697084215724,
+        "source": 140697084215719,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": -8,
+        "new_delta": 0,
+        "old_sp": -2104,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084221124,
+        "source": 140697084221119,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2112,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084221111,
+        "source": 140697084221106,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 16,
+        "new_delta": 0,
+        "old_sp": -2128,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084214396,
+        "source": 140697084214391,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": -24,
+        "new_delta": 0,
+        "old_sp": -2080,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084207023,
+        "source": 140697084207018,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": -24,
+        "new_delta": 0,
+        "old_sp": -2096,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084206244,
+        "source": 140697084206239,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": -8,
+        "new_delta": 0,
+        "old_sp": -2096,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084201584,
+        "source": 140697084201579,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": -8,
+        "new_delta": 0,
+        "old_sp": -2096,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084195560,
+        "source": 140697084195555,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2112,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084184703,
+        "source": 140697084184698,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2112,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084207497,
+        "source": 140697084207492,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 16,
+        "new_delta": 0,
+        "old_sp": -2120,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084189286,
+        "source": 140697084189281,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 16,
+        "new_delta": 0,
+        "old_sp": -2120,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084195540,
+        "source": 140697084195535,
+        "instruction": "jmp     loc_7FF697B99E51",
+        "old_delta": -8,
+        "new_delta": 0,
+        "old_sp": -2104,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084206224,
+        "source": 140697084206219,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2104,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084182917,
+        "source": 140697084182912,
+        "instruction": "call    near ptr sub_7FF697AE6F10",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2104,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084215737,
+        "source": 140697084215732,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2112,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084215641,
+        "source": 140697084215636,
+        "instruction": "jmp     loc_7FF697B9CE75",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2112,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084182948,
+        "source": 140697084182943,
+        "instruction": "jmp     loc_7FF697B9A233",
+        "old_delta": -8,
+        "new_delta": 0,
+        "old_sp": -2096,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084194783,
+        "source": 140697084194778,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2112,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084215228,
+        "source": 140697084215223,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2104,
+        "proved_sp": -2104,
+        "applied": true
+      }
+    ],
+    "frame_applied": true,
+    "after_f5": "// Recovered request dispatch with 35 bounded selectors 0..34. Header validator at 0x7ff697b72670: selector WORD+0, payload length WORD+2, total length=payload+4. Length error 0x401; selector>34 sets 0x7000 and clears 0x7ff697bbb068. Indirect table 0x7ff697bb84ec / JMP 0x7ff697b95c65. Wrapper pointer tokens checked for initialized reconstructed globals; not arbitrary mutated-state proof. Exact per-selector scan/report semantics remain open. See reversing-warden.md.\n__int64 __fastcall wmp1_dispatch_request_0_34(__int64 a1, __int64 a2, __int64 a3, __int64 a4)\n{\n  int i; // [rsp+38h] [rbp-7C0h]\n  __int64 *v6; // [rsp+58h] [rbp-7A0h]\n  __int64 v7; // [rsp+68h] [rbp-790h] BYREF\n  __int64 v8; // [rsp+70h] [rbp-788h] BYREF\n  void *request_ptr; // [rsp+90h] [rbp-768h]\n  int v10; // [rsp+D8h] [rbp-720h] BYREF\n  int v11; // [rsp+DCh] [rbp-71Ch] BYREF\n  int v12; // [rsp+E0h] [rbp-718h] BYREF\n  char *v13; // [rsp+E8h] [rbp-710h]\n  int v14; // [rsp+110h] [rbp-6E8h]\n  __int64 v15; // [rsp+138h] [rbp-6C0h]\n  __int64 v16; // [rsp+178h] [rbp-680h]\n  __int64 v17; // [rsp+180h] [rbp-678h]\n  __int64 v18; // [rsp+188h] [rbp-670h]\n  _BYTE *v19; // [rsp+190h] [rbp-668h]\n  int *v20; // [rsp+198h] [rbp-660h]\n  int v21; // [rsp+1A8h] [rbp-650h]\n  int v22; // [rsp+1ACh] [rbp-64Ch]\n  unsigned int v23; // [rsp+1C4h] [rbp-634h]\n  unsigned __int64 byte_count; // [rsp+1C8h] [rbp-630h]\n  int *v25; // [rsp+230h] [rbp-5C8h]\n  __int64 v26; // [rsp+248h] [rbp-5B0h]\n  __int64 v27; // [rsp+250h] [rbp-5A8h]\n  __int64 *v28; // [rsp+258h] [rbp-5A0h]\n  __int64 *v29; // [rsp+260h] [rbp-598h]\n  int *v30; // [rsp+268h] [rbp-590h]\n  int *v31; // [rsp+270h] [rbp-588h]\n  char *v32; // [rsp+278h] [rbp-580h]\n  _BYTE *v33; // [rsp+280h] [rbp-578h]\n  unsigned __int64 v34; // [rsp+2A0h] [rbp-558h]\n  _BYTE *v35; // [rsp+2D0h] [rbp-528h]\n  _BYTE *v36; // [rsp+2D8h] [rbp-520h]\n  _BYTE *v37; // [rsp+2E0h] [rbp-518h]\n  _BYTE *v38; // [rsp+2E8h] [rbp-510h]\n  unsigned __int8 *bytes; // [rsp+2F0h] [rbp-508h]\n  _BYTE *v40; // [rsp+2F8h] [rbp-500h]\n  _BYTE *v41; // [rsp+300h] [rbp-4F8h]\n  char *v42; // [rsp+310h] [rbp-4E8h]\n  char *v43; // [rsp+318h] [rbp-4E0h]\n  char *v44; // [rsp+320h] [rbp-4D8h]\n  char *v45; // [rsp+328h] [rbp-4D0h]\n  char *v46; // [rsp+330h] [rbp-4C8h]\n  _BYTE *v47; // [rsp+338h] [rbp-4C0h]\n  _BYTE v48[7]; // [rsp+3F1h] [rbp-407h] BYREF\n  char v49; // [rsp+3F8h] [rbp-400h] BYREF\n  _BYTE v50[7]; // [rsp+3F9h] [rbp-3FFh] BYREF\n  __int64 v51; // [rsp+400h] [rbp-3F8h] BYREF\n\n  v16 = a4;\n  v26 = a3;\n  for ( i = 1586754339; ; i = 1538915917 )\n  {\n    while ( i <= 1586754338 )\n    {\n      v27 = v26 + 12;\n      v18 = v26 + 8;\n      v6 = &v7;\n      v13 = (char *)&v7 + 4;\n      v28 = &v8;\n      v19 = &v50[3];\n      v29 = &v51;\n      v20 = &v10;\n      v30 = &v11;\n      v31 = &v12;\n      v32 = &v49;\n      v33 = &v48[3];\n      v35 = v48;\n      v36 = &v48[1];\n      v37 = &v48[2];\n      v38 = &v48[4];\n      bytes = &v48[5];\n      v40 = &v48[6];\n      v41 = v50;\n      v42 = (char *)&v51 + 2;\n      v43 = (char *)&v51 + 3;\n      v44 = (char *)&v51 + 5;\n      v45 = (char *)&v51 + 6;\n      v46 = (char *)&v51 + 7;\n      LODWORD(v15) = HIDWORD(byte_count);\n      v34 = (v17 ^ 0xF2B6CB58C7697BC8uLL) + 172;\n      v47 = &v48[3];\n      request_ptr = &v49;\n      v21 = v14;\n      v22 = *v25;\n    }\n    v23 = *(_DWORD *)((v16 ^ 0xF2B6CB58C7697BC8uLL) + 0xA8);\n    if ( v23 < 0x11 )\n      break;\n  }\n  return 1027;\n}\n"
+  },
+  "dispatcher_wrapper_after": "unsigned int __fastcall wmp1_dispatch_request_call_wrapper(void *context, void *output_object)\n{\n  unsigned int v5; // esi\n  int i; // [rsp+30h] [rbp-10h]\n  char v7; // [rsp+34h] [rbp-Ch]\n  unsigned __int64 v8; // [rsp+38h] [rbp-8h]\n\n  for ( i = 1693362238; ; i = 1412440649 )\n  {\n    while ( i <= 1561726045 )\n    {\n      if ( i != 1412440649 )\n        return wmp1_dispatch_request_0_34(48, 0x5BFB73FBDE051055LL, (__int64)output_object, v8 ^ 0xF2B6CB58C7697BC8uLL);\n      if ( (v7 & 1) != 0 )\n      {\n        i = 1561726046;\n      }\n      else\n      {\n        v8 = (unsigned __int64)context;\n        i = 987773440;\n      }\n    }\n    if ( i != 1693362238 )\n      break;\n    v7 = wmp1_decode_body_if_needed(\n           (unsigned __int8 *)&wmp1_protected_125_seed,\n           (unsigned __int8 *)&qword_7FF697B9D8F0,\n           &byte_7FF697BCC66F);\n  }\n  v5 = wmp1_dispatch_request_0_34(\n         14,\n         0x5BFB73FBDE05104CLL,\n         (__int64)output_object,\n         (unsigned __int64)context ^ 0xF2B6CB58C7697BC8uLL);\n  sub_7FF697AECE00(&wmp1_protected_125_seed, &qword_7FF697B9D8F0, &byte_7FF697BCC66F);\n  return v5;\n}\n",
+  "allocator_pseudocode": "__int64 __fastcall candidate_a006_body_08(__int64 a1, int a2)\n{\n  unsigned int v2; // esi\n  __int64 v3; // rdi\n  __int64 result; // rax\n  unsigned int v5; // r8d\n  unsigned int v6; // r9d\n  int v7; // r10d\n  unsigned int v8; // ecx\n  unsigned int v9; // r11d\n  unsigned int v10; // edx\n  unsigned int v11; // ebx\n  int v12; // edx\n  unsigned int v13; // ebp\n  int v14; // r12d\n  int v15; // ecx\n  int v16; // r10d\n  unsigned int v17; // ecx\n  int v18; // eax\n  unsigned int v19; // edx\n  int v20; // r15d\n  int v21; // eax\n  __int64 v22; // rbx\n  __int64 v23; // r9\n  unsigned int *v24; // r8\n  int v25; // ecx\n  unsigned int v26; // edx\n\n  v2 = (a2 ^ 0x63DC0980) + 8;\n  v3 = *(_QWORD *)(a1 + 16) ^ 0x112D4179E9FA37ACLL;\n  result = 0;\n  v5 = v2 / *(_DWORD *)(v3 + 0x28) - ((v2 % *(_DWORD *)(v3 + 0x28) == 0) - 1);\n  if ( v5 > *(_DWORD *)(v3 + 0x40) )\n    return result;\n  v6 = *(_DWORD *)((*(_QWORD *)(a1 + 16) ^ 0x112D4179E9FA37ACLL) + 8);\n  if ( v5 > v6 )\n    return result;\n  if ( *(_DWORD *)((*(_QWORD *)(a1 + 16) ^ 0x112D4179E9FA37ACLL) + 0x2C) )\n  {\n    v7 = -((__PAIR64__(v2 / *(_DWORD *)(v3 + 0x28), v2 % *(_DWORD *)(v3 + 0x28)) - 1) >> 32);\n    v8 = dword_2BE48417090;\n    v9 = 0;\n    if ( v5 )\n    {\n      do\n      {\n        if ( !v8 )\n        {\n          v8 = __rdtsc() % 0xFFFF;\n          v6 = *(_DWORD *)(v3 + 8);\n        }\n        v8 = 8253729 * v8 + 2396403;\n        dword_2BE48417090 = v8;\n        v11 = v8 % (v6 + v7);\n        if ( v11 + v5 <= v6 )\n        {\n          v12 = 0;\n          v13 = v5;\n          while ( 1 )\n          {\n            v14 = *(unsigned __int8 *)(*(_QWORD *)v3 + ((v12 + v11) >> 3));\n            if ( _bittest(&v14, (v12 + v11) & 7) )\n              break;\n            ++v12;\n            if ( !--v13 )\n            {\n              if ( v11 != *(_DWORD *)(v3 + 48) )\n                goto LABEL_34;\n              goto LABEL_20;\n            }\n          }\n        }\n        ++v9;\n      }\n      while ( v9 < *(_DWORD *)(v3 + 44) );\n    }\n    else\n    {\n      while ( 1 )\n      {\n        if ( !v8 )\n        {\n          v8 = __rdtsc() % 0xFFFF;\n          v6 = *(_DWORD *)(v3 + 8);\n        }\n        v8 = 8253729 * v8 + 2396403;\n        dword_2BE48417090 = v8;\n        v10 = v8 % (v6 + v7);\n        if ( v10 <= v6 )\n          break;\n        if ( ++v9 >= *(_DWORD *)(v3 + 44) )\n          goto LABEL_20;\n      }\n      v11 = v8 % (v6 + v7);\n      if ( v10 != *(_DWORD *)(v3 + 48) )\n        goto LABEL_34;\n    }\n  }\nLABEL_20:\n  v15 = dword_2BE48417090;\n  if ( !dword_2BE48417090 )\n  {\n    v15 = __rdtsc() % 0xFFFF;\n    v6 = *(_DWORD *)(v3 + 8);\n  }\n  dword_2BE48417090 = 8253729 * v15 + 2396403;\n  v16 = 0;\n  v17 = (8253729 * v15 + 2396403) % v6;\n  if ( v5 )\n  {\n    do\n    {\n      v11 = (v16 + v17) % v6;\n      if ( v11 + v5 <= v6 )\n      {\n        v18 = 0;\n        v19 = v5;\n        while ( 1 )\n        {\n          v20 = *(unsigned __int8 *)(*(_QWORD *)v3 + ((v18 + v11) >> 3));\n          if ( _bittest(&v20, ((_BYTE)v18 + (_BYTE)v11) & 7) )\n            break;\n          ++v18;\n          if ( !--v19 )\n            goto LABEL_31;\n        }\n      }\n      ++v16;\n    }\n    while ( v16 != (v6 == 0) + v6 );\n    return 0;\n  }\n  v11 = v17;\nLABEL_31:\n  if ( v11 == *(_DWORD *)(v3 + 48) )\n    return 0;\nLABEL_34:\n  if ( v5 )\n  {\n    v21 = 0;\n    if ( v5 == 1 )\n      goto LABEL_39;\n    v21 = 0;\n    do\n    {\n      *(_BYTE *)(*(_QWORD *)v3 + ((v11 + v21) >> 3)) |= 1 << ((v11 + v21) & 7);\n      --*(_DWORD *)(v3 + 64);\n      *(_BYTE *)(*(_QWORD *)v3 + ((v11 + 1 + v21) >> 3)) |= 1 << ((v11 + 1 + v21) & 7);\n      --*(_DWORD *)(v3 + 64);\n      v21 += 2;\n    }\n    while ( (v5 & 0xFFFFFFFE) != v21 );\n    if ( (v5 & 1) != 0 )\n    {\nLABEL_39:\n      *(_BYTE *)(*(_QWORD *)v3 + ((v11 + v21) >> 3)) |= 1 << ((v11 + v21) & 7);\n      --*(_DWORD *)(v3 + 64);\n    }\n  }\n  candidate_a006_pool_free_finish((void *)v3);\n  v22 = *(_DWORD *)(v3 + 40) * v11;\n  v23 = *(_QWORD *)(v3 + 24);\n  v24 = (unsigned int *)(v23 + v22);\n  v25 = dword_2BE48417090;\n  if ( !dword_2BE48417090 )\n    v25 = __rdtsc() % 0xFFFF;\n  v26 = 8253729 * v25 + 2396403;\n  dword_2BE48417090 = v26;\n  v24[1] = v26;\n  *v24 = v2 ^ __ROL4__(*(_DWORD *)(v3 + 36), (v26 >> 9) & 0xF) ^ __ROR4__(v26, (v26 >> 9) & 0xF);\n  return v23 + v22 + 8;\n}\n",
+  "free_pseudocode": "BOOL __fastcall candidate_a006_body_01(__int64 a1, __int64 a2)\n{\n  char *v2; // r10\n  void *v3; // r8\n  char v4; // cl\n  int v5; // edx\n  unsigned int v6; // eax\n  unsigned int v7; // r9d\n  __int64 v8; // rax\n  unsigned int i; // edx\n\n  v2 = (char *)(a2 ^ 0xA87AF73CA5D295EEuLL);\n  if ( (a2 ^ 0xA87AF73CA5D295EEuLL) < (unsigned __int64)candidate_a006_pool_base\n    || v2 >= (char *)candidate_a006_pool_base + (unsigned int)dword_2BE48415F50 )\n  {\n    return candidate_a006_pfn_VirtualFree(v2, 0, 0x8000u);\n  }\n  v3 = candidate_a006_allocator_context;\n  v4 = (*((_DWORD *)v2 - 1) >> 9) & 0xF;\n  v5 = __ROL4__(dword_2BE48415F54, v4);\n  v6 = __ROR4__(*((_DWORD *)v2 - 1), v4);\n  v7 = (v5 ^ *((_DWORD *)v2 - 2) ^ v6) / (unsigned int)qword_2BE48415F58\n     - (((v5 ^ *((_DWORD *)v2 - 2) ^ v6) % (unsigned int)qword_2BE48415F58 == 0)\n      - 1);\n  v8 = v2 - 8 - (char *)candidate_a006_pool_base;\n  if ( HIDWORD(v8) )\n  {\n    v8 /= (__int64)(unsigned int)qword_2BE48415F58;\n    if ( !v7 )\n      return candidate_a006_pool_free_finish(v3);\nLABEL_8:\n    for ( i = 0; i < v7; ++i )\n    {\n      *((_BYTE *)candidate_a006_allocator_state + (((unsigned int)v8 + i) >> 3)) &= ~(unsigned __int8)(1 << ((v8 + i) & 7));\n      ++LODWORD(qword_2BE48415F70[0]);\n    }\n    return candidate_a006_pool_free_finish(v3);\n  }\n  LODWORD(v8) = (unsigned int)v8 / (unsigned int)qword_2BE48415F58;\n  if ( v7 )\n    goto LABEL_8;\n  return candidate_a006_pool_free_finish(v3);\n}\n",
+  "allocate_callback": "void *__fastcall candidate_a006_allocate(unsigned __int64 length)\n{\n  void *v1; // rsi\n  unsigned __int64 v3; // [rsp+20h] [rbp-18h] BYREF\n  __int64 v4; // [rsp+28h] [rbp-10h]\n\n  v3 = length;\n  if ( (candidate_a006_decode_body_if_needed(\n          &candidate_a006_body_02_key,\n          &end,\n          (unsigned __int8 *)&qword_2BE484172B0[64] + 2)\n      & 1) != 0 )\n  {\n    v4 = 15;\n    v1 = (void *)candidate_a006_body_02(0x554E94C0993A6E29LL, (__int64 *)&v3);\n    candidate_a006_substitution_dispatch(\n      (__int64 *)&candidate_a006_body_02_key,\n      (__int64)&end,\n      (__int64)&qword_2BE484172B0[64] + 2);\n    return v1;\n  }\n  else\n  {\n    v4 = 50;\n    return (void *)candidate_a006_body_02(0x554E94C0993A6E5DLL, (__int64 *)&v3);\n  }\n}\n",
+  "free_callback": "unsigned int __fastcall candidate_a006_helper_32c0(__int64 a1)\n{\n  unsigned __int64 v1; // rsi\n\n  v1 = a1 ^ 0xA87AF73CA5D295EEuLL;\n  if ( (candidate_a006_decode_body_if_needed(\n          &candidate_a006_body_01_key,\n          (unsigned __int8 *)sub_2BE483F8820,\n          (unsigned __int8 *)qword_2BE484172B0 + 1)\n      & 1) == 0 )\n    return candidate_a006_body_01(0xD60EA4BE7E0A0FD6uLL, v1);\n  candidate_a006_body_01(0xD60EA4BE7E0A0FB0uLL, v1);\n  return (unsigned int)candidate_a006_substitution_dispatch(\n                         (__int64 *)&candidate_a006_body_01_key,\n                         (__int64)sub_2BE483F8820,\n                         (__int64)qword_2BE484172B0 + 1);\n}\n",
+  "allocate_fallback_body": "__int64 __fastcall candidate_a006_body_02(__int64 a1, __int64 *a2)\n{\n  __int64 v2; // rsi\n  __int64 result; // rax\n  void (__fastcall *v4)(__int64, __int64 *, _QWORD, __int64 *, int, int); // rax\n  __int64 v5; // [rsp+38h] [rbp-20h] BYREF\n  __int64 v6; // [rsp+40h] [rbp-18h] BYREF\n  _BYTE v7[16]; // [rsp+48h] [rbp-10h] BYREF\n\n  v2 = *a2;\n  result = candidate_a006_helper_6430(candidate_a006_allocator_context, (unsigned int)*a2);\n  if ( !result )\n  {\n    v6 = v2;\n    v5 = 0;\n    v4 = (void (__fastcall *)(__int64, __int64 *, _QWORD, __int64 *, int, int))((__int64 (__fastcall *)(__int64, _BYTE *, void *))loc_2BE483F5970)(\n                                                                                 1,\n                                                                                 v7,\n                                                                                 &unk_2BE48416F90);\n    v4(-1, &v5, 0, &v6, 4096, 64);\n    return v5;\n  }\n  return result;\n}\n",
+  "pool_randomizer_body": "__int64 __fastcall candidate_a006_body_07(__int64 a1)\n{\n  __int64 v1; // r9\n  unsigned int v2; // r11d\n  unsigned int v3; // r10d\n  int v4; // ecx\n  unsigned int v5; // r8d\n  unsigned int v6; // ecx\n  unsigned int v7; // r8d\n  unsigned int v8; // r11d\n  __int64 result; // rax\n  unsigned int i; // r10d\n  __int64 v11; // rsi\n  __int64 v12; // rdi\n  unsigned __int64 v13; // kr00_8\n  int v14; // r8d\n  int v15; // r8d\n  int v16; // r8d\n  bool v17; // zf\n  int v18; // r8d\n  int v19; // r8d\n  int v20; // r8d\n  unsigned __int64 v21; // rax\n  int v22; // r8d\n  unsigned __int64 v23; // rdx\n\n  v1 = *(_QWORD *)(a1 + 24);\n  v2 = *(_DWORD *)(v1 + 8);\n  v3 = v2 >> 1;\n  v4 = dword_2BE48417090;\n  if ( !dword_2BE48417090 )\n  {\n    v4 = __rdtsc() % 0xFFFF;\n    v2 = *(_DWORD *)(v1 + 8);\n  }\n  v5 = 8253729 * v4 + 2396403;\n  dword_2BE48417090 = v5;\n  v6 = v5 % (v3 + 1);\n  if ( !v5 )\n    v5 = __rdtsc() % 0xFFFF;\n  v7 = 8253729 * v5 + 2396403;\n  dword_2BE48417090 = v7;\n  v8 = v2 - v6;\n  result = v7 / v8;\n  for ( i = v7 % v8 + v6 + 1; v6 < i; ++v6 )\n  {\n    result = *(unsigned __int8 *)(*(_QWORD *)v1 + (v6 >> 3));\n    if ( !_bittest((const int *)&result, v6 & 7) )\n    {\n      v11 = *(_QWORD *)(v1 + 24);\n      v12 = v6 * *(_DWORD *)(v1 + 40);\n      if ( !v7 )\n      {\n        v13 = __rdtsc();\n        is_mul_ok(0x8000800080008001uLL, v13);\n        v7 = v13 % 0xFFFF;\n      }\n      v14 = 8253729 * v7;\n      dword_2BE48417090 = v14 + 2396403;\n      *(_DWORD *)(v11 + v12) = v14 + 2396403;\n      v15 = v14 + 2396403;\n      if ( !v15 )\n        v15 = __rdtsc() % 0xFFFF;\n      v16 = 8253729 * v15;\n      v17 = v16 == -2396403;\n      v18 = v16 + 2396403;\n      dword_2BE48417090 = v18;\n      *(_DWORD *)(v11 + v12 + 16) = v18;\n      if ( v17 )\n        v18 = __rdtsc() % 0xFFFF;\n      v19 = 8253729 * v18;\n      result = (unsigned int)(v19 + 2396403);\n      dword_2BE48417090 = v19 + 2396403;\n      v17 = v19 == -2396403;\n      v20 = v19 + 2396403;\n      *(_DWORD *)(v11 + v12 + 32) = v20;\n      if ( v17 )\n      {\n        v21 = __rdtsc();\n        v22 = v21;\n        v23 = v21 / 0xFFFF;\n        result = (unsigned int)(v21 / 0xFFFF) << 16;\n        v20 = v23 - result + v22;\n      }\n      v7 = 8253729 * v20 + 2396403;\n      dword_2BE48417090 = v7;\n      *(_DWORD *)(v11 + v12 + 48) = v7;\n    }\n  }\n  return result;\n}\n",
+  "central_output_pseudocode": "// 574 reachable instructions, 69 flag-proof patches; context version words4/34, callbacks +108/+144/+152, state +116/+124, delay +104, output +80/+88. Inferred body second-register context binding/ABI and missing synthetic IAT remain unresolved.\n__int64 __fastcall wmp1_body_073(__int64 a1, __int64 a2)\n{\n  __int64 v2; // rbx\n  unsigned int v3; // esi\n  __int64 (__fastcall *v4)(_QWORD); // rcx\n  __int64 (__fastcall *v5)(_QWORD); // rdx\n  __int64 v6; // r8\n  unsigned __int64 v7; // rcx\n  unsigned int v8; // ebp\n  void *v9; // rdi\n  unsigned __int64 v11; // rsi\n  char v12; // cl\n  char v13; // si\n  char v14; // r11\n  unsigned __int64 v15; // rdx\n  int v16; // ecx\n  unsigned int v17; // edx\n  unsigned int v18; // r15d\n  __int64 v19; // r12\n  char v20; // r9\n  char v21; // r11\n  char v22; // r10\n  _QWORD *v23; // rdi\n  int v24; // eax\n  __int64 v25; // r8\n  unsigned int v26; // eax\n  const void *v27[2]; // [rsp+8h] [rbp-B0h] BYREF\n  unsigned int v28; // [rsp+18h] [rbp-A0h]\n  void *destination[2]; // [rsp+20h] [rbp-98h]\n  void *v30; // [rsp+30h] [rbp-88h] BYREF\n  const void **descriptor; // [rsp+40h] [rbp-78h] BYREF\n  __int64 v32; // [rsp+48h] [rbp-70h]\n  __int64 v33; // [rsp+50h] [rbp-68h]\n  unsigned __int64 v34; // [rsp+58h] [rbp-60h]\n\n  v2 = *(_QWORD *)(a2 + 8);\n  *(_OWORD *)destination = 0;\n  LOBYTE(v30) = 0;\n  if ( !v2 )\n    goto LABEL_14;\n  v3 = 20;\n  if ( *(_WORD *)v2 != 4 || *(_WORD *)(v2 + 2) != 34 )\n    goto LABEL_15;\n  if ( *(_QWORD *)(v2 + 108)\n    && (v4 = *(__int64 (__fastcall **)(_QWORD))(v2 + 144)) != nullptr\n    && (v5 = *(__int64 (__fastcall **)(_QWORD))(v2 + 152)) != nullptr )\n  {\n    v6 = *(_QWORD *)(v2 + 124);\n    v3 = 2;\n    if ( v6 )\n    {\n      wmp1_context_gate_callback = *(__int64 (__fastcall **)(_QWORD))(v2 + 108);\n      wmp1_context_delivery_callback = *(__int64 (__fastcall **)(_QWORD, _QWORD, _QWORD))(v2 + 160);\n      qword_7FF697BBC600 = v6;\n      wmp1_context_allocator = v4;\n      wmp1_context_free = v5;\n      v7 = *(_QWORD *)(v2 + 116);\n      if ( v7 )\n      {\n        wmp1_fill_bytes((void *)v7, 0, 0xA40u);\n        qword_7FF697BBB0A0 = *(_QWORD *)(v2 + 116);\n      }\n      v8 = *(_DWORD *)(v2 + 104);\n      destination[1] = (void *)qword_7FF697BBC2B8;\n      if ( !qword_7FF697BBC2B8 )\n      {\n        sub_7FF697AC6FC0(&v30);\n        destination[1] = v30;\n        qword_7FF697BBC2B8 = (__int64)v30;\n      }\n      if ( v8 )\n      {\n        destination[1] = (char *)destination[1] + 600000;\n        while ( 1 )\n        {\n          if ( MEMORY[0x7FFE026C] == 5 && MEMORY[0x7FFE0270] == 1 )\n          {\n            v11 = (unsigned int)(MEMORY[0x7FFE0004] * MEMORY[0x7FFE0320]) >> 24;\n          }\n          else\n          {\n            descriptor = (const void **)MEMORY[0x7FFE0004];\n            v12 = (dword_7FF697BBA5D0 + 18) ^ 0xE5;\n            v13 = 3 * ~((v12 + 121) ^ 0xB9 | 0xB8)\n                + 7 * ((v12 + 121) ^ 1)\n                + 2 * (((v12 + 121) ^ 0xB9) & 0xB8)\n                - 6 * (((v12 + 121) ^ 0xB9) & 0x47)\n                - 3 * ~((v12 + 121) ^ 0xB9 | 0x47)\n                - 3 * ((v12 + 121) ^ 0x46);\n            v14 = 7 * ~((v13 + 19) | 0xC1)\n                + ((v13 + 19) & 0xC1)\n                + 6 * ((v13 + 19) | 0xC1)\n                + ((v12 + 121) ^ 0xB9)\n                + ((v12 + 121)\n                 ^ (5 * (v13 | (dword_7FF697BBA5D0 + 18) ^ dword_7FF697BBA5D0 ^ 0x1A)\n                  - (3 * (v13 & ((dword_7FF697BBA5D0 + 18) ^ dword_7FF697BBA5D0 ^ 0x1A))\n                   + 4 * (((dword_7FF697BBA5D0 + 18) ^ dword_7FF697BBA5D0 ^ 0x1A) & ~v13))\n                  - v13\n                  - v13\n                  - 4 * ~(~v13 | (dword_7FF697BBA5D0 + 18) ^ dword_7FF697BBA5D0 ^ 0x1A)))\n                + 7;\n            v15 = MEMORY[0x7FFE0320] << (7 * ~v14\n                                       + 3 * ~(v14 & v12)\n                                       + 2 * (v14 & v12)\n                                       - 2 * (v14 & ((dword_7FF697BBA5D0 + 18) ^ 0x1A))\n                                       - 10 * ~(v12 | v14)\n                                       - 9 * ~((dword_7FF697BBA5D0 + 18) ^ 0x1Au | v14));\n            v7 = (unsigned __int64)MEMORY[0x7FFE0004] << 32;\n            v11 = (v7 * (unsigned __int128)v15) >> 64;\n          }\n          if ( v11 > (unsigned __int64)v30 )\n          {\n            v3 = 1030;\n            goto LABEL_15;\n          }\n          if ( (unsigned __int8)wmp1_context_gate_callback(v7) )\n            break;\n          v16 = dword_7FF697BBC308;\n          if ( !dword_7FF697BBC308 )\n            v16 = __rdtsc() % 0xFFFF;\n          v17 = dword_7FF697BBA5D8\n              + ((((dword_7FF697BBA5D8 - 1049934308) ^ 0xB6E522F5) - 247044984)\n               ^ (dword_7FF697BBA5D8\n                + ((dword_7FF697BBA5D8 - 1049934308)\n                 ^ 0xB6E522F5\n                 ^ (((dword_7FF697BBA5D8 - 1049934308) ^ 0xB6E522F5) + 983921896)\n                 ^ (((dword_7FF697BBA5D8 - 1049934308) ^ 0xB6E522F5) - 2134924591)\n                 ^ 0xF67D09A4)\n                - 1049934308));\n          dword_7FF697BBC308 = (v17 | (8253729 * v16))\n                             + 3 * ((8253729 * v16) & v17)\n                             + 2 * ((8253729 * v16) & ~v17)\n                             + ~(16507458 * v16)\n                             + 1;\n          v18 = dword_7FF697BBC308 % 0x1F4u + 1;\n          if ( v18 >= v8 )\n            v18 = v8;\n          MEMORY[0](\n            -1,\n            v18,\n            ((dword_7FF697BBA5DC ^ 0x111465F9) + (dword_7FF697BBA5DC ^ 0x61036034))\n          ^ ((dword_7FF697BBA5DC ^ 0x111465F9u) + 1268176807));\n          if ( MEMORY[0x7FFE026C] == 5 && MEMORY[0x7FFE0270] == 1 )\n          {\n            v19 = (unsigned int)(MEMORY[0x7FFE0004] * MEMORY[0x7FFE0320]) >> 24;\n          }\n          else\n          {\n            v20 = (dword_7FF697BBA5E0 + 72) ^ 0xFB;\n            v21 = 4 * (~(_BYTE)dword_7FF697BBA5E0 & 0xF3)\n                + 2 * (dword_7FF697BBA5E0 & 0xF3)\n                - (dword_7FF697BBA5E0 ^ 0xF3)\n                - 2 * (dword_7FF697BBA5E0 | 0xF3)\n                + 4 * ~(~(_BYTE)dword_7FF697BBA5E0 | 0xF3);\n            v22 = ~(v20 - 38);\n            v19 = (((unsigned __int64)MEMORY[0x7FFE0004] << ((unsigned __int8)(v20 - 111)\n                                                           ^ (unsigned __int8)((v22 | v21)\n                                                                             + 2 * ~(v22 & v21)\n                                                                             - (v22 & v21)\n                                                                             - 4 * ~((v20 - 38) | v21)\n                                                                             + 2 * v22\n                                                                             - (v20\n                                                                              - 111)\n                                                                             + dword_7FF697BBA5E0\n                                                                             + 72\n                                                                             - v20\n                                                                             - 112)))\n                 * (unsigned __int128)(unsigned __int64)(MEMORY[0x7FFE0320] << 8)) >> 64;\n          }\n          if ( (sub_7FF697AE0A20(v11, v19, &descriptor) & 1) == 0 )\n          {\n            v23 = descriptor;\n            *(_DWORD *)descriptor = 49374;\n            v23[4] = 14;\n            v23[5] = v8;\n            v23[6] = v18;\n            v23[7] = v19 - v11;\n            byte_7FF697BBB0A8 = 1;\n            __halt();\n          }\n          v8 -= v18;\n          if ( !v8 )\n            goto LABEL_42;\n        }\n        v3 = 6;\n      }\n      else\n      {\nLABEL_42:\n        byte_7FF697BBB0D0 = 1;\n        qmemcpy(&unk_7FF697BBB0C0, &dword_7FF697BBA000, 8u);\n        qmemcpy(&unk_7FF697BBB0B0, &dword_7FF697BBA000, 8u);\n        v24 = *(_DWORD *)(v2 + 92);\n        descriptor = v27;\n        LODWORD(v32) = v24;\n        v33 = 44;\n        v34 = 0x8BA1E53208D15CE6uLL;\n        v3 = 128;\n        if ( (unsigned __int8)wmp1_callback_buffer_resize_normal_stack_view(&descriptor) )\n        {\n          byte_7FF697BBB098 = 1;\n          v3 = sub_7FF697AE14E0(v2, v27, v25);\n          if ( byte_7FF697BBB098 )\n            byte_7FF697BBB098 = 0;\n          if ( (_QWORD)xmmword_7FF697BBB070 )\n            sub_7FF697AE89F0();\n          LODWORD(qword_7FF697BBB084) = 0;\n          byte_7FF697BBB08C = 0;\n          xmmword_7FF697BBB070 = 0;\n          if ( !v3 )\n          {\n            v26 = v28;\n            qmemcpy(*(void **)(v2 + 80), v27[1], v28);\n            *(_DWORD *)(v2 + 88) = v26;\n            v3 = 0;\n          }\n          goto LABEL_20;\n        }\n      }\n    }\n  }\n  else\n  {\nLABEL_14:\n    v3 = 2;\n  }\nLABEL_15:\n  if ( byte_7FF697BBB098 )\n    byte_7FF697BBB098 = 0;\n  if ( (_QWORD)xmmword_7FF697BBB070 )\n    wmp1_context_free(xmmword_7FF697BBB070);\n  LODWORD(qword_7FF697BBB084) = 0;\n  byte_7FF697BBB08C = 0;\n  xmmword_7FF697BBB070 = 0;\nLABEL_20:\n  if ( (_BYTE)v30 )\n  {\n    v9 = destination[0];\n    if ( HIDWORD(destination[1]) )\n      wmp1_fill_bytes(destination[0], 0, HIDWORD(destination[1]));\n    wmp1_context_free(v9);\n  }\n  return v3;\n}\n",
+  "host_constructor_pseudocode": "    }\n            v51[12] = 1;\n            v51[14] = v47[14];\n            v51[13] = 0;\n            *((_DWORD *)v51 + 2) = 8;\nLABEL_286:\n            *((_DWORD *)v51 + 4) = v130;\n          }\n          else\n          {\n            if ( v50 == 201 )\n            {\n              v127 = *((_DWORD *)v47 + 4);\n              LODWORD(v487) = v127;\n              if ( (unsigned int)v49 < 0x11 )\n              {\n                v128 = 256;\nLABEL_320:\n                v264 = 0;\n                v261 = nullptr;\n                goto LABEL_321;\n              }\n              if ( (_DWORD)v49 != *((_DWORD *)v47 + 5) + 17 || (unsigned int)v49 < *((_DWORD *)v47 + 5) )\n              {\n                v128 = 257;\n                goto LABEL_320;\n              }\n              v187 = (unsigned int)candidate_a006_module_cache_count;\n              v128 = 512;\n              if ( !candidate_a006_module_cache_count )\n                goto LABEL_320;\n              v188 = candidate_a006_module_cache_records;\n              while ( *((_DWORD *)v188 + 1) != v127 )\n              {\n                v188 = (__int64 *)((char *)v188 + 20);\n                if ( !--v187 )\n                  goto LABEL_320;\n              }\n              v206 = (*((_DWORD *)v188 + 2) + 15) & 0xFFFFFFF0;\n              v207 = (_DWORD *)candidate_a006_helper_6430(candidate_a006_allocator_context, v206);\n              if ( !v207 )\n              {\n                *(_QWORD *)&v515[0] = v206;\n                v485 = 0;\n                v208 = (void (__fastcall *)(__int64, __int64 *, _QWORD, _OWORD *, int, int))((__int64 (__fastcall *)(__int64, _OWORD *, void *))loc_2BE483F5970)(\n                                                                                              1,\n                                                                                              v516,\n                                                                                              &unk_2BE48416F90);\n                v208(-1, &v485, 0, v515, 4096, 64);\n                v207 = (_DWORD *)v485;\n                if ( !v485 )\n                {\n                  v128 = 128;\n                  goto LABEL_320;\n                }\n              }\n              qmemcpy(v207, *(const void **)((char *)v188 + 12), v206);\n              qword_2BE48405120[1] = 0x4F4B0D49B1BCAB1BLL;\n              if ( v206 )\n              {\n                v209 = 27;\n                v210 = -85;\n                v211 = -68;\n                v2_2BE483F3170)(v253 + 3, v259) )\n                      {\n                        candidate_a006_helper_32c0(v253);\n                        v260 = (unsigned int)(*((_DWORD *)v47 + 7) + *((_DWORD *)v47 + 5) + 176);\n                        v261 = (_DWORD *)candidate_a006_helper_6430(\n                                           candidate_a006_allocator_context,\n                                           (unsigned int)v260);\n                        if ( !v261 )\n                        {\n                          *(_QWORD *)&v515[0] = v260;\n                          v485 = 0;\n                          v262 = (void (__fastcall *)(__int64, __int64 *, _QWORD, _OWORD *, int, int))((__int64 (__fastcall *)(__int64, _OWORD *, void *))loc_2BE483F5970)(1, v516, &unk_2BE48416F90);\n                          v262(-1, &v485, 0, v515, 4096, 64);\n                          v261 = (_DWORD *)v485;\n                          if ( !v485 )\n                          {\n                            v128 = 128;\n                            v261 = nullptr;\n                            v264 = v259;\n                            goto LABEL_321;\n                          }\n                        }\n                        v263 = candidate_a006_module_cache_count;\n                        if ( v260 )\n                          candidate_a006_memset_0(v261, 0, v260);\n                        *v261 = 2228228;\n                        v261[42] = *((_DWORD *)v47 + 5);\n                        v261[26] = *((_DWORD *)v47 + 6);\n                        *(_QWORD *)(v261 + 27) = qword_2BE48405350[8] ^ (2147483497 * qword_2BE48405350[7]);\n                        v261[23] = *((_DWORD *)v47 + 7);\n                        *((_QWORD *)v261 + 10) = (char *)v261 + *((unsigned int *)v47 + 5) + 176;\n                        *((_QWORD *)v261 + 12) = 0;\n                        *(_QWORD *)(v261 + 29) = &qword_2BE484154C0[2];\n                        *((_QWORD *)v261 + 18) = candidate_a006_pfn_callback_3390;\n                        *((_QWORD *)v261 + 19) = candidate_a006_pfn_callback_32c0;\n                        *(_QWORD *)(v261 + 31) = &qword_2BE48405120[2];\n                        *(_QWORD *)(v261 + 33) = candidate_a006_module_cache_records;\n                        v261[35] = v263;\n                        *((_QWORD *)v261 + 20) = off_2BE48415F10;\n                        qmemcpy(v261 + 43, v47 + 33, *((unsigned int *)v47 + 5));\n                        v128 = 517;\n                        v264 = v259;\n                        if ( *(_DWORD *)v259 == 9111787 && *(_WORD *)(v259 + 4) == 1 )\n                        {\n                          v265 = *(unsigned int *)(v259 + 16);\n                          v266 = 0;\n                          if ( LOBYTE(qword_2BE484154C0[0]) )\n                            v266 = 18415616;\n                          v128 = 522;\n                          if ( v266 >= (unsigned int)v265 )\n                          {\n                            v267 = dword_2BE48417090;\n                            if ( !dword_2BE48417090 )\n                              v267 = __rdtsc() % 0xFFFF;\n                            dword_2BE48417090 = 8253729 * v267 + 2396403;\n                            v499 = v265;\n                            LODWORD(v486) = 0;\n                            v491 = ((unsigned __int64)candidate_a006_ntdll_text_bank\n                                  + (8253729 * v267 + 2396403) % (v266 - (unsigned int)v265 - 15)\n                                  + 15)\n                                 & 0xFFFFFFFFFFFFFFF0uLL;\n                            if ( !v491 )\n                              goto",
+  "pool_context_hex": "805f4148be0200000080000001100000000000000000000000007cbbbf020000000020007b409e8a4000000005000000ffffffff000000000000000000000000104a0000000000000000000000000000",
+  "output_callback_pointer": "0x7ff6415e0420",
+  "output_callback_pseudocode": "// Candidate-6 body11 resolves here by captured encoded pointer. Normal-stack view assumes ESP>0x2100. Clears pending object through virtual slot +0x10 when enabled, then tail-jumps Wow+0x2ae550. That target begins INT3-filled capture bytes; callback continuation is NOT recovered. No consumer-thread ancestry proof.\nvoid __fastcall wow_candidate_a006_output_callback(void *context, const void *buffer, unsigned int length)\n{\n  if ( qword_7FF64585DAB8 )\n  {\n    if ( byte_7FF64585CE51 )\n    {\n      ((void (__fastcall *)(__int64 (__fastcall ***)(), __int64))(*off_7FF64585DAA8)[2])(\n        off_7FF64585DAA8,\n        qword_7FF64585DAB8);\n      qword_7FF64585DAB8 = 0;\n    }\n  }\n  JUMPOUT(0x7FF6415E0550LL);\n}\n",
+  "unrecovered_tail_hex": "40554883ec20ccbf5fd6ffccc2a158ccffcf65ccb93ccc3ad350ccdeb8cc8a70",
+  "producer_native": [
+    [
+      "0x2be48400d55",
+      "mov     eax, [r14+14h]"
+    ],
+    [
+      "0x2be48400d59",
+      "mov     ecx, [r14+1Ch]"
+    ],
+    [
+      "0x2be48400d5d",
+      "lea     esi, [rcx+rax]"
+    ],
+    [
+      "0x2be48400d60",
+      "add     esi, 0B0h"
+    ],
+    [
+      "0x2be48400d66",
+      "mov     rcx, cs:candidate_a006_allocator_context; Captured runtime pointer 0x2be48415f30. Name reflects observed data relationship, not proven Warden ownership."
+    ],
+    [
+      "0x2be48400d6d",
+      "mov     edx, esi"
+    ],
+    [
+      "0x2be48400d6f",
+      "call    candidate_a006_helper_6430"
+    ],
+    [
+      "0x2be48400d74",
+      "mov     r15, rax"
+    ],
+    [
+      "0x2be48400d77",
+      "test    rax, rax"
+    ],
+    [
+      "0x2be48400d7a",
+      "jnz     short loc_2BE48400DDD"
+    ],
+    [
+      "0x2be48400d7c",
+      "mov     qword ptr [rsp+868h+var_708], rsi"
+    ],
+    [
+      "0x2be48400d84",
+      "mov     [rsp+868h+var_820], 0"
+    ],
+    [
+      "0x2be48400d8d",
+      "mov     ecx, 1"
+    ],
+    [
+      "0x2be48400d92",
+      "lea     rdx, [rsp+868h+var_608]"
+    ],
+    [
+      "0x2be48400d9a",
+      "lea     r8, unk_2BE48416F90"
+    ],
+    [
+      "0x2be48400da1",
+      "call    loc_2BE483F5970"
+    ],
+    [
+      "0x2be48400da6",
+      "mov     [rsp+868h+var_840], 40h ; '@'"
+    ],
+    [
+      "0x2be48400dae",
+      "mov     [rsp+868h+var_848], 1000h"
+    ],
+    [
+      "0x2be48400db6",
+      "mov     rcx, 0FFFFFFFFFFFFFFFFh"
+    ],
+    [
+      "0x2be48400dbd",
+      "lea     rdx, [rsp+868h+var_820]"
+    ],
+    [
+      "0x2be48400dc2",
+      "xor     r8d, r8d"
+    ],
+    [
+      "0x2be48400dc5",
+      "lea     r9, [rsp+868h+var_708]"
+    ],
+    [
+      "0x2be48400dcd",
+      "call    rax"
+    ],
+    [
+      "0x2be48400dcf",
+      "mov     r15, [rsp+868h+var_820]"
+    ],
+    [
+      "0x2be48400dd4",
+      "test    r15, r15"
+    ],
+    [
+      "0x2be48400dd7",
+      "jz      loc_2BE4840217E"
+    ],
+    [
+      "0x2be48400ddd",
+      "mov     ebx, cs:candidate_a006_module_cache_count; Current module-cache count 1. Command 200 inserts/replaces up to 12; command 201 decodes, checks/decompresses and maps cached modules."
+    ],
+    [
+      "0x2be48400de3",
+      "test    rsi, rsi"
+    ],
+    [
+      "0x2be48400de6",
+      "jz      short loc_2BE48400DF5"
+    ],
+    [
+      "0x2be48400de8",
+      "mov     rcx, r15; destination"
+    ],
+    [
+      "0x2be48400deb",
+      "xor     edx, edx; byte_value"
+    ],
+    [
+      "0x2be48400ded",
+      "mov     r8, rsi; length"
+    ],
+    [
+      "0x2be48400df0",
+      "call    candidate_a006_memset_0"
+    ],
+    [
+      "0x2be48400df5",
+      "mov     dword ptr [r15], 220004h"
+    ],
+    [
+      "0x2be48400dfc",
+      "mov     eax, [r14+14h]"
+    ],
+    [
+      "0x2be48400e00",
+      "jno     short loc_2BE48400E52"
+    ],
+    [
+      "0x2be48400e02",
+      "jmp     short loc_2BE48400E52"
+    ],
+    [
+      "0x2be48400e52",
+      "mov     [r15+0A8h], eax"
+    ],
+    [
+      "0x2be48400e59",
+      "mov     eax, [r14+18h]"
+    ],
+    [
+      "0x2be48400e5d",
+      "mov     [r15+68h], eax"
+    ],
+    [
+      "0x2be48400e61",
+      "imul    rax, cs:qword_2BE48405350+38h, 7FFFFF69h"
+    ],
+    [
+      "0x2be48400e6c",
+      "xor     rax, cs:qword_2BE48405350+40h"
+    ],
+    [
+      "0x2be48400e73",
+      "jge     short loc_2BE48400EBD"
+    ],
+    [
+      "0x2be48400e75",
+      "xchg    bh, bh"
+    ],
+    [
+      "0x2be48400e77",
+      "jmp     short loc_2BE48400EBD"
+    ],
+    [
+      "0x2be48400ebd",
+      "mov     [r15+6Ch], rax"
+    ],
+    [
+      "0x2be48400ec1",
+      "mov     eax, [r14+1Ch]"
+    ],
+    [
+      "0x2be48400ec5",
+      "mov     [r15+5Ch], eax"
+    ],
+    [
+      "0x2be48400ec9",
+      "lea     rdi, [r15+0ACh]"
+    ],
+    [
+      "0x2be48400ed0",
+      "mov     eax, [r14+14h]"
+    ],
+    [
+      "0x2be48400ed4",
+      "lea     rax, [r15+rax+0B0h]"
+    ],
+    [
+      "0x2be48400edc",
+      "mov     [r15+50h], rax"
+    ],
+    [
+      "0x2be48400ee0",
+      "mov     qword ptr [r15+60h], 0"
+    ],
+    [
+      "0x2be48400ee8",
+      "lea     rax, qword_2BE484154C0+10h"
+    ],
+    [
+      "0x2be48400eef",
+      "mov     [r15+74h], rax"
+    ],
+    [
+      "0x2be48400ef3",
+      "mov     rax, cs:candidate_a006_pfn_callback_3390; Captured runtime pointer 0x2be483f3390. Name reflects observed data relationship, not proven Warden ownership."
+    ],
+    [
+      "0x2be48400efa",
+      "mov     [r15+90h], rax"
+    ],
+    [
+      "0x2be48400f01",
+      "mov     rax, cs:candidate_a006_pfn_callback_32c0; Captured runtime pointer 0x2be483f32c0. Name reflects observed data relationship, not proven Warden ownership."
+    ],
+    [
+      "0x2be48400f08",
+      "mov     [r15+98h], rax"
+    ],
+    [
+      "0x2be48400f0f",
+      "lea     rax, qword_2BE48405120+10h"
+    ],
+    [
+      "0x2be48400f16",
+      "mov     [r15+7Ch], rax"
+    ],
+    [
+      "0x2be48400f1a",
+      "lea     rax, candidate_a006_module_cache_records; INLINE array (native LEA), NOT an indirect heap pointer. Up to 12 packed 20-byte records: DWORD encrypted_bytes_fnv +0, DWORD module_id +4, DWORD original_length +8, QWORD encrypted_buffer +12. Current count=1; record 0: ID1, length D7B9F, ciphertext pool VA 2BFBB87BBC8. Recovered into wmp1.* synthetic segments; see reversing-warden.md."
+    ],
+    [
+      "0x2be48400f21",
+      "mov     [r15+84h], rax"
+    ],
+    [
+      "0x2be48400f28",
+      "mov     [r15+8Ch], ebx"
+    ],
+    [
+      "0x2be48400f2f",
+      "mov     rax, cs:off_2BE48415F10"
+    ],
+    [
+      "0x2be48400f36",
+      "mov     [r15+0A0h], rax"
+    ],
+    [
+      "0x2be48400f3d",
+      "mov     ecx, [r14+14h]"
+    ],
+    [
+      "0x2be48400f41",
+      "lea     rsi, [r14+21h]"
+    ],
+    [
+      "0x2be48400f45",
+      "rep movsb"
+    ]
+  ],
+  "output_native": [
+    [
+      "0x7ff697b2a623",
+      "lea     rdx, [rsp+0D0h+output_object]; output_object"
+    ],
+    [
+      "0x7ff697b2a628",
+      "mov     rcx, rbx; context"
+    ],
+    [
+      "0x7ff697b2a62b",
+      "call    wmp1_dispatch_request_call_wrapper"
+    ],
+    [
+      "0x7ff697b2a630",
+      "mov     esi, eax"
+    ],
+    [
+      "0x7ff697b2a632",
+      "cmp     cs:byte_7FF697BBB098, 0"
+    ],
+    [
+      "0x7ff697b2a639",
+      "jz      short loc_7FF697B2A642"
+    ],
+    [
+      "0x7ff697b2a63b",
+      "mov     cs:byte_7FF697BBB098, 0"
+    ],
+    [
+      "0x7ff697b2a642",
+      "jns     short loc_7FF697B2A67F"
+    ],
+    [
+      "0x7ff697b2a644",
+      "sal     al, 0"
+    ],
+    [
+      "0x7ff697b2a647",
+      "jmp     short loc_7FF697B2A67F"
+    ],
+    [
+      "0x7ff697b2a67f",
+      "mov     rcx, qword ptr cs:xmmword_7FF697BBB070"
+    ],
+    [
+      "0x7ff697b2a686",
+      "test    rcx, rcx"
+    ],
+    [
+      "0x7ff697b2a689",
+      "jz      short loc_7FF697B2A690"
+    ],
+    [
+      "0x7ff697b2a68b",
+      "call    sub_7FF697AE89F0"
+    ],
+    [
+      "0x7ff697b2a690",
+      "mov     dword ptr cs:qword_7FF697BBB084, 0"
+    ],
+    [
+      "0x7ff697b2a69a",
+      "mov     cs:byte_7FF697BBB08C, 0"
+    ],
+    [
+      "0x7ff697b2a6a1",
+      "xorps   xmm0, xmm0"
+    ],
+    [
+      "0x7ff697b2a6a4",
+      "movups  cs:xmmword_7FF697BBB070, xmm0"
+    ],
+    [
+      "0x7ff697b2a6ab",
+      "or      al, 0"
+    ],
+    [
+      "0x7ff697b2a6ad",
+      "xchg    ch, ch"
+    ],
+    [
+      "0x7ff697b2a6af",
+      "jmp     short loc_7FF697B2A703"
+    ],
+    [
+      "0x7ff697b2a700",
+      "or      ebp, edx"
+    ],
+    [
+      "0x7ff697b2a703",
+      "test    esi, esi"
+    ],
+    [
+      "0x7ff697b2a705",
+      "jnz     loc_7FF697B29808"
+    ],
+    [
+      "0x7ff697b2a70b",
+      "mov     eax, [rsp+0C8h+var_A0]"
+    ],
+    [
+      "0x7ff697b2a70f",
+      "jmp     short loc_7FF697B2A741"
+    ],
+    [
+      "0x7ff697b2a720",
+      "sbb     cl, [rdi]"
+    ],
+    [
+      "0x7ff697b2a722",
+      "mov     [rdx+0F00016Eh], al"
+    ],
+    [
+      "0x7ff697b2a737",
+      "nop"
+    ],
+    [
+      "0x7ff697b2a738",
+      "jmp     short loc_7FF697B2A763"
+    ],
+    [
+      "0x7ff697b2a741",
+      "jmp     short loc_7FF697B2A737"
+    ],
+    [
+      "0x7ff697b2a74c",
+      "retn    0B148h"
+    ],
+    [
+      "0x7ff697b2a763",
+      "mov     rsi, [rsp+20h]"
+    ],
+    [
+      "0x7ff697b2a768",
+      "stc"
+    ],
+    [
+      "0x7ff697b2a769",
+      "shl     dh, 0"
+    ],
+    [
+      "0x7ff697b2a76c",
+      "jmp     short loc_7FF697B2A7B0"
+    ],
+    [
+      "0x7ff697b2a7b0",
+      "mov     rdi, [rbx+50h]"
+    ],
+    [
+      "0x7ff697b2a7b4",
+      "mov     rcx, rax"
+    ],
+    [
+      "0x7ff697b2a7b7",
+      "rep movsb"
+    ],
+    [
+      "0x7ff697b2a7b9",
+      "mov     [rbx+58h], eax"
+    ],
+    [
+      "0x7ff697b2a7bc",
+      "xor     esi, esi"
+    ],
+    [
+      "0x7ff697b2a7be",
+      "jmp     loc_7FF697B29808"
+    ],
+    [
+      "0x7ff697b2a7c3",
+      "mov     esi, 406h"
+    ],
+    [
+      "0x7ff697b2a7c8",
+      "jmp     loc_7FF697B29762"
+    ],
+    [
+      "0x7ff697b2a7cd",
+      "mov     esi, 6"
+    ],
+    [
+      "0x7ff697b2a7d2",
+      "jmp     loc_7FF697B29762"
+    ]
+  ],
+  "names": [
+    {
+      "ea": "0x2be483f6010",
+      "old": "candidate_a006_pool_free_finish",
+      "new": "candidate_a006_randomize_free_pool_blocks",
+      "ok": true
+    },
+    {
+      "ea": "0x2be483fa640",
+      "old": "candidate_a006_body_07",
+      "new": "candidate_a006_randomize_free_pool_blocks_body",
+      "ok": true
+    }
+  ],
+  "comments": [
+    {
+      "ea": "0x2be483f3390",
+      "old": null,
+      "new": "Allocator adopted by wmp1 from context+144. Pool attempt truncates length to DWORD; pool stores8-byte header and reserves ceil(uint32(n+8)/64) blocks under captured metadata. Fallback NtAllocateVirtualMemory slot1 uses original QWORD length, flags1000/protect40. No zero-initialization guarantee for reused pool payload.",
+      "ok": true
+    },
+    {
+      "ea": "0x2be483f32c0",
+      "old": null,
+      "new": "Free callback adopted by wmp1 context+152. Within captured pool: decode8-byte header, clear allocated bitmap/count, then randomize selected free pool blocks (four DWORD positions), not guaranteed full buffer wiping. Outside pool: VirtualFree(ptr,0,8000). Local range gate alone does not validate arbitrary pointer/header.",
+      "ok": true
+    },
+    {
+      "ea": "0x2be483fa640",
+      "old": null,
+      "new": "Randomizes free-pool blocks, NOT merely unlock/finish. Chooses start in lower half and inclusive interval end using captured LCG8253729*x+2396403/RDTSC seed; skips allocated bitmap bits; writes DWORDs at unit+0,+16,+32,+48. No guarantee every freed block is selected or all its bytes wiped.",
+      "ok": true
+    },
+    {
+      "ea": "0x2be48400d5d",
+      "old": null,
+      "new": "Command201 context allocation S=uint32(input_length+output_capacity+176), ADD atD60. No local overflow guard here. Input copied to context+172; output backing pointer=context+input_length+176. Correct extents require nonwrapping sum and real allocation>=S.",
+      "ok": true
+    },
+    {
+      "ea": "0x2be48400f45",
+      "old": null,
+      "new": "Copy input_length bytes from command+33 to context+172. Command201 has declared payload_length=input_length+17 and unsigned payload>=input_length checks; no selector18-specific fixed-layout/component/prefix validation at this copy.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b2a7b7",
+      "old": null,
+      "new": "On dispatcher return0, copy used output bytes to adopted context+80 buffer; context+88 receives used atA7B9. This is the module-to-host output handoff, not yet a server verdict or proof of37-byte report production.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff6415e0550",
+      "old": null,
+      "new": "Unrecovered callback continuation. Current32 capture bytes:40554883ec20ccbf5fd6ffccc2a158ccffcf65ccb93ccc3ad350ccdeb8cc8a70. They are NOT all CC; prior blanket INT3-filled wording is inaccurate. Do not invent plaintext. Tail source callback7FF6415E0420 -> JMP0548; network/remote consumer not closed.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b93970",
+      "old": null,
+      "new": "Dispatcher native35-case table remains verified; current F5 after19 SP metadata corrections and actual7F8local/40saved frame still omits case18 and has incorrect collapsed state loop. Do NOT use missing F5 call as reachability evidence. Native case18 atB9CAD3/brokerB9CE54 remains authoritative; semantic F5 discrepancy OPEN.",
+      "ok": true
+    }
+  ],
+  "frame_repair_result": "Wrapper fresh F5 no JUMPOUT and ABI recovered. Dispatcher SP/actualframe repaired, but F5 semantic omission persists; not solved by frame repair.",
+  "save_success": true,
+  "final_comments": [
+    {
+      "ea": "0x7ff697abce0d",
+      "old": "NtEnumerateKey-compatible 6arg call; captured bank22, information class0; index increments after nonmatch. Buffer starts512 bytes; retries statuses80000005/C0000023 with ResultLength.",
+      "new": "NtEnumerateKey via captured a006 slot22/tag0FCFEC92/service32; class0, starts512 bytes; retries80000005/C0000023. Negative enum/no-match exits WITHOUT updating caller status; resize OOM may retry indefinitely. Conditional on constructor table.",
+      "applied": true
+    },
+    {
+      "ea": "0x7ff697abd8e1",
+      "old": "NtOpenKey-compatible bank20; captured access20019h and OBJECT_ATTRIBUTES attrs40h. Opens matched UTF16 name relative to parent handle descriptor+24 pointee, output handle descriptor+16. Stores signed status through descriptor+0.",
+      "new": "NtOpenKey via captured a006 slot20/tagF8AD295A/service12. Matched lowercase raw-name hash; access20019 attrs40; root from descriptor+18 pointee, child output+10 pointee; writes status through+0. No-match enumeration does not perform this write.",
+      "applied": true
+    },
+    {
+      "ea": "0x7ff697ac4103",
+      "old": "Captured constants: bank index23, class0, six-argument NtEnumerateValueKey-compatible operation; KEY_VALUE_BASIC_INFORMATION NameLength+8, UTF16 Name+0Ch. Actual runtime callable-bank pointer unavailable.",
+      "new": "NtEnumerateValueKey via captured a006 slot23/tag184B9BF7/service13, class0. KEY_VALUE_BASIC_INFORMATION NameLength+8/Name+0C. Prior missing-table caveat superseded for captured constructor context.",
+      "applied": true
+    },
+    {
+      "ea": "0x7ff697ac511b",
+      "old": "Captured constants: bank21/class2; NtQueryValueKey-compatible sizing call: output NULL,length0. Requires STATUS_BUFFER_TOO_SMALL before allocation/requery. API identity not proven from live pointer.",
+      "new": "NtQueryValueKey via captured a006 slot21/tag96853C81/service17, class2 sizing(NULL,0). Continues only C0000023. No inference from argument shape alone: independent captured-table tag match now available.",
+      "applied": true
+    },
+    {
+      "ea": "0x7ff697ac58ca",
+      "old": "Captured constants: bank21/class2, allocated result buffer; negative NTSTATUS aborts. KEY_VALUE_PARTIAL_INFORMATION-compatible Type+4,DataLength+8,Data+0Ch. Check type/extent and caller buffer contract; see journal.",
+      "new": "NtQueryValueKey slot21/service17/class2, allocated result buffer. Type+4/DataLength+8/Data+0C. Prior compatible-only label superseded for captured constructor context; malformed extents/termination still not established.",
+      "applied": true
+    },
+    {
+      "ea": "0x7ff6415e0548",
+      "old": null,
+      "new": "Tail JMP to VA7FF6415E0550 = actual imagebase7FF641320000 + RVA2C0550. Old RVA2AE550 was incorrect. Primary PE and main_final carry identical96 unrecovered bytes at the correct RVA.",
+      "applied": true
+    },
+    {
+      "ea": "0x7ff6415e0550",
+      "old": "Unrecovered callback continuation. Current32 capture bytes:40554883ec20ccbf5fd6ffccc2a158ccffcf65ccb93ccc3ad350ccdeb8cc8a70. They are NOT all CC; prior blanket INT3-filled wording is inaccurate. Do not invent plaintext. Tail source callback7FF6415E0420 -> JMP0548; network/remote consumer not closed.",
+      "new": "Unrecovered continuation RVA2C0550 (NOT2AE550). Primary PE offset2C0550 and main_final file offset212327280 have identical96 bytes matching IDA: begins40554883EC20CCBF... then extensiveCC padding. Not all bytesCC. Static failure boundary; no alternative plaintext snapshot found.",
+      "applied": true
+    },
+    {
+      "ea": "0x7ff697aef420",
+      "repeatable_function": true,
+      "old": null,
+      "new": "Selector18 captured-client dossier: three registry chains/types4,1,1; flags1 DWORD equality/2 UTF16 mismatch/4 prefix equality or count0. Return101 if L<5, else0 iff flag1 or2, else1. 37byte report append independently capacity gated. Root handles not closed locally; enum/no-match preserves caller status. Captured a006 table resolves APIs. Upstream/module/consumer limitations and exact proof journals: KB/reversing-warden.md.",
+      "applied": true
+    },
+    {
+      "ea": "0x7ff697abc790",
+      "repeatable_function": true,
+      "old": null,
+      "new": "Selector18 component traversal: captured-context NtEnumerateKey(slot22)/NtOpenKey(slot20), ASCII-folded raw UTF16 name-byte FNV32. Child/status out via descriptor; enum-negative/no-match leaves status unchanged, copied-name OOM C0000017, matched open writes status. Resize OOM can retry forever. Return cleanup-dependent, not status.",
+      "applied": true
+    },
+    {
+      "ea": "0x7ff697ac33f0",
+      "repeatable_function": true,
+      "old": null,
+      "new": "Selector18 value query: captured-context NtEnumerateValueKey(slot23)/NtQueryValueKey(slot21,class2). Outputs via descriptor; query/temp/result rules in dossier. NT type tag does not prove data length/termination. Adopted free callback marks pool blocks then partially randomizes selected free units; not complete wipe.",
+      "applied": true
+    }
+  ],
+  "snapshot_comparison": {
+    "rejected_wrong_rva_comparison": [
+      {
+        "name": "primary PE",
+        "base": "0x7FF641320000",
+        "offset": 2811216,
+        "bytes": "CCE81A481A034C8BA424600200004881C468020000415E5F5B5DC3CCCCCCCCCC488BC44889480855488DA848FFFFFF4881ECB0010000488970F04C8D4228488978E8488D4C2440488BFA0FB65250E8FDDFFFFF488D44247048C7442460000000"
+      },
+      {
+        "name": "main_final",
+        "kind": 3,
+        "base": "0x7FF641320000",
+        "offset": 212253552,
+        "bytes": "CCE81A481A034C8BA424600200004881C468020000415E5F5B5DC3CCCCCCCCCC488BC44889480855488DA848FFFFFF4881ECB0010000488970F04C8D4228488978E8488D4C2440488BFA0FB65250E8FDDFFFFF488D44247048C7442460000000"
+      }
+    ],
+    "correct_rva": "0x2C0550",
+    "correct_snapshots": [
+      {
+        "name": "primary PE",
+        "offset": 2884944,
+        "bytes": "40554883EC20CCBF5FD6FFCCC2A158CCFFCF65CCB93CCC3AD350CCDEB8CC8A70CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+        "read": 96
+      },
+      {
+        "name": "main_final",
+        "offset": 212327280,
+        "bytes": "40554883EC20CCBF5FD6FFCCC2A158CCFFCF65CCB93CCC3AD350CCDEB8CC8A70CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+        "read": 96
+      }
+    ],
+    "reason": "Actual IDA imagebase0x7FF641320000 and descriptor table record0 agree. Old2AE550 refers to a different address."
+  }
+}

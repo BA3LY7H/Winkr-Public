@@ -1,0 +1,118 @@
+{
+  "scope": "Selector18 first-record dispatcher termination audit; conservative ctree control-flow abstraction, not execution of captured code",
+  "date": "2026-10-01",
+  "ctree_nodes": 994,
+  "product_states": 6846,
+  "queue_empty": true,
+  "tracked_local_indexes": [
+    233,
+    234,
+    235,
+    279,
+    282,
+    287,
+    288,
+    357,
+    363,
+    4
+  ],
+  "return_rows": [
+    {
+      "ea": "0x7ff697b9d8c7",
+      "status": 1027,
+      "event_mask": 0,
+      "input_restore_count": 0
+    },
+    {
+      "ea": "0x7ff697b9d8d9",
+      "status": 0,
+      "event_mask": 15,
+      "input_restore_count": 1
+    },
+    {
+      "ea": "0x7ff697b9d8d9",
+      "status": 1024,
+      "event_mask": 5,
+      "input_restore_count": 1
+    },
+    {
+      "ea": "0x7ff697b9d8d9",
+      "status": 1026,
+      "event_mask": 5,
+      "input_restore_count": 1
+    },
+    {
+      "ea": "0x7ff697b9d8d9",
+      "status": 1027,
+      "event_mask": 4,
+      "input_restore_count": 1
+    },
+    {
+      "ea": "0x7ff697b9d8d9",
+      "status": 1028,
+      "event_mask": 13,
+      "input_restore_count": 1
+    },
+    {
+      "ea": "0x7ff697b9d8d9",
+      "status": 6,
+      "event_mask": 5,
+      "input_restore_count": 1
+    }
+  ],
+  "second_record_boundaries": [
+    {
+      "event_mask": 15,
+      "prior_status": 0
+    }
+  ],
+  "event_bits": {
+    "input_save": 1,
+    "output_save": 2,
+    "input_restore": 4,
+    "output_restore": 8
+  },
+  "events": [
+    {
+      "ea": "0x7ff697b9bc7c",
+      "mask": 1,
+      "expression": "qmemcpy(&wmp1_input_cbc_feedback_snapshot, &dword_7FF697BBA000, 8 * (unsigned int)(unsigned __int8)wmp1_cbc_snapshot_enabled)"
+    },
+    {
+      "ea": "0x7ff697b95dd8",
+      "mask": 4,
+      "expression": "qmemcpy(&dword_7FF697BBA000, &wmp1_input_cbc_feedback_snapshot, v42)"
+    },
+    {
+      "ea": "0x7ff697b94b0a",
+      "mask": 2,
+      "expression": "qmemcpy(&wmp1_output_cbc_feedback_snapshot, &dword_7FF697BBA000, v415)"
+    },
+    {
+      "ea": "0x7ff697b949e4",
+      "mask": 8,
+      "expression": "qmemcpy(&dword_7FF697BBA000, &wmp1_output_cbc_feedback_snapshot, v13)"
+    },
+    {
+      "ea": "0x7ff697b94947",
+      "mask": 2,
+      "expression": "qmemcpy(&wmp1_output_cbc_feedback_snapshot, &dword_7FF697BBA000, 8 * (unsigned int)(unsigned __int8)wmp1_cbc_snapshot_enabled)"
+    }
+  ],
+  "unknown_final_status_count": 0,
+  "assumptions": [
+    "Use recovered dispatcher ctree and qualified normal-stack gate",
+    "Input/output snapshot copy flag initialized1 as in adopted central entry",
+    "Restrict executed selector switch to18; use already established handler returns0/1/257",
+    "Use already established qualified gate returns0/6/1030",
+    "Track selected scalar locals only; all other conditions branch conservatively",
+    "Stop analysis when a second input snapshot restore is reached",
+    "No memory faults, exceptional transfers, callback mutation or nontermination modeled"
+  ],
+  "limits": "Queue exhaustion proves coverage of this finite abstraction, not feasibility of every row or an exhaustive native exception/concurrency/malformed-pointer model. Existing manual native evidence supports phase ordering; ctree abstraction does not replace instruction proofs. Later records may retain snapshot advancement from earlier successfully encrypted records.",
+  "reproduction_sources": [
+    "\naudit_nodes={}\naudit_labels={}\naudit_nextid=0\ndef audit_new(kind,ea,expr=None):\n global audit_nextid\n audit_nextid+=1\n node={'id':audit_nextid,'kind':kind,'ea':int(ea),'expr':expr,'next':[]}\n audit_nodes[node['id']]=node\n return node['id']\ndef audit_expr(e,nxt,ea):\n n=audit_new('expr',ea,e)\n audit_nodes[n]['next']=[nxt]\n return n\ndef audit_build(ins,nxt,brk=None,cont=None):\n h=ida_hexrays;op=ins.op\n if op==h.cit_block:\n  start=nxt\n  for child in reversed(list(ins.cblock)):start=audit_build(child,start,brk,cont)\n  if ins.label_num>=0:audit_labels[int(ins.label_num)]=start\n  return start\n n=audit_new('other',ins.ea)\n d=audit_nodes[n]\n if ins.label_num>=0:audit_labels[int(ins.label_num)]=n\n if op==h.cit_expr:\n  d.update(kind='expr',expr=ins.cexpr,next=[nxt])\n elif op==h.cit_if:\n  d.update(kind='branch',expr=ins.cif.expr,next=[audit_build(ins.cif.ithen,nxt,brk,cont),audit_build(ins.cif.ielse,nxt,brk,cont) if ins.cif.ielse else nxt])\n elif op in (h.cit_while,h.cit_do):\n  part=ins.cwhile if op==h.cit_while else ins.cdo\n  body=audit_build(part.body,n,nxt,n)\n  d.update(kind='branch',expr=part.expr,next=[body,nxt])\n  if op==h.cit_do:return body\n elif op==h.cit_for:\n  part=ins.cfor\n  step=audit_expr(part.step,n,ins.ea)\n  body=audit_build(part.body,step,nxt,step)\n  d.update(kind='branch',expr=part.expr,next=[body,nxt])\n  return audit_expr(part.init,n,ins.ea)\n elif op==h.cit_goto:d.update(kind='goto',label=int(ins.cgoto.label_num))\n elif op==h.cit_break:d.update(kind='edge',next=[brk])\n elif op==h.cit_continue:d.update(kind='edge',next=[cont])\n elif op==h.cit_return:d.update(kind='return',expr=ins.creturn.expr)\n elif op==h.cit_switch:\n  part=ins.cswitch\n  branches=[]\n  for case in part.cases:branches.append(audit_build(case,nxt,nxt,cont))\n  d.update(kind='switch',expr=part.expr,next=branches or [nxt])\n else:d.update(next=[nxt],opcode=int(op))\n return n\naudit_entry=audit_build(audit_cf.body,None)\nfor n in audit_nodes.values():\n if n['kind']=='goto':\n  n['next']=[audit_labels.get(n['label'])]\nprint('built',len(audit_nodes),'labels',len(audit_labels),'entry',audit_entry)\nprint('returns',[(n['id'],hex(n['ea'])) for n in audit_nodes.values() if n['kind']=='return'])\n",
+    "\nimport ida_lines\naudit_track=(233,234,235,279,282,287,288,357,363,4)\naudit_ix={v:i for i,v in enumerate(audit_track)}\ndef audit_value(e,vals):\n h=ida_hexrays\n if e is None:return None\n if e.op==h.cot_num:return int(e.numval())&((1<<(max(1,e.type.get_size())*8))-1)\n if e.op==h.cot_var:return vals[audit_ix[e.v.idx]] if e.v.idx in audit_ix else None\n if e.op==h.cot_cast:return audit_value(e.x,vals)\n if e.op in (h.cot_lnot,h.cot_neg,h.cot_bnot):\n  v=audit_value(e.x,vals)\n  if v is None:return None\n  return int(not v) if e.op==h.cot_lnot else (-v if e.op==h.cot_neg else ~v)\n if e.op in (h.cot_eq,h.cot_ne,h.cot_sgt,h.cot_sge,h.cot_slt,h.cot_sle,h.cot_ugt,h.cot_uge,h.cot_ult,h.cot_ule,h.cot_land,h.cot_lor,h.cot_add,h.cot_sub,h.cot_band,h.cot_bor,h.cot_xor):\n  a=audit_value(e.x,vals);b=audit_value(e.y,vals)\n  if e.op==h.cot_land and ((a is not None and not a) or (b is not None and not b)):return 0\n  if e.op==h.cot_lor and ((a is not None and a) or (b is not None and b)):return 1\n  if a is None or b is None:return None\n  if e.op in (h.cot_sgt,h.cot_sge,h.cot_slt,h.cot_sle):\n   a=a-(1<<32) if a&0x80000000 else a\n   b=b-(1<<32) if b&0x80000000 else b\n  ops={h.cot_eq:lambda:a==b,h.cot_ne:lambda:a!=b,h.cot_sgt:lambda:a>b,h.cot_ugt:lambda:a>b,h.cot_sge:lambda:a>=b,h.cot_uge:lambda:a>=b,h.cot_slt:lambda:a<b,h.cot_ult:lambda:a<b,h.cot_sle:lambda:a<=b,h.cot_ule:lambda:a<=b,h.cot_land:lambda:bool(a and b),h.cot_lor:lambda:bool(a or b),h.cot_add:lambda:a+b,h.cot_sub:lambda:a-b,h.cot_band:lambda:a&b,h.cot_bor:lambda:a|b,h.cot_xor:lambda:a^b}\n  return int(ops[e.op]())&0xFFFFFFFF\n return None\nfor n in audit_nodes.values():\n e=n['expr']\n n['text']=ida_lines.tag_remove(e.print1(audit_cf)) if e is not None else ''\n n['events']=0\n if n['kind']=='expr' and 'qmemcpy' in n['text']:\n  if n['text'].startswith('qmemcpy(&wmp1_input_cbc_feedback_snapshot'):n['events']|=1\n  if n['text'].startswith('qmemcpy(&wmp1_output_cbc_feedback_snapshot'):n['events']|=2\n  if n['text'].startswith('qmemcpy(&dword_7FF697BBA000, &wmp1_input'):n['events']|=4\n  if n['text'].startswith('qmemcpy(&dword_7FF697BBA000, &wmp1_output'):n['events']|=8\naudit_queue=[(audit_entry,(None,)*len(audit_track),0)]\naudit_seen=set()\naudit_returns=set()\naudit_unknown_state_assignments=set()\ndef audit_batch(limit=15000):\n processed=0\n while audit_queue and processed<limit:\n  item=audit_queue.pop()\n  if item in audit_seen:continue\n  audit_seen.add(item);processed+=1\n  nid,vals,events=item\n  if nid is None:continue\n  n=audit_nodes[nid];events|=n['events'];e=n['expr']\n  if n['kind']=='return':\n   audit_returns.add((hex(n['ea']),audit_value(e,vals),events));continue\n  if n['kind']=='expr' and e.op==ida_hexrays.cot_asg and e.x.op==ida_hexrays.cot_var and e.x.v.idx in audit_ix:\n   vi=e.x.v.idx;value=audit_value(e.y,vals)\n   if vi==233 and value is None:audit_unknown_state_assignments.add((hex(n['ea']),n['text']))\n   mutable=list(vals);mutable[audit_ix[vi]]=value;vals=tuple(mutable)\n  targets=n['next']\n  if n['kind']=='branch':\n   value=audit_value(e,vals)\n   if value is not None:targets=[targets[0] if value else targets[1]]\n  for target in targets:audit_queue.append((target,vals,events))\n print('processed',processed,'seen',len(audit_seen),'queue',len(audit_queue),'returns',sorted(audit_returns,key=str),'unknown state writes',len(audit_unknown_state_assignments))\nprint('snapshot events',[(hex(n['ea']),n['events'],n['text']) for n in audit_nodes.values() if n['events']])\naudit_batch(10000)\n",
+    "\naudit18_queue=[(audit_entry,(None,)*len(audit_track),0,0)]\naudit18_seen=set()\naudit18_returns=set()\naudit18_continuations=set()\naudit18_unknown=set()\ndef audit18_batch(limit=12000):\n processed=0\n while audit18_queue and processed<limit:\n  item=audit18_queue.pop()\n  if item in audit18_seen:continue\n  audit18_seen.add(item);processed+=1\n  nid,vals,events,records=item\n  if nid is None:continue\n  n=audit_nodes[nid];e=n['expr']\n  if n['events']&4:\n   records+=1\n   if records>1:\n    audit18_continuations.add((events,vals[audit_ix[357]]));continue\n  events|=n['events']\n  if n['kind']=='return':\n   value=audit_value(e,vals)\n   audit18_returns.add((hex(n['ea']),value,events,records))\n   if value is None:audit18_unknown.add(item)\n   continue\n  variants=[vals]\n  if n['kind']=='expr' and e.op==ida_hexrays.cot_asg and e.x.op==ida_hexrays.cot_var and e.x.v.idx in audit_ix:\n   vi=e.x.v.idx;values=[audit_value(e.y,vals)]\n   if vi==4 and n['ea']==0x7FF697B94180:values=[0,6,1030]\n   if vi==4 and n['ea']==0x7FF697B9CAD3:values=[0,1,257]\n   variants=[]\n   for value in values:\n    mutable=list(vals);mutable[audit_ix[vi]]=value;variants.append(tuple(mutable))\n  for variant in variants:\n   targets=n['next']\n   if n['kind']=='switch' and n['ea']==0x7FF697B95C65:targets=[targets[18]]\n   if n['kind']=='branch':\n    value=audit_value(e,variant)\n    if value is not None:targets=[targets[0] if value else targets[1]]\n   for target in targets:audit18_queue.append((target,variant,events,records))\n print('processed',processed,'seen',len(audit18_seen),'remaining',len(audit18_queue),'returns',sorted(audit18_returns,key=str),'continuations',sorted(audit18_continuations,key=str),'unknown',len(audit18_unknown))\naudit18_batch()\n"
+  ]
+}

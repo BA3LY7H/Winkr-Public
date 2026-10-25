@@ -1,0 +1,228 @@
+/*
+ * rva_defs.h � RVA definitions for WoW build 68453 (12.0.7)
+ *
+ * Auto-generated from IDA verification. Source: decrypted dump + wow_offsets.txt
+ * Build verified: 68453 | Base: 0x7FF79F350000
+ */
+
+#ifndef WINKR_RVA_DEFS_H
+#define WINKR_RVA_DEFS_H
+
+/* ============================================================================
+ * BUILD 68887 MIGRATION -- PARTIAL (source: WINKR/build/Wow_68887_full.exe dump)
+ *
+ * VERIFIED for 68887 (dump + LIVE runtime, 2026-07-24) -- fully working:
+ *   RVA_G_LUASTATE (now RIP-relative self-healing), RVA_G_LUASTATE_CREATE_COUNT,
+ *   RVA_G_TAINT_HANDLER_PTR, the sig-confirmed Lua/spell functions ("68887 sig"),
+ *   the two Eidolon validators (RET-stomp applied), and the OM-enum globals
+ *   (g_pObjectMgr, *GUID, g_GameStateFlags) -- OM enumerates live and /wl cast
+ *   on a real target, so these are CORRECT, not stale. SAFE MODE is OFF.
+ *
+ * NOT sig/dump-verifiable (harmless):
+ *   - Target/Focus/Mouseover GUID globals: no code accessors; verified live via
+ *     targeting instead. Correct on 68887.
+ *   - Security patch sites (FORBIDDEN_TBL/SECRET_*_GATE/PRECALL): unused --
+ *     ApplySecurityPatches applies only the 2 validators (taint-scope bypass).
+ *
+ * Re-derivation method: flat-mapped dump (file offset == RVA) + capstone; anchor
+ * globals via the function that writes them (e.g. g_LuaState = store after the
+ * lua_newstate call at 0x557BD2). Shift is region-dependent -- never extrapolate.
+ * ========================================================================== */
+/* PATCH DAY (2026-08-08): client 1.15.9.68940 -> 1.15.9.69109.
+ * Bumping EXPECTED_BUILD alone arms SAFE MODE on every gate below (they all
+ * compare against it), so the DLL can be injected to TAKE A DUMP with no taint
+ * write, no mod execution and no stale-pointer deref.
+ *
+ * IMPORTANT: the on-disk WowClassic.exe is ENCRYPTED — .text samples read
+ * entropy 7.96 with zero x64 prologues, vs 6.1-7.0 with hundreds in a real
+ * dump. An offline PE flat-map therefore scores 0 on every signature. The image
+ * only decrypts in memory, so patch-day re-derivation REQUIRES a runtime dump
+ * of the live process. (tools/flatmap.py is kept for unencrypted builds only.) */
+#define EXPECTED_BUILD 69109  // WoW Classic Era 1.15.9 (build 69109)
+
+/* Build the RVA set below was actually derived + verified against.
+ * When this != EXPECTED_BUILD the DLL runs in SAFE MODE: no taint-scope writes
+ * and no mod execution, because the data globals are stale (writing through a
+ * stale g_taint_handler_ptr corrupts memory; a stale g_LuaState crashes Lua).
+ * Bump this to EXPECTED_BUILD only after re-deriving the globals from a dump.
+ *
+ * 68940: mod-critical EXEC globals verified live -- g_LuaState (recipe AGREE,
+ * L resolved valid in-world), luaL_loadbuffer + lua_pcall (sig PASS), CreateCount
+ * (derived from g_LuaState+0x118). OM-enum globals verified (86 entities live).
+ * Camera verified (selfheal camera=OK). Exiting SAFE MODE enables mod execution.
+ * WINKR_CLEAR_TAINT=0 (taint-intact) so this does NOT trigger any g_taint write. */
+#define RVA_VERIFIED_BUILD 68940  // exec-critical globals verified live on 68940
+#define RVA_SET_IS_VERIFIED (RVA_VERIFIED_BUILD == EXPECTED_BUILD)
+
+/* g_taint_handler_ptr is a SEPARATE gate. RVA_G_TAINT_HANDLER_PTR is still the
+ * retail 68887 value (0x43C89F0) -- NOT re-derived for Classic. It reads 0 at
+ * that offset live, but WRITING 0 through it (the taint-clear bracket used by
+ * winkr_Call + the cast/interact/terrain actions) would corrupt whatever real
+ * Classic global lives there. Until derived, every taint-clear runs PASS-THROUGH:
+ * the wrapped function is called WITHOUT touching taint. Consequence: unit.health
+ * reads return SECRET values -> non-fatal "arithmetic on secret value" chat spam,
+ * but zero crashes / zero memory corruption. Bump once g_taint is derived. */
+#define RVA_G_TAINT_VERIFIED_BUILD 68940  // g_taint derived for Classic (0x3BDDDB0, 2352 refs)
+#define RVA_G_TAINT_IS_VERIFIED (RVA_G_TAINT_VERIFIED_BUILD == EXPECTED_BUILD)
+
+/* OM STRUCT gate. The CGObject field offsets in om_types.h beyond pos/GUID/type
+ * (auras: CGOBJ_AURA_*, AURA_OFF_*; missiles: MISSILE_OFF_*, g_MissileInFlightListHead)
+ * are all retail (67088/67186/68887) values -- NOT re-derived for Classic 68940.
+ * Bridges that WALK these structures and build Lua tables from them (winkr_UnitAuras,
+ * winkr_Missiles) read garbage on Classic. winkr_Missiles in particular reads a stale
+ * head RVA -> walks a garbage "linked list" -> forces the vendored table into the hash
+ * path with rehashing on junk -> luaH_getnum node-chain crash (0xffff... deref).
+ * Until the OM struct offsets are re-derived, those bridges return empty/nil so awful
+ * falls back to the native WoW aura API and skips missile tracking. Only pos/GUID/type
+ * are verified (live OM enum = 79 entities). Bump when om_types is re-derived. */
+#define RVA_OM_STRUCT_VERIFIED_BUILD 0  // CGObject aura/missile offsets NOT derived for Classic
+#define RVA_OM_STRUCT_IS_VERIFIED (RVA_OM_STRUCT_VERIFIED_BUILD == EXPECTED_BUILD)
+
+// === Lua API ===
+#define RVA_ACTIVE_SPEC_ID                                 0x05C7739C
+#define RVA_CAM_FOV_RAW                                    0x03F704F8
+#define RVA_CAM_MGR                                        0x03C41C50  // CLASSIC 68940 (was retail)  // 68887 WorldFrameUI singleton (live+disasm confirmed: 319 refs, [+0x4B0]=CCamera; was stale 0x04154730 0-ref)
+#define RVA_C_API_SECRET_ARG_GATE                          0x02D16940  // CLASSIC 68940 (was retail)  // 68887 sig
+#define RVA_C_API_TYPE_GATE_0                              0x03338CC3
+#define RVA_C_API_TYPE_GATE_1                              0x03338D33
+#define RVA_C_API_TYPE_GATE_2                              0x03338DAA
+#define RVA_C_API_TYPE_GATE_3                              0x03338E43
+#define RVA_C_API_TYPE_GATE_4                              0x03338EC3
+#define RVA_C_API_TYPE_GATE_5                              0x0333AAC3
+#define RVA_CombatLog_PushEventArgs                        0x01393F10
+#define RVA_DUMMYNODE                                      0x02F19E70  // 68940 Classic: luaH_new@0x2D21FE0 lea [rip+0x1f7e30] -> 0x2F19E70, written as empty-table node. (retail 68887 was 0x035E1780 -- stale value pointed empty winkr tables at garbage -> luaH_getnum -1 crash)
+#define RVA_G_TAINT_GC_SOURCE                              0x03BDDDC8  // 68940: GC-object taint source. WoW luaC_link @0x2D24DF0 stamps new obj gc_taint = *this when *g_taint(0x3BDDDB0)!=0. Adjacent to RVA_G_TAINT_HANDLER_PTR.
+#define RVA_FORBIDDEN_TBL_0                                0x03342BCC
+#define RVA_FORBIDDEN_TBL_1                                0x03342D8B
+#define RVA_FORBIDDEN_TBL_2                                0x03342E4B
+#define RVA_FORBIDDEN_TBL_3                                0x03342F28
+#define RVA_FORBIDDEN_TBL_4                                0x033430B2
+#define RVA_FORBIDDEN_TBL_5                                0x03343588
+#define RVA_FORBIDDEN_TBL_6                                0x033436DE
+#define RVA_FORBIDDEN_TBL_7                                0x0334379C
+#define RVA_FORBIDDEN_TBL_8                                0x03343E5F
+#define RVA_G_LUASTATE                                     0x05B3C1D8  // CLASSIC 68940 (was retail)  // 68887 dump-verified: lua_newstate caller store, 302 refs (was 68453 0x06481458)
+#define RVA_G_LUASTATE_CREATE_COUNT                        0x063F1BB0  // 68887 dump-verified: inc after lua_newstate (was 0x05A57420)
+#define RVA_G_P_WORLD_FRAME                                0x067BDBD8  // 68887 world/map base ptr (10 trace sites deref it: [base+0x20]=mapIndex, [base+idx*8+0x10]=intersect context). was stale 0x05E24038 (0 refs) -> TraceLine fail-safe -> los always false
+#define RVA_G_TAINT_HANDLER_PTR                            0x03BDDDB0  // g_taint_handler_ptr (g_pCurrentTaint) 68940: cross-anchor derived (c_api_secret_arg_gate cmp-vs-0 @0x2D16963, lua_pushboolean first-read @0x2D17E7B stamps TValue+0x10, lua_newstate default-write, is_value_not_secret/luaG_secreterror cmp-vs-0), 2352 rip-refs (dominant). retail 68887 was 0x043C89F0
+#define RVA_HANDLE_TERRAIN_CLICK                           0x01C06240  // 68887 sig
+#define RVA_INTERACT_UNIT                                  0x01F10F60  // 68887 sig
+#define RVA_IS_VALUE_NOT_SECRET                            0x02D17980  // CLASSIC 68940 (was retail)  // 68887 sig
+#define RVA_LUAG_SECRETERROR                               0x02D14DB0  // CLASSIC 68940 (was retail)  // 68887 sig
+#define RVA_LUAH_NEW                                       0x02D21FE0  // CLASSIC 68940 (was retail)  // 68887 sig
+#define RVA_LUAL_LOADBUFFER                                0x02E86DB0  // CLASSIC 68940 (was retail)  // 68887 sig
+#define RVA_LUA_NEWSTATE                                   0x02D24010  // CLASSIC 68940 (was retail)  // 68887 sig
+#define RVA_LUA_PCALL                                      0x02D17D80  // CLASSIC 68940 (was retail)  // 68887 sig
+#define RVA_LUA_PUSHBOOLEAN                                0x02D17E70  // CLASSIC 68940 (was retail)  // 68887 sig
+#define RVA_LUA_SETSECRET                                  0x00530890
+#define RVA_PRECALL_C_CCLOSURE                             0x0333BA9B
+#define RVA_PRECALL_C_LUAFUNC                              0x0333B9C6
+#define RVA_PRECALL_LUA_CCLOSURE                           0x0333BA9B
+#define RVA_PRECALL_LUA_LUAFUNC                            0x0333B9C6
+#define RVA_PRECALL_V1_C_CCLOSURE                          0x0333B79C
+#define RVA_PRECALL_V1_C_LUAFUNC                           0x0333B6C9
+#define RVA_RESOLVER_CANCALL_BYPASS                        0x004F9709
+#define RVA_RESOLVER_LOCKDOWN_BYPASS                       0x004F973B
+#define RVA_RETADDR_CHECK                                  0x001D0580  // CLASSIC 68940 Eidolon validator (24 callers, RE-derived)  // 68887 caller-validator (Eidolon): 0x1D7E80..0x1D8118, faults movzx eax,[r10] @0x1D8110; 24 callers all discard ret -> entry RET-stomp safe. Re-derived from crash dump (was 68453 0x188EC0)
+#define RVA_SECRET_KEY_GATE_0                              0x03342BE2
+#define RVA_SECRET_KEY_GATE_1                              0x033430CB
+#define RVA_SECRET_KEY_GATE_2                              0x033435AC
+// Secret-value taint-PROPAGATION gates (68887 dump-verified via tools/secret_gates.py).
+// Each is `test byte[reg+0x11],4; je` guarding a call to the taint-propagation helper
+// (luaG_taintpropagate 0x33E4FD0/0x33E4FF0) inside a Lua VM leaf value-op
+// (luaO_arith / luaV_lessthan / luaV_tonumber / luaV_tostring / boolean+length ops).
+// Flipping imm 0x04->0x00 forces the je (skip-propagate) so tainted mod code's COMPUTED
+// values are not re-marked secret -> breaks the chain that raises "arithmetic on a secret
+// number value" when a rotation reads unit.health/power. Behaviour-identical for WoW's own
+// UNTAINTED code (context bit 4 already 0 -> je already taken). EXCLUDES the settable gate
+// 0x33E207D (secret-value-as-table-key store; flipping it crashes -> NULL node deref).
+// Re-derive per build: python tools/secret_gates.py  (prints the 5 gate RVAs + veto check).
+#define RVA_SECRET_TAINT_GATE_0                            0x033D8EDD  // 68887 luaO_arith value-op propagate-gate
+#define RVA_SECRET_TAINT_GATE_1                            0x033D900F  // 68887 value-op propagate-gate (arith/concat)
+#define RVA_SECRET_TAINT_GATE_2                            0x033D939D  // 68887 value-op propagate-gate (compare)
+#define RVA_SECRET_TAINT_GATE_3                            0x033D95AB  // 68887 value-op propagate-gate (tonumber/len)
+#define RVA_SECRET_TAINT_GATE_4                            0x033D98C6  // 68887 value-op propagate-gate (boolean test)
+// secret_val_gate: 68453 dump-verified (cmp byte[reg+9],0; je -> luaG_secreterror), 46 sites
+#define RVA_SECRET_VAL_GATE_0                   0x03468479
+#define RVA_SECRET_VAL_GATE_1                   0x03468803
+#define RVA_SECRET_VAL_GATE_2                   0x03469103
+#define RVA_SECRET_VAL_GATE_3                   0x034691A5
+#define RVA_SECRET_VAL_GATE_4                   0x034698CD
+#define RVA_SECRET_VAL_GATE_5                   0x03469942
+#define RVA_SECRET_VAL_GATE_6                   0x03469A28
+#define RVA_SECRET_VAL_GATE_7                   0x03469AA2
+#define RVA_SECRET_VAL_GATE_8                   0x03469BC9
+#define RVA_SECRET_VAL_GATE_9                   0x03469CFC
+#define RVA_SECRET_VAL_GATE_10                  0x03469E52
+#define RVA_SECRET_VAL_GATE_11                  0x0346A09A
+#define RVA_SECRET_VAL_GATE_12                  0x0346A2C9
+#define RVA_SECRET_VAL_GATE_13                  0x0346A6F9
+#define RVA_SECRET_VAL_GATE_14                  0x0346A7A1
+#define RVA_SECRET_VAL_GATE_15                  0x0346A890
+#define RVA_SECRET_VAL_GATE_16                  0x0346A92D
+#define RVA_SECRET_VAL_GATE_17                  0x0346A99B
+#define RVA_SECRET_VAL_GATE_18                  0x0346AA08
+#define RVA_SECRET_VAL_GATE_19                  0x0346AAA3
+#define RVA_SECRET_VAL_GATE_20                  0x0346AB13
+#define RVA_SECRET_VAL_GATE_21                  0x0346C6C7
+#define RVA_SECRET_VAL_GATE_22                  0x0346C7E6
+#define RVA_SECRET_VAL_GATE_23                  0x0346C95E
+#define RVA_SECRET_VAL_GATE_24                  0x0346DA63
+#define RVA_SECRET_VAL_GATE_25                  0x0346E66A
+#define RVA_SECRET_VAL_GATE_26                  0x0346E7F0
+#define RVA_SECRET_VAL_GATE_27                  0x0346E9A0
+#define RVA_SECRET_VAL_GATE_28                  0x0346F341
+#define RVA_SECRET_VAL_GATE_29                  0x0346F3ED
+#define RVA_SECRET_VAL_GATE_30                  0x0346F467
+#define RVA_SECRET_VAL_GATE_31                  0x0346F989
+#define RVA_SECRET_VAL_GATE_32                  0x0347067A
+#define RVA_SECRET_VAL_GATE_33                  0x03470844
+#define RVA_SECRET_VAL_GATE_34                  0x034709F5
+#define RVA_SECRET_VAL_GATE_35                  0x034712F5
+#define RVA_SECRET_VAL_GATE_36                  0x0347137D
+#define RVA_SECRET_VAL_GATE_37                  0x034713EB
+#define RVA_SECRET_VAL_GATE_38                  0x034719E6
+#define RVA_SECRET_VAL_GATE_39                  0x03472463
+#define RVA_SECRET_VAL_GATE_40                  0x03472484
+#define RVA_SECRET_VAL_GATE_41                  0x0347264D
+#define RVA_SECRET_VAL_GATE_42                  0x03472BFB
+#define RVA_SECRET_VAL_GATE_43                  0x03472C4C
+#define RVA_SECRET_VAL_GATE_44                  0x03472D94
+#define RVA_SECRET_VAL_GATE_45                  0x03472DC9
+#define RVA_SECRET_VAL_GATE_COUNT               46
+#define RVA_SPELL_CAST_PARAMS_VERSION                      0x03F21808
+#define RVA_SPELL_CLICK_CONTEXT                            0x03F21930
+#define RVA_SPELL_C_CASTSPELL_WRAPPER                      0x024AFAE0
+#define RVA_SPELL_C_CAST_GUID_DIRECT                       0x01BF7890  // 68887 sig
+#define RVA_SPELL_C_CAST_GUID_IMPL                         0x01C5A8B0  // 68887 sig
+#define RVA_SPELL_C_GET_LOCAL_MANAGER                      0x005224A0
+#define RVA_SPELL_STOP_TARGETING                           0x01AD1FA0  // CLASSIC 68940 (was retail)  // 68887 sig (offline scorecard: was stale 0x01C9FB70 -> mid-instruction garbage; sig unique-matches here)
+#define RVA_VALIDATE_CFUNC_PTR                             0x0030EB70  // CLASSIC 68940 Eidolon validator (9 callers, RE-derived)  // 68887 C-func-ptr whitelist (Eidolon): range-checks ptr vs [base,base+size) global @rip+0x4106D96; out-of-range -> deliberate movzx eax,[NULL] crash @0x31FC00. Our winkr_ bridges are outside .text -> crash on first call. 9 callers all discard ret -> entry RET-stomp safe. Re-derived from crash dump (was 68453 0x2C53A0)
+#define RVA_WORLDFRAME_PROJECT_POINT                       0x01C1B850  // CLASSIC 68940 (was retail)  // 68887 sig
+#define RVA_WORLD_INTERSECT                                0x0147EC00  // CLASSIC 68940 (was retail)  // 68887 sig
+#define RVA_WOWGUID_TO_STRING                              0x02D85720  // CLASSIC 68940 (was retail)  // 68887 sig
+#define RVA_g_pEntityHandleBuckets                         0x0413FC60  // 68887 g_pEntityRegistry base (872 lea xrefs; ClntObjMgr_GetRegistry). was 0x03EB9C60
+#define RVA_g_pObjectMgr                                   0x05D3E480  // CLASSIC 68940 (was retail)  // 68887 (was stale 0x05C4E7F0 -> count=1 sentinel = 0-objects). accessor 0x176C38C: mov rax,[rip]; [rax+8]=entries; [rax+0x10]=count; 0x3FFFFFFF walk
+#define RVA_g_pRealObjectMgr                               0x05D3E480  // CLASSIC 68940 (was retail)  // 68887 same flat all-entities RecordSet manager. was 0x05C4E7F0
+#define RVA_g_activePlayerUnit                             0x03C87AD0  // CLASSIC 68940 (was retail)  // 68887 active-player object ptr (GetActivePlayer: mov rax,[rip]; test; cmove rax,[rip]). used for ActivePlayer tagging by pointer identity
+
+// === NEED MANUAL UPDATE ===
+#define RVA_ActivePlayerGUID                               0x045E3C90  // OLD RVA - needs update
+#define RVA_FocusGUID                                      0x045E37B0  // OLD RVA - needs update
+#define RVA_MouseoverGUID                                  0x049629A0  // 68887 raw global (mouseover UnitToken resolver @0x25623BD). was stale 0x04683478 (zeroed)
+#define RVA_NpcTargetGUID                                  0x045E37C0  // OLD RVA - needs update
+#define RVA_SPELL_TARGETING_FLAGS                          0x0418AD74  // OLD RVA - needs update
+#define RVA_SPELL_TARGETING_GUID                           0x045F7290  // OLD RVA - needs update
+#define RVA_TargetGUID                                     0x045E3770  // OLD RVA - needs update
+#define RVA_WORLD_ORIGIN_BIAS                              0x0484AFDC  // OLD RVA - needs update
+#define RVA_g_CLEU_CurrentEventEntry                       0x05C6B2F8  // OLD RVA - needs update
+#define RVA_g_GameStateFlags                               0x0411BCA0  // CLASSIC 68940 (was retail)  // 68887 u16, bit 0x200=in-world (verified @0x1E4FA4 'and ebp,0x200' + @0x534543 'bt eax,9'). was stale 0x04683470
+#define RVA_g_MissileInFlightListHead                      0x0418AEE8  // OLD RVA - needs update
+#define RVA_g_pZoneMapContext                              0x05C59928  // OLD RVA - needs update
+
+// === Security patch counts ===
+#define RVA_FORBIDDEN_TBL_COUNT     9
+#define RVA_SECRET_KEY_GATE_COUNT    3
+#define RVA_C_API_TYPE_GATE_COUNT    6
+
+#endif /* WINKR_RVA_DEFS_H */

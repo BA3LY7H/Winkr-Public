@@ -1,0 +1,282 @@
+{
+  "date": "2026-09-30",
+  "scope": "shared dispatcher static encrypt core for selector18 response, not server-side logic",
+  "output_pure_source": "v106 = __ROL4__(\n                     (dword_7FF697BBA004 + 365685905) ^ (dword_7FF697BBA000 - 1497288132),\n                     dword_7FF697BBA004 - 111);\n            v107 = 2 * ~(v106 & 0xD612707E)\n                 - (v106 & 0xD612707E)\n                 - 4 * (~v106 & 0x1612707E)\n                 + (v106 | 0xD612707E)\n                 - 1406869251;\n            v108 = __ROL4__(v107 ^ (dword_7FF697BBA004 + 365685905), v107) - 660532791;\n            v109 = __ROL4__(v108 ^ v107, v108) + 1014243751;\n            v110 = __ROL4__(v109 ^ v108, v109);\n            v111 = 8 * (v110 & 0x1955E7B)\n                 - 2 * (v110 & 0x5E6AA184)\n                 - 7 * (v110 ^ 0x5E6AA184)\n                 + 4 * (v110 ^ 0x21955E7B)\n                 - 4 * (~v110 & 0x21955E7B)\n                 + 8 * (~v110 & 0x1E6AA184);\n            v112 = __ROL4__(v111 ^ v109, v111) + 878744182;\n            v113 = __ROL4__(v112 ^ v111, v112) + 1433706364;\n            v114 = __ROL4__(v113 ^ v112, v113) + 1934650103;\n            v115 = ((loc_7FF697BBADF8 - 914415791) | 0x4B53CF87)\n                 + ((loc_7FF697BBADF8 - 914415791) & 0xB4AC3078)\n                 - 11 * ((loc_7FF697BBADF8 - 914415791) & 0x4B53CF87)\n                 - 11 * (~(loc_7FF697BBADF8 - 914415791) & 0x4B53CF87)\n                 + ~(loc_7FF697BBADF8 - 914415791);\n            v116 = ((((v115 - 929961351) | 0x183C073)\n                   + 3 * ((v115 - 929961351) & 0x183C073)\n                   + 2 * ((v115 - 929961351) & 0x7E7C3F8C)\n                   + ~(2 * v115 - 1859922702)\n                   - 105328137)\n                  ^ 0xC23F2D46)\n                 + loc_7FF697BBADF8\n                 - 914415791\n                 + 105328137\n                 - (v115\n                  - 929961351)\n                 + __ROL4__(v114 ^ v113, v114)\n                 - 1505949358;\n            v117 = __ROL4__(\n                     ~(~v114 | v116)\n                   + 6 * (~v114 & v116)\n                   + 8 * (v116 & v114)\n                   - 5 * (~v114 | v116)\n                   - 3 * (v116 ^ ~v114)\n                   + 8 * ~(v114 | v116),\n                     v116)\n                 - 1011008155;\n            v118 = __ROL4__(v117 ^ v116, v117) - 1304068246;\n            v119 = __ROL4__(v118 ^ v117, v118);\n            v230 = 3 * (~v119 & 0x745D8CDD)\n                 + 7 * (v119 ^ 0x8BA27322)\n                 + 2 * (v119 & 0xBA27322)\n                 - 6 * (v119 & 0x745D8CDD)\n                 - 3 * (~v119 & 0x8BA27322)\n                 - 3 * ~v119;\n            v120 = __ROL4__(7 * ~(~v118 | v230) + (v118 & v230) + 6 * (v230 & ~v118) - 5 * (v118 ^ v230) - v118, v230);\n            v121 = 8 * ~v120\n                 + v120\n                 + 1\n                 + 3 * ~(v120 & 0x29D8C691)\n                 + 2 * (v120 & 0x29D8C691)\n                 - 2 * (v120 & 0x5627396E)\n                 - 10 * (~v120 & 0x5627396E)\n                 - 9 * (~v120 & 0x29D8C691);\n            v122 = __ROL4__(\n                     2 * (v121 & ~v230) + 2 * (v121 & v230) + ~(v230 | v121) + ~(v121 & v230) + 2 * ~(~v230 | v121) + 2,\n                     v121);\n            v123 = __ROL4__((v122 - 690481024) ^ v121, v122) - 1243158984;\n            v124 = __ROL4__(v123 ^ (v122 - 690481024), v123);\n            v125 = ((*(&loc_7FF697BBADF8 + 1) - 267979878) ^ 0x6A1BCB52) - *(&loc_7FF697BBADF8 + 1) + v124 - 213998273;\n            v126 = __ROL4__(\n                     v125 ^ v123,\n                     ((*(&loc_7FF697BBADF8 + 4) - 102) ^ 0x52) - *(&loc_7FF697BBADF8 + 4) + v124 + 63);\n            v127 = __ROL4__((v126 + 1328090688) ^ v125, v126) - 654992491;\n            v128 = __ROL4__(v127 ^ (v126 + 1328090688), v127) - 1807553314;\n            v129 = __ROL4__(v128 ^ v127, v128) + 1575698546;\n            v130 = __ROL4__(v129 ^ v128, v129) + 621898256;\n            v131 = __ROL4__(v130 ^ v129, v130) + 452460610;\n            v132 = __ROL4__(v131 ^ v130, v131);\n            v133 = (~v132 & 0xF933AE54)\n                 + 3 * (v132 & 0x6CC51AB)\n                 + 3 * (v132 & 0xF933AE54)\n                 - 2 * v132\n                 + (v132 | 0xF933AE54)\n                 + (v132 ^ 0x6CC51AB)\n                 + 1;\n            v134 = ~(dword_7FF697BBAE00 - 736130998);\n            v135 = -11 * ((dword_7FF697BBAE00 - 736130998) & 0xFA83DA95)\n                 + ((dword_7FF697BBAE00 - 736130998) | 0xFA83DA95)\n                 + ((dword_7FF697BBAE00 - 736130998) & 0x57C256A)\n                 - 11 * (v134 & 0xFA83DA95);\n            v136 = v135 + v134 - 1012243352;\n            v137 = v135 + v134 - 1992109534;\n            v138 = (11 * (dword_7FF697BBAE00 | (dword_7FF697BBAE00 - 736130998) ^ 0x7F790FEF)\n                  + -11 * (dword_7FF697BBAE00 & ((dword_7FF697BBAE00 - 736130998) ^ 0x7F790FEF))\n                  - 9 * (((dword_7FF697BBAE00 - 736130998) ^ 0x7F790FEF) & ~dword_7FF697BBAE00)\n                  - (dword_7FF697BBAE00 ^ (dword_7FF697BBAE00 - 736130998) ^ 0x7F790FEF)\n                  - 11 * ~(~dword_7FF697BBAE00 | (dword_7FF697BBAE00 - 736130998) ^ 0x7F790FEF))\n                 ^ v136\n                 ^ (v135 + v134 - 1118828287);\n            v139 = v138 + v136 - 2031219739;\n            v140 = __ROL4__(v133 ^ v131, v133) - 2125622254;\n            a1 = __ROL4__(v140 ^ v133, v140)\n               + v134\n               + v135\n               + (~v137 | v139)\n               + 3 * ~(v137 | v139)\n               + 3 * (v139 & ~v137)\n               - (v137 & v139)\n               + v138\n               + v134\n               + v135\n               - 1012243352\n               - 2031219739\n               - 3 * ~v137\n               - 1012243352\n               + 1540716759;\n            a2 = HIBYTE(v140);\n            *",
+  "native_seed_refs": [
+    [
+      "0x7ff697b97b9b",
+      "mov     ecx, dword ptr cs:loc_7FF697BBADF8"
+    ],
+    [
+      "0x7ff697b9837a",
+      "mov     eax, dword ptr cs:loc_7FF697BBADF8+4"
+    ]
+  ],
+  "single_input_add_proofs": [
+    {
+      "local": "v107",
+      "input": "v106",
+      "expression": "2 * ~(v106 & 0xD612707E)\n                 - (v106 & 0xD612707E)\n                 - 4 * (~v106 & 0x1612707E)\n                 + (v106 | 0xD612707E)\n                 - 1406869251",
+      "add_constant": "0x29ed8f81",
+      "proof": "unsat"
+    },
+    {
+      "local": "v111",
+      "input": "v110",
+      "expression": "8 * (v110 & 0x1955E7B)\n                 - 2 * (v110 & 0x5E6AA184)\n                 - 7 * (v110 ^ 0x5E6AA184)\n                 + 4 * (v110 ^ 0x21955E7B)\n                 - 4 * (~v110 & 0x21955E7B)\n                 + 8 * (~v110 & 0x1E6AA184)",
+      "add_constant": "0x5e6aa184",
+      "proof": "unsat"
+    },
+    {
+      "local": "v230",
+      "input": "v119",
+      "expression": "3 * (~v119 & 0x745D8CDD)\n                 + 7 * (v119 ^ 0x8BA27322)\n                 + 2 * (v119 & 0xBA27322)\n                 - 6 * (v119 & 0x745D8CDD)\n                 - 3 * (~v119 & 0x8BA27322)\n                 - 3 * ~v119",
+      "add_constant": "0x8ba27322",
+      "proof": "unsat"
+    },
+    {
+      "local": "v121",
+      "input": "v120",
+      "expression": "8 * ~v120\n                 + v120\n                 + 1\n                 + 3 * ~(v120 & 0x29D8C691)\n                 + 2 * (v120 & 0x29D8C691)\n                 - 2 * (v120 & 0x5627396E)\n                 - 10 * (~v120 & 0x5627396E)\n                 - 9 * (~v120 & 0x29D8C691)",
+      "add_constant": "0x29d8c691",
+      "proof": "unsat"
+    },
+    {
+      "local": "v125",
+      "input": "v124",
+      "expression": "((*(&loc_7FF697BBADF8 + 1) - 267979878) ^ 0x6A1BCB52) - *(&loc_7FF697BBADF8 + 1) + v124 - 213998273",
+      "add_constant": "0x793151a7",
+      "proof": "unsat"
+    },
+    {
+      "local": "v133",
+      "input": "v132",
+      "expression": "(~v132 & 0xF933AE54)\n                 + 3 * (v132 & 0x6CC51AB)\n                 + 3 * (v132 & 0xF933AE54)\n                 - 2 * v132\n                 + (v132 | 0xF933AE54)\n                 + (v132 ^ 0x6CC51AB)\n                 + 1",
+      "add_constant": "0xf933ae54",
+      "proof": "unsat"
+    },
+    {
+      "local": "v135",
+      "input": "v134",
+      "expression": "-11 * ((dword_7FF697BBAE00 - 736130998) & 0xFA83DA95)\n                 + ((dword_7FF697BBAE00 - 736130998) | 0xFA83DA95)\n                 + ((dword_7FF697BBAE00 - 736130998) & 0x57C256A)\n                 - 11 * (v134 & 0xFA83DA95)",
+      "add_constant": "0x6d37535a",
+      "proof": "sat"
+    }
+  ],
+  "seed_globals": {
+    "dword_7FF697BBA000": 2080104183,
+    "dword_7FF697BBA004": 2542513448,
+    "loc_7FF697BBADF8": 3845427762,
+    "dword_7FF697BBAE00": 3297767455,
+    "GLOBAL_ADFC_DWORD": 2391874088,
+    "GLOBAL_ADFC_BYTE": 40
+  },
+  "output_subkeys": [
+    2797679164,
+    365685905,
+    703434625,
+    3634434505,
+    1014243751,
+    1584046468,
+    878744182,
+    1433706364,
+    1934650103,
+    2559158413,
+    3283959141,
+    2990899050,
+    2342679330,
+    702072465,
+    3604486272,
+    3051808312,
+    2033275303,
+    1328090688,
+    3639974805,
+    2487413982,
+    1575698546,
+    621898256,
+    452460610,
+    4180913748,
+    2169345042,
+    2584747019
+  ],
+  "output_subkeys_sha256": "1941a129aef01b91e181b178e1919daae773acbec4c497f5a46e03bb2842e08f",
+  "two_input_xor_proofs": [
+    {
+      "name": "v117_arg",
+      "expression": "\n                     ~(~v114 | v116)\n                   + 6 * (~v114 & v116)\n                   + 8 * (v116 & v114)\n                   - 5 * (~v114 | v116)\n                   - 3 * (v116 ^ ~v114)\n                   + 8 * ~(v114 | v116)",
+      "dependencies": [
+        "v114",
+        "v116"
+      ],
+      "xor_proof": "unknown"
+    },
+    {
+      "name": "v120_arg",
+      "expression": "7 * ~(~v118 | v230) + (v118 & v230) + 6 * (v230 & ~v118) - 5 * (v118 ^ v230) - v118",
+      "dependencies": [
+        "v118",
+        "v230"
+      ],
+      "xor_proof": "unknown"
+    },
+    {
+      "name": "v122_arg",
+      "expression": "\n                     2 * (v121 & ~v230) + 2 * (v121 & v230) + ~(v230 | v121) + ~(v121 & v230) + 2 * ~(~v230 | v121) + 2",
+      "dependencies": [
+        "v121",
+        "v230"
+      ],
+      "xor_proof": "unsat"
+    }
+  ],
+  "algebraic_xor_proofs": [
+    {
+      "target": "v117 rotate input",
+      "definition": "A=x&y,B=x&~y,C=~x&y,D=~(x|y)",
+      "partition_sum": "B+6C+8A-5(A+C+D)-3(A+D)+8D=B+C=x^y",
+      "solver": "previous timeout remains unknown; algebraic proof independently closes identity modulo32"
+    },
+    {
+      "target": "v120 rotate input",
+      "definition": "same partition",
+      "partition_sum": "7B+A+6C-5(B+C)-(A+B)=B+C=x^y",
+      "solver": "previous timeout remains unknown; algebraic proof independently closes identity modulo32"
+    }
+  ],
+  "rc5_description": "Unrolled8-byte RC5-32/12-compatible encryption core with26 fixed captured-state subkeys. Original user-key byte length/material not established from the expanded constants. Do not equate this schedule with separately expanded selector32 key.",
+  "rotate_count_proofs": {
+    "first": "365685905 modulo32 =17; -111 modulo32 =17, so first rotate count equals whitenedB low5 bits",
+    "eighthB": "capturedADFCbyte40: (((40-102)^82)-40+63) modulo32=7; S16=793151A7 low5bits7. Thus native count=v124+7 matches whitenedA8=v125."
+  },
+  "padding_count_proof": {
+    "expression": "(~r|16)+3*(~r&FFFFFFEF)+3*(~r&16)-(r&16)-3*~r+17",
+    "precondition": "1<=r<=15, r=used&15",
+    "expected": "16-r",
+    "solver": "unsat"
+  },
+  "input_roundup_proof": {
+    "expected": "uint32(M+15)&FFFFFFF0",
+    "solver": "unsat",
+    "prevalidation_caveat": "Rounded value <= remaining_input-16 and <=400 is checked before checksum/header validator; wrapping M+15 can evade rounded-only cap for malformed M. Accepted selector18 M also equals uint16(request+2)+4, ruling out that wrap and establishing accepted M<=1024."
+  },
+  "input_span_pseudocode": "               - 3 * (HIBYTE(dword_7FF697BBA000) ^ ~(_BYTE)v151);\n            LOBYTE(v152) = ~(~(_BYTE)v151 | HIBYTE(dword_7FF697BBA000)) + 8 * ~(v151 | HIBYTE(dword_7FF697BBA000));\n            v239 = v289[11];\n            HIBYTE(dword_7FF697BBA000) = v239;\n            *v398 = v161 + v152;\n            LOBYTE(v147) = dword_7FF697BBA004 ^ v147;\n            total_length_2 = *v405;\n            LOBYTE(dword_7FF697BBA004) = total_length_2;\n            *(_BYTE *)v334 = v147;\n            LOBYTE(v159) = BYTE1(dword_7FF697BBA004) ^ v159;\n            total_length_3 = v289[13];\n            BYTE1(dword_7FF697BBA004) = total_length_3;\n            *v399 = v159;\n            LOBYTE(v155) = BYTE2(dword_7FF697BBA004) ^ v155;\n            v271 = v289[14];\n            BYTE2(dword_7FF697BBA004) = v271;\n            *v400 = v155;\n            LOBYTE(v154) = HIBYTE(dword_7FF697BBA004) ^ v154;\n            v272 = v289[15];\n            HIBYTE(dword_7FF697BBA004) = v272;\n            *v401 = v154;\n            v329 = v289 + 16;\n            HIDWORD(v284) = byte_count - 16;\n            v162 = ~*v334;\n            a3 = 9 * (~*(_BYTE *)v334 & 0xFu);\n            a4 = 10 * (v162 & 0x7FFFFFF0u);\n            a2 = 2 * (*v334 & 0x7FFFFFF0);\n            a1 = (7 * v162 + 3 * ~(*v334 & 0xF) + 2 * (*v334 & 0xF) - (_DWORD)a2 - (_DWORD)a4 - (_DWORD)a3) & 0xFFFFFFF0;\n            v285 = a1;\n            if ( (unsigned int)a1 > byte_count - 16 || (unsigned int)a1 > 0x400 )\n            {\n              v233 = 1653626827;\n            }\n            else\n            {\n              v406 = v285;\n              if ( v285 <= 0x3F0uLL )15118157 )\n                  goto LABEL_266;\n                *output_descriptor = v290;\n                v295 = v376;\n                *v335 = v310;\n                *v377 = v310;\n                *(_BYTE *)v378 = 0;\n                v418 = *v379;\n                v420 = 0x57C6A5BFA9BE29D4LL;\n                v419 = 5;\n                v4 = sub_7FF697AE6F10(&v418, 55, a3);\n                if ( v4 )\n                {\n                  if ( v4 == 1030 )\n                  {\nLABEL_260:\n                    v292 = v4;\n                    goto LABEL_261;\n                  }\n                  v288 = v4;\n                  goto LABEL_199;\n                }\n                v207 = wmp1_request_header_decode_call_wrapper(\n                         &v295,\n                         (__int64)v335,\n                         &v332,\n                         (__int64)&v341,\n                         (__int64)&v305,\n                         (__int64)&v342);\n                request_ptr = v332;\n                v291 = v341;\n                a1 = v305;\n                v306 = v305;\n                if ( (v207 & 1) != 0 )\n                {\n                  v292 = v342;\n                  goto LABEL_261;\n                }\n                v233 = 1969490239;\n              }\n            }\n            else if ( v233 <= 3672333 = 951915554;\n                  }\n                }\n                else if ( v233 <= 1976813460 )\n                {\n                  if ( v233 > 1865229218 )\n                  {\n                    if ( v233 == 1865229219 )\n                    {\n                      destination = v355 + v356;\n                      v11 = v422;\n                      v310 = *v334;\n                      if ( v11 != wmp1_fnv1a_raw_bytes(\n                                    v402,\n                                    v310 + 12LL,\n                                    (dword_7FF697BBADCC ^ (2 * (dword_7FF697BBADCC ^ 0x14C7838F) + 354830805))\n                                  - (dword_7FF697BBADCC ^ 0x14C7838F)) )\n                      {\n                        v286 = destination;\n                        v307 = v330;\n                        v287 = 1024;\n                        goto LABEL_3;\n                      }\n                      v233 = 1425794121;\n                    }\n                    else\n                    {\n                      switch ( v306 )\n                      {\n                        ",
+  "accepted_input_contract": "Command201 input I bytes start context+172. Dispatcher requires I>=17, decrypts16byte header, obtains declared M at header+12, computes Q=uint32(M+15)&FFFFFFF0, checks Q<=I-16 and Q<=400h, then Q<=3F0h; failure of stricter check returns403h. Nonzero Q is decrypted to stack RSP+400h, at most1008bytes ending7F0h inside7F8h local frame. Header validator requires M=uint16(payload+2)+4, therefore any accepted selector18 L=M<=1008 and Q covers L. No minimum144/per-field count/prefix bound follows. CRC before WORD-total validation leaves malformed wrapped M safety unproved.",
+  "gate_dependency": {
+    "wrapper_start": "0x7FF697AE6F10",
+    "wrapper_end": "0x7FF697AE83CA",
+    "graph_nodes": 705,
+    "closed_graph": true,
+    "unresolved_esp_writes": [
+      "AE755E",
+      "AE7A7F",
+      "AE7DF8"
+    ],
+    "semantic_status": "Do not claim ordinary balanced stack by generic walker which ignores these ESP writes. No byte/frame edits applied to this helper. Header-field/callback gating remains open.",
+    "captured_gate_pointer": "0x7ff6415e0ed0",
+    "constructor": "uint64(global05388 * 7FFFFF69) XOR global05390, storedcontext+108, adoptedBBC7B8",
+    "gate_first32": "669079128ae47826c6c6df0f8a03160000c6c7d60f8679290000c7c580a1f57c"
+  },
+  "proof_source": "32-bit bitvectors; arithmetic modulo32; rotations masked to low5bits. Output globals derefBBADF8DWORD, BBADFC DWORD and BYTE independently crosschecked native loads. Solver timeouts retained as unknown; two XOR identities closed by bitpartition algebra instead.",
+  "save_success": true,
+  "input_zero_gate": {
+    "wrapper": "0x7ff697ad0950",
+    "call": "0x7ff697b970a7",
+    "body": "0x7ff697b2a870",
+    "body_bytes": "4183f9007503b001c331c0",
+    "semantics": "bool(R9D==0); both wrapper paths forward original ECX in R9D. This is not an alignment predicate.",
+    "graph_nodes": 75,
+    "stack_proof": {
+      "states": 75,
+      "conflicts": [],
+      "unknown": [],
+      "returns": [
+        [
+          140697083382667,
+          0
+        ]
+      ],
+      "min": -104
+    },
+    "repair": {
+      "start": 140697083382096,
+      "end": 140697083382672,
+      "label": "selector18_input_nonzero_gate",
+      "original_bytes": "4157415641545657534883ec3889cec744242c2a33644d488d3de29e0500488d1d0b9f05004c8d35c0560f004c8d7c243049bcd12a30eb0091e988eb2d0f1f0048c744243015000000b9620000004c89fa4d89e04189f1e8c49e050024018844242bc744242c150cdd318b44242c3d5a5ef23c7e2b3d5b5ef23c74c43d2a33644d0f85f8000000c744242cddb4c532ebd9662e0f1f8400000000000f1f4400003dddb4c5320f85190100004889f94889da4d89f0e8c7cb01007d508ad27c4c66906690c6c70e0f8ac64d000080e9370f8d163c000080e828f6dfc6c1c0e850b30000e895dc0000c6c0eb80c6d5c6c34281ea3ab7d13481ee6f3a9a5f6ab7e8922101006b9b8cc8ec10423af88ac97351909066905c5154c6c2cfc7c2c099ccb40f84e574000072715978967c4f83c35083c6dd765ff6d8c7c01d0280cf0f8860f901000f8fb273000080c361c6c0a680c02e81c3f76feee5c7c04787230b4920b7a801740dc744242c6d7c8361e9f8feffffc744242c5b5ef23ce9ebfeffff48c74424304e000000488d54243049b8c82a30eb0091e988b9360000004189f1e87c9d050089c3488d0d539d0500488d157c9d05004c8d0531550f00e8f0c2010089d8eb6aa84573619090e8110a010080c2535181e913d05f0c80e83278a0e80548010081c512137173e8da370000c7c53b9fd23d0f8c83660000f6d9c7c10888691881ed4b6507300f8db8440000f6de83c6936aad0f8008af00006af883c39c80eb864b83aa0891390fb644242b4883c4385b5f5e415c415e415fc3cccccccc",
+      "sha256_before": "9dbab9ccf73e65971b97b53c44b36616b8b207eefcb0638ee5dae829978245d9",
+      "old_name": "sub_7FF697AD0950",
+      "old_type": "void()",
+      "old_comment": null,
+      "old_chunks": [
+        [
+          140697083382096,
+          140697083382668
+        ]
+      ],
+      "patches": [
+        {
+          "ea": 140697083382285,
+          "old": "7c4c",
+          "new": "eb4c",
+          "selected": 140697083382363
+        },
+        {
+          "ea": 140697083382366,
+          "old": "7351",
+          "new": "eb51",
+          "selected": 140697083382449
+        },
+        {
+          "ea": 140697083382550,
+          "old": "7361",
+          "new": "eb61",
+          "selected": 140697083382649
+        }
+      ],
+      "old_frame": {
+        "frsize": 104,
+        "frregs": 0,
+        "fpd": 0,
+        "serialized": [
+          "0d29f18008210420011102382102082002200a30f1802004c0010208",
+          "077661725f3434077661725f3344077661725f3343077661725f3338115f5f72657475726e5f61646472657373",
+          null
+        ]
+      },
+      "after": {
+        "failure": "no error",
+        "failure_ea": 18446744073709551615,
+        "pseudocode": "__int64 __fastcall selector18_input_nonzero_gate(int a1, __int64 a2, __int64 a3, __int64 a4, int a5, __int64 a6)\n{\n  unsigned int v7; // eax\n  unsigned int v8; // ebx\n  int v10; // [rsp+94h] [rbp+2Ch]\n\n  v10 = 1298412330;\n  while ( 1 )\n  {\n    while ( v10 > 1022516826 )\n    {\n      if ( v10 == 1022516827 )\n      {\n        a6 = 21;\n        HIBYTE(a5) = wmp1_body_075(98, (__int64)&a6, 0x88E99100EB302AD1uLL, a1);\n        v10 = 836570133;\n      }\n      else\n      {\n        if ( v10 != 1298412330 )\n        {\n          a6 = 78;\n          LOBYTE(v7) = wmp1_body_075(54, (__int64)&a6, 0x88E99100EB302AC8uLL, a1);\n          v8 = v7;\n          sub_7FF697AECE00(&wmp1_protected_075_seed, sub_7FF697B2A880, &byte_7FF697BC603C);\n          return v8;\n        }\n        v10 = 851817693;\n      }\n    }\n    if ( v10 != 851817693 )\n      break;\n    if ( (wmp1_decode_body_if_needed(\n            (unsigned __int8 *)&wmp1_protected_075_seed,\n            (unsigned __int8 *)sub_7FF697B2A880,\n            &byte_7FF697BC603C)\n        & 1) != 0 )\n      v10 = 1636007021;\n    else\n      v10 = 1022516827;\n  }\n  return HIBYTE(a5);\n}\n",
+        "sha256": "10ba01fcd98a812f1f8e5925de6484d9fbc0dba916679233ef88c814f3f3913e"
+      }
+    },
+    "fresh_f5": "bool __fastcall selector18_input_nonzero_gate(unsigned int size)\n{\n  bool v2; // bl\n  bool v4; // [rsp+2Bh] [rbp-3Dh]\n  int v5; // [rsp+2Ch] [rbp-3Ch]\n  _QWORD v6[5]; // [rsp+30h] [rbp-38h] BYREF\n\n  v5 = 1298412330;\n  while ( 1 )\n  {\n    while ( v5 > 1022516826 )\n    {\n      if ( v5 == 1022516827 )\n      {\n        v6[0] = 21;\n        v4 = wmp1_body_075(98, (__int64)v6, 0x88E99100EB302AD1uLL, size);\n        v5 = 836570133;\n      }\n      else\n      {\n        if ( v5 != 1298412330 )\n        {\n          v6[0] = 78;\n          v2 = wmp1_body_075(54, (__int64)v6, 0x88E99100EB302AC8uLL, size);\n          sub_7FF697AECE00(&wmp1_protected_075_seed, sub_7FF697B2A880, &byte_7FF697BC603C);\n          return v2;\n        }\n        v5 = 851817693;\n      }\n    }\n    if ( v5 != 851817693 )\n      break;\n    if ( (wmp1_decode_body_if_needed(\n            (unsigned __int8 *)&wmp1_protected_075_seed,\n            (unsigned __int8 *)sub_7FF697B2A880,\n            &byte_7FF697BC603C)\n        & 1) != 0 )\n      v5 = 1636007021;\n    else\n      v5 = 1022516827;\n  }\n  return v4;\n}\n"
+  },
+  "input_native_bound": {
+    "compare": "0x7ff697b99c50",
+    "assembly": "cmp     rax, 3F0h",
+    "source": "   *v400 = v155;\n            LOBYTE(v154) = HIBYTE(dword_7FF697BBA004) ^ v154;\n            v272 = v289[15];\n            HIBYTE(dword_7FF697BBA004) = v272;\n            *v401 = v154;\n            v329 = v289 + 16;\n            HIDWORD(v284) = byte_count - 16;\n            v162 = ~*v334;\n            a3 = 9 * (~*(_BYTE *)v334 & 0xFu);\n            a4 = 10 * (v162 & 0x7FFFFFF0u);\n            a2 = 2 * (*v334 & 0x7FFFFFF0);\n            a1 = (7 * v162 + 3 * ~(*v334 & 0xF) + 2 * (*v334 & 0xF) - (_DWORD)a2 - (_DWORD)a4 - (_DWORD)a3) & 0xFFFFFFF0;\n            v285 = a1;\n            if ( (unsigned int)a1 > byte_count - 16 || (unsigned int)a1 > 0x400 )\n            {\n              v233 = 1653626827;\n            }\n            else\n            {\n              v406 = v285;\n              if ( v285 <= 0x3F0uLL )\n                v233 = 1989884516;\n              else\n                v233 = 979207607;\n            }\n          }\n          else if ( v233 == 1039541169 )\n          {\nLABEL_65:\n            v5 = v313;\nLABEL_178:\n        ",
+    "error": 1027
+  },
+  "input_checksum": {
+    "global": "0x7ff697bbadcc",
+    "dword": "0xeb171f52",
+    "derived_seed": 0,
+    "scope": "Captured initialized global only, seed0 selects FNV helper default; not a keyed MAC."
+  },
+  "padding_iteration": {
+    "capacity_expression": "(~u_s18padding | 1) -\nu_s18padding -\nu_s18padding -\n4*(~u_s18padding & 1073741822) -\n3*If(u_s18padding & 1 == 0, 1, 0) -\n3",
+    "capacity_expected": "uint32(used+1)",
+    "capacity_solver": "unsat",
+    "iteration_expression": "2*(i_s18padding & 1) -\n6*(i_s18padding & 9223372036854775806) +\n3*(~i_s18padding & 18446744073709551614) +\n7*(i_s18padding ^ 1) -\n3*If(i_s18padding & 1 == 0, 1, 0) -\n3*~i_s18padding",
+    "iteration_expected": "uint64(i+1)",
+    "iteration_solver": "unsat",
+    "prng": "x=8253729*x+2396403 mod32; if current x0, reseed RDTSC%65535; low8 x appended only when capacity nonzero and uint32(used+1)<=capacity; increment used only on copy; iteration still advances when skipped.",
+    "source": " (__int64)&v329[v406];\n                v355 = ~HIDWORD(v284);\n                a2 = 11 * ~(HIDWORD(v284) & ~v285);\n                a4 = HIDWORD(v284) & ~v285;\n                a3 = (unsigned int)a4 + 11 * (v285 & HIDWORD(v284)) - (unsigned int)a2;\n                a1 = 9 * ~(HIDWORD(v284) | ~v285) + (_DWORD)a3 + 10 * ~(v285 | HIDWORD(v284));\n                v356 = 9 * ~(HIDWORD(v284) | ~v285) + a3 + 10 * ~(v285 | HIDWORD(v284));\n                v233 = 1865229219;\n              }\n              else if ( v233 == 230786547 )\n              {\n                v233 = 1836754441;\n              }\n              else\n              {\n                v96 = *output_descriptor;\n                v97 = ~*output_descriptor;\n                a2 = 4 * (v97 & 0x3FFFFFFEu);\n                if ( (v97 | 1)\n                   - (_DWORD)v96\n                   - (_DWORD)v96\n                   - (_DWORD)a2\n                   - 3 * (unsigned int)((*(_BYTE *)output_descriptor & 1) == 0)\n                   - 3 > v370 )\n                {\nLABEL_151:\n                  v95 = v314;\nLABEL_152:\n                  v304 = v95;\n                  a4 = 3 * (~v336 & 0xFFFFFFFFFFFFFFFEuLL);\n                  a3 = 2 * (v336 & 1) - 6 * (v336 & 0x7FFFFFFFFFFFFFFELL);\n                  a2 = a3 + a4 + 7 * (v336 ^ 1) - 3LL * ((v336 & 1) == 0) - 3 * ~v336;\n                  if ( a2 != v416 )\n                  {\n                    v327 = v304;\n                    v389 = a3 + a4 + 7 * (v336 ^ 1) - 3LL * ((v336 & 1) == 0) - 3 * ~v336;\n                    goto LABEL_181;\n                  }\n                  goto LABEL_183;\n                }\n                qmemcpy(&v258[v96], &v338, sizeof(unsigned __int8));\n                a1 = 0;\n                v371 = *output_descriptor + 1;\n                v233 = 1549223896;\n              }\n }\n          }\n          else if ( v233 == 1039541169 )\n          {\nLABEL_65:\n            v5 = v313;\nLABEL_178:\n            v303 = v5;\n            v372 = v5;\n            if ( HIDWORD(v369) == v368 )\n            {\n              v163 = *output_descriptor & 0xFLL;\n              if ( v163 )\n              {\n                a2 = 16 - v163;\n                v416 = 16 - v163;\n                v327 = v372;\n                v389 = 0;\nLABEL_181:\n                a1 = v389;\n                v336 = v389;\n                if ( v327 )\n                {\n                  v328 = v327;\n                }\n                else\n                {\n                  v164 = __rdtsc();\n                  a2 = -65535 * (unsigned int)(v164 / 0xFFFF);\n                  a1 = v164 % 0xFFFF;\n                  v328 = v164 % 0xFFFF;\n                }\n                v314 = 8253729 * v328 + 2396403;\n                dword_7FF697BBC308 = v314;\n                v338 = v314;\n                v370 = *v299;\n                if ( v370 )\n                  v233 = 331792383;\n                else\n                  v233 = 367232961;\n              }\n              else\n              {\nLABEL_183:\n                v292 = 0;\nLABEL_261:\n                v221 = v292;\n                v222 = (unsigned int *)v258;\n                v223 = v258 + 4;\n                *((_DWORD *)v258 + 1) = *(_DWORD *)v380;\n                v224 = (*output_descriptor | ~v290)\n                     + 3 * ~(v290 | *output_descriptor)\n                     + *output_descriptor\n                     + 3 * (*output_descriptor & ~v290)\n                     - (v290 & *output_descriptor)\n                     - 3 * ~v290\n                     + 1;\n                v222[3] = v224;\n                v222[2] = v221;\n                *v222 = wmp1_fnv1a_raw_bytes(\n                          v223,\n                          19 * (v224 & 0xC)\n                        + 12LL * ((unsigned int)v224 & 0xFFFFFFF3)\n                        - 11 * (v224 | 0xFFFFFFFFFFFFFFF3uLL)\n                        - 6 * ~(unsigned __int64)((unsigned int)v224 & 0xFFFFFFF3)\n                        + 7 * ~(v224 | 0xFFFFFFFFFFFFFFF3uLL)\n                        + 17 * (~v224 & 0xFFFFFFFFFFFFFFF3uLL),\n                          dword_7FF697BBADE4\n                        ^ ((dword_7FF697BBADE4 ^ 0xF3AA2A3F) - 1795179518)\n                        ^ ((dword_7FF697BBADE4 ^ 0xF3AA2A3F) - 426122356));\n                v300 = *output_descriptor;\n                v225 = ~(_BYTE)v300 & 0xF;\n                a2 = (unsigned int)(8 * v225);\n                a1 = ~v300 & 0xFFFFFFF0;\n                a4 = (unsigned __int8)v300 | 0xFFFFFFF0;\n                a3 = (unsigned int)a1 + 7 * (v300 ^ 0xF) + 2 * (v300 & 0xF) - 6 * (v300 & 0x7FFFFFF0) - (_DWORD)a4;\n                destination_4 = a3 - 7 * v225;\n                if ( destination_4 )\n                {\n                  v233 = 869960929;\n                }\n                else\n                {\n                  v29 = v300;\nLABEL_264:\n                  v321 = ",
+    "order": "SUPERSEDED INTERPRETATION: the retained LCG padding source belongs to the empty-response filler path, not an actual37byte record. Subsequent complete branch-join tracing in warden-selector18-dispatcher-return-extent-20260930.json proves a nonempty37byte selector18 report goes straight to header construction: payload_length37, FNVcount49, rawpacket53,11POSTchecksum cipher-alignment bytes and64 encryptedtotal with adequate capacity. The earlier48payload claim was incorrect; the underlying local iteration/capacity expression proofs remain valid for their own path."
+  },
+  "initial_feedback": {
+    "bytes_in_reconstructed_image": "f7defb7b28ad8b97",
+    "scope": "Embedded reconstructed initialized data, NOT evidence of live current feedback.",
+    "central_init": "B2A53E sets BBB0D0=1; B2A545..56C copies initial8bytes BBA000 to BBB0C0 and BBB0B0 before dispatcher. Dispatcher updates BBA000/004 with ciphertext. Reset/restore policy still under investigation."
+  }
+}

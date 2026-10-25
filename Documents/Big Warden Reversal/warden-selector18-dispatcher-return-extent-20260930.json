@@ -1,0 +1,283 @@
+{
+  "date": "2026-09-30",
+  "scope": "Selector18 shared dispatcher status/framing/extent followup; offline native and existing captured constants only",
+  "source_excerpts": {
+    "nonempty_handler_response": "      if ( v337 == 8 )\n                    goto LABEL_209;\n                  v233 = 2093634665;\n                }\n              }\n              else if ( v233 <= 1425794120 )\n              {\n                if ( v233 > 1410287579 )\n                {\n                  if ( v233 == 1410287580 )\n                  {\n                    v362 = 5 * (v301 & 0x1E)\n                         + 4 * (v301 & 0x3FFFFFE1)\n                         - 6 * (v301 | 0x1E)\n                         - 2 * ~(v301 | 0x1E)\n                         + 4 * (~(_BYTE)v301 & 0x1E)\n                         - 2;\n                    v320 = 0;\n                    goto LABEL_81;\n                  }\nLABEL_255:\n                  if ( *output_descriptor == v290 )\n                  {\n                    v233 = 1476852290;\n                  }\n                  else\n                  {\n                    v292 = 0;\n                    v233 = 936711224;\n                  }\n                }\n                else if ( v233 == 1380602974 )\n                {\n                  a3 = (~destination_4 | 0x10) + 3 * (~destination_4 & 0xFFFFFFEF);\n                  a2 = ~destination_4 & 0x10;\n                  v301 = a3 + 3 * a2 - (destination_4 & 0x10) - v360 + 17;\n                  a1 = *v299;\n                  if ( v300 + v301 > (unsigned int)a1 )\n                  {\n                    v288 = 1026;\nLABEL_199:\n                    v235 = 0;\n                    goto LABEL_200;\n                  }\n                  v361 = v301 & 1;\n                  if ( destination_4 == 15 )\n                    v233 = 1603454864;\n               ",
+    "status_broker": "ptr, &output_buffer);\n                          goto wmp1_request_case_05;\n                        case 0x1Au:\n                          v4 = sub_7FF697AD2E80(request_ptr, &output_buffer);\nLABEL_259:\n                          dword_7FF697BBB068 = 0;\n                          if ( v4 )\n                            goto LABEL_260;\n                          v233 = 934858297;\n                          break;\n                        case 0x1Bu:\n                          sub_7FF697AE6830(&v295, &output_buffer);\n                          goto wmp1_request_case_05;\n                        case 0x1Cu:\n                          sub_7FF697AE3F10(request_ptr, &output_buffer);\n                          goto wmp1_request_case_05;\n                        case 0x1Du:\n                          sub_7FF697AB6540(request_ptr, &output_buffer);\n                          goto wmp1_request_case_05;\n                        case 0x1Eu:\n                          sub_7FF697AD53A0(&v295, &output_buffer);\n          ",
+    "header_join": "            a3 = (unsigned int)a2 ^ v102;\n                if ( (int)v99 + v103 - (int)a3 - (int)a4 - (int)a1 <= *v299 )\n                {\n                  qmemcpy((char *)output_buffer + v99, &v339, sizeof(char));\n                  ++*output_descriptor;\n                  v5 = dword_7FF697BBC308;\n                  goto LABEL_178;\n                }\n                v233 = 1308829077;\n              }\n              else\n              {\n                v233 = 1039541169;\n              }\n            }\n          }\n          if ( v233 <= 936711223 )\n            break;\n          if ( v233 <= 979207606 )\n          {\n            if ( v233 <= 951915553 )\n            {\n              if ( v233 != 936711224 )\n                goto LABEL_75;\n              goto LABEL_261;\n            }\n            if ( v233 == 951915554 )\n            {\n              v26 = __rdtsc();\n              v27 = output_buffer;\n              v28 = *output_descriptor;\n              *output_descriptor = v28 + 1;\n              v27[v2",
+    "cleanup_and_return": "    v105[6] = BYTE2(a1);\n            *((_WORD *)v105 + 2) = a1;\n            dword_7FF697BBA000 = v140;\n            dword_7FF697BBA004 = a1;\n            v141 = v104 == 8;\n            a4 = (unsigned int)(v104 - 8);\n            if ( v141 )\n            {\n              v233 = 1976813461;\n            }\n            else\n            {\n              request = BYTE3(a1);\n              request_1 = BYTE2(a1);\n              request_2 = BYTE1(a1);\n              request_3 = a1;\n              request_4 = HIBYTE(v140);\n              request_5 = BYTE2(v140);\n              request_6 = BYTE1(v140);\n              request_7 = v140;\n              v388 = v105 + 8;\n              v322 = a4;\n              v233 = 1276412378;\n            }\n          }\n        }\n        if ( v233 <= 869960928 )\n          break;\n        if ( v233 > 885530296 )\n        {\n          if ( v233 == 885530297 )\n          {\n            wmp1_fill_bytes(v295, 0, v364);\n            v233 = 1129091958;\n          }\n          else\n          {\n            v233 = 1418022731;\n          }\n        }\n        else if ( v233 == 869960929 )\n        {\n          v360 = 3 * ~destination_4;\n          v233 = 1380602974;\n        }\n        else\n        {\n          v233 = 1217383306;\n        }\n      }\n      if ( v233 <= 813534494 )\n        break;\n      if ( v233 == 813534495 )\n      {\nLABEL_120:\n        *output_descriptor = 0;\n        wmp1_context_free(output_buffer);\nLABEL_121:\n        if ( v279 == 1 && v311 > 0xF )\n          v233 = 2142309679;\n        else\n          v233 = 666145958;\n      }\n      else\n      {\n        v364 = *v377;\n        if ( v364 )\n          v233 = 885530297;\n        else\n          v233 = 499424563;\n      }\n    }\n    if ( v233 == 625229500 )\n      goto LABEL_132;\n    if ( v233 != 761331634 )\n      break;\n    *v333 = v366;\nLABEL_107:\n    v288 = 0;\n    v235 = 1;\nLABEL_200:\n    a1 = v288;\n    v282 = v235;\n    v363 = v288;\n    if ( *(_BYTE *)v378 )\n      v233 = 841039841;\n    else\n      v233 = 1329130502;\n  }\n  return v357;\n}\n",
+    "alignment_pair": " v346;\n                  v233 = 15118157;\n                }\n                else\n                {\n                  if ( v233 != 107842354 )\n                    goto LABEL_159;\nLABEL_81:\n                  v6 = v320;\n                  v7 = __rdtsc();\n                  v8 = output_buffer;\n                  v9 = *output_descriptor;\n                  *output_descriptor = v9 + 1;\n                  v8[v9] = -109 * v7;\n                  v10 = __rdtsc();\n                  a2 = (unsigned __int64)output_buffer;\n                  a3 = (__int64)output_descriptor;\n                  a4 = *output_descriptor;\n                  *output_descriptor = a4 + 1;\n                  *(_BYTE *)(a2 + a4) = -109 * v10;\n                  a1 = (unsigned int)(v6 + 2);\n                  if ( (_DWORD)a1 == v362 )\n                  {\n                    v233 = 230786547;\n                  }\n                  else\n                  {\n                    v320 = a1;\n                    v233 = 107842354;\n                  ",
+    "capacity_setup": "     v247 = v273;\n                  v248 = v236;\n                  v386 = v407;\n                  v387 = v408;\n                  v318 = v354;\n                  v233 = 1271562492;\n                }\n              }\n              else if ( v233 <= 1380602973 )\n              {\n                if ( v233 > 1308829076 )\n                {\n                  if ( v233 > 1352076719 )\n                  {\n                    if ( v233 != 1352076720 )\n                      goto LABEL_118;\n                    v14 = *v333;\n                    v15 = byte_count_4 - v14;\n                    a2 = (unsigned __int64)v373;\n                    output_buffer = (void *)(*v373 + v14);\n                    *output_descriptor = 0;\n                    *v299 = v15;\n                    *v375 = 0;\n                    v316 = dword_7FF697BBC308;\n                    v384 = 0;\n                    while ( 2 )\n                    {\n                      a1 = v316;\n                      v381 = v384;\n                      v346 = v316;\n                      if ( v316 )\n                      {\n                        v233 = 162147902;\n                      }\n                      else\n                      {\n                ",
+    "aggregate_limit": "( v233 != 1775801589 )\n                      {\n                        v323 = v367;\nLABEL_190:\n                        dword_7FF697BBC308 = 8253729 * v323 + 2396403;\n                        a2 = dword_7FF697BBC308 % 0x60u + 15;\n                        v368 = dword_7FF697BBC308 % 0x60u + 15;\n                        v324 = 8253729 * v323 + 2396403;\n                        v325 = 0;\n                        goto LABEL_191;\n                      }\n                      a1 = 3 * ~*v333;\n                      a2 = 3 * ~(*v333 | ~v312);\n                      a3 = v312;\n                      a4 = 6 * (*v333 & ~v312);\n                      v366 = 3 * ~(v312 | *v333) + 7 * (v312 ^ *v333) + 2 * (v312 & *v333) - a4 - a2 - a1;\n                      if ( v366 <= v365 )\n                      {\n                        v233 = 761331634;\n                      }\n                      else\n                      {\n                        v288 = 0;\n                        v235 = 1;\n                        v233 = 87733939;\n                      }\n                    }\n                  }\n                  else if ( v233 > 1647656018 )\n                  {\n                    if ( v233 != 1647656019 )\n                      goto LABEL_125;\n                    v13 = v411 + v414 - v413 - v412 - v410.m128i_i64[1] - v410.m128i_i64[0];\n                    if ( !v281 )\n                      v13 = 0;\n          ",
+    "input_snapshot_before_validation": "   v207 = wmp1_request_header_decode_call_wrapper(\n                         (unsigned __int16 **)&v295,\n                         (__int64)v335,\n                         &v332,\n                         (__int64)&v341,\n                         (__int64)&v305,\n                         (__int64)&v342);\n                request_ptr = v332;\n                v291 = v341;\n                a1 = v305;\n                v306 = v305;\n                if ( (v207 & 1) != 0 )\n                {\n                  v292 = v342;\n                  goto LABEL_261;\n                }\n                v233 = 1969490239;\n              }\n            }\n            else if ( v233 <= 367232960 )\n            {\n              if ( v233 > 333094820 )\n              {\n                if ( v233 == 333094821 )\n                  goto LABEL_2;\nLABEL_209:\n                qmemcpy(\n                  &wmp1_input_cbc_feedback_snapshot,\n                  &dword_7FF697BBA000,\n                  8 * (unsigned int)(unsigned __int8)wmp1_cbc_snapshot_enabled);\n                v330 = (unsigned __int64)&v329[v406];\n                v355 = ~HIDWORD(v284);\n                a2 = 11 * ~(HIDWORD(v284) & ~size);\n                a4 = HIDWORD(v284) & ~size;\n                a3 = (unsigned int)a4 + 11 * (size & HIDWORD(v284)) - (unsigned int)a2;\n                a1 = 9 * ~(HIDWORD(v284) | ~size) + (_DWORD)a3 + 10 * ~(size | HIDWORD(v284));\n                v356 = 9 * ~(HIDWORD(v284) | ~size) + a3 + 10 * ~(size | HIDWORD(v284));\n                v233 = 1865229219;\n              }\n              else if ( v233 == 230786547 )\n              {\n                v233 = 1836754441;\n              }\n              else\n              {\n                v96 = *o",
+    "gate_abort": "   if ( v233 == 15118157 )\n                  goto LABEL_266;\n                *output_descriptor = v290;\n                v295 = v376;\n                *v335 = v310;\n                *v377 = v310;\n                *(_BYTE *)v378 = 0;\n                descriptor = *v379;\n                v420 = 0x57C6A5BFA9BE29D4LL;\n                v419 = 5;\n                v4 = wmp1_dispatch_gate_normal_stack_view(&descriptor);\n                if ( v4 )\n                {\n                  if ( v4 == 1030 )\n                  {\nLABEL_260:\n                    v292 = v4;\n                    goto LABEL_261;\n                  }\n                  v288 = v4;\n                  goto LABEL_199;\n                }\n                v207 = wmp1_request_header_decode_call_wrapper(\n                         (unsigned __int16 **)&v295,\n                         (__int64)v335,\n                         &v332,\n                         (__int64)&v341,\n                         (__int64)&v305,\n                         (__int64)&v342);\n                request_ptr = v332;\n                v291 = v341;\n                a1 = v305;\n                v306 = v305;\n                if ( (v207 & 1) != 0 )\n                {\n                  v292 = v342;\n                  goto LABEL_261;\n                }\n                v233 = 1969490239;\n              }\n            }\n            else if ( v233 <= 367232960 )\n            {\n              if ( v233 > 333094820 )\n              {\n                if ( v233 == 333094821 )\n                  goto "
+  },
+  "padding_correction": "The earlier crypto journal interpreted preheader LCG padding as the37byte record path. Native/F5 branchjoin1418022731=>LABEL255: nonempty response status0 assignsstate936711224=>directLABEL261 header construction; nonzerohandlergotoLABEL260=>LABEL261 too. A37byte report therefore headerpayload37, checksumcount49, rawpacket53,11POSTchecksumalignmentbytes,encryptedtotal64 withcapacity>=64. Preheader LCG/noise padding pertains toemptyresponse fallback, NOT actualrecord path.",
+  "alignment": {
+    "count": "p=16-(used&15) fornonzero remainder",
+    "pair_expression": "5*(p_alignment & 30) + 4*(p_alignment & 1073741793) -\n6*(p_alignment | 30) -\n2*~(p_alignment | 30) +\n4*(~p_alignment & 30) -\n2",
+    "pair_expected": "p&~1 under1..15",
+    "pair_solver": "unsat",
+    "odd_constant_global": "0x89ea8eb0",
+    "odd_constant_derived": 0,
+    "byte_source": "uint8(-109*RDTSC) separately for each tail byte",
+    "capacity_failure": "uint32(used+p)>capacity =>overall1026; arithmeticnowrap precondition required",
+    "checksum_scope": "header+12 ispayloadcount BEFOREpostchecksumtail; FNVspan excludes tail"
+  },
+  "aggregate_capacity": {
+    "layout": "calleroutputobject dataQWORD+0,usedDWORD+8,capDWORD+12; localpacket data=callerdata+oldused,used0,cap=callercap-oldused,owner0",
+    "sum_identity": "PartitionA=packet&oldused,B=packet&~oldused,C=~packet&oldused,D=~(packet|oldused):3D+7(B+C)+2A-6C-3B-3(B+D)=B+C+2A=packet+oldused mod32.",
+    "commit": "B944E9 stores aggregate;B944F0 cmpaggregate<=callerCap;B9400C loads aggregate and publishes via callerusedptr. Normal initialoldused0 + invariantoldused<=cap + packet<=cap-oldused =>aggregate<=cap andnowrap.",
+    "oversize_fallback": "Packetused>callercap orcomputedaggregate>cap skipsusedcommitbutsetsstatus0/continue1; notexplicitfailure andnotproofpacketdelivery.",
+    "host_extent": "Command201 host S=uint32(I+O+176), outputptr=context+I+176 capacityO. RequiresnonwrappingS, actualallocatedextentS and stable ownership. Centralcopiespublishedmoduleusedonlyifdispatcherstatus0; conditionalextent invariantboundsordinarycopy<=O.",
+    "malformed": "Invalidcallerused>cap subtractionunderflows; missingconstructor/allocationoverflow/ownership checks not invented."
+  },
+  "overall_status": {
+    "gate6": "v2886=>v3636=>v2876=>RSP204savedstatus(B93A02);finalB9D8B7loadssavedstatusandreturns6. Gatezeroownerplaintext/outputcleanupskipsfree stack/buffer. Doesnotreachselector18;centraldoesnotcopyoutputonstatus6.",
+    "gate1030": "Constructsstatus1030 packetwithoutselector18; ifcipher/capacity/commit succeed,overallstatus0.",
+    "handler1": "Constructsstatus1 packet; canhave37bytereport; overallstatus0 ifcompleted.",
+    "input_crc1024": "InputsnapshotB0alreadyadvancedbeforevalidation;overall1024 nooutputcipher success assumed.",
+    "rounded_input_failure1027": "HeaderdecryptionmayupdateworkingBBA000 but prepayloadrejectiondoesnotsaveB0 atLABEL209; resetnextincomingrestore usesoldB0.",
+    "output_alignment_capacity1026": "IncomingB0alreadyadvanced; ifbeforerestore/encryption thenoutgoingC0unchanged. Failure-pathmatrixfurther completeness remainsopen."
+  },
+  "native": {
+    "0x7ff697b93ff0": [
+      {
+        "ea": "0x7ff697b93ff3",
+        "asm": "jz      loc_7FF697B95A44"
+      },
+      {
+        "ea": "0x7ff697b93ff9",
+        "asm": "cmp     eax, 2D60FFB2h"
+      },
+      {
+        "ea": "0x7ff697b93ffe",
+        "asm": "jnz     loc_7FF697B9D8B7"
+      },
+      {
+        "ea": "0x7ff697b94004",
+        "asm": "mov     rax, qword ptr [rsp+7F8h+var_670]"
+      },
+      {
+        "ea": "0x7ff697b9400c",
+        "asm": "mov     ecx, dword ptr [rsp+7F8h+var_5D0]"
+      },
+      {
+        "ea": "0x7ff697b94013",
+        "asm": "mov     [rax], ecx"
+      },
+      {
+        "ea": "0x7ff697b94015",
+        "asm": "jmp     loc_7FF697B94BD9"
+      },
+      {
+        "ea": "0x7ff697b9401a",
+        "asm": "cmp     eax, 4E032594h"
+      },
+      {
+        "ea": "0x7ff697b9401f",
+        "asm": "jg      loc_7FF697B94400"
+      },
+      {
+        "ea": "0x7ff697b94025",
+        "asm": "cmp     eax, 4BFF64A5h"
+      },
+      {
+        "ea": "0x7ff697b9402a",
+        "asm": "jg      loc_7FF697B94966"
+      },
+      {
+        "ea": "0x7ff697b94030",
+        "asm": "cmp     eax, 488FCB8Ah"
+      },
+      {
+        "ea": "0x7ff697b94035",
+        "asm": "jz      loc_7FF697B95108"
+      },
+      {
+        "ea": "0x7ff697b9403b",
+        "asm": "jmp     loc_7FF697B9A388"
+      }
+    ],
+    "0x7ff697b944c0": [
+      {
+        "ea": "0x7ff697b944c4",
+        "asm": "sub     r11d, r10d"
+      },
+      {
+        "ea": "0x7ff697b944c7",
+        "asm": "add     r11d, r9d"
+      },
+      {
+        "ea": "0x7ff697b944ca",
+        "asm": "mov     r9d, r8d"
+      },
+      {
+        "ea": "0x7ff697b944cd",
+        "asm": "not     r9d"
+      },
+      {
+        "ea": "0x7ff697b944d0",
+        "asm": "and     r9d, eax"
+      },
+      {
+        "ea": "0x7ff697b944d3",
+        "asm": "add     r9d, r9d"
+      },
+      {
+        "ea": "0x7ff697b944d6",
+        "asm": "lea     r9d, [r9+r9*2]"
+      },
+      {
+        "ea": "0x7ff697b944da",
+        "asm": "and     eax, r8d"
+      },
+      {
+        "ea": "0x7ff697b944dd",
+        "asm": "add     eax, eax"
+      },
+      {
+        "ea": "0x7ff697b944df",
+        "asm": "sub     eax, r9d"
+      },
+      {
+        "ea": "0x7ff697b944e2",
+        "asm": "add     eax, r11d"
+      },
+      {
+        "ea": "0x7ff697b944e5",
+        "asm": "sub     eax, edx"
+      },
+      {
+        "ea": "0x7ff697b944e7",
+        "asm": "sub     eax, ecx"
+      },
+      {
+        "ea": "0x7ff697b944e9",
+        "asm": "mov     dword ptr [rsp+7F8h+var_5D0], eax"
+      },
+      {
+        "ea": "0x7ff697b944f0",
+        "asm": "cmp     eax, dword ptr [rsp+7F8h+var_5D8+4]"
+      },
+      {
+        "ea": "0x7ff697b944f7",
+        "asm": "jbe     loc_7FF697B9BF95"
+      },
+      {
+        "ea": "0x7ff697b944fd",
+        "asm": "mov     dword ptr [rsp+7F8h+var_750+4], 0"
+      },
+      {
+        "ea": "0x7ff697b94508",
+        "asm": "mov     [rsp+7F8h+var_7BA], 1"
+      },
+      {
+        "ea": "0x7ff697b9450d",
+        "asm": "mov     dword ptr [rsp+38h], 53AB6B3h"
+      }
+    ],
+    "0x7ff697b939da": [
+      {
+        "ea": "0x7ff697b939da",
+        "asm": "mov     [rsp+7F8h+var_7BB], 0"
+      },
+      {
+        "ea": "0x7ff697b939df",
+        "asm": "movzx   eax, [rsp+7F8h+var_7BB]"
+      },
+      {
+        "ea": "0x7ff697b939e4",
+        "asm": "mov     ecx, dword ptr [rsp+7F8h+var_750]"
+      },
+      {
+        "ea": "0x7ff697b939eb",
+        "asm": "mov     rdx, [rsp+7F8h+var_6F4+4]"
+      },
+      {
+        "ea": "0x7ff697b939f3",
+        "asm": "mov     r8d, [rsp+7F8h+var_754]"
+      },
+      {
+        "ea": "0x7ff697b939fb",
+        "asm": "mov     byte ptr [rsp+7F8h+var_770+4], al"
+      },
+      {
+        "ea": "0x7ff697b93a02",
+        "asm": "mov     dword ptr [rsp+7F8h+var_5F8+4], ecx"
+      },
+      {
+        "ea": "0x7ff697b93a09",
+        "asm": "mov     [rsp+7F8h+var_490], rdx"
+      },
+      {
+        "ea": "0x7ff697b93a11",
+        "asm": "mov     [rsp+7F8h+var_6D8], r8d"
+      }
+    ],
+    "0x7ff697b9d8b7": [
+      {
+        "ea": "0x7ff697b9d8b7",
+        "asm": "mov     eax, dword ptr [rsp+7F8h+var_5F8+4]"
+      },
+      {
+        "ea": "0x7ff697b9d8be",
+        "asm": "mov     dword ptr [rsp+7F8h+var_6B8], eax"
+      },
+      {
+        "ea": "0x7ff697b9d8c5",
+        "asm": "jmp     short loc_7FF697B9D8D2"
+      },
+      {
+        "ea": "0x7ff697b9d8c7",
+        "asm": "mov     dword ptr [rsp+7F8h+var_6B8], 403h"
+      },
+      {
+        "ea": "0x7ff697b9d8d2",
+        "asm": "mov     eax, dword ptr [rsp+7F8h+var_6B8]"
+      },
+      {
+        "ea": "0x7ff697b9d8d9",
+        "asm": "add     rsp, 7F8h"
+      },
+      {
+        "ea": "0x7ff697b9d8e0",
+        "asm": "pop     rbx"
+      },
+      {
+        "ea": "0x7ff697b9d8e1",
+        "asm": "pop     rbp"
+      },
+      {
+        "ea": "0x7ff697b9d8e2",
+        "asm": "pop     rdi"
+      },
+      {
+        "ea": "0x7ff697b9d8e3",
+        "asm": "pop     rsi"
+      },
+      {
+        "ea": "0x7ff697b9d8e4",
+        "asm": "pop     r12"
+      },
+      {
+        "ea": "0x7ff697b9d8e6",
+        "asm": "pop     r13"
+      },
+      {
+        "ea": "0x7ff697b9d8e8",
+        "asm": "pop     r14"
+      },
+      {
+        "ea": "0x7ff697b9d8ea",
+        "asm": "pop     r15"
+      },
+      {
+        "ea": "0x7ff697b9d8ec",
+        "asm": "retn"
+      }
+    ]
+  },
+  "save_success": true,
+  "central_return_excerpt": "23 = descriptor;\n            *(_DWORD *)descriptor = 49374;\n            v23[4] = 14;\n            v23[5] = v8;\n            v23[6] = v18;\n            v23[7] = v19 - v11;\n            byte_7FF697BBB0A8 = 1;\n            __halt();\n          }\n          v8 -= v18;\n          if ( !v8 )\n            goto LABEL_42;\n        }\n        v3 = 6;\n      }\n      else\n      {\nLABEL_42:\n        wmp1_cbc_snapshot_enabled = 1;\n        qmemcpy(&wmp1_output_cbc_feedback_snapshot, &dword_7FF697BBA000, 8u);\n        qmemcpy(&wmp1_input_cbc_feedback_snapshot, &dword_7FF697BBA000, 8u);\n        v24 = *(_DWORD *)(v2 + 92);\n        descriptor = v27;\n        LODWORD(v32) = v24;\n        v33 = 44;\n        v34 = 0x8BA1E53208D15CE6uLL;\n        v3 = 128;\n        if ( (unsigned __int8)wmp1_callback_buffer_resize_normal_stack_view(&descriptor) )\n        {\n          byte_7FF697BBB098 = 1;\n          v3 = wmp1_dispatch_request_call_wrapper(v2, v27, v25);\n          if ( byte_7FF697BBB098 )\n            byte_7FF697BBB098 = 0;\n          if ( (_QWORD)xmmword_7FF697BBB070 )\n            sub_7FF697AE89F0();\n          LODWORD(qword_7FF697BBB084) = 0;\n          byte_7FF697BBB08C = 0;\n          xmmword_7FF697BBB070 = 0;\n          if ( !v3 )\n          {\n            v26 = v28;\n            qmemcpy(*(void **)(v2 + 80), v27[1], v28);\n            *(_DWORD *)(v2 + 88) = v26;\n            v3 = 0;\n          }\n          goto LABEL_20;\n        }\n      }\n    }\n  }\n  else\n  {\nLABEL_14:\n    v3 = 2;\n  }\nLABEL_15:\n  if ( byte_7FF697BBB098 )\n    byte_7FF697BBB098 = 0;\n  if ( (_QWORD)xmmword_7FF697BBB070 )\n    wmp1_context_free(xmmword_7FF697BBB070);\n  LODWORD(qword_7FF697BBB084) = 0;\n  byte_7FF697BBB08C = 0;\n  xmmword_7FF697BBB070 = 0;\nLABEL_20:\n  if ( (_BYTE)v30 )\n  {\n    v9 = destination[0];\n    if ( HIDWORD(destination[1]) )\n      wmp1_fill_bytes(destination[0], 0, HIDWORD(destination[1]));\n    wmp1_context_free(v9);\n  }\n  return v3;\n}\n"
+}

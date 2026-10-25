@@ -1,0 +1,134 @@
+Talent import: CoPASnrjTdwaLTX9NnLQoJJXfwYWmZGzMmZmhZxMz0MbzMjxMAAAAAmxMzMzMzYmZAAjZmZGAAAzMbjhxM2WasttNMZZYYDwwMAAMzMzAzwA
+
+Spellbook :
+Anti-Magic Shell - Spell ID: 48707 (Defensive/Self Dispell)
+Asphyxiate - Spell ID: 221562 (Stun)
+Blinding Sleet - Spell ID: 207167 (Crowd Control)
+Chains of Ice - Spell ID: 45524 (Single Slow)
+Dark Command - Spell ID: 56222 (Taunt)
+Death and Decay - Spell ID: 43265 (AOE DOT, Cleave buff) 
+Death Grip - Spell ID: 49576 (Pull, Taunt)
+Death Pact - Spell ID: 48743 (Defensive, Self heal) 
+Death Strike - Spell ID: 49998 (RP spender, Cleave, Self Heal)
+Death's Advance - Spell ID: 48265 (Movement speed, Knockback immune, Slow immune)
+Icebound Fortitude - Spell ID 48792 (Defensive, removes stuns, stun immunity)
+Lichborne - Spell ID: 49039 (Defensive, Self Heal, Removes Fear, Fear Immune)
+Mind Freeze - Spell ID: 47528 (Interrupt)
+Raise Ally - Spell ID: 61999 (Battle Rez)
+Raise Dead - Spell ID: 46585 (Temporary Pet)
+Wraith Walk - Spell ID: 212552 (Movement, Root Immune)
+Blood Boil - Spell ID: 50842 (AOE DOT, Applies Blood Plague)
+Dancing Rune Weapon - Spell ID: 49028 (DPS Cooldown)
+Death's Caress - Spell ID: 195292 (Ranged attack, Bone Shield, Applies Blood Plague)
+Gorefiend's Grasp - Spell ID: 108199 (Mass pull, Silence)
+Heart Strike - Spell ID: 206930 (Rune Spender, RP builder, Applies Essence of the Blood queen)
+Marrowrend - Spell ID: 195182 (Rune Spender, Bone Shield)
+Vampiric Blood - Spell ID: 55233 (Defensive, Healing)
+Vampiric Strike - Spell ID: 433901 (Replaces Heart Strike, Applies Essence of the Blood queen)
+Purgatory - Spell ID: 114556 (Cheat Death, Passive) 
+Blood Draw - Spell ID: 374598 (Defensive, Passive)
+
+Buffs/Debuffs :
+Essence of the Blood queen - Spell ID: 433925 (stacking haste buff)
+Dancing Rune Weapon - Spell ID: 81256 (Damage buff)
+Bone Shield - Spell ID: 195181 (Armor)
+Hemostasis - Spell ID: 273946 (damage/healing buff)
+Death and Decay - Spell ID: 43265 (Cleaving strikes)
+Blood Plague - Spell ID: 55078 (DoT, Self Healing)
+Visceral Strength - Spell ID: 434157 (DPS, Strength Buff)
+Crimson Scourge - Spell ID: 81136 (DPS, Reduces the cost of Death and decay, Blood Plague)
+Bloodied Blade - Spell ID: 458753 (Strength Buff, Heart strike DPS increase)
+
+
+Runes and Runic Power :
+Runes are the primary resource with a maximum of six. all runes have separate cooldowns, only three can recharge at once. Each rune used generates ten runic power.
+
+Runic power (RP) serves as a secondary resource generated mainly by spending runes. It is primarily used on Death Strike for healing and functions as a second health bar that must be carefully managed. Try to aim for 35%-40% RP to make sure a Death Strike is always available, never allow this bar to hit 100% or it will waste potential Runic Power.
+
+
+Bone Shield :
+Bone Shield is a stack based mitigation effect with a maximum of twelve stacks. Stacks are generated mainly through Marrowrend or Death’s Caress and are consumed by incoming melee attacks at a rate of no more than one every 2.5 seconds. Losing all stacks significantly reduces passive mitigation. Generating stacks reduces overall runic power efficiency since Marrowrend and Death’s Caress generate less than Heart Strike. Aim to press Marrowrend when the bone shield buff has about 2-4 seconds left, If you have more than 2 runes and are at range press death's caress. 
+
+
+Defensive Cooldowns :
+Defensive cooldowns should generally be prioritized based on how much damage they mitigate per second while active, since this maximizes total mitigation. Abilities that prevent or reduce the greatest amount of damage during their duration are typically the most valuable in high damage situations.
+Anti-Magic Shell - 100% of damage taken (if magic) 
+Vampiric Blood - 30%+ of damage taken, (Increases healing and damage absorbs +30%)
+Icebound Fortitude - 30% of damage taken 
+Dancing Rune Weapon - ~30% of damage taken, (increases Parry chance additively)
+
+
+Blood Plague :
+Blood Boil should be used when a target does not have Blood Plague or when the effect is close to expiring.
+
+This priority is based on two factors. Blood Boil is the primary method for establishing initial threat on multiple targets. In addition Blood Boil drains 1102 health every 2.6 seconds, keyword: "drain" this damage also heals the player and equal amount.
+
+Blood boil should always be presses when Dancing rune weapon(Spell ID: 81256) is procced, and should also be pressed again after the cast of Dancing rune weapon(Spell ID: 49028), to stack as many Blood plagues as possible, Deaths caress can also overlap addition diseases but should only be pressed if ranged is an option. 
+
+
+Dancing Rune weapon :
+Dancing rune weapon(Spell ID: 49028) is the castable spell, that creates a copy of the players currently equipped main hand weapon and mimics every attack, and spell. DRW should always be used in conjunction with Raise dead, Marrowrend should always be pressed immediately to cap Bone shield stacks followed by blood boil to apply multiple Blood Plague debuffs.
+
+Dancing rune weapon(Spell ID: 81256) Is a passively proccable buff that increases damage and can be procced by and stacked with/by the Castable version, Blood boil can be casted multiple times to accommodate and stack as many Blood Plagues as possible per rune weapon. 
+
+
+Buff maintenance :
+Death Strike should be used when health falls below seventy percent.
+
+Marrowrend or Death’s Caress should be used when Bone Shield is close to expiring or has fewer than 6 stacks.
+
+Blood Boil should be used when a target does not have Blood Plague or when the effect is close to expiring.
+
+Heart Strike should be used while Gift of the San’layn or Vampiric Strike is active if Essence of the Blood Queen is about to expire.
+
+Death Strike should also be used when runic power exceeds 85% to avoid overcapping. Or after taking damage from a casted ability, and to keep health maintained.
+
+Marrowrend or Death’s Caress should be used to maintain Bone Shield and to stay above 5-7 stacks.
+
+Death and Decay should be used when its buffs are not active and there are at least four targets, or when Crimson Scourge is active and Visceral Strength is not active.
+
+Raise dead and Dancing rune weapon(Spell ID: 49028) should always be used together and as soon as dancing rune weapon comes of cooldown.
+
+Blood boil should always be presses when Dancing rune weapon(Spell ID: 81256) is procced, and should also be pressed again after the cast of Dancing rune weapon(Spell ID: 49028), to stack as many Blood plagues as possible, Deaths caress can also overlap addition diseases but should only be pressed if ranged is an option. 
+
+
+Effective use of Taunts :
+If a target is not attacking you but hostile towards another party member and already have blood plague, then Dark Command should be casted,
+
+If a target is not attacking you but hostile towards another party member and already have blood plague, and Dark Command is not available Death Grip should be used.
+
+If a target is not attacking you but hostile towards another party member and already have blood plague, and Dark Command is not available or Death Grip, Death's Caress should be used.
+
+Death Grip should also be used if a target uses an ability to move away from the player.
+
+
+Effective use of Crowd Control and Interrupts :
+Blood DK's main interrupt is Mind Freeze, It should be used on important tank busters, and channeled abilities. 
+
+If there is no Mind Freeze available and the target is not immune to Crowd Control or movement impairing effects, the player should wait until the last possible moments to cast Death Grip, keep in mind Death Grip has 2 charges, this should only be used to delay a cast until Mind Freeze is Available.
+
+Asphyxiate is a 5 second stun If there is no Mind Freeze available and the target is not immune to Crowd Control or movement impairing effects, the player should wait until the last possible moments to cast Asphyxiate, this should only be used to delay a cast until Mind Freeze is Available.
+
+If multiple targets are casting and they are not immune to Crowd Control or movement impairing effects, or the player takes a large amount of damage from 6 or more targets and Does not have purgatory available then Blinding Sleet should be casted.
+
+If multiple targets are casting and they are not immune to Crowd Control or movement impairing effects, or the player takes a large amount of damage from 6 or more targets and Does not have purgatory available and Blinding Sleet is on cooldown then Gorefiends Grasp should be casted.
+
+
+Clarifications:
+
+Death Strike is Optimally used when timed with damage but you should pay attention to your HP and always have enough to stay at a high HP%
+
+Heart Strike is the primary filler, and is buffed heavily by Vampiric strike. it should be constantly pressed to build Runic Power.
+
+Dancing Rune Weapon makes all Heart strikes pressed Vampiric Strike.
+
+While the guide is written using set variables and fixed %'s Blood DK requires a reactive play style and everything should be adapted to the situation, fixed %'s simply give the player and idea of what they should be aiming for to start with.
+
+
+
+
+
+
+
+
+

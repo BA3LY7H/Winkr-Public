@@ -1,0 +1,2 @@
+/* DINKR application icon resource */
+IDI_APPICON ICON "gui/assets/dinkr_icon.ico"

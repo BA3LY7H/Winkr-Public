@@ -1,0 +1,38 @@
+{
+  "input": "C:\\Users\\<user>\\Desktop\\dump\\dump.bin",
+  "image_base": "0x7FF641320000",
+  "image_size": 114941952,
+  "adck_record_count": 104,
+  "comparison_length": 96,
+  "method": "Read e_lfanew at file+0x3C, SizeOfImage at PE+0x50; walk bounds-checked 56-byte ADCK headers starting at SizeOfImage. Compare payload_offset+(target-runtime_base) for every covering record and primary image. SHA256 covers exactly 96 bytes. Independently scan mapped .pdata in 12-byte <III> records for containment.",
+  "results": [
+    {
+      "address": "0x7FF6414FBD90",
+      "primary_offset": 1949072,
+      "main_final_offset": 211391408,
+      "sha256_both": "4CCF5CD4CB56C2483B0264F3ED9461325A1E43707404938FFF74F9E663D5E158",
+      "pdata": "0x7FF647D89EE0",
+      "end_exclusive": "0x7FF6414FEE92",
+      "unwind": "0x7FF645257E64"
+    },
+    {
+      "address": "0x7FF6415DD680",
+      "primary_offset": 2872960,
+      "main_final_offset": 212315296,
+      "sha256_both": "7A01C7FB80407E72FCE8915E1AE5123C247787D664C06BBA513E4708409E4005",
+      "pdata": "0x7FF647D972FC",
+      "end_exclusive": "0x7FF6415DD6F5",
+      "unwind": "0x7FF6452670E0"
+    },
+    {
+      "address": "0x7FF6415E0550",
+      "primary_offset": 2884944,
+      "main_final_offset": 212327280,
+      "sha256_both": "0211D149F284128D0277BD201A7516A1B35B9D29B5A0EA2E657E8CBBF9E29C36",
+      "pdata": "0x7FF647D97470",
+      "end_exclusive": "0x7FF6415E095B",
+      "unwind": "0x7FF645267260"
+    }
+  ],
+  "conclusion": "Only primary and main_final overlap these three addresses. Their first 96 bytes match each other and current IDA bytes. No alternate plaintext prefix exists in other overlapping ADCK records. Recorded runtime-function bounds do not prove plaintext; whole-routine equality not established by this prefix comparison. No executable bytes repaired."
+}

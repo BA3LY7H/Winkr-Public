@@ -1,0 +1,361 @@
+{
+  "overlap": {
+    "ea": "0x7ff697ac884c",
+    "before": "ebffc0",
+    "after": "90ffc0",
+    "reason": "EB FF jumps into FF C0 INC EAX; replacing only EB by NOP preserves alternate-entry INC flags/register effects."
+  },
+  "normalizations": [
+    {
+      "start": 140697083677376,
+      "end": 140697083677425,
+      "label": "wmp1_allocate_syscall_scratch_body",
+      "original_bytes": "56574883ec284889ce498b38b9f3000000ff15d13c0a0048890648b94e4fe871235e2cc64831cf4889074883c4285f5ec3",
+      "sha256_before": "932feb442d394afd903c34f19e224707f5c70608ec84c54335cb1ed63a1845c9",
+      "old_name": "wmp1_allocate_243_byte_stub_buffer",
+      "old_type": "__int64 __fastcall(__int64 *, __int64, __int64 *)",
+      "old_comment": null,
+      "old_chunks": [
+        [
+          140697083677376,
+          140697083677425
+        ]
+      ],
+      "patches": [],
+      "old_frame": {
+        "frsize": 56,
+        "frregs": 0,
+        "fpd": 0,
+        "serialized": [
+          "0d09f180080a30f1802004c0010208",
+          "115f5f72657475726e5f61646472657373",
+          null
+        ]
+      },
+      "after": {
+        "failure": "no error",
+        "failure_ea": 18446744073709551615,
+        "pseudocode": "__int64 __fastcall wmp1_allocate_syscall_scratch_body(__int64 *a1, __int64 a2, __int64 *a3)\n{\n  __int64 v4; // rdi\n  __int64 result; // rax\n\n  v4 = *a3;\n  result = wmp1_context_allocator(243);\n  *a1 = result;\n  *(_QWORD *)(v4 ^ 0xC62C5E2371E84F4EuLL) = result;\n  return result;\n}\n",
+        "sha256": "932feb442d394afd903c34f19e224707f5c70608ec84c54335cb1ed63a1845c9"
+      }
+    },
+    {
+      "start": 140697083348784,
+      "end": 140697083349860,
+      "label": "wmp1_allocate_syscall_scratch_wrapper",
+      "original_bytes": "4157415641554154565755534883ec784889d64889cf49bc4e4fe871235e2cc649bdb1b0178edca1d339c744242025ccdd704889cd4c09e5488d1d310305004c8d358a0305004c8d3da3a00f00eb21488b44246848034424484889442470c74424205980b77b662e0f1f8400000000008b4424203dcb54703b7e753d24ccdd700f8e6a0100003d25ccdd700f84130200003df67547780f8536030000488b44244048f7d04801c0488d04404889442448488b4424384889c14c09e94801c9488d0c4948894c24504889c14c31e148894c24584c21e84801c0488d04404889442460c7442420be704502eb850f1f4400003d3fa07c1f0f8f830100003dbe7045020f85ab01000081fc004b0000770383ec4e75087406e800000000c35090ffc0587e2ec0e4007f1d669066900f83f17e0000710a80ef15756c80ea7de84c46010083c3dde87f0e010080c15fc6c12a69a3907e01aa488b4424384c21e0488d04404801c07c5b8aff7d5780eeb580e82ac7c000b7d84d81eaf6286d39c6c2dac6c7dc68d0a4fd84705a74750f8ef96a0000c6c30881c6085ed76680e88bc6c27d83c70083c3a7f6daf6da80e99283c1ee83c1d9f6df80ee0cc7c7005e0ca12bb32f48034424604803442458482b4424504889442468c7442420cc54703be98ffeffff662e0f1f8400000000000f1f4400003dcc54703b0f8454feffff726d8af67369669066907e677b3079957df5680dd21a720f8e82a0000080c05d0f3183c20380e8e0c7c1a251ce4280c13681c191b5263380c6f75cc6c39980c334e8266b00007b7583c19e83c32581c5a377b76480ea1f83c522c6c2baf6d981ed5f1070a37f3383aea04fdfae00cff6442424017457c7442420a5142b16e9f2fdffff3d40a07c1f75504889d94c89f24d89f8e80d4c020089442424c744242015010351e9ccfdffffc744242040a07c1fe9bffdffff48897c243848896c2440c7442420f6754778e9a8fdffffc744242082909e22e99bfdffffa966b4de3dc0ea00735090907e40f6de81ea48b1bfdac6c6d881edac64cb246ac9c7c6a9ffcdcd0f310f835cf1010083c3db0f89d3c900005bc7c2e37fcbd881c0b06a5e2b0f31c6c3740f3155c7c73071e66b80897476f529d54c31e7766bc0e6007766909083c52f80ea5881ea96484dc9c6c52481c6394a5c11500f87dc3000000f3181c2f12741886abe81e95e2a10cb81e9cfe2586281efd303f480f6de682d4b07d6c6c62e0f82b897010080c5c16acd5868dffd5d7a0f81aea3000080e90dc7c28ab7515a03b848897c242848b83ccbac9d9d5c3059488944243048bad2913781517341ad4c8d44242841b92c0000004889f1e8c0ff0400eb50488b442470488944242848b836cbac9d9d5c3059488944243048ba89913781517341ad4c8d44242841b91a0000004889f1e888ff0400488d0d61ff0400488d15baff04004c8d05d39c0f00e8ae420200904883c4785b5d5f5e415c415d415e415fc3",
+      "sha256_before": "72c0e901ba5f33fd7a47b55149b2b7ba0c6a08c534081d97749f13fd8b8e8540",
+      "old_name": "sub_7FF697AC8730",
+      "old_type": "__int64 __fastcall(_QWORD, _QWORD)",
+      "old_comment": null,
+      "old_chunks": [
+        [
+          140697083348784,
+          140697083349860
+        ]
+      ],
+      "patches": [
+        {
+          "ea": 140697083349059,
+          "old": "7406",
+          "new": "eb06",
+          "selected": 140697083349067
+        },
+        {
+          "ea": 140697083349077,
+          "old": "7f1d",
+          "new": "eb1d",
+          "selected": 140697083349108
+        },
+        {
+          "ea": 140697083349108,
+          "old": "7f0e",
+          "new": "eb0e",
+          "selected": 140697083349124
+        },
+        {
+          "ea": 140697083349121,
+          "old": "7e01",
+          "new": "eb01",
+          "selected": 140697083349124
+        },
+        {
+          "ea": 140697083349143,
+          "old": "7d57",
+          "new": "eb57",
+          "selected": 140697083349232
+        },
+        {
+          "ea": 140697083349295,
+          "old": "7369",
+          "new": "eb69",
+          "selected": 140697083349402
+        },
+        {
+          "ea": 140697083349517,
+          "old": "7350",
+          "new": "eb50",
+          "selected": 140697083349599
+        },
+        {
+          "ea": 140697083349607,
+          "old": "7766",
+          "new": "eb66",
+          "selected": 140697083349711
+        }
+      ],
+      "after": {
+        "failure": "no error",
+        "failure_ea": 18446744073709551615,
+        "pseudocode": "__int64 __fastcall wmp1_allocate_syscall_scratch_wrapper(\n        __int64 a1,\n        __int64 *a2,\n        __int64 a3,\n        __int64 a4,\n        unsigned __int64 a5,\n        __int64 a6,\n        __int64 a7,\n        unsigned __int64 a8,\n        __int64 a9,\n        __int64 a10,\n        unsigned __int64 a11,\n        __int64 a12,\n        unsigned __int64 a13,\n        unsigned __int64 a14)\n{\n  unsigned __int64 v16; // rbp\n  int v18; // [rsp+D8h] [rbp+20h]\n  char v19; // [rsp+DCh] [rbp+24h]\n\n  v18 = 1893583909;\n  v16 = a1 | 0xC62C5E2371E84F4EuLL;\n  while ( 1 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( v18 <= 997217483 )\n        {\n          if ( v18 > 528261183 )\n          {\n            if ( v18 != 528261184 )\n            {\n              a5 = a1 ^ 0xC62C5E2371E84F4EuLL;\n              a6 = 0x59305C9D9DACCB3CLL;\n              return wmp1_allocate_syscall_scratch_body(a2, 0xAD417351813791D2uLL, (__int64 *)&a5);\n            }\n            v19 = wmp1_decode_body_if_needed(\n                    (unsigned __int8 *)&wmp1_protected_047_seed,\n                    (unsigned __int8 *)sub_7FF697B18B00,\n                    &byte_7FF697BC2820);\n            v18 = 1359151381;\n          }\n          else if ( v18 == 38105278 )\n          {\n            a13 = a11 + a12 + 6 * (a7 & 0xC62C5E2371E84F4EuLL) - a10;\n            v18 = 997217484;\n          }\n          else\n          {\n            a7 = a1;\n            a8 = v16;\n            v18 = 2017949174;\n          }\n        }\n        if ( v18 > 1893583908 )\n          break;\n        if ( v18 == 997217484 )\n        {\n          a14 = a9 + a13;\n          v18 = 2075623513;\n        }\n        else if ( (v19 & 1) != 0 )\n        {\n          v18 = 371922085;\n        }\n        else\n        {\n          v18 = 580817026;\n        }\n      }\n      if ( v18 != 1893583909 )\n        break;\n      v18 = 528261184;\n    }\n    if ( v18 != 2017949174 )\n      break;\n    a9 = 6 * ~a8;\n    a10 = 6 * (a7 | 0x39D3A1DC8E17B0B1LL);\n    a11 = a7 ^ 0xC62C5E2371E84F4EuLL;\n    a12 = 6 * (a7 & 0x39D3A1DC8E17B0B1LL);\n    v18 = 38105278;\n  }\n  a5 = a14;\n  a6 = 0x59305C9D9DACCB36LL;\n  wmp1_allocate_syscall_scratch_body(a2, 0xAD41735181379189uLL, (__int64 *)&a5);\n  return sub_7FF697AECE00(&wmp1_protected_047_seed, sub_7FF697B18B00, &byte_7FF697BC2820);\n}\n",
+        "sha256": "12dc65c8ab3f422d678df5ed3bd4925be4487b0cc19400783847490715f97d2b"
+      }
+    }
+  ],
+  "types": [
+    {
+      "ea": "0x7ff697b18ac0",
+      "old_type": "__int64 __fastcall(__int64 *, __int64, __int64 *)",
+      "old_name": "wmp1_allocate_syscall_scratch_body",
+      "new_type": "void __fastcall wmp1_allocate_syscall_scratch_body(unsigned __int64 *scratch_out, void *unused, unsigned __int64 *encoded_owner_descriptor);"
+    },
+    {
+      "ea": "0x7ff697ac8730",
+      "old_type": "__int64 __fastcall(__int64, __int64 *, __int64, __int64, unsigned __int64, __int64, __int64, unsigned __int64, __int64, __int64, unsigned __int64, __int64, unsigned __int64, unsigned __int64)",
+      "old_name": "wmp1_allocate_syscall_scratch_wrapper",
+      "new_type": "void __fastcall wmp1_allocate_syscall_scratch_wrapper(unsigned __int64 *owner_out, unsigned __int64 *scratch_out);"
+    },
+    {
+      "ea": "0x7ff697adb460",
+      "old_type": "unsigned __int64 __fastcall(const void *, unsigned int, __int64, __int64)",
+      "old_name": "wmp1_query_setup_dependency_0x7ff697adb460",
+      "new_type": "unsigned __int64 __fastcall wmp1_pe_section_metadata_hash_wrapper(const void *image, unsigned int image_length);"
+    }
+  ],
+  "views": {
+    "0x7ff697b18ac0": "void __fastcall wmp1_allocate_syscall_scratch_body(\n        unsigned __int64 *scratch_out,\n        void *unused,\n        unsigned __int64 *encoded_owner_descriptor)\n{\n  unsigned __int64 v4; // rdi\n  unsigned __int64 v5; // rax\n\n  v4 = *encoded_owner_descriptor;\n  v5 = wmp1_context_allocator(243);\n  *scratch_out = v5;\n  *(_QWORD *)(v4 ^ 0xC62C5E2371E84F4EuLL) = v5;\n}\n",
+    "0x7ff697ac8730": "void __fastcall wmp1_allocate_syscall_scratch_wrapper(unsigned __int64 *owner_out, unsigned __int64 *scratch_out)\n{\n  unsigned __int64 v4; // rbp\n  int v5; // [rsp+D8h] [rbp+20h]\n  char v6; // [rsp+DCh] [rbp+24h]\n  unsigned __int64 v7; // [rsp+E0h] [rbp+28h] BYREF\n  __int64 v8; // [rsp+E8h] [rbp+30h]\n  unsigned __int64 *v9; // [rsp+F0h] [rbp+38h]\n  unsigned __int64 v10; // [rsp+F8h] [rbp+40h]\n  __int64 v11; // [rsp+100h] [rbp+48h]\n  __int64 v12; // [rsp+108h] [rbp+50h]\n  unsigned __int64 v13; // [rsp+110h] [rbp+58h]\n  __int64 v14; // [rsp+118h] [rbp+60h]\n  unsigned __int64 v15; // [rsp+120h] [rbp+68h]\n  unsigned __int64 v16; // [rsp+128h] [rbp+70h]\n\n  v5 = 1893583909;\n  v4 = (unsigned __int64)owner_out | 0xC62C5E2371E84F4EuLL;\n  while ( 1 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( v5 <= 997217483 )\n        {\n          if ( v5 > 528261183 )\n          {\n            if ( v5 != 528261184 )\n            {\n              v7 = (unsigned __int64)owner_out ^ 0xC62C5E2371E84F4EuLL;\n              v8 = 0x59305C9D9DACCB3CLL;\n              wmp1_allocate_syscall_scratch_body(scratch_out, (void *)0xAD417351813791D2LL, &v7);\n              return;\n            }\n            v6 = wmp1_decode_body_if_needed(\n                   (unsigned __int8 *)&wmp1_protected_047_seed,\n                   (unsigned __int8 *)sub_7FF697B18B00,\n                   &byte_7FF697BC2820);\n            v5 = 1359151381;\n          }\n          else if ( v5 == 38105278 )\n          {\n            v15 = v13 + v14 + 6 * ((unsigned __int64)v9 & 0xC62C5E2371E84F4EuLL) - v12;\n            v5 = 997217484;\n          }\n          else\n          {\n            v9 = owner_out;\n            v10 = v4;\n            v5 = 2017949174;\n          }\n        }\n        if ( v5 > 1893583908 )\n          break;\n        if ( v5 == 997217484 )\n        {\n          v16 = v11 + v15;\n          v5 = 2075623513;\n        }\n        else if ( (v6 & 1) != 0 )\n        {\n          v5 = 371922085;\n        }\n        else\n        {\n          v5 = 580817026;\n        }\n      }\n      if ( v5 != 1893583909 )\n        break;\n      v5 = 528261184;\n    }\n    if ( v5 != 2017949174 )\n      break;\n    v11 = 6 * ~v10;\n    v12 = 6 * ((unsigned __int64)v9 | 0x39D3A1DC8E17B0B1LL);\n    v13 = (unsigned __int64)v9 ^ 0xC62C5E2371E84F4EuLL;\n    v14 = 6 * ((unsigned __int64)v9 & 0x39D3A1DC8E17B0B1LL);\n    v5 = 38105278;\n  }\n  v7 = v16;\n  v8 = 0x59305C9D9DACCB36LL;\n  wmp1_allocate_syscall_scratch_body(scratch_out, (void *)0xAD41735181379189LL, &v7);\n  sub_7FF697AECE00(&wmp1_protected_047_seed, sub_7FF697B18B00, &byte_7FF697BC2820);\n}\n"
+  },
+  "owner_encoding_proof": "Partition A=x&K,B=x&~K,C=~x&K,D=~x&~K: 6*~(x|K)+(x^K)+6*(x&~K)+6*(x&K)-6*(x|~K) = x^K+6*(D+A+B-(A+B+D)) = x^K mod2^64. K=C62C5E2371E84F4E.",
+  "allocation_size": 243,
+  "allocation_callback_slot": "0x7FF697BBC7A8",
+  "limits": "No allocation-null check in body47. Allocation permissions and callback implementation unresolved; no code executed.",
+  "comments": [
+    {
+      "ea": "0x7ff697b18ac0",
+      "before": null,
+      "after": "Syscall scratch helper: context allocator(0xF3=243); store allocation to scratch_out and owner pointer decoded from descriptor QWORD0 XOR C62C5E2371E84F4E. No NULL guard in this body. Callback permissions/lifetime unresolved."
+    },
+    {
+      "ea": "0x7ff697b5135f",
+      "before": null,
+      "after": "Selector6 response record +8 = saved PE section-metadata FNV64 result from B5040E -> wrapper ADB460 -> body B658D0. Record total37bytes copied at B52B88; this store is not itself network delivery."
+    },
+    {
+      "ea": "0x7ff697b52b88",
+      "before": null,
+      "after": "Append 37-byte selector6 region record to output buffer; next B52B8A increments used length by37. Native B52B69 is unsigned JA bounds rejection (do not trust F5 signed-looking cast). +8 carries PE metadata fingerprint; +32=1, +33 WORD derived value, +35 WORD0100."
+    }
+  ],
+  "response_native_windows": {
+    "0x7ff697b51351": [
+      [
+        "0x7ff697b51334",
+        "cmp     eax, 512CD0B3h"
+      ],
+      [
+        "0x7ff697b51339",
+        "jg      loc_7FF697B517B1"
+      ],
+      [
+        "0x7ff697b5133f",
+        "cmp     eax, 4E78CD36h"
+      ],
+      [
+        "0x7ff697b51344",
+        "jnz     loc_7FF697B52AE8"
+      ],
+      [
+        "0x7ff697b5134a",
+        "mov     rax, [rbp+890h+var_330]"
+      ],
+      [
+        "0x7ff697b51351",
+        "mov     [rbp+890h+var_4C8], rax"
+      ],
+      [
+        "0x7ff697b51358",
+        "mov     rax, [rbp+890h+var_2C0]"
+      ]
+    ],
+    "0x7ff697b5135f": [
+      [
+        "0x7ff697b51344",
+        "jnz     loc_7FF697B52AE8"
+      ],
+      [
+        "0x7ff697b5134a",
+        "mov     rax, [rbp+890h+var_330]"
+      ],
+      [
+        "0x7ff697b51351",
+        "mov     [rbp+890h+var_4C8], rax"
+      ],
+      [
+        "0x7ff697b51358",
+        "mov     rax, [rbp+890h+var_2C0]"
+      ],
+      [
+        "0x7ff697b5135f",
+        "mov     [rbp+890h+var_4C0], rax"
+      ],
+      [
+        "0x7ff697b51366",
+        "mov     rax, [rbp+890h+var_328]"
+      ]
+    ],
+    "0x7ff697b5136d": [
+      [
+        "0x7ff697b51351",
+        "mov     [rbp+890h+var_4C8], rax"
+      ],
+      [
+        "0x7ff697b51358",
+        "mov     rax, [rbp+890h+var_2C0]"
+      ],
+      [
+        "0x7ff697b5135f",
+        "mov     [rbp+890h+var_4C0], rax"
+      ],
+      [
+        "0x7ff697b51366",
+        "mov     rax, [rbp+890h+var_328]"
+      ],
+      [
+        "0x7ff697b5136d",
+        "mov     [rbp+890h+var_4B8], rax"
+      ],
+      [
+        "0x7ff697b51374",
+        "mov     [rbp+890h+var_3C], 35B6438Dh"
+      ]
+    ],
+    "0x7ff697b52ef3": [
+      [
+        "0x7ff697b52ed8",
+        "jmp     loc_7FF697B4FF30"
+      ],
+      [
+        "0x7ff697b52edd",
+        "mov     [rbp+890h+var_3C], 4DD415AEh"
+      ],
+      [
+        "0x7ff697b52ee7",
+        "jmp     loc_7FF697B4FF30"
+      ],
+      [
+        "0x7ff697b52eec",
+        "mov     rax, [rbp+890h+var_2A0]"
+      ],
+      [
+        "0x7ff697b52ef3",
+        "mov     [rbp+890h+var_4B0], rax"
+      ],
+      [
+        "0x7ff697b52efa",
+        "mov     [rbp+890h+var_4A8], 1"
+      ]
+    ],
+    "0x7ff697b52efa": [
+      [
+        "0x7ff697b52edd",
+        "mov     [rbp+890h+var_3C], 4DD415AEh"
+      ],
+      [
+        "0x7ff697b52ee7",
+        "jmp     loc_7FF697B4FF30"
+      ],
+      [
+        "0x7ff697b52eec",
+        "mov     rax, [rbp+890h+var_2A0]"
+      ],
+      [
+        "0x7ff697b52ef3",
+        "mov     [rbp+890h+var_4B0], rax"
+      ],
+      [
+        "0x7ff697b52efa",
+        "mov     [rbp+890h+var_4A8], 1"
+      ],
+      [
+        "0x7ff697b52f01",
+        "movzx   eax, [rbp+890h+var_40]"
+      ]
+    ],
+    "0x7ff697b52f08": [
+      [
+        "0x7ff697b52eec",
+        "mov     rax, [rbp+890h+var_2A0]"
+      ],
+      [
+        "0x7ff697b52ef3",
+        "mov     [rbp+890h+var_4B0], rax"
+      ],
+      [
+        "0x7ff697b52efa",
+        "mov     [rbp+890h+var_4A8], 1"
+      ],
+      [
+        "0x7ff697b52f01",
+        "movzx   eax, [rbp+890h+var_40]"
+      ],
+      [
+        "0x7ff697b52f08",
+        "mov     [rbp+890h+var_4A7], ax"
+      ],
+      [
+        "0x7ff697b52f0f",
+        "mov     [rbp+890h+var_4A5], 100h"
+      ]
+    ],
+    "0x7ff697b52f0f": [
+      [
+        "0x7ff697b52ef3",
+        "mov     [rbp+890h+var_4B0], rax"
+      ],
+      [
+        "0x7ff697b52efa",
+        "mov     [rbp+890h+var_4A8], 1"
+      ],
+      [
+        "0x7ff697b52f01",
+        "movzx   eax, [rbp+890h+var_40]"
+      ],
+      [
+        "0x7ff697b52f08",
+        "mov     [rbp+890h+var_4A7], ax"
+      ],
+      [
+        "0x7ff697b52f0f",
+        "mov     [rbp+890h+var_4A5], 100h"
+      ],
+      [
+        "0x7ff697b52f18",
+        "stc"
+      ],
+      [
+        "0x7ff697b52f19",
+        "sal     dl, 0"
+      ]
+    ]
+  },
+  "response_observation": {
+    "hash_call": "0x7FF697B5040E",
+    "hash_save": "0x7FF697B5042F",
+    "hash_record_store": "0x7FF697B5135F",
+    "record_offset": 8,
+    "record_length": 37,
+    "copy": "0x7FF697B52B88",
+    "limits": "Other report fields exact origin/policy, emission paths and server transport unresolved."
+  }
+}

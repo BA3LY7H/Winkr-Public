@@ -1,0 +1,295 @@
+{
+  "native_windows": {
+    "0x7ff697b7212c": [
+      [
+        "0x7ff697b7212c",
+        "sub     rsp, 20h"
+      ],
+      [
+        "0x7ff697b72130",
+        "mov     rdx, rdi; a2"
+      ],
+      [
+        "0x7ff697b72133",
+        "xor     r8d, r8d; a3"
+      ],
+      [
+        "0x7ff697b72136",
+        "mov     r9, r13; a4"
+      ],
+      [
+        "0x7ff697b72139",
+        "call    wmp1_selector6_dependency_0x7ff697ad8410"
+      ],
+      [
+        "0x7ff697b7213e",
+        "add     rsp, 20h"
+      ],
+      [
+        "0x7ff697b72142",
+        "test    al, al"
+      ],
+      [
+        "0x7ff697b72144",
+        "jz      loc_7FF697B718AC"
+      ]
+    ],
+    "0x7ff697ad8455": [
+      [
+        "0x7ff697ad8459",
+        "mov     r12, rdi"
+      ],
+      [
+        "0x7ff697ad845c",
+        "xor     r12, rdx"
+      ],
+      [
+        "0x7ff697ad845f",
+        "xor     r13, r9"
+      ],
+      [
+        "0x7ff697ad8462",
+        "lea     r14, [rsp+118h+descriptor]"
+      ],
+      [
+        "0x7ff697ad8467",
+        "and     bl, 1"
+      ],
+      [
+        "0x7ff697ad846a",
+        "xor     rbp, rcx"
+      ],
+      [
+        "0x7ff697ad846d",
+        "mov     rax, rdi"
+      ]
+    ],
+    "0x7ff697ad8588": [
+      [
+        "0x7ff697ad8589",
+        "mov     rax, [rsp+118h+var_58]"
+      ],
+      [
+        "0x7ff697ad8591",
+        "mov     [rsp+118h+var_C0], rax"
+      ],
+      [
+        "0x7ff697ad8596",
+        "mov     byte ptr [rsp+118h+var_D0], bl"
+      ],
+      [
+        "0x7ff697ad859a",
+        "mov     [rsp+118h+var_EC], 222C67EBh"
+      ]
+    ],
+    "0x7ff697b50072": [
+      [
+        "0x7ff697b50072",
+        "mov     rax, [rbx+28h]"
+      ],
+      [
+        "0x7ff697b50076",
+        "mov     [rbp+890h+var_70], rax"
+      ],
+      [
+        "0x7ff697b5007d",
+        "movzx   eax, byte ptr [rbx+18h]"
+      ],
+      [
+        "0x7ff697b50081",
+        "mov     [rbp+890h+var_41], al"
+      ]
+    ],
+    "0x7ff697b535d2": [
+      [
+        "0x7ff697b535d2",
+        "mov     rax, [rbp+890h+var_270]"
+      ],
+      [
+        "0x7ff697b535d9",
+        "mov     [rbp+890h+var_E0], rax"
+      ],
+      [
+        "0x7ff697b535e0",
+        "cmp     [rbp+890h+var_41], 0"
+      ],
+      [
+        "0x7ff697b535e7",
+        "jz      loc_7FF697B4FEFB"
+      ],
+      [
+        "0x7ff697b535ed",
+        "jnp     short loc_7FF697B53636"
+      ],
+      [
+        "0x7ff697b535ef",
+        "mov     dh, dh"
+      ],
+      [
+        "0x7ff697b535f1",
+        "jmp     short loc_7FF697B53636"
+      ],
+      [
+        "0x7ff697b53636",
+        "mov     rax, [rbp+890h+var_50]"
+      ],
+      [
+        "0x7ff697b5363d",
+        "cmp     word ptr [rax], 0"
+      ]
+    ],
+    "0x7ff697b50ccd": [
+      [
+        "0x7ff697b50ccd",
+        "mov     rax, [rbp+890h+var_248]"
+      ],
+      [
+        "0x7ff697b50cd4",
+        "movzx   ecx, word ptr [rax]"
+      ],
+      [
+        "0x7ff697b50cd7",
+        "jno     short loc_7FF697B50D41"
+      ],
+      [
+        "0x7ff697b50cd9",
+        "xchg    bh, bh"
+      ],
+      [
+        "0x7ff697b50cdb",
+        "jmp     short loc_7FF697B50D41"
+      ],
+      [
+        "0x7ff697b50d41",
+        "mov     rax, [rbp+890h+var_248]"
+      ],
+      [
+        "0x7ff697b50d48",
+        "mov     [rbp+890h+var_4A0], rax"
+      ],
+      [
+        "0x7ff697b50d4f",
+        "test    cx, cx"
+      ],
+      [
+        "0x7ff697b50d52",
+        "jz      loc_7FF697B54035"
+      ],
+      [
+        "0x7ff697b50d58",
+        "mov     rax, [rbp+890h+var_4A0]"
+      ],
+      [
+        "0x7ff697b50d5f",
+        "mov     [rbp+890h+var_498], rax"
+      ],
+      [
+        "0x7ff697b50d66",
+        "lea     rax, [rbp+890h+var_8A2]"
+      ],
+      [
+        "0x7ff697b50d6a",
+        "mov     [rbp+890h+var_250], rax"
+      ],
+      [
+        "0x7ff697b50d71",
+        "mov     [rbp+890h+var_3C], 131EB2E1h"
+      ]
+    ],
+    "0x7ff697b524cb": [
+      [
+        "0x7ff697b524df",
+        "add     eax, 2"
+      ],
+      [
+        "0x7ff697b524e2",
+        "mov     rcx, [rbp+890h+var_250]"
+      ],
+      [
+        "0x7ff697b524e9",
+        "mov     [rbp+890h+var_44], ax"
+      ],
+      [
+        "0x7ff697b524f0",
+        "mov     [rbp+890h+var_268], rcx"
+      ],
+      [
+        "0x7ff697b524f7",
+        "mov     rax, [rbp+890h+var_268]"
+      ],
+      [
+        "0x7ff697b524fe",
+        "movzx   ecx, [rbp+890h+var_44]"
+      ],
+      [
+        "0x7ff697b52505",
+        "mov     [rbp+890h+var_50], rax"
+      ],
+      [
+        "0x7ff697b5250c",
+        "mov     [rbp+890h+var_40], cx"
+      ]
+    ],
+    "0x7ff697b54035": [
+      [
+        "0x7ff697b54035",
+        "add     rax, 0FFFFFFFFFFFFFFFEh"
+      ],
+      [
+        "0x7ff697b54039",
+        "mov     [rbp+890h+var_298], rax"
+      ],
+      [
+        "0x7ff697b54040",
+        "mov     rax, [rbp+890h+var_298]"
+      ],
+      [
+        "0x7ff697b54047",
+        "mov     [rbp+890h+var_248], rax"
+      ],
+      [
+        "0x7ff697b5404e",
+        "mov     [rbp+890h+var_3C], 61B4DE3h"
+      ]
+    ]
+  },
+  "comments": [
+    {
+      "ea": "0x7ff697b72133",
+      "before": "a3",
+      "after": "Selector6 native call sets wrapper95 mode=0. Wrapper masks mode&1 into descriptor BYTE+0x18; body95 B535E7 then bypasses all four system-path hash filters. Do not describe those filters as active for this particular call."
+    },
+    {
+      "ea": "0x7ff697b535e7",
+      "before": null,
+      "after": "If descriptor mode BYTE+0x18 ==0, jump directly to report setup B4FEFB, skipping path-hash exclusion loops. Selector6 caller B72133 supplies0. Other callers/modes remain to inventory."
+    },
+    {
+      "ea": "0x7ff697b50d66",
+      "before": null,
+      "after": "Variable trailer fixed start = filename-query scratch +0x3E (RBP-0x12 versus buffer RBP-0x50), NOT UNICODE_STRING.Buffer field. Backwards WORD scan starts scratch+0x40E and finds last nonzeroWORD. Length=end-start+2 modulo16bits; no appended NUL is counted."
+    },
+    {
+      "ea": "0x7ff697b52b69",
+      "before": null,
+      "after": "Unsigned fixed-record bounds failure branches to trailing-write stage B53026; no automatic transaction rollback. Variable and256-byte trailers have separate capacity checks. Total output is not a single indivisible append."
+    }
+  ],
+  "mode_chain": [
+    "B72133 XOR R8D,R8D",
+    "AD8467 AND BL,1",
+    "AD8596 store descriptor BYTE+24",
+    "B5007D read descriptor BYTE+24",
+    "B535E7 zero-mode jump to B4FEFB"
+  ],
+  "trailer_algorithm": {
+    "scratch_start_rbp_offset": -80,
+    "scratch_length": 1040,
+    "scan_start_offset": 1038,
+    "fixed_slice_start_offset": 62,
+    "end": "Last nonzero WORD found by backwards two-byte steps",
+    "length": "end-start+2 modulo16bits, excluding trailing zeroWORD",
+    "limits": "No loop-local lower-bound comparison observed. Fixed slice start does not prove arbitrary mapped paths share a particular device prefix."
+  },
+  "append_limits": "Fixed37-byte record/trailers have separate capacity gates; no all-or-nothing guarantee. Actual zero-mode reachability beyond dispatcher remains subject to inherited ABI/stack preconditions."
+}

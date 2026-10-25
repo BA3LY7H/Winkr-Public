@@ -1,0 +1,1230 @@
+--@class awful
+local awful, routine = ...
+
+if awful.player.class2 ~= "EVOKER" then
+	return
+end
+
+routine.evoker = {
+	devastation = routine.Actor({ class = "evoker", spec = 1 }),
+}
+
+local player, target = awful.player, awful.target
+local party1, party2, party3, party4 = awful.party1, awful.party2, awful.party3, awful.party4
+local focus, healer = awful.focus, awful.healer
+local arena1, arena2, arena3 = awful.arena1, awful.arena2, awful.arena3
+
+local dev = routine.evoker.devastation
+awful.Dock:New(routine, {
+	{ text = "Toggle Routine", var = "enabled", spellId = 382266 },
+	{ text = "Toggle Burst", var = "burst", spellId = 382266 },
+})
+
+awful.Unit:Trait("isEnemy", function(obj)
+	return obj.enemy and not obj.dead
+end)
+awful.Unit:Trait("immuneSlows", function(obj)
+	return obj.immunities and obj.immunities.slow
+end)
+awful.Unit:Trait("immuneMagic", function(obj)
+	return obj.immunities and obj.immunities.magic
+end)
+awful.Unit:Trait("immunePhysical", function(obj)
+	return obj.immunities and obj.immunities.physical
+end)
+awful.Unit:Trait("stunRemains", function(obj)
+	return obj.ccInfo and obj.ccInfo.type == "stun" and obj.ccInfo.remains or 0
+end)
+
+awful.Unit:Trait("targetsMe", function(o)
+	return o.target and o.target.exists and awful.player.isUnit(o.target)
+end)
+
+awful.Unit:Trait("importantLockoutRemains", function(t)
+	if not t.healer or not t.isPlayer then
+		return 0
+	end
+	local specId = t.specId
+	if specId == 257 then -- Holy Priest
+		return t.lockouts.holy and t.lockouts.holy.remains or 0
+	end
+	if specId == 256 then -- Discipline Priest
+		return t.lockouts.holy and t.lockouts.holy.remains or 0
+	end
+	if specId == 105 then -- Restoration Druid
+		return t.lockouts.nature and t.lockouts.nature.remains or 0
+	end
+	if specId == 264 then -- Restoration Shaman
+		return t.lockouts.nature and t.lockouts.nature.remains or 0
+	end
+	if specId == 65 then -- Holy Paladin
+		return t.lockouts.holy and t.lockouts.holy.remains or 0
+	end
+	return 0
+end)
+
+awful.Unit:Trait("advancedBurstSince", function(u)
+	if not u or not u.exists or not u.visible then
+		return 0
+	end
+
+	if u.specId == 71 and (u.cd(262161) > 35 or u.cd(167105) > 35 and not u.disarmed) then
+		if u.target and u.target.exists and u.meleeRangeOf(u.target) and u.target.debuff(307865) then
+			return u.target.debuffUptime(307865)
+		end
+		if u.target and u.target.exists and u.target.debuff(208086, u) then
+			return u.target.debuffUptime(208086)
+		end
+	end
+
+	if u.class2 == "MAGE" then
+		if u.buff(190319) then
+			return u.buffUptime(190319)
+		end
+		if u.buff(12472) then
+			return u.buffUptime(12472)
+		end
+		if u.buff(365362) and u.specId == 62 then
+			return u.buffUptime(365362)
+		end
+		return 0
+	end
+
+	if u.specId == 72 and not u.disarmed then
+		if u.buffRemains(18499) >= 4 then
+			return u.buffUptime(18499)
+		end
+		if u.target and u.target.exists then
+			local tar = u.target
+			if tar.debuff(388933, u) and tar.debuffStacks(388933) >= 8 then
+				return tar.debuffUptime(388933)
+			end
+		end
+		return 0
+	end
+
+	if u.specId == 260 and not u.disarmed then
+		if u.debuff(343142) then
+			return u.debuffUptime(343142)
+		end
+		if u.buff(13750) then
+			return u.buffUptime(13750)
+		end
+	end
+
+	if u.specId == 252 then
+		if u.buff(315443) then
+			return u.buffUptime(315443)
+		end
+	end
+
+	if u.specId == 259 and not u.disarmed then
+		if u.target and u.target.exists then
+			if u.target.debuff(385408) then
+				return u.target.debuffUptime(385408)
+			end
+			if u.target.debuff(360194) then
+				return u.target.debuffUptime(360194)
+			end
+		end
+	end
+
+	if u.class2 == "ROGUE" and not u.disarmed then
+		if u.target and u.target.exists and u.meleeRangeOf(u.target) and u.target.debuff(384631) then
+			return u.target.debuffUptime(384631)
+		end
+		if u.buff(121471) then
+			return u.buffUptime(121471)
+		end
+	end
+
+	if u.specId == 577 then
+		local tar = u.target
+		if tar.exists and tar.debuff(320338) and tar.losOf(u) then
+			return tar.debuffUptime(320338)
+		end
+	end
+
+	if u.specId == 266 then
+		if u.buff(267217) then
+			return u.buffUptime(267217)
+		end
+		local cd = GetSpellBaseCooldown(265187)
+		cd = cd * 0.001
+		local cdCur = u.cd(265187)
+		if cdCur > 0 and cdCur >= cd - 15 then
+			return math.max(0, cd - cdCur)
+		end
+		local cdGrimmoire = u.cd(111898)
+		if cdGrimmoire > 108 and cdGrimmoire < 120 then
+			return 120 - cdGrimmoire
+		end
+	end
+
+	return u.burstingSince or 0
+end)
+
+awful.Unit:Trait("burstingSince", function(u)
+	local burstBuffs = {
+		190319, -- Combustion
+		12472, -- Icy Veins
+		365362, -- Arcane Surge
+		13750, -- Adrenaline Rush
+		121471, -- Shadow Blades
+		18499, -- Berserker Rage
+		315443, -- Abomination Limb
+		267217, -- Nether Portal
+		102560, -- Incarnation
+		102543, -- Berserk
+		162264, -- Metamorphosis
+		191427, -- Metamorphosis
+	}
+
+	local entry = u.buffFrom(burstBuffs)
+	if entry then
+		return entry.uptime
+	end
+	return 0
+end)
+
+local function getOffTarget()
+	if not awful.arena then
+		return nil
+	end
+
+	local currentTarget = awful.target
+	if not currentTarget or not currentTarget.isPlayer or not currentTarget.exists then
+		return nil
+	end
+
+	local arenaBracket = GetNumGroupMembers()
+
+	if arenaBracket == 2 then
+		-- 2v2: return the enemy that's not your current target
+		for _, enemy in pairs(awful.enemies) do
+			if enemy.isPlayer and not enemy.isUnit(currentTarget) then
+				return enemy
+			end
+		end
+	elseif arenaBracket == 3 then
+		-- 3v3: return the enemy that's not your current target and not the healer
+		for _, enemy in pairs(awful.enemies) do
+			if enemy.isPlayer and not enemy.isUnit(currentTarget) and not enemy.healer then
+				return enemy
+			end
+		end
+	end
+
+	return nil
+end
+
+local buffs = {
+	hover = 358267,
+	essenceBurn = 359618,
+	dragonRage = 375087,
+	tipTheScales = 370553,
+	burnOut = 375802,
+	massDisintegrate = 436336,
+	obsidianScales = 363916,
+}
+
+local debuffs = {
+	meltArmor = 441172,
+	shatteringStar = 370452,
+	fireBreath = 357209,
+	sleepWalk = 360806,
+}
+
+-- Damage rotation
+
+--[[
+Deep breathe kill target
+Dragon Rage (check)
+1 charge fire breath
+Shattering star
+Eternity Surge
+2 big mass disintegrate
+if proc of living flame use to spam disintegrate
+if no essence or living flame proc then use azure strike
+]]
+
+local inPrep = function()
+	local timeLeft = 0
+	if TimerTracker and TimerTracker.timerList[1] then
+		if TimerTracker.timerList[1].time then
+			timeLeft = TimerTracker.timerList[1].time
+		end
+	elseif DBT_Bar_1 and DBT_Bar_1.obj and DBT_Bar_1.obj.timer then
+		timeLeft = DBT_Bar_1.obj.timer
+	end
+	if player.combat then
+		timeLeft = 0
+	end
+	return timeLeft
+end
+
+dev:Spells({
+	azureStrike = { 362969, { "magic", "damage", "targeted" } },
+	fireBreath = { 357208, { "magic", "empowered" } },
+	disintegrate = {
+		356995,
+		{
+			"magic",
+			"damage",
+			"targeted",
+			"channel",
+			"effect",
+			skip = {
+				moving = function()
+					local hasHover = player.buff(buffs.hover)
+					return hasHover
+				end,
+			},
+			validate = function(self, unit, options)
+				if player.moving and not player.buff(buffs.hover) then
+					return false
+				end
+				return true
+			end,
+		},
+	},
+	eternitySurge = { 359073, { "targeted", "magic", "damage", "effect", "empowered", skip = { "facing" } } },
+	pyre = { 357211, { "targeted", "magic", "damage" } },
+	dragonRage = { 375087, { "benficial" } },
+	tipTheScales = { 370553, { "benficial", skip = { "gcd" } } },
+	blessingOfTheBronze = { 364342, { "benficial" } },
+	quell = { 351338, { "targeted", skip = { "channeling", "casting" } } },
+	deepBreathe = { 433874, { "magic", "damage", "effect", "cc" } },
+	livingFlame = { 361469, { "targeted", "magic", "damage", "effect" } },
+	shatteringStar = { 370452, { "targeted", "magic", "damage", "effect" } },
+	nullifyingShroud = { 378464, { "benficial" } },
+	sleepWalk = {
+		360806,
+		{
+			"targeted",
+			"magic",
+			"cc",
+			"effect",
+			skip = {
+				facing = true,
+				moving = function()
+					local hasHover = player.buff(buffs.hover)
+					return hasHover
+				end,
+			},
+			validate = function(self, unit, options)
+				if player.moving and not player.buff(buffs.hover) then
+					return false
+				end
+				return true
+			end,
+		},
+	},
+	verdantEmbrace = { 360995, { "targeted", "magic", "heal" } },
+	obsidianScales = { 363916, { "benficial", skip = { "gcd" } } },
+
+	shadowWordDeath = { 32378, { "targeted", "magic" } },
+	sourceOfMagic = { 369459, { "benficial" } },
+	cauterizingFlames = { 374251, { "targeted", "magic", "heal", "benficial" } },
+	timeSpiral = { 374968, { "benficial" } },
+	hover = { 358267, { "benficial" } },
+})
+
+local function evokerStomp()
+	awful.enemyTotems.loop(function(totem, uptime)
+		if not totem.exists or not totem.enemy or uptime < awful.delays.pvpDelay.now or totem.distance > 40 then
+			return
+		end
+
+		local entry = awful.Lists.pvpStomps[totem.id]
+		if not entry then
+			return
+		end
+
+		if entry.fragile then
+			if dev.azureStrike:Castable(totem) then
+				return dev.azureStrike:Cast(totem)
+			end
+		elseif entry.highPrio then
+			if player.buff(buffs.burnOut) and totem.hp > dev.azureStrike.effect and dev.livingFlame:Castable(totem) then
+				return dev.livingFlame:Cast(totem)
+			elseif dev.azureStrike:Castable(totem) then
+				return dev.azureStrike:Cast(totem)
+			end
+		end
+	end)
+end
+
+dev:Init(function()
+	if player.mounted then
+		return
+	end
+	evokerStomp()
+	dev.cauterizingFlames()
+	dev.timeSpiral()
+	dev.verdantEmbrace()
+	dev.obsidianScales()
+	dev.sleepWalk("auto")
+	dev.blessingOfTheBronze()
+	dev.sourceOfMagic()
+	dev.quell("test")
+	dev.nullifyingShroud()
+	if awful.burst then
+		dev.dragonRage()
+		dev.tipTheScales()
+		dev.fireBreath()
+		dev.shatteringStar()
+		dev.eternitySurge()
+	end
+
+	dev.fireBreath()
+	dev.eternitySurge()
+	dev.shatteringStar()
+	dev.livingFlame()
+	dev.disintegrate()
+	dev.azureStrike()
+end)
+
+local function burst(command)
+	if command == "burst" then
+		awful.burst = not awful.burst
+	end
+end
+
+awful:OnProjectUpdate(function()
+	if awful.burst and dev.tipTheScales.cd > awful.GCD.total and not player.buff(buffs.tipTheScales) then
+		awful.burst = false
+	end
+end)
+
+awful.registerCommand("marco", burst)
+
+--Damage Spells
+
+dev.disintegrate:Callback(function(spell)
+	if not target.enemy or target.dead then
+		return
+	end
+	if not spell:Castable(target) then
+		return
+	end
+	if player.buff__insta(buffs.tipTheScales) then
+		return
+	end
+	if player.buff(buffs.essenceBurn) or player.essence >= 3 then
+		return spell:Cast(target)
+	end
+end)
+
+dev.livingFlame:Callback(function(spell)
+	if not target.enemy or target.dead then
+		return
+	end
+	if not spell:Castable(target) then
+		return
+	end
+	if player.buff(buffs.massDisintegrate) then
+		return
+	end
+	if player.buff(buffs.hover) and player.buff(buffs.essenceBurn) then
+		return
+	end
+	if not player.buff(buffs.burnOut) then
+		return
+	end
+	return spell:Cast(target)
+end)
+
+dev.azureStrike:Callback(function(spell)
+	if not target.enemy or target.dead then
+		return
+	end
+	if player.essence < 1 or not player.buff(buffs.essenceBurn) then
+		if spell:Castable(target) then
+			return spell:Cast(target)
+		end
+	end
+end)
+
+dev.fireBreath
+	:Callback(function(spell)
+		if player.buff(buffs.tipTheScales) then
+			return
+		end
+		if not target.enemy or target.dead then
+			return
+		end
+		if not spell:Castable(target) then
+			return
+		end
+
+		if awful.burst and dev.dragonRage.cd < 10 then
+			return
+		end
+
+		local enemiesInArc = #awful.allEnemies.arc(
+			player.x,
+			player.y,
+			player.z,
+			25, -- range in yards
+			30, -- arc angle in degrees
+			player.rotation,
+			function(unit)
+				return not unit.bcc and not unit.immuneMagic and unit.los
+			end
+		)
+
+		if enemiesInArc > 0 then
+			return spell:Cast(target)
+		end
+	end)
+	:Channeling(function(spell)
+		if player.empowerStage == 1 then
+			return spell:Release()
+		end
+	end)
+
+dev.dragonRage:Callback(function(spell)
+	if not awful.burst then
+		return
+	end
+	if not target.stunned then
+		return
+	end
+	if not target.enemy or target.dead then
+		return
+	end
+	if target.immuneMagic then
+		return
+	end
+	--if not target.debuff(debuffs.meltArmor) then return end
+	return spell:Cast()
+end)
+
+dev.obsidianScales:Callback(function(spell)
+	if not awful.burst then
+		return
+	end
+	if player.buff(buffs.obsidianScales) then
+		return
+	end
+	if spell.charges >= 1 and player.buff(buffs.dragonRage) then
+		return spell:Cast()
+	end
+end)
+
+dev.tipTheScales:Callback(function(spell)
+	if not awful.burst then
+		return
+	end
+	if not spell:Castable() then
+		return
+	end
+	if not player.buff(buffs.dragonRage) then
+		return
+	end
+	if dev.fireBreath.cd > awful.GCD.total then
+		return spell:Cast()
+	end
+end)
+
+dev.eternitySurge
+	:Callback(function(spell)
+		if not target.enemy then
+			return
+		end
+		if target.dead then
+			return
+		end
+		if not spell:Castable(target) then
+			return
+		end
+
+		if awful.burst then
+			if not player.buff(buffs.dragonRage) then
+				return
+			end
+			if not player.buff(buffs.tipTheScales) then
+				return
+			end
+			if not target.debuff(debuffs.shatteringStar) then
+				return
+			end
+			if not target.debuff(debuffs.fireBreath) then
+				return
+			end
+			return spell:Cast(target)
+		end
+
+		if not target.debuff__insta(debuffs.shatteringStar) then
+			return
+		end
+		if dev.fireBreath.cd > awful.GCD.total then
+			return spell:Cast(target)
+		end
+	end)
+	:Channeling(function(spell)
+		if player.empowerStage >= 1 then
+			return spell:Release()
+		end
+	end)
+
+dev.shatteringStar:Callback(function(spell)
+	if not target.enemy or target.dead then
+		return
+	end
+	if not spell:Castable(target) then
+		return
+	end
+
+	if awful.burst then
+		if not (player.buff(buffs.dragonRage) and dev.fireBreath.cd > awful.GCD.total) then
+			return
+		end
+		return spell:Cast(target)
+	end
+
+	if dev.fireBreath.cd > awful.GCD.total and dev.eternitySurge.cd < awful.GCD.total then
+		return spell:Cast(target)
+	end
+end)
+
+--Utility Spells
+
+dev.nullifyingShroud:Callback(function(spell)
+	if not awful.pvp then
+		return
+	end
+	if inPrep() > 0 then
+		return
+	end
+	if player.buff(buffs.dragonRage) then
+		return
+	end
+	if awful.enemies.around(player, 10) > 0 then
+		return
+	end
+	if spell:Castable() then
+		return spell:Cast()
+	end
+end)
+
+local buffblacklist = {}
+awful:OnProjectEvent(function(info, source, dest)
+	local subEvent, spellName = info[2], info[13]
+	if subEvent == "SPELL_AURA_REMOVED" then
+		if not dest then
+			dest = awful.Object:FromGUID(info.destGUID)
+		end
+		if dest.friend and spellName == dev.blessingOfTheBronze.name then
+			buffblacklist[dest.guid] = awful.time + awful.delays.xxl.now
+		end
+	end
+end)
+
+dev.blessingOfTheBronze:Callback(function(spell)
+	if spell.used(awful.delays.xxxl.now) then
+		return
+	end
+	awful.fullGroup.loop(function(unit)
+		if
+			buffblacklist[unit.guid]
+			or not spell:Castable(unit)
+			or unit.distance > 40
+			or unit.buffRemains(spell.name) > (awful.delays.xxxl.now * 5)
+		then
+			return
+		end
+		spell:Cast(player)
+	end)
+end)
+
+dev.sourceOfMagic:Callback(function(spell)
+	if not awful.pvp then
+		return
+	end
+	if not awful.healer or not awful.healer.exists then
+		return
+	end
+	if awful.healer.buff(spell.name) then
+		return
+	end
+	local prepTime = inPrep()
+	if prepTime < 30 or prepTime > 45 then
+		return
+	end
+	return spell:Cast(awful.healer)
+end)
+
+dev.verdantEmbrace:Callback(function(spell)
+	if player.buff(buffs.hover) then
+		return
+	end
+	if player.buff(buffs.obsidianScales) then
+		return
+	end
+	if awful.enemies.around(player, 5) == 0 then
+		return
+	end
+	if player.attackers() < 1 then
+		return
+	end
+
+	local bestTarget = nil
+	awful.fullGroup.loop(function(unit)
+		if not unit.exists or unit.dead then
+			return
+		end
+		if not spell:Castable(unit) then
+			return
+		end
+		if unit.distance > 25 then
+			return
+		end
+
+		local enemiesNearUnit = awful.enemies.around(unit, 8)
+		if enemiesNearUnit == 0 then
+			if not bestTarget or unit.hp < bestTarget.hp then
+				bestTarget = unit
+			end
+		end
+	end)
+
+	if bestTarget then
+		return spell:Cast(bestTarget)
+	end
+end)
+
+local dispelList = {
+	[274837] = true, -- Feral Frenzy
+	[386997] = true, -- Soul Rot
+	[360194] = true, -- Deathmark
+}
+
+dev.cauterizingFlames:Callback(function(spell)
+	local targetWithDebuff = awful.fullGroup.find(function(unit)
+		return unit.exists
+			and not unit.dead
+			and spell:Castable(unit)
+			and unit.distance <= 25
+			and unit.debuffFrom(dispelList)
+			and unit.debuff
+			and unit.debuffUptimeFrom(dispelList) > awful.delays.human.now
+	end)
+
+	if not targetWithDebuff then
+		return
+	end
+
+	if awful.healer and awful.healer.exists and awful.healer.cc and awful.healer.ccRemains > awful.GCD.total then
+		return spell:Cast(targetWithDebuff)
+	end
+end)
+
+dev.timeSpiral:Callback(function(spell)
+	if player.buff(buffs.hover) then
+		return
+	end
+	if dev.hover.charges == 0 and player.attackers() > 0 and not player.casting then
+		return spell:Cast()
+	end
+end)
+
+local dontStop = {
+	[356995] = function()
+		return player.buff(buffs.massDisintegrate)
+	end,
+}
+
+routine.StompDelay, routine.InterruptDelay, routine.InterruptFinishDelay =
+	awful.delay(0.45, 0.85), awful.delay(0.25, 0.45), awful.delay(0.10, 0.40)
+routine.DispelDelay, routine.BlinkDelay, routine.TinyDelay, routine.HumanDelay, routine.SlowDelay =
+	awful.delay(0.50, 0.90), awful.delay(0.2, 0.4), awful.delay(0.1, 0.3), awful.delay(0.2, 0.4), awful.delay(1, 4)
+
+dev.quell:Callback("test", function(spell)
+	if dontStop[player.chastId] and dontStop[player.chastId]() then
+		awful.alert("Not kicking - dontStop active", player.chastId)
+		return
+	end
+	awful.enemies.loop(function(unit)
+		if unit.dead or unit.friend or not unit.chasting or unit.cannotBeInterrupted then
+			return
+		end
+		if player.chasting and player.chastRemains < unit.chastRemains + awful.buffer then
+			return
+		end
+		local ct = unit.castTarget
+		if ct and ct.friend and ct.buff(8178) then
+			return
+		end
+		if
+			player.chasting
+			and routine.InterruptCCList[player.chastId]
+			and player.castTarget.isUnit(unit)
+			and routine.InterruptCCList[player.chastId](unit)
+			and player.chastRemains < unit.chastRemains
+		then
+			return
+		end
+		if unit.chasting then
+			if unit.chastElapsed > routine.InterruptDelay.now and unit.chastRemains > awful.buffer then
+				if
+					unit.chastRemains < awful.buffer + awful.latency + 0.03 + routine.InterruptFinishDelay.now
+					--or not unit.predictLos(unit.chastRemains - awful.buffer + awful.latency + 0.03)
+				then
+					if
+						routine.InterruptSpecialList[unit.chastId]
+						or (routine.InterruptCCList[unit.chastId] and routine.InterruptCCList[unit.chastId](ct))
+					then
+						return not player.chasting and spell:Cast(unit)
+					end
+					if
+						ct
+						and ct.friend
+						and ct.hp
+						and (ct.hp < 35 or (unit.cds or routine.DangerCasts[unit.chastId]) and ct.hp < 60)
+					then
+						if unit.healer then
+							return
+						end
+						return not player.chasting and spell:Cast(unit)
+					end
+					if ct and ct.enemy and ct.hp and ct.hp < 60 then
+						if awful.enemyHealer and awful.enemyHealer.exists and not awful.enemyHealer.dead and not unit.healer then
+							return
+						end
+						if routine.InterruptChanneledHealsList[unit.chastId] then
+							return spell:Cast(unit)
+						end
+						return spell:Cast(unit)
+					end
+				end
+			end
+		end
+	end)
+end)
+
+routine.InterruptCCList = {
+	[118] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[161355] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[161354] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[161353] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[126819] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[61780] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[161372] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[61721] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[61305] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[28272] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[28271] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[277792] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[277787] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[391622] = function(unit)
+		return unit.dr.incapacitate.half
+	end, -- Polymorph
+	[51514] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[211015] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[211010] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[211004] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[210873] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[269352] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[277778] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[277784] = function(unit)
+		return unit.dr.incapacitate.half
+	end,
+	[309328] = function(unit)
+		return unit.dr.incapacitate.half
+	end, -- Hex
+	[20066] = function(unit)
+		return unit.dr.incapacitate.half
+	end, -- Repentance
+	[710] = function(unit)
+		return unit.dr.incapacitate.half
+	end, -- Banish
+	[113724] = function(unit)
+		return true
+	end, -- Ring of Frost
+	[33786] = function(unit)
+		return unit.dr.disorient.half
+	end, -- Cyclone
+	[605] = function(unit)
+		return unit.dr.disorient.half
+	end, -- Mind Control
+	[198898] = function(unit)
+		return unit.dr.disorient.half
+	end, -- Song of Chi-ji
+	[5782] = function(unit)
+		return unit.dr.disorient.half
+	end, -- Fear
+	[2637] = function(unit)
+		return unit.dr.disorient.half
+	end, -- Hibernate
+	[360806] = function(unit)
+		return unit.dr.disorient.half
+	end, -- Sleep Walk
+}
+
+routine.InterruptSpecialList = {
+	[323764] = true,
+	[337433] = true,
+	[391528] = true, -- Convoke the Spirits
+	[375901] = true, -- Mindgames
+	[691] = true, -- Summon Felhunter
+	[688] = true, -- Summon Imp
+	[712] = true, -- Summon Succubus
+	[111771] = true, -- Demonic Gateway
+	[32375] = true, -- Mass Dispel
+	[64901] = true, -- Symbol of Hope
+	[64843] = true, -- Divine Hymn
+	[325013] = true, -- Boon of the Ascended
+	[324220] = true, -- Deathborne
+	[314791] = true, -- Shifting Power
+	[982] = true, -- Revive Pet
+	[191634] = true, -- Stormkeeper
+	[326434] = true, -- Kindred Spirits
+	[264106] = true, -- Deathbolt
+	[116858] = true, -- Chaos Bolt
+	[203286] = true, -- Greater Pyro
+	[305483] = true, -- Lightning Lasso
+	[199786] = true, -- Glacial Spike
+	[214621] = true, -- Schism
+	[265187] = true, -- demonic tyrant
+	[421453] = true, -- ultimate penitence
+	[8004] = true, -- Healing Surge
+	[82326] = true, -- Holy Light
+	[2060] = true, -- Heal
+	[2061] = true, -- Flash Heal
+	[77472] = true, -- Healing Wave
+	[8936] = true, -- Regrowth
+}
+
+routine.InterruptChanneledHealsList = {
+	[115175] = "Soothing Mist",
+	-- [191837] = "Essence Font",
+	[157982] = "Tranquility",
+	[64901] = "Symbol of Hope",
+	[64843] = "Divine Hymn",
+	[47758] = "Penance",
+	[47540] = "Penance",
+	[47666] = "Penance",
+	[47750] = "Penance",
+	[186724] = "Penance",
+	[186723] = "Penance",
+	[47757] = "Penance",
+	[355936] = "Dream Breath",
+}
+routine.DangerCasts = {
+	[365350] = "Arcane Surge",
+	[199786] = "Glacial Spike",
+	[116858] = "Chaos Bolt",
+	[375901] = "Mindgames",
+	[228260] = "Void Eruption",
+	[48181] = "Haunt",
+	[316099] = "Unstable Affliction",
+}
+
+routine.cancelCast = {}
+
+awful:OnProjectEvent(function(info, source, dest)
+	local subEvent, spellName = info[2], info[13]
+	local time = awful.time
+
+	if subEvent == "SPELL_CAST_SUCCESS" then
+		if not source then
+			source = awful.Object:FromGUID(info.sourceGUID)
+		end
+		if source then
+			if source.enemy then
+				if spellName == dev.shadowWordDeath.name then
+					if player.casting == dev.sleepWalk.name and player.castTarget.isUnit(source) then
+						awful.alert(player.castTarget.name .. " on hex", dev.shadowWordDeath.id)
+						routine.cancelCast[source] = {
+							cancel = time + awful.delays.tiny.now,
+							dmg = time + 1,
+							spellid = player.castId,
+							finish = time + player.chastRemains,
+						}
+					end
+				end
+			end
+		end
+	elseif subEvent == "SPELL_AURA_APPLIED" then
+		if not dest then
+			dest = awful.Object:FromGUID(info.destGUID)
+		end
+		if dest and dest.enemy and info[12] == 23920 then -- Spell Reflection buff ID
+			if player.casting == dev.sleepWalk.name and player.castTarget.isUnit(dest) then
+				awful.alert("Canceling Hex - " .. dest.name .. " got Spell Reflection", dev.sleepWalk.id)
+				routine.cancelCast[dest] = {
+					cancel = time + awful.delays.tiny.now,
+					dmg = time + 1,
+					spellid = player.castId,
+					finish = time + player.chastRemains,
+				}
+			end
+		end
+	end
+end)
+
+awful:OnProjectUpdate(function()
+	for enemy, info in pairs(routine.cancelCast) do
+		if (player.castId == info.spellid) and (awful.time > info.cancel) and (awful.time < info.finish) then
+			if awful.time + player.chastRemains > info.dmg then
+				return
+			end
+			SpellStopCasting()
+			SpellStopCasting()
+			return
+		end
+	end
+end)
+
+local immmuneToKick = {
+	[363916] = true,
+	[377362] = true,
+}
+
+local function safeToSleepWalk(target)
+	local ct = dev.sleepWalk.castTime
+	local magicImmune = target.immunities and target.immunities.magic and target.immunities.magic.effects
+	if magicImmune and magicImmune.remains > ct then
+		return false
+	end
+	if target.buffRemains(23920) >= ct then -- Spell Reflection
+		return false
+	end
+	if target.buffRemains(335255) >= ct then -- Divine Shield
+		return false
+	end
+	if target.buffRemains(210256) >= ct then -- Divine Shield
+		return false
+	end
+	if target.buffRemains(212704) >= ct then -- Divine Shield
+		return false
+	end
+	if target.class2 == "PALADIN" then
+		if target.buffRemains(6940) >= ct then -- Divine Shield
+			return false
+		end
+	end
+	if target.buffRemains(20711) >= ct then -- Priest Angle
+		return false
+	end
+	return true
+end
+
+dev.sleepWalk:Callback("auto", function(spell)
+	if player.buff(buffs.dragonRage) then
+		return
+	end
+
+	-- if not awful.arena then
+	--     return
+	-- end
+
+	if player.casting == spell.name then
+		return
+	end
+
+	local sleepy = awful.enemies.find(function(enemy)
+		return enemy.enemy and enemy.debuffRemains__insta(spell.name, player) > spell.castTime + awful.buffer
+	end)
+
+	if sleepy and sleepy.enemy then
+		return
+	end
+
+	local tremor = awful.enemyTotems.find(function(totem)
+		return totem.id == 5913 and totem.distance <= 32
+	end)
+
+	if tremor then
+		return
+	end
+
+	local function conditionHeal(target)
+		if not target.exists then
+			return false
+		end
+		if awful.target.exists and target.isUnit(awful.target) then
+			return false
+		end
+		if
+			awful.dps
+			and awful.dps.exists
+			and awful.dps.target.isUnit(target)
+			and not awful.dps.healer
+			and awful.dps.ccRemains <= 0
+		then
+			return false
+		end
+
+		local condDR = target.dr.disorient.full
+			or (target.dr.disorient.half and target.dr.disorient.remains > 15)
+			or (target.dr.disorient.remains > 0 and target.dr.disorient.remains < spell.castTime)
+		if not condDR then
+			return false
+		end
+
+		if not spell:Castable(target) then
+			return false
+		end
+
+		if target.ccRemains > spell.castTime + awful.GCD.total + awful.buffer then
+			return false
+		end
+
+		if not safeToSleepWalk(target) then
+			return false
+		end
+
+		if target.importantLockoutRemains > spell.castTime + player.gcdRemains + awful.buffer then
+			return false
+		end
+
+		return true
+	end
+
+	if awful.enemyHealer.exists then
+		if conditionHeal(awful.enemyHealer) then
+			return spell:Cast(awful.enemyHealer) and awful.alert("Sleep Walk on Healer", spell.id)
+		end
+	end
+
+	local sleepWalkReason = ""
+	local function conditionDPS(target)
+		if not target.exists or not target.visible then
+			return false
+		end
+		if not spell:Castable(target) then
+			return false
+		end
+
+		-- Never Sleep Walk your current target
+		if awful.target.exists and target.isUnit(awful.target) then
+			return false
+		end
+
+		local targetTarget = target.target
+		local targetCast = target.castTarget
+
+		if not targetTarget.exists and (not targetCast or not targetCast.exists) and not target.dummy then
+			return false
+		end
+
+		if target.ranged and not spell:Castable(target) then
+			return false
+		end
+
+		local condDR = target.dr.disorient.full
+			or (target.dr.disorient.half and target.dr.disorient.remains > 10)
+			or (target.dr.disorient.remains > 0 and target.dr.disorient.remains < spell.castTime)
+		if not condDR then
+			return false
+		end
+
+		if not safeToSleepWalk(target) then
+			return false
+		end
+
+		if target.castIdEx == 116858 and target.castTimeLeft > spell.castTime then -- Chaos Bolt
+			sleepWalkReason = "Chaos Bolt"
+			return true
+		end
+
+		if target.class2 == "ROGUE" then
+			if target.buffRemains(185313) > 0 or targetTarget.debuffRemains(408, target) > 0 then -- Shadow Dance, Kidney Shot
+				sleepWalkReason = "Rogue Burst"
+				return true
+			end
+		end
+
+		if target.advancedBurstSince > 0.7 then
+			sleepWalkReason = "Burst"
+			return true
+		end
+
+		if target.melee and target.targetsMe and target.distance <= 10 and not target.isUnit(awful.target) then
+			sleepWalkReason = "Melee Burst"
+			return true
+		end
+
+		if awful.arena then
+			local lowest = awful.fullGroup.lowest()
+			if
+				lowest
+				and lowest.exists
+				and lowest.hp <= 40
+				and (targetTarget.isUnit(lowest) or targetCast and lowest.isUnit(targetCast))
+			then
+				sleepWalkReason = "Friend in danger"
+				return true
+			end
+
+			local off = getOffTarget()
+			if awful.healer.exists and awful.healer.ccRemains > 4 then
+				if
+					off
+					and off.exists
+					and target.isUnit(off)
+					and target.ccRemains <= awful.GCD.total
+					and spell:Castable(off)
+				then
+					sleepWalkReason = "Melee on you"
+					return true
+				end
+			end
+		end
+
+		return false
+	end
+
+	local enemy = awful.enemies.find(function(enemy)
+		return spell:Castable(enemy)
+			and conditionDPS(enemy)
+			and enemy.ccRemains <= awful.buffer * 3
+			and safeToSleepWalk(enemy)
+	end)
+	if enemy then
+		return spell:Cast(enemy) and awful.alert("Sleep Walk: " .. sleepWalkReason, spell.id)
+	end
+end)

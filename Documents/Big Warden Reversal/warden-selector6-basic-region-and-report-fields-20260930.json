@@ -1,0 +1,81 @@
+{
+  "basic_query": {
+    "ea": "0x7FF697B720A4",
+    "constants": {
+      "dword_7FF697BBAB7C": 2895998106,
+      "qword_7FF697BBAB80": 12900496056888285822,
+      "v48": 3382998664,
+      "v49": 3455400854,
+      "v50": 3382998664,
+      "v51": 4294967295,
+      "v53": 13258414362113900540,
+      "v54": 8974675839989766868,
+      "v52": 9472068233719784747
+    },
+    "assignment_expressions": {
+      "v48": "7 * (~(dword_7FF697BBAB7C - 406767123) & 0x5DFAD00F)\n                                          + ((dword_7FF697BBAB7C - 406767123) & 0x5DFAD00F)\n                                          + 6 * ((dword_7FF697BBAB7C - 406767123) & 0x22052FF0)\n                                          - 5 * ((dword_7FF697BBAB7C - 406767123) ^ 0x5DFAD00F)\n                                          - 1576718351",
+      "v49": "v48 ^ 0x4514D1E",
+      "v50": "(7 * ~(v49 | 0x874516FF)\n                                           + 17 * ((v48 ^ 0x830412E1) & 0x874516FF)\n                                           + 19 * (v49 & 0x78BAE900)\n                                           + 12 * (v49 & 0x874516FF)\n                                           - 11 * (v49 | 0x874516FF)\n                                           - 6 * ~(v49 & 0x874516FF))\n                                          ^ (dword_7FF697BBAB7C\n                                           + ((v48 ^ 0x4514D1E) & 0xF520FC66)\n                                           + (v48 ^ 0x4514D1E | 0xADF0399)\n                                           + (v48 ^ 0xF171B178)\n                                           + 3 * ((v48 ^ 0xA8E0281) & 0xADF0399)\n                                           + 3 * ((v48 ^ 0x4514D1E) & 0xADF0399)\n                                           + dword_7FF697BBAB7C\n                                           + 1195848330)",
+      "v51": "(~v48 | v50) + ~(v48 | v50) + 2 * v50 - 2 * (v48 & v50) + v48 + 1",
+      "v53": "(~(qword_7FF697BBAB80 | 0x30744F0FF6067F55LL)\n                                           + ~(qword_7FF697BBAB80 & 0x30744F0FF6067F55LL)\n                                           + 2 * (qword_7FF697BBAB80 & 0xCF8BB0F009F980AAuLL)\n                                           + 2 * (qword_7FF697BBAB80 & 0x30744F0FF6067F55LL)\n                                           + 2 * ~(qword_7FF697BBAB80 | 0xCF8BB0F009F980AAuLL)\n                                           + 2)\n                                          ^ 0x348CD242559D5AD7LL",
+      "v54": "~(~(qword_7FF697BBAB80 | 0x30744F0FF6067F55LL)\n                                            + ~(qword_7FF697BBAB80 & 0x30744F0FF6067F55LL)\n                                            + 2 * (qword_7FF697BBAB80 & 0xCF8BB0F009F980AAuLL)\n                                            + 2 * (qword_7FF697BBAB80 & 0x30744F0FF6067F55LL)\n                                            + 2 * ~(qword_7FF697BBAB80 | 0xCF8BB0F009F980AAuLL)\n                                            + 2)",
+      "v52": "~(qword_7FF697BBAB80 | 0x30744F0FF6067F55LL)\n                                          + ~(qword_7FF697BBAB80 & 0x30744F0FF6067F55LL)\n                                          + 2 * (qword_7FF697BBAB80 & 0xCF8BB0F009F980AAuLL)\n                                          + 2 * (qword_7FF697BBAB80 & 0x30744F0FF6067F55LL)\n                                          + 2 * ~(qword_7FF697BBAB80 | 0xCF8BB0F009F980AAuLL)\n                                          + 2"
+    },
+    "arguments": [
+      "\n                                              -1",
+      "\n                                              v45",
+      "\n                                              (unsigned int)(v51 + 1)",
+      "\n                                              &v56[1]",
+      "\n                                              ~(v54 | (v53 - 0x7E687A38A1CD0AB0LL))\n                                            + (v52 | (v53 - 0x7E687A38A1CD0AB0LL))\n                                            + ((v53 - 0x7E687A38A1CD0AB0LL) ^ v54)\n                                            + 3 * (v54 & (v53 - 0x7E687A38A1CD0AB0LL))\n                                            + 3 * (v52 & (v53 - 0x7E687A38A1CD0AB0LL))\n                                            - 2 * (v53 - 0x7E687A38A1CD0AB0LL)\n                                            - qword_7FF697BBAB80\n                                            - v53\n                                            - 0x52034CD6942CBFCCLL",
+      "\n                                              0"
+    ],
+    "class": 0,
+    "length": 48
+  },
+  "region_pointer_algebra": "Let K=DC986F84CE98A878 and A=x&K,B=x&~K,C=~x&K,D=~x&~K. ((2*~x)|2*~K)-2*(~x&~K)-(x^K) = 2*(B+C+D)-2*D-(B+C) = B+C = x^K modulo2^64. Constants2*~K=46CF20F662CEAF0E and~K=2367907B31675787.",
+  "attributes_algebra": "For x=State,y=Protect,A=x&y,B=x&~y,C=~x&y,D=~(x|y):3*~(~x|y)+2*(y&~x)+2*(y&x)+2*~(x|y)+y+2 =3*B+2*C+2*A+2*D+(A+C)+2 =3*(MASK-D)+2*D+2=MASK-D=x|y modulo2^32. OR Type yields State|Protect|Type.",
+  "optional_source_xor_constant": "0xdc986f84ce98a878",
+  "optional_source_intermediates": {
+    "v44": 17167158949385564548,
+    "v45": 1844859651035341480,
+    "v46": 7350733694318990796,
+    "v47": 4862279655387013810,
+    "v50": 17796372464905416510
+  },
+  "comments": [
+    {
+      "ea": "0x7ff697b720a4",
+      "before": "Six-argument region query through callable-table slot0 (captured BBAB78 subtraction=0), previously identified NtQueryVirtualMemory. RCX=-1, RDX=decoded address. Current region-info class/length expressions and downstream report meanings still require closure.",
+      "after": "Captured selector6 basic query: NtQueryVirtualMemory(currentprocess=-1, decoded handler, class0 MemoryBasicInformation, output48bytes, ReturnLengthNULL). Constants BBAB7C/BBAB80 evaluated width-masked; full expressions journaled. This is distinct from dependent class2 filename query in body95."
+    },
+    {
+      "ea": "0x7ff697b50408",
+      "before": null,
+      "after": "Decoded descriptor is pointer to48-byte MEMORY_BASIC_INFORMATION. This native load reads BaseAddress (+0), not AllocationBase (+8); PE section fingerprint invoked at B5040E on this region base."
+    },
+    {
+      "ea": "0x7ff697b5136d",
+      "before": null,
+      "after": "37-byte response +16 = MEMORY_BASIC_INFORMATION.RegionSize from descriptor+0x18. +8=PE metadata fingerprint; +24=zero-extended State|Protect|Type (MBA partition proof in journal)."
+    },
+    {
+      "ea": "0x7ff697b52ef3",
+      "before": null,
+      "after": "37-byte response QWORD+24 receives zero-extended DWORD State|Protect|Type. Native DWORD inputs at descriptor+0x20/+0x24/+0x28; MBA over State/Protect reduces exactly to bitwise OR modulo2^32."
+    }
+  ],
+  "record_fields": {
+    "0": "reported region base (zero allowed when optional input is null)",
+    "8": "PE-section metadata FNV64",
+    "16": "RegionSize",
+    "24": "zero-extended State|Protect|Type",
+    "32": "BYTE1",
+    "33": "derived variable-trailer byte length WORD",
+    "35": "WORD256"
+  },
+  "limits": "Native full flatten-state path and buffer sizing/rollback semantics remain unresolved. Captured class/length evaluation not all-seeds proof. Optional nonnull input selects BaseAddress as256-byte source, not necessarily the exact decoded handler address or AllocationBase.",
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-memory_basic_information",
+    "https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntqueryvirtualmemory"
+  ]
+}

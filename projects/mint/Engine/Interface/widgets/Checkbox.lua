@@ -1,0 +1,331 @@
+local Unlocker, mint = ...
+
+---@class StdUi
+local StdUi = mint.StdUi
+
+if not StdUi then return end
+
+local module, version = 'Checkbox', 5;
+if not StdUi:UpgradeNeeded(module, version) then
+	return
+end
+
+----------------------------------------------------
+--- Checkbox
+----------------------------------------------------
+
+local CheckboxMethods = {
+	--- Set checkbox state
+	---
+	--- @param flag boolean
+	--- @param internal boolean - indicates to not run OnValueChanged
+	SetChecked = function(self, flag, internal)
+		self.isChecked = flag;
+
+		if not internal and self.OnValueChanged then
+			self:OnValueChanged(flag, self.value);
+		end
+
+		if not flag then
+			self.checkedTexture:Hide();
+			self.disabledCheckedTexture:Hide();
+			return
+		end
+
+		if self.isDisabled then
+			self.checkedTexture:Hide();
+			self.disabledCheckedTexture:Show();
+		else
+			self.checkedTexture:Show();
+			self.disabledCheckedTexture:Hide();
+		end
+	end,
+
+	GetChecked = function(self)
+		return self.isChecked;
+	end,
+
+	SetText    = function(self, t)
+		self.label:SetText(t);
+	end,
+
+	SetValue   = function(self, value)
+		self.value = value;
+	end,
+
+	GetValue   = function(self)
+		if self:GetChecked() then
+			return self.value;
+		else
+			return nil;
+		end
+	end,
+
+	Disable    = function(self)
+		self.isDisabled = true;
+		self:SetChecked(true);
+	end,
+
+	Enable     = function(self)
+		self.isDisabled = false;
+		self:SetChecked(self.isChecked);
+	end,
+
+	AutoWidth  = function(self)
+		self:SetWidth(self.target:GetWidth() + 8 + self.label:GetWidth());
+	end
+};
+
+local CheckboxEvents = {
+	OnClick = function(self)
+		if not self.isDisabled then
+			self:SetChecked(not self:GetChecked());
+		end
+	end
+}
+
+---@return CheckButton
+function StdUi:Checkbox(parent, text, width, height, tooltip)
+	local checkbox = CreateFrame('Button', nil, parent);
+	checkbox.stdUi = self;
+
+	checkbox.value = true;
+	checkbox.isChecked = false;
+
+	checkbox:EnableMouse(true);
+	self:SetObjSize(checkbox, width, height or 20);
+	self:InitWidget(checkbox);
+
+	checkbox.target = self:Panel(checkbox, 16, 16);
+	checkbox.target.stdUi = self;
+	checkbox.target:SetPoint('LEFT', 0, 0);
+
+	checkbox.label = self:ElementLabel(checkbox, text);
+	checkbox.label:SetPoint('LEFT', checkbox.target, 'RIGHT', 5, 0);
+	checkbox.label:SetPoint('RIGHT', checkbox, 'RIGHT', -5, 0);
+	checkbox.target.label = checkbox.label; -- reference for disabled
+
+	-- checkbox.checkedTexture = self:Texture(checkbox.target, nil, nil, [[Interface\Buttons\UI-CheckBox-Check]]);
+	checkbox.checkedTexture = self:Texture(checkbox.target, nil, nil, [[Interface\Buttons\WHITE8X8]]);
+	-- checkbox.checkedTexture:SetVertexColor(0.5450980392156862, 0.9137254901960784, 0.9921568627450981, 0.95)
+
+	local top_color = CreateColor(1, 0.82, 0, 1)
+	local bottom_color = CreateColor(1, 0.82, 0, 0.8)
+
+
+	checkbox.checkedTexture:SetGradient("VERTICAL", bottom_color, top_color)
+	checkbox.checkedTexture:SetPoint('TOPLEFT', checkbox.target, 1, -1)
+	checkbox.checkedTexture:SetPoint('BOTTOMRIGHT', checkbox.target, -1, 1)
+	-- checkbox.checkedTexture:SetAllPoints();
+	checkbox.checkedTexture:Hide();
+
+	-- checkbox.disabledCheckedTexture = self:Texture(checkbox.target, nil, nil,
+	-- 	[[Interface\Buttons\UI-CheckBox-Check-Disabled]]);
+	-- checkbox.disabledCheckedTexture:SetAllPoints();
+	-- checkbox.disabledCheckedTexture:Hide();
+
+	checkbox.disabledCheckedTexture = self:Texture(checkbox.target, nil, nil, [[Interface\Buttons\WHITE8X8]]);
+	-- checkbox.checkedTexture:SetVertexColor(0.5450980392156862, 0.9137254901960784, 0.9921568627450981, 0.95)
+
+	local dis_top_color = CreateColor(0.82, 0.82, 0.82, 0.4)
+	local dis_bottom_color = CreateColor(0.82, 0.82, 0.82, 0.1)
+
+	checkbox.disabledCheckedTexture:SetGradient("VERTICAL", dis_bottom_color, dis_top_color)
+	checkbox.disabledCheckedTexture:SetPoint('TOPLEFT', checkbox.target, 1, -1)
+	checkbox.disabledCheckedTexture:SetPoint('BOTTOMRIGHT', checkbox.target, -1, 1)
+	checkbox.disabledCheckedTexture:Hide();
+
+	for k, v in pairs(CheckboxMethods) do
+		checkbox[k] = v;
+	end
+
+	self:ApplyBackdrop(checkbox.target);
+	self:HookDisabledChecks(checkbox);
+	self:HookHoverBorder(checkbox);
+
+	if width == nil then
+		checkbox:AutoWidth();
+	end
+
+	for k, v in pairs(CheckboxEvents) do
+		checkbox:SetScript(k, v);
+	end
+
+	if (tooltip) then
+		self:FrameTooltip(checkbox, tooltip, 'mintTip', 'TOP', true)
+	end
+
+	return checkbox;
+end
+
+----------------------------------------------------
+--- IconCheckbox
+----------------------------------------------------
+
+function StdUi:IconCheckbox(parent, icon, text, width, height, iconSize)
+	iconSize = iconSize or 16
+	local checkbox = self:Checkbox(parent, text, width, height);
+	checkbox.icon = self:Texture(checkbox, iconSize, iconSize, icon);
+	checkbox.icon:SetPoint('LEFT', checkbox.target, 'RIGHT', 5, 0);
+
+	checkbox.label:ClearAllPoints();
+	checkbox.label:SetPoint('LEFT', checkbox.target, 'RIGHT', iconSize + 5, 0);
+	checkbox.label:SetPoint('RIGHT', checkbox, 'RIGHT', -5, 0);
+
+	return checkbox;
+end
+
+function StdUi:IconCheckbox2(parent, icon, text, width, height, iconSize)
+	iconSize = iconSize or 16
+	local checkbox = self:Checkbox(parent, '', width, height);
+	checkbox.icon = self:Texture(checkbox, 30, 30, icon);
+	checkbox.icon:SetPoint('LEFT', 0, 0);
+	
+
+	checkbox.target:ClearAllPoints();
+	checkbox.target:SetPoint('BOTTOMRIGHT', checkbox.icon, 5, -5);
+
+	-- checkbox.text:ClearAllPoints();
+	-- checkbox.text:SetPoint('LEFT', checkbox.target, 'RIGHT', iconSize + 5, 0);
+	-- checkbox.text:SetPoint('RIGHT', checkbox, 'RIGHT', -5, 0);
+
+	return checkbox;
+end
+
+----------------------------------------------------
+--- Radio
+----------------------------------------------------
+
+local RadioEvents = {
+	OnClick = function(self)
+		if not self.isDisabled then
+			self:SetChecked(true);
+		end
+	end
+};
+
+---@return CheckButton
+function StdUi:Radio(parent, text, groupName, width, height)
+	local radio = self:Checkbox(parent, text, width, height);
+
+	radio.checkedTexture = self:Texture(radio.target, nil, nil, [[Interface\Buttons\UI-RadioButton]]);
+	radio.checkedTexture:SetAllPoints(radio.target);
+	radio.checkedTexture:Hide();
+	radio.checkedTexture:SetTexCoord(0.25, 0.5, 0, 1);
+
+	radio.disabledCheckedTexture = self:Texture(radio.target, nil, nil,
+		[[Interface\Buttons\UI-RadioButton]]);
+	radio.disabledCheckedTexture:SetAllPoints(radio.target);
+	radio.disabledCheckedTexture:Hide();
+	radio.disabledCheckedTexture:SetTexCoord(0.75, 1, 0, 1);
+
+	for k, v in pairs(RadioEvents) do
+		radio:SetScript(k, v);
+	end
+
+	if groupName then
+		self:AddToRadioGroup(radio, groupName);
+	end
+
+	return radio;
+end
+
+StdUi.radioGroups = {};
+StdUi.radioGroupValues = {};
+
+---@return CheckButton[]
+function StdUi:RadioGroup(groupName)
+	if not self.radioGroups[groupName] then
+		self.radioGroups[groupName] = {};
+	end
+
+	if not self.radioGroupValues[groupName] then
+		self.radioGroupValues[groupName] = {};
+	end
+
+	return self.radioGroups[groupName];
+end
+
+function StdUi:GetRadioGroupValue(groupName)
+	local group = self:RadioGroup(groupName);
+
+	for i = 1, #group do
+		local radio = group[i];
+		if radio:GetChecked() then
+			return radio:GetValue();
+		end
+	end
+
+	return nil;
+end
+
+function StdUi:SetRadioGroupValue(groupName, value)
+	local group = self:RadioGroup(groupName);
+
+	for i = 1, #group do
+		local radio = group[i];
+		radio:SetChecked(radio.value == value)
+	end
+
+	return nil;
+end
+
+local radioGroupOnValueChanged = function(radio)
+	radio.notified = true;
+	local group = radio.radioGroup;
+	local groupName = radio.radioGroupName;
+
+	-- We must get all notifications from group
+	for i = 1, #group do
+		if not group[i].notified then
+			return
+		end
+	end
+
+	local newValue = radio.stdUi:GetRadioGroupValue(groupName);
+	if radio.stdUi.radioGroupValues[groupName] ~= newValue then
+		radio.OnValueChangedCallback(newValue, groupName);
+	end
+	radio.stdUi.radioGroupValues[groupName] = newValue;
+
+	for i = 1, #group do
+		group[i].notified = false;
+	end
+end
+
+function StdUi:OnRadioGroupValueChanged(groupName, callback)
+	local group = self:RadioGroup(groupName);
+
+	for i = 1, #group do
+		local radio = group[i];
+		radio.OnValueChangedCallback = callback;
+		radio.OnValueChanged = radioGroupOnValueChanged;
+	end
+
+	return nil;
+end
+
+local RadioGroupEvents = {
+	OnClick = function(radio)
+		for i = 1, #radio.radioGroup do
+			local otherRadio = radio.radioGroup[i];
+
+			if otherRadio ~= radio then
+				otherRadio:SetChecked(false);
+			end
+		end
+	end
+};
+
+function StdUi:AddToRadioGroup(radio, groupName)
+	local group = self:RadioGroup(groupName);
+	tinsert(group, radio);
+	radio.radioGroup = group;
+	radio.radioGroupName = groupName;
+
+	for k, v in pairs(RadioGroupEvents) do
+		radio:HookScript(k, v);
+	end
+end
+
+StdUi:RegisterModule(module, version);

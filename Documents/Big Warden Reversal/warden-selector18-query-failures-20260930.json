@@ -1,0 +1,51 @@
+{
+  "date": "2026-09-30",
+  "source_journal": "warden-registry-query-match-20260930.json",
+  "paths": {
+    "enumeration_resize": "80000005/C0000023 retry same index. Replacement allocation failure may retry unchanged capacity without bounded retry count.",
+    "enumeration_negative_or_no_match": "Exit without unconditional descriptor status write; initialized caller output remains empty unless previously modified.",
+    "copied_name_allocation_failure": "AC6194 writes C0000017, then only owned enumeration storage cleanup.",
+    "sizing_result": "Only C0000023 enters requery; otherwise publish returned status, no value-data copy. Required length<12 uses C0000024.",
+    "query_temp_allocation_failure": "AC528D uses C0000017.",
+    "output_replacement_allocation_failure": "AC5CD8 uses C0000017; free query temp, publish status.",
+    "requery_negative_status": "Publish negative status; no value-data copy; query temp released.",
+    "requery_extent_mismatch": "AC5C64 C0000206 when returned DataLength !=output capacity.",
+    "requery_type_mismatch": "AC5CB2 C0000024 when returned Type !=fixed caller type.",
+    "normal_copy": "DataLength==capacity,type matches,used=0 permits memcpy, used becomes DataLength; report/input length checks separate."
+  },
+  "ownership": {
+    "enumeration_stack": "512-byte local, never free as owned heap.",
+    "enumeration_heap": "Replacement buffers and final owned storage explicitly cleared by capacity then freed.",
+    "copied_value_name": "Temporary terminated/lowercased name explicitly cleared then freed on ordinary match/nonmatch cleanup.",
+    "query_result_temp": "Explicitly freed atAC5DBE; no separate helper-local wipe was identified before that free. Free callback internals not established.",
+    "output_data": "Transferred into owned caller object; not freed by ordinary query cleanup. Outer selector clears capacity/free on ownership-controlled paths."
+  },
+  "limitations": [
+    "Malformed OS result lengths/pointers remain unchecked contracts",
+    "Missing runtime bank targets and allocator/free callback implementations prevent universal external-call proof",
+    "No recovered bytes or routines executed"
+  ],
+  "comment_journal": [
+    {
+      "ea": "0x7ff697ac51e0",
+      "old": null,
+      "new": "Sizing fallback status C0000024: required KEY_VALUE_PARTIAL_INFORMATION-compatible extent must be>=12 before allocation/requery."
+    },
+    {
+      "ea": "0x7ff697ac528d",
+      "old": null,
+      "new": "Query-result temporary allocation failure status C0000017; no data copy."
+    },
+    {
+      "ea": "0x7ff697ac5dbe",
+      "old": null,
+      "new": "Release query-result temporary. No explicit local wipe immediately precedes this free; do not assume free callback wipes it. Output data remains caller-owned."
+    },
+    {
+      "ea": "0x7ff697ac6194",
+      "old": null,
+      "new": "Copied value-name allocation failure: write C0000017 through descriptor status pointer, then clear/free owned enumeration storage only."
+    }
+  ],
+  "save_success": true
+}

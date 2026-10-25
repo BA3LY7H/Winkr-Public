@@ -1,0 +1,733 @@
+{
+	"order": [
+		{
+			"path": "Engine/Wrappers.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/json.lua",
+			"type": "require",
+			"assignTo": "json"
+		},
+		{
+			"path": "Engine/Classes/Command.lua",
+			"type": "require",
+			"assignTo": "Command"
+		},
+		{
+			"path": "Engine/Classes/List.lua",
+			"type": "require",
+			"assignTo": "List"
+		},
+		{
+			"path": "Engine/Classes/Draw.lua",
+			"type": "require",
+			"assignTo": "Draw"
+		},
+		{
+			"path": "Engine/Classes/Timer.lua",
+			"type": "require",
+			"assignTo": "Timer"
+		},
+		{
+			"path": "Engine/Classes/Vector3.lua",
+			"type": "require",
+			"assignTo": "Vector3"
+		},
+		{
+			"path": "Engine/Classes/EventManager.lua",
+			"type": "require",
+			"assignTo": "EventManager"
+		},
+		{
+			"path": "Engine/Classes/Database/Database.lua",
+			"type": "instance",
+			"assignTo": "Settings"
+		},
+		{
+			"path": "Engine/Classes/Cache.lua",
+			"type": "require",
+			"assignTo": "Cache"
+		},
+		{
+			"path": "Engine/Classes/DebugFrame.lua",
+			"type": "require",
+			"assignTo": "DebugFrame"
+		},
+		{
+			"path": "Engine/Classes/SmartObject.lua",
+			"type": "require",
+			"assignTo": "SmartObject"
+		},
+		{
+			"path": "Engine/Classes/Aura.lua",
+			"type": "require",
+			"assignTo": "Aura"
+		},
+		{
+			"path": "Engine/Classes/AuraTable.lua",
+			"type": "require",
+			"assignTo": "AuraTable"
+		},
+		{
+			"path": "Engine/Classes/Unit/Unit.lua",
+			"type": "require",
+			"assignTo": "Unit"
+		},
+		{
+			"path": "Engine/Classes/Unit/Attributes.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Classes/FriendManager.lua",
+			"type": "instance",
+			"assignTo": "FriendManager",
+			"postInit": "Populate"
+		},
+		{
+			"path": "Engine/Classes/UnitManager.lua",
+			"type": "instance",
+			"assignTo": "UnitManager"
+		},
+		{
+			"path": "Engine/Classes/ObjectManager.lua",
+			"type": "instance",
+			"assignTo": "ObjectManager"
+		},
+		{
+			"path": "Engine/Classes/Spell/Spell.lua",
+			"type": "require",
+			"assignTo": "Spell"
+		},
+		{
+			"path": "Engine/Classes/Spell/Attributes.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Classes/Spell/Methods.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Classes/Spell/Empower.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Constants/Constants.lua",
+			"type": "require",
+			"assignTo": "Constants"
+		},
+		{
+			"path": "Engine/Constants/Columns.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Classes/TotemManager.lua",
+			"type": "instance",
+			"assignTo": "TotemManager"
+		},
+		{
+			"path": "Engine/Classes/Item/Item.lua",
+			"type": "require",
+			"assignTo": "Item"
+		},
+		{
+			"path": "Engine/Classes/Item/Methods.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Classes/TimeToDie.lua",
+			"type": "require",
+			"assignTo": "TimeToDie"
+		},
+		{
+			"path": "Engine/Interface/StdUi.lua",
+			"type": "require",
+			"assignTo": "StdUi"
+		},
+		{
+			"path": "Engine/Interface/StdUiConfig.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/StdUiPosition.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/StdUiUtil.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/StdUiLayout.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/StdUiGrid.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/StdUiBuilder.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/Basic.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/Window.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/Button.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/EditBox.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/Checkbox.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/Dropdown.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/Autocomplete.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/Label.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/Scroll.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/ScrollTable.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/ScrollDictionary.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/Slider.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/Tooltip.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/Table.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/ProgressBar.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/ColorPicker.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/Tab.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/Spell.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/ContextMenu.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/widgets/QuickButton.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/API/API.lua",
+			"type": "instance",
+			"assignTo": "Interface"
+		},
+		{
+			"path": "Engine/Interface/API/Element.lua",
+			"type": "require",
+			"assignTo": "Interface.Element"
+		},
+		{
+			"path": "Engine/Interface/API/Row.lua",
+			"type": "require",
+			"assignTo": "Interface.Row"
+		},
+		{
+			"path": "Engine/Interface/API/Page.lua",
+			"type": "require",
+			"assignTo": "Interface.Page"
+		},
+		{
+			"path": "Engine/Interface/pages/General.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/pages/Keybinds.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/pages/Utility.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/pages/Reactions.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/pages/Dungeons.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/pages/Profiles.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/pages/Developer.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Interface/pages/Whitelists.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Classes/Notification.lua",
+			"type": "require",
+			"assignTo": "Notification"
+		},
+		{
+			"path": "Engine/Classes/NotificationManager.lua",
+			"type": "instance",
+			"assignTo": "NotificationManager"
+		},
+		{
+			"path": "Engine/Classes/Queue/Queue.lua",
+			"type": "instance",
+			"assignTo": "Queue"
+		},
+		{
+			"path": "Engine/Classes/Keybinds.lua",
+			"type": "require",
+			"assignTo": "Keybinds",
+			"postProcess": "mint.Keybinds = mint.Keybinds.New()"
+		},
+		{
+			"path": "Engine/Classes/Actor.lua",
+			"type": "require",
+			"assignTo": "Actor"
+		},
+		{
+			"path": "Engine/Classes/RaidEvents/RaidEvents.lua",
+			"type": "require",
+			"assignTo": "RaidEvents"
+		},
+		{
+			"path": "Engine/Classes/Reaction.lua",
+			"type": "instance",
+			"assignTo": "Reactions"
+		},
+		{
+			"path": "Engine/Classes/Sequencer.lua",
+			"type": "require",
+			"assignTo": "Sequence"
+		},
+		{
+			"path": "Engine/Classes/Utility/Dispel.lua",
+			"type": "require",
+			"assignTo": "Dispel",
+			"errorHandling": true,
+			"postProcess": "local success, result = pcall(function() local dispel = mint.Dispel:New(); mint.console.log('Successfully initialized Dispel'); return dispel; end); if success then mint.Dispel = result; mint.data.vars.dispel_delay = mint.Dispel:GetNewDelay(); else mint.console.log('|cFFFF0000Error initializing Dispel:|r ', result); geterrorhandler()(result); end"
+		},
+		{
+			"path": "Engine/Classes/Utility/Targets.lua",
+			"type": "instance",
+			"assignTo": "SmartTarget"
+		},
+		{
+			"path": "Engine/Classes/Utility/Utility.lua",
+			"type": "require",
+			"assignTo": "Utility"
+		},
+		{
+			"path": "Engine/Classes/Utility/Draws.lua",
+			"type": "require"
+		},
+		{
+			"path": "Engine/Core.lua",
+			"type": "require"
+		},
+		{
+			"path": "APLs/Utility/utility.lua",
+			"type": "classFile"
+		},
+		{
+			"path": "APLs/Utility/visions.lua",
+			"type": "classFile"
+		},
+		{
+			"path": "APLs/Hunter/hunter.lua",
+			"type": "classFile",
+			"class": "hunter"
+		},
+		{
+			"path": "APLs/Hunter/BeastMastery/spells.lua",
+			"type": "classFile",
+			"class": "hunter",
+			"spec": "beast mastery"
+		},
+		{
+			"path": "APLs/Hunter/BeastMastery/settings.lua",
+			"type": "classFile",
+			"class": "hunter",
+			"spec": "beast mastery"
+		},
+		{
+			"path": "APLs/Hunter/BeastMastery/actor.lua",
+			"type": "classFile",
+			"class": "hunter",
+			"spec": "beast mastery"
+		},
+		{
+			"path": "APLs/Paladin/paladin.lua",
+			"type": "classFile",
+			"class": "paladin"
+		},
+		{
+			"path": "APLs/Paladin/Protection/settings.lua",
+			"type": "classFile",
+			"class": "paladin",
+			"spec": "protection"
+		},
+		{
+			"path": "APLs/Paladin/Protection/spells.lua",
+			"type": "classFile",
+			"class": "paladin",
+			"spec": "protection"
+		},
+		{
+			"path": "APLs/Paladin/Protection/reactions.lua",
+			"type": "classFile",
+			"class": "paladin",
+			"spec": "protection"
+		},
+		{
+			"path": "APLs/Paladin/Protection/actor.lua",
+			"type": "classFile",
+			"class": "paladin",
+			"spec": "protection"
+		},
+		{
+			"path": "APLs/Paladin/Holy/settings.lua",
+			"type": "classFile",
+			"class": "paladin",
+			"spec": "holy"
+		},
+		{
+			"path": "APLs/Paladin/Holy/spells.lua",
+			"type": "classFile",
+			"class": "paladin",
+			"spec": "holy"
+		},
+		{
+			"path": "APLs/Paladin/Holy/reactions.lua",
+			"type": "classFile",
+			"class": "paladin",
+			"spec": "holy"
+		},
+		{
+			"path": "APLs/Paladin/Holy/actor.lua",
+			"type": "classFile",
+			"class": "paladin",
+			"spec": "holy"
+		},
+		{
+			"path": "APLs/Mage/mage.lua",
+			"type": "classFile",
+			"class": "mage"
+		},
+		{
+			"path": "APLs/Mage/Fire/spells.lua",
+			"type": "classFile",
+			"class": "mage",
+			"spec": "fire"
+		},
+		{
+			"path": "APLs/Mage/Fire/actor.lua",
+			"type": "classFile",
+			"class": "mage",
+			"spec": "fire"
+		},
+		{
+			"path": "APLs/Monk/monk.lua",
+			"type": "classFile",
+			"class": "monk"
+		},
+		{
+			"path": "APLs/Monk/Mistweaver/settings.lua",
+			"type": "classFile",
+			"class": "monk",
+			"spec": "mistweaver"
+		},
+		{
+			"path": "APLs/Monk/Mistweaver/spells.lua",
+			"type": "classFile",
+			"class": "monk",
+			"spec": "mistweaver"
+		},
+		{
+			"path": "APLs/Monk/Mistweaver/actor.lua",
+			"type": "classFile",
+			"class": "monk",
+			"spec": "mistweaver"
+		},
+		{
+			"path": "APLs/Priest/priest.lua",
+			"type": "classFile",
+			"class": "priest"
+		},
+		{
+			"path": "APLs/Priest/Discipline/settings.lua",
+			"type": "classFile",
+			"class": "priest",
+			"spec": "discipline"
+		},
+		{
+			"path": "APLs/Priest/Discipline/spells.lua",
+			"type": "classFile",
+			"class": "priest",
+			"spec": "discipline"
+		},
+		{
+			"path": "APLs/Priest/Discipline/actor.lua",
+			"type": "classFile",
+			"class": "priest",
+			"spec": "discipline"
+		},
+		{
+			"path": "APLs/Priest/Shadow/settings.lua",
+			"type": "classFile",
+			"class": "priest",
+			"spec": "shadow"
+		},
+		{
+			"path": "APLs/Priest/Shadow/spells.lua",
+			"type": "classFile",
+			"class": "priest",
+			"spec": "shadow"
+		},
+		{
+			"path": "APLs/Priest/Shadow/actor.lua",
+			"type": "classFile",
+			"class": "priest",
+			"spec": "shadow"
+		},
+		{
+			"path": "APLs/Shaman/shaman.lua",
+			"type": "classFile",
+			"class": "shaman"
+		},
+		{
+			"path": "APLs/Shaman/Enhancement/spells.lua",
+			"type": "classFile",
+			"class": "shaman",
+			"spec": "enhancement"
+		},
+		{
+			"path": "APLs/Shaman/Enhancement/settings.lua",
+			"type": "classFile",
+			"class": "shaman",
+			"spec": "enhancement"
+		},
+		{
+			"path": "APLs/Shaman/Enhancement/actor.lua",
+			"type": "classFile",
+			"class": "shaman",
+			"spec": "enhancement"
+		},
+		{
+			"path": "APLs/Death Knight/deathknight.lua",
+			"type": "classFile",
+			"class": "deathknight"
+		},
+		{
+			"path": "APLs/Death Knight/Blood/spells.lua",
+			"type": "classFile",
+			"class": "deathknight",
+			"spec": "blood"
+		},
+		{
+			"path": "APLs/Death Knight/Blood/settings.lua",
+			"type": "classFile",
+			"class": "deathknight",
+			"spec": "blood"
+		},
+		{
+			"path": "APLs/Death Knight/Blood/actor.lua",
+			"type": "classFile",
+			"class": "deathknight",
+			"spec": "blood"
+		},
+		{
+			"path": "APLs/Death Knight/Unholy/settings.lua",
+			"type": "classFile",
+			"class": "deathknight",
+			"spec": "unholy"
+		},
+		{
+			"path": "APLs/Death Knight/Unholy/spells.lua",
+			"type": "classFile",
+			"class": "deathknight",
+			"spec": "unholy"
+		},
+		{
+			"path": "APLs/Death Knight/Unholy/actor.lua",
+			"type": "classFile",
+			"class": "deathknight",
+			"spec": "unholy"
+		},
+		{
+			"path": "APLs/Druid/druid.lua",
+			"type": "classFile",
+			"class": "druid"
+		},
+		{
+			"path": "APLs/Druid/Feral/spells.lua",
+			"type": "classFile",
+			"class": "druid",
+			"spec": "feral"
+		},
+		{
+			"path": "APLs/Druid/Feral/actor.lua",
+			"type": "classFile",
+			"class": "druid",
+			"spec": "feral"
+		},
+		{
+			"path": "APLs/Druid/Restoration/settings.lua",
+			"type": "classFile",
+			"class": "druid",
+			"spec": "restoration"
+		},
+		{
+			"path": "APLs/Druid/Restoration/spells.lua",
+			"type": "classFile",
+			"class": "druid",
+			"spec": "restoration"
+		},
+		{
+			"path": "APLs/Druid/Restoration/actor.lua",
+			"type": "classFile",
+			"class": "druid",
+			"spec": "restoration"
+		},
+		{
+			"path": "APLs/Warrior/warrior.lua",
+			"type": "classFile",
+			"class": "warrior"
+		},
+		{
+			"path": "APLs/Warrior/Generic/settings.lua",
+			"type": "classFile",
+			"class": "warrior"
+		},
+		{
+			"path": "APLs/Warrior/Generic/spells.lua",
+			"type": "classFile",
+			"class": "warrior"
+		},
+		{
+			"path": "APLs/Warrior/Generic/actor.lua",
+			"type": "classFile",
+			"class": "warrior"
+		},
+		{
+			"path": "APLs/Warlock/warlock.lua",
+			"type": "classFile",
+			"class": "warlock"
+		},
+		{
+			"path": "APLs/Warlock/Generic/settings.lua",
+			"type": "classFile",
+			"class": "warlock"
+		},
+		{
+			"path": "APLs/Warlock/Generic/spells.lua",
+			"type": "classFile",
+			"class": "warlock"
+		},
+		{
+			"path": "APLs/Warlock/Generic/actor.lua",
+			"type": "classFile",
+			"class": "warlock"
+		},
+		{
+			"path": "APLs/Evoker/evoker.lua",
+			"type": "classFile",
+			"class": "evoker"
+		},
+		{
+			"path": "APLs/Evoker/Devastation/settings.lua",
+			"type": "classFile",
+			"class": "evoker",
+			"spec": "devastation"
+		},
+		{
+			"path": "APLs/Evoker/Devastation/spells.lua",
+			"type": "classFile",
+			"class": "evoker",
+			"spec": "devastation"
+		},
+		{
+			"path": "APLs/Evoker/Devastation/actor.lua",
+			"type": "classFile",
+			"class": "evoker",
+			"spec": "devastation"
+		},
+		{
+			"path": "APLs/Evoker/Augmentation/settings.lua",
+			"type": "classFile",
+			"class": "evoker",
+			"spec": "augmentation"
+		},
+		{
+			"path": "APLs/Evoker/Augmentation/spells.lua",
+			"type": "classFile",
+			"class": "evoker",
+			"spec": "augmentation"
+		},
+		{
+			"path": "APLs/Evoker/Augmentation/actor.lua",
+			"type": "classFile",
+			"class": "evoker",
+			"spec": "augmentation"
+		},
+		{
+			"path": "APLs/Evoker/Preservation/settings.lua",
+			"type": "classFile",
+			"class": "evoker",
+			"spec": "preservation"
+		},
+		{
+			"path": "APLs/Evoker/Preservation/spells.lua",
+			"type": "classFile",
+			"class": "evoker",
+			"spec": "preservation"
+		},
+		{
+			"path": "APLs/Evoker/Preservation/actor.lua",
+			"type": "classFile",
+			"class": "evoker",
+			"spec": "preservation"
+		}
+	]
+}

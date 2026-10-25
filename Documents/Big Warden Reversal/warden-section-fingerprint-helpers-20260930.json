@@ -1,0 +1,480 @@
+{
+  "captured_constants": {
+    "qword_7FF697BBAAD0": 16664451718823606991,
+    "qword_7FF697BBAAD8": 2899777740133055028,
+    "v11": 16594823596416651087,
+    "v12": 15046684495513629287,
+    "v13": 8041191902543707495,
+    "v14": 15824149336991606010
+  },
+  "assignment_expressions": {
+    "v11": "qword_7FF697BBAAD0 - 0xF75E688E71AB80LL",
+    "v12": "(((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL) | 0xEB4A0C861FAB2240uLL)\n            + (~((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL) & 0xEB4A0C861FAB2240uLL)",
+    "v13": "qword_7FF697BBAAD8 + 0x4759F8F0B9A64333LL",
+    "v14": "-7LL\n            - (7 * ~(v13 ^ 0x48DEF1802389F488LL | 0xFCDC5715224AAD15uLL)\n             + ((v13 ^ 0x48DEF1802389F488LL) & 0xFCDC5715224AAD15uLL)\n             + 6 * (v13 ^ 0x48DEF1802389F488LL | 0xFCDC5715224AAD15uLL))"
+  },
+  "hash_arguments": [
+    "\n                 (const unsigned __int8 *)&v15[2] + 2",
+    "\n                 ((qword_7FF697BBAAD0\n                 + ((v12\n                   + 2 * ((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL)\n                   - 2 * (((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL) & 0x14B5F379E054DDBFLL)\n                   + 0x14B5F379E054DDC1LL)\n                  ^ v11\n                  ^ 0xEE2B3235E1A68F21uLL)\n                 - ((v11 ^ 0x1623495AB2113398LL)\n                  + 0x1E5CAE51D8A93590LL))\n                ^ v11\n                ^ 0xB23528A77907B266uLL)\n               - qword_7FF697BBAAD0\n               + v12\n               + 2 * ((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL)\n               - 2 * (((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL) & 0x14B5F379E054DDBFLL)\n               + 0x14B5F379E054DDC0LL\n               + 0x4E9B6CB6799186A9LL",
+    "\n                 (((((v14 ^ 0x5DDF7CF6FE151B68LL) + 0xECA020D88CBE1CLL) ^ v13 ^ 0xD3D7AAC4CF1B9C8AuLL)\n                 + 6 * ((v13 ^ 0xD3D7AAC4CF1B9C8AuLL) & ~((v14 ^ 0x5DDF7CF6FE151B68LL) + 0xECA020D88CBE1CLL))\n                 + 6 * (((v14 ^ 0x5DDF7CF6FE151B68LL) + 0xECA020D88CBE1CLL) & (v13 ^ 0xD3D7AAC4CF1B9C8AuLL))\n                 - 6 * (~((v14 ^ 0x5DDF7CF6FE151B68LL) + 0xECA020D88CBE1CLL) | v13 ^ 0xD3D7AAC4CF1B9C8AuLL)\n                 + 6 * ~(((v14 ^ 0x5DDF7CF6FE151B68LL) + 0xECA020D88CBE1CLL) | v13 ^ 0xD3D7AAC4CF1B9C8AuLL))\n                ^ (qword_7FF697BBAAD8 + 0x4759F8F0B9A64333LL)\n                ^ ((v14 ^ 0x5DDF7CF6FE151B68LL) + 0x558B0CED5CDD1CF4LL)\n                ^ 0xAC5B0265629B1763uLL)\n               - (v13 ^ 0x48DEF1802389F488LL)\n               + qword_7FF697BBAAD8\n               + v14"
+  ],
+  "evaluated_length": 136,
+  "evaluated_seed": 0,
+  "normalizations": [
+    {
+      "start": 140697083321680,
+      "end": 140697083322468,
+      "label": "wmp1_section_fingerprint_wrapper_34",
+      "original_bytes": "4157415641554154565755534883ec784489c748895424304889cbc744242c209b091d48bedbd6f8163c08fb0f49bdc4d6f8163c08fb0f49be2a253fa6da22706949bf9e8791a00f08c7bb4c8d642440488d6c2458eb19488b442470488930c744242cb7880322660f1f8400000000008b44242c3db74ea44a7f453d0612ff2e0f8fda0000003d209b091d0f8590010000488d0db8180500488d15311905004c8d051df00f00e8d5b70200a8010f84ec010000c744242c0712ff2eebb30f1f003d2f258a650f8e2f0100003d30258a650f84670100003d3c03c9740f85f5010000f6c377713490900f3180e81e81c7680dc63183c37ec6c2f0e8eb7100000f82af100000c6c26c55f6da80ef2081ed9475dc6480ea186ade0f8071260000c7c02c534f245958e882a50100c7c3e70e32255381c696b8f8b5f6de81c1fadb1f9501ab488b44246866893848896c2470c744242c89b75d3be914ffffff0f1f40003d0712ff2e0f85ecfeffff80cb0071739090f6d880ebb4c6c6f883c59f81e818a365d9c6c1050f8de49a0100c7c25bbbf26d76115880c77b80ed9f7fa280c36d80c51d683c005f7c687e1443c280c63f68e9310afa6a876841b7b75580c0e8e857ef010081e99c68818751c6c309e85ae70000c6c35bc7c36b853672809a6fad9e29df48895c243866897c2440c744242c8a33d452e976feffff3d8a33d4520f85b10000004c896c24584c897424504c897c2448c744242cd08f9c76e94ffeffff48b864253fa6da2270694889442450c744242cb84ea44ae933fefffff976459090669080c575e85ac3010081c196369f4583c76581eeffce5198c6c662e8cf4c000081e9fab4cf8b0f8e764d0000f6daf6db7d5381ed3448a2cb0f81c3280100f6acbd85488b4424604889184c89642468c744242c3c03c974e9d1fdffff488d4424384889442460c744242c30258a65e9bafdffff48b88d8791a00f08c7bb4889442448488d4c2438488b542430e89c160500eb2d488d4c2438488b542430e88b16050089c3488d0d62160500488d15db1605004c8d05c7ed0f00e8afad020089d84883c4785b5d5f5e415c415d415e415fc3",
+      "sha256_before": "a565e451c8b53ee5bb5f7e4a666266410ae95835b663a86c74c8fb7116a22067",
+      "old_name": "sub_7FF697AC1D50",
+      "old_type": null,
+      "old_comment": null,
+      "old_chunks": [
+        [
+          140697083321680,
+          140697083322468
+        ]
+      ],
+      "patches": [
+        {
+          "ea": 140697083321908,
+          "old": "7134",
+          "new": "eb34",
+          "selected": 140697083321962
+        },
+        {
+          "ea": 140697083321962,
+          "old": "7126",
+          "new": "eb26",
+          "selected": 140697083322002
+        },
+        {
+          "ea": 140697083322046,
+          "old": "7173",
+          "new": "eb73",
+          "selected": 140697083322163
+        },
+        {
+          "ea": 140697083322254,
+          "old": "7645",
+          "new": "eb45",
+          "selected": 140697083322325
+        }
+      ],
+      "old_frame": {
+        "frsize": 184,
+        "frregs": 0,
+        "fpd": 96,
+        "serialized": [
+          "0d8101f180082102202002601002402102202102802002201102401102402002402002402002402002402002402002400a30f18020044002112028415a24020201",
+          "077661725f4234077661725f4138077661725f4130077661725f3943077661725f3843077661725f3838077661725f3830077661725f3738077661725f3730077661725f3638077661725f3630077661725f3538077661725f3530077661725f3438115f5f72657475726e5f616464726573730d6172675f3434384234383144",
+          null
+        ]
+      },
+      "after": {
+        "failure": "no error",
+        "failure_ea": 18446744073709551615,
+        "pseudocode": "bool __fastcall wmp1_section_fingerprint_wrapper_34(\n        __int64 a1,\n        __int64 a2,\n        __int16 a3,\n        __int64 a4,\n        __int64 a5,\n        __int64 a6,\n        __int64 a7,\n        __int16 a8,\n        unsigned __int64 a9,\n        __int64 a10,\n        __int64 a11,\n        __int64 *a12,\n        __int16 *a13,\n        __int64 *a14)\n{\n  bool v17; // bl\n  __int64 v18; // [rsp+58h] [rbp+0h] BYREF\n  int i; // [rsp+E4h] [rbp+8Ch]\n\n  for ( i = 487168800; ; i = 995997577 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( i <= 1252282039 )\n        {\n          if ( i > 788468230 )\n          {\n            if ( i == 788468231 )\n            {\n              a7 = a1;\n              a8 = a3;\n              i = 1389638538;\n            }\n            else\n            {\n              *a14 = 0xFFB083C16F8D6DBLL;\n              i = 570656951;\n            }\n          }\n          else if ( i == 487168800 )\n          {\n            if ( (wmp1_decode_body_if_needed(\n                    (unsigned __int8 *)&wmp1_protected_034_seed,\n                    (unsigned __int8 *)&sub_7FF697B13720,\n                    &byte_7FF697BC0E13)\n                & 1) != 0 )\n            {\n              i = 788468231;\n            }\n            else\n            {\n              a12 = &a7;\n              i = 1703552304;\n            }\n          }\n          else\n          {\n            a10 = 0x697022DAA63F2564LL;\n            i = 1252282040;\n          }\n        }\n        if ( i > 1703552303 )\n          break;\n        if ( i != 1389638538 )\n        {\n          a9 = 0xBBC7080FA091878DuLL;\n          return wmp1_body_034(&a7, a2);\n        }\n        a11 = 0xFFB083C16F8D6C4LL;\n        a10 = 0x697022DAA63F252ALL;\n        a9 = 0xBBC7080FA091879EuLL;\n        i = 1989971920;\n      }\n      if ( i != 1703552304 )\n        break;\n      *a12 = a1;\n      a13 = &a8;\n      i = 1959330620;\n    }\n    if ( i != 1959330620 )\n      break;\n    *a13 = a3;\n    a14 = &v18;\n  }\n  v17 = wmp1_body_034(&a7, a2);\n  sub_7FF697AECE00(&wmp1_protected_034_seed, &sub_7FF697B13720, &byte_7FF697BC0E13);\n  return v17;\n}\n",
+        "sha256": "7d6464bb3656c07fc0d3dbd49416f8efe20a5dfbf666a629b0708416ad500163"
+      }
+    },
+    {
+      "start": 140697083655872,
+      "end": 140697083655957,
+      "label": "wmp1_section_fingerprint_helper_34",
+      "original_bytes": "4c8b01668b41080f108280000000660f70c0b1f3410f7f40386683f80474300f1082a8000000660f70c0b1f3410f7f40486683f80574180f1082d0000000660f70c0b1f3410f7f40586683f8067503b001c331c0c3",
+      "sha256_before": "95f974aa0341772043df234e86e7cbf2d9f1a0bf5f02802d6bb77248fc3d2244",
+      "old_name": "wmp1_body_034",
+      "old_type": "bool __fastcall(_WORD *, __int64)",
+      "old_comment": null,
+      "old_chunks": [
+        [
+          140697083655872,
+          140697083655968
+        ]
+      ],
+      "patches": [],
+      "old_frame": {
+        "frsize": 0,
+        "frregs": 0,
+        "fpd": 0,
+        "serialized": [
+          "0d09f180080a30f18020010208",
+          "115f5f72657475726e5f61646472657373",
+          null
+        ]
+      },
+      "after": {
+        "failure": "no error",
+        "failure_ea": 18446744073709551615,
+        "pseudocode": "bool __fastcall wmp1_section_fingerprint_helper_34(_WORD *a1, __int64 a2)\n{\n  __int64 v2; // r8\n  __int16 v3; // ax\n  bool result; // al\n\n  v2 = *(_QWORD *)a1;\n  v3 = a1[4];\n  *(__m128i *)(*(_QWORD *)a1 + 56LL) = _mm_shuffle_epi32(*(__m128i *)(a2 + 128), 177);\n  result = true;\n  if ( v3 != 4 )\n  {\n    *(__m128i *)(v2 + 72) = _mm_shuffle_epi32(*(__m128i *)(a2 + 168), 177);\n    if ( v3 != 5 )\n    {\n      *(__m128i *)(v2 + 88) = _mm_shuffle_epi32(*(__m128i *)(a2 + 208), 177);\n      if ( v3 != 6 )\n        return false;\n    }\n  }\n  return result;\n}\n",
+        "sha256": "95f974aa0341772043df234e86e7cbf2d9f1a0bf5f02802d6bb77248fc3d2244"
+      }
+    },
+    {
+      "start": 140697083458544,
+      "end": 140697083460032,
+      "label": "wmp1_section_fingerprint_wrapper_129",
+      "original_bytes": "4157415641554154565755534881ec980000004489c64889d74889cb48b88d89b80759310862c744242c306a9e014189f64181f692f6000048895424604831c74189f441f7d44489e0256d0900008d2cc50000000029c58d04360d24ed0000448d2c404189f74181e792f6ffff41f7dfe98b000000488b44246048894424707473c0e600756ef6dee8a109000081c08ac38885f6de80e95c81ef67efe5a87c3183c5eb81c5be206987e8ee540000c6c254c6c6a2e8ffba01000f8e17ee000081c1a8dc4dd381ee86a513340f86c82401005e83c28383c2b70f86772800000f85a63d000050c7c6cd00426768ceecd081c1b5c93dc744242c46172d0c0f1f40008b44242c3d7daa903a7e553db03e015e7f7e3dbc97e54b0f8e250100003dbd97e54b0f84e90300003d61a9215c0f85100400000fb744243a662b442430668944243c48895c2440c744242c8e937c71ebaf662e0f1f8400000000000f1f4400003dda6451237f693d297b401e0f8f300100003d306a9e010f853c030000c744242c2a7b401ee976ffffff660f1f4400003dff97b7750f8fcc0000003db13e015e0f8574020000488b84248800000048c70045000000488d4424484889842490000000c744242c0098b775e931ffffff903d104f92360f8f520100003ddb6451230f85730100007f4dc0ff007e4890905be8ca5f010081c6a39f8e175583c226e827bf01000f88b61d010081ef5f845c720f8263310100c7c21c609be880eb37505381c5a4f3b82be8f6dd0000e8c4630100c081154ec744242c56c1071fe9befeffff3d7eaa903a0f8528feffff488d4424504889842488000000c744242cb13e015ee999feffff3d0098b7750f852e020000488b84249000000048c7000a0000004c8b4424780fb754243e488d4c2440e89b2c0c00c744242c114f9236e95efeffff3d2a7b401e0f8548020000488d0d5c2c0c00488d15c52c0c004c8d05c2990e00e8199f00007c4fc0f9007d4a81eb32fa2c11e89ad90000c6c0cd530f8412970100e8eaf001007e75714059f6d980c730f6d980ebaf0f83996b00006895f5934780ed270f8728a80100f6def6df739b80ea3d819d7c5aa8010f8416020000c744242c65468044e9d3fdffff3d5bf07b390f85690200000fb7442438662b4424366603442434668944243ac744242c61a9215ce9a7fdffff80e0ff73519090f6de80edde80c13e786b83c54756c7c39d508a2d7431576ab1e8330d0100c6c17381e8c30eade9e89b68000080ea0ac7c273cfe7930f8273cc01005bf6dd80ea990f856f69010081ea2a07a4e4a0ac48897c246880e0ff7349909080c1fbe890bd01005ec7c3f23da0d980c54cc7c29d93c2e5f6da80ea85f6daf6da81e9f03f763d81ee5383018881e835258dc658c7c262a45677c7c6a435b77081b63ff34c5c1e66896c2430664489642432c744242cbd97e54be9e6fcffff703dc0fb007153669066905e0f83457d0100713253e847380100f6db80c62a0f84ea93010081c2bc15df186864e7665e0f842a3f000080e8c9f6df81eed75b700883c591f6df81e834907012540f8a710d0000c6c1964bc190e49071f22f48c74424580900000048c74424503300000048c744244846000000c744242c6111c657e960fcffff6644896c24366644897c2438c744242c5bf07b39e947fcffff488b44247048b98d89b807593108624831c8488944247866448974243e48895c2440488d4424584889842480000000c744242cdb645123e90bfcffff488b84248000000048c70064000000c744242c7eaa903ae9effbffff0fb74424326621f0f7d08d0cc50000000029c166894c2434c744242c0404357fe9cafbffffc744242c54efff2de9bdfbffff7c46c0e6007d0f9090669052f6de81eac7c3ed5952e87d3001006afc53f6dd80c6c7c7c3dab53695c7c0458cb7bc80ea69f6dd81ed43b14c0dc7c3fb7706a15b4dc094b5ac7e2faa4c8b4424680fb754243c488d4c2440e891290c00eb1a488d0d68290c00488d15d1290c004c8d05ce960e00e855940000904881c4980000005b5d5f5e415c415d415e415fc3",
+      "sha256_before": "635e18b6f4aa9836e17e0499f22b5a2d07bf9f353f2df4e8a068443b731e272c",
+      "old_name": "sub_7FF697AE33F0",
+      "old_type": "void __fastcall(__int16, __int64, __int16)",
+      "old_comment": null,
+      "old_chunks": [
+        [
+          140697083458544,
+          140697083460032
+        ]
+      ],
+      "patches": [
+        {
+          "ea": 140697083458671,
+          "old": "7473",
+          "new": "9090",
+          "selected": 140697083458673
+        },
+        {
+          "ea": 140697083458676,
+          "old": "756e",
+          "new": "eb6e",
+          "selected": 140697083458788
+        },
+        {
+          "ea": 140697083459030,
+          "old": "7f4d",
+          "new": "9090",
+          "selected": 140697083459032
+        },
+        {
+          "ea": 140697083459035,
+          "old": "7e48",
+          "new": "eb48",
+          "selected": 140697083459109
+        },
+        {
+          "ea": 140697083459260,
+          "old": "7d4a",
+          "new": "eb4a",
+          "selected": 140697083459336
+        },
+        {
+          "ea": 140697083459404,
+          "old": "7351",
+          "new": "eb51",
+          "selected": 140697083459487
+        },
+        {
+          "ea": 140697083459495,
+          "old": "7349",
+          "new": "eb49",
+          "selected": 140697083459570
+        },
+        {
+          "ea": 140697083459599,
+          "old": "7153",
+          "new": "eb53",
+          "selected": 140697083459684
+        },
+        {
+          "ea": 140697083459657,
+          "old": "7008",
+          "new": "eb08",
+          "selected": 140697083459667
+        },
+        {
+          "ea": 140697083459668,
+          "old": "7012",
+          "new": "eb12",
+          "selected": 140697083459688
+        },
+        {
+          "ea": 140697083459673,
+          "old": "710d",
+          "new": "eb0d",
+          "selected": 140697083459688
+        },
+        {
+          "ea": 140697083459685,
+          "old": "71f2",
+          "new": "ebf2",
+          "selected": 140697083459673
+        },
+        {
+          "ea": 140697083459896,
+          "old": "7d0f",
+          "new": "eb0f",
+          "selected": 140697083459913
+        },
+        {
+          "ea": 140697083459913,
+          "old": "7d30",
+          "new": "eb30",
+          "selected": 140697083459963
+        }
+      ],
+      "old_frame": {
+        "frsize": 216,
+        "frregs": 0,
+        "fpd": 0,
+        "serialized": [
+          "0da101f18008210420012102401002201002101002101002102002102002402102401102401102402002402002802002402002402002402002400a30f180200440022108980f011002300202",
+          "077661725f4234077661725f4143077661725f4138077661725f4136077661725f4134077661725f4132077661725f4130077661725f3938077661725f3930077661725f3838077661725f3830077661725f3738077661725f3638077661725f3630077661725f3538077661725f3530077661725f3438115f5f72657475726e5f61646472657373096172675f32314542096172675f32314631",
+          null
+        ]
+      },
+      "after": {
+        "failure": "no error",
+        "failure_ea": 18446744073709551615,
+        "pseudocode": "__int64 __fastcall wmp1_section_fingerprint_wrapper_129(\n        __int64 a1,\n        __int64 a2,\n        int a3,\n        __int64 a4,\n        __int64 a5,\n        __int64 a6,\n        __int64 a7,\n        __int64 a8,\n        __int64 a9,\n        __int64 a10,\n        __int64 a11,\n        __int64 a12,\n        __int64 a13,\n        __int64 a14)\n{\n  __int16 v14; // si\n  __int64 v16; // rdi\n  __int16 v17; // r12\n  __int16 v18; // bp\n  __int16 v19; // r13\n  unsigned int v20; // r15d\n  int v22; // [rsp+104h] [rbp+2Ch]\n\n  v14 = a3;\n  v22 = 27159088;\n  a12 = a2;\n  v16 = a2 ^ 0x6208315907B8898DLL;\n  v17 = ~(_WORD)a3;\n  v18 = 7 * (~(_WORD)a3 & 0x96D);\n  v19 = 3 * ((2 * a3) | 0xED24);\n  v20 = -(a3 & 0xFFFFF692);\n  while ( 1 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( v22 <= 982559357 )\n        {\n          if ( v22 > 592536794 )\n          {\n            if ( v22 > 915558160 )\n            {\n              WORD1(a7) = WORD2(a6) + a7 - HIWORD(a6);\n              v22 = 1545709921;\n            }\n            else\n            {\n              a13 = v16;\n              LOWORD(a6) = v18;\n              WORD1(a6) = v17;\n              v22 = 1273337789;\n            }\n          }\n          else if ( v22 > 507542313 )\n          {\n            if ( (wmp1_decode_body_if_needed(\n                    (unsigned __int8 *)&wmp1_protected_129_seed,\n                    (unsigned __int8 *)&qword_7FF697BA6370,\n                    &byte_7FF697BCD074)\n                & 1) != 0 )\n              v22 = 1149257317;\n            else\n              v22 = 771747668;\n          }\n          else\n          {\n            v22 = 507542314;\n          }\n        }\n        if ( v22 <= 1577139888 )\n          break;\n        if ( v22 > 1974966271 )\n        {\n          HIWORD(a6) = v19;\n          LOWORD(a7) = v20;\n          v22 = 964423771;\n        }\n        else\n        {\n          a11 = 9;\n          a10 = 51;\n          a9 = 70;\n          v22 = 1472598369;\n        }\n      }\n      if ( v22 <= 1273337788 )\n      {\n        a14 = a12;\n        JUMPOUT(0x7FF697AE3470LL);\n      }\n      if ( v22 != 1273337789 )\n        break;\n      WORD2(a6) = 7 * ~(v14 & WORD1(a6));\n      v22 = 2134180868;\n    }\n    if ( v22 != 1545709921 )\n      break;\n    WORD2(a7) = WORD1(a7) - a6;\n    a8 = a1;\n    v22 = 1903989646;\n  }\n  return wmp1_body_129(&a8, WORD2(a7), a13);\n}\n",
+        "sha256": "80a6c41f9b66db42f21388d368b8392ae8312d1a6ef78d182fd380af3d3168eb"
+      }
+    },
+    {
+      "start": 140697084257056,
+      "end": 140697084257136,
+      "label": "wmp1_section_fingerprint_helper_129",
+      "original_bytes": "488b0148b98d89b807593108624d89c14931c9410f1081f8000000660f70c0b1f30f7f40686681f292f66683fa07741f48b98d89b807593108624931c8410f108020010000660f70c0b1f30f7f4078c3",
+      "sha256_before": "7ecda3451f925382293372c7d5e92a62cc9a3fd55f2c2b4b6f573356a741b76c",
+      "old_name": "wmp1_body_129",
+      "old_type": "__int64 __fastcall(__int64 *, unsigned __int16, __int64)",
+      "old_comment": null,
+      "old_chunks": [
+        [
+          140697084257056,
+          140697084257136
+        ]
+      ],
+      "patches": [],
+      "old_frame": {
+        "frsize": 0,
+        "frregs": 0,
+        "fpd": 0,
+        "serialized": [
+          "0d09f180080a30f18020010208",
+          "115f5f72657475726e5f61646472657373",
+          null
+        ]
+      },
+      "after": {
+        "failure": "no error",
+        "failure_ea": 18446744073709551615,
+        "pseudocode": "__int64 __fastcall wmp1_section_fingerprint_helper_129(__int64 *a1, unsigned __int16 a2, __int64 a3)\n{\n  __int64 result; // rax\n\n  result = *a1;\n  *(__m128i *)(*a1 + 104) = _mm_shuffle_epi32(*(__m128i *)((a3 ^ 0x6208315907B8898DLL) + 0xF8), 177);\n  if ( (a2 ^ 0xF692) != 7 )\n    *(__m128i *)(result + 120) = _mm_shuffle_epi32(*(__m128i *)((a3 ^ 0x6208315907B8898DLL) + 0x120), 177);\n  return result;\n}\n",
+        "sha256": "7ecda3451f925382293372c7d5e92a62cc9a3fd55f2c2b4b6f573356a741b76c"
+      }
+    }
+  ],
+  "types": [
+    {
+      "ea": "0x7ff697ac1d50",
+      "old_name": "wmp1_section_fingerprint_wrapper_34",
+      "old_type": "bool __fastcall(__int64, __int64, __int16, __int64, __int64, __int64, __int64, __int16, unsigned __int64, __int64, __int64, __int64 *, __int16 *, __int64 *)",
+      "new_type": "unsigned char __fastcall wmp1_section_fingerprint_wrapper_34(void *summary, const void *section_table, unsigned short section_count);"
+    },
+    {
+      "ea": "0x7ff697ae33f0",
+      "old_name": "wmp1_section_fingerprint_wrapper_129",
+      "old_type": "__int64 __fastcall(__int64, __int64, int, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64, __int64)",
+      "new_type": "void __fastcall wmp1_section_fingerprint_wrapper_129(void *summary, const void *section_table, unsigned short section_count);"
+    },
+    {
+      "ea": "0x7ff697ba6320",
+      "old_name": "wmp1_section_fingerprint_helper_129",
+      "old_type": "__int64 __fastcall(__int64 *, unsigned __int16, __int64)",
+      "new_type": "void __fastcall wmp1_section_fingerprint_helper_129(void *descriptor, unsigned short encoded_section_count, unsigned __int64 encoded_section_table);"
+    },
+    {
+      "ea": "0x7ff697b658d0",
+      "old_name": "sub_7FF697B658D0",
+      "old_type": "unsigned __int64 __fastcall(__int64, __int64, int)",
+      "new_type": "unsigned __int64 __fastcall wmp1_pe_section_metadata_hash(void *unused, const void *image, unsigned int encoded_image_length);"
+    }
+  ],
+  "comments": [
+    {
+      "ea": "0x7ff697b658d0",
+      "before": null,
+      "after": "Recovered PE section-metadata fingerprint. Real entry confirmed by wrapper calls and unwind record. Captured MBA evaluation gives FNV-1a-64 length=136, optional seed=0. WARNING: conditional ESP adjustments make current F5 local aliases unreliable; native hash pointer is [RSP+0x20], not a proven summary+10. See KB/reversing-warden.md and journal."
+    },
+    {
+      "ea": "0x7ff697b65bb0",
+      "before": null,
+      "after": "Native summary [RSP+0x20] DWORD0 = NT OptionalHeader.AddressOfEntryPoint (NT+0x28); DWORD1 = NumberOfSections. Positive-SP F5 currently loses/misplaces this field."
+    },
+    {
+      "ea": "0x7ff697b666bf",
+      "before": null,
+      "after": "Raw FNV-1a-64 call: captured constant expressions yield RDX=136, R8=0 (helper default seed). RCX loaded as RSP+0x20. Low-ESP conditional paths remain explicit native behavior, not proven unreachable."
+    },
+    {
+      "ea": "0x7ff697b136c0",
+      "before": null,
+      "after": "Copies section indices3..5: table+0x80/0xA8/0xD0, 16 bytes each, DWORD shuffle [1,0,3,2]; output offsets0x38/0x48/0x58. Returns AL=1 for section counts4/5/6, otherwise0."
+    },
+    {
+      "ea": "0x7ff697ba6320",
+      "before": null,
+      "after": "Copies section6 metadata at decoded table+0xF8 to summary+0x68; section7 at+0x120 to summary+0x78 unless decoded count==7. Pointer XOR6208315907B8898D; count XORF692. DWORD shuffle [1,0,3,2]."
+    }
+  ],
+  "views": {
+    "0x7ff697ac1d50": "unsigned __int8 __fastcall wmp1_section_fingerprint_wrapper_34(\n        void *summary,\n        const void *section_table,\n        unsigned __int16 section_count)\n{\n  unsigned __int8 v6; // bl\n  int i; // [rsp+2Ch] [rbp-2Ch]\n  void *v9; // [rsp+38h] [rbp-20h] BYREF\n  unsigned __int16 v10; // [rsp+40h] [rbp-18h] BYREF\n  unsigned __int64 v11; // [rsp+48h] [rbp-10h]\n  __int64 v12; // [rsp+50h] [rbp-8h]\n  __int64 v13; // [rsp+58h] [rbp+0h] BYREF\n  void **v14; // [rsp+60h] [rbp+8h]\n  unsigned __int16 *v15; // [rsp+68h] [rbp+10h]\n  __int64 *v16; // [rsp+70h] [rbp+18h]\n\n  for ( i = 487168800; ; i = 995997577 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( i <= 1252282039 )\n        {\n          if ( i > 788468230 )\n          {\n            if ( i == 788468231 )\n            {\n              v9 = summary;\n              v10 = section_count;\n              i = 1389638538;\n            }\n            else\n            {\n              *v16 = 0xFFB083C16F8D6DBLL;\n              i = 570656951;\n            }\n          }\n          else if ( i == 487168800 )\n          {\n            if ( (wmp1_decode_body_if_needed(\n                    (unsigned __int8 *)&wmp1_protected_034_seed,\n                    (unsigned __int8 *)&sub_7FF697B13720,\n                    &byte_7FF697BC0E13)\n                & 1) != 0 )\n            {\n              i = 788468231;\n            }\n            else\n            {\n              v14 = &v9;\n              i = 1703552304;\n            }\n          }\n          else\n          {\n            v12 = 0x697022DAA63F2564LL;\n            i = 1252282040;\n          }\n        }\n        if ( i > 1703552303 )\n          break;\n        if ( i != 1389638538 )\n        {\n          v11 = 0xBBC7080FA091878DuLL;\n          return wmp1_section_fingerprint_helper_34(&v9, (__int64)section_table);\n        }\n        v13 = 0xFFB083C16F8D6C4LL;\n        v12 = 0x697022DAA63F252ALL;\n        v11 = 0xBBC7080FA091879EuLL;\n        i = 1989971920;\n      }\n      if ( i != 1703552304 )\n        break;\n      *v14 = summary;\n      v15 = &v10;\n      i = 1959330620;\n    }\n    if ( i != 1959330620 )\n      break;\n    *v15 = section_count;\n    v16 = &v13;\n  }\n  v6 = wmp1_section_fingerprint_helper_34(&v9, (__int64)section_table);\n  sub_7FF697AECE00(&wmp1_protected_034_seed, &sub_7FF697B13720, &byte_7FF697BC0E13);\n  return v6;\n}\n",
+    "0x7ff697ae33f0": "void __fastcall wmp1_section_fingerprint_wrapper_129(\n        void *summary,\n        const void *section_table,\n        unsigned __int16 section_count)\n{\n  unsigned __int16 v5; // r14\n  unsigned __int64 v6; // rdi\n  __int16 v7; // r12\n  __int16 v8; // bp\n  __int16 v9; // r13\n  unsigned int v10; // r15d\n  int v11; // [rsp+2Ch] [rbp-ACh]\n  __int16 v12; // [rsp+30h] [rbp-A8h]\n  __int16 v13; // [rsp+32h] [rbp-A6h]\n  __int16 v14; // [rsp+34h] [rbp-A4h]\n  __int16 v15; // [rsp+36h] [rbp-A2h]\n  __int16 v16; // [rsp+38h] [rbp-A0h]\n  __int16 v17; // [rsp+3Ah] [rbp-9Eh]\n  unsigned __int16 v18; // [rsp+3Ch] [rbp-9Ch]\n  unsigned __int16 v19; // [rsp+3Eh] [rbp-9Ah]\n  void *v20; // [rsp+40h] [rbp-98h] BYREF\n  __int64 v21; // [rsp+48h] [rbp-90h] BYREF\n  __int64 v22; // [rsp+50h] [rbp-88h] BYREF\n  __int64 v23; // [rsp+58h] [rbp-80h] BYREF\n  const void *v24; // [rsp+60h] [rbp-78h]\n  unsigned __int64 v25; // [rsp+68h] [rbp-70h]\n  unsigned __int64 v26; // [rsp+70h] [rbp-68h]\n  unsigned __int64 v27; // [rsp+78h] [rbp-60h]\n  __int64 *v28; // [rsp+80h] [rbp-58h]\n  __int64 *v29; // [rsp+88h] [rbp-50h]\n  __int64 *v30; // [rsp+90h] [rbp-48h]\n\n  v11 = 27159088;\n  v5 = section_count ^ 0xF692;\n  v24 = section_table;\n  v6 = (unsigned __int64)section_table ^ 0x6208315907B8898DLL;\n  v7 = ~section_count;\n  v8 = 7 * (~section_count & 0x96D);\n  v9 = 3 * ((2 * section_count) | 0xED24);\n  v10 = -(section_count & 0xFFFFF692);\n  while ( 1 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( v11 > 982559357 )\n        {\n          if ( v11 > 1577139888 )\n          {\n            if ( v11 > 1974966271 )\n            {\n              if ( v11 == 1974966272 )\n              {\n                *v30 = 10;\n                wmp1_section_fingerprint_helper_129(&v20, v19, v27);\n                v11 = 915558161;\n              }\n              else\n              {\n                v15 = v9;\n                v16 = v10;\n                v11 = 964423771;\n              }\n            }\n            else if ( v11 == 1577139889 )\n            {\n              *v29 = 69;\n              v30 = &v21;\n              v11 = 1974966272;\n            }\n            else\n            {\n              v23 = 9;\n              v22 = 51;\n              v21 = 70;\n              v11 = 1472598369;\n            }\n          }\n          else if ( v11 <= 1273337788 )\n          {\n            if ( v11 == 982559358 )\n            {\n              v29 = &v22;\n              v11 = 1577139889;\n            }\n            else\n            {\n              v26 = (unsigned __int64)v24;\n              v11 = 204281670;\n            }\n          }\n          else if ( v11 == 1273337789 )\n          {\n            v14 = 7 * ~(section_count & v13);\n            v11 = 2134180868;\n          }\n          else\n          {\n            if ( v11 != 1545709921 )\n            {\n              wmp1_section_fingerprint_helper_129(&v20, v18, v25);\n              return;\n            }\n            v18 = v17 - v12;\n            v20 = summary;\n            v11 = 1903989646;\n          }\n        }\n        if ( v11 > 592536794 )\n          break;\n        if ( v11 > 507542313 )\n        {\n          if ( v11 == 507542314 )\n          {\n            if ( (wmp1_decode_body_if_needed(\n                    (unsigned __int8 *)&wmp1_protected_129_seed,\n                    (unsigned __int8 *)&qword_7FF697BA6370,\n                    &byte_7FF697BCD074)\n                & 1) != 0 )\n              v11 = 1149257317;\n            else\n              v11 = 771747668;\n          }\n          else\n          {\n            *v28 = 100;\n            v11 = 982559358;\n          }\n        }\n        else if ( v11 == 27159088 )\n        {\n          v11 = 507542314;\n        }\n        else\n        {\n          v27 = v26 ^ 0x6208315907B8898DLL;\n          v19 = v5;\n          v20 = summary;\n          v28 = &v23;\n          v11 = 592536795;\n        }\n      }\n      if ( v11 > 915558160 )\n        break;\n      if ( v11 == 592536795 )\n      {\n        v11 = 520601942;\n      }\n      else\n      {\n        v25 = v6;\n        v12 = v8;\n        v13 = v7;\n        v11 = 1273337789;\n      }\n    }\n    if ( v11 != 964423771 )\n      break;\n    v17 = v14 + v16 - v15;\n    v11 = 1545709921;\n  }\n  sub_7FF697AECE00(&wmp1_protected_129_seed, &qword_7FF697BA6370, &byte_7FF697BCD074);\n}\n",
+    "0x7ff697b658d0": "// positive sp value has been detected, the output may be wrong!\nunsigned __int64 __fastcall wmp1_pe_section_metadata_hash(\n        void *unused,\n        const void *image,\n        unsigned int encoded_image_length)\n{\n  unsigned __int64 result; // rax\n  __int64 v4; // rcx\n  unsigned int v5; // r8d\n  char *v6; // rdx\n  int v7; // esi\n  __int64 v8; // rdi\n  __int16 v9; // dx\n  unsigned __int16 v10; // r8\n  __int64 v11; // rcx\n  unsigned __int64 v12; // r11\n  __int64 v13; // r9\n  unsigned __int64 v14; // r8\n  _DWORD v15[32]; // [rsp+16h] [rbp-C2h] BYREF\n  __int64 v16; // [rsp+96h] [rbp-42h]\n\n  result = -1;\n  if ( *(_WORD *)image == 23117 )\n  {\n    v4 = *((int *)image + 15);\n    v5 = encoded_image_length ^ 0x92A1D3F8;\n    if ( (int)v4 <= (int)v5 && *(_DWORD *)((char *)image + v4) == 17744 )\n    {\n      if ( v4 < v5 && (int)v4 > 0 )\n      {\n        v6 = (char *)image + v4;\n        memset(v15, 0, sizeof(v15));\n        v16 = 0;\n        v7 = *((unsigned __int16 *)v6 + 3);\n        v15[1] = v7;\n        if ( v7 )\n        {\n          v8 = (__int64)&v6[*((unsigned __int16 *)v6 + 10) + 24];\n          v15[2] = *(_DWORD *)&v6[*((unsigned __int16 *)v6 + 10) + 36];\n          v15[3] = *(_DWORD *)(v8 + 8);\n          v15[4] = *(_DWORD *)(v8 + 20);\n          v15[5] = *(_DWORD *)(v8 + 16);\n          if ( v7 != 1 )\n          {\n            *(__m128i *)&v15[7] = _mm_shuffle_epi32(_mm_loadu_si128((const __m128i *)(v8 + 48)), 177);\n            v9 = word_7FF697BBAACC ^ 0xCD2B;\n            v10 = v9\n                ^ (5 * (~(v9 + 4281) & 0x7D3F)\n                 + 8 * ((v9 + 4281) & 0x1D3F)\n                 - 2 * ((v9 + 4281) ^ 0x2C0)\n                 + 3 * (~(v9 + 4281) & 0x82C0)\n                 - 29243)\n                ^ (5 * (~(v9 + 4281) & 0x7D3F)\n                 + 8 * ((v9 + 4281) & 0x1D3F)\n                 - 2 * ((v9 + 4281) ^ 0x2C0)\n                 + 3 * (~(v9 + 4281) & 0x82C0)\n                 - 20739)\n                ^ 0xCA56;\n            if ( (_WORD)v7 != 4 * (v10 & ((unsigned __int16)word_7FF697BBAACC ^ 0x5FBA))\n                            + 2 * (((unsigned __int16)word_7FF697BBAACC ^ 0xA045) & v10)\n                            - ((unsigned __int16)word_7FF697BBAACC ^ 0xA045 ^ v10)\n                            - 2 * ((unsigned __int16)word_7FF697BBAACC ^ 0xA045 | v10)\n                            + 4 * ~((unsigned __int16)word_7FF697BBAACC ^ 0x5FBA | v10)\n                            - word_7FF697BBAACC )\n            {\n              *(__m128i *)&v15[11] = _mm_shuffle_epi32(_mm_loadu_si128((const __m128i *)(v8 + 88)), 177);\n              if ( v7 != 3 && (wmp1_section_fingerprint_wrapper_34(&v15[1], (const void *)v8, v7) & 1) == 0 )\n                wmp1_section_fingerprint_wrapper_129(&v15[1], (const void *)v8, v7);\n            }\n          }\n        }\n        v11 = qword_7FF697BBAAD0 - 0xF75E688E71AB80LL;\n        v12 = (((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL) | 0xEB4A0C861FAB2240uLL)\n            + (~((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL) & 0xEB4A0C861FAB2240uLL);\n        v13 = qword_7FF697BBAAD8 + 0x4759F8F0B9A64333LL;\n        v14 = -7LL\n            - (7 * ~(v13 ^ 0x48DEF1802389F488LL | 0xFCDC5715224AAD15uLL)\n             + ((v13 ^ 0x48DEF1802389F488LL) & 0xFCDC5715224AAD15uLL)\n             + 6 * (v13 ^ 0x48DEF1802389F488LL | 0xFCDC5715224AAD15uLL));\n        return wmp1_fnv1a_raw_bytes64(\n                 (const unsigned __int8 *)&v15[2] + 2,\n                 ((qword_7FF697BBAAD0\n                 + ((v12\n                   + 2 * ((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL)\n                   - 2 * (((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL) & 0x14B5F379E054DDBFLL)\n                   + 0x14B5F379E054DDC1LL)\n                  ^ v11\n                  ^ 0xEE2B3235E1A68F21uLL)\n                 - ((v11 ^ 0x1623495AB2113398LL)\n                  + 0x1E5CAE51D8A93590LL))\n                ^ v11\n                ^ 0xB23528A77907B266uLL)\n               - qword_7FF697BBAAD0\n               + v12\n               + 2 * ((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL)\n               - 2 * (((v11 ^ 0x1623495AB2113398LL) + 0x1E5CAE51D8A93590LL) & 0x14B5F379E054DDBFLL)\n               + 0x14B5F379E054DDC0LL\n               + 0x4E9B6CB6799186A9LL,\n                 (((((v14 ^ 0x5DDF7CF6FE151B68LL) + 0xECA020D88CBE1CLL) ^ v13 ^ 0xD3D7AAC4CF1B9C8AuLL)\n                 + 6 * ((v13 ^ 0xD3D7AAC4CF1B9C8AuLL) & ~((v14 ^ 0x5DDF7CF6FE151B68LL) + 0xECA020D88CBE1CLL))\n                 + 6 * (((v14 ^ 0x5DDF7CF6FE151B68LL) + 0xECA020D88CBE1CLL) & (v13 ^ 0xD3D7AAC4CF1B9C8AuLL))\n                 - 6 * (~((v14 ^ 0x5DDF7CF6FE151B68LL) + 0xECA020D88CBE1CLL) | v13 ^ 0xD3D7AAC4CF1B9C8AuLL)\n                 + 6 * ~(((v14 ^ 0x5DDF7CF6FE151B68LL) + 0xECA020D88CBE1CLL) | v13 ^ 0xD3D7AAC4CF1B9C8AuLL))\n                ^ (qword_7FF697BBAAD8 + 0x4759F8F0B9A64333LL)\n                ^ ((v14 ^ 0x5DDF7CF6FE151B68LL) + 0x558B0CED5CDD1CF4LL)\n                ^ 0xAC5B0265629B1763uLL)\n               - (v13 ^ 0x48DEF1802389F488LL)\n               + qword_7FF697BBAAD8\n               + v14);\n      }\n      else\n      {\n        return 0;\n      }\n    }\n  }\n  return result;\n}\n"
+  },
+  "native_helpers": {
+    "34": [
+      [
+        "0x7ff697b136c0",
+        "mov     r8, [rcx]; Copies section indices3..5: table+0x80/0xA8/0xD0, 16 bytes each, DWORD shuffle [1,0,3,2]; output offsets0x38/0x48/0x58. Returns AL=1 for section counts4/5/6, otherwise0."
+      ],
+      [
+        "0x7ff697b136c3",
+        "mov     ax, [rcx+8]"
+      ],
+      [
+        "0x7ff697b136c7",
+        "movups  xmm0, xmmword ptr [rdx+80h]"
+      ],
+      [
+        "0x7ff697b136ce",
+        "pshufd  xmm0, xmm0, 0B1h"
+      ],
+      [
+        "0x7ff697b136d3",
+        "movdqu  xmmword ptr [r8+38h], xmm0"
+      ],
+      [
+        "0x7ff697b136d9",
+        "cmp     ax, 4"
+      ],
+      [
+        "0x7ff697b136dd",
+        "jz      short loc_7FF697B1370F"
+      ],
+      [
+        "0x7ff697b136df",
+        "movups  xmm0, xmmword ptr [rdx+0A8h]"
+      ],
+      [
+        "0x7ff697b136e6",
+        "pshufd  xmm0, xmm0, 0B1h"
+      ],
+      [
+        "0x7ff697b136eb",
+        "movdqu  xmmword ptr [r8+48h], xmm0"
+      ],
+      [
+        "0x7ff697b136f1",
+        "cmp     ax, 5"
+      ],
+      [
+        "0x7ff697b136f5",
+        "jz      short loc_7FF697B1370F"
+      ],
+      [
+        "0x7ff697b136f7",
+        "movups  xmm0, xmmword ptr [rdx+0D0h]"
+      ],
+      [
+        "0x7ff697b136fe",
+        "pshufd  xmm0, xmm0, 0B1h"
+      ],
+      [
+        "0x7ff697b13703",
+        "movdqu  xmmword ptr [r8+58h], xmm0"
+      ],
+      [
+        "0x7ff697b13709",
+        "cmp     ax, 6"
+      ],
+      [
+        "0x7ff697b1370d",
+        "jnz     short loc_7FF697B13712"
+      ],
+      [
+        "0x7ff697b1370f",
+        "mov     al, 1"
+      ],
+      [
+        "0x7ff697b13711",
+        "retn"
+      ],
+      [
+        "0x7ff697b13712",
+        "xor     eax, eax"
+      ],
+      [
+        "0x7ff697b13714",
+        "retn"
+      ]
+    ],
+    "129": [
+      [
+        "0x7ff697ba6320",
+        "mov     rax, [rcx]; Copies section6 metadata at decoded table+0xF8 to summary+0x68; section7 at+0x120 to summary+0x78 unless decoded count==7. Pointer XOR6208315907B8898D; count XORF692. DWORD shuffle [1,0,3,2]."
+      ],
+      [
+        "0x7ff697ba6323",
+        "mov     rcx, 6208315907B8898Dh"
+      ],
+      [
+        "0x7ff697ba632d",
+        "mov     r9, r8"
+      ],
+      [
+        "0x7ff697ba6330",
+        "xor     r9, rcx"
+      ],
+      [
+        "0x7ff697ba6333",
+        "movups  xmm0, xmmword ptr [r9+0F8h]"
+      ],
+      [
+        "0x7ff697ba633b",
+        "pshufd  xmm0, xmm0, 0B1h"
+      ],
+      [
+        "0x7ff697ba6340",
+        "movdqu  xmmword ptr [rax+68h], xmm0"
+      ],
+      [
+        "0x7ff697ba6345",
+        "xor     dx, 0F692h"
+      ],
+      [
+        "0x7ff697ba634a",
+        "cmp     dx, 7"
+      ],
+      [
+        "0x7ff697ba634e",
+        "jz      short locret_7FF697BA636F"
+      ],
+      [
+        "0x7ff697ba6350",
+        "mov     rcx, 6208315907B8898Dh"
+      ],
+      [
+        "0x7ff697ba635a",
+        "xor     r8, rcx"
+      ],
+      [
+        "0x7ff697ba635d",
+        "movups  xmm0, xmmword ptr [r8+120h]"
+      ],
+      [
+        "0x7ff697ba6365",
+        "pshufd  xmm0, xmm0, 0B1h"
+      ],
+      [
+        "0x7ff697ba636a",
+        "movdqu  xmmword ptr [rax+78h], xmm0"
+      ],
+      [
+        "0x7ff697ba636f",
+        "retn"
+      ]
+    ]
+  },
+  "limits": "Pure captured-constant expression evaluation, not all-seeds proof. Conditional low-ESP paths kept; main F5 warning remains; field aliases require native reads."
+}

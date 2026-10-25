@@ -1,0 +1,51 @@
+{
+  "maxlen_expression": "(~n|2)-2*n-4*(~n&3FFD)-3*(~byte(n)&2)-3",
+  "width": 16,
+  "equals": "n+2 modulo2^16",
+  "solver": "unsat",
+  "first_type": {
+    "expression": " dword_7FF697BBA0CC ^ 0x5EEA0EAE ^ (dword_7FF697BBA0CC - (dword_7FF697BBA0CC ^ 0x5EEA0EAE) - 507210712)",
+    "value": 4,
+    "global_bba0cc": "0x757098d0"
+  },
+  "request_map": [
+    {
+      "components_start": 4,
+      "count": 40,
+      "value_name_hash": 44,
+      "expected_type": 4,
+      "expected_data": 48
+    },
+    {
+      "components_start": 52,
+      "count": 88,
+      "value_name_hash": 92,
+      "expected_type": 1
+    },
+    {
+      "components_start": 96,
+      "count": 132,
+      "value_name_hash": 136,
+      "expected_type": 1
+    }
+  ],
+  "zero_initialization": "AF0041/AF0044 plus flag atAF0048 for first object; AF0CF7/AF0CFA/AF0D02 plus following owner-zero stores for second and third objects before their query calls. Each used starts0.",
+  "comment_journal": [
+    {
+      "ea": "0x7ff697af1ff3",
+      "old": null,
+      "new": "Registry chain1: component hashes request+4, count+40, VALUE-NAME hash+44; expected queried type4 (REG_DWORD), expected DWORD content+48. Output object zeroed AF0044/AF0048. +44 is NOT a type selector."
+    },
+    {
+      "ea": "0x7ff697af22f9",
+      "old": null,
+      "new": "Registry chain2: component hashes request+52, count+88, VALUE-NAME hash+92; fixed expected type1 (REG_SZ), not request-selected type. Output object zeroed AF0CFA, queried once. No data-terminator guarantee follows from type1."
+    },
+    {
+      "ea": "0x7ff697af33f1",
+      "old": null,
+      "new": "Registry chain3: component hashes request+96, count+132, VALUE-NAME hash+136; fixed expected type1 (REG_SZ). Output zeroed AF0D02. Byte-prefix comparison count request+140, bytes+144; raw-byte hash uses UTF16 unit count as byte count."
+    }
+  ],
+  "save_success": true
+}

@@ -1,0 +1,1708 @@
+{
+  "native_broker_start": "0x7FF697B9CE54",
+  "source_offsets": {
+    "selector18": 23962,
+    "header_assembly": 76581
+  },
+  "proofs": {
+    "payload_subtraction": "unsat",
+    "crc_length_m_plus12": "unsat",
+    "padding_remainder_u_and15": "unsat"
+  },
+  "crc_seed": {
+    "global": "0x73be388e",
+    "result": 0
+  },
+  "native": [
+    [
+      "0x7ff697b9a2c0",
+      "mov     rcx, qword ptr [rsp+7F8h+output_descriptor]"
+    ],
+    [
+      "0x7ff697b9a2c5",
+      "mov     ecx, [rcx]"
+    ],
+    [
+      "0x7ff697b9a2c7",
+      "mov     dword ptr [rsp+7F8h+var_5F0+4], ecx"
+    ],
+    [
+      "0x7ff697b9a2ce",
+      "add     ecx, 10h"
+    ],
+    [
+      "0x7ff697b9a2d1",
+      "mov     [rsp+7F8h+var_73C], ecx"
+    ],
+    [
+      "0x7ff697b9a2d8",
+      "cmp     ecx, eax"
+    ],
+    [
+      "0x7ff697b9ce54",
+      "mov     dword ptr [rsp+7F8h+var_7B8], eax; Common handler-return broker: store/reload EAX, clearBBB068, TEST/JZ B9D6B7 on0. Nonzero enters generic error construction. No test of report appended/used delta here; return0 is not proof a37-byte record was produced. Later response protocol still unresolved."
+    ],
+    [
+      "0x7ff697b9ce58",
+      "mov     eax, dword ptr [rsp+7F8h+var_7B8]"
+    ],
+    [
+      "0x7ff697b9ce5c",
+      "mov     cs:dword_7FF697BBB068, 0"
+    ],
+    [
+      "0x7ff697b9ce66",
+      "test    eax, eax"
+    ],
+    [
+      "0x7ff697b9ce68",
+      "jz      loc_7FF697B9D6B7"
+    ],
+    [
+      "0x7ff697b9ce6e",
+      "mov     [rsp+0C4h], eax"
+    ],
+    [
+      "0x7ff697b9ce75",
+      "mov     edx, [rsp+0C4h]"
+    ],
+    [
+      "0x7ff697b9ce7c",
+      "mov     rsi, [rsp+7F8h+output_buffer]"
+    ],
+    [
+      "0x7ff697b9ce81",
+      "mov     rax, [rsp+7F8h+var_578]"
+    ],
+    [
+      "0x7ff697b9ce89",
+      "mov     eax, [rax]"
+    ],
+    [
+      "0x7ff697b9ce8b",
+      "lea     rcx, [rsi+4]"
+    ],
+    [
+      "0x7ff697b9ce8f",
+      "mov     [rsi+4], eax"
+    ],
+    [
+      "0x7ff697b9ce92",
+      "mov     rax, qword ptr [rsp+7F8h+output_descriptor]"
+    ],
+    [
+      "0x7ff697b9ce97",
+      "mov     r8d, [rax]"
+    ],
+    [
+      "0x7ff697b9ce9a",
+      "mov     eax, [rsp+7F8h+var_73C]"
+    ],
+    [
+      "0x7ff697b9cea1",
+      "not     eax"
+    ],
+    [
+      "0x7ff697b9cea3",
+      "lea     r9d, [rax+rax*2]"
+    ],
+    [
+      "0x7ff697b9cea7",
+      "or      eax, r8d"
+    ],
+    [
+      "0x7ff697b9ceaa",
+      "stc"
+    ],
+    [
+      "0x7ff697b9ceab",
+      "sal     bh, 0"
+    ],
+    [
+      "0x7ff697b9ceae",
+      "jmp     short loc_7FF697B9CF13"
+    ],
+    [
+      "0x7ff697b9cf13",
+      "mov     r10d, [rsp+7F8h+var_73C]"
+    ],
+    [
+      "0x7ff697b9cf1b",
+      "mov     r11d, r8d"
+    ],
+    [
+      "0x7ff697b9cf1e",
+      "or      r11d, r10d"
+    ],
+    [
+      "0x7ff697b9cf21",
+      "not     r11d"
+    ],
+    [
+      "0x7ff697b9cf24",
+      "lea     r11d, [r11+r11*2]"
+    ],
+    [
+      "0x7ff697b9cf28",
+      "add     r11d, eax"
+    ],
+    [
+      "0x7ff697b9cf2b",
+      "mov     edi, r8d"
+    ],
+    [
+      "0x7ff697b9cf2e",
+      "and     edi, r10d"
+    ],
+    [
+      "0x7ff697b9cf31",
+      "not     r10d"
+    ],
+    [
+      "0x7ff697b9cf34",
+      "and     r10d, r8d"
+    ],
+    [
+      "0x7ff697b9cf37",
+      "lea     eax, [r10+r10*2]"
+    ],
+    [
+      "0x7ff697b9cf3b",
+      "sub     eax, edi"
+    ],
+    [
+      "0x7ff697b9cf3d",
+      "add     eax, r8d"
+    ],
+    [
+      "0x7ff697b9cf40",
+      "add     eax, r11d"
+    ],
+    [
+      "0x7ff697b9cf43",
+      "and     bl, 0FFh"
+    ],
+    [
+      "0x7ff697b9cf46",
+      "sal     dh, 0"
+    ],
+    [
+      "0x7ff697b9cf49",
+      "jmp     short loc_7FF697B9CFA3"
+    ],
+    [
+      "0x7ff697b9cfa3",
+      "sub     eax, r9d"
+    ],
+    [
+      "0x7ff697b9cfa6",
+      "inc     eax"
+    ],
+    [
+      "0x7ff697b9cfa8",
+      "xor     cl, 0; bytes"
+    ],
+    [
+      "0x7ff697b9cfab",
+      "jmp     short loc_7FF697B9CFB7"
+    ],
+    [
+      "0x7ff697b9cfb7",
+      "jmp     short loc_7FF697B9CFE4"
+    ],
+    [
+      "0x7ff697b9cfe4",
+      "mov     [rsi+0Ch], eax"
+    ],
+    [
+      "0x7ff697b9cfe7",
+      "mov     [rsi+8], edx"
+    ],
+    [
+      "0x7ff697b9cfea",
+      "mov     r8, rax"
+    ],
+    [
+      "0x7ff697b9cfed",
+      "not     r8"
+    ],
+    [
+      "0x7ff697b9cff0",
+      "mov     rdx, rax"
+    ],
+    [
+      "0x7ff697b9cff3",
+      "or      rdx, 0FFFFFFFFFFFFFFF3h"
+    ],
+    [
+      "0x7ff697b9cff7",
+      "lea     r9, [rdx+rdx*4]"
+    ],
+    [
+      "0x7ff697b9cffb",
+      "lea     r9, [rdx+r9*2]"
+    ],
+    [
+      "0x7ff697b9cfff",
+      "not     rdx"
+    ],
+    [
+      "0x7ff697b9d002",
+      "cmp     esp, 4600h"
+    ],
+    [
+      "0x7ff697b9d008",
+      "jmp     short loc_7FF697B9D00D"
+    ],
+    [
+      "0x7ff697b9d00d",
+      "nop"
+    ],
+    [
+      "0x7ff697b9d00e",
+      "nop"
+    ],
+    [
+      "0x7ff697b9d00f",
+      "jmp     short loc_7FF697B9D017"
+    ],
+    [
+      "0x7ff697b9d017",
+      "push    rax"
+    ],
+    [
+      "0x7ff697b9d018",
+      "nop"
+    ],
+    [
+      "0x7ff697b9d019",
+      "inc     eax"
+    ],
+    [
+      "0x7ff697b9d01b",
+      "pop     rax"
+    ],
+    [
+      "0x7ff697b9d01c",
+      "jns     short loc_7FF697B9D041"
+    ],
+    [
+      "0x7ff697b9d01e",
+      "xchg    dl, dl"
+    ],
+    [
+      "0x7ff697b9d020",
+      "jmp     short loc_7FF697B9D039"
+    ],
+    [
+      "0x7ff697b9d02d",
+      "jmp     short loc_7FF697B9D052"
+    ],
+    [
+      "0x7ff697b9d039",
+      "nop"
+    ],
+    [
+      "0x7ff697b9d03a",
+      "jmp     short loc_7FF697B9D02D"
+    ],
+    [
+      "0x7ff697b9d041",
+      "jmp     short loc_7FF697B9D052"
+    ],
+    [
+      "0x7ff697b9d052",
+      "lea     r10, ds:0[rdx*8]"
+    ],
+    [
+      "0x7ff697b9d05a",
+      "sub     r10, rdx"
+    ],
+    [
+      "0x7ff697b9d05d",
+      "and     r8, 0FFFFFFFFFFFFFFF3h"
+    ],
+    [
+      "0x7ff697b9d061",
+      "mov     rdx, r8"
+    ],
+    [
+      "0x7ff697b9d064",
+      "shl     rdx, 4"
+    ],
+    [
+      "0x7ff697b9d068",
+      "add     rdx, r8"
+    ],
+    [
+      "0x7ff697b9d06b",
+      "mov     r8d, eax"
+    ],
+    [
+      "0x7ff697b9d06e",
+      "and     r8d, 0FFFFFFF3h"
+    ],
+    [
+      "0x7ff697b9d072",
+      "lea     r11, [r8+r8*2]"
+    ],
+    [
+      "0x7ff697b9d076",
+      "not     r8"
+    ],
+    [
+      "0x7ff697b9d079",
+      "add     r8, r8"
+    ],
+    [
+      "0x7ff697b9d07c",
+      "lea     r8, [r8+r8*2]"
+    ],
+    [
+      "0x7ff697b9d080",
+      "and     eax, 0Ch"
+    ],
+    [
+      "0x7ff697b9d083",
+      "lea     rdi, [rax+rax*8]"
+    ],
+    [
+      "0x7ff697b9d087",
+      "lea     rax, [rax+rdi*2]"
+    ],
+    [
+      "0x7ff697b9d08b",
+      "cmp     esp, 1C00h"
+    ],
+    [
+      "0x7ff697b9d091",
+      "jmp     short loc_7FF697B9D096"
+    ],
+    [
+      "0x7ff697b9d096",
+      "nop"
+    ],
+    [
+      "0x7ff697b9d097",
+      "nop"
+    ],
+    [
+      "0x7ff697b9d098",
+      "jmp     short loc_7FF697B9D0A0"
+    ],
+    [
+      "0x7ff697b9d0a0",
+      "push    rax"
+    ],
+    [
+      "0x7ff697b9d0a1",
+      "nop"
+    ],
+    [
+      "0x7ff697b9d0a2",
+      "inc     eax"
+    ],
+    [
+      "0x7ff697b9d0a4",
+      "pop     rax"
+    ],
+    [
+      "0x7ff697b9d0a5",
+      "test    eax, ebx"
+    ],
+    [
+      "0x7ff697b9d0a7",
+      "mov     ah, ah"
+    ],
+    [
+      "0x7ff697b9d0a9",
+      "jmp     short loc_7FF697B9D0FF"
+    ],
+    [
+      "0x7ff697b9d0ff",
+      "jmp     short loc_7FF697B9D102"
+    ],
+    [
+      "0x7ff697b9d102",
+      "lea     rax, [rax+r11*4]"
+    ],
+    [
+      "0x7ff697b9d106",
+      "sub     rax, r9"
+    ],
+    [
+      "0x7ff697b9d109",
+      "jno     short loc_7FF697B9D168"
+    ],
+    [
+      "0x7ff697b9d10b",
+      "xchg    al, al"
+    ],
+    [
+      "0x7ff697b9d10d",
+      "jmp     short loc_7FF697B9D168"
+    ],
+    [
+      "0x7ff697b9d168",
+      "sub     rax, r8"
+    ],
+    [
+      "0x7ff697b9d16b",
+      "add     rdx, r10"
+    ],
+    [
+      "0x7ff697b9d16e",
+      "add     rdx, rax; byte_count"
+    ],
+    [
+      "0x7ff697b9d171",
+      "mov     eax, cs:dword_7FF697BBADE4"
+    ],
+    [
+      "0x7ff697b9d177",
+      "mov     r8d, eax"
+    ],
+    [
+      "0x7ff697b9d17a",
+      "xor     r8d, 0F3AA2A3Fh"
+    ],
+    [
+      "0x7ff697b9d181",
+      "lea     r9d, [r8-6B0043FEh]"
+    ],
+    [
+      "0x7ff697b9d188",
+      "test    edx, 987BE0E7h"
+    ],
+    [
+      "0x7ff697b9d18e",
+      "shl     ah, 0"
+    ],
+    [
+      "0x7ff697b9d191",
+      "jmp     short loc_7FF697B9D1EF"
+    ],
+    [
+      "0x7ff697b9d1ef",
+      "cmp     esp, 4800h"
+    ],
+    [
+      "0x7ff697b9d1f5",
+      "jmp     short loc_7FF697B9D1FA"
+    ],
+    [
+      "0x7ff697b9d1fa",
+      "jmp     short loc_7FF697B9D204"
+    ],
+    [
+      "0x7ff697b9d204",
+      "push    rax"
+    ],
+    [
+      "0x7ff697b9d205",
+      "nop"
+    ],
+    [
+      "0x7ff697b9d206",
+      "inc     eax"
+    ],
+    [
+      "0x7ff697b9d208",
+      "pop     rax"
+    ],
+    [
+      "0x7ff697b9d209",
+      "stc"
+    ],
+    [
+      "0x7ff697b9d20a",
+      "jmp     short loc_7FF697B9D22B"
+    ],
+    [
+      "0x7ff697b9d22b",
+      "jmp     short loc_7FF697B9D23F"
+    ],
+    [
+      "0x7ff697b9d23f",
+      "add     r8d, 0E699E38Ch"
+    ],
+    [
+      "0x7ff697b9d246",
+      "xor     r8d, r9d"
+    ],
+    [
+      "0x7ff697b9d249",
+      "xor     r8d, eax; optional_seed"
+    ],
+    [
+      "0x7ff697b9d24c",
+      "call    wmp1_fnv1a_raw_bytes"
+    ],
+    [
+      "0x7ff697b9d251",
+      "mov     [rsi], eax"
+    ],
+    [
+      "0x7ff697b9d253",
+      "mov     rax, qword ptr [rsp+7F8h+output_descriptor]"
+    ],
+    [
+      "0x7ff697b9d258",
+      "mov     ecx, [rax]"
+    ],
+    [
+      "0x7ff697b9d25a",
+      "mov     [rsp+7F8h+var_708], ecx"
+    ],
+    [
+      "0x7ff697b9d261",
+      "not     ecx"
+    ],
+    [
+      "0x7ff697b9d263",
+      "mov     eax, ecx"
+    ],
+    [
+      "0x7ff697b9d265",
+      "and     eax, 0Fh"
+    ],
+    [
+      "0x7ff697b9d268",
+      "lea     edx, ds:0[rax*8]"
+    ],
+    [
+      "0x7ff697b9d26f",
+      "and     ecx, 0FFFFFFF0h"
+    ],
+    [
+      "0x7ff697b9d272",
+      "or      bh, 0"
+    ],
+    [
+      "0x7ff697b9d275",
+      "jmp     short loc_7FF697B9D297"
+    ],
+    [
+      "0x7ff697b9d297",
+      "xchg    al, al"
+    ],
+    [
+      "0x7ff697b9d299",
+      "jmp     short loc_7FF697B9D2D5"
+    ],
+    [
+      "0x7ff697b9d2d5",
+      "mov     r8d, [rsp+7F8h+var_708]"
+    ],
+    [
+      "0x7ff697b9d2dd",
+      "mov     r9d, r8d"
+    ],
+    [
+      "0x7ff697b9d2e0",
+      "or      r9d, 0FFFFFFF0h"
+    ],
+    [
+      "0x7ff697b9d2e4",
+      "mov     r10d, r8d"
+    ],
+    [
+      "0x7ff697b9d2e7",
+      "xor     r10d, 0Fh"
+    ],
+    [
+      "0x7ff697b9d2eb",
+      "lea     r11d, ds:0[r10*8]"
+    ],
+    [
+      "0x7ff697b9d2f3",
+      "sub     r11d, r10d"
+    ],
+    [
+      "0x7ff697b9d2f6",
+      "mov     r10d, r8d"
+    ],
+    [
+      "0x7ff697b9d2f9",
+      "and     r10d, 7FFFFFF0h"
+    ],
+    [
+      "0x7ff697b9d300",
+      "add     r10d, r10d"
+    ],
+    [
+      "0x7ff697b9d303",
+      "lea     r10d, [r10+r10*2]"
+    ],
+    [
+      "0x7ff697b9d307",
+      "and     r8d, 0Fh"
+    ],
+    [
+      "0x7ff697b9d30b",
+      "add     r8d, r8d"
+    ],
+    [
+      "0x7ff697b9d30e",
+      "sub     r8d, r10d"
+    ],
+    [
+      "0x7ff697b9d311",
+      "add     r8d, r11d"
+    ],
+    [
+      "0x7ff697b9d314",
+      "sub     r8d, r9d"
+    ],
+    [
+      "0x7ff697b9d317",
+      "add     r8d, ecx"
+    ],
+    [
+      "0x7ff697b9d31a",
+      "jnz     short loc_7FF697B9D35A"
+    ],
+    [
+      "0x7ff697b9d31c",
+      "sal     bh, 0"
+    ],
+    [
+      "0x7ff697b9d31f",
+      "jmp     short loc_7FF697B9D35A"
+    ]
+  ],
+  "comments": [
+    {
+      "ea": "0x7ff697b9cfe4",
+      "old": null,
+      "new": "Response header+12 = uint32(used_after - baseline_used), baseline=previous used+16 reserved header. Native same stack slot188 read CE9A/CF13; symbolic32 proof UNSAT for inequality.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b9cfe7",
+      "old": null,
+      "new": "Response header+8 stores selector handler status, e.g selector18 return0/1/101h. Selector18 report flags are in appended37byte payload, NOT this status field.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b9d24c",
+      "old": null,
+      "new": "Response FNV32 over packet+4 for payload_length+12 bytes, captured seed0(default). Native64-bit polynomial proves count=m+12 for anyDWORDm. Header+0 stores result; +4 forwarded input field; +8 status; +12 payload length.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b9ce54",
+      "old": "Common handler-return broker: store/reload EAX, clearBBB068, TEST/JZ B9D6B7 on0. Nonzero enters generic error construction. No test of report appended/used delta here; return0 is not proof a37-byte record was produced. Later response protocol still unresolved.",
+      "new": "Selector18 return broker now visible in corrected F5: zero selects normal header status0; nonzero writes same status header+8. Local report content independent. See envelope journal.",
+      "ok": true
+    },
+    {
+      "ea": "0x7ff697b93970",
+      "old": "Dispatcher native35-case table remains verified; current F5 after19 SP metadata corrections and actual7F8local/40saved frame still omits case18 and has incorrect collapsed state loop. Do NOT use missing F5 call as reachability evidence. Native case18 atB9CAD3/brokerB9CE54 remains authoritative; semantic F5 discrepancy OPEN.",
+      "new": "35-case dispatcher readable again after matching CUMULATIVE native SP depths at20 metadata points (all4990 match). Literal zeroing at JMP was insufficient: IDA points encode linear/block join changes. Fresh F5~89KB includes selector18, noJUMPOUT. Packet/integration findings in KB.",
+      "ok": true
+    }
+  ],
+  "save_success": true,
+  "dispatcher_sp_repair": {
+    "old_frame": {
+      "frsize": 2104,
+      "frregs": 0,
+      "fpd": 0
+    },
+    "old_type": "__int64 __fastcall(__int64, __int64, __int64, __int64)",
+    "before_f5": "// Recovered request dispatch with 35 bounded selectors 0..34. Header validator at 0x7ff697b72670: selector WORD+0, payload length WORD+2, total length=payload+4. Length error 0x401; selector>34 sets 0x7000 and clears 0x7ff697bbb068. Indirect table 0x7ff697bb84ec / JMP 0x7ff697b95c65. Wrapper pointer tokens checked for initialized reconstructed globals; not arbitrary mutated-state proof. Exact per-selector scan/report semantics remain open. See reversing-warden.md.\n__int64 __fastcall wmp1_dispatch_request_0_34(__int64 a1, __int64 a2, __int64 a3, __int64 a4)\n{\n  int v4; // ecx\n  __m128i v5; // xmm0\n  __int64 v6; // rax\n  __m128i v7; // xmm2\n  __int64 v8; // rax\n  __m128i v9; // xmm1\n  unsigned __int64 v10; // rcx\n  __int64 v11; // r10\n  int v12; // edx\n  int v13; // ecx\n  int v14; // eax\n  int v15; // edx\n  int v16; // r9d\n  int v17; // ecx\n  int v18; // edx\n  int v19; // r9d\n  int v20; // edx\n  int v21; // r9d\n  int v22; // edx\n  int v23; // r8d\n  int v24; // edx\n  int v25; // r8d\n  int v26; // edx\n  int v27; // esi\n  int v28; // ebx\n  int v29; // r15d\n  int v30; // ebx\n  int v31; // r8d\n  int v32; // r9d\n  int v33; // r8d\n  int v34; // edx\n  int v35; // r8d\n  int v36; // edx\n  int v37; // r8d\n  int v38; // edx\n  int v39; // r8d\n  int v40; // edx\n  int v41; // ecx\n  int v42; // edx\n  unsigned int v43; // r9d\n  unsigned int v44; // ecx\n  unsigned int v45; // r8d\n  unsigned int v46; // esi\n  char v47; // r11\n  int v48; // edx\n  int v49; // r9d\n  int v50; // ecx\n  int v51; // edx\n  int v52; // eax\n  int v53; // r8d\n  int v54; // eax\n  int v55; // r8d\n  int v56; // eax\n  int v57; // edx\n  int v58; // eax\n  int v59; // edx\n  int v60; // eax\n  int v61; // edx\n  int v62; // eax\n  int i; // [rsp+38h] [rbp-800h]\n  char *v65; // [rsp+58h] [rbp-7E0h]\n  char v66; // [rsp+68h] [rbp-7D0h] BYREF\n  char v67; // [rsp+6Ch] [rbp-7CCh] BYREF\n  char v68; // [rsp+70h] [rbp-7C8h] BYREF\n  unsigned __int8 *v69; // [rsp+A8h] [rbp-790h]\n  __int64 v70; // [rsp+B0h] [rbp-788h]\n  char v71; // [rsp+D8h] [rbp-760h] BYREF\n  char v72; // [rsp+DCh] [rbp-75Ch] BYREF\n  char v73; // [rsp+E0h] [rbp-758h] BYREF\n  int *v74; // [rsp+E8h] [rbp-750h]\n  int v75; // [rsp+130h] [rbp-708h]\n  int v76; // [rsp+134h] [rbp-704h]\n  int v77; // [rsp+138h] [rbp-700h]\n  __int64 v78; // [rsp+178h] [rbp-6C0h]\n  __int64 v79; // [rsp+180h] [rbp-6B8h]\n  _DWORD *v80; // [rsp+188h] [rbp-6B0h]\n  char *v81; // [rsp+190h] [rbp-6A8h]\n  char *v82; // [rsp+198h] [rbp-6A0h]\n  unsigned int v83; // [rsp+1C4h] [rbp-674h]\n  int v84; // [rsp+1C8h] [rbp-670h]\n  int v85; // [rsp+1CCh] [rbp-66Ch]\n  int v86; // [rsp+1D0h] [rbp-668h]\n  int v87; // [rsp+1D4h] [rbp-664h]\n  __int64 v88; // [rsp+248h] [rbp-5F0h]\n  __int64 v89; // [rsp+250h] [rbp-5E8h]\n  char *v90; // [rsp+258h] [rbp-5E0h]\n  char *v91; // [rsp+260h] [rbp-5D8h]\n  char *v92; // [rsp+268h] [rbp-5D0h]\n  char *v93; // [rsp+270h] [rbp-5C8h]\n  char *v94; // [rsp+278h] [rbp-5C0h]\n  _BYTE *v95; // [rsp+280h] [rbp-5B8h]\n  unsigned __int64 v96; // [rsp+288h] [rbp-5B0h]\n  __int64 v97; // [rsp+298h] [rbp-5A0h]\n  unsigned __int64 v98; // [rsp+2A0h] [rbp-598h]\n  __int64 j; // [rsp+2A8h] [rbp-590h]\n  _BYTE *v100; // [rsp+2C8h] [rbp-570h]\n  _BYTE *v101; // [rsp+2D0h] [rbp-568h]\n  _BYTE *v102; // [rsp+2D8h] [rbp-560h]\n  _BYTE *v103; // [rsp+2E0h] [rbp-558h]\n  _BYTE *v104; // [rsp+2E8h] [rbp-550h]\n  _BYTE *v105; // [rsp+2F0h] [rbp-548h]\n  _BYTE *v106; // [rsp+2F8h] [rbp-540h]\n  char *v107; // [rsp+300h] [rbp-538h]\n  _BYTE *v108; // [rsp+310h] [rbp-528h]\n  _BYTE *v109; // [rsp+318h] [rbp-520h]\n  _BYTE *v110; // [rsp+320h] [rbp-518h]\n  _BYTE *v111; // [rsp+328h] [rbp-510h]\n  unsigned __int8 *bytes; // [rsp+330h] [rbp-508h]\n  _BYTE *v113; // [rsp+338h] [rbp-500h]\n  unsigned __int8 *v114; // [rsp+340h] [rbp-4F8h]\n  __m128i v115; // [rsp+3B0h] [rbp-488h] BYREF\n  __m128i v116; // [rsp+3E0h] [rbp-458h] BYREF\n  _BYTE v117[7]; // [rsp+3F1h] [rbp-447h] BYREF\n  char v118; // [rsp+3F8h] [rbp-440h] BYREF\n  char v119; // [rsp+3F9h] [rbp-43Fh] BYREF\n  char v120; // [rsp+3FCh] [rbp-43Ch] BYREF\n  char v121; // [rsp+400h] [rbp-438h] BYREF\n  _BYTE v122[6]; // [rsp+402h] [rbp-436h] BYREF\n\n  v78 = a4;\n  v88 = a3;\n  for ( i = 1586754339; ; i = 1538915917 )\n  {\n    while ( 1 )\n    {\nLABEL_2:\n      while ( i <= 1217383305 )\n      {\n        if ( i <= 230786546 )\n        {\n          if ( i <= 107842353 )\n          {\n            while ( 1 )\n            {\n              v62 = 8253729 * v77 + 2396403;\n              dword_7FF697BBC308 = v62;\n              *((_BYTE *)&dword_7FF697BBB0E0 + v96) = 33 * v77 - 13;\n              if ( v96 == 4562 )\n              {\n                i = 428801239;\n                goto LABEL_2;\n              }\n              v76 = v62;\n              v98 = v96 + 1;\nLABEL_25:\n              v96 = v98;\n              v86 = v76;\n              if ( v76 )\n                break;\n              v77 = __rdtsc() % 0xFFFF;\n            }\n            i = 162147902;\n          }\n          else\n          {\n            v77 = v86;\n            i = 15118157;\n          }\n        }\n        else if ( i <= 476665867 )\n        {\n          v5 = _mm_slli_si128(_mm_cvtsi32_si128(dword_7FF697BBB0E0), 15);\n          for ( j = 0; ; j = v8 )\n          {\n            v115 = v5;\n            v6 = j;\n            v7 = _mm_loadu_si128((const __m128i *)((char *)&dword_7FF697BBB0E0 + j + 1));\n            v5 = _mm_loadu_si128((const __m128i *)((char *)&dword_7FF697BBB0E0 + j + 17));\n            *(__m128i *)((char *)&dword_7FF697BBB0E0 + j) = _mm_xor_si128(\n                                                              _mm_or_si128(\n                                                                _mm_srli_si128(_mm_load_si128(&v115), 15),\n                                                                _mm_slli_si128(v7, 1)),\n                                                              v7);\n            *(__m128i *)((char *)&dword_7FF697BBB0E0 + v6 + 16) = _mm_xor_si128(\n                                                                    _mm_or_si128(\n                                                                      _mm_slli_si128(v5, 1),\n                                                                      _mm_srli_si128(v7, 15)),\n                                                                    v5);\n            v8 = v6 + 32;\n            v116 = v5;\n            if ( v8 == 4544 )\n              break;\n          }\n          i = 476665868;\n        }\n        else\n        {\n          v9 = _mm_loadu_si128((const __m128i *)((char *)&xmmword_7FF697BBC2A0 + 1));\n          xmmword_7FF697BBC2A0 = (__int128)_mm_xor_si128(\n                                             _mm_or_si128(\n                                               _mm_slli_si128(v9, 1),\n                                               _mm_srli_si128(_mm_load_si128(&v116), 15)),\n                                             v9);\n          byte_7FF697BBC2B0 ^= byte_7FF697BBC2B1;\n          v10 = (((qword_7FF697BBAD98 + 0x2EC1BD50C4212827LL) ^ 0x60DFC412EAC2D18DLL) - 0x6B3D21D1F8AB433CLL)\n              ^ (qword_7FF697BBAD98 + 0x62D8D77132379366LL);\n          if ( byte_7FF697BBB0D0 )\n            v10 = 8;\n          byte_7FF697BBC2B1 ^= byte_7FF697BBC2B2;\n          qmemcpy(&dword_7FF697BBA000, &unk_7FF697BBB0B0, v10);\n          v11 = v70;\n          v12 = ~(v69[1] << 8);\n          v13 = 196608 * *(unsigned __int16 *)(v70 + 2)\n              + (v69[1] << 8)\n              - v12\n              + 2 * ~((v69[1] << 8) | (*(unsigned __int16 *)(v70 + 2) << 16))\n              - v12;\n          v14 = *v69;\n          v15 = (v14 | v13) ^ __ROR4__(*((_DWORD *)v69 + 1) + 1710220277, *v69);\n          v16 = __ROR4__(v13 + v14 + 2125622254, v15);\n          v17 = (v15 & v16) + 6 * (v16 & ~v15) - 5 * (v15 ^ v16) - v15 + 7 * ~(~v15 | v16);\n          v18 = v17 ^ __ROR4__(v15 + 114053548, v17);\n          v19 = v18 ^ __ROR4__(v17 - 452460610, v18);\n          v20 = v19 ^ __ROR4__(v18 - 621898256, v19);\n          v21 = v20 ^ __ROR4__(v19 - 1575698546, v20);\n          v22 = v21 ^ __ROR4__(v20 + 1807553314, v21);\n          v23 = v22\n              ^ __ROR4__(\n                  19 * (v21 & 0x270A646B)\n                + 12 * (v21 & 0xD8F59B94)\n                - 11 * (v21 | 0xD8F59B94)\n                - 6 * ~(v21 & 0xD8F59B94)\n                + 7 * ~(v21 | 0xD8F59B94)\n                + 17 * (~v21 & 0xD8F59B94),\n                  v22);\n          v24 = v23 ^ __ROR4__(v22 - 1328090688, v23);\n          v25 = v24 ^ __ROR4__(v23 - 2033275303, v24);\n          v26 = v25 ^ __ROR4__(v24 + 1243158984, v25);\n          v27 = 3 * (dword_7FF697BBADA0 & 0x137D3C9D)\n              + 2 * (dword_7FF697BBADA0 & 0x6C82C362)\n              + ~(2 * dword_7FF697BBADA0);\n          v28 = (dword_7FF697BBADA0 | 0x137D3C9D) + v27 + 1;\n          v29 = ~v28 & 0x35714CEB;\n          v30 = (v28 & 0x35714CEB) + 2 * (v28 & 0x4A8EB314) - v28 + 2 * (v28 ^ 0x4A8EB314) - 2 * (~v28 & 0x4A8EB314);\n          v31 = v26\n              ^ __ROR4__(\n                  8 * (v25 & 0x16D8187F)\n                - 2 * (v25 & 0x2927E780)\n                - 7 * (v25 ^ 0x2927E780)\n                + 4 * (v25 ^ 0x16D8187F)\n                - 4 * (~v25 & 0x16D8187F)\n                + 8 * (~v25 & 0x927E780),\n                  v26);\n          v32 = v31\n              ^ __ROR4__(\n                  v26\n                + ((v30 + v29 + 1268106144)\n                 ^ (((v30 + v29 + 987374976) ^ dword_7FF697BBADA0\n                                             ^ (v27 + (dword_7FF697BBADA0 | 0x137D3C9D) + 156368136))\n                  - (v29\n                   + v30)\n                  - 1123552033))\n                + 2 * (v29 + v30)\n                - 1264220624,\n                  v31);\n          v33 = v32 ^ __ROR4__(v31 + 1952287966, v32);\n          v34 = v33\n              ^ __ROR4__(\n                  v32\n                + (((((dword_7FF697BBADA4 | 0x6666233D)\n                    + 3 * (dword_7FF697BBADA4 & 0x6666233D)\n                    + 2 * (dword_7FF697BBADA4 & 0x1999DCC2)\n                    + ~(2 * dword_7FF697BBADA4)\n                    + 1)\n                   ^ 0x875EDF4B)\n                  + 2145405434)\n                 ^ 0xF7CC6BC4)\n                + dword_7FF697BBADA4\n                + (((dword_7FF697BBADA4 | 0x6666233D)\n                  + 3 * (dword_7FF697BBADA4 & 0x6666233D)\n                  + 2 * (dword_7FF697BBADA4 & 0x1999DCC2)\n                  + ~(2 * dword_7FF697BBADA4)\n                  + 1)\n                 ^ 0x3E08ECC4)\n                + (dword_7FF697BBADA4 | 0x6666233D)\n                + 3 * (dword_7FF697BBADA4 & 0x6666233D)\n                + 2 * (dword_7FF697BBADA4 & 0x1999DCC2)\n                + ~(2 * dword_7FF697BBADA4)\n                + 1,\n                  v33);\n          v35 = v34 ^ __ROR4__(v33 + 1011008155, v34);\n          v36 = v35 ^ __ROR4__(v34 + 1735808883, v35);\n          v37 = v36 ^ __ROR4__(v35 - 1934650103, v36);\n          v38 = v37 ^ __ROR4__(v36 - 1433706364, v37);\n          v39 = v38 ^ __ROR4__(v37 - 878744182, v38);\n          v40 = v39 ^ __ROR4__(v38 - 1584046468, v39);\n          v41 = v40 ^ __ROR4__(v39 - 1014243751, v40);\n          v42 = v41 ^ __ROR4__(v40 + 660532791, v41);\n          v43 = (v42\n               ^ __ROR4__(\n                   8 * (v41 & 0x9ED8F80)\n                 - 2 * (v41 & 0x5612707F)\n                 - 7 * (v41 ^ 0xD612707F)\n                 + 4 * (v41 ^ 0x29ED8F80)\n                 - 4 * (~v41 & 0x29ED8F80)\n                 + 8 * (~v41 & 0x1612707F),\n                   v42))\n              + 1497288132;\n          v42 -= 365685905;\n          v44 = HIBYTE(v43);\n          v45 = HIWORD(v43);\n          v46 = v43 >> 8;\n          LOBYTE(v43) = dword_7FF697BBA000 ^ v43;\n          LOBYTE(dword_7FF697BBA000) = *v69;\n          v116.m128i_i8[8] = v43;\n          LOBYTE(v46) = BYTE1(dword_7FF697BBA000) ^ v46;\n          BYTE1(dword_7FF697BBA000) = v69[1];\n          *v100 = v46;\n          LOBYTE(v44) = HIBYTE(dword_7FF697BBA000) ^ v44;\n          LOBYTE(v42) = dword_7FF697BBA004 ^ v42;\n          v47 = BYTE1(dword_7FF697BBA004) ^ BYTE1(v42);\n          LODWORD(v11) = *(_DWORD *)(v11 + 2);\n          *v101 = BYTE2(dword_7FF697BBA000) ^ v45;\n          *v102 = v44;\n          *v94 = v42;\n          *(int *)((char *)&dword_7FF697BBA000 + 2) = v11;\n          *v103 = v47;\n          LOBYTE(v43) = BYTE2(dword_7FF697BBA004) ^ BYTE2(v42);\n          BYTE2(dword_7FF697BBA004) = v69[6];\n          *v104 = v43;\n          LOBYTE(v14) = HIBYTE(dword_7FF697BBA004) ^ HIBYTE(v42);\n          HIBYTE(dword_7FF697BBA004) = v69[7];\n          *v105 = v14;\n          bytes = v69 + 10;\n          v48 = *((unsigned __int16 *)v69 + 5);\n          v113 = v69 + 9;\n          v49 = v69[9] << 8;\n          v50 = v69[8];\n          v114 = v69 + 12;\n          v51 = ((v48 << 16) | v49) + v50;\n          v52 = v51 ^ __ROR4__(*((_DWORD *)v69 + 3) + 1710220277, v50);\n          v53 = v52 ^ __ROR4__(v51 + 2125622254, v52);\n          v54 = v53 ^ __ROR4__(v52 + 114053548, v53);\n          v55 = v54 ^ __ROR4__(v53 - 452460610, v54);\n          v56 = v55 ^ __ROR4__(v54 - 621898256, v55);\n          v57 = v56\n              ^ __ROR4__((~v55 | 0xA214BF8E) - 2 * v55 - 4 * (~v55 & 0x1DEB4071) - 3 * (~v55 & 0xA214BF8E) - 3, v56);\n          v58 = v57 ^ __ROR4__(v56 + 1807553314, v57);\n          v59 = v58 ^ __ROR4__(v57 + 654992491, v58);\n          v60 = v59 ^ __ROR4__(v58 - 1328090688, v59);\n          v61 = __ROR4__(v59 - 2033275303, v60);\n          v86 = 10 * ~(~v60 | v61);\n          v85 = v60;\n          v87 = 9 * (v60 & v61) + 4 * (v61 & ~v60) - 3 * (v60 | v61) - 6 * v60;\n        }\n      }\n      if ( i > 1586754338 )\n        break;\n      if ( i <= 1380602973 )\n      {\n        v4 = v85 - *v80;\n        *(_DWORD *)v65 = 0;\n        *v74 = v4;\n        *v90 = 0;\n        v76 = dword_7FF697BBC308;\n        v98 = 0;\n        goto LABEL_25;\n      }\n      v89 = v88 + 12;\n      v80 = (_DWORD *)(v88 + 8);\n      v65 = &v66;\n      v74 = (int *)&v67;\n      v90 = &v68;\n      v81 = &v120;\n      v91 = &v121;\n      v82 = &v71;\n      v92 = &v72;\n      v93 = &v73;\n      v94 = &v118;\n      v95 = &v117[3];\n      v101 = v117;\n      v102 = &v117[1];\n      v103 = &v117[2];\n      v104 = &v117[4];\n      v105 = &v117[5];\n      v106 = &v117[6];\n      v107 = &v119;\n      v108 = v122;\n      v109 = &v122[1];\n      v110 = &v122[3];\n      v111 = &v122[4];\n      bytes = &v122[5];\n      v77 = v85;\n      v98 = (v79 ^ 0xF2B6CB58C7697BC8uLL) + 172;\n      v113 = &v117[3];\n      v70 = v97;\n      v84 = v75;\n      v85 = *(_DWORD *)(v88 + 12);\n      i = 1352076720;\n    }\n    v83 = *(_DWORD *)((v78 ^ 0xF2B6CB58C7697BC8uLL) + 0xA8);\n    if ( v83 < 0x11 )\n      break;\n  }\n  return 1027;\n}\n",
+    "changes": [
+      {
+        "post": 140697084215724,
+        "source": 140697084215719,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": -8,
+        "new_delta": 0,
+        "old_sp": -2104,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084221124,
+        "source": 140697084221119,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2112,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084221111,
+        "source": 140697084221106,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 16,
+        "new_delta": 0,
+        "old_sp": -2128,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084214396,
+        "source": 140697084214391,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": -24,
+        "new_delta": 0,
+        "old_sp": -2080,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084207023,
+        "source": 140697084207018,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": -24,
+        "new_delta": 0,
+        "old_sp": -2096,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084206244,
+        "source": 140697084206239,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": -8,
+        "new_delta": 0,
+        "old_sp": -2096,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084201584,
+        "source": 140697084201579,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": -8,
+        "new_delta": 0,
+        "old_sp": -2096,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084195560,
+        "source": 140697084195555,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2112,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084184703,
+        "source": 140697084184698,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2112,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084207497,
+        "source": 140697084207492,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 16,
+        "new_delta": 0,
+        "old_sp": -2120,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084189286,
+        "source": 140697084189281,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 16,
+        "new_delta": 0,
+        "old_sp": -2120,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084195540,
+        "source": 140697084195535,
+        "instruction": "jmp     loc_7FF697B99E51",
+        "old_delta": -8,
+        "new_delta": 0,
+        "old_sp": -2104,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084206224,
+        "source": 140697084206219,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2104,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084182917,
+        "source": 140697084182912,
+        "instruction": "call    near ptr sub_7FF697AE6F10",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2104,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084215737,
+        "source": 140697084215732,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2112,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084215641,
+        "source": 140697084215636,
+        "instruction": "jmp     loc_7FF697B9CE75",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2112,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084182948,
+        "source": 140697084182943,
+        "instruction": "jmp     loc_7FF697B9A233",
+        "old_delta": -8,
+        "new_delta": 0,
+        "old_sp": -2096,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084194783,
+        "source": 140697084194778,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2112,
+        "proved_sp": -2104,
+        "applied": true
+      },
+      {
+        "post": 140697084215228,
+        "source": 140697084215223,
+        "instruction": "jmp     loc_7FF697B93A80",
+        "old_delta": 8,
+        "new_delta": 0,
+        "old_sp": -2104,
+        "proved_sp": -2104,
+        "applied": true
+      }
+    ],
+    "frame_applied": true,
+    "after_f5": "// Recovered request dispatch with 35 bounded selectors 0..34. Header validator at 0x7ff697b72670: selector WORD+0, payload length WORD+2, total length=payload+4. Length error 0x401; selector>34 sets 0x7000 and clears 0x7ff697bbb068. Indirect table 0x7ff697bb84ec / JMP 0x7ff697b95c65. Wrapper pointer tokens checked for initialized reconstructed globals; not arbitrary mutated-state proof. Exact per-selector scan/report semantics remain open. See reversing-warden.md.\n__int64 __fastcall wmp1_dispatch_request_0_34(__int64 a1, __int64 a2, __int64 a3, __int64 a4)\n{\n  int i; // [rsp+38h] [rbp-7C0h]\n  __int64 *v6; // [rsp+58h] [rbp-7A0h]\n  __int64 v7; // [rsp+68h] [rbp-790h] BYREF\n  __int64 v8; // [rsp+70h] [rbp-788h] BYREF\n  void *request_ptr; // [rsp+90h] [rbp-768h]\n  int v10; // [rsp+D8h] [rbp-720h] BYREF\n  int v11; // [rsp+DCh] [rbp-71Ch] BYREF\n  int v12; // [rsp+E0h] [rbp-718h] BYREF\n  char *v13; // [rsp+E8h] [rbp-710h]\n  int v14; // [rsp+110h] [rbp-6E8h]\n  __int64 v15; // [rsp+138h] [rbp-6C0h]\n  __int64 v16; // [rsp+178h] [rbp-680h]\n  __int64 v17; // [rsp+180h] [rbp-678h]\n  __int64 v18; // [rsp+188h] [rbp-670h]\n  _BYTE *v19; // [rsp+190h] [rbp-668h]\n  int *v20; // [rsp+198h] [rbp-660h]\n  int v21; // [rsp+1A8h] [rbp-650h]\n  int v22; // [rsp+1ACh] [rbp-64Ch]\n  unsigned int v23; // [rsp+1C4h] [rbp-634h]\n  unsigned __int64 byte_count; // [rsp+1C8h] [rbp-630h]\n  int *v25; // [rsp+230h] [rbp-5C8h]\n  __int64 v26; // [rsp+248h] [rbp-5B0h]\n  __int64 v27; // [rsp+250h] [rbp-5A8h]\n  __int64 *v28; // [rsp+258h] [rbp-5A0h]\n  __int64 *v29; // [rsp+260h] [rbp-598h]\n  int *v30; // [rsp+268h] [rbp-590h]\n  int *v31; // [rsp+270h] [rbp-588h]\n  char *v32; // [rsp+278h] [rbp-580h]\n  _BYTE *v33; // [rsp+280h] [rbp-578h]\n  unsigned __int64 v34; // [rsp+2A0h] [rbp-558h]\n  _BYTE *v35; // [rsp+2D0h] [rbp-528h]\n  _BYTE *v36; // [rsp+2D8h] [rbp-520h]\n  _BYTE *v37; // [rsp+2E0h] [rbp-518h]\n  _BYTE *v38; // [rsp+2E8h] [rbp-510h]\n  unsigned __int8 *bytes; // [rsp+2F0h] [rbp-508h]\n  _BYTE *v40; // [rsp+2F8h] [rbp-500h]\n  _BYTE *v41; // [rsp+300h] [rbp-4F8h]\n  char *v42; // [rsp+310h] [rbp-4E8h]\n  char *v43; // [rsp+318h] [rbp-4E0h]\n  char *v44; // [rsp+320h] [rbp-4D8h]\n  char *v45; // [rsp+328h] [rbp-4D0h]\n  char *v46; // [rsp+330h] [rbp-4C8h]\n  _BYTE *v47; // [rsp+338h] [rbp-4C0h]\n  _BYTE v48[7]; // [rsp+3F1h] [rbp-407h] BYREF\n  char v49; // [rsp+3F8h] [rbp-400h] BYREF\n  _BYTE v50[7]; // [rsp+3F9h] [rbp-3FFh] BYREF\n  __int64 v51; // [rsp+400h] [rbp-3F8h] BYREF\n\n  v16 = a4;\n  v26 = a3;\n  for ( i = 1586754339; ; i = 1538915917 )\n  {\n    while ( i <= 1586754338 )\n    {\n      v27 = v26 + 12;\n      v18 = v26 + 8;\n      v6 = &v7;\n      v13 = (char *)&v7 + 4;\n      v28 = &v8;\n      v19 = &v50[3];\n      v29 = &v51;\n      v20 = &v10;\n      v30 = &v11;\n      v31 = &v12;\n      v32 = &v49;\n      v33 = &v48[3];\n      v35 = v48;\n      v36 = &v48[1];\n      v37 = &v48[2];\n      v38 = &v48[4];\n      bytes = &v48[5];\n      v40 = &v48[6];\n      v41 = v50;\n      v42 = (char *)&v51 + 2;\n      v43 = (char *)&v51 + 3;\n      v44 = (char *)&v51 + 5;\n      v45 = (char *)&v51 + 6;\n      v46 = (char *)&v51 + 7;\n      LODWORD(v15) = HIDWORD(byte_count);\n      v34 = (v17 ^ 0xF2B6CB58C7697BC8uLL) + 172;\n      v47 = &v48[3];\n      request_ptr = &v49;\n      v21 = v14;\n      v22 = *v25;\n    }\n    v23 = *(_DWORD *)((v16 ^ 0xF2B6CB58C7697BC8uLL) + 0xA8);\n    if ( v23 < 0x11 )\n      break;\n  }\n  return 1027;\n}\n",
+    "rejected_delta_zeroing_reason": "IDA SP points also encode linear-layout/block-join adjustments, not only machine-instruction stack deltas. Zeroing an adjustment at a JMP is not itself valid. Cumulative native graph depths must be matched instead.",
+    "absolute_before_points": [
+      {
+        "ea": 140697084180850,
+        "spd": -8
+      },
+      {
+        "ea": 140697084180852,
+        "spd": -16
+      },
+      {
+        "ea": 140697084180854,
+        "spd": -24
+      },
+      {
+        "ea": 140697084180856,
+        "spd": -32
+      },
+      {
+        "ea": 140697084180857,
+        "spd": -40
+      },
+      {
+        "ea": 140697084180858,
+        "spd": -48
+      },
+      {
+        "ea": 140697084180859,
+        "spd": -56
+      },
+      {
+        "ea": 140697084180860,
+        "spd": -64
+      },
+      {
+        "ea": 140697084180867,
+        "spd": -2104
+      },
+      {
+        "ea": 140697084181514,
+        "spd": -2112
+      },
+      {
+        "ea": 140697084181518,
+        "spd": -2104
+      },
+      {
+        "ea": 140697084181837,
+        "spd": -2096
+      },
+      {
+        "ea": 140697084181844,
+        "spd": -2088
+      },
+      {
+        "ea": 140697084181866,
+        "spd": -2080
+      },
+      {
+        "ea": 140697084181879,
+        "spd": -2072
+      },
+      {
+        "ea": 140697084181880,
+        "spd": -2080
+      },
+      {
+        "ea": 140697084181882,
+        "spd": -2088
+      },
+      {
+        "ea": 140697084181895,
+        "spd": -2096
+      },
+      {
+        "ea": 140697084182176,
+        "spd": -2104
+      },
+      {
+        "ea": 140697084184123,
+        "spd": -2112
+      },
+      {
+        "ea": 140697084184412,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084184416,
+        "spd": -2112
+      },
+      {
+        "ea": 140697084185122,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084185126,
+        "spd": -2112
+      },
+      {
+        "ea": 140697084185623,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084185627,
+        "spd": -2112
+      },
+      {
+        "ea": 140697084186549,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084186553,
+        "spd": -2112
+      },
+      {
+        "ea": 140697084187305,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084187309,
+        "spd": -2112
+      },
+      {
+        "ea": 140697084188382,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084188388,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084188438,
+        "spd": -2112
+      },
+      {
+        "ea": 140697084188443,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084188471,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084188513,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084188521,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084188545,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084188549,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084189149,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084189153,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084190192,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084190196,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084190439,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084192213,
+        "spd": -2144
+      },
+      {
+        "ea": 140697084192217,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084193506,
+        "spd": -2144
+      },
+      {
+        "ea": 140697084193510,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084194528,
+        "spd": -2144
+      },
+      {
+        "ea": 140697084194532,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084196847,
+        "spd": -2144
+      },
+      {
+        "ea": 140697084196851,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084197966,
+        "spd": -2144
+      },
+      {
+        "ea": 140697084197970,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084198605,
+        "spd": -2144
+      },
+      {
+        "ea": 140697084198609,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084199010,
+        "spd": -2144
+      },
+      {
+        "ea": 140697084199014,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084199144,
+        "spd": -2144
+      },
+      {
+        "ea": 140697084199148,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084199468,
+        "spd": -2144
+      },
+      {
+        "ea": 140697084199520,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084199534,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084200270,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084200304,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084200315,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084200320,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084201112,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084201116,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084201665,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084201669,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084201938,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084201942,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084202709,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084202713,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084203668,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084203672,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084204025,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084204059,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084204064,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084204068,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084204083,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084204113,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084206045,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084206049,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084206271,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084206275,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084206579,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084206583,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084206928,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084207211,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084207215,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084208132,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084208136,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084208440,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084208444,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084208683,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084208687,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084209238,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084209242,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084209261,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084209288,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084209301,
+        "spd": -2112
+      },
+      {
+        "ea": 140697084209423,
+        "spd": -2104
+      },
+      {
+        "ea": 140697084209445,
+        "spd": -2096
+      },
+      {
+        "ea": 140697084209470,
+        "spd": -2104
+      },
+      {
+        "ea": 140697084209474,
+        "spd": -2096
+      },
+      {
+        "ea": 140697084209666,
+        "spd": -2104
+      },
+      {
+        "ea": 140697084209670,
+        "spd": -2096
+      },
+      {
+        "ea": 140697084211339,
+        "spd": -2104
+      },
+      {
+        "ea": 140697084211378,
+        "spd": -2096
+      },
+      {
+        "ea": 140697084212019,
+        "spd": -2104
+      },
+      {
+        "ea": 140697084212023,
+        "spd": -2096
+      },
+      {
+        "ea": 140697084212344,
+        "spd": -2104
+      },
+      {
+        "ea": 140697084212348,
+        "spd": -2096
+      },
+      {
+        "ea": 140697084212929,
+        "spd": -2104
+      },
+      {
+        "ea": 140697084212933,
+        "spd": -2096
+      },
+      {
+        "ea": 140697084214148,
+        "spd": -2104
+      },
+      {
+        "ea": 140697084214152,
+        "spd": -2096
+      },
+      {
+        "ea": 140697084215090,
+        "spd": -2104
+      },
+      {
+        "ea": 140697084215094,
+        "spd": -2096
+      },
+      {
+        "ea": 140697084215309,
+        "spd": -2112
+      },
+      {
+        "ea": 140697084215474,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084215478,
+        "spd": -2112
+      },
+      {
+        "ea": 140697084216460,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084216464,
+        "spd": -2112
+      },
+      {
+        "ea": 140697084217362,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084217366,
+        "spd": -2112
+      },
+      {
+        "ea": 140697084218307,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084218311,
+        "spd": -2112
+      },
+      {
+        "ea": 140697084218922,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084219416,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084219420,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084219553,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084219557,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084219909,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084219913,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084220616,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084220620,
+        "spd": -2120
+      },
+      {
+        "ea": 140697084220837,
+        "spd": -2128
+      },
+      {
+        "ea": 140697084220845,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084221176,
+        "spd": -2144
+      },
+      {
+        "ea": 140697084221180,
+        "spd": -2136
+      },
+      {
+        "ea": 140697084221664,
+        "spd": -96
+      },
+      {
+        "ea": 140697084221665,
+        "spd": -88
+      },
+      {
+        "ea": 140697084221666,
+        "spd": -80
+      },
+      {
+        "ea": 140697084221667,
+        "spd": -72
+      },
+      {
+        "ea": 140697084221668,
+        "spd": -64
+      },
+      {
+        "ea": 140697084221670,
+        "spd": -56
+      },
+      {
+        "ea": 140697084221672,
+        "spd": -48
+      },
+      {
+        "ea": 140697084221674,
+        "spd": -40
+      },
+      {
+        "ea": 140697084221676,
+        "spd": -32
+      }
+    ],
+    "absolute_repairs": [
+      {
+        "ea": 140697084181922,
+        "old_sp": -2096,
+        "previous_linear_sp": -2096,
+        "native_sp": -2104,
+        "point_delta": -8,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084182176,
+        "old_sp": -2112,
+        "previous_linear_sp": -2104,
+        "native_sp": -2104,
+        "point_delta": 0,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084184129,
+        "old_sp": -2112,
+        "previous_linear_sp": -2112,
+        "native_sp": -2104,
+        "point_delta": 8,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084188399,
+        "old_sp": -2120,
+        "previous_linear_sp": -2120,
+        "native_sp": -2104,
+        "point_delta": 16,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084188452,
+        "old_sp": -2096,
+        "previous_linear_sp": -2096,
+        "native_sp": -2104,
+        "point_delta": -8,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084188471,
+        "old_sp": -2112,
+        "previous_linear_sp": -2104,
+        "native_sp": -2104,
+        "point_delta": 0,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084188513,
+        "old_sp": -2096,
+        "previous_linear_sp": -2104,
+        "native_sp": -2104,
+        "point_delta": 0,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084188521,
+        "old_sp": -2112,
+        "previous_linear_sp": -2104,
+        "native_sp": -2104,
+        "point_delta": 0,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084190450,
+        "old_sp": -2112,
+        "previous_linear_sp": -2112,
+        "native_sp": -2104,
+        "point_delta": 8,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084199536,
+        "old_sp": -2096,
+        "previous_linear_sp": -2096,
+        "native_sp": -2104,
+        "point_delta": -8,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084200317,
+        "old_sp": -2112,
+        "previous_linear_sp": -2112,
+        "native_sp": -2104,
+        "point_delta": 8,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084200320,
+        "old_sp": -2096,
+        "previous_linear_sp": -2104,
+        "native_sp": -2104,
+        "point_delta": 0,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084206951,
+        "old_sp": -2096,
+        "previous_linear_sp": -2096,
+        "native_sp": -2104,
+        "point_delta": -8,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084209303,
+        "old_sp": -2096,
+        "previous_linear_sp": -2096,
+        "native_sp": -2104,
+        "point_delta": -8,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084209448,
+        "old_sp": -2088,
+        "previous_linear_sp": -2088,
+        "native_sp": -2104,
+        "point_delta": -16,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084211365,
+        "old_sp": -2112,
+        "previous_linear_sp": -2112,
+        "native_sp": -2104,
+        "point_delta": 8,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084211378,
+        "old_sp": -2096,
+        "previous_linear_sp": -2104,
+        "native_sp": -2104,
+        "point_delta": 0,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084215343,
+        "old_sp": -2120,
+        "previous_linear_sp": -2120,
+        "native_sp": -2104,
+        "point_delta": 16,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084218964,
+        "old_sp": -2112,
+        "previous_linear_sp": -2112,
+        "native_sp": -2104,
+        "point_delta": 8,
+        "applied": true,
+        "after_sp": -2104
+      },
+      {
+        "ea": 140697084220878,
+        "old_sp": -2120,
+        "previous_linear_sp": -2120,
+        "native_sp": -2104,
+        "point_delta": 16,
+        "applied": true,
+        "after_sp": -2104
+      }
+    ],
+    "absolute_mismatches": [],
+    "absolute_after_f5": "// Recovered request dispatch with 35 bounded selectors 0..34. Header validator at 0x7ff697b72670: selector WORD+0, payload length WORD+2, total length=payload+4. Length error 0x401; selector>34 sets 0x7000 and clears 0x7ff697bbb068. Indirect table 0x7ff697bb84ec / JMP 0x7ff697b95c65. Wrapper pointer tokens checked for initialized reconstructed globals; not arbitrary mutated-state proof. Exact per-selector scan/report semantics remain open. See reversing-warden.md.\n__int64 __fastcall wmp1_dispatch_request_0_34(__int64 a1, __int64 a2, __int64 a3, unsigned __int64 a4)\n{\n  unsigned int v4; // eax\n  int v5; // eax\n  int v6; // ecx\n  unsigned __int64 v7; // rax\n  unsigned __int8 *v8; // rdx\n  __int64 v9; // r8\n  unsigned __int64 v10; // rax\n  int v11; // esi\n  unsigned int v12; // eax\n  unsigned __int64 v13; // rcx\n  __int64 v14; // rax\n  unsigned int v15; // ecx\n  __m128i v16; // xmm0\n  __int64 v17; // rax\n  __m128i v18; // xmm2\n  __int64 v19; // rax\n  int v20; // edx\n  int v21; // eax\n  int v22; // edx\n  int v23; // eax\n  int v24; // edx\n  int v25; // eax\n  unsigned __int64 v26; // rax\n  unsigned __int8 *v27; // rcx\n  __int64 v28; // r8\n  unsigned int v29; // eax\n  unsigned int v30; // r9d\n  int v31; // esi\n  int v32; // et1\n  unsigned int v33; // edx\n  unsigned int v34; // ecx\n  int v35; // r8d\n  int v36; // r9d\n  int v37; // r10d\n  int v38; // edx\n  int v39; // r8d\n  int v40; // r11d\n  __m128i v41; // xmm1\n  unsigned __int64 v42; // rcx\n  unsigned __int8 *v43; // r10\n  int v44; // edx\n  int v45; // ecx\n  int v46; // eax\n  int v47; // edx\n  int v48; // r9d\n  int v49; // ecx\n  int v50; // edx\n  int v51; // r9d\n  int v52; // edx\n  int v53; // r9d\n  int v54; // edx\n  int v55; // r8d\n  int v56; // edx\n  int v57; // r8d\n  int v58; // edx\n  int v59; // esi\n  int v60; // ebx\n  int v61; // r15d\n  int v62; // ebx\n  int v63; // r8d\n  int v64; // r9d\n  int v65; // r8d\n  int v66; // edx\n  int v67; // r8d\n  int v68; // edx\n  int v69; // r8d\n  int v70; // edx\n  int v71; // r8d\n  int v72; // edx\n  int v73; // ecx\n  int v74; // edx\n  unsigned int v75; // r9d\n  unsigned int v76; // ecx\n  unsigned int v77; // r8d\n  unsigned int v78; // esi\n  char v79; // r11\n  int v80; // edx\n  int v81; // r9d\n  int v82; // ecx\n  int v83; // edx\n  int v84; // eax\n  int v85; // r8d\n  int v86; // eax\n  int v87; // r8d\n  int v88; // eax\n  int v89; // edx\n  int v90; // eax\n  int v91; // edx\n  int v92; // eax\n  unsigned int v93; // edx\n  int v94; // ecx\n  int v95; // eax\n  __int64 v96; // rdi\n  int v97; // eax\n  unsigned __int64 v98; // rax\n  __int64 v99; // rdi\n  unsigned int v100; // r9d\n  int v101; // r10d\n  unsigned int v102; // r8d\n  int v103; // r10d\n  unsigned int v104; // r9d\n  unsigned __int8 *v105; // r10\n  int v106; // eax\n  unsigned int v107; // eax\n  int v108; // edx\n  int v109; // eax\n  int v110; // edx\n  int v111; // edx\n  int v112; // eax\n  int v113; // edx\n  int v114; // eax\n  unsigned int v115; // et1\n  unsigned int v116; // edx\n  int v117; // eax\n  int v118; // edx\n  int v119; // eax\n  int v120; // r8d\n  int v121; // edx\n  int v122; // eax\n  int v123; // edx\n  int v124; // r8d\n  int v125; // eax\n  int v126; // edx\n  int v127; // eax\n  int v128; // r8d\n  int v129; // eax\n  int v130; // r8d\n  int v131; // eax\n  int v132; // r8d\n  unsigned int v133; // edx\n  int v134; // edi\n  unsigned int v135; // ebx\n  int v136; // esi\n  int v137; // r14d\n  int v138; // r8d\n  int v139; // r11d\n  unsigned int v140; // eax\n  bool v141; // zf\n  int v142; // eax\n  int v143; // edx\n  int v144; // edx\n  int v145; // eax\n  int v146; // edx\n  unsigned int v147; // eax\n  int v148; // edx\n  int v149; // edx\n  unsigned int v150; // edi\n  unsigned int v151; // r9d\n  unsigned int v152; // r11d\n  unsigned int v153; // esi\n  unsigned int v154; // edx\n  unsigned int v155; // r8d\n  char v156; // cl\n  char v157; // r10\n  char v158; // cl\n  unsigned int v159; // r10d\n  char v160; // bl\n  char v161; // cl\n  int v162; // ecx\n  __int64 v163; // rax\n  unsigned __int64 v164; // rax\n  unsigned __int16 *v165; // rdi\n  unsigned __int8 *v166; // rsi\n  int v167; // edx\n  int v168; // eax\n  int v169; // r8d\n  int v170; // edx\n  int v171; // eax\n  int v172; // et1\n  int v173; // edx\n  int v174; // eax\n  int v175; // edx\n  int v176; // eax\n  int v177; // edx\n  int v178; // eax\n  int v179; // edx\n  int v180; // eax\n  int v181; // edx\n  int v182; // eax\n  int v183; // r8d\n  int v184; // edx\n  int v185; // r8d\n  int v186; // eax\n  int v187; // edx\n  int v188; // r9d\n  int v189; // edx\n  int v190; // r9d\n  unsigned int v191; // eax\n  int v192; // edx\n  int v193; // r9d\n  unsigned int v194; // r11d\n  unsigned int v195; // ebp\n  int v196; // edx\n  int v197; // r9d\n  int v198; // r13d\n  unsigned int v199; // r12d\n  unsigned int v200; // r10d\n  unsigned int v201; // r13d\n  int v202; // ebp\n  unsigned int v203; // ecx\n  int v204; // et1\n  unsigned int v205; // r8d\n  unsigned int v206; // r10d\n  char v207; // al\n  int v208; // edx\n  unsigned int v209; // r9d\n  int v210; // eax\n  int v211; // ecx\n  unsigned int v212; // ecx\n  int v213; // eax\n  __int64 v214; // rcx\n  unsigned int v215; // r9d\n  int v216; // r10d\n  int v217; // eax\n  int v218; // r8d\n  int v219; // r10d\n  unsigned int v220; // eax\n  unsigned int v221; // edx\n  unsigned int *v222; // rsi\n  const unsigned __int8 *v223; // rcx\n  __int64 v224; // rax\n  int v225; // eax\n  unsigned __int64 v226; // rcx\n  int v227; // eax\n  unsigned __int64 v228; // rax\n  unsigned int v230; // [rsp-8h] [rbp-800h]\n  int v231; // [rsp-8h] [rbp-800h]\n  int v232; // [rsp-8h] [rbp-800h]\n  int v233; // [rsp+38h] [rbp-7C0h]\n  char v234; // [rsp+3Dh] [rbp-7BBh]\n  char v235; // [rsp+3Eh] [rbp-7BAh]\n  char v236; // [rsp+3Fh] [rbp-7B9h]\n  unsigned __int8 v237; // [rsp+44h] [rbp-7B4h]\n  unsigned __int8 v238; // [rsp+45h] [rbp-7B3h]\n  unsigned __int8 v239; // [rsp+46h] [rbp-7B2h]\n  unsigned __int8 v240; // [rsp+47h] [rbp-7B1h]\n  unsigned __int8 v241; // [rsp+48h] [rbp-7B0h]\n  unsigned __int8 v242; // [rsp+49h] [rbp-7AFh]\n  unsigned __int8 v243; // [rsp+4Ah] [rbp-7AEh]\n  unsigned __int8 v244; // [rsp+4Bh] [rbp-7ADh]\n  unsigned __int8 v245; // [rsp+4Ch] [rbp-7ACh]\n  unsigned __int8 v246; // [rsp+4Dh] [rbp-7ABh]\n  unsigned __int8 v247; // [rsp+4Eh] [rbp-7AAh]\n  char v248; // [rsp+4Fh] [rbp-7A9h]\n  char request; // [rsp+50h] [rbp-7A8h]\n  char request_1; // [rsp+51h] [rbp-7A7h]\n  char request_2; // [rsp+52h] [rbp-7A6h]\n  char request_3; // [rsp+53h] [rbp-7A5h]\n  char request_4; // [rsp+54h] [rbp-7A4h]\n  char request_5; // [rsp+55h] [rbp-7A3h]\n  char request_6; // [rsp+56h] [rbp-7A2h]\n  char request_7; // [rsp+57h] [rbp-7A1h]\n  unsigned int *output_descriptor; // [rsp+58h] [rbp-7A0h]\n  unsigned __int8 *v258; // [rsp+60h] [rbp-798h] BYREF\n  __int64 v259; // [rsp+68h] [rbp-790h] BYREF\n  __int64 v260; // [rsp+70h] [rbp-788h] BYREF\n  char v261; // [rsp+7Ah] [rbp-77Eh]\n  unsigned __int8 v262; // [rsp+7Bh] [rbp-77Dh]\n  unsigned __int8 v263; // [rsp+7Ch] [rbp-77Ch]\n  unsigned __int8 v264; // [rsp+7Dh] [rbp-77Bh]\n  unsigned __int8 v265; // [rsp+7Eh] [rbp-77Ah]\n  unsigned __int8 v266; // [rsp+7Fh] [rbp-779h]\n  unsigned __int8 total_length; // [rsp+80h] [rbp-778h]\n  char total_length_1; // [rsp+81h] [rbp-777h]\n  char total_length_2; // [rsp+82h] [rbp-776h]\n  unsigned __int8 total_length_3; // [rsp+83h] [rbp-775h]\n  unsigned __int8 v271; // [rsp+84h] [rbp-774h]\n  unsigned __int8 v272; // [rsp+85h] [rbp-773h]\n  unsigned __int8 v273; // [rsp+86h] [rbp-772h]\n  unsigned __int8 v274; // [rsp+87h] [rbp-771h]\n  unsigned __int8 v275; // [rsp+88h] [rbp-770h]\n  unsigned __int8 v276; // [rsp+89h] [rbp-76Fh]\n  unsigned __int8 v277; // [rsp+8Ah] [rbp-76Eh]\n  unsigned __int8 v278; // [rsp+8Bh] [rbp-76Dh]\n  char v279; // [rsp+8Ch] [rbp-76Ch]\n  char v280; // [rsp+8Dh] [rbp-76Bh]\n  char v281; // [rsp+8Eh] [rbp-76Ah]\n  char v282; // [rsp+8Fh] [rbp-769h]\n  void *request_ptr; // [rsp+90h] [rbp-768h]\n  __int64 v284; // [rsp+98h] [rbp-760h]\n  unsigned int v285; // [rsp+A0h] [rbp-758h]\n  unsigned int v286; // [rsp+A4h] [rbp-754h]\n  unsigned int v287; // [rsp+A8h] [rbp-750h]\n  unsigned int v288; // [rsp+ACh] [rbp-74Ch]\n  unsigned __int8 *v289; // [rsp+B0h] [rbp-748h]\n  unsigned int v290; // [rsp+BCh] [rbp-73Ch]\n  unsigned int v291; // [rsp+C0h] [rbp-738h]\n  unsigned int v292; // [rsp+C4h] [rbp-734h]\n  unsigned int destination; // [rsp+C8h] [rbp-730h]\n  int destination_4; // [rsp+CCh] [rbp-72Ch]\n  unsigned __int16 *v295; // [rsp+D0h] [rbp-728h] BYREF\n  int v296; // [rsp+D8h] [rbp-720h] BYREF\n  int v297; // [rsp+DCh] [rbp-71Ch] BYREF\n  int v298; // [rsp+E0h] [rbp-718h] BYREF\n  unsigned int *v299; // [rsp+E8h] [rbp-710h]\n  unsigned int v300; // [rsp+F0h] [rbp-708h]\n  int v301; // [rsp+F4h] [rbp-704h]\n  unsigned int v302; // [rsp+F8h] [rbp-700h]\n  int v303; // [rsp+FCh] [rbp-6FCh]\n  int v304; // [rsp+100h] [rbp-6F8h]\n  unsigned __int16 v305; // [rsp+104h] [rbp-6F4h] BYREF\n  unsigned __int16 v306; // [rsp+106h] [rbp-6F2h]\n  __int64 v307; // [rsp+108h] [rbp-6F0h]\n  int v308; // [rsp+114h] [rbp-6E4h]\n  int v309; // [rsp+118h] [rbp-6E0h]\n  unsigned int v310; // [rsp+11Ch] [rbp-6DCh]\n  unsigned int v311; // [rsp+120h] [rbp-6D8h]\n  unsigned int v312; // [rsp+124h] [rbp-6D4h]\n  unsigned int v313; // [rsp+128h] [rbp-6D0h]\n  int v314; // [rsp+12Ch] [rbp-6CCh]\n  unsigned int v315; // [rsp+130h] [rbp-6C8h]\n  unsigned int v316; // [rsp+134h] [rbp-6C4h]\n  int v317; // [rsp+138h] [rbp-6C0h]\n  unsigned int v318; // [rsp+13Ch] [rbp-6BCh]\n  int v320; // [rsp+144h] [rbp-6B4h]\n  unsigned int v321; // [rsp+148h] [rbp-6B0h]\n  unsigned int v322; // [rsp+14Ch] [rbp-6ACh]\n  int v323; // [rsp+150h] [rbp-6A8h]\n  unsigned int v324; // [rsp+154h] [rbp-6A4h]\n  int v325; // [rsp+158h] [rbp-6A0h]\n  unsigned int v326; // [rsp+15Ch] [rbp-69Ch]\n  int v327; // [rsp+160h] [rbp-698h]\n  int v328; // [rsp+164h] [rbp-694h]\n  unsigned __int8 *v329; // [rsp+168h] [rbp-690h]\n  __int64 v330; // [rsp+170h] [rbp-688h]\n  __int64 v331; // [rsp+178h] [rbp-680h]\n  unsigned __int16 *v332; // [rsp+180h] [rbp-678h] BYREF\n  unsigned int *v333; // [rsp+188h] [rbp-670h]\n  unsigned int *v334; // [rsp+190h] [rbp-668h]\n  unsigned int *v335; // [rsp+198h] [rbp-660h]\n  __int64 v336; // [rsp+1A0h] [rbp-658h]\n  unsigned int v337; // [rsp+1ACh] [rbp-64Ch]\n  int v338; // [rsp+1B0h] [rbp-648h] BYREF\n  unsigned int v339; // [rsp+1B4h] [rbp-644h] BYREF\n  unsigned int v340; // [rsp+1B8h] [rbp-640h] BYREF\n  unsigned int v341; // [rsp+1BCh] [rbp-63Ch] BYREF\n  unsigned int v342; // [rsp+1C0h] [rbp-638h] BYREF\n  unsigned int v343; // [rsp+1C4h] [rbp-634h]\n  unsigned int byte_count; // [rsp+1C8h] [rbp-630h]\n  int byte_count_4; // [rsp+1CCh] [rbp-62Ch]\n  unsigned int v346; // [rsp+1D0h] [rbp-628h]\n  int v347; // [rsp+1D4h] [rbp-624h]\n  int v348; // [rsp+1D8h] [rbp-620h]\n  unsigned int v349; // [rsp+1DCh] [rbp-61Ch]\n  _DWORD v350[3]; // [rsp+1E0h] [rbp-618h]\n  int v351; // [rsp+1ECh] [rbp-60Ch]\n  unsigned int v352; // [rsp+1F0h] [rbp-608h]\n  int v353; // [rsp+1F4h] [rbp-604h]\n  unsigned int v354; // [rsp+1F8h] [rbp-600h]\n  int v355; // [rsp+1FCh] [rbp-5FCh]\n  int v356; // [rsp+200h] [rbp-5F8h]\n  unsigned int v357; // [rsp+204h] [rbp-5F4h]\n  unsigned int v358; // [rsp+208h] [rbp-5F0h]\n  unsigned int v359; // [rsp+20Ch] [rbp-5ECh]\n  int v360; // [rsp+210h] [rbp-5E8h]\n  int v361; // [rsp+214h] [rbp-5E4h]\n  int v362; // [rsp+218h] [rbp-5E0h]\n  unsigned int v363; // [rsp+21Ch] [rbp-5DCh]\n  unsigned int v364; // [rsp+220h] [rbp-5D8h]\n  unsigned int v365; // [rsp+224h] [rbp-5D4h]\n  unsigned int v366; // [rsp+228h] [rbp-5D0h]\n  int v367; // [rsp+22Ch] [rbp-5CCh]\n  unsigned int v368; // [rsp+230h] [rbp-5C8h]\n  unsigned __int64 v369; // [rsp+234h] [rbp-5C4h]\n  unsigned int v370; // [rsp+23Ch] [rbp-5BCh]\n  int v371; // [rsp+240h] [rbp-5B8h]\n  int v372; // [rsp+244h] [rbp-5B4h]\n  _QWORD *v373; // [rsp+248h] [rbp-5B0h]\n  unsigned int *v374; // [rsp+250h] [rbp-5A8h]\n  char *v375; // [rsp+258h] [rbp-5A0h]\n  unsigned __int16 *v376; // [rsp+260h] [rbp-598h]\n  unsigned int *v377; // [rsp+268h] [rbp-590h]\n  int *v378; // [rsp+270h] [rbp-588h]\n  int *v379; // [rsp+278h] [rbp-580h]\n  char *v380; // [rsp+280h] [rbp-578h]\n  __int64 v381; // [rsp+288h] [rbp-570h]\n  unsigned __int8 *v382; // [rsp+290h] [rbp-568h]\n  unsigned __int64 v383; // [rsp+298h] [rbp-560h]\n  __int64 v384; // [rsp+2A0h] [rbp-558h]\n  __int64 i; // [rsp+2A8h] [rbp-550h]\n  unsigned __int8 *v386; // [rsp+2B0h] [rbp-548h]\n  unsigned __int16 *v387; // [rsp+2B8h] [rbp-540h]\n  unsigned __int8 *v388; // [rsp+2C0h] [rbp-538h]\n  __int64 v389; // [rsp+2C8h] [rbp-530h]\n  _BYTE *v390; // [rsp+2D0h] [rbp-528h]\n  _BYTE *v391; // [rsp+2D8h] [rbp-520h]\n  _BYTE *v392; // [rsp+2E0h] [rbp-518h]\n  _BYTE *v393; // [rsp+2E8h] [rbp-510h]\n  unsigned __int8 *bytes; // [rsp+2F0h] [rbp-508h]\n  _BYTE *v395; // [rsp+2F8h] [rbp-500h]\n  _BYTE *v396; // [rsp+300h] [rbp-4F8h]\n  _BYTE *v397; // [rsp+308h] [rbp-4F0h]\n  _BYTE *v398; // [rsp+310h] [rbp-4E8h]\n  _BYTE *v399; // [rsp+318h] [rbp-4E0h]\n  _BYTE *v400; // [rsp+320h] [rbp-4D8h]\n  unsigned __int8 *v401; // [rsp+328h] [rbp-4D0h]\n  const unsigned __int8 *v402; // [rsp+330h] [rbp-4C8h]\n  char *v403; // [rsp+338h] [rbp-4C0h]\n  char *v404; // [rsp+340h] [rbp-4B8h]\n  char *v405; // [rsp+348h] [rbp-4B0h]\n  __int64 v406; // [rsp+350h] [rbp-4A8h]\n  unsigned __int8 *v407; // [rsp+358h] [rbp-4A0h]\n  unsigned __int16 *v408; // [rsp+360h] [rbp-498h]\n  unsigned __int64 v409; // [rsp+368h] [rbp-490h]\n  __m128i v410; // [rsp+370h] [rbp-488h]\n  __int64 v411; // [rsp+380h] [rbp-478h]\n  __int64 v412; // [rsp+388h] [rbp-470h]\n  __int64 v413; // [rsp+390h] [rbp-468h]\n  __int64 v414; // [rsp+398h] [rbp-460h]\n  unsigned __int64 v415; // [rsp+3A0h] [rbp-458h]\n  __int64 v416; // [rsp+3A8h] [rbp-450h]\n  __m128i v417; // [rsp+3B0h] [rbp-448h] BYREF\n  int v418; // [rsp+3C8h] [rbp-430h] BYREF\n  __int64 v419; // [rsp+3D0h] [rbp-428h]\n  __int64 v420; // [rsp+3D8h] [rbp-420h]\n  __m128i v421; // [rsp+3E0h] [rbp-418h] BYREF\n  int v422; // [rsp+3F0h] [rbp-408h] BYREF\n  char v423; // [rsp+3F4h] [rbp-404h] BYREF\n  _BYTE v424[3]; // [rsp+3F5h] [rbp-403h] BYREF\n  __int64 v425; // [rsp+3F8h] [rbp-400h] BYREF\n  __int64 v426; // [rsp+400h] [rbp-3F8h] BYREF\n\n  v331 = a4;\n  v373 = (_QWORD *)a3;\n  v233 = 1586754339;\n  while ( 1 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( 1 )\n        {\n          while ( 1 )\n          {\n            while ( v233 > 1217383305 )\n            {\n              if ( v233 > 1586754338 )\n              {\n                if ( v233 <= 1830857347 )\n                {\n                  if ( v233 > 1775801588 )\n                  {\n                    if ( v233 > 1791925671 )\n                    {\n                      if ( v233 == 1791925672 )\n                      {\n                        qmemcpy(&unk_7FF697BBB0C0, &dword_7FF697BBA000, v415);\n                        goto LABEL_106;\n                      }\n                      v326 = v369;\n                      v233 = 151357882;\n                    }\n                    else\n                    {\n                      if ( v233 != 1775801589 )\n                      {\n                        v323 = v367;\nLABEL_190:\n                        dword_7FF697BBC308 = 8253729 * v323 + 2396403;\n                        a2 = dword_7FF697BBC308 % 0x60u + 15;\n                        v368 = dword_7FF697BBC308 % 0x60u + 15;\n                        v324 = 8253729 * v323 + 2396403;\n                        v325 = 0;\n                        goto LABEL_191;\n                      }\n                      a1 = 3 * ~*v333;\n                      a2 = 3 * ~(*v333 | ~v312);\n                      a3 = v312;\n                      a4 = 6 * (*v333 & ~v312);\n                      v366 = 3 * ~(v312 | *v333) + 7 * (v312 ^ *v333) + 2 * (v312 & *v333) - a4 - a2 - a1;\n                      if ( v366 <= v365 )\n                      {\n                        v233 = 761331634;\n                      }\n                      else\n                      {\n                        v288 = 0;\n                        v235 = 1;\n                        v233 = 87733939;\n                      }\n                    }\n                  }\n                  else if ( v233 > 1647656018 )\n                  {\n                    if ( v233 != 1647656019 )\n                      goto LABEL_125;\n                    v13 = v411 + v414 - v413 - v412 - v410.m128i_i64[1] - v410.m128i_i64[0];\n                    if ( !v281 )\n                      v13 = 0;\n                    qmemcpy(&dword_7FF697BBA000, &unk_7FF697BBB0C0, v13);\n                    a1 = 0;\n                    if ( !v382 || (v302 & 7) != 0 )\n                    {\n                      v288 = 1028;\n                      goto LABEL_199;\n                    }\n                    if ( v302 )\n                    {\n                      v233 = 1206697998;\n                    }\n                    else\n                    {\n                      v415 = 8 * (unsigned int)(unsigned __int8)byte_7FF697BBB0D0;\n                      v233 = 1791925672;\n                    }\n                  }\n                  else if ( v233 == 1586754339 )\n                  {\n                    a1 = 0xF2B6CB58C7697BC8uLL;\n                    v343 = *(_DWORD *)((v331 ^ 0xF2B6CB58C7697BC8uLL) + 0xA8);\n                    if ( v343 < 0x11 )\n                      return 1027;\n                    v233 = 1538915917;\n                  }\n                  else\n                  {\nLABEL_58:\n                    a1 = dword_7FF697BBADE8 ^ 0x8C3CBDFC;\n                    a2 = (unsigned int)(a1 - 2030819682);\n                    a3 = dword_7FF697BBADE8 + ((unsigned int)a2 ^ (unsigned int)a1 ^ ((_DWORD)a1 + 796469) ^ 0xFAEB4177);\n                    if ( v361 == (_DWORD)a3 )\n                      v233 = 1363165805;\n                    else\n                      v233 = 951915554;\n                  }\n                }\n                else if ( v233 <= 1976813460 )\n                {\n                  if ( v233 > 1865229218 )\n                  {\n                    if ( v233 == 1865229219 )\n                    {\n                      destination = v355 + v356;\n                      v11 = v422;\n                      v310 = *v334;\n                      if ( v11 != wmp1_fnv1a_raw_bytes(\n                                    v402,\n                                    v310 + 12LL,\n                                    (dword_7FF697BBADCC ^ (2 * (dword_7FF697BBADCC ^ 0x14C7838F) + 354830805))\n                                  - (dword_7FF697BBADCC ^ 0x14C7838F)) )\n                      {\n                        v286 = destination;\n                        v307 = v330;\n                        v287 = 1024;\n                        goto LABEL_3;\n                      }\n                      v233 = 1425794121;\n                    }\n                    else\n                    {\n                      switch ( v306 )\n                      {\n                        case 0u:\n                          v4 = sub_7FF697AE4570(&v258);\n                          goto LABEL_259;\n                        case 1u:\n                          v208 = (dword_7FF697BBADD0 + 1884869704) | 0x3CC74A0B;\n                          v209 = 3 * (dword_7FF697BBADD0 + 1884869704)\n                               + 4 * ((dword_7FF697BBADD0 + 1884869704) & 0x3CC74A0B)\n                               - 3 * ((dword_7FF697BBADD0 + 1884869704) & 0xC338B5F4);\n                          v210 = v208 + v209 + 6 * (~(dword_7FF697BBADD0 + 1884869704) & 0x3CC74A0B) - 1823194177;\n                          v211 = v208 + v209 + 6 * (~(dword_7FF697BBADD0 + 1884869704) & 0x3CC74A0B) + 1810066113;\n                          v212 = (v211 | 0x5AF254FF)\n                               + 3 * v211\n                               + 4 * (v211 & 0x1AF254FF)\n                               - 3 * (v211 & 0xA50DAB00)\n                               + 6 * (~v211 & 0x5AF254FF)\n                               - 565050873;\n                          v213 = 11 * (v210 | 0x4F3859FC)\n                               + -11 * (v210 & 0x4F3859FC)\n                               - 8 * (~v210 & 0xF3859FC)\n                               - 2 * (v210 ^ 0x4F3859FC)\n                               - 10 * (v210 & 0x30C7A603);\n                          v214 = -7 - (7 * ~(v212 | v213) + (v212 & v213) + 6 * (v212 | v213));\n                          v215 = 3 * (~dword_7FF697BBADD4 & 0x9F74E859);\n                          v216 = 5 * (~dword_7FF697BBADD4 & 0x608B17A6)\n                               + 8 * (dword_7FF697BBADD4 & 0x8B17A6)\n                               - 2 * (dword_7FF697BBADD4 ^ 0x1F74E859);\n                          v217 = v216 + v215 + 491293122;\n                          v218 = v216 + v215 - 952691919;\n                          v219 = v216 + v215 - 158603231;\n                          v220 = (11 * ~(v219 & 0x315A0F86)\n                                + 11 * (v219 | 0x315A0F86)\n                                - (21 * (v219 & 0xCEA5F079)\n                                 + 9 * (v219 & 0x315A0F86))\n                                - 11 * ~(v219 | 0x315A0F86)\n                                - 21 * (~v219 & 0x315A0F86))\n                               ^ (dword_7FF697BBADD4 + (v219 ^ v217 ^ 0xAD2DA524));\n                          sub_7FF697AB5120(\n                            v214,\n                            v220\n                          + 3 * (v220 & ~v218)\n                          - (v220 & v218)\n                          + (~v218 | v220)\n                          + 3 * ~(v218 | v220)\n                          - 3 * ~v218\n                          + 1,\n                            sub_7FF697AB44F0,\n                            &v258);\n                          goto wmp1_request_case_05;\n                        case 2u:\n                          v4 = sub_7FF697ADB1F0((__int64 *)&v295, (__int64)&v258);\n                          goto LABEL_259;\n                        case 3u:\n                          wmp1_cpu_environment_decode_call_wrapper((__int64)&v258);\n                          goto wmp1_request_case_05;\n                        case 4u:\n                          wmp1_selector4_wrapper((__int64)&v258);\n                          goto wmp1_request_case_05;\n                        case 5u:\n                          goto wmp1_request_case_05;\n                        case 6u:\n                          v4 = sub_7FF697ADE380(&v258);\n                          goto LABEL_259;\n                        case 7u:\n                          v4 = sub_7FF697AE51E0(request_ptr, &v258);\n                          goto LABEL_259;\n                        case 8u:\n                          v233 = 2053355997;\n                          continue;\n                        case 9u:\n                          sub_7FF697AC8B70(&v258);\n                          goto wmp1_request_case_05;\n                        case 0xAu:\n                          v4 = sub_7FF697AD25A0(request_ptr, v291, &v258);\n                          goto LABEL_259;\n                        case 0xBu:\n                          wmp1_selector11_wrapper();\n                          goto wmp1_request_case_05;\n                        case 0xCu:\n                          v4 = sub_7FF697AE39C0(request_ptr, v291, &v258);\n                          goto LABEL_259;\n                        case 0xDu:\n                          v4 = wmp1_selector13_named_module_section_capture_wrapper(request_ptr, &v258);\n                          goto LABEL_259;\n                        case 0xEu:\n                          v4 = sub_7FF697ACFE10(&v295, &v258);\n                          goto LABEL_259;\n                        case 0xFu:\n                          sub_7FF697AC1950(&v295, &v258);\n                          goto wmp1_request_case_05;\n                        case 0x10u:\n                          sub_7FF697AC8D40(&v295, &v258);\n                          goto wmp1_request_case_05;\n                        case 0x11u:\n                          sub_7FF697AE0360(request_ptr, &v258);\n                          goto wmp1_request_case_05;\n                        case 0x12u:\n                          v4 = wmp1_selector18_call_wrapper(request_ptr, v291, &v258);\n                          goto LABEL_259;\n                        case 0x13u:\n                          v4 = sub_7FF697AB3A00(request_ptr, &v258);\n                          goto LABEL_259;\n                        case 0x14u:\n                          sub_7FF697AC25B0((__int64)request_ptr, v291, (__int64)&v258, (__int64)&v332);\n                          v4 = (unsigned int)v332;\n                          goto LABEL_259;\n                        case 0x15u:\n                          wmp1_selector21_wrapper((const void **)&v295, &v258);\n                          goto wmp1_request_case_05;\n                        case 0x16u:\n                          wmp1_selector22_wrapper((__int64)&v295, (__int64)&v258, a3, a4);\n                          goto wmp1_request_case_05;\n                        case 0x17u:\n                          sub_7FF697ADA930(\n                            (v331 ^ 0xF2B6CB58C7697BC8uLL)\n                          + 6 * (v331 & 0xD4934A738968437LL)\n                          + 6 * (v331 & 0xF2B6CB58C7697BC8uLL)\n                          - 6 * (v331 | 0xD4934A738968437LL)\n                          + 6 * ~(v331 | 0xF2B6CB58C7697BC8uLL),\n                            &v295,\n                            &v258);\n                          goto wmp1_request_case_05;\n                        case 0x18u:\n                          v4 = sub_7FF697ABAFD0(&v295, &v258);\n                          goto LABEL_259;\n                        case 0x19u:\n                          sub_7FF697AE53F0(request_ptr, &v258);\n                          goto wmp1_request_case_05;\n                        case 0x1Au:\n                          v4 = sub_7FF697AD2E80(request_ptr, &v258);\nLABEL_259:\n                          dword_7FF697BBB068 = 0;\n                          if ( v4 )\n                            goto LABEL_260;\n                          v233 = 934858297;\n                          break;\n                        case 0x1Bu:\n                          sub_7FF697AE6830(&v295, &v258);\n                          goto wmp1_request_case_05;\n                        case 0x1Cu:\n                          sub_7FF697AE3F10(request_ptr, &v258);\n                          goto wmp1_request_case_05;\n                        case 0x1Du:\n                          sub_7FF697AB6540(request_ptr, &v258);\n                          goto wmp1_request_case_05;\n                        case 0x1Eu:\n                          sub_7FF697AD53A0(&v295, &v258);\n                          goto wmp1_request_case_05;\n                        case 0x1Fu:\n                          sub_7FF697ADF950(&v295, a2);\n                          goto wmp1_request_case_05;\n                        case 0x20u:\n                          sub_7FF697ACAE10(&v295, a2);\n                          goto wmp1_request_case_05;\n                        case 0x21u:\n                          wmp1_append_post_callable_eflags_record(a1, a2, (__int64 *)&v258);\n                          goto wmp1_request_case_05;\n                        case 0x22u:\n                          sub_7FF697AD22C0(request_ptr, v291, &v258);\n                          goto wmp1_request_case_05;\n                      }\n                    }\n                  }\n                  else\n                  {\n                    if ( v233 != 1830857348 )\n                      goto LABEL_58;\nLABEL_106:\n                    v312 = *output_descriptor;\n                    a1 = *v374;\n                    v365 = a1;\n                    if ( v312 > (unsigned int)a1 )\n                      goto LABEL_107;\n                    v233 = 1775801589;\n                  }\n                }\n                else if ( v233 <= 2053355996 )\n                {\n                  if ( v233 == 1976813461 )\n                  {\n                    qmemcpy(\n                      &unk_7FF697BBB0C0,\n                      &dword_7FF697BBA000,\n                      8 * (unsigned int)(unsigned __int8)byte_7FF697BBB0D0);\n                    a1 = 0;\n                    v233 = 1830857348;\n                  }\n                  else\n                  {\n                    if ( (sub_7FF697AD0950(v285) & 1) == 0 )\n                    {\n                      v241 = v272;\n                      v242 = v271;\n                      v243 = total_length_3;\n                      v244 = total_length_2;\n                      v245 = v239;\n                      v246 = total_length_1;\n                      v247 = v238;\n                      v248 = v237;\n                      v386 = v329;\n                      v387 = v376;\n                      v318 = v285;\n                      goto LABEL_207;\n                    }\n                    v233 = 342202512;\n                  }\n                }\n                else\n                {\n                  if ( v233 == 2053355997 )\n                  {\nwmp1_request_case_05:\n                    dword_7FF697BBB068 = 0;\n                    goto LABEL_255;\n                  }\n                  if ( v233 != 2093634665 )\n                  {\n                    v315 = v311;\n                    v383 = v409;\n                    goto LABEL_144;\n                  }\n                  a1 = v273;\n                  a2 = v274;\n                  a3 = v275;\n                  a4 = v240;\n                  v241 = v278;\n                  v242 = v277;\n                  v243 = v276;\n                  v244 = v240;\n                  v245 = v275;\n                  v246 = v274;\n                  v247 = v273;\n                  v248 = v236;\n                  v386 = v407;\n                  v387 = v408;\n                  v318 = v354;\n                  v233 = 1271562492;\n                }\n              }\n              else if ( v233 <= 1380602973 )\n              {\n                if ( v233 > 1308829076 )\n                {\n                  if ( v233 > 1352076719 )\n                  {\n                    if ( v233 != 1352076720 )\n                      goto LABEL_118;\n                    v14 = *v333;\n                    v15 = byte_count_4 - v14;\n                    a2 = (__int64)v373;\n                    v258 = (unsigned __int8 *)(*v373 + v14);\n                    *output_descriptor = 0;\n                    *v299 = v15;\n                    *v375 = 0;\n                    v316 = dword_7FF697BBC308;\n                    v384 = 0;\n                    while ( 2 )\n                    {\n                      a1 = v316;\n                      v381 = v384;\n                      v346 = v316;\n                      if ( v316 )\n                      {\n                        v233 = 162147902;\n                      }\n                      else\n                      {\n                        v228 = __rdtsc();\n                        a2 = -65535 * (unsigned int)(v228 / 0xFFFF);\n                        v317 = v228 % 0xFFFF;\nLABEL_266:\n                        v227 = 8253729 * v317 + 2396403;\n                        dword_7FF697BBC308 = v227;\n                        *((_BYTE *)&dword_7FF697BBB0E0 + v381) = 33 * v317 - 13;\n                        a1 = v381 + 1;\n                        if ( v381 != 4562 )\n                        {\n                          v316 = v227;\n                          v384 = v381 + 1;\n                          continue;\n                        }\n                        v233 = 428801239;\n                      }\n                      break;\n                    }\n                  }\n                  else\n                  {\n                    if ( v233 == 1308829077 )\n                      goto LABEL_65;\n                    v233 = 942748990;\n                  }\n                }\n                else\n                {\n                  if ( v233 > 1275028645 )\n                  {\n                    if ( v233 != 1275028646 )\n                      goto LABEL_165;\n                    wmp1_fill_bytes(v258, 0, v358);\n                    goto LABEL_120;\n                  }\n                  if ( v233 == 1217383306 )\n                    goto LABEL_121;\nLABEL_207:\n                  v337 = v318;\n                  v165 = v387;\n                  v166 = v386;\n                  v261 = v248;\n                  v262 = v247;\n                  v263 = v245;\n                  v264 = v244;\n                  v265 = v243;\n                  v266 = v242;\n                  total_length = v241;\n                  v236 = *v386;\n                  v167 = *v386 | (*((unsigned __int16 *)v386 + 1) << 16) | (v386[1] << 8);\n                  v231 = __ROR4__(\n                           *((_DWORD *)v386 + 1)\n                         + (((((dword_7FF697BBADB0 ^ 0x839D64D2) + 296845262) ^ 0x8F9261EE) + 1353652338)\n                          ^ (((-975352785 - (((dword_7FF697BBADB0 ^ 0x839D64D2) + 296845262) ^ 0x8F9261EE))\n                            ^ dword_7FF697BBADB0\n                            ^ 0x839D64D2\n                            ^ ((dword_7FF697BBADB0 ^ 0x839D64D2) + 296845262))\n                           + 1552484262)),\n                           *v386);\n                  v168 = v167 ^ v231;\n                  v169 = __ROR4__(\n                           v167\n                         + ((4 * (((dword_7FF697BBADB4 - 212724766) ^ 0xE7B018AD) & 0x1FC66D98)\n                           + 2 * (((dword_7FF697BBADB4 - 212724766) ^ 0xE7B018AD) & 0x20399267)\n                           - ((dword_7FF697BBADB4 - 212724766) ^ 0xC7898ACA)\n                           - ((2 * ((dword_7FF697BBADB4 - 212724766) ^ 0xE7B018AD)) | 0x407324CE)\n                           + 4 * (((dword_7FF697BBADB4 - 212724766) ^ 0x98242) & 0x20399267))\n                          ^ (dword_7FF697BBADB4\n                           + ((dword_7FF697BBADB4 - 212724766) ^ 0xE7B018AD)\n                           + ((dword_7FF697BBADB4 + 1077262096) ^ 0x14ADF16C)\n                           + 1616471083)),\n                           v167 ^ v231);\n                  v170 = 2 * ~(v168 & v169) - (v168 ^ v169) - 2 * ~(v168 | v169);\n                  v171 = __ROR4__(v168 + 114053548, v170);\n                  v172 = ~(v170 | v171) + ~(v170 & v171) + 2 * (v171 & ~v170) + 2 * (v170 & v171) + 2 * ~(~v170 | v171);\n                  v173 = (v172 + 2) ^ __ROR4__(v170 - 452460610, v172 + 2);\n                  v174 = v173 ^ __ROR4__(v172 - 621898254, v173);\n                  v175 = v174\n                       ^ __ROR4__(\n                           (~v173 & 0xA214BF8E)\n                         + 3 * (v173 & 0x5DEB4071)\n                         + 3 * (v173 & 0xA214BF8E)\n                         - 2 * v173\n                         + (v173 | 0xA214BF8E)\n                         + (v173 ^ 0x5DEB4071)\n                         + 1,\n                           v174);\n                  v176 = v175 ^ __ROR4__(v174 + 1807553314, v175);\n                  v177 = v176 ^ __ROR4__(v175 + 654992491, v176);\n                  v178 = v177 ^ __ROR4__(v176 - 1328090688, v177);\n                  v179 = v178 ^ __ROR4__(v177 - 2033275303, v178);\n                  v232 = __ROR4__(v178 + 1243158984, v179);\n                  v180 = v179 ^ v232;\n                  v181 = v179 ^ v232 ^ __ROR4__(v179 + 690481024, v179 ^ v232);\n                  v182 = __ROR4__(v180 - 702072465, v181);\n                  v183 = 3 * ~(~v181 | v182) + 5 * ~(v181 | v182) + 8 * (v182 & ~v181) - 2 * (v181 ^ v182) - 5 * ~v181;\n                  v184 = v183 ^ __ROR4__(v181 + 1952287966, v183);\n                  v185 = __ROR4__(v183 + 1304068246, v184);\n                  v186 = -11 * (v184 & v185) + (v184 | v185) + 11 * v184 + (v185 & ~v184) - 11 * ~(~v184 | v185);\n                  v187 = (v186 - v185) ^ __ROR4__(v184 + 1011008155, v186 - v185);\n                  v188 = v187 ^ __ROR4__(v186 + ~v185 + 1735808884, v187);\n                  v189 = v188 ^ __ROR4__(v187 - 1934650103, v188);\n                  v190 = v189 ^ __ROR4__(v188 - 1433706364, v189);\n                  v191 = ~((dword_7FF697BBADB8 + 261360105) | 0xC24CC2C7)\n                       + 6 * ((dword_7FF697BBADB8 + 261360105) & 0x424CC2C7)\n                       + 8 * ((dword_7FF697BBADB8 + 261360105) & 0x1DB33D38)\n                       - 5 * ((dword_7FF697BBADB8 + 261360105) | 0xC24CC2C7)\n                       - 3 * ((dword_7FF697BBADB8 + 261360105) ^ 0xC24CC2C7)\n                       + 8 * (~(dword_7FF697BBADB8 + 261360105) & 0x24CC2C7);\n                  v192 = v190 ^ __ROR4__(v191 + (v191 ^ 0x55DE1AE5) - dword_7FF697BBADB8 + v189 + 1289666385, v190);\n                  v193 = v192 ^ __ROR4__(v190 - 1584046468, v192);\n                  v194 = 11 * (~((dword_7FF697BBADBC ^ 0xA9296630) + 1968824451) & 0xBC5FCA97);\n                  v195 = (((dword_7FF697BBADBC ^ 0xA9296630) + 1968824451) | 0xBC5FCA97)\n                       + (((dword_7FF697BBADBC ^ 0xA9296630) + 1968824451) & 0x43A03568);\n                  v196 = v193 ^ __ROR4__(v192 - 1014243751, v193);\n                  v197 = v196 ^ __ROR4__(v193 + 660532791, v196);\n                  v198 = v197\n                       ^ __ROR4__(\n                           v196\n                         + (dword_7FF697BBADBC\n                          ^ ((dword_7FF697BBADBC ^ 0xC17A4F8)\n                           + ((~((dword_7FF697BBADBC ^ 0xA9296630) + 1968824451)\n                             + v195\n                             - 11 * (((dword_7FF697BBADBC ^ 0xA9296630) + 1968824451) & 0xBC5FCA97)\n                             - v194\n                             + 404599934)\n                            ^ (~((dword_7FF697BBADBC ^ 0xA9296630) + 1968824451)\n                             + v195\n                             - 11 * (((dword_7FF697BBADBC ^ 0xA9296630) + 1968824451) & 0xBC5FCA97)\n                             - v194\n                             + 404599934\n                             - (dword_7FF697BBADBC\n                              + (dword_7FF697BBADBC ^ 0xA9296630))\n                             + 1099980866)\n                            ^ 0x4DEFAE9F))\n                          ^ 0x737F4DBA),\n                           v197);\n                  v199 = ~((dword_7FF697BBADC0 + 1218703707) ^ 0x7A8EA805\n                         | (dword_7FF697BBADC0 + 1218703707) ^ dword_7FF697BBADC0 ^ 0x9F981206)\n                       + (((dword_7FF697BBADC0 + 1218703707)\n                         ^ dword_7FF697BBADC0\n                         ^ 0x9F981206)\n                        & ((dword_7FF697BBADC0 + 1218703707)\n                         ^ 0x857157FA))\n                       + 2\n                       * (((dword_7FF697BBADC0 + 1218703707)\n                         ^ 0x7A8EA805)\n                        & ((dword_7FF697BBADC0 + 1218703707)\n                         ^ dword_7FF697BBADC0\n                         ^ 0x9F981206))\n                       - ((dword_7FF697BBADC0 + 1218703707) ^ dword_7FF697BBADC0 ^ 0x9F981206)\n                       + 2\n                       * ((dword_7FF697BBADC0 + 1218703707)\n                        ^ dword_7FF697BBADC0\n                        ^ 0x9F981206\n                        ^ (dword_7FF697BBADC0 + 1218703707)\n                        ^ 0x7A8EA805)\n                       - 2\n                       * ~((dword_7FF697BBADC0 + 1218703707) ^ 0x857157FA\n                         | (dword_7FF697BBADC0 + 1218703707) ^ dword_7FF697BBADC0 ^ 0x9F981206);\n                  v200 = 11 * ~(v198 & v199)\n                       + 11 * (v199 | v198)\n                       - (21 * (v198 & ~v199)\n                        + 9 * (v198 & v199))\n                       - 11 * ~(v199 | v198)\n                       - 21 * ~(~v199 | v198);\n                  LOBYTE(v185) = 2 * ((dword_7FF697BBADC4 + 80) & 0xC1)\n                               - 6 * ((dword_7FF697BBADC4 + 80) & 0x3E)\n                               + 3 * (~(dword_7FF697BBADC4 + 80) & 0x3E)\n                               + 7 * ((dword_7FF697BBADC4 + 80) ^ 0xC1)\n                               - 3 * (~(dword_7FF697BBADC4 + 80) & 0xC1)\n                               - 3 * ~(dword_7FF697BBADC4 + 80);\n                  v201 = (dword_7FF697BBADC8 - 1675509901) ^ 0xEB402E26;\n                  v202 = 2 * ((v201 + 389181777) & (dword_7FF697BBADC8 - 738742542))\n                       - 3 * ((dword_7FF697BBADC8 - 738742542) & ~(v201 + 389181777))\n                       + 4 * ~((v201 + 389181777) & (dword_7FF697BBADC8 - 738742542))\n                       - 2 * ~((dword_7FF697BBADC8 - 738742542) & ~(v201 + 389181777))\n                       - 2 * ~((v201 + 389181777) | (dword_7FF697BBADC8 - 738742542))\n                       - 3 * ~(~(v201 + 389181777) | (dword_7FF697BBADC8 - 738742542));\n                  v203 = (v202 & ~(dword_7FF697BBADC8 - 1675509901))\n                       + 11 * ((dword_7FF697BBADC8 - 1675509901) & v202)\n                       - 11 * ~(v202 & ~(dword_7FF697BBADC8 - 1675509901))\n                       + 10 * ~((dword_7FF697BBADC8 - 1675509901) | v202)\n                       + ~v202\n                       + 9 * ~(~(dword_7FF697BBADC8 - 1675509901) | v202)\n                       - v201;\n                  v204 = ((dword_7FF697BBADC8 + 2076665515) | v203)\n                       + 3 * ((dword_7FF697BBADC8 + 2076665515) & v203)\n                       + 2 * (v203 & ~(dword_7FF697BBADC8 + 2076665515))\n                       + ~(2 * v203);\n                  a2 = (~(v201 + 556116868) | (v204 + 1))\n                     + 3 * ~((v201 + 556116868) | (v204 + 1))\n                     + 3 * ((v204 + 1) & ~(v201 + 556116868))\n                     - ((v201 + 556116868) & (v204 + 1))\n                     + v204\n                     + 1\n                     - 3 * ~(v201 + 556116868);\n                  LOBYTE(dword_7FF697BBA000) = *v386;\n                  *(_BYTE *)v387 = v248 ^ v200;\n                  v273 = v166[1];\n                  BYTE1(dword_7FF697BBA000) = v273;\n                  *((_BYTE *)v165 + 1) = v262 ^ BYTE1(v200);\n                  a4 = (unsigned int)(v197 - 365685905);\n                  LOBYTE(v203) = 2 * ~((v200 >> (v185 - 101)) & v246)\n                               - ((v200 >> (v185 - 101)) ^ v246)\n                               - 2 * ~((v200 >> (v185 - 101)) | v246);\n                  v274 = v166[2];\n                  BYTE2(dword_7FF697BBA000) = v274;\n                  v205 = a4;\n                  *((_BYTE *)v165 + 2) = v203;\n                  v275 = v166[3];\n                  HIBYTE(dword_7FF697BBA000) = v275;\n                  *((_BYTE *)v165 + 3) = v263 ^ HIBYTE(v200);\n                  v206 = a4;\n                  LOBYTE(a4) = v264 ^ a4;\n                  v240 = v166[4];\n                  LOBYTE(dword_7FF697BBA004) = v240;\n                  LOBYTE(a2) = (~(v201 - 124) | (v204 + 1))\n                             + 3 * ~((v201 - 124) | (v204 + 1))\n                             + 3 * ((v204 + 1) & ~(v201 - 124))\n                             - ((v201 - 124) & (v204 + 1))\n                             + v204\n                             + 1\n                             - 3 * ~(v201 - 124)\n                             + 1;\n                  *((_BYTE *)v165 + 4) = a4;\n                  v276 = v166[5];\n                  BYTE1(dword_7FF697BBA004) = v276;\n                  *((_BYTE *)v165 + 5) = v265 ^ (v206 >> a2);\n                  a1 = v166[6];\n                  v277 = a1;\n                  BYTE2(dword_7FF697BBA004) = a1;\n                  *((_BYTE *)v165 + 6) = v266 ^ BYTE2(a4);\n                  a3 = HIBYTE(v205);\n                  LOBYTE(a3) = total_length ^ a3;\n                  v278 = v166[7];\n                  HIBYTE(dword_7FF697BBA004) = v278;\n                  *((_BYTE *)v165 + 7) = a3;\n                  v407 = v166 + 8;\n                  v408 = v165 + 4;\n                  v354 = v337 - 8;\n                  if ( v337 == 8 )\n                    goto LABEL_209;\n                  v233 = 2093634665;\n                }\n              }\n              else if ( v233 <= 1425794120 )\n              {\n                if ( v233 > 1410287579 )\n                {\n                  if ( v233 == 1410287580 )\n                  {\n                    v362 = 5 * (v301 & 0x1E)\n                         + 4 * (v301 & 0x3FFFFFE1)\n                         - 6 * (v301 | 0x1E)\n                         - 2 * ~(v301 | 0x1E)\n                         + 4 * (~(_BYTE)v301 & 0x1E)\n                         - 2;\n                    v320 = 0;\n                    goto LABEL_81;\n                  }\nLABEL_255:\n                  if ( *output_descriptor == v290 )\n                  {\n                    v233 = 1476852290;\n                  }\n                  else\n                  {\n                    v292 = 0;\n                    v233 = 936711224;\n                  }\n                }\n                else if ( v233 == 1380602974 )\n                {\n                  a3 = (~destination_4 | 0x10) + 3 * (~destination_4 & 0xFFFFFFEF);\n                  a2 = ~destination_4 & 0x10;\n                  v301 = a3 + 3 * a2 - (destination_4 & 0x10) - v360 + 17;\n                  a1 = *v299;\n                  if ( v300 + v301 > (unsigned int)a1 )\n                  {\n                    v288 = 1026;\nLABEL_199:\n                    v235 = 0;\n                    goto LABEL_200;\n                  }\n                  v361 = v301 & 1;\n                  if ( destination_4 == 15 )\n                    v233 = 1603454864;\n                  else\n                    v233 = 1410287580;\n                }\n                else\n                {\n                  a1 = 6 * (v308 & (unsigned int)v351);\n                  v309 = v350[0] + v350[2] + a1 + 6 * (HIDWORD(v260) & v308) - v350[1];\n                  v352 = ~HIDWORD(v260) & 0xAA8B6084;\n                  v353 = ~HIDWORD(v260) & 0x55749F7B;\n                  v233 = 1028065436;\n                }\n              }\n              else if ( v233 <= 1476852289 )\n              {\n                if ( v233 == 1425794121 )\n                {\n                  v12 = *v299;\n                  if ( *v299 >= 0x10 )\n                  {\n                    v359 = *output_descriptor;\n                    a1 = v359 + 16;\n                    v290 = a1;\n                    if ( (unsigned int)a1 <= v12 )\n                      v233 = 33548964;\n                    else\n                      v233 = 333094821;\n                  }\n                  else\n                  {\n                    v233 = 175292787;\n                  }\n                }\n                else if ( (v280 & 1) != 0 )\n                {\n                  v358 = *v299;\n                  if ( v358 )\n                    v233 = 1275028646;\n                  else\n                    v233 = 813534495;\n                }\n                else\n                {\n                  v233 = 884363350;\n                }\n              }\n              else if ( v233 == 1476852290 )\n              {\n                v340 = 2 * ((dword_7FF697BBADD8 ^ 0xC531D359) & 0x6A08DF2D)\n                     + 2 * ((dword_7FF697BBADD8 ^ 0x3ACE2CA6) & 0x6A08DF2D)\n                     + ((dword_7FF697BBADD8 ^ 0xC531D359) & 0x95F720D2)\n                     + ~((dword_7FF697BBADD8 ^ 0x3ACE2CA6) & 0x6A08DF2D)\n                     + 2 * ((dword_7FF697BBADD8 ^ 0x3ACE2CA6) & 0x15F720D2)\n                     - (dword_7FF697BBADD8 ^ 0xCDE205D4)\n                     - dword_7FF697BBADD8\n                     - 338084431;\n                v30 = 11 * (dword_7FF697BBADDC | 0xF184AF77)\n                    + -11 * (dword_7FF697BBADDC & 0xF184AF77)\n                    - 9 * (dword_7FF697BBADDC & 0xE7B5088)\n                    - (dword_7FF697BBADDC ^ 0xF184AF77)\n                    - 11 * (~dword_7FF697BBADDC & 0xF184AF77);\n                v31 = 5 * ((v30 - 1049353703) | 0x2ECBC290)\n                    - (3 * ((v30 - 1049353703) & 0x2ECBC290)\n                     + 4 * ((v30 - 1049353703) & 0x11343D6F))\n                    - 4 * (~(v30 - 1049353703) & 0x2ECBC290)\n                    - 1570211104;\n                v32 = (v31 | 0x5ACED6ED) + (~v31 & 0x5ACED6ED) + 2 * v31 - 2 * (v31 & 0x25312912);\n                v33 = (v32 - 1523504876) ^ 0xA0CB0F4E;\n                v34 = 7 * (v31 ^ 0x9F5427E8)\n                    + 3 * ~(v30 & (v31 ^ 0x60ABD817))\n                    + 2 * (v30 & (v31 ^ 0x60ABD817))\n                    - 2 * ((v31 ^ 0x60ABD817) & ~v30)\n                    - 10 * ~(v30 | v31 ^ 0x60ABD817)\n                    - 9 * ~(~v30 | v31 ^ 0x60ABD817)\n                    - v30\n                    - (v30\n                     - 1049353703)\n                    + v32\n                    - 1523504876\n                    + dword_7FF697BBADDC\n                    + 384901093;\n                v35 = (v32 - 1523504876) ^ 0x5F34F0B1;\n                v36 = v35 | v34;\n                v37 = v33 | v34;\n                v38 = v34 & v33;\n                v39 = v34 & v35;\n                v40 = 7 * ~v34;\n                a1 = (unsigned int)(9 * ~v36);\n                a4 = (unsigned int)(10 * ~v37);\n                a3 = (unsigned int)(2 * v39);\n                a2 = (unsigned int)(v40 + 3 * ~v38 + 2 * v38 - a3 - a4 - a1);\n                if ( *v299 < (unsigned int)a2 || (a1 = v359 + 20, (unsigned int)a1 > *v299) )\n                {\n                  v233 = 976719873;\n                }\n                else\n                {\n                  qmemcpy(&v258[v290], &v340, 4u);\n                  a1 = (__int64)output_descriptor;\n                  *output_descriptor += 4;\nLABEL_132:\n                  v367 = dword_7FF697BBC308;\n                  if ( !dword_7FF697BBC308 )\n                  {\n                    v323 = __rdtsc() % 0xFFFF;\n                    goto LABEL_190;\n                  }\n                  v233 = 1789999801;\n                }\n              }\n              else\n              {\n                if ( v233 != 1538915917 )\n                {\n                  *output_descriptor = v371;\n                  v95 = dword_7FF697BBC308;\n                  goto LABEL_152;\n                }\n                v374 = (unsigned int *)v373 + 3;\n                v333 = (unsigned int *)(v373 + 1);\n                output_descriptor = (unsigned int *)&v259;\n                v299 = (unsigned int *)&v259 + 1;\n                v375 = (char *)&v260;\n                v334 = (unsigned int *)&v425 + 1;\n                v376 = (unsigned __int16 *)&v426;\n                v335 = (unsigned int *)&v296;\n                v377 = (unsigned int *)&v297;\n                v378 = &v298;\n                v379 = (int *)&v425;\n                a2 = (__int64)&v423;\n                v380 = &v423;\n                v390 = (char *)&v422 + 1;\n                v391 = (char *)&v422 + 2;\n                v392 = (char *)&v422 + 3;\n                v393 = v424;\n                bytes = &v424[1];\n                v395 = &v424[2];\n                v396 = (char *)&v425 + 1;\n                v397 = (char *)&v425 + 2;\n                v398 = (char *)&v425 + 3;\n                v399 = (char *)&v425 + 5;\n                v400 = (char *)&v425 + 6;\n                v401 = (unsigned __int8 *)&v425 + 7;\n                v315 = v343;\n                v383 = (v331 ^ 0xF2B6CB58C7697BC8uLL) + 172;\n                v402 = (const unsigned __int8 *)&v423;\nLABEL_144:\n                a1 = v315;\n                v289 = (unsigned __int8 *)v383;\n                byte_count = v315;\n                byte_count_4 = *v374;\n                v233 = 1352076720;\n              }\n            }\n            if ( v233 > 625229499 )\n              break;\n            if ( v233 <= 230786546 )\n            {\n              if ( v233 > 107842353 )\n              {\n                if ( v233 > 162147901 )\n                {\n                  if ( v233 != 162147902 )\n                  {\nLABEL_2:\n                    v286 = destination;\n                    v307 = v330;\n                    v287 = 1026;\nLABEL_3:\n                    v234 = 0;\n                    goto LABEL_4;\n                  }\n                  v317 = v346;\n                  v233 = 15118157;\n                }\n                else\n                {\n                  if ( v233 != 107842354 )\n                    goto LABEL_159;\nLABEL_81:\n                  v6 = v320;\n                  v7 = __rdtsc();\n                  v8 = v258;\n                  v9 = *output_descriptor;\n                  *output_descriptor = v9 + 1;\n                  v8[v9] = -109 * v7;\n                  v10 = __rdtsc();\n                  a2 = (__int64)v258;\n                  a3 = (__int64)output_descriptor;\n                  a4 = *output_descriptor;\n                  *output_descriptor = a4 + 1;\n                  *(_BYTE *)(a2 + a4) = -109 * v10;\n                  a1 = (unsigned int)(v6 + 2);\n                  if ( (_DWORD)a1 == v362 )\n                  {\n                    v233 = 230786547;\n                  }\n                  else\n                  {\n                    v320 = a1;\n                    v233 = 107842354;\n                  }\n                }\n              }\n              else if ( v233 > 48253918 )\n              {\n                if ( v233 != 48253919 )\n                  goto LABEL_200;\n                a3 = v349;\n                a4 = 1243158984;\n                v20 = (v349 + v348) ^ __ROR4__(v347 + 1243158984, v349 + v348);\n                v21 = v20 ^ __ROR4__(v349 + v348 + 690481024, v20);\n                v22 = v21 ^ __ROR4__(v20 - 702072465, v21);\n                v23 = v22 ^ __ROR4__(v21 + 1952287966, v22);\n                v24 = v23 ^ __ROR4__(v22 + 1304068246, v23);\n                v25 = v24 ^ __ROR4__(v23 + 1011008155, v24);\n                a2 = (unsigned int)v25 ^ __ROR4__(v24 + 1735808883, v25);\n                HIDWORD(v260) = a2;\n                v308 = __ROR4__(v25 - 1934650103, a2);\n                v350[0] = 6 * ~(a2 | v308);\n                v350[1] = 6 * (v308 | ~(_DWORD)a2);\n                v350[2] = a2 ^ v308;\n                a1 = (unsigned int)~(_DWORD)a2;\n                v351 = ~(_DWORD)a2;\n                v233 = 1404130456;\n              }\n              else\n              {\n                if ( v233 == 15118157 )\n                  goto LABEL_266;\n                *output_descriptor = v290;\n                v295 = v376;\n                *v335 = v310;\n                *v377 = v310;\n                *(_BYTE *)v378 = 0;\n                v418 = *v379;\n                v420 = 0x57C6A5BFA9BE29D4LL;\n                v419 = 5;\n                v4 = sub_7FF697AE6F10(&v418, 55, a3);\n                if ( v4 )\n                {\n                  if ( v4 == 1030 )\n                  {\nLABEL_260:\n                    v292 = v4;\n                    goto LABEL_261;\n                  }\n                  v288 = v4;\n                  goto LABEL_199;\n                }\n                v207 = wmp1_request_header_decode_call_wrapper(\n                         &v295,\n                         (__int64)v335,\n                         &v332,\n                         (__int64)&v341,\n                         (__int64)&v305,\n                         (__int64)&v342);\n                request_ptr = v332;\n                v291 = v341;\n                a1 = v305;\n                v306 = v305;\n                if ( (v207 & 1) != 0 )\n                {\n                  v292 = v342;\n                  goto LABEL_261;\n                }\n                v233 = 1969490239;\n              }\n            }\n            else if ( v233 <= 367232960 )\n            {\n              if ( v233 > 333094820 )\n              {\n                if ( v233 == 333094821 )\n                  goto LABEL_2;\nLABEL_209:\n                qmemcpy(&unk_7FF697BBB0B0, &dword_7FF697BBA000, 8 * (unsigned int)(unsigned __int8)byte_7FF697BBB0D0);\n                v330 = (__int64)&v329[v406];\n                v355 = ~HIDWORD(v284);\n                a2 = 11 * ~(HIDWORD(v284) & ~v285);\n                a4 = HIDWORD(v284) & ~v285;\n                a3 = (unsigned int)a4 + 11 * (v285 & HIDWORD(v284)) - (unsigned int)a2;\n                a1 = 9 * ~(HIDWORD(v284) | ~v285) + (_DWORD)a3 + 10 * ~(v285 | HIDWORD(v284));\n                v356 = 9 * ~(HIDWORD(v284) | ~v285) + a3 + 10 * ~(v285 | HIDWORD(v284));\n                v233 = 1865229219;\n              }\n              else if ( v233 == 230786547 )\n              {\n                v233 = 1836754441;\n              }\n              else\n              {\n                v96 = *output_descriptor;\n                v97 = ~*output_descriptor;\n                a2 = 4 * (v97 & 0x3FFFFFFEu);\n                if ( (v97 | 1)\n                   - (_DWORD)v96\n                   - (_DWORD)v96\n                   - (_DWORD)a2\n                   - 3 * (unsigned int)((*(_BYTE *)output_descriptor & 1) == 0)\n                   - 3 > v370 )\n                {\nLABEL_151:\n                  v95 = v314;\nLABEL_152:\n                  v304 = v95;\n                  a4 = 3 * (~v336 & 0xFFFFFFFFFFFFFFFEuLL);\n                  a3 = 2 * (v336 & 1) - 6 * (v336 & 0x7FFFFFFFFFFFFFFELL);\n                  a2 = a3 + a4 + 7 * (v336 ^ 1) - 3LL * ((v336 & 1) == 0) - 3 * ~v336;\n                  if ( a2 != v416 )\n                  {\n                    v327 = v304;\n                    v389 = a3 + a4 + 7 * (v336 ^ 1) - 3LL * ((v336 & 1) == 0) - 3 * ~v336;\n                    goto LABEL_181;\n                  }\n                  goto LABEL_183;\n                }\n                qmemcpy(&v258[v96], &v338, sizeof(unsigned __int8));\n                a1 = 0;\n                v371 = *output_descriptor + 1;\n                v233 = 1549223896;\n              }\n            }\n            else if ( v233 <= 476665867 )\n            {\n              if ( v233 == 367232961 )\n                goto LABEL_151;\n              v16 = _mm_slli_si128(_mm_cvtsi32_si128(dword_7FF697BBB0E0), 15);\n              for ( i = 0; ; i = v19 )\n              {\n                v417 = v16;\n                v17 = i;\n                v18 = _mm_loadu_si128((const __m128i *)((char *)&dword_7FF697BBB0E0 + i + 1));\n                v16 = _mm_loadu_si128((const __m128i *)((char *)&dword_7FF697BBB0E0 + i + 17));\n                *(__m128i *)((char *)&dword_7FF697BBB0E0 + i) = _mm_xor_si128(\n                                                                  _mm_or_si128(\n                                                                    _mm_srli_si128(_mm_load_si128(&v417), 15),\n                                                                    _mm_slli_si128(v18, 1)),\n                                                                  v18);\n                *(__m128i *)((char *)&dword_7FF697BBB0E0 + v17 + 16) = _mm_xor_si128(\n                                                                         _mm_or_si128(\n                                                                           _mm_slli_si128(v16, 1),\n                                                                           _mm_srli_si128(v18, 15)),\n                                                                         v16);\n                v19 = v17 + 32;\n                v421 = v16;\n                if ( v19 == 4544 )\n                  break;\n              }\n              v233 = 476665868;\n            }\n            else if ( v233 == 476665868 )\n            {\n              v41 = _mm_loadu_si128((const __m128i *)((char *)&xmmword_7FF697BBC2A0 + 1));\n              xmmword_7FF697BBC2A0 = (__int128)_mm_xor_si128(\n                                                 _mm_or_si128(\n                                                   _mm_slli_si128(v41, 1),\n                                                   _mm_srli_si128(_mm_load_si128(&v421), 15)),\n                                                 v41);\n              byte_7FF697BBC2B0 ^= byte_7FF697BBC2B1;\n              v42 = (((qword_7FF697BBAD98 + 0x2EC1BD50C4212827LL) ^ 0x60DFC412EAC2D18DLL) - 0x6B3D21D1F8AB433CLL)\n                  ^ (qword_7FF697BBAD98 + 0x62D8D77132379366LL);\n              if ( byte_7FF697BBB0D0 )\n                v42 = 8;\n              byte_7FF697BBC2B1 ^= byte_7FF697BBC2B2;\n              qmemcpy(&dword_7FF697BBA000, &unk_7FF697BBB0B0, v42);\n              v43 = v289;\n              v44 = ~(v289[1] << 8);\n              v45 = 196608 * *((unsigned __int16 *)v289 + 1)\n                  + (v289[1] << 8)\n                  - v44\n                  + 2 * ~((v289[1] << 8) | (*((unsigned __int16 *)v289 + 1) << 16))\n                  - v44;\n              v46 = *v289;\n              v47 = (v46 | v45) ^ __ROR4__(*((_DWORD *)v289 + 1) + 1710220277, *v289);\n              v48 = __ROR4__(v45 + v46 + 2125622254, v47);\n              v49 = (v47 & v48) + 6 * (v48 & ~v47) - 5 * (v47 ^ v48) - v47 + 7 * ~(~v47 | v48);\n              v50 = v49 ^ __ROR4__(v47 + 114053548, v49);\n              v51 = v50 ^ __ROR4__(v49 - 452460610, v50);\n              v52 = v51 ^ __ROR4__(v50 - 621898256, v51);\n              v53 = v52 ^ __ROR4__(v51 - 1575698546, v52);\n              v54 = v53 ^ __ROR4__(v52 + 1807553314, v53);\n              v55 = v54\n                  ^ __ROR4__(\n                      19 * (v53 & 0x270A646B)\n                    + 12 * (v53 & 0xD8F59B94)\n                    - 11 * (v53 | 0xD8F59B94)\n                    - 6 * ~(v53 & 0xD8F59B94)\n                    + 7 * ~(v53 | 0xD8F59B94)\n                    + 17 * (~v53 & 0xD8F59B94),\n                      v54);\n              v56 = v55 ^ __ROR4__(v54 - 1328090688, v55);\n              v57 = v56 ^ __ROR4__(v55 - 2033275303, v56);\n              v58 = v57 ^ __ROR4__(v56 + 1243158984, v57);\n              v59 = 3 * (dword_7FF697BBADA0 & 0x137D3C9D)\n                  + 2 * (dword_7FF697BBADA0 & 0x6C82C362)\n                  + ~(2 * dword_7FF697BBADA0);\n              v60 = (dword_7FF697BBADA0 | 0x137D3C9D) + v59 + 1;\n              v61 = ~v60 & 0x35714CEB;\n              v62 = (v60 & 0x35714CEB) + 2 * (v60 & 0x4A8EB314) - v60 + 2 * (v60 ^ 0x4A8EB314) - 2 * (~v60 & 0x4A8EB314);\n              v63 = v58\n                  ^ __ROR4__(\n                      8 * (v57 & 0x16D8187F)\n                    - 2 * (v57 & 0x2927E780)\n                    - 7 * (v57 ^ 0x2927E780)\n                    + 4 * (v57 ^ 0x16D8187F)\n                    - 4 * (~v57 & 0x16D8187F)\n                    + 8 * (~v57 & 0x927E780),\n                      v58);\n              v64 = v63\n                  ^ __ROR4__(\n                      v58\n                    + ((v62 + v61 + 1268106144)\n                     ^ (((v62 + v61 + 987374976)\n                       ^ dword_7FF697BBADA0\n                       ^ (v59 + (dword_7FF697BBADA0 | 0x137D3C9D) + 156368136))\n                      - (v61\n                       + v62)\n                      - 1123552033))\n                    + 2 * (v61 + v62)\n                    - 1264220624,\n                      v63);\n              v65 = v64 ^ __ROR4__(v63 + 1952287966, v64);\n              v66 = v65\n                  ^ __ROR4__(\n                      v64\n                    + (((((dword_7FF697BBADA4 | 0x6666233D)\n                        + 3 * (dword_7FF697BBADA4 & 0x6666233D)\n                        + 2 * (dword_7FF697BBADA4 & 0x1999DCC2)\n                        + ~(2 * dword_7FF697BBADA4)\n                        + 1)\n                       ^ 0x875EDF4B)\n                      + 2145405434)\n                     ^ 0xF7CC6BC4)\n                    + dword_7FF697BBADA4\n                    + (((dword_7FF697BBADA4 | 0x6666233D)\n                      + 3 * (dword_7FF697BBADA4 & 0x6666233D)\n                      + 2 * (dword_7FF697BBADA4 & 0x1999DCC2)\n                      + ~(2 * dword_7FF697BBADA4)\n                      + 1)\n                     ^ 0x3E08ECC4)\n                    + (dword_7FF697BBADA4 | 0x6666233D)\n                    + 3 * (dword_7FF697BBADA4 & 0x6666233D)\n                    + 2 * (dword_7FF697BBADA4 & 0x1999DCC2)\n                    + ~(2 * dword_7FF697BBADA4)\n                    + 1,\n                      v65);\n              v67 = v66 ^ __ROR4__(v65 + 1011008155, v66);\n              v68 = v67 ^ __ROR4__(v66 + 1735808883, v67);\n              v69 = v68 ^ __ROR4__(v67 - 1934650103, v68);\n              v70 = v69 ^ __ROR4__(v68 - 1433706364, v69);\n              v71 = v70 ^ __ROR4__(v69 - 878744182, v70);\n              v72 = v71 ^ __ROR4__(v70 - 1584046468, v71);\n              v73 = v72 ^ __ROR4__(v71 - 1014243751, v72);\n              v74 = v73 ^ __ROR4__(v72 + 660532791, v73);\n              v75 = (v74\n                   ^ __ROR4__(\n                       8 * (v73 & 0x9ED8F80)\n                     - 2 * (v73 & 0x5612707F)\n                     - 7 * (v73 ^ 0xD612707F)\n                     + 4 * (v73 ^ 0x29ED8F80)\n                     - 4 * (~v73 & 0x29ED8F80)\n                     + 8 * (~v73 & 0x1612707F),\n                       v74))\n                  + 1497288132;\n              v74 -= 365685905;\n              v76 = HIBYTE(v75);\n              v77 = HIWORD(v75);\n              v78 = v75 >> 8;\n              LOBYTE(v75) = dword_7FF697BBA000 ^ v75;\n              LOBYTE(dword_7FF697BBA000) = *v289;\n              LOBYTE(v422) = v75;\n              LOBYTE(v78) = BYTE1(dword_7FF697BBA000) ^ v78;\n              BYTE1(dword_7FF697BBA000) = v289[1];\n              *v390 = v78;\n              LOBYTE(v76) = HIBYTE(dword_7FF697BBA000) ^ v76;\n              LOBYTE(v74) = dword_7FF697BBA004 ^ v74;\n              v79 = BYTE1(dword_7FF697BBA004) ^ BYTE1(v74);\n              LODWORD(v43) = *(_DWORD *)(v43 + 2);\n              *v391 = BYTE2(dword_7FF697BBA000) ^ v77;\n              *v392 = v76;\n              *v380 = v74;\n              *(int *)((char *)&dword_7FF697BBA000 + 2) = (int)v43;\n              *v393 = v79;\n              LOBYTE(v75) = BYTE2(dword_7FF697BBA004) ^ BYTE2(v74);\n              BYTE2(dword_7FF697BBA004) = v289[6];\n              *bytes = v75;\n              LOBYTE(v46) = HIBYTE(dword_7FF697BBA004) ^ HIBYTE(v74);\n              HIBYTE(dword_7FF697BBA004) = v289[7];\n              *v395 = v46;\n              v403 = (char *)(v289 + 10);\n              v80 = *((unsigned __int16 *)v289 + 5);\n              v404 = (char *)(v289 + 9);\n              v81 = v289[9] << 8;\n              v82 = v289[8];\n              v237 = v289[8];\n              v405 = (char *)(v289 + 12);\n              v83 = ((v80 << 16) | v81) + v82;\n              v84 = v83 ^ __ROR4__(*((_DWORD *)v289 + 3) + 1710220277, v82);\n              v85 = v84 ^ __ROR4__(v83 + 2125622254, v84);\n              v86 = v85 ^ __ROR4__(v84 + 114053548, v85);\n              v87 = v86 ^ __ROR4__(v85 - 452460610, v86);\n              v88 = v87 ^ __ROR4__(v86 - 621898256, v87);\n              a4 = 4 * (~v87 & 0x1DEB4071u);\n              v89 = v88 ^ __ROR4__((~v87 | 0xA214BF8E) - 2 * v87 - a4 - 3 * (~v87 & 0xA214BF8E) - 3, v88);\n              v90 = v89 ^ __ROR4__(v88 + 1807553314, v89);\n              v91 = v90 ^ __ROR4__(v89 + 654992491, v90);\n              v92 = v91 ^ __ROR4__(v90 - 1328090688, v91);\n              v93 = __ROR4__(v91 - 2033275303, v92);\n              v348 = 10 * ~(~v92 | v93);\n              v94 = 9 * (v92 & v93) + 4 * (v93 & ~v92);\n              a3 = v92 | v93;\n              a2 = (unsigned int)(3 * a3);\n              v347 = v92;\n              a1 = (unsigned int)(v94 - a2 - 6 * v92);\n              v349 = a1;\n              v233 = 48253919;\n            }\n            else if ( v233 == 499424563 )\n            {\nLABEL_31:\n              *v335 = 0;\n              wmp1_context_free(v295);\nLABEL_75:\n              v286 = destination;\n              v307 = v330;\n              v287 = v363;\n              v234 = v282;\nLABEL_4:\n              a1 = v287;\n              a2 = v307;\n              a3 = v286;\n              v279 = v234;\n              v357 = v287;\n              v409 = v307;\n              v311 = v286;\n              v280 = *v375;\n              v233 = 1455534367;\n            }\n            else\n            {\n              v98 = __rdtsc();\n              a2 = -65535 * (unsigned int)(v98 / 0xFFFF);\n              a1 = v98 % 0xFFFF;\n              v326 = v98 % 0xFFFF;\nLABEL_159:\n              is_mul_ok(0x7DF121u, v326);\n              v313 = 8253729 * v326 + 2396403;\n              dword_7FF697BBC308 = v313;\n              v339 = v313;\n              if ( *v299 )\n              {\n                v99 = *output_descriptor;\n                a2 = (dword_7FF697BBADE0 ^ 0x9DDE91B1) - 543022700;\n                v100 = (dword_7FF697BBADE0 ^ 0x9DDE91B1) + 1561034380;\n                a1 = ((dword_7FF697BBADE0 ^ 0x9DDE91B1) - 444467818) ^ 0x1814B91D;\n                v101 = 3 * (((dword_7FF697BBADE0 ^ 0x9DDE91B1) - 444467818) ^ 0xE7EB46E2)\n                     + 3 * ((((dword_7FF697BBADE0 ^ 0x9DDE91B1) - 444467818) ^ 0xE7EB46E2) & 0x18436731)\n                     - (3 * ((((dword_7FF697BBADE0 ^ 0x9DDE91B1) - 444467818) ^ 0xE7EB46E2) & 0xE7BC98CE)\n                      + 7 * (((dword_7FF697BBADE0 ^ 0x9DDE91B1) - 444467818) ^ 0x57DE2C)\n                      + 2 * (a1 & 0x18436731)\n                      - 6 * (a1 & 0x67BC98CE))\n                     + dword_7FF697BBADE0\n                     + 1454233054;\n                v102 = (dword_7FF697BBADE0\n                      ^ 0x9DDE91B1\n                      ^ (9 * (v100 & v101) + 4 * (v101 & ~v100) - 3 * (v100 | v101) - 6 * v100 + 10 * ~(~v100 | v101)))\n                     + (dword_7FF697BBADE0 ^ 0x9DDE91B1)\n                     - 795427732;\n                a4 = 2 * ~((unsigned int)a2 | v102);\n                v103 = 2 * ~(a2 & v102);\n                a3 = (unsigned int)a2 ^ v102;\n                if ( (int)v99 + v103 - (int)a3 - (int)a4 - (int)a1 <= *v299 )\n                {\n                  qmemcpy(&v258[v99], &v339, sizeof(unsigned __int8));\n                  ++*output_descriptor;\n                  v5 = dword_7FF697BBC308;\n                  goto LABEL_178;\n                }\n                v233 = 1308829077;\n              }\n              else\n              {\n                v233 = 1039541169;\n              }\n            }\n          }\n          if ( v233 <= 936711223 )\n            break;\n          if ( v233 <= 979207606 )\n          {\n            if ( v233 <= 951915553 )\n            {\n              if ( v233 != 936711224 )\n                goto LABEL_75;\n              goto LABEL_261;\n            }\n            if ( v233 == 951915554 )\n            {\n              v26 = __rdtsc();\n              v27 = v258;\n              v28 = *output_descriptor;\n              *output_descriptor = v28 + 1;\n              v27[v28] = -109 * v26;\nLABEL_118:\n              v29 = *output_descriptor;\n              goto LABEL_264;\n            }\n            v233 = 625229500;\n          }\n          else if ( v233 <= 1039541168 )\n          {\n            if ( v233 == 979207607 )\n            {\nLABEL_125:\n              v286 = HIDWORD(v284);\n              v307 = (__int64)v329;\n              v287 = 1027;\n              goto LABEL_3;\n            }\n            v142 = v309\n                 ^ __ROR4__(\n                     v352\n                   + (HIDWORD(v260) & 0xAA8B6084)\n                   + 2 * (HIDWORD(v260) & 0x55749F7B)\n                   - HIDWORD(v260)\n                   + 2 * (HIDWORD(v260) ^ 0x55749F7B)\n                   - 2 * v353,\n                     v309);\n            v143 = __ROR4__(v309 - 878744182, v142);\n            v144 = 2 * (v143 & ~v142) + 2 * (v142 & v143) + ~(v142 | v143) + ~(v142 & v143) + 2 * ~(~v142 | v143);\n            v145 = (v144 + 2) ^ __ROR4__(v142 - 1584046468, v144 + 2);\n            v146 = v145\n                 ^ __ROR4__(\n                     ((11 * ((dword_7FF697BBADA8 + 2132766729) | 0xD1924250)\n                     + -11 * ((dword_7FF697BBADA8 + 2132766729) & 0xD1924250)\n                     - 8 * ((dword_7FF697BBADA8 + 2132766729) & 0xE6DBDAF)\n                     - 2 * ((dword_7FF697BBADA8 + 2132766729) ^ 0x51924250)\n                     - 10 * (~(dword_7FF697BBADA8 + 2132766729) & 0x51924250)\n                     - 998158961)\n                    ^ dword_7FF697BBADA8\n                    ^ (dword_7FF697BBADA8 + 2132766729))\n                   + v144\n                   + 2,\n                     v145);\n            v147 = v146 ^ __ROR4__(v145 + 660532791, v146);\n            v148 = __ROR4__(v146 - 703434625, v147);\n            v149 = (v147 ^ v148) + 6 * (v148 & ~v147) + 6 * (v147 & v148) - 6 * (~v147 | v148) + 6 * ~(v147 | v148);\n            v150 = (~v149 & 0x593ECDC4)\n                 + (v149 & 0x593ECDC4)\n                 + 2 * (v149 & 0x26C1323B)\n                 - v149\n                 + 2 * (v149 ^ 0x26C1323B)\n                 - 2 * (~v149 & 0x26C1323B);\n            v147 -= 365685905;\n            v151 = HIBYTE(v150);\n            v152 = HIWORD(v150);\n            v153 = v150 >> 8;\n            v154 = HIBYTE(v147);\n            v155 = HIWORD(v147);\n            v156 = ((~(dword_7FF697BBADAC - 34) & 0x54)\n                  + (~(dword_7FF697BBADAC - 34) | 0x54)\n                  + 2 * (dword_7FF697BBADAC - 34)\n                  + 2 * (~(dword_7FF697BBADAC - 34) & 0xAB)\n                  + 2)\n                 ^ 0x23;\n            v157 = v156 + 84;\n            v158 = (((v156 - 15) ^ 0xCA) - (dword_7FF697BBADAC - 34)) ^ dword_7FF697BBADAC ^ v156;\n            v159 = v147 >> (11 * (v157 | v158)\n                          + -11 * (v157 & v158)\n                          - 9 * (v158 & ~v157)\n                          - (v157 ^ v158)\n                          - 11 * ~(~v157 | v158));\n            LOBYTE(v150) = dword_7FF697BBA000 ^ v150;\n            LOBYTE(dword_7FF697BBA000) = v237;\n            *(_BYTE *)v379 = v150;\n            v160 = -7\n                 - (7 * ~(v153 | BYTE1(dword_7FF697BBA000))\n                  + 6 * (v153 | BYTE1(dword_7FF697BBA000))\n                  + (v153 & BYTE1(dword_7FF697BBA000)));\n            v238 = *v404;\n            BYTE1(dword_7FF697BBA000) = *v404;\n            *v396 = v160;\n            LOBYTE(v152) = -7\n                         - (7 * ~(v152 | BYTE2(dword_7FF697BBA000))\n                          + 6 * (v152 | BYTE2(dword_7FF697BBA000))\n                          + (v152 & BYTE2(dword_7FF697BBA000)));\n            total_length_1 = *v403;\n            BYTE2(dword_7FF697BBA000) = total_length_1;\n            *v397 = v152;\n            v161 = 6 * (~(_BYTE)v151 & HIBYTE(dword_7FF697BBA000))\n                 + 8 * (v151 & HIBYTE(dword_7FF697BBA000))\n                 - 5 * (~(_BYTE)v151 | HIBYTE(dword_7FF697BBA000))\n                 - 3 * (HIBYTE(dword_7FF697BBA000) ^ ~(_BYTE)v151);\n            LOBYTE(v152) = ~(~(_BYTE)v151 | HIBYTE(dword_7FF697BBA000)) + 8 * ~(v151 | HIBYTE(dword_7FF697BBA000));\n            v239 = v289[11];\n            HIBYTE(dword_7FF697BBA000) = v239;\n            *v398 = v161 + v152;\n            LOBYTE(v147) = dword_7FF697BBA004 ^ v147;\n            total_length_2 = *v405;\n            LOBYTE(dword_7FF697BBA004) = total_length_2;\n            *(_BYTE *)v334 = v147;\n            LOBYTE(v159) = BYTE1(dword_7FF697BBA004) ^ v159;\n            total_length_3 = v289[13];\n            BYTE1(dword_7FF697BBA004) = total_length_3;\n            *v399 = v159;\n            LOBYTE(v155) = BYTE2(dword_7FF697BBA004) ^ v155;\n            v271 = v289[14];\n            BYTE2(dword_7FF697BBA004) = v271;\n            *v400 = v155;\n            LOBYTE(v154) = HIBYTE(dword_7FF697BBA004) ^ v154;\n            v272 = v289[15];\n            HIBYTE(dword_7FF697BBA004) = v272;\n            *v401 = v154;\n            v329 = v289 + 16;\n            HIDWORD(v284) = byte_count - 16;\n            v162 = ~*v334;\n            a3 = 9 * (~*(_BYTE *)v334 & 0xFu);\n            a4 = 10 * (v162 & 0x7FFFFFF0u);\n            a2 = 2 * (*v334 & 0x7FFFFFF0);\n            a1 = (7 * v162 + 3 * ~(*v334 & 0xF) + 2 * (*v334 & 0xF) - (_DWORD)a2 - (_DWORD)a4 - (_DWORD)a3) & 0xFFFFFFF0;\n            v285 = a1;\n            if ( (unsigned int)a1 > byte_count - 16 || (unsigned int)a1 > 0x400 )\n            {\n              v233 = 1653626827;\n            }\n            else\n            {\n              v406 = v285;\n              if ( v285 <= 0x3F0uLL )\n                v233 = 1989884516;\n              else\n                v233 = 979207607;\n            }\n          }\n          else if ( v233 == 1039541169 )\n          {\nLABEL_65:\n            v5 = v313;\nLABEL_178:\n            v303 = v5;\n            v372 = v5;\n            if ( HIDWORD(v369) == v368 )\n            {\n              v163 = *output_descriptor & 0xFLL;\n              if ( v163 )\n              {\n                a2 = 16 - v163;\n                v416 = 16 - v163;\n                v327 = v372;\n                v389 = 0;\nLABEL_181:\n                a1 = v389;\n                v336 = v389;\n                if ( v327 )\n                {\n                  v328 = v327;\n                }\n                else\n                {\n                  v164 = __rdtsc();\n                  a2 = -65535 * (unsigned int)(v164 / 0xFFFF);\n                  a1 = v164 % 0xFFFF;\n                  v328 = v164 % 0xFFFF;\n                }\n                v314 = 8253729 * v328 + 2396403;\n                dword_7FF697BBC308 = v314;\n                v338 = v314;\n                v370 = *v299;\n                if ( v370 )\n                  v233 = 331792383;\n                else\n                  v233 = 367232961;\n              }\n              else\n              {\nLABEL_183:\n                v292 = 0;\nLABEL_261:\n                v221 = v292;\n                v222 = (unsigned int *)v258;\n                v223 = v258 + 4;\n                *((_DWORD *)v258 + 1) = *(_DWORD *)v380;\n                v224 = (*output_descriptor | ~v290)\n                     + 3 * ~(v290 | *output_descriptor)\n                     + *output_descriptor\n                     + 3 * (*output_descriptor & ~v290)\n                     - (v290 & *output_descriptor)\n                     - 3 * ~v290\n                     + 1;\n                v222[3] = v224;\n                v222[2] = v221;\n                *v222 = wmp1_fnv1a_raw_bytes(\n                          v223,\n                          19 * (v224 & 0xC)\n                        + 12LL * ((unsigned int)v224 & 0xFFFFFFF3)\n                        - 11 * (v224 | 0xFFFFFFFFFFFFFFF3uLL)\n                        - 6 * ~(unsigned __int64)((unsigned int)v224 & 0xFFFFFFF3)\n                        + 7 * ~(v224 | 0xFFFFFFFFFFFFFFF3uLL)\n                        + 17 * (~v224 & 0xFFFFFFFFFFFFFFF3uLL),\n                          dword_7FF697BBADE4\n                        ^ ((dword_7FF697BBADE4 ^ 0xF3AA2A3F) - 1795179518)\n                        ^ ((dword_7FF697BBADE4 ^ 0xF3AA2A3F) - 426122356));\n                v300 = *output_descriptor;\n                v225 = ~(_BYTE)v300 & 0xF;\n                a2 = (unsigned int)(8 * v225);\n                a1 = ~v300 & 0xFFFFFFF0;\n                a4 = (unsigned __int8)v300 | 0xFFFFFFF0;\n                a3 = (unsigned int)a1 + 7 * (v300 ^ 0xF) + 2 * (v300 & 0xF) - 6 * (v300 & 0x7FFFFFF0) - (_DWORD)a4;\n                destination_4 = a3 - 7 * v225;\n                if ( destination_4 )\n                {\n                  v233 = 869960929;\n                }\n                else\n                {\n                  v29 = v300;\nLABEL_264:\n                  v321 = v29;\n                  v302 = v29;\n                  v382 = v258;\n                  v281 = byte_7FF697BBB0D0;\n                  v410.m128i_i64[0] = qword_7FF697BBADF0 - 0x5FF5124D482344BDLL;\n                  a3 = (qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x80896B7CE9117AA4uLL;\n                  v226 = ((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x98BF80CE1A7B23EEuLL)\n                       + 11\n                       * ~(((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x893B5790D8E2F2E7uLL) & 0x7E985ADDF4BBA3DFLL)\n                       + 11\n                       * ((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x893B5790D8E2F2E7uLL | 0x7E985ADDF4BBA3DFLL)\n                       - (21\n                        * (((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x76C4A86F271D0D18LL) & 0x7E985ADDF4BBA3DFLL)\n                        + 9\n                        * (((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x893B5790D8E2F2E7uLL) & 0x7E985ADDF4BBA3DFLL))\n                       - 11\n                       * ~((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x893B5790D8E2F2E7uLL | 0x7E985ADDF4BBA3DFLL)\n                       - 21\n                       * ~((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x76C4A86F271D0D18LL | 0x7E985ADDF4BBA3DFLL);\n                  v410.m128i_i64[1] = 11 * ~((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x7F76948316EE855BLL | v226);\n                  a4 = 5 * (a3 | v226);\n                  v411 = 11 * (a3 | v226);\n                  a2 = a3 ^ v226;\n                  v412 = a3 ^ v226;\n                  v413 = 9 * (v226 & ((qword_7FF697BBADF0 - 0x5FF5124D482344BDLL) ^ 0x7F76948316EE855BLL));\n                  a1 = a3 & v226;\n                  v414 = -11 * a1;\n                  v233 = 1647656019;\n                }\n              }\n            }\n            else\n            {\n              v324 = v5;\n              v325 = HIDWORD(v369) + 1;\nLABEL_191:\n              a1 = v324;\n              v369 = __PAIR64__(v325, v324);\n              if ( v324 )\n                v233 = 1817359031;\n              else\n                v233 = 623293520;\n            }\n          }\n          else\n          {\n            if ( v233 == 1129091958 )\n              goto LABEL_31;\n            request = HIBYTE(dword_7FF697BBA004);\n            request_1 = BYTE2(dword_7FF697BBA004);\n            request_2 = BYTE1(dword_7FF697BBA004);\n            request_3 = dword_7FF697BBA004;\n            request_4 = HIBYTE(dword_7FF697BBA000);\n            request_5 = BYTE2(dword_7FF697BBA000);\n            request_6 = BYTE1(dword_7FF697BBA000);\n            request_7 = dword_7FF697BBA000;\n            v388 = v382;\n            v322 = v302;\nLABEL_165:\n            v104 = v322;\n            v105 = v388;\n            LOBYTE(dword_7FF697BBA000) = *v388 ^ request_7;\n            BYTE1(dword_7FF697BBA000) = v388[1] ^ request_6;\n            BYTE2(dword_7FF697BBA000) = -7\n                                      - (7 * ~(v388[2] | request_5)\n                                       + 6 * (v388[2] | request_5)\n                                       + (v388[2] & request_5));\n            HIBYTE(dword_7FF697BBA000) = v388[3] ^ request_4;\n            LOBYTE(dword_7FF697BBA004) = v388[4] ^ request_3;\n            BYTE1(dword_7FF697BBA004) = v388[5] ^ request_2;\n            BYTE2(dword_7FF697BBA004) = v388[6] ^ request_1;\n            HIBYTE(dword_7FF697BBA004) = v388[7] ^ request;\n            v106 = __ROL4__(\n                     (dword_7FF697BBA004 + 365685905) ^ (dword_7FF697BBA000 - 1497288132),\n                     dword_7FF697BBA004 - 111);\n            v107 = 2 * ~(v106 & 0xD612707E)\n                 - (v106 & 0xD612707E)\n                 - 4 * (~v106 & 0x1612707E)\n                 + (v106 | 0xD612707E)\n                 - 1406869251;\n            v108 = __ROL4__(v107 ^ (dword_7FF697BBA004 + 365685905), v107) - 660532791;\n            v109 = __ROL4__(v108 ^ v107, v108) + 1014243751;\n            v110 = __ROL4__(v109 ^ v108, v109);\n            v111 = 8 * (v110 & 0x1955E7B)\n                 - 2 * (v110 & 0x5E6AA184)\n                 - 7 * (v110 ^ 0x5E6AA184)\n                 + 4 * (v110 ^ 0x21955E7B)\n                 - 4 * (~v110 & 0x21955E7B)\n                 + 8 * (~v110 & 0x1E6AA184);\n            v112 = __ROL4__(v111 ^ v109, v111) + 878744182;\n            v113 = __ROL4__(v112 ^ v111, v112) + 1433706364;\n            v114 = __ROL4__(v113 ^ v112, v113) + 1934650103;\n            v115 = ((loc_7FF697BBADF8 - 914415791) | 0x4B53CF87)\n                 + ((loc_7FF697BBADF8 - 914415791) & 0xB4AC3078)\n                 - 11 * ((loc_7FF697BBADF8 - 914415791) & 0x4B53CF87)\n                 - 11 * (~(loc_7FF697BBADF8 - 914415791) & 0x4B53CF87)\n                 + ~(loc_7FF697BBADF8 - 914415791);\n            v116 = ((((v115 - 929961351) | 0x183C073)\n                   + 3 * ((v115 - 929961351) & 0x183C073)\n                   + 2 * ((v115 - 929961351) & 0x7E7C3F8C)\n                   + ~(2 * v115 - 1859922702)\n                   - 105328137)\n                  ^ 0xC23F2D46)\n                 + loc_7FF697BBADF8\n                 - 914415791\n                 + 105328137\n                 - (v115\n                  - 929961351)\n                 + __ROL4__(v114 ^ v113, v114)\n                 - 1505949358;\n            v117 = __ROL4__(\n                     ~(~v114 | v116)\n                   + 6 * (~v114 & v116)\n                   + 8 * (v116 & v114)\n                   - 5 * (~v114 | v116)\n                   - 3 * (v116 ^ ~v114)\n                   + 8 * ~(v114 | v116),\n                     v116)\n                 - 1011008155;\n            v118 = __ROL4__(v117 ^ v116, v117) - 1304068246;\n            v119 = __ROL4__(v118 ^ v117, v118);\n            v230 = 3 * (~v119 & 0x745D8CDD)\n                 + 7 * (v119 ^ 0x8BA27322)\n                 + 2 * (v119 & 0xBA27322)\n                 - 6 * (v119 & 0x745D8CDD)\n                 - 3 * (~v119 & 0x8BA27322)\n                 - 3 * ~v119;\n            v120 = __ROL4__(7 * ~(~v118 | v230) + (v118 & v230) + 6 * (v230 & ~v118) - 5 * (v118 ^ v230) - v118, v230);\n            v121 = 8 * ~v120\n                 + v120\n                 + 1\n                 + 3 * ~(v120 & 0x29D8C691)\n                 + 2 * (v120 & 0x29D8C691)\n                 - 2 * (v120 & 0x5627396E)\n                 - 10 * (~v120 & 0x5627396E)\n                 - 9 * (~v120 & 0x29D8C691);\n            v122 = __ROL4__(\n                     2 * (v121 & ~v230) + 2 * (v121 & v230) + ~(v230 | v121) + ~(v121 & v230) + 2 * ~(~v230 | v121) + 2,\n                     v121);\n            v123 = __ROL4__((v122 - 690481024) ^ v121, v122) - 1243158984;\n            v124 = __ROL4__(v123 ^ (v122 - 690481024), v123);\n            v125 = ((*(&loc_7FF697BBADF8 + 1) - 267979878) ^ 0x6A1BCB52) - *(&loc_7FF697BBADF8 + 1) + v124 - 213998273;\n            v126 = __ROL4__(\n                     v125 ^ v123,\n                     ((*(&loc_7FF697BBADF8 + 4) - 102) ^ 0x52) - *(&loc_7FF697BBADF8 + 4) + v124 + 63);\n            v127 = __ROL4__((v126 + 1328090688) ^ v125, v126) - 654992491;\n            v128 = __ROL4__(v127 ^ (v126 + 1328090688), v127) - 1807553314;\n            v129 = __ROL4__(v128 ^ v127, v128) + 1575698546;\n            v130 = __ROL4__(v129 ^ v128, v129) + 621898256;\n            v131 = __ROL4__(v130 ^ v129, v130) + 452460610;\n            v132 = __ROL4__(v131 ^ v130, v131);\n            v133 = (~v132 & 0xF933AE54)\n                 + 3 * (v132 & 0x6CC51AB)\n                 + 3 * (v132 & 0xF933AE54)\n                 - 2 * v132\n                 + (v132 | 0xF933AE54)\n                 + (v132 ^ 0x6CC51AB)\n                 + 1;\n            v134 = ~(dword_7FF697BBAE00 - 736130998);\n            v135 = -11 * ((dword_7FF697BBAE00 - 736130998) & 0xFA83DA95)\n                 + ((dword_7FF697BBAE00 - 736130998) | 0xFA83DA95)\n                 + ((dword_7FF697BBAE00 - 736130998) & 0x57C256A)\n                 - 11 * (v134 & 0xFA83DA95);\n            v136 = v135 + v134 - 1012243352;\n            v137 = v135 + v134 - 1992109534;\n            v138 = (11 * (dword_7FF697BBAE00 | (dword_7FF697BBAE00 - 736130998) ^ 0x7F790FEF)\n                  + -11 * (dword_7FF697BBAE00 & ((dword_7FF697BBAE00 - 736130998) ^ 0x7F790FEF))\n                  - 9 * (((dword_7FF697BBAE00 - 736130998) ^ 0x7F790FEF) & ~dword_7FF697BBAE00)\n                  - (dword_7FF697BBAE00 ^ (dword_7FF697BBAE00 - 736130998) ^ 0x7F790FEF)\n                  - 11 * ~(~dword_7FF697BBAE00 | (dword_7FF697BBAE00 - 736130998) ^ 0x7F790FEF))\n                 ^ v136\n                 ^ (v135 + v134 - 1118828287);\n            v139 = v138 + v136 - 2031219739;\n            v140 = __ROL4__(v133 ^ v131, v133) - 2125622254;\n            a1 = __ROL4__(v140 ^ v133, v140)\n               + v134\n               + v135\n               + (~v137 | v139)\n               + 3 * ~(v137 | v139)\n               + 3 * (v139 & ~v137)\n               - (v137 & v139)\n               + v138\n               + v134\n               + v135\n               - 1012243352\n               - 2031219739\n               - 3 * ~v137\n               - 1012243352\n               + 1540716759;\n            a2 = HIBYTE(v140);\n            *(_DWORD *)v388 = v140;\n            a3 = HIWORD(v140);\n            v105[7] = BYTE3(a1);\n            v105[6] = BYTE2(a1);\n            *((_WORD *)v105 + 2) = a1;\n            dword_7FF697BBA000 = v140;\n            dword_7FF697BBA004 = a1;\n            v141 = v104 == 8;\n            a4 = v104 - 8;\n            if ( v141 )\n            {\n              v233 = 1976813461;\n            }\n            else\n            {\n              request = BYTE3(a1);\n              request_1 = BYTE2(a1);\n              request_2 = BYTE1(a1);\n              request_3 = a1;\n              request_4 = HIBYTE(v140);\n              request_5 = BYTE2(v140);\n              request_6 = BYTE1(v140);\n              request_7 = v140;\n              v388 = v105 + 8;\n              v322 = a4;\n              v233 = 1276412378;\n            }\n          }\n        }\n        if ( v233 <= 869960928 )\n          break;\n        if ( v233 > 885530296 )\n        {\n          if ( v233 == 885530297 )\n          {\n            wmp1_fill_bytes(v295, 0, v364);\n            v233 = 1129091958;\n          }\n          else\n          {\n            v233 = 1418022731;\n          }\n        }\n        else if ( v233 == 869960929 )\n        {\n          v360 = 3 * ~destination_4;\n          v233 = 1380602974;\n        }\n        else\n        {\n          v233 = 1217383306;\n        }\n      }\n      if ( v233 <= 813534494 )\n        break;\n      if ( v233 == 813534495 )\n      {\nLABEL_120:\n        *output_descriptor = 0;\n        wmp1_context_free(v258);\nLABEL_121:\n        if ( v279 == 1 && v311 > 0xF )\n          v233 = 2142309679;\n        else\n          v233 = 666145958;\n      }\n      else\n      {\n        v364 = *v377;\n        if ( v364 )\n          v233 = 885530297;\n        else\n          v233 = 499424563;\n      }\n    }\n    if ( v233 == 625229500 )\n      goto LABEL_132;\n    if ( v233 != 761331634 )\n      break;\n    *v333 = v366;\nLABEL_107:\n    v288 = 0;\n    v235 = 1;\nLABEL_200:\n    a1 = v288;\n    v282 = v235;\n    v363 = v288;\n    if ( *(_BYTE *)v378 )\n      v233 = 841039841;\n    else\n      v233 = 1329130502;\n  }\n  return v357;\n}\n"
+  },
+  "fresh_f5_location": "dispatcher_sp_repair.absolute_after_f5",
+  "cumulative_repair_source": "# Preconditions: validated closed nonoverlapping native graph, ABI-balanced calls,\n# known push/pop and immediate RSP adjustments, matching original function bounds.\n# states maps reachable EA -> proved incoming depth; fd is IDA func_t.\nfor ea in sorted(states):\n    expected = states[ea]\n    if ida_frame.get_spd(fd, ea) != expected:\n        previous_linear = ida_frame.get_spd(fd, ea - 1)\n        assert ida_frame.add_user_stkpnt(ea, expected - previous_linear)\nassert all(ida_frame.get_spd(fd, ea) == sp for ea, sp in states.items())\nida_hexrays.mark_cfunc_dirty(fd.start_ea)\ncf = ida_hexrays.decompile(fd.start_ea, None, ida_hexrays.DECOMP_NO_CACHE)\n# Verify head-depth matches again after decompilation/save; retain every old point.\n",
+  "post_save_depth_mismatches": []
+}

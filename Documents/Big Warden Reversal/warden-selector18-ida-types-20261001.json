@@ -1,0 +1,199 @@
+{
+  "declarations": "#pragma pack(push, 1)\ntypedef struct wmp1_output_prefix {\n unsigned char *data;\n unsigned int used;\n unsigned int capacity;\n unsigned char owned;\n} wmp1_output_prefix;\ntypedef struct wmp1_selector18_request {\n unsigned short selector;\n unsigned short body_length;\n unsigned int chain1_hashes[9];\n unsigned int chain1_count;\n unsigned int chain1_value_hash;\n unsigned int expected_dword;\n unsigned int chain2_hashes[9];\n unsigned int chain2_count;\n unsigned int chain2_value_hash;\n unsigned int chain3_hashes[9];\n unsigned int chain3_count;\n unsigned int chain3_value_hash;\n unsigned int prefix_length;\n} wmp1_selector18_request;\ntypedef struct wmp1_registry_report {\n unsigned __int64 flags;\n unsigned __int64 first_dword_or_ffffffff;\n unsigned __int64 utf16_unit_count;\n unsigned __int64 queried_value_hash;\n unsigned char reserved_byte;\n unsigned int reserved_dword;\n} wmp1_registry_report;\ntypedef struct wmp1_selector18_call_descriptor {\n wmp1_output_prefix *output;\n unsigned int encoded_total_length;\n unsigned int reserved;\n unsigned __int64 opaque_token;\n} wmp1_selector18_call_descriptor;\n#pragma pack(pop)\n",
+  "old_function_types": {
+    "0x7ff697ab4c90": "unsigned int __fastcall(const void *request, unsigned int total_length, void *output_buffer)",
+    "0x7ff697aef420": "unsigned int __fastcall(unsigned __int64 a1, void *descriptor, unsigned __int64 a3, unsigned __int64 a4)"
+  },
+  "new_function_types": {
+    "0x7ff697ab4c90": "unsigned int __fastcall(const wmp1_selector18_request *request, unsigned int total_length, wmp1_output_prefix *output_buffer)",
+    "0x7ff697aef420": "unsigned int __fastcall(unsigned __int64 opaque_a1, wmp1_selector18_call_descriptor *descriptor, const wmp1_selector18_request *request, unsigned __int64 opaque_a4)"
+  },
+  "verified_structures": {
+    "wmp1_output_prefix": {
+      "size": 17,
+      "members": [
+        {
+          "name": "data",
+          "offset_bytes": 0,
+          "size_bytes": 8
+        },
+        {
+          "name": "used",
+          "offset_bytes": 8,
+          "size_bytes": 4
+        },
+        {
+          "name": "capacity",
+          "offset_bytes": 12,
+          "size_bytes": 4
+        },
+        {
+          "name": "owned",
+          "offset_bytes": 16,
+          "size_bytes": 1
+        }
+      ]
+    },
+    "wmp1_selector18_request": {
+      "size": 144,
+      "members": [
+        {
+          "name": "selector",
+          "offset_bytes": 0,
+          "size_bytes": 2
+        },
+        {
+          "name": "body_length",
+          "offset_bytes": 2,
+          "size_bytes": 2
+        },
+        {
+          "name": "chain1_hashes",
+          "offset_bytes": 4,
+          "size_bytes": 36
+        },
+        {
+          "name": "chain1_count",
+          "offset_bytes": 40,
+          "size_bytes": 4
+        },
+        {
+          "name": "chain1_value_hash",
+          "offset_bytes": 44,
+          "size_bytes": 4
+        },
+        {
+          "name": "expected_dword",
+          "offset_bytes": 48,
+          "size_bytes": 4
+        },
+        {
+          "name": "chain2_hashes",
+          "offset_bytes": 52,
+          "size_bytes": 36
+        },
+        {
+          "name": "chain2_count",
+          "offset_bytes": 88,
+          "size_bytes": 4
+        },
+        {
+          "name": "chain2_value_hash",
+          "offset_bytes": 92,
+          "size_bytes": 4
+        },
+        {
+          "name": "chain3_hashes",
+          "offset_bytes": 96,
+          "size_bytes": 36
+        },
+        {
+          "name": "chain3_count",
+          "offset_bytes": 132,
+          "size_bytes": 4
+        },
+        {
+          "name": "chain3_value_hash",
+          "offset_bytes": 136,
+          "size_bytes": 4
+        },
+        {
+          "name": "prefix_length",
+          "offset_bytes": 140,
+          "size_bytes": 4
+        }
+      ]
+    },
+    "wmp1_registry_report": {
+      "size": 37,
+      "members": [
+        {
+          "name": "flags",
+          "offset_bytes": 0,
+          "size_bytes": 8
+        },
+        {
+          "name": "first_dword_or_ffffffff",
+          "offset_bytes": 8,
+          "size_bytes": 8
+        },
+        {
+          "name": "utf16_unit_count",
+          "offset_bytes": 16,
+          "size_bytes": 8
+        },
+        {
+          "name": "queried_value_hash",
+          "offset_bytes": 24,
+          "size_bytes": 8
+        },
+        {
+          "name": "reserved_byte",
+          "offset_bytes": 32,
+          "size_bytes": 1
+        },
+        {
+          "name": "reserved_dword",
+          "offset_bytes": 33,
+          "size_bytes": 4
+        }
+      ]
+    },
+    "wmp1_selector18_call_descriptor": {
+      "size": 24,
+      "members": [
+        {
+          "name": "output",
+          "offset_bytes": 0,
+          "size_bytes": 8
+        },
+        {
+          "name": "encoded_total_length",
+          "offset_bytes": 8,
+          "size_bytes": 4
+        },
+        {
+          "name": "reserved",
+          "offset_bytes": 12,
+          "size_bytes": 4
+        },
+        {
+          "name": "opaque_token",
+          "offset_bytes": 16,
+          "size_bytes": 8
+        }
+      ]
+    }
+  },
+  "scope": "IDA type metadata only; recovered fixed prefixes do not guarantee request/backing bounds",
+  "local_type_followup": {
+    "function": "0x7FF697AEF420",
+    "v92": {"old_type": "_QWORD *", "new_type": "wmp1_output_prefix *", "defea": "0x7FF697AF4318"},
+    "buffer": {"old_type": "void *", "new_type": "wmp1_output_prefix *", "defea": "0x7FF697AF003E"},
+    "method": "modify_user_lvar_info with MLI_TYPE and lvar_locator_t(location,defea); mark cfunc dirty and regenerate without cache",
+    "pseudocode_length": 43216,
+    "JUMPOUT_count": 0,
+    "visible_fields": ["capacity = buffer->capacity;", "qmemcpy(&v92->data[old_used_out[0]], descriptora, 0x25u);"],
+    "saved": true
+  },
+  "old_comment": "CONDITIONAL normal-stack view: ESP>4600h at fourteen guards, ABI-preserving calls, no wrap. Seven actual stack-probed allocations retained. Captured constants decode three Registry root strings. API bank runtime state missing; helper semantics/request bounds still unresolved. Journals in KB.",
+  "new_comment": "QUALIFIED normal-stack view: fourteen ESP guards require documented high-low32 stack domain, ABI-preserving calls and no wrap. Seven stack-probed allocations retained. Captured adopted bank resolves NtOpenKey/NtEnumerateKey/NtQueryValueKey/NtEnumerateValueKey/NtClose. Local request/value bounds are missing, not assumed. Returns0 iff flag1 or flag2, else1 (length<5:0x101); optional37-byte report can be skipped for capacity. Typed144-byte request prefix is a layout, NOT an enforced minimum. See reversing-warden.md and selector18 journals.",
+  "pseudocode_verification": {
+    "length": 43147,
+    "JUMPOUT_count": 0,
+    "named_request_fields": [
+      "chain1_count = request->chain1_count;",
+      "chain1_value_hash = request->chain1_value_hash;",
+      "v35 = request->expected_dword != v127;",
+      "v130 = (int *)(request->expected_dword == v127);",
+      "chain2_count = request->chain2_count;",
+      "*(_DWORD *)v106 = request->chain2_hashes[v48];",
+      "chain2_value_hash = request->chain2_value_hash;",
+      "chain3_count = request->chain3_count;"
+    ],
+    "descriptor_fields": [
+      "decoded_request_length = descriptor->encoded_total_length ^ 0x292585D1;",
+      "buffer = descriptor->output;"
+    ]
+  }
+}

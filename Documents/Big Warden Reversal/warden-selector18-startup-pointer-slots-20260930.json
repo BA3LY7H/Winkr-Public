@@ -1,0 +1,21 @@
+{
+  "scope": "Offline constructor-table and startup-state provenance for encoded pointer slots",
+  "table_begin": "0x7FF6449B36C8",
+  "table_end_exclusive": "0x7FF6449C15B0",
+  "null_begin": true,
+  "non_null_executable_entries": 7132,
+  "total_slots": 7133,
+  "initializer_slot": "0x7FF6449B5780",
+  "initializer": "0x7FF6414434B0",
+  "initializer_slot_index": 1047,
+  "walker": "0x7FF6447B01FC",
+  "startup": "0x7FF644792808",
+  "startup_call": "0x7FF64479287F",
+  "startup_state": "0x7FF6457FE1C0",
+  "captured_state": 2,
+  "error_walker": "0x7FF6447B0260",
+  "error_table_begin": "0x7FF6449C1600",
+  "error_table_end": "0x7FF6449C1640",
+  "contract": "If startup state is zero, set it to1; run error-returning initializer table; nonzero error returns255 before void table. Otherwise walk void initializer table, then store2. State1 takes failure path; already initialized state skips this table. Void walker rounds (end-begin+7)>>3, suppresses count when begin>end, skips null pointers, dispatches non-null pointers through CFG. Exact supplied aligned range contains7133 slots: initial null plus7132 pointers.",
+  "limits": "Proves registration-slot initializer belongs to this startup path, not that no later reset/alias writes occur. Current static xrefs show no stop-flag reset and no pending-byte producer; absence of xrefs is not proof of absence. Main PE entry callback points into loader, not directly to this startup function. PE entry0x7FF6414F9EC0 reads pointer0x7FF64585CE38, captured0x7FFAF2694B10. Startup trampoline0x7FF64479297C calls0x7FF644792EA0 then tail-jumps to startup; chain from loader callback remains unverified."
+}

@@ -1,0 +1,1278 @@
+{
+  "scope": "Partial normal-stack-domain semantics and native validation; entire callback/module not finished.",
+  "lvar_rename_journal": [
+    {
+      "old": "v235",
+      "new": "callback_context",
+      "ok": true
+    },
+    {
+      "old": "v137",
+      "new": "sfc_named_lookup_slot",
+      "ok": true
+    },
+    {
+      "old": "v139",
+      "new": "input_dword_query_function",
+      "ok": true
+    },
+    {
+      "old": "v140",
+      "new": "second_buffer_function_slot",
+      "ok": true
+    },
+    {
+      "old": "v138",
+      "new": "indexed_input_function_slot",
+      "ok": true
+    },
+    {
+      "old": "v156",
+      "new": "unary_result_check_slot",
+      "ok": true
+    },
+    {
+      "old": "v157",
+      "new": "other_input_function_slot",
+      "ok": true
+    },
+    {
+      "old": "v189",
+      "new": "queried_input_pointer",
+      "ok": true
+    },
+    {
+      "old": "v252",
+      "new": "named_sfc_nonzero",
+      "ok": true
+    },
+    {
+      "old": "v130",
+      "new": "pointer_region_record",
+      "ok": true
+    },
+    {
+      "old": "v126",
+      "new": "region_query_buffer",
+      "ok": true
+    },
+    {
+      "old": "v118",
+      "new": "sfc_path_first_word",
+      "ok": true
+    }
+  ],
+  "named_pseudocode": "// CONDITIONAL normal-stack analysis view: requires unsigned ESP>4C00h at every guard, ABI-preserving calls, no low32 wrap. 22 JA guard branches restricted to skipping ESP updates; originals/journals in KB. Not a full unrestricted reversal.\nunsigned int __fastcall wmp1_selector22_callback_normal_stack_view(\n        void **context_descriptor,\n        unsigned int mode,\n        unsigned __int64 key1,\n        unsigned __int64 key2,\n        void *input)\n{\n  void *v5; // r12\n  __int128 *v6; // r13\n  int v7; // eax\n  int v8; // eax\n  unsigned __int16 v9; // cx\n  bool v10; // zf\n  __int16 v11; // ax\n  unsigned int v12; // eax\n  char *v13; // rcx\n  unsigned int v14; // edx\n  __int64 v15; // rsi\n  unsigned int v16; // eax\n  unsigned int v17; // r9d\n  __int64 (__fastcall *v18)(__int64, unsigned __int64, __int64, __int128 *, unsigned __int64, _QWORD); // rax\n  int v19; // r11d\n  unsigned int v20; // ecx\n  unsigned int v21; // edi\n  int v22; // ebx\n  int v23; // r12d\n  unsigned int v24; // r12d\n  __int64 v25; // r8\n  unsigned __int64 v26; // r10\n  unsigned __int64 v27; // rcx\n  unsigned __int64 v28; // r10\n  unsigned int v29; // eax\n  __int16 v30; // ax\n  unsigned __int16 v31; // cx\n  __int16 v32; // ax\n  __int16 v33; // ax\n  __int128 *v34; // r14\n  __int64 v35; // rsi\n  int v36; // et1\n  int v37; // r8d\n  __int64 (__fastcall *v38)(__int64, __int64, _QWORD, char *, unsigned __int64, _QWORD); // rax\n  unsigned int v39; // r8d\n  unsigned int v40; // r8d\n  unsigned __int64 v41; // r9\n  int v42; // ecx\n  unsigned int v43; // edi\n  unsigned int v44; // eax\n  char v45; // al\n  unsigned int v46; // esi\n  unsigned __int64 v47; // rcx\n  unsigned __int64 v48; // rdx\n  __int64 v49; // rax\n  int v50; // eax\n  int v51; // eax\n  __int16 v52; // cx\n  unsigned __int16 v53; // cx\n  char v54; // al\n  unsigned __int64 v55; // rdx\n  unsigned int v56; // esi\n  char v57; // al\n  __int16 v58; // ax\n  int v59; // edx\n  char v60; // al\n  char *v61; // rsi\n  unsigned int v62; // eax\n  unsigned __int16 v63; // cx\n  unsigned __int16 v64; // cx\n  struct _PEB_LDR_DATA *Ldr; // rax\n  struct _LIST_ENTRY *Flink; // rcx\n  unsigned __int64 v67; // rax\n  unsigned __int64 v68; // rcx\n  bool v69; // al\n  bool v70; // cl\n  char v71; // al\n  unsigned int v72; // edx\n  unsigned int v73; // esi\n  unsigned int v74; // r13d\n  unsigned int v75; // edi\n  int v76; // ebx\n  unsigned int v77; // edx\n  char v78; // al\n  unsigned int v79; // ecx\n  unsigned int v80; // eax\n  unsigned int v81; // edi\n  char v82; // al\n  unsigned int v83; // esi\n  char *v84; // rdi\n  unsigned __int64 v85; // r9\n  unsigned int v86; // r9d\n  __int64 v87; // rsi\n  unsigned int v88; // eax\n  char v89; // al\n  __int64 v90; // r8\n  __int16 v91; // ax\n  unsigned int v92; // edx\n  unsigned __int16 v93; // cx\n  __int64 v94; // rax\n  unsigned __int64 v95; // rdx\n  unsigned int v96; // eax\n  unsigned int v97; // eax\n  unsigned int v98; // ecx\n  unsigned int v99; // edx\n  unsigned int v100; // edi\n  unsigned int v101; // ecx\n  unsigned int v102; // eax\n  int v103; // ecx\n  unsigned int v104; // edx\n  __int16 v105; // r10\n  __int16 v106; // dx\n  __int16 v107; // dx\n  unsigned int v108; // eax\n  int v109; // ecx\n  int v110; // r10d\n  __int64 v111; // rdx\n  __int64 v112; // rdi\n  int v113; // r9d\n  int v115; // [rsp-8h] [rbp-88h]\n  char v116[8]; // [rsp+30h] [rbp-50h] BYREF\n  unsigned __int16 *v117; // [rsp+38h] [rbp-48h]\n  __int16 sfc_path_first_word; // [rsp+440h] [rbp+3C0h] BYREF\n  __int16 v119; // [rsp+442h] [rbp+3C2h]\n  _WORD v120[257]; // [rsp+444h] [rbp+3C4h] BYREF\n  __int16 v121; // [rsp+646h] [rbp+5C6h]\n  _OWORD v122[12]; // [rsp+650h] [rbp+5D0h] BYREF\n  __int64 v123; // [rsp+710h] [rbp+690h]\n  _OWORD v124[12]; // [rsp+720h] [rbp+6A0h] BYREF\n  __int64 v125; // [rsp+7E0h] [rbp+760h]\n  __int128 region_query_buffer; // [rsp+7F0h] [rbp+770h] BYREF\n  __int128 v127; // [rsp+800h] [rbp+780h]\n  __int128 v128; // [rsp+810h] [rbp+790h]\n  _QWORD v129[2]; // [rsp+828h] [rbp+7A8h] BYREF\n  _QWORD pointer_region_record[5]; // [rsp+838h] [rbp+7B8h] BYREF\n  __int64 v131; // [rsp+860h] [rbp+7E0h]\n  __int64 v132; // [rsp+868h] [rbp+7E8h]\n  unsigned int *v133; // [rsp+870h] [rbp+7F0h]\n  __int16 *v134; // [rsp+878h] [rbp+7F8h]\n  __int64 *v135; // [rsp+880h] [rbp+800h]\n  _QWORD *v136; // [rsp+888h] [rbp+808h]\n  unsigned int (__fastcall **sfc_named_lookup_slot)(_QWORD, __int16 *, unsigned __int64, unsigned __int64); // [rsp+890h] [rbp+810h]\n  __int64 (__fastcall **indexed_input_function_slot)(void *, _QWORD); // [rsp+898h] [rbp+818h]\n  void (__fastcall *input_dword_query_function)(void *, int *, unsigned __int64, unsigned __int64); // [rsp+8A0h] [rbp+820h]\n  void (__fastcall **second_buffer_function_slot)(void *, _OWORD *, _QWORD); // [rsp+8A8h] [rbp+828h]\n  void **v141; // [rsp+8B0h] [rbp+830h]\n  __int64 v142; // [rsp+8B8h] [rbp+838h]\n  __int64 v143; // [rsp+8C0h] [rbp+840h]\n  unsigned __int16 *v144; // [rsp+8C8h] [rbp+848h]\n  unsigned __int16 *v145; // [rsp+8D0h] [rbp+850h]\n  char *v146; // [rsp+8D8h] [rbp+858h]\n  char *v147; // [rsp+8E0h] [rbp+860h]\n  char *v148; // [rsp+8E8h] [rbp+868h]\n  __int16 *p_sfc_path_first_word; // [rsp+8F0h] [rbp+870h]\n  _WORD *v150; // [rsp+8F8h] [rbp+878h]\n  _WORD *v151; // [rsp+900h] [rbp+880h]\n  unsigned __int64 v152; // [rsp+908h] [rbp+888h]\n  char *v153; // [rsp+910h] [rbp+890h]\n  __int64 v154; // [rsp+918h] [rbp+898h]\n  char *v155; // [rsp+920h] [rbp+8A0h]\n  unsigned int (__fastcall **unary_result_check_slot)(__int64); // [rsp+928h] [rbp+8A8h]\n  __int64 (__fastcall **other_input_function_slot)(void *, _QWORD); // [rsp+930h] [rbp+8B0h]\n  void (__fastcall **v158)(void *, _OWORD *, _QWORD); // [rsp+938h] [rbp+8B8h]\n  unsigned __int64 allocated_stub; // [rsp+940h] [rbp+8C0h] BYREF\n  unsigned __int64 v160; // [rsp+948h] [rbp+8C8h] BYREF\n  int v161; // [rsp+954h] [rbp+8D4h]\n  int v162; // [rsp+958h] [rbp+8D8h]\n  int v163; // [rsp+95Ch] [rbp+8DCh]\n  int v164; // [rsp+960h] [rbp+8E0h]\n  int v165; // [rsp+964h] [rbp+8E4h]\n  int v166; // [rsp+968h] [rbp+8E8h]\n  int v167; // [rsp+96Ch] [rbp+8ECh]\n  int v168; // [rsp+970h] [rbp+8F0h]\n  int v169; // [rsp+974h] [rbp+8F4h]\n  int v170; // [rsp+978h] [rbp+8F8h]\n  int v171; // [rsp+97Ch] [rbp+8FCh]\n  int v172; // [rsp+980h] [rbp+900h]\n  int v173; // [rsp+984h] [rbp+904h]\n  int v174; // [rsp+988h] [rbp+908h]\n  unsigned int v175; // [rsp+98Ch] [rbp+90Ch]\n  unsigned int v176; // [rsp+990h] [rbp+910h]\n  unsigned int v177; // [rsp+994h] [rbp+914h]\n  unsigned int v178; // [rsp+998h] [rbp+918h]\n  int v179; // [rsp+99Ch] [rbp+91Ch]\n  unsigned int v180; // [rsp+9A0h] [rbp+920h]\n  unsigned int v181; // [rsp+9A4h] [rbp+924h]\n  int v182; // [rsp+9A8h] [rbp+928h]\n  int v183; // [rsp+9ACh] [rbp+92Ch]\n  __int64 v184; // [rsp+9B0h] [rbp+930h]\n  _WORD *v185; // [rsp+9B8h] [rbp+938h]\n  unsigned __int16 *v186; // [rsp+9C0h] [rbp+940h]\n  unsigned __int16 *v187; // [rsp+9C8h] [rbp+948h]\n  int *v188; // [rsp+9D0h] [rbp+950h]\n  unsigned __int64 queried_input_pointer; // [rsp+9D8h] [rbp+958h]\n  __int64 v190; // [rsp+9E0h] [rbp+960h]\n  int v191; // [rsp+9ECh] [rbp+96Ch]\n  int v192; // [rsp+9F0h] [rbp+970h]\n  unsigned int v193; // [rsp+9F4h] [rbp+974h]\n  int v194; // [rsp+9F8h] [rbp+978h]\n  unsigned int v195; // [rsp+9FCh] [rbp+97Ch]\n  unsigned int v196; // [rsp+A00h] [rbp+980h]\n  unsigned int v197; // [rsp+A04h] [rbp+984h]\n  unsigned int v198; // [rsp+A08h] [rbp+988h]\n  unsigned int v199; // [rsp+A0Ch] [rbp+98Ch]\n  int v200; // [rsp+A10h] [rbp+990h]\n  unsigned int v201; // [rsp+A14h] [rbp+994h]\n  unsigned int v202; // [rsp+A18h] [rbp+998h]\n  unsigned int v203; // [rsp+A1Ch] [rbp+99Ch]\n  unsigned int v204; // [rsp+A20h] [rbp+9A0h]\n  int v205; // [rsp+A24h] [rbp+9A4h]\n  unsigned int v206; // [rsp+A28h] [rbp+9A8h]\n  unsigned int v207; // [rsp+A2Ch] [rbp+9ACh]\n  unsigned int v208; // [rsp+A30h] [rbp+9B0h]\n  unsigned int v209; // [rsp+A34h] [rbp+9B4h]\n  int v210; // [rsp+A38h] [rbp+9B8h]\n  unsigned int v211; // [rsp+A3Ch] [rbp+9BCh]\n  unsigned int v212; // [rsp+A40h] [rbp+9C0h]\n  unsigned int v213; // [rsp+A44h] [rbp+9C4h]\n  unsigned int v214; // [rsp+A48h] [rbp+9C8h]\n  unsigned int v215; // [rsp+A4Ch] [rbp+9CCh]\n  unsigned int v216; // [rsp+A50h] [rbp+9D0h]\n  unsigned int v217; // [rsp+A54h] [rbp+9D4h]\n  int v218; // [rsp+A58h] [rbp+9D8h]\n  int v219; // [rsp+A5Ch] [rbp+9DCh] BYREF\n  __int16 *v220; // [rsp+A60h] [rbp+9E0h]\n  _WORD *v221; // [rsp+A68h] [rbp+9E8h]\n  _WORD *v222; // [rsp+A70h] [rbp+9F0h]\n  unsigned __int64 v223; // [rsp+A78h] [rbp+9F8h]\n  __int64 v224; // [rsp+A80h] [rbp+A00h]\n  unsigned int *v225; // [rsp+A88h] [rbp+A08h]\n  __int16 v226; // [rsp+A96h] [rbp+A16h]\n  unsigned int v227; // [rsp+A98h] [rbp+A18h]\n  unsigned int v228; // [rsp+A9Ch] [rbp+A1Ch]\n  unsigned int v229; // [rsp+AA0h] [rbp+A20h]\n  unsigned int v230; // [rsp+AA4h] [rbp+A24h]\n  unsigned int v231; // [rsp+AA8h] [rbp+A28h]\n  unsigned int v232; // [rsp+AACh] [rbp+A2Ch]\n  unsigned int v233; // [rsp+AB0h] [rbp+A30h]\n  int v234; // [rsp+AB4h] [rbp+A34h] BYREF\n  _QWORD *callback_context; // [rsp+AB8h] [rbp+A38h]\n  __int128 *v236; // [rsp+AC0h] [rbp+A40h]\n  unsigned int v237; // [rsp+AC8h] [rbp+A48h]\n  __int64 v238; // [rsp+AD0h] [rbp+A50h]\n  unsigned __int64 v239; // [rsp+AD8h] [rbp+A58h]\n  __int16 v240; // [rsp+AE6h] [rbp+A66h]\n  unsigned int v241; // [rsp+AE8h] [rbp+A68h]\n  int v242; // [rsp+AECh] [rbp+A6Ch]\n  int v243; // [rsp+AF0h] [rbp+A70h]\n  int v244; // [rsp+AF4h] [rbp+A74h]\n  int v245; // [rsp+AF8h] [rbp+A78h]\n  int v246; // [rsp+AFCh] [rbp+A7Ch]\n  __int128 v247; // [rsp+B00h] [rbp+A80h] BYREF\n  char v248; // [rsp+B10h] [rbp+A90h]\n  bool v249; // [rsp+B17h] [rbp+A97h]\n  unsigned int *v250; // [rsp+B18h] [rbp+A98h]\n  bool named_sfc_nonzero; // [rsp+B2Bh] [rbp+AABh]\n  int v253; // [rsp+B2Ch] [rbp+AACh]\n\n  v141 = context_descriptor;\n  v5 = input;\n  v253 = 1008693309;\n  v6 = &v247;\n  while ( 1 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( 1 )\n        {\n          while ( 1 )\n          {\n            while ( 1 )\n            {\n              while ( 1 )\n              {\n                while ( v253 > 984790278 )\n                {\n                  if ( v253 > 1556533327 )\n                  {\n                    if ( v253 <= 1816567597 )\n                    {\n                      if ( v253 > 1694343705 )\n                      {\n                        if ( v253 <= 1723514501 )\n                        {\n                          if ( v253 == 1694343706 )\n                          {\n                            v34 = v6;\n                            v35 = region_query_buffer;\n                            v160 = 0;\n                            v36 = ~(dword_7FF697BBA338 | 0x18FEEA19)\n                                + 6 * (dword_7FF697BBA338 & 0x18FEEA19)\n                                + 8 * (dword_7FF697BBA338 & 0x70115E6)\n                                - 5 * (dword_7FF697BBA338 | 0x18FEEA19)\n                                - 3 * (dword_7FF697BBA338 ^ 0x18FEEA19)\n                                + 8 * (~dword_7FF697BBA338 & 0x18FEEA19);\n                            v37 = v36 + 399587901;\n                            v38 = (__int64 (__fastcall *)(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD))wmp1_selector6_dependency_0x7ff697ade690((~v37 & 0xB333C4B4) + 3 * (v37 ^ 0x4CCC3B4B) + (v37 & 0x4CCC3B4B) - (v37 & 0xB333C4B4) - (v37 | 0xB333C4B4) - 4 * ~(v37 | 0xB333C4B4) + v36 + (dword_7FF697BBA338 ^ 0x4D2A26AD) - v37, &v160, 0);\n                            v39 = ~((dword_7FF697BBA33C ^ 0xDD7A6B7D) + 110559911);\n                            v40 = dword_7FF697BBA33C\n                                ^ ((dword_7FF697BBA33C ^ 0xDD7A6B7D)\n                                 + (v39 | 0x50B3930D)\n                                 + 2 * ~(v39 & 0x50B3930D)\n                                 - (v39 & 0x50B3930D)\n                                 - 4 * (v39 & 0x2F4C6CF2)\n                                 + 2 * v39\n                                 + 35101498);\n                            v41 = 9\n                                * (((qword_7FF697BBA340 + 0x16B9BA3040D7597LL)\n                                  ^ 0x8A8C0051BF0E8DC8uLL)\n                                 & 0x8A12EE00D4C056C6uLL)\n                                + 4\n                                * (((qword_7FF697BBA340 + 0x16B9BA3040D7597LL)\n                                  ^ 0x8A8C0051BF0E8DC8uLL)\n                                 & 0x35ED11FF2B3FA939LL)\n                                - 3\n                                * ((qword_7FF697BBA340 + 0x16B9BA3040D7597LL) ^ 0x8A8C0051BF0E8DC8uLL\n                                 | 0x8A12EE00D4C056C6uLL)\n                                + 10\n                                * (((qword_7FF697BBA340 + 0x16B9BA3040D7597LL)\n                                  ^ 0x12EE0040C05206LL)\n                                 & 0xA12EE00D4C056C6LL);\n                            v174 = v38(\n                                     -1,\n                                     v35,\n                                     4 * (v40 & (dword_7FF697BBA33C ^ 0x22859482))\n                                   + 2 * ((dword_7FF697BBA33C ^ 0xDD7A6B7D) & v40)\n                                   - (dword_7FF697BBA33C ^ 0xDD7A6B7D ^ v40)\n                                   - 2 * (dword_7FF697BBA33C ^ 0xDD7A6B7D | v40)\n                                   + 4 * ~(dword_7FF697BBA33C ^ 0x22859482 | v40),\n                                     v116,\n                                     ((((v41 - 0x47AB5F28E9136C92LL)\n                                      ^ (11 * (qword_7FF697BBA340 | 0x63BB21706F93694DLL)\n                                       + -11 * (qword_7FF697BBA340 & 0x63BB21706F93694DLL)\n                                       - 8 * (~qword_7FF697BBA340 & 0x3BB21706F93694DLL)\n                                       - 2 * (qword_7FF697BBA340 ^ 0x63BB21706F93694DLL)\n                                       - 10 * (qword_7FF697BBA340 & 0x1C44DE8F906C96B2LL)))\n                                     + v41\n                                     - 0x3C719404FC8208A4LL)\n                                    ^ 0x8A8C0051BF0E8DC8uLL)\n                                   + 0xC2C39481E5D23LL,\n                                     0);\n                            if ( v160 )\n                            {\n                              wmp1_context_free(v160);\n                              if ( !v174 )\n                                goto LABEL_133;\nLABEL_10:\n                              v253 = 1858675515;\n                            }\n                            else\n                            {\n                              v253 = 341612709;\nLABEL_236:\n                              v6 = v34;\n                            }\n                          }\n                          else\n                          {\n                            v93 = v186[v184 + 2];\n                            v185[v184 + 2] = v93;\n                            if ( v93 )\n                            {\n                              key2 = ((qword_7FF697BBA348 + 0x3C156CA24FB760C8LL) & 0x781BC701294981LL)\n                                   + 2 * ((qword_7FF697BBA348 + 0x3C156CA24FB760C8LL) & 0x7F87E438FED6B67ELL)\n                                   - (qword_7FF697BBA348\n                                    + 0x3C156CA24FB760C8LL);\n                              v94 = qword_7FF697BBA348\n                                  + 0x3C156CA24FB760C8LL\n                                  + qword_7FF697BBA348\n                                  + (~(qword_7FF697BBA348 + 0x3C156CA24FB760C8LL) & 0x781BC701294981LL);\n                              key1 = (qword_7FF697BBA348 + 0x3C156CA24FB760C8LL) ^ 0x7F87E438FED6B67ELL;\n                              v95 = key2\n                                  + 2 * key1\n                                  - 2 * (~(qword_7FF697BBA348 + 0x3C156CA24FB760C8LL) & 0x7F87E438FED6B67ELL);\n                              v132 = v184 + v95 + v94 - 0x559D1136DD640A96LL;\n                              if ( v184 + v95 + v94 == 0x559D1136DD640B98LL )\n                                v253 = 1319661532;\n                              else\n                                v253 = 1556533328;\n                            }\n                            else\n                            {\n                              v253 = 395174881;\n                            }\n                          }\n                        }\n                        else if ( v253 == 1723514502 )\n                        {\n                          unary_result_check_slot = (unsigned int (__fastcall **)(__int64))(callback_context + 7);\n                          if ( !callback_context[7] )\n                            return 0;\n                          v253 = 1728798234;\n                        }\n                        else if ( v253 == 1728798234 )\n                        {\n                          input_dword_query_function(v5, &v219, key1, key2);\n                          if ( v219 == LODWORD(NtCurrentTeb()->ClientId.UniqueProcess) )\n                          {\n                            v14 = (dword_7FF697BBA318 ^ 0xE357AFAC) - 1348583040;\n                            (*v158)(\n                              v5,\n                              v124,\n                              ~(v14 | (795536846 - dword_7FF697BBA318))\n                            + 3 * (v14 ^ (795536846 - dword_7FF697BBA318))\n                            + (v14 & (795536846 - dword_7FF697BBA318))\n                            - ((795536846 - dword_7FF697BBA318) & ~v14)\n                            - (~v14 | (795536846 - dword_7FF697BBA318))\n                            - 4 * ~(~v14 | (795536846 - dword_7FF697BBA318))\n                            - (dword_7FF697BBA318 ^ 0xE357AFAC)\n                            - 1904032511);\n                            (*second_buffer_function_slot)(\n                              v5,\n                              v122,\n                              (dword_7FF697BBA31C ^ 0x12620841)\n                            + (dword_7FF697BBA31C ^ 0x12620841)\n                            + (((dword_7FF697BBA31C ^ 0x12620841) + 254644538)\n                             ^ ((dword_7FF697BBA31C ^ 0x12620841) + 1474235637)\n                             ^ (1357561717 - ((dword_7FF697BBA31C ^ 0x12620841u) + dword_7FF697BBA31C)))\n                            - 165558679);\n                            v15 = (*indexed_input_function_slot)(\n                                    v5,\n                                    ((dword_7FF697BBA320 - 61281046) ^ 0x83370D5)\n                                  + ((dword_7FF697BBA320 - 61281046)\n                                   ^ (((dword_7FF697BBA320 - 61281046) ^ 0x83370D5u) + dword_7FF697BBA320 - 1763367526))\n                                  - dword_7FF697BBA320\n                                  + 126307459);\n                            if ( (*unary_result_check_slot)(v15) != 1 )\n                            {\n                              v152 = v15;\n                              v249 = 0;\n                              goto LABEL_240;\n                            }\n                            v253 = 1805766611;\n                          }\n                          else\n                          {\n                            v253 = 309237791;\n                          }\n                        }\n                        else\n                        {\n                          v86 = 2 * ((dword_7FF697BBA324 + 139711513) & 0x2F95E360)\n                              - 6 * ((dword_7FF697BBA324 + 139711513) & 0x506A1C9F)\n                              + 3 * (~(dword_7FF697BBA324 + 139711513) & 0xD06A1C9F)\n                              + 7 * ((dword_7FF697BBA324 + 139711513) ^ 0x2F95E360)\n                              - 3 * (~(dword_7FF697BBA324 + 139711513) & 0x2F95E360)\n                              - 3 * ~(dword_7FF697BBA324 + 139711513);\n                          v87 = (*other_input_function_slot)(\n                                  v5,\n                                  ((((v86 - 14549864) ^ 0xCE91B1A8) + 1490660189)\n                                 ^ (-1055709638 - (((v86 - 14549864) ^ 0xCE91B1A8) + v86)))\n                                - (v86\n                                 - 14549864)\n                                - dword_7FF697BBA324\n                                - dword_7FF697BBA324\n                                + 1692180075);\n                          v88 = (*unary_result_check_slot)(v87);\n                          v152 = v87;\n                          v249 = v88 == 1;\nLABEL_240:\n                          queried_input_pointer = v152;\n                          if ( !v152 || v249 )\n                            goto LABEL_243;\n                          v253 = 1026841301;\n                        }\n                      }\n                      else if ( v253 <= 1603624905 )\n                      {\n                        if ( v253 != 1556533328 )\n                          goto LABEL_127;\n                        v143 = v132;\n                        v253 = 125323345;\n                      }\n                      else\n                      {\n                        if ( v253 == 1603624906 )\n                        {\n                          v51 = v165 + 1;\n                          goto LABEL_297;\n                        }\n                        if ( v253 != 1626611455 )\n                        {\n                          v72 = dword_7FF697BBA380 ^ 0xEC2C44A2;\n                          v73 = (~((dword_7FF697BBA380 ^ 0xEC2C44A2) - 971428557) & 0xDA57D6B9)\n                              + ((v72 - 971428557) & 0xDA57D6B9)\n                              + 2 * ((v72 - 971428557) & 0x25A82946)\n                              - (v72\n                               - 971428557)\n                              + 2 * (((dword_7FF697BBA380 ^ 0xEC2C44A2) - 971428557) ^ 0x25A82946)\n                              - 2 * (~((dword_7FF697BBA380 ^ 0xEC2C44A2) - 971428557) & 0x25A82946);\n                          v74 = 3 * (~v73 & 0x7BBBA3FA) + v73 + 3 * (v73 & 0x7BBBA3FA) - (v73 & 0x84445C05);\n                          v75 = (((v73 | 0x7BBBA3FA) + v74 - 1932717037) | 0xC8B09A28)\n                              + 3 * (((v73 | 0x7BBBA3FA) + v74 - 1932717037) & 0xC8B09A28)\n                              + 2 * (((v73 | 0x7BBBA3FA) + v74 - 1932717037) & 0x374F65D7)\n                              - 2 * ((v73 | 0x7BBBA3FA) + v74 - 1932717037);\n                          v76 = (v73 | 0x7BBBA3FA) + v74 - 687272987;\n                          v77 = v72\n                              + 2 * (v76 & (v72 - 971428557))\n                              - 3 * (v76 & ~((dword_7FF697BBA380 ^ 0xEC2C44A2) - 971428557))\n                              + 4 * ~(v76 & (v72 - 971428557))\n                              - 2 * ~(v76 & ~((dword_7FF697BBA380 ^ 0xEC2C44A2) - 971428557))\n                              - 2 * ~((v72 - 971428557) | v76)\n                              - 3 * ~(~((dword_7FF697BBA380 ^ 0xEC2C44A2) - 971428557) | v76);\n                          v5 = input;\n                          v6 = &v247;\n                          v50 = (v75 | 0x66DC8854)\n                              + 2 * ~(v75 & 0x66DC8854)\n                              - (v75 & 0x66DC8854)\n                              - 4 * (~v75 & 0x26DC8854)\n                              + dword_7FF697BBA380\n                              + 3 * ~(v75 | v77)\n                              + 7 * (v75 ^ v77)\n                              + 2 * (v75 & v77)\n                              - 6 * (v77 & ~v75)\n                              - 3 * ~(~v75 | v77)\n                              - 3 * ~v77\n                              + v169\n                              - 843509591;\n                          goto LABEL_226;\n                        }\n                        v10 = v221[2] == 0;\n                        v166 = v245;\n                        if ( v10 )\n                        {\n                          v51 = v166 + 2;\n                          goto LABEL_297;\n                        }\n                        v253 = 1490673290;\n                      }\n                    }\n                    else if ( v253 <= 2025408877 )\n                    {\n                      if ( v253 <= 1833845028 )\n                      {\n                        if ( v253 == 1816567598 )\n                          goto LABEL_245;\n                        v16 = v178;\nLABEL_142:\n                        v204 = v16;\n                        v43 = v16;\n                        wmp1_copy_bytes((void *)(v16 + (_QWORD)v247), v124, v231);\n                        v228 = v43;\n                        v44 = v231 + v43;\n                        *v250 = v231 + v43;\n                        v203 = v44;\nLABEL_143:\n                        if ( *v225 < 2 || v203 + 2 > *v225 )\n                        {\n                          v236 = v6;\n                          v237 = v203 + 2;\n                          v238 = 37;\n                          v239 = 0x8BA1E53208D15CB0uLL;\n                          sub_7FF697AD42D0();\n                          if ( !v45 )\n                            goto LABEL_146;\n                          v202 = *v250;\n                        }\n                        else\n                        {\n                          v202 = v203;\n                        }\n                        v46 = v202;\n                        v47 = 4 * ((qword_7FF697BBA370 ^ 0x43FB413A5BB76584LL) & 0x1A01CD92E930330LL)\n                            + 2 * ((qword_7FF697BBA370 ^ 0x43FB413A5BB76584LL) & 0x7E5FE326D16CFCCFLL)\n                            - (qword_7FF697BBA370 ^ 0x3DA4A21C8ADB994BLL)\n                            - ((2 * (qword_7FF697BBA370 ^ 0x43FB413A5BB76584LL)) | 0xFCBFC64DA2D9F99EuLL)\n                            + 4 * ((qword_7FF697BBA370 ^ 0x3C04A2048048984BLL) & 0x3E5FE326D16CFCCFLL);\n                        v48 = ((v47 + 0x4CB52D1B18BE9AF8LL) & 0xF622527DD460C341uLL)\n                            + 11 * ((v47 + 0x4CB52D1B18BE9AF8LL) & 0x9DDAD822B9F3CBELL)\n                            - 11 * ~((v47 + 0x4CB52D1B18BE9AF8LL) & 0xF622527DD460C341uLL)\n                            + 10 * (~(v47 + 0x4CB52D1B18BE9AF8LL) & 0x7622527DD460C341LL)\n                            + ~(v47 + 0x4CB52D1B18BE9AF8LL)\n                            + 9 * (~(v47 + 0x4CB52D1B18BE9AF8LL) & 0x9DDAD822B9F3CBELL);\n                        v49 = v47\n                            ^ ((qword_7FF697BBA370 ^ 0x43FB413A5BB76584LL)\n                             - (v47\n                              + 0x4CB52D1B18BE9AF8LL)\n                             - 0x7775703B2DCDA02FLL);\n                        wmp1_copy_bytes(\n                          (void *)(v202 + (_QWORD)v247),\n                          &v234,\n                          ~(~v48 | v49) + (v49 & v48) + 2 * (~v48 & v49) - v49 + 2 * (v49 ^ ~v48) - 2 * ~(v48 | v49));\n                        v201 = v46;\n                        v253 = 445105178;\n                      }\n                      else\n                      {\n                        if ( v253 != 1833845029 )\n                        {\n                          if ( v253 == 1858675515 )\n                            goto LABEL_172;\n                          *v250 = v206 + 2;\n                          goto LABEL_85;\n                        }\n                        v236 = v6;\n                        v237 = v181;\n                        v238 = 62;\n                        v239 = 0x8BA1E53208D15CB0uLL;\n                        sub_7FF697AD42D0();\n                        v211 = *v250;\n                        if ( !v71 )\n                        {\n                          v96 = v211;\n                          goto LABEL_277;\n                        }\n                        v253 = 304618708;\n                      }\n                    }\n                    else if ( v253 > 2081231646 )\n                    {\n                      if ( v253 == 2081231647 )\n                      {\n                        second_buffer_function_slot = (void (__fastcall **)(void *, _OWORD *, _QWORD))(callback_context + 4);\n                        if ( !callback_context[4] )\n                          return 0;\n                        input_dword_query_function = (void (__fastcall *)(_QWORD, _QWORD, _QWORD, _QWORD))callback_context[2];\n                        if ( input_dword_query_function )\n                        {\n                          indexed_input_function_slot = (__int64 (__fastcall **)(void *, _QWORD))(callback_context + 5);\n                          if ( callback_context[5] )\n                            v253 = 985679020;\n                          else\n                            v253 = 73531523;\n                        }\n                        else\n                        {\n                          v253 = 1031113724;\n                        }\n                      }\n                      else\n                      {\n                        if ( v253 != 2107449560 )\n                          return 1;\nLABEL_115:\n                        if ( v183 )\n                          goto LABEL_172;\n                        v253 = 1694343706;\n                      }\n                    }\n                    else\n                    {\n                      if ( v253 == 2025408878 )\n                        goto LABEL_136;\n                      if ( v253 == 2059037979 )\n                      {\n                        v8 = v173;\n                        goto LABEL_153;\n                      }\n                      v131 = v190 + 4;\n                      if ( v190 == 256 )\n                        v253 = 602931878;\n                      else\n                        v253 = 497036297;\n                    }\n                  }\n                  else if ( v253 > 1158698027 )\n                  {\n                    if ( v253 > 1274365739 )\n                    {\n                      if ( v253 > 1377590796 )\n                      {\n                        if ( v253 == 1394869564 )\n                        {\n                          v242 = 100;\n                          goto LABEL_298;\n                        }\n                        if ( v253 != 1490673290 )\n                          return 0;\n                        v10 = v221[3] == 0;\n                        v167 = v245;\n                        if ( v10 )\n                        {\n                          v51 = v167 + 3;\n                          goto LABEL_297;\n                        }\n                        v30 = v221[4];\n                        v168 = v245;\n                        if ( !v30 )\n                        {\n                          v51 = v168 + 4;\n                          goto LABEL_297;\n                        }\n                        v253 = 663041131;\n                      }\n                      else if ( v253 == 1274365740 )\n                      {\n                        v241 = 19 * (v172 & 4)\n                             + 12 * (v172 & 0xFFFFFFFB)\n                             - 11 * (v172 | 0xFFFFFFFB)\n                             - 6 * ~(v172 & 0xFFFFFFFB)\n                             + 7 * ~(v172 | 0xFFFFFFFB)\n                             + 17 * (~v172 & 0xFFFFFFFB);\nLABEL_227:\n                        v217 = v241;\n                        key2 = 2 * (~dword_7FF697BBA384 & 0x78CC08EDu);\n                        v78 = ((2 * ~(dword_7FF697BBA384 - 5)) | 0x8A)\n                            - ((dword_7FF697BBA384 - 5) ^ 0x3A)\n                            - 2 * (~(dword_7FF697BBA384 - 5) & 0xC5);\n                        v216 = v241 << (2 * (dword_7FF697BBA384 & 0x12)\n                                      - 3 * (~(_BYTE)dword_7FF697BBA384 & 0x12)\n                                      + 4 * ~(dword_7FF697BBA384 & 0x12)\n                                      - 2 * ~(~(_BYTE)dword_7FF697BBA384 & 0x12)\n                                      - 2 * (~(_BYTE)dword_7FF697BBA384 & 0xED)\n                                      - 3 * (dword_7FF697BBA384 & 0xED)\n                                      - (dword_7FF697BBA384\n                                       - 5)\n                                      + v78\n                                      + 18\n                                      - ((v78 + 18) ^ 0x3A));\n                        v79 = *v225;\n                        v80 = *v250;\n                        key1 = *v250 + v216;\n                        v215 = *v250 + v216;\n                        if ( v216 <= v79 && v215 <= v79 )\n                        {\n                          v199 = v80;\n                          goto LABEL_230;\n                        }\n                        v253 = 191981287;\n                      }\n                      else\n                      {\n                        if ( v253 != 1300070836 )\n                        {\n                          v121 = 0;\n                          goto LABEL_214;\n                        }\n                        v11 = v222[2];\n                        v162 = v246;\n                        if ( !v11 )\n                        {\n                          v7 = v162 + 2;\n                          goto LABEL_272;\n                        }\n                        v253 = 402756322;\n                      }\n                    }\n                    else if ( v253 > 1248743189 )\n                    {\n                      if ( v253 == 1248743190 )\n                      {\n                        v233 = (unsigned __int16)v176;\n                        v62 = *v133;\n                        if ( (unsigned __int16)v176 > *v133 )\n                          goto LABEL_201;\n                        v188 = (int *)(v224 + 8);\n                        v175 = *(_DWORD *)(v224 + 8);\n                        key2 = 11 * ~(v175 & v233);\n                        key1 = v175 & ~v233;\n                        if ( (_DWORD)key2\n                           + 11 * (v233 | v175)\n                           - (21 * (_DWORD)key1\n                            + 9 * (v175 & v233))\n                           - 11 * ~(v233 | v175)\n                           - 21 * ~(~v233 | v175) <= v62 )\n                          v253 = 272349097;\n                        else\n                          v253 = 124306050;\n                      }\n                      else\n                      {\n                        if ( v253 != 1272288546 )\n                          goto LABEL_323;\nLABEL_315:\n                        if ( v240 && v155 )\n                          v253 = 1248743190;\n                        else\n                          v253 = 1115446080;\n                      }\n                    }\n                    else if ( v253 == 1158698028 )\n                    {\n                      v13 = v147;\n                      v12 = v196 + 4;\n                      *v250 = v196 + 4;\nLABEL_311:\n                      v146 = v13;\n                      v195 = v12;\n                      v176 = v12;\n                      v155 = v13;\n                      v224 = *v135;\n                      v240 = v12;\n                      pointer_region_record[0] = queried_input_pointer;\n                      pointer_region_record[1] = *((_QWORD *)&v127 + 1);\n                      pointer_region_record[2] = DWORD1(v128);\n                      pointer_region_record[3] = queried_input_pointer - region_query_buffer;\n                      LOBYTE(pointer_region_record[4]) = 0;\n                      *(_WORD *)((char *)&pointer_region_record[4] + 1) = v12;\n                      v105 = 6 * (word_7FF697BBA390 ^ 0xD50D | 0x97)\n                           + (((unsigned __int8)word_7FF697BBA390 ^ 0xD) & 0x97)\n                           + 7 * ~(word_7FF697BBA390 ^ 0xD50D | 0x97);\n                      v106 = word_7FF697BBA390\n                           ^ (3 * ~(~(19610 - v105) | (v105 - 24315))\n                            + 5 * ~((19610 - v105) | (v105 - 24315))\n                            + 8 * ((v105 - 24315) & ~(19610 - v105))\n                            - 2 * ((v105 - 24315) ^ (19610 - v105))\n                            - 5 * ~(19610 - v105)\n                            - ((-6561 - v105) ^ 0x58C5));\n                      v107 = ~((-7 - v105) | v106)\n                           + 3 * ((-7 - v105) ^ v106)\n                           + ((-7 - v105) & v106)\n                           - (v106 & ~(-7 - v105))\n                           - (~(-7 - v105) | v106)\n                           - 4 * ~(~(-7 - v105) | v106);\n                      *(_WORD *)((char *)&pointer_region_record[4] + 3) = word_7FF697BBA390\n                                                                        ^ 0xD50D\n                                                                        ^ (4 * (v107 & ~(-6561 - v105))\n                                                                         + 2 * ((-6561 - v105) & v107)\n                                                                         - ((-6561 - v105) ^ v107)\n                                                                         - 2 * ((-6561 - v105) | v107)\n                                                                         + 4 * ~(~(-6561 - v105) | v107));\n                      v133 = (unsigned int *)(v224 + 12);\n                      v108 = *(_DWORD *)(v224 + 12);\n                      v109 = (dword_7FF697BBA394 | 0x6E7BEA46)\n                           + 3 * (dword_7FF697BBA394 & 0x6E7BEA46)\n                           + 2 * (dword_7FF697BBA394 & 0x118415B9)\n                           - 2 * dword_7FF697BBA394;\n                      key1 = 11 * (((v109 ^ 0xF10F99A2) - 1672552050) | 0x96FAA5AD)\n                           + -11 * (((v109 ^ 0xF10F99A2) - 1672552050) & 0x96FAA5AD)\n                           - 9 * (((v109 ^ 0xF10F99A2) - 1672552050) & 0x69055A52)\n                           - (((v109 ^ 0xF10F99A2) - 1672552050) ^ 0x96FAA5AD)\n                           - 11 * (~((v109 ^ 0xF10F99A2) - 1672552050) & 0x96FAA5AD);\n                      v110 = -7 - (7 * ~(key1 | 0x5E72A5A7) + (key1 & 0x5E72A5A7) + 6 * (key1 | 0x5E72A5A7));\n                      key2 = v110 ^ 0x1D9B19C8u;\n                      if ( v108 < v109\n                                + ((unsigned int)key2\n                                 ^ (((unsigned int)key1 ^ ((v109 ^ 0xFC6AD386) - (_DWORD)key2))\n                                  - ((v109 ^ 0xF10F99A2)\n                                   - 1672552050))\n                                 ^ 0x414E2023)\n                                - v110 )\n                        goto LABEL_315;\n                      v111 = v224;\n                      v112 = *(unsigned int *)(v224 + 8);\n                      if ( (int)v112 + 37 <= v108 )\n                      {\n                        qmemcpy((void *)(*(_QWORD *)v224 + v112), pointer_region_record, 0x25u);\n                        v113 = ~*(_DWORD *)(v111 + 8);\n                        key1 = 9 * (~*(_BYTE *)(v111 + 8) & 0x25u);\n                        v115 = 7 * v113;\n                        key2 = 10 * (v113 & 0x7FFFFFDAu);\n                        *(_DWORD *)(v111 + 8) = v115\n                                              + 3 * ~(*(_DWORD *)(v111 + 8) & 0x25)\n                                              + 2 * (*(_DWORD *)(v111 + 8) & 0x25)\n                                              - 2 * (*(_DWORD *)(v111 + 8) & 0x7FFFFFDA)\n                                              - key2\n                                              - key1;\n                        goto LABEL_315;\n                      }\n                      v253 = 614421851;\n                    }\n                    else\n                    {\n                      if ( v253 == 1209370938 )\n                        goto LABEL_273;\nLABEL_151:\n                      v144 = v187;\n                      v186 = v187;\n                      v129[1] = *v136 ^ 0x43DD10D1FD2B4B7CLL;\n                      v129[0] = 0xDC01B9527075B783uLL;\n                      v226 = sub_7FF697ADC650(\n                               0xC7CB249E46D9BBBCuLL,\n                               v129,\n                               72,\n                               4 * (v223 & 0x17D58DF6487D281ALL)\n                             + 2 * (v223 & 0x682A7209B782D7E5LL)\n                             - (v223 ^ 0xE82A7209B782D7E5uLL)\n                             - ((2 * v223) | 0xD054E4136F05AFCAuLL)\n                             + 4 * (~v223 & 0x282A7209B782D7E5LL));\n                      if ( v226 )\n                        v253 = 991130569;\n                      else\n                        v253 = 1092835642;\n                    }\n                  }\n                  else if ( v253 > 1104317662 )\n                  {\n                    if ( v253 > 1115446079 )\n                    {\n                      if ( v253 == 1115446080 )\n                        goto LABEL_201;\n                      if ( v253 != 1120694325 )\n                        goto LABEL_175;\n                      v16 = v212;\n                      goto LABEL_142;\n                    }\n                    if ( v253 == 1104317663 )\n                      goto LABEL_143;\n                    v223 = (unsigned __int64)v117;\n                    v145 = v117;\n                    v192 = 0;\nLABEL_136:\n                    v8 = v192;\n                    v187 = v145;\n                    v42 = *v145;\n                    if ( v42 == 48 )\n                      goto LABEL_151;\n                    if ( v42 == 92 )\n                    {\n                      v173 = v192 + 1;\n                      if ( v192 == 2 )\n                        v253 = 1244597117;\n                      else\n                        v253 = 2059037979;\n                    }\n                    else\n                    {\nLABEL_153:\n                      v191 = v8;\n                      v145 = v187 + 1;\n                      v192 = v8;\n                      v253 = 2025408878;\n                    }\n                  }\n                  else if ( v253 > 1026841300 )\n                  {\n                    if ( v253 > 1052226031 )\n                    {\n                      if ( v253 != 1092835642 )\n                        return 0;\n                      if ( !v223 )\n                        goto LABEL_172;\n                      v142 = 0;\nLABEL_169:\n                      v190 = v142;\n                      v52 = *(_WORD *)(v223 + 2 * v142);\n                      *(&sfc_path_first_word + v142) = v52;\n                      if ( v52 )\n                      {\n                        v53 = *(_WORD *)(v223 + 2 * v190 + 2);\n                        v120[v190 - 1] = v53;\n                        if ( !v53 )\n                          goto LABEL_172;\n                        v253 = 851152392;\n                      }\n                      else\n                      {\n                        v253 = 826225829;\n                      }\n                    }\n                    else\n                    {\n                      if ( v253 != 1026841301 )\n                        return 0;\n                      allocated_stub = 0;\n                      v17 = dword_7FF697BBA328 - ((dword_7FF697BBA328 + 1551081019) ^ 0x9A86884A) - 2079005646;\n                      v18 = (__int64 (__fastcall *)(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD))wmp1_selector6_dependency_0x7ff697ade690(11 * ~(v17 & (dword_7FF697BBA328 + 1551081019)) + 11 * ((dword_7FF697BBA328 + 1551081019) | v17) - (21 * (v17 & ~(dword_7FF697BBA328 + 1551081019)) + 9 * (v17 & (dword_7FF697BBA328 + 1551081019))) - 11 * ~((dword_7FF697BBA328 + 1551081019) | v17) - 21 * ~(~(dword_7FF697BBA328 + 1551081019) | v17) + 715929255, &allocated_stub, 0);\n                      v19 = (dword_7FF697BBA32C + 2079374935) ^ 0x15DAF036;\n                      v20 = (v19 + 866290215) ^ 0xEDB65C0E;\n                      v21 = 2 * (dword_7FF697BBA32C & 0x42660CDD)\n                          - 3 * (~dword_7FF697BBA32C & 0x42660CDD)\n                          + 4 * ~(dword_7FF697BBA32C & 0x42660CDD)\n                          - 2 * ~(~dword_7FF697BBA32C & 0x42660CDD)\n                          - 2 * (~dword_7FF697BBA32C & 0x3D99F322)\n                          - 3 * (dword_7FF697BBA32C & 0xBD99F322)\n                          - v19;\n                      v22 = ~(v19 + 866290215);\n                      v23 = v19 + 10 * (v19 + 866290215) + 866290215;\n                      v19 += 866290215;\n                      v24 = (v19 | v21) + v23 + (v21 & v22) - 11 * (v21 & v19) - 11 * ~(v22 | v21) - v21;\n                      v25 = 4 * (v24 & ~(dword_7FF697BBA32C - 1148527944))\n                          + 2 * ((dword_7FF697BBA32C - 1148527944) & v24)\n                          - ((dword_7FF697BBA32C - 1148527944) ^ v24)\n                          - 2 * ((dword_7FF697BBA32C - 1148527944) | v24)\n                          + 4 * ~(~(dword_7FF697BBA32C - 1148527944) | v24)\n                          + v20\n                          + 3 * ((v19 ^ 0x120003A0) & 0x3B901BA2)\n                          + 2 * ~(v20 & 0xC46FE45D)\n                          - (2 * (v20 & 0x3B901BA2)\n                           - 3 * (v20 & 0xC46FE45D)\n                           + 4 * ~(v20 & 0x3B901BA2))\n                          + 2 * ((v19 ^ 0x49A051) & 0x446FE45D);\n                      v26 = (qword_7FF697BBA330 + 0x61696D2111305E6LL) ^ 0x87D537F388897762uLL;\n                      v27 = 3 * (~(v26 - 0x4C7FC81473E8F59CLL) & 0x8F90B4640BEDE2E9uLL)\n                          + 5 * (~(v26 - 0x4C7FC81473E8F59CLL) & 0x706F4B9BF4121D16LL)\n                          + 8 * ((v26 - 0x4C7FC81473E8F59CLL) & 0x106F4B9BF4121D16LL)\n                          - 2 * ((v26 - 0x4C7FC81473E8F59CLL) ^ 0xF90B4640BEDE2E9LL);\n                      v28 = qword_7FF697BBA330\n                          + 0x61696D2111305E6LL\n                          + (qword_7FF697BBA330\n                           ^ (4\n                            * (((qword_7FF697BBA330 + 0x61696D2111305E6LL) ^ 0x82AC80443160800LL) & 0xFFAEB27439F2A40LL)\n                            + 2 * (v26 & 0x4FFAEB27439F2A40LL)\n                            - ((qword_7FF697BBA330 + 0x61696D2111305E6LL) ^ 0xC82FDCD4CB165D22uLL)\n                            - ((2 * v26) | 0x9FF5D64E873E5480uLL)\n                            + 4 * (v26 & 0x300514D8BC60D5BFLL)));\n                      v183 = v18(\n                               -1,\n                               queried_input_pointer,\n                               v25,\n                               &region_query_buffer,\n                               (qword_7FF697BBA330 - 0x5959D1C6D5BBA084LL)\n                             ^ (((qword_7FF697BBA330 - 0x581DEB2114AC9BCBLL) | v28)\n                              + 11 * (qword_7FF697BBA330 - 0x581DEB2114AC9BCBLL)\n                              + (v28 & ~(qword_7FF697BBA330 - 0x581DEB2114AC9BCBLL))\n                              - 11 * (v28 & (qword_7FF697BBA330 - 0x581DEB2114AC9BCBLL))\n                              - 11 * ~(~(qword_7FF697BBA330 - 0x581DEB2114AC9BCBLL) | v28)\n                              - v28\n                              + v27\n                              - 0x322C7A0BC45A916ELL),\n                               0);\n                      if ( allocated_stub )\n                      {\n                        wmp1_context_free(allocated_stub);\n                        v5 = input;\n                        v6 = &v247;\n                        goto LABEL_115;\n                      }\n                      v253 = 2107449560;\n                      v5 = input;\n                      v6 = &v247;\n                    }\n                  }\n                  else if ( v253 <= 991130568 )\n                  {\n                    if ( v253 != 985679020 )\n                      return 0;\n                    other_input_function_slot = (__int64 (__fastcall **)(void *, _QWORD))(callback_context + 6);\n                    if ( callback_context[6] )\n                    {\n                      sfc_named_lookup_slot = (unsigned int (__fastcall **)(_QWORD, __int16 *, unsigned __int64, unsigned __int64))(callback_context + 8);\n                      if ( callback_context[8] )\n                      {\n                        v136 = callback_context + 9;\n                        if ( callback_context[9] )\n                        {\n                          if ( *callback_context )\n                          {\n                            v135 = callback_context + 1;\n                            if ( callback_context[1] )\n                              v253 = 1723514502;\n                            else\n                              v253 = 1377590797;\n                          }\n                          else\n                          {\n                            v253 = 557270768;\n                          }\n                        }\n                        else\n                        {\n                          v253 = 984790279;\n                        }\n                      }\n                      else\n                      {\n                        v253 = 770346782;\n                      }\n                    }\n                    else\n                    {\n                      v253 = 1052226032;\n                    }\n                  }\n                  else\n                  {\n                    if ( v253 == 991130569 )\n                    {\n                      sfc_path_first_word = v226;\n                      v119 = 58;\n                      v185 = v120;\n                      v143 = 0;\n                      goto LABEL_120;\n                    }\n                    v61 = (char *)*v141;\n                    v219 = 0;\n                    v247 = 0;\n                    v248 = 0;\n                    memset(v122, 0, sizeof(v122));\n                    v123 = 0;\n                    memset(v124, 0, sizeof(v124));\n                    v125 = 0;\n                    sub_7FF697ADFAE0((__int64)v116, 0, 0x410u);\n                    sub_7FF697ADFAE0((__int64)&sfc_path_first_word, 0, 0x208u);\n                    v128 = 0;\n                    v127 = 0;\n                    region_query_buffer = 0;\n                    if ( v61 )\n                    {\n                      callback_context = v61;\n                      v158 = (void (__fastcall **)(void *, _OWORD *, _QWORD))(v61 + 24);\n                      if ( *((_QWORD *)v61 + 3) )\n                        v253 = 2081231647;\n                      else\n                        v253 = 525965080;\n                    }\n                    else\n                    {\n                      v253 = 328081862;\n                    }\n                  }\n                }\n                if ( v253 <= 497036296 )\n                  break;\n                if ( v253 > 770346781 )\n                {\n                  if ( v253 > 838773497 )\n                  {\n                    if ( v253 <= 874771821 )\n                    {\n                      if ( v253 == 838773498 )\n                      {\n                        v32 = v222[4];\n                        key1 = ((unsigned __int16)word_7FF697BBA362 - 9673) ^ 0x1CE2u;\n                        key2 = 2 * (unsigned __int16)word_7FF697BBA362\n                             + 11 * ((((unsigned __int16)word_7FF697BBA362 - 9673) ^ 0x14A2) & 0xFFFF97AF);\n                        v164 = v246;\n                        if ( v32 == 11 * ((unsigned __int16)(word_7FF697BBA362 - 9673) ^ 0x8B4D | 0x97AF)\n                                  + -11 * (((unsigned __int16)(word_7FF697BBA362 - 9673) ^ 0x8B4D) & 0x97AF)\n                                  - 9 * (((unsigned __int16)(word_7FF697BBA362 - 9673) ^ 0x8B4D) & 0x6850)\n                                  - ((unsigned __int16)(word_7FF697BBA362 - 9673) ^ 0x1CE2)\n                                  - (2 * word_7FF697BBA362\n                                   + 11 * (((unsigned __int16)(word_7FF697BBA362 - 9673) ^ 0x14A2) & 0x97AF))\n                                  + ((unsigned __int16)(word_7FF697BBA362 - 9673) ^ 0x8B4D)\n                                  - 1589 )\n                        {\n                          v7 = v164 + 4;\n                          goto LABEL_272;\n                        }\n                        v253 = 972085455;\n                      }\n                      else\n                      {\n                        v64 = *(_WORD *)(v223 + 2 * v190 + 4);\n                        v120[v190] = v64;\n                        if ( v64 )\n                          v253 = 825193256;\n                        else\n                          v253 = 489029904;\n                      }\n                    }\n                    else if ( v253 == 874771822 )\n                    {\nLABEL_246:\n                      v222 = v151;\n                      v246 = v210;\n                      if ( *v151 )\n                      {\n                        v91 = v222[1];\n                        v92 = ((word_7FF697BBA360 - 3840) | 0xFFFF9078)\n                            + 3 * (~((unsigned __int16)word_7FF697BBA360 - 3840) & 0xFFFF9078)\n                            + 3 * (((unsigned __int16)word_7FF697BBA360 - 3840) & 0xFFFF9078)\n                            - (((unsigned __int16)word_7FF697BBA360 - 3840) & 0x6F87)\n                            + (unsigned __int16)word_7FF697BBA360\n                            - 3840\n                            + 20121;\n                        key1 = (v92 ^ 0xFFFFCC3A) - 17092;\n                        key2 = 6 * (~(((unsigned __int16)v92 ^ 0xCC3A) - 17092) & 0x4CA3u);\n                        v161 = v246;\n                        if ( v91 == ((unsigned __int16)v92\n                                   ^ (unsigned __int16)((word_7FF697BBA360\n                                                       ^ (6 * (~((v92 ^ 0xCC3A) - 17092) & 0x4CA3)\n                                                        + (((v92 ^ 0xCC3A) - 17092) ^ 0xB35C)\n                                                        + 6 * (((v92 ^ 0xCC3A) - 17092) & 0x4CA3)\n                                                        + 6 * (((v92 ^ 0xCC3A) - 17092) & 0x335C)\n                                                        - 3 * ((2 * (v92 ^ 0xCC3A) + 31352) | 0x9946))\n                                                       ^ 0x33B0)\n                                                      + word_7FF697BBA360\n                                                      - 3840\n                                                      - ((v92 ^ 0xCC3A)\n                                                       - 17092))) )\n                          v253 = 521401489;\n                        else\n                          v253 = 1300070836;\n                      }\n                      else\n                      {\n                        v253 = 963858037;\n                      }\n                    }\n                    else\n                    {\n                      if ( v253 == 963858037 )\n                      {\n                        v7 = v246;\n                        goto LABEL_272;\n                      }\n                      if ( v246 == 95 )\n                      {\n                        v243 = 100;\n                        v253 = 1209370938;\n                      }\n                      else\n                      {\n                        v210 = v246 + 5;\n                        v151 = v222 + 5;\n                        v253 = 874771822;\n                      }\n                    }\n                  }\n                  else if ( v253 <= 816210990 )\n                  {\n                    if ( v253 == 783851927 )\n                    {\n                      v10 = v220[1] == 0;\n                      v169 = v244;\n                      if ( v10 )\n                      {\n                        v253 = 1652120551;\n                      }\n                      else\n                      {\n                        v10 = v220[2] == 0;\n                        v170 = v244;\n                        if ( v10 )\n                        {\n                          v50 = v170 + 2;\n                          goto LABEL_226;\n                        }\n                        v10 = v220[3] == 0;\n                        v171 = v244;\n                        if ( v10 )\n                        {\n                          v50 = v171 + 3;\n                          goto LABEL_226;\n                        }\n                        v58 = v220[4];\n                        v59 = (unsigned __int16)word_7FF697BBA378 ^ 0x6DAD;\n                        key1 = (v59 - 22596) ^ 0xFFFFF0D1;\n                        key2 = (unsigned __int16)word_7FF697BBA378\n                             ^ (-32054 - (v59 + (unsigned int)key1 + ((v59 - 22596) ^ 0xFFFFE916) + v59 - 22596));\n                        v172 = v244;\n                        if ( v58 == ((unsigned __int16)(v59 - 22596) ^ 0xF0D1)\n                                  + ((unsigned __int16)word_7FF697BBA378\n                                   ^ (unsigned __int16)(-32054\n                                                      - (v59\n                                                       + ((v59 - 22596) ^ 0xF0D1)\n                                                       + ((v59 - 22596) ^ 0xE916)\n                                                       + v59\n                                                       - 22596)))\n                                  + 19883 )\n                        {\n                          v253 = 1274365740;\n                        }\n                        else\n                        {\n                          v218 = v244 + 5;\n                          v134 = v220 + 5;\n                          v103 = (dword_7FF697BBA37C ^ 0xA2E326C) - 2042550263;\n                          v104 = 8 * (~dword_7FF697BBA37C & 0x14CC58BC)\n                               - 2 * (dword_7FF697BBA37C ^ 0x34CC58BC)\n                               + 3 * (dword_7FF697BBA37C & 0xCB33A743)\n                               + 5 * (~dword_7FF697BBA37C & 0xCB33A743)\n                               - 5 * ~dword_7FF697BBA37C;\n                          key2 = 11 * ~(~v103 | v104);\n                          key1 = 9 * (v104 & ~v103);\n                          if ( v244 + 5 == 11 * (v103 | v104)\n                                         + -11 * (v103 & v104)\n                                         - (_DWORD)key1\n                                         - (v103 ^ v104)\n                                         - (_DWORD)key2\n                                         - (dword_7FF697BBA37C ^ 0xA2E326C) )\n                          {\n                            v241 = 260;\n                            goto LABEL_227;\n                          }\n                          v253 = 35075629;\n                        }\n                      }\n                    }\n                    else\n                    {\n                      if ( v253 != 804132890 )\n                        return 0;\n                      v29 = v213;\nLABEL_231:\n                      v198 = v29;\n                      if ( *v225 >= 4 && v29 + 4 <= *v225 )\n                      {\n                        v148 = (char *)v247;\n                        v197 = v29;\nLABEL_235:\n                        v34 = v6;\n                        v83 = v197;\n                        v84 = v148;\n                        v85 = ~((qword_7FF697BBA388 - 0xAEF23BAB1E3844LL) | 0xD0E7086F03FB0D8DuLL)\n                            + 6 * ((qword_7FF697BBA388 - 0xAEF23BAB1E3844LL) & 0x50E7086F03FB0D8DLL)\n                            + 8 * ((qword_7FF697BBA388 - 0xAEF23BAB1E3844LL) & 0xF18F790FC04F272LL)\n                            - 5 * ((qword_7FF697BBA388 - 0xAEF23BAB1E3844LL) | 0xD0E7086F03FB0D8DuLL)\n                            - 3 * ((qword_7FF697BBA388 - 0xAEF23BAB1E3844LL) ^ 0xD0E7086F03FB0D8DuLL)\n                            + 8 * (~(qword_7FF697BBA388 - 0xAEF23BAB1E3844LL) & 0x10E7086F03FB0D8DLL);\n                        wmp1_copy_bytes(\n                          &v148[v197],\n                          &v234,\n                          ((v85\n                          ^ (3 * (((v85 + 0x782FA864C43CE2F3LL) ^ 0x438420FFD16E34D9LL) & 0x34267C9A3D27E95FLL)\n                           + 7 * ((v85 + 0x782FA864C43CE2F3LL) ^ 0x77A25C65EC49DD86LL)\n                           + 2 * (((v85 + 0x782FA864C43CE2F3LL) ^ 0xBC7BDF002E91CB26uLL) & 0x4BD98365C2D816A0LL)\n                           - 6 * (((v85 + 0x782FA864C43CE2F3LL) ^ 0x438420FFD16E34D9LL) & 0x4BD98365C2D816A0LL)\n                           - 3 * (((v85 + 0x782FA864C43CE2F3LL) ^ 0xBC7BDF002E91CB26uLL) & 0x34267C9A3D27E95FLL)\n                           + 0x638C8A31488843E3LL))\n                         - (qword_7FF697BBA388\n                          - 0xAEF23BAB1E3844LL))\n                        ^ (((v85 + 0x782FA864C43CE2F3LL) ^ 0xBC7BDF002E91CB26uLL) + 0x5843E1AE8BDDAB56LL)\n                        ^ (qword_7FF697BBA388 - 0x23A6F127430622D0LL)\n                        ^ qword_7FF697BBA388);\n                        v147 = v84;\n                        v196 = v83;\n                        v253 = 1158698028;\n                        goto LABEL_236;\n                      }\n                      v236 = v6;\n                      v237 = v29 + 4;\n                      v238 = 38;\n                      v239 = 0x8BA1E53208D15CC3uLL;\n                      sub_7FF697AD42D0();\n                      v214 = *v250;\n                      v153 = (char *)v247;\n                      if ( v82 )\n                      {\n                        v148 = v153;\n                        v197 = v214;\n                        v253 = 321182081;\n                      }\n                      else\n                      {\n                        v253 = 252580720;\n                      }\n                    }\n                  }\n                  else\n                  {\n                    if ( v253 != 825193256 )\n                      goto LABEL_172;\n                    v9 = *(_WORD *)(v223 + 2 * v190 + 6);\n                    v120[v190 + 1] = v9;\n                    if ( !v9 )\n                      goto LABEL_172;\n                    v253 = 2061595061;\n                  }\n                }\n                else if ( v253 > 607093406 )\n                {\n                  if ( v253 <= 630392755 )\n                  {\n                    if ( v253 == 607093407 )\n                      v253 = 1262057442;\n                    else\n                      v253 = 1272288546;\n                  }\n                  else if ( v253 == 630392756 )\n                  {\nLABEL_85:\n                    v205 = 0;\n                    v150 = v124;\nLABEL_127:\n                    v221 = v150;\n                    v245 = v205;\n                    if ( *v150 )\n                    {\n                      v33 = v221[1];\n                      v165 = v245;\n                      if ( v33 )\n                        v253 = 1626611455;\n                      else\n                        v253 = 1603624906;\n                    }\n                    else\n                    {\n                      v51 = v245;\nLABEL_297:\n                      v242 = v51;\nLABEL_298:\n                      v179 = v242;\n                      v231 = 2 * v242;\n                      v102 = *v225;\n                      v178 = *v250;\n                      key1 = v178;\n                      v177 = v178 + 2 * v242;\n                      if ( 2 * v242 > v102 || v178 + 2 * v242 > v102 )\n                        v253 = 85611068;\n                      else\n                        v253 = 1826208346;\n                    }\n                  }\n                  else if ( v253 == 663041131 )\n                  {\n                    if ( v245 == 95 )\n                    {\n                      v253 = 1394869564;\n                    }\n                    else\n                    {\n                      v205 = v245 + 5;\n                      v150 = v221 + 5;\n                      v253 = 1599380789;\n                    }\n                  }\n                  else\n                  {\n                    v63 = v186[v184 + 1];\n                    v185[v184 + 1] = v63;\n                    if ( !v63 )\n                      goto LABEL_214;\n                    v253 = 1695662684;\n                  }\n                }\n                else\n                {\n                  if ( v253 > 525798689 )\n                  {\n                    if ( v253 != 602931878 )\n                      return 0;\n                    v121 = 0;\nLABEL_172:\n                    named_sfc_nonzero = 0;\n                    goto LABEL_215;\n                  }\n                  if ( v253 == 497036297 )\n                  {\n                    v142 = v131;\n                    v253 = 57459630;\n                  }\n                  else\n                  {\n                    v7 = v161 + 1;\nLABEL_272:\n                    v243 = v7;\nLABEL_273:\n                    v182 = v243;\n                    v232 = 2 * v243;\n                    v97 = *v225;\n                    key1 = (unsigned int)(2 * v243);\n                    v98 = *v250;\n                    v99 = *v250 + 2 * v243;\n                    v181 = v99;\n                    if ( (unsigned int)key1 > v97 || v99 > v97 )\n                    {\n                      v253 = 1833845029;\n                    }\n                    else\n                    {\n                      v209 = v98;\nLABEL_276:\n                      v100 = v209;\n                      wmp1_copy_bytes((void *)(v209 + (_QWORD)v247), v122, v232);\n                      v229 = v100;\n                      v96 = v232 + v100;\n                      *v250 = v232 + v100;\nLABEL_277:\n                      v208 = v96;\n                      v101 = *v225;\n                      v180 = v96 + 2;\n                      if ( v101 < 2 || v96 + 2 > v101 )\n                      {\n                        v253 = 334712425;\n                      }\n                      else\n                      {\n                        v207 = v96;\n                        v253 = 1121545263;\n                      }\n                    }\n                  }\n                }\n              }\n              if ( v253 <= 304618707 )\n                break;\n              if ( v253 > 346059054 )\n              {\n                if ( v253 <= 406938401 )\n                {\n                  if ( v253 == 395174881 )\n                  {\nLABEL_214:\n                    named_sfc_nonzero = (*sfc_named_lookup_slot)(0, &sfc_path_first_word, key1, key2) != 0;\nLABEL_215:\n                    Ldr = NtCurrentPeb()->Ldr;\n                    Flink = Ldr->InLoadOrderModuleList.Flink;\n                    if ( Flink == &Ldr->InLoadOrderModuleList )\n                      Flink = nullptr;\n                    v67 = (unsigned __int64)Flink[3].Flink;\n                    v68 = v67 + LODWORD(Flink[4].Flink);\n                    key1 = queried_input_pointer;\n                    v69 = queried_input_pointer >= v67;\n                    v70 = queried_input_pointer < v68;\n                    if ( named_sfc_nonzero || v70 && v69 )\n                      v253 = 2096636096;\n                    else\n                      v253 = 96217060;\n                  }\n                  else\n                  {\n                    if ( v253 != 402756322 )\n                      return v230;\n                    v10 = v222[3] == 0;\n                    v163 = v246;\n                    if ( v10 )\n                    {\n                      key2 = v163 ^ 0x3FFFFFFCu;\n                      v7 = 8 * (v163 & 0x1FFFFFFC)\n                         - 2 * (v163 & 3)\n                         - 7 * (v163 ^ 3)\n                         + 4 * key2\n                         - 4 * (~v163 & 0x3FFFFFFC)\n                         + 8 * (~(_BYTE)v163 & 3);\n                      goto LABEL_272;\n                    }\n                    v253 = 838773498;\n                  }\n                }\n                else\n                {\n                  if ( v253 != 445105178 )\n                    goto LABEL_172;\n                  key1 = 4 * (~v201 & 0x3FFFFFFD);\n                  *v250 = (~v201 | 2) - 2 * v201 - key1 - 3 * (~(_BYTE)v201 & 2) - 3;\nLABEL_146:\n                  v200 = 0;\n                  p_sfc_path_first_word = &sfc_path_first_word;\nLABEL_147:\n                  v220 = p_sfc_path_first_word;\n                  v244 = v200;\n                  if ( !*p_sfc_path_first_word )\n                  {\n                    v50 = v244;\nLABEL_226:\n                    v241 = v50;\n                    goto LABEL_227;\n                  }\n                  v253 = 783851927;\n                }\n              }\n              else\n              {\n                if ( v253 <= 334712424 )\n                {\n                  if ( v253 <= 321182080 )\n                  {\n                    if ( v253 != 304618708 )\n                      return 1;\n                    v209 = v211;\n                    goto LABEL_276;\n                  }\n                  if ( v253 != 321182081 )\n                    return 0;\n                  goto LABEL_235;\n                }\n                if ( v253 == 334712425 )\n                {\n                  v236 = v6;\n                  v237 = v180;\n                  v238 = 28;\n                  v239 = 0x8BA1E53208D15CA0uLL;\n                  sub_7FF697AD42D0();\n                  if ( v54 )\n                  {\n                    v207 = *v250;\nLABEL_175:\n                    v55 = 9\n                        * (((qword_7FF697BBA368 + 0x1D38460DC4FA5912LL) ^ 0x84E826A8E6EEDA23uLL) & 0x18562FE92B44B207LL)\n                        + 4\n                        * (((qword_7FF697BBA368 + 0x1D38460DC4FA5912LL) ^ 0x84E826A8E6EEDA23uLL) & 0x27A9D016D4BB4DF8LL)\n                        - 3\n                        * ((qword_7FF697BBA368 + 0x1D38460DC4FA5912LL) ^ 0x84E826A8E6EEDA23uLL | 0x18562FE92B44B207LL)\n                        + 10\n                        * (((qword_7FF697BBA368 + 0x1D38460DC4FA5912LL) ^ 0x1816094109002004LL) & 0x18562FE92B44B207LL)\n                        + 0x6DFAE088FC63D3D6LL;\n                    v56 = v207;\n                    wmp1_copy_bytes(\n                      (void *)(v207 + (_QWORD)v247),\n                      &v234,\n                      (v55 ^ 0x9749BD5429384747uLL)\n                    + ((qword_7FF697BBA368 + 0x1D38460DC4FA5912LL) ^ 0x84E826A8E6EEDA23uLL)\n                    + (v55\n                     ^ (((qword_7FF697BBA368 + 0x1D38460DC4FA5912LL) ^ 0xEB2414D4C8D7CA6BuLL)\n                      - qword_7FF697BBA368\n                      - 0x4A714627CE831FDALL))\n                    - qword_7FF697BBA368\n                    + 0x65C3090086A0AF5FLL);\n                    v206 = v56;\n                    v253 = 1909879925;\n                  }\n                  else\n                  {\n                    v253 = 630392756;\n                  }\n                }\n                else\n                {\n                  if ( v174 )\n                    goto LABEL_10;\nLABEL_133:\n                  v253 = 1108745116;\n                }\n              }\n            }\n            if ( v253 > 124306049 )\n              break;\n            if ( v253 > 73531522 )\n            {\n              if ( v253 == 85611068 )\n              {\n                v236 = v6;\n                v237 = v177;\n                v238 = 64;\n                v239 = 0x8BA1E53208D15CC4uLL;\n                sub_7FF697AD42D0();\n                v212 = *v250;\n                if ( v57 )\n                {\n                  v253 = 1120694325;\n                }\n                else\n                {\n                  v203 = v212;\n                  v253 = 1104317663;\n                }\n              }\n              else\n              {\n                if ( v253 != 96217060 )\n                  return 0;\nLABEL_243:\n                v234 = 124;\n                v225 = (unsigned int *)&v247 + 3;\n                v250 = (unsigned int *)&v247 + 2;\n                v236 = v6;\n                v237 = ((dword_7FF697BBA350 ^ 0xB9744650) - 385378843)\n                     ^ dword_7FF697BBA350\n                     ^ (7 * (~((dword_7FF697BBA350 ^ 0xB9744650) - 385378843) & 0xCE105EF7)\n                      + (((dword_7FF697BBA350 ^ 0xB9744650) - 385378843) & 0xCE105EF7)\n                      + 6 * (((dword_7FF697BBA350 ^ 0xB9744650) - 385378843) & 0x31EFA108)\n                      - 5 * (((dword_7FF697BBA350 ^ 0xB9744650) - 385378843) ^ 0xCE105EF7)\n                      - 76555245);\n                v238 = 21;\n                v239 = 0x8BA1E53208D15CB8uLL;\n                sub_7FF697AD42D0();\n                if ( v89 )\n                {\n                  v90 = ((qword_7FF697BBA358 ^ 0x2480080000040194LL) & 0x6E903B8AAA2C93B7LL)\n                      + ((qword_7FF697BBA358 ^ 0x4A3277AEAB6AD22BLL) & 0x6E903B8AAA2C93B7LL)\n                      + 2 * ((qword_7FF697BBA358 ^ 0x4A3277AEAB6AD22BLL) & 0x116FC47555D36C48LL)\n                      - (qword_7FF697BBA358 ^ 0x4A3277AEAB6AD22BLL)\n                      + 2 * (qword_7FF697BBA358 ^ 0x5B5DB3DBFEB9BE63LL)\n                      - 2 * ((qword_7FF697BBA358 ^ 0x114D805154912C40LL) & 0x116FC47555D36C48LL);\n                  wmp1_copy_bytes(\n                    (void *)(v247 + *v250),\n                    &v234,\n                    (v90 - 0x6B126115ACF380FDLL) ^ ((v90 ^ 0xCBAABABA67F94ED0uLL) - qword_7FF697BBA358));\n                  v193 = *v250;\n                  *v250 = v193 + 2;\nLABEL_245:\n                  v210 = 0;\n                  v151 = v122;\n                  goto LABEL_246;\n                }\n                v253 = 1816567598;\n              }\n            }\n            else\n            {\n              if ( v253 != 22000499 )\n              {\n                if ( v253 == 35075629 )\n                {\n                  v200 = v218;\n                  p_sfc_path_first_word = v134;\n                  goto LABEL_147;\n                }\n                goto LABEL_169;\n              }\n              v230 = 1;\n              v253 = 346059055;\n            }\n          }\n          if ( v253 > 191981286 )\n            break;\n          if ( v253 == 124306050 )\n            goto LABEL_201;\nLABEL_120:\n          v184 = v143;\n          v31 = v186[v143];\n          v185[v143] = v31;\n          if ( !v31 )\n            goto LABEL_214;\n          v253 = 764177541;\n        }\n        if ( v253 != 191981287 )\n          break;\n        v236 = v6;\n        v237 = v215;\n        v238 = 70;\n        v239 = 0x8BA1E53208D15CE9uLL;\n        sub_7FF697AD42D0();\n        v213 = *v250;\n        if ( v60 )\n        {\n          v199 = v213;\nLABEL_230:\n          v81 = v199;\n          wmp1_copy_bytes((void *)(v199 + (_QWORD)v247), &sfc_path_first_word, v216);\n          v227 = v81;\n          v29 = v216 + v81;\n          *v250 = v216 + v81;\n          goto LABEL_231;\n        }\n        v253 = 804132890;\n      }\n      if ( v253 == 252580720 )\n      {\n        v12 = v214;\n        v13 = v153;\n        goto LABEL_311;\n      }\n      wmp1_copy_bytes((void *)(*(_QWORD *)v224 + v175), v155, v233);\n      v194 = *v188;\n      *v188 = v233 + v194;\nLABEL_201:\n      if ( (v248 & 1) != 0 )\n        break;\n      v253 = 22000499;\n    }\n    key1 = HIDWORD(v247);\n    v154 = v247;\n    if ( HIDWORD(v247) )\n      break;\n    v253 = 607093407;\n  }\n  sub_7FF697ADFAE0(v154, 0, HIDWORD(v247));\nLABEL_323:\n  wmp1_context_free(v154);\n  return 1;\n}\n",
+  "normal_stack_precondition": "At every retained CMP ESP guard, unsigned ESP>4C00h. Calls return with their caller RSP preserved. No low-32-bit stack wrap/underflow.",
+  "vmquery_values": {
+    "globals": {
+      "dword_7FF697BBA328": 3149946209,
+      "dword_7FF697BBA32C": 2600266727,
+      "qword_7FF697BBA330": 12991248426897349269
+    },
+    "bank_index": 0,
+    "class": 0,
+    "buffer_length": 48,
+    "bank_record": "00000000000000000000000000000000",
+    "index_expression": "11 * ~(v17 & (dword_7FF697BBA328 + 1551081019)) + 11 * ((dword_7FF697BBA328 + 1551081019) | v17) - (21 * (v17 & ~(dword_7FF697BBA328 + 1551081019)) + 9 * (v17 & (dword_7FF697BBA328 + 1551081019))) - 11 * ~((dword_7FF697BBA328 + 1551081019) | v17) - 21 * ~(~(dword_7FF697BBA328 + 1551081019) | v17) + 715929255",
+    "length_expression": "\n                               (qword_7FF697BBA330 - 0x5959D1C6D5BBA084LL)\n                             ^ (((qword_7FF697BBA330 - 0x581DEB2114AC9BCBLL) | v28)\n                              + 11 * (qword_7FF697BBA330 - 0x581DEB2114AC9BCBLL)\n                              + (v28 & ~(qword_7FF697BBA330 - 0x581DEB2114AC9BCBLL))\n                              - 11 * (v28 & (qword_7FF697BBA330 - 0x581DEB2114AC9BCBLL))\n                              - 11 * ~(~(qword_7FF697BBA330 - 0x581DEB2114AC9BCBLL) | v28)\n                              - v28\n                              + v27\n                              - 0x322C7A0BC45A916ELL)",
+    "intermediates": [
+      {
+        "name": "v17",
+        "operator": "=",
+        "expression": "dword_7FF697BBA328 - ((dword_7FF697BBA328 + 1551081019) ^ 0x9A86884A) - 2079005646",
+        "width": 32,
+        "value": 3172978109
+      },
+      {
+        "name": "v19",
+        "operator": "=",
+        "expression": "(dword_7FF697BBA32C + 2079374935) ^ 0x15DAF036",
+        "width": 32,
+        "value": 53959176
+      },
+      {
+        "name": "v20",
+        "operator": "=",
+        "expression": "(v19 + 866290215) ^ 0xEDB65C0E",
+        "width": 32,
+        "value": 3681531937
+      },
+      {
+        "name": "v21",
+        "operator": "=",
+        "expression": "2 * (dword_7FF697BBA32C & 0x42660CDD)\n                          - 3 * (~dword_7FF697BBA32C & 0x42660CDD)\n                          + 4 * ~(dword_7FF697BBA32C & 0x42660CDD)\n                          - 2 * ~(~dword_7FF697BBA32C & 0x42660CDD)\n                          - 2 * (~dword_7FF697BBA32C & 0x3D99F322)\n                          - 3 * (dword_7FF697BBA32C & 0xBD99F322)\n                          - v19",
+        "width": 32,
+        "value": 2754725614
+      },
+      {
+        "name": "v22",
+        "operator": "=",
+        "expression": "~(v19 + 866290215)",
+        "width": 32,
+        "value": 3374717904
+      },
+      {
+        "name": "v23",
+        "operator": "=",
+        "expression": "v19 + 10 * (v19 + 866290215) + 866290215",
+        "width": 32,
+        "value": 1532808709
+      },
+      {
+        "name": "v19",
+        "operator": "+=",
+        "expression": "866290215",
+        "width": 32,
+        "value": 920249391
+      },
+      {
+        "name": "v24",
+        "operator": "=",
+        "expression": "(v19 | v21) + v23 + (v21 & v22) - 11 * (v21 & v19) - 11 * ~(v22 | v21) - v21",
+        "width": 32,
+        "value": 2464686785
+      },
+      {
+        "name": "v25",
+        "operator": "=",
+        "expression": "4 * (v24 & ~(dword_7FF697BBA32C - 1148527944))\n                          + 2 * ((dword_7FF697BBA32C - 1148527944) & v24)\n                          - ((dword_7FF697BBA32C - 1148527944) ^ v24)\n                          - 2 * ((dword_7FF697BBA32C - 1148527944) | v24)\n                          + 4 * ~(~(dword_7FF697BBA32C - 1148527944) | v24)\n                          + v20\n                          + 3 * ((v19 ^ 0x120003A0) & 0x3B901BA2)\n                          + 2 * ~(v20 & 0xC46FE45D)\n                          - (2 * (v20 & 0x3B901BA2)\n                           - 3 * (v20 & 0xC46FE45D)\n                           + 4 * ~(v20 & 0x3B901BA2))\n                          + 2 * ((v19 ^ 0x49A051) & 0x446FE45D)",
+        "width": 32,
+        "value": 0
+      },
+      {
+        "name": "v26",
+        "operator": "=",
+        "expression": "(qword_7FF697BBA330 + 0x61696D2111305E6LL) ^ 0x87D537F388897762uLL",
+        "width": 64,
+        "value": 4446725862161504025
+      },
+      {
+        "name": "v27",
+        "operator": "=",
+        "expression": "3 * (~(v26 - 0x4C7FC81473E8F59CLL) & 0x8F90B4640BEDE2E9uLL)\n                          + 5 * (~(v26 - 0x4C7FC81473E8F59CLL) & 0x706F4B9BF4121D16LL)\n                          + 8 * ((v26 - 0x4C7FC81473E8F59CLL) & 0x106F4B9BF4121D16LL)\n                          - 2 * ((v26 - 0x4C7FC81473E8F59CLL) ^ 0xF90B4640BEDE2E9LL)",
+        "width": 64,
+        "value": 12741554124286563586
+      },
+      {
+        "name": "v28",
+        "operator": "=",
+        "expression": "qword_7FF697BBA330\n                          + 0x61696D2111305E6LL\n                          + (qword_7FF697BBA330\n                           ^ (4\n                            * (((qword_7FF697BBA330 + 0x61696D2111305E6LL) ^ 0x82AC80443160800LL) & 0xFFAEB27439F2A40LL)\n                            + 2 * (v26 & 0x4FFAEB27439F2A40LL)\n                            - ((qword_7FF697BBA330 + 0x61696D2111305E6LL) ^ 0xC82FDCD4CB165D22uLL)\n                            - ((2 * v26) | 0x9FF5D64E873E5480uLL)\n                            + 4 * (v26 & 0x300514D8BC60D5BFLL)))",
+        "width": 64,
+        "value": 9252077631791695943
+      }
+    ],
+    "scope": "Concrete captured-seed arithmetic, DWORD boundaries for v17..v25 and QWORD for v26..v28. Not arbitrary-seed proof."
+  },
+  "record_word35": {
+    "seed": 17327,
+    "v105": 4294928836,
+    "intermediates": [
+      {
+        "name": "v106",
+        "expression": "word_7FF697BBA390\n                           ^ (3 * ~(~(19610 - v105) | (v105 - 24315))\n                            + 5 * ~((19610 - v105) | (v105 - 24315))\n                            + 8 * ((v105 - 24315) & ~(19610 - v105))\n                            - 2 * ((v105 - 24315) ^ (19610 - v105))\n                            - 5 * ~(19610 - v105)\n                            - ((-6561 - v105) ^ 0x58C5))",
+        "value": 4294934638,
+        "width": 32
+      },
+      {
+        "name": "v107",
+        "expression": "~((-7 - v105) | v106)\n                           + 3 * ((-7 - v105) ^ v106)\n                           + ((-7 - v105) & v106)\n                           - (v106 & ~(-7 - v105))\n                           - (~(-7 - v105) | v106)\n                           - 4 * ~(~(-7 - v105) | v106)",
+        "value": 4294896185,
+        "width": 32
+      }
+    ],
+    "word35": 0,
+    "expression": " word_7FF697BBA390\n                                                       ^ 0xD50D\n                                                       ^ (4 * (v107 & ~(-6561 - v105))\n                                                        + 2 * ((-6561 - v105) & v107)\n                                                        - ((-6561 - v105) ^ v107)\n                                                        - 2 * ((-6561 - v105) | v107)\n                                                        + 4 * ~(~(-6561 - v105) | v107))",
+    "scope": "Captured WORD promoted to DWORD for v105..v107 and final WORD truncation. No all-seed proof."
+  },
+  "input_query_constants": {
+    "B08AE1": {
+      "source": "BBA320",
+      "captured": 1964523007,
+      "arg2_u32": 4294967292,
+      "arg2_i32": -4
+    },
+    "B089EE": {
+      "source": "BBA31C",
+      "captured": 1441646513,
+      "arg3_u32": 100
+    },
+    "scope": "Concrete captured constants with native modulo32 arithmetic. Not all-seed or path proof.",
+    "B0D06F": {
+      "source": "BBA324",
+      "captured": 65462479,
+      "v86": 1003526216,
+      "arg2_u32": 4294967292,
+      "arg2_i32": -4
+    }
+  },
+  "filter_dispatch_routes": {
+    "2096636096": {
+      "path": [
+        [
+          140697083609296,
+          "mov     eax, [rbp+0B00h+var_54]"
+        ],
+        [
+          140697083609302,
+          "cmp     eax, 3AB2B506h"
+        ],
+        [
+          140697083609307,
+          "jg      short loc_7FF697B08140"
+        ],
+        [
+          140697083609408,
+          "cmp     eax, 5CC6D04Fh"
+        ],
+        [
+          140697083609413,
+          "jg      loc_7FF697B08210"
+        ],
+        [
+          140697083609616,
+          "cmp     eax, 6C469F2Dh"
+        ],
+        [
+          140697083609621,
+          "jle     loc_7FF697B083D0"
+        ],
+        [
+          140697083609627,
+          "cmp     eax, 78B9496Dh"
+        ],
+        [
+          140697083609632,
+          "jle     loc_7FF697B08BAF"
+        ],
+        [
+          140697083609638,
+          "cmp     eax, 7C0D131Eh"
+        ],
+        [
+          140697083609643,
+          "jg      loc_7FF697B09778"
+        ],
+        [
+          140697083615096,
+          "cmp     eax, 7C0D131Fh"
+        ],
+        [
+          140697083615101,
+          "jz      loc_7FF697B0BB2C"
+        ],
+        [
+          140697083615107,
+          "cmp     eax, 7D9D20D8h"
+        ],
+        [
+          140697083615112,
+          "jnz     loc_7FF697B0F266"
+        ],
+        [
+          140697083638374,
+          "mov     [rbp+0B00h+var_5C], 1"
+        ]
+      ],
+      "destination": 140697083638374
+    },
+    "96217060": {
+      "path": [
+        [
+          140697083609296,
+          "mov     eax, [rbp+0B00h+var_54]"
+        ],
+        [
+          140697083609302,
+          "cmp     eax, 3AB2B506h"
+        ],
+        [
+          140697083609307,
+          "jg      short loc_7FF697B08140"
+        ],
+        [
+          140697083609309,
+          "cmp     eax, 1DA02C08h"
+        ],
+        [
+          140697083609314,
+          "jg      loc_7FF697B081C0"
+        ],
+        [
+          140697083609320,
+          "cmp     eax, 12281CD3h"
+        ],
+        [
+          140697083609325,
+          "jle     loc_7FF697B08283"
+        ],
+        [
+          140697083609731,
+          "cmp     eax, 768C281h"
+        ],
+        [
+          140697083609736,
+          "jg      loc_7FF697B086F3"
+        ],
+        [
+          140697083609742,
+          "cmp     eax, 4620082h"
+        ],
+        [
+          140697083609747,
+          "jg      loc_7FF697B095D0"
+        ],
+        [
+          140697083614672,
+          "cmp     eax, 51A523Ch"
+        ],
+        [
+          140697083614677,
+          "jz      loc_7FF697B0B181"
+        ],
+        [
+          140697083614683,
+          "cmp     eax, 5BC27E4h"
+        ],
+        [
+          140697083614688,
+          "jz      loc_7FF697B0D0BC"
+        ],
+        [
+          140697083629756,
+          "or      al, 0"
+        ]
+      ],
+      "destination": 140697083629756
+    }
+  },
+  "notes": {
+    "140697083625572": "Unsigned lower bound: queried input-derived pointer >= first PEB loader image DllBase. Upper bound at B0C06A uses DllBase+SizeOfImage.",
+    "140697083625584": "Nonzero named SFC lookup result OR pointer within first loader image sends state 7CF820C0; verified dispatcher route reaches B0F266 -> return1 epilogue. Native local filter, not a server verdict.",
+    "140697083638374": "State 7CF820C0 return path sets result1. Reached by SFC/nonzero-or-first-image-range filter B0C070/B0C07A.",
+    "140697083614616": "Captured arithmetic: callable bank index0, query class0, output length48; args=(-1,input-derived pointer,0,48-byte buffer,48,NULL). NtQueryVirtualMemory-compatible; captured BBC600 record0 is zero/uninitialized, so API identity not established by this record.",
+    "140697083635815": "37-byte pointer/region record +0=input-derived queried pointer; +8 loaded from query buffer+18h (RegionSize-compatible).",
+    "140697083635912": "Record QWORD+10h = zero-extended query buffer DWORD+24h (Protect-compatible).",
+    "140697083635919": "Record QWORD+18h = queried pointer minus query buffer QWORD+0 (BaseAddress-compatible).",
+    "140697083635926": "Record byte+20h=0; WORD+21h written B0E8E4 from local variable payload length. WORD+23h at B0EB67 evaluates0 for captured seed BBA390=43AF.",
+    "140697083637438": "Fixed record REP MOVSB size25h=37 bytes (ECX B0EEB2), source starts local var_348. Variable trailers/capacity and used-length proof still unfinished.",
+    "140697083629679": "Second indexed input query: captured BBA324=03E6E0CF arithmetic also gives EDX=FFFFFFFC/-4. Uses context+30h, distinct from context+28h first query; do not guess ANSI/W or class API identities."
+  },
+  "native_regions": [
+    [
+      140697083614581,
+      "mov     rdx, [rbp+0B00h+var_1A8]"
+    ],
+    [
+      140697083614588,
+      "mov     [rsp+0B80h+var_B60], rcx"
+    ],
+    [
+      140697083614593,
+      "mov     [rsp+0B80h+var_B58], 0"
+    ],
+    [
+      140697083614602,
+      "mov     rcx, 0FFFFFFFFFFFFFFFFh"
+    ],
+    [
+      140697083614609,
+      "lea     r9, [rbp+0B00h+var_390]"
+    ],
+    [
+      140697083614616,
+      "call    rax"
+    ],
+    [
+      140697083614618,
+      "mov     [rbp+0B00h+var_1D4], eax"
+    ],
+    [
+      140697083614624,
+      "mov     rcx, [rbp+0B00h+allocated_stub]"
+    ],
+    [
+      140697083614631,
+      "test    rcx, rcx"
+    ],
+    [
+      140697083614634,
+      "jz      loc_7FF697B0DD68"
+    ],
+    [
+      140697083614640,
+      "call    cs:wmp1_context_free"
+    ],
+    [
+      140697083625227,
+      "call    qword ptr [rax]"
+    ],
+    [
+      140697083625229,
+      "test    eax, eax"
+    ],
+    [
+      140697083625231,
+      "setnz   [rbp+0B00h+var_55]"
+    ],
+    [
+      140697083625238,
+      "movzx   edx, [rbp+0B00h+var_55]"
+    ],
+    [
+      140697083625245,
+      "mov     rax, gs:60h"
+    ],
+    [
+      140697083625254,
+      "mov     rax, [rax+18h]"
+    ],
+    [
+      140697083625258,
+      "mov     rcx, [rax+10h]"
+    ],
+    [
+      140697083625262,
+      "add     rax, 10h"
+    ],
+    [
+      140697083625266,
+      "cmp     rcx, rax"
+    ],
+    [
+      140697083625269,
+      "mov     eax, 0"
+    ],
+    [
+      140697083625274,
+      "cmovz   rcx, rax"
+    ],
+    [
+      140697083625278,
+      "mov     rax, [rcx+30h]"
+    ],
+    [
+      140697083625282,
+      "mov     ecx, [rcx+40h]"
+    ],
+    [
+      140697083625285,
+      "cmp     esp, 4C00h"
+    ],
+    [
+      140697083625291,
+      "jmp     short loc_7FF697B0BF50"
+    ],
+    [
+      140697083625296,
+      "jz      short loc_7FF697B0BF5A"
+    ],
+    [
+      140697083625298,
+      "jmp     short loc_7FF697B0BF5A"
+    ],
+    [
+      140697083625306,
+      "push    rax"
+    ],
+    [
+      140697083625307,
+      "nop"
+    ],
+    [
+      140697083625308,
+      "inc     eax"
+    ],
+    [
+      140697083625310,
+      "pop     rax"
+    ],
+    [
+      140697083625311,
+      "or      bl, 0"
+    ],
+    [
+      140697083625314,
+      "jmp     short loc_7FF697B0BF70"
+    ],
+    [
+      140697083625328,
+      "nop"
+    ],
+    [
+      140697083625329,
+      "jmp     short loc_7FF697B0BF76"
+    ],
+    [
+      140697083625334,
+      "nop"
+    ],
+    [
+      140697083625335,
+      "jmp     short loc_7FF697B0BF91"
+    ],
+    [
+      140697083625361,
+      "test    ch, dh"
+    ],
+    [
+      140697083625363,
+      "jmp     short loc_7FF697B0BFF6"
+    ],
+    [
+      140697083625462,
+      "add     rcx, rax"
+    ],
+    [
+      140697083625465,
+      "or      cl, 0"
+    ],
+    [
+      140697083625468,
+      "mov     al, al"
+    ],
+    [
+      140697083625470,
+      "jmp     short loc_7FF697B0C02A"
+    ],
+    [
+      140697083625514,
+      "jmp     short loc_7FF697B0C05D"
+    ],
+    [
+      140697083625565,
+      "mov     r8, [rbp+0B00h+var_1A8]"
+    ],
+    [
+      140697083625572,
+      "cmp     r8, rax"
+    ],
+    [
+      140697083625575,
+      "setnb   al"
+    ],
+    [
+      140697083625578,
+      "cmp     r8, rcx"
+    ],
+    [
+      140697083625581,
+      "setb    cl"
+    ],
+    [
+      140697083625584,
+      "test    dl, dl"
+    ],
+    [
+      140697083625586,
+      "jnz     loc_7FF697B080C4"
+    ],
+    [
+      140697083625592,
+      "and     al, cl"
+    ],
+    [
+      140697083625594,
+      "jnz     loc_7FF697B080C4"
+    ],
+    [
+      140697083625600,
+      "mov     [rbp+0B00h+var_54], 5BC27E4h"
+    ],
+    [
+      140697083635710,
+      "mov     rax, [rbp+0B00h+var_1A8]"
+    ],
+    [
+      140697083635717,
+      "jnz     short loc_7FF697B0E85D"
+    ],
+    [
+      140697083635719,
+      "xchg    dh, dh"
+    ],
+    [
+      140697083635721,
+      "jmp     short loc_7FF697B0E826"
+    ],
+    [
+      140697083635750,
+      "jmp     short loc_7FF697B0E85D"
+    ],
+    [
+      140697083635805,
+      "mov     rcx, rax"
+    ],
+    [
+      140697083635808,
+      "sub     rcx, qword ptr [rbp+0B00h+var_390]"
+    ],
+    [
+      140697083635815,
+      "mov     [rbp+0B00h+var_348], rax"
+    ],
+    [
+      140697083635822,
+      "mov     eax, dword ptr [rbp+0B00h+var_370+4]"
+    ],
+    [
+      140697083635828,
+      "mov     rdx, [rbp+0B00h+var_378]"
+    ],
+    [
+      140697083635835,
+      "jg      short loc_7FF697B0E8C1"
+    ],
+    [
+      140697083635837,
+      "sar     dl, 0"
+    ],
+    [
+      140697083635840,
+      "jmp     short loc_7FF697B0E8C1"
+    ],
+    [
+      140697083635905,
+      "mov     [rbp+0B00h+var_340], rdx"
+    ],
+    [
+      140697083635912,
+      "mov     [rbp+0B00h+var_338], rax"
+    ],
+    [
+      140697083635919,
+      "mov     [rbp+0B00h+var_330], rcx"
+    ],
+    [
+      140697083635926,
+      "mov     [rbp+0B00h+var_328], 0"
+    ],
+    [
+      140697083635933,
+      "movzx   eax, [rbp+0B00h+var_9A]"
+    ],
+    [
+      140697083635940,
+      "mov     [rbp+0B00h+var_327], ax"
+    ],
+    [
+      140697083635947,
+      "movzx   r9d, cs:word_7FF697BBA390"
+    ],
+    [
+      140697083635955,
+      "mov     eax, r9d"
+    ],
+    [
+      140697083635958,
+      "xor     eax, 0FFFFD50Dh"
+    ],
+    [
+      140697083635963,
+      "mov     ecx, eax"
+    ],
+    [
+      140697083635965,
+      "or      ecx, 97h"
+    ],
+    [
+      140697083635971,
+      "mov     edx, ecx"
+    ],
+    [
+      140697083635973,
+      "not     edx"
+    ],
+    [
+      140697083635975,
+      "lea     esi, ds:0[rdx*8]"
+    ],
+    [
+      140697083635982,
+      "sub     esi, edx"
+    ],
+    [
+      140697083635984,
+      "clc"
+    ],
+    [
+      140697083635985,
+      "jmp     short loc_7FF697B0E95A"
+    ],
+    [
+      140697083636058,
+      "add     ecx, ecx"
+    ],
+    [
+      140697083636060,
+      "lea     ecx, [rcx+rcx*2]"
+    ],
+    [
+      140697083636063,
+      "cmp     esp, 900h"
+    ],
+    [
+      140697083636069,
+      "jmp     short loc_7FF697B0E96A"
+    ],
+    [
+      140697083636074,
+      "jz      short loc_7FF697B0E974"
+    ],
+    [
+      140697083636076,
+      "jmp     short loc_7FF697B0E974"
+    ],
+    [
+      140697083636084,
+      "push    rax"
+    ],
+    [
+      140697083636085,
+      "nop"
+    ],
+    [
+      140697083636086,
+      "inc     eax"
+    ],
+    [
+      140697083636088,
+      "pop     rax"
+    ],
+    [
+      140697083636089,
+      "ja      short loc_7FF697B0E9A4"
+    ],
+    [
+      140697083636091,
+      "shl     cl, 0"
+    ],
+    [
+      140697083636094,
+      "jmp     short loc_7FF697B0E9B9"
+    ],
+    [
+      140697083636132,
+      "jmp     short loc_7FF697B0E9AF"
+    ],
+    [
+      140697083636143,
+      "jmp     short loc_7FF697B0E9C4"
+    ],
+    [
+      140697083636153,
+      "jmp     short loc_7FF697B0E9C4"
+    ],
+    [
+      140697083636164,
+      "mov     edx, eax"
+    ],
+    [
+      140697083636166,
+      "and     edx, 97h"
+    ],
+    [
+      140697083636172,
+      "add     edx, ecx"
+    ],
+    [
+      140697083636174,
+      "lea     r10d, [rdx+rsi]"
+    ],
+    [
+      140697083636178,
+      "mov     r8d, 0FFFFFFF9h"
+    ],
+    [
+      140697083636184,
+      "sub     r8d, r10d"
+    ],
+    [
+      140697083636187,
+      "mov     r11d, 4C9Ah"
+    ],
+    [
+      140697083636193,
+      "sub     r11d, r10d"
+    ],
+    [
+      140697083636196,
+      "mov     ecx, 0FFFFE65Fh"
+    ],
+    [
+      140697083636201,
+      "sub     ecx, r10d"
+    ],
+    [
+      140697083636204,
+      "mov     r10d, ecx"
+    ],
+    [
+      140697083636207,
+      "xor     r10d, 58C5h"
+    ],
+    [
+      140697083636214,
+      "add     esi, edx"
+    ],
+    [
+      140697083636216,
+      "add     esi, 0FFFFA105h"
+    ],
+    [
+      140697083636222,
+      "mov     edx, r11d"
+    ],
+    [
+      140697083636225,
+      "not     edx"
+    ],
+    [
+      140697083636227,
+      "lea     edi, [rdx+rdx*4]"
+    ],
+    [
+      140697083636230,
+      "mov     ebx, esi"
+    ],
+    [
+      140697083636232,
+      "or      ebx, edx"
+    ],
+    [
+      140697083636234,
+      "not     ebx"
+    ],
+    [
+      140697083636236,
+      "lea     ebx, [rbx+rbx*2]"
+    ],
+    [
+      140697083636239,
+      "mov     r14d, esi"
+    ],
+    [
+      140697083636242,
+      "or      r14d, r11d"
+    ],
+    [
+      140697083636245,
+      "not     r14d"
+    ],
+    [
+      140697083636248,
+      "lea     r14d, [r14+r14*4]"
+    ],
+    [
+      140697083636252,
+      "xor     r11d, esi"
+    ],
+    [
+      140697083636255,
+      "add     r11d, r11d"
+    ],
+    [
+      140697083636258,
+      "and     edx, esi"
+    ],
+    [
+      140697083636260,
+      "shl     edx, 3"
+    ],
+    [
+      140697083636263,
+      "sub     edx, r11d"
+    ],
+    [
+      140697083636266,
+      "add     edx, r14d"
+    ],
+    [
+      140697083636269,
+      "add     edx, ebx"
+    ],
+    [
+      140697083636271,
+      "sub     edx, edi"
+    ],
+    [
+      140697083636273,
+      "sub     edx, r10d"
+    ],
+    [
+      140697083636276,
+      "xor     edx, r9d"
+    ],
+    [
+      140697083636279,
+      "mov     r9d, r8d"
+    ],
+    [
+      140697083636282,
+      "not     r9d"
+    ],
+    [
+      140697083636285,
+      "mov     r10d, edx"
+    ],
+    [
+      140697083636288,
+      "or      r10d, r9d"
+    ],
+    [
+      140697083636291,
+      "mov     r11d, edx"
+    ],
+    [
+      140697083636294,
+      "mov     esi, edx"
+    ],
+    [
+      140697083636296,
+      "xor     esi, r8d"
+    ],
+    [
+      140697083636299,
+      "lea     esi, [rsi+rsi*2]"
+    ],
+    [
+      140697083636302,
+      "and     r9d, edx"
+    ],
+    [
+      140697083636305,
+      "and     edx, r8d"
+    ],
+    [
+      140697083636308,
+      "sub     edx, r9d"
+    ],
+    [
+      140697083636311,
+      "add     edx, esi"
+    ],
+    [
+      140697083636313,
+      "sub     edx, r10d"
+    ],
+    [
+      140697083636316,
+      "not     r10d"
+    ],
+    [
+      140697083636319,
+      "shl     r10d, 2"
+    ],
+    [
+      140697083636323,
+      "or      r11d, r8d"
+    ],
+    [
+      140697083636326,
+      "not     r11d"
+    ],
+    [
+      140697083636329,
+      "and     al, 0FFh"
+    ],
+    [
+      140697083636331,
+      "shl     cl, 0"
+    ],
+    [
+      140697083636334,
+      "jmp     short loc_7FF697B0EA91"
+    ],
+    [
+      140697083636369,
+      "jmp     short loc_7FF697B0EAAC"
+    ],
+    [
+      140697083636396,
+      "test    ch, al"
+    ],
+    [
+      140697083636398,
+      "jmp     short loc_7FF697B0EAE8"
+    ],
+    [
+      140697083636456,
+      "add     edx, r11d"
+    ],
+    [
+      140697083636459,
+      "sub     edx, r10d"
+    ],
+    [
+      140697083636462,
+      "mov     r8d, ecx"
+    ],
+    [
+      140697083636465,
+      "not     r8d"
+    ],
+    [
+      140697083636468,
+      "mov     r9d, edx"
+    ],
+    [
+      140697083636471,
+      "or      r9d, r8d"
+    ],
+    [
+      140697083636474,
+      "not     r9d"
+    ],
+    [
+      140697083636477,
+      "mov     r10d, edx"
+    ],
+    [
+      140697083636480,
+      "or      r10d, ecx"
+    ],
+    [
+      140697083636483,
+      "add     r10d, r10d"
+    ],
+    [
+      140697083636486,
+      "mov     r11d, edx"
+    ],
+    [
+      140697083636489,
+      "xor     r11d, ecx"
+    ],
+    [
+      140697083636492,
+      "test    eax, 0E502BABCh"
+    ],
+    [
+      140697083636497,
+      "sal     dh, 0"
+    ],
+    [
+      140697083636500,
+      "jmp     short loc_7FF697B0EB4E"
+    ],
+    [
+      140697083636558,
+      "and     r8d, edx"
+    ],
+    [
+      140697083636561,
+      "shl     r8d, 2"
+    ],
+    [
+      140697083636565,
+      "and     edx, ecx"
+    ],
+    [
+      140697083636567,
+      "lea     ecx, [r8+rdx*2]"
+    ],
+    [
+      140697083636571,
+      "sub     ecx, r11d"
+    ],
+    [
+      140697083636574,
+      "sub     ecx, r10d"
+    ],
+    [
+      140697083636577,
+      "lea     ecx, [rcx+r9*4]"
+    ],
+    [
+      140697083636581,
+      "xor     ecx, eax"
+    ],
+    [
+      140697083636583,
+      "mov     [rbp+0B00h+var_325], cx"
+    ],
+    [
+      140697083637416,
+      "mov     rax, [rbp+0B00h+var_100]"
+    ],
+    [
+      140697083637423,
+      "add     rdi, [rax]"
+    ],
+    [
+      140697083637426,
+      "mov     ecx, 25h ; '%'"
+    ],
+    [
+      140697083637431,
+      "lea     rsi, [rbp+0B00h+var_348]"
+    ],
+    [
+      140697083637438,
+      "rep movsb"
+    ],
+    [
+      140697083638129,
+      "mov     eax, [rbp+0B00h+var_5C]"
+    ],
+    [
+      140697083638135,
+      "test    al, 26h"
+    ],
+    [
+      140697083638137,
+      "mov     al, al"
+    ],
+    [
+      140697083638139,
+      "jmp     short loc_7FF697B0F1C7"
+    ],
+    [
+      140697083638215,
+      "mov     [rbp+0B00h+var_DC], eax"
+    ],
+    [
+      140697083638221,
+      "mov     eax, [rbp+0B00h+var_DC]"
+    ],
+    [
+      140697083638227,
+      "cmp     esp, 3A00h"
+    ],
+    [
+      140697083638233,
+      "jmp     short loc_7FF697B0F1DE"
+    ],
+    [
+      140697083638238,
+      "jnz     short loc_7FF697B0F1E8"
+    ],
+    [
+      140697083638240,
+      "jmp     short loc_7FF697B0F1E8"
+    ],
+    [
+      140697083638248,
+      "push    rax"
+    ],
+    [
+      140697083638249,
+      "nop"
+    ],
+    [
+      140697083638250,
+      "inc     eax"
+    ],
+    [
+      140697083638252,
+      "pop     rax"
+    ],
+    [
+      140697083638253,
+      "xor     dl, 0"
+    ],
+    [
+      140697083638256,
+      "xchg    al, al"
+    ],
+    [
+      140697083638258,
+      "jmp     short loc_7FF697B0F212"
+    ],
+    [
+      140697083638290,
+      "nop"
+    ],
+    [
+      140697083638291,
+      "jmp     short loc_7FF697B0F221"
+    ],
+    [
+      140697083638305,
+      "movaps  xmm6, [rbp+0B00h+var_50]"
+    ],
+    [
+      140697083638312,
+      "add     rsp, 0B48h"
+    ],
+    [
+      140697083638319,
+      "pop     rbx"
+    ],
+    [
+      140697083638320,
+      "pop     rdi"
+    ],
+    [
+      140697083638321,
+      "pop     rsi"
+    ],
+    [
+      140697083638322,
+      "pop     r12"
+    ],
+    [
+      140697083638324,
+      "pop     r13"
+    ],
+    [
+      140697083638326,
+      "pop     r14"
+    ],
+    [
+      140697083638328,
+      "pop     r15"
+    ],
+    [
+      140697083638330,
+      "pop     rbp"
+    ],
+    [
+      140697083638331,
+      "retn"
+    ],
+    [
+      140697083638332,
+      "mov     rcx, [rbp+0B00h+var_268]"
+    ],
+    [
+      140697083638339,
+      "xor     edx, edx"
+    ],
+    [
+      140697083638341,
+      "call    sub_7FF697ADFAE0"
+    ],
+    [
+      140697083638346,
+      "mov     rcx, [rbp+0B00h+var_268]"
+    ],
+    [
+      140697083638353,
+      "call    cs:wmp1_context_free"
+    ],
+    [
+      140697083638359,
+      "mov     [rbp+0B00h+var_DC], 1"
+    ],
+    [
+      140697083638369,
+      "jmp     loc_7FF697B0F1CD"
+    ],
+    [
+      140697083638374,
+      "mov     [rbp+0B00h+var_5C], 1"
+    ],
+    [
+      140697083638384,
+      "jmp     loc_7FF697B0F171"
+    ]
+  ],
+  "limits": [
+    "Both indexed-function argument2 values are -4 for captured constants; actual functions request-selected/unresolved.",
+    "SYSTEM MEMORY_BASIC_INFORMATION format is compatible; runtime callable bank row0 absent/uninitialized, so NtQueryVirtualMemory identity remains hypothesis.",
+    "The native filter selects return1 local path for SFC nonzero or first-image membership, but all callbacks/serialization/error/low-ESP paths not fully proved.",
+    "F5 infers extra live key1/key2 arguments for SFC lookup-slot call; native only sets RCX/RDX at that call. Do not treat inferred extra arguments as verified API prototype."
+  ],
+  "saved": true
+}

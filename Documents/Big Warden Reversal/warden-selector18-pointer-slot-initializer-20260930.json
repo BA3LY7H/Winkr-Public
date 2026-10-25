@@ -1,0 +1,135 @@
+{
+  "date": "2026-09-30",
+  "function": "0x7ff6414434b0",
+  "graph_nodes": 28,
+  "pseudocode": "__int64 sub_7FF6414434B0()\n{\n  __int64 v0; // r8\n  _QWORD *v1; // rdx\n  __int64 result; // rax\n  unsigned __int64 value; // [rsp+30h] [rbp+8h] BYREF\n\n  v0 = 3;\n  v1 = qword_7FF647CC99B0;\n  do\n  {\n    *v1 = 0;\n    value = 0x53A687D61FC95CBLL;\n    wow_rotate_qword_inplace_ror45(&value);\n    ++v1;\n    result = (__ROR8__((value + 0x431EFFEC65BA15A7LL) ^ 0x1471B93481304827LL, 32) + 0xC38567F801661B4LL) ^ 0xC9;\n    *(v1 - 1) = result;\n    --v0;\n  }\n  while ( v0 );\n  return result;\n}\n",
+  "native": [
+    {
+      "ea": "0x7ff6414434b0",
+      "asm": "mov     [rsp+arg_8], rbx"
+    },
+    {
+      "ea": "0x7ff6414434b5",
+      "asm": "push    rdi"
+    },
+    {
+      "ea": "0x7ff6414434b6",
+      "asm": "sub     rsp, 20h"
+    },
+    {
+      "ea": "0x7ff6414434ba",
+      "asm": "mov     r8d, 3"
+    },
+    {
+      "ea": "0x7ff6414434c0",
+      "asm": "lea     rdx, qword_7FF647CC99B0"
+    },
+    {
+      "ea": "0x7ff6414434c7",
+      "asm": "xor     r9d, r9d"
+    },
+    {
+      "ea": "0x7ff6414434ca",
+      "asm": "mov     rbx, 1471B93481304827h"
+    },
+    {
+      "ea": "0x7ff6414434d4",
+      "asm": "mov     rdi, 0C38567F801661B4h"
+    },
+    {
+      "ea": "0x7ff6414434de",
+      "asm": "mov     r10, 53A687D61FC95CBh"
+    },
+    {
+      "ea": "0x7ff6414434e8",
+      "asm": "mov     r11, 431EFFEC65BA15A7h"
+    },
+    {
+      "ea": "0x7ff6414434f2",
+      "asm": "lea     rcx, [rsp+28h+value]; value"
+    },
+    {
+      "ea": "0x7ff6414434f7",
+      "asm": "mov     [rdx], r9"
+    },
+    {
+      "ea": "0x7ff6414434fa",
+      "asm": "mov     [rsp+28h+value], r10"
+    },
+    {
+      "ea": "0x7ff6414434ff",
+      "asm": "call    wow_rotate_qword_inplace_ror45"
+    },
+    {
+      "ea": "0x7ff641443504",
+      "asm": "mov     rax, [rsp+28h+value]"
+    },
+    {
+      "ea": "0x7ff641443509",
+      "asm": "lea     rdx, [rdx+8]"
+    },
+    {
+      "ea": "0x7ff64144350d",
+      "asm": "add     rax, r11"
+    },
+    {
+      "ea": "0x7ff641443510",
+      "asm": "xor     rax, rbx"
+    },
+    {
+      "ea": "0x7ff641443513",
+      "asm": "ror     rax, 20h"
+    },
+    {
+      "ea": "0x7ff641443517",
+      "asm": "add     rax, rdi"
+    },
+    {
+      "ea": "0x7ff64144351a",
+      "asm": "xor     rax, 0C9h"
+    },
+    {
+      "ea": "0x7ff641443520",
+      "asm": "mov     [rdx-8], rax"
+    },
+    {
+      "ea": "0x7ff641443524",
+      "asm": "sub     r8, 1"
+    },
+    {
+      "ea": "0x7ff641443528",
+      "asm": "jnz     short loc_7FF6414434F2"
+    },
+    {
+      "ea": "0x7ff64144352a",
+      "asm": "mov     rbx, [rsp+28h+arg_8]"
+    },
+    {
+      "ea": "0x7ff64144352f",
+      "asm": "add     rsp, 20h"
+    },
+    {
+      "ea": "0x7ff641443533",
+      "asm": "pop     rdi"
+    },
+    {
+      "ea": "0x7ff641443534",
+      "asm": "retn"
+    }
+  ],
+  "contract": "Initializeexactly3slots:clearQWORDthenwriteencodednullpointerconstantA15ACDDD13921850. Constant053A687D61FC95CB isROR64(markerF2572C14E9A1F587,42), afterROR45andencoder matchescapturedslots1/2. Doesnotinvoke registeredpointers.",
+  "encoded_null": "0xa15acddd13921850",
+  "key_assumption": "Encoderuses1471B93481304827; capturedreaderkeyobjectmatches. No universal claimifobjectkeychanges.",
+  "callers": [
+    {
+      "ea": "0x7ff6449b5780",
+      "asm": "dq offset sub_7FF6414434B0"
+    },
+    {
+      "ea": "0x7ff647d7efe4",
+      "asm": "RUNTIME_FUNCTION <rva sub_7FF6414434B0, rva algn_7FF641443535, \\; latest WINKR snapshot: main_final"
+    }
+  ],
+  "consumer_gap": "Onlytwostaticreferences to tablebaseareinitializer4434B0andregistration4FEEA0; neitherinvokes storedpointer. Missingindirect/aliasconsumer must not be invented.",
+  "saved": true
+}

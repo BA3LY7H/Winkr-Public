@@ -1,0 +1,79 @@
+-- local unlocker,
+-- ---@class mint
+-- mint = ...
+
+-- ----------------------------
+-- --- Constants/Locals
+-- ----------------------------
+-- local Constants     = mint.Constants or {}
+-- local settings 		= mint.Settings
+-- ---@class Interface
+-- local Interface     = mint.Interface
+
+-- local developer = Interface.Page:NewCustom("Developer", "developer", false)
+
+-- local defaults = {
+-- 	smart_target = true,
+-- 	arrow_color = 1,
+-- }
+
+-- developer:AddDefaults(defaults)
+
+-- local layout = {
+-- 	layoutConfig = { padding = { top = 15 } },
+-- 	database = settings.profile.developer,
+-- 	rows = {
+-- 		{
+-- 			header = {
+-- 				type = 'header',
+-- 				label = 'Developer Settings'
+-- 			}
+-- 		},
+-- 		{
+-- 			margins = {
+-- 				margin = { top = 10 }
+-- 			},
+-- 			display_console = {
+-- 				key = 'display_console',
+-- 				type = 'checkbox',
+-- 				label = 'Debug Console',
+-- 				tooltip = 'Display the debug console. Can be toggled with',
+-- 				order = 1
+-- 			},
+-- 		},
+-- 		{
+-- 			margins = {
+-- 				margin = { top = 10 }
+-- 			},
+-- 			player_indicator = {
+-- 				key = 'player_indicator',
+-- 				type = 'checkbox',
+-- 				label = 'Player Indicator',
+-- 				tooltip = 'Display an arrow beneath your feet.',
+-- 				column = 3,
+-- 				order = 1
+-- 			},
+-- 			indicator_color = {
+-- 				key = 'indicator_color',
+-- 				label = 'Indicator Color',
+-- 				type = 'dropdown',
+-- 				options = {
+-- 					{ text = '|cff00d8ff Cyan |r',   value = 'cyan' }, -- 00d8ff
+-- 					{ text = '|cffffd200 Gold |r',   value = 'gold' }, -- ffd200
+-- 					{ text = '|cff00ff12 Lime |r',   value = 'lime' }, -- 00ff12
+-- 					{ text = '|cffffffff White |r',  value = 'white' }, -- ffffff
+-- 					{ text = '|cffff2114 Red |r',    value = 'red' }, -- ff2114
+-- 					{ text = '|cffff8000 Orange |r', value = 'orange' }, -- ff8000
+-- 					{ text = '|cfffff809 Yellow |r', value = 'yellow' }, -- fff809
+-- 					{ text = '|cffff80ff Pink |r',   value = 'pink' }, -- ff80ff
+-- 					{ text = '|cffc845fa Purple |r', value = 'purple' }, -- c845fa
+-- 				},
+-- 				initialValue = 1,
+-- 				column = 5,
+-- 				order = 2
+-- 			},
+-- 		}
+-- 	},
+-- }
+
+-- general:AddLayout(layout)

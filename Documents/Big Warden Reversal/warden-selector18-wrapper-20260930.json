@@ -1,0 +1,132 @@
+{
+  "start": 140697083268240,
+  "end": 140697083269399,
+  "label": "wmp1_selector18_call_wrapper",
+  "original_bytes": "4157415641554154565755534881ec880000004c89c789d34889cec744242c8dd6f8484c8d3546a703004c8d3dafff03004c8d25328f1000bd7ab739da41bd0c9c5293eb2b8b44246001c08d0440894424648b44243021d801c08d044089442468c744242cfc1f26720f1f80000000008b44242c3d94798a3b7f753d3b6dbe090f8ffa0000003d89f9bf0074b83d8fc6aa030f856002000024ff8ae4714090900f80f136010081c518fac7f36a5e50c6c76180eb80f6de80ee7381c545d2b43be8daab010081c2b2ad26740f3183c7b781edcec37b935f4af6856d5675cdc744242c27d40e4ceb880f1f8400000000003d26d40e4c0f8ef00000003dfb1f26720f8e1e0100003dfc1f26720f855b0200008b442468034424640344245c73218ae472396690669068907236197e04c7c738e1566681c684077c7383c5e281e8fd90731ec7c2af8f0370f6db81c3973a89300f813ff0010080eb6b6bb972cadbc6472b4424588944246cc744242cdadb4d14e9fafeffff662e0f1f8400000000003d3c6dbe090f84540100003ddadb4d140f856f0100008b44246c034424547b3ac0e0007a3566906690c6c04680c69b81ea0ac06f69e8582b010081ed941059ab80c0c181ed129d5cc5c7c70165908e81efea04f1794dc187d78d89442478c744242cbfabc56be985feffff3dbca7783f0f84380100003d8dd6f8480f85ea0100004c89f14c89fa4d89e0e831870300a8010f84c7010000c744242cbca7783fe94cfeffff3d27d40e4c0f85f70100008b44245001c08d0440894424548b44243089c1f7d109d901c98d0c49894c245831d88944245cf9c0e000766b909081ed2493862e83c27b81c0c717894481c29d0c7952c7c7b0cf882e6adf80ef3cc7c74a8f417783c09a0f81c953000080c699e83f39010080c6aa5f81edc0e8514ec7c2c7853e3880e93e81efe971d70480c27f81c3b02fd98b80c7d60f84eaa301006b8e3ab4ed10a58b442430f7d021d889442460c744242c89f9bf00e991fdffff8b44243009d8f7d089442450c744242c8fc6aa03e978fdffffc744242cd3a12518e96bfdffff8b44244c2b4424482b4424343344243c2b4424382b44244089442430c744242c3c6dbe09e942fdffff8b058c5110008944243c8d88e574e0c9894c24408d889ff51450894c24448d880dd98b89894c24480530c72ff189442434c744242c0c717675e904fdffff8b44243401e889442438772f86c07641909066900f83a5fa0100680c6a11a2c6c61d5480ed885ff6dfc6c22d5a0f83cd74010081c551881759688c7714e680c7b1c7c5a43f12090f86ff580000f68ab5398b4424444431e82b44243805e65bf1d68944244cc744242c336fcb06e992fcffffc744242c95798a3be985fcffff81f3d1852529895c247848897c247048b8f9b4422fa1f3e4814889842480000000488d542470b91700000041b9320000004989f0e86ca30300eb4d48897c247048b8e0b4422fa1f3e4814889842480000000488d542470b92400000041b9480000004989f0e83ba3030089c6488d0d12a30300488d157bfb03004c8d05fe8a1000e8ff7c030089f04881c4880000005b5d5f5e415c415d415e415fc3",
+  "sha256_before": "2efcf42cda73217db56c26024f51f6505cb8be98f88dc1724bf91ebf3b8484d9",
+  "old_name": "sub_7FF697AB4C90",
+  "old_type": "unsigned int __fastcall(unsigned __int64, int, __int64 r8_0)",
+  "old_comment": null,
+  "old_chunks": [
+    [
+      140697083268240,
+      140697083269399
+    ]
+  ],
+  "patches": [
+    {
+      "ea": 140697083268396,
+      "old": "7140",
+      "new": "eb40",
+      "selected": 140697083268462
+    },
+    {
+      "ea": 140697083268529,
+      "old": "7239",
+      "new": "eb39",
+      "selected": 140697083268588
+    },
+    {
+      "ea": 140697083268537,
+      "old": "7236",
+      "new": "eb36",
+      "selected": 140697083268593
+    },
+    {
+      "ea": 140697083268561,
+      "old": "731e",
+      "new": "eb1e",
+      "selected": 140697083268593
+    },
+    {
+      "ea": 140697083268588,
+      "old": "72ca",
+      "new": "ebca",
+      "selected": 140697083268536
+    },
+    {
+      "ea": 140697083268659,
+      "old": "7a35",
+      "new": "eb35",
+      "selected": 140697083268714
+    },
+    {
+      "ea": 140697083268841,
+      "old": "766b",
+      "new": "eb6b",
+      "selected": 140697083268950
+    },
+    {
+      "ea": 140697083269130,
+      "old": "7641",
+      "new": "eb41",
+      "selected": 140697083269197
+    },
+    {
+      "ea": 140697083269175,
+      "old": "7714",
+      "new": "eb14",
+      "selected": 140697083269197
+    }
+  ],
+  "old_frame": {
+    "frsize": 200,
+    "frregs": 0,
+    "fpd": 0,
+    "serialized": [
+      "0da901f18008210420012102402102202102202102202102202102202102202102202102202102202102202102202102202102202102202002202002402002402002400a30f180200440020208",
+      "077661725f4134077661725f3943077661725f3938077661725f3934077661725f3930077661725f3843077661725f3838077661725f3834077661725f3830077661725f3743077661725f3738077661725f3734077661725f3730077661725f3643077661725f3638077661725f3634077661725f36300b64657363726970746f72077661725f3530077661725f3438115f5f72657475726e5f61646472657373",
+      null
+    ]
+  },
+  "after": {
+    "failure": "no error",
+    "failure_ea": 18446744073709552000,
+    "pseudocode": "unsigned int __fastcall wmp1_selector18_call_wrapper(\n        unsigned __int64 a1,\n        int a2,\n        __int64 a3,\n        __int64 a4,\n        __int64 a5,\n        __int64 a6,\n        __int64 a7,\n        __int64 a8,\n        __int64 a9,\n        __int64 a10,\n        __int64 a11,\n        __int64 a12,\n        __int64 a13,\n        __int64 a14,\n        int a15,\n        unsigned __int64 a16)\n{\n  unsigned int v20; // esi\n  int i; // [rsp+F4h] [rbp+2Ch]\n\n  for ( i = 1224267405; ; i = 12581257 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( i <= 998930836 )\n        {\n          if ( i > 163474747 )\n          {\n            if ( i == 163474748 )\n            {\n              LODWORD(a10) = ~(a2 | a6);\n              i = 61523599;\n            }\n            else if ( i == 340646874 )\n            {\n              a15 = HIDWORD(a10) + HIDWORD(a13);\n              i = 1808116671;\n            }\n            else\n            {\n              LODWORD(a6) = (HIDWORD(a7) ^ (HIDWORD(a9) - a9 - HIDWORD(a6))) - a7 - a8;\n              i = 163474748;\n            }\n          }\n          else if ( i == 12581257 )\n          {\n            HIDWORD(a12) = 6 * a12;\n            LODWORD(a13) = 6 * (a2 & a6);\n            i = 1915101180;\n          }\n          else if ( i == 61523599 )\n          {\n            i = 1276040231;\n          }\n          else\n          {\n            i = 405119443;\n          }\n        }\n        if ( i > 1276040230 )\n          break;\n        if ( i == 1064871868 )\n        {\n          HIDWORD(a7) = dword_7FF697BBA150;\n          LODWORD(a8) = dword_7FF697BBA150 - 908036891;\n          HIDWORD(a8) = dword_7FF697BBA150 + 1343550879;\n          LODWORD(a9) = dword_7FF697BBA150 - 1987323635;\n          HIDWORD(a6) = dword_7FF697BBA150 - 248527056;\n          i = 1970696460;\n        }\n        else\n        {\n          if ( i != 1224267405 )\n          {\n            a15 = a2 ^ 0x292585D1;\n            a14 = a3;\n            a16 = 0x81E4F3A12F42B4F9uLL;\n            return wmp1_selector18_registry_compare_normal_stack_view(0x17u, &a14, a1, 0x32u);\n          }\n          if ( (wmp1_decode_body_if_needed(\n                  (unsigned __int8 *)wmp1_protected_010_seed,\n                  (unsigned __int8 *)&loc_7FF697AF4C70,\n                  &byte_7FF697BBDBFA)\n              & 1) != 0 )\n            i = 1064871868;\n          else\n            i = 998930837;\n        }\n      }\n      if ( i <= 1915101179 )\n        break;\n      if ( i == 1915101180 )\n      {\n        HIDWORD(a13) = HIDWORD(a11) + HIDWORD(a12) + a13 - a11;\n        i = 340646874;\n      }\n      else\n      {\n        LODWORD(a7) = HIDWORD(a6) - 633751686;\n        HIDWORD(a9) = (HIDWORD(a8) ^ 0x93529C0C) - (HIDWORD(a6) - 633751686) - 688825370;\n        i = 113995571;\n      }\n    }\n    if ( i != 1276040231 )\n      break;\n    HIDWORD(a10) = 6 * a10;\n    LODWORD(a11) = 6 * (a2 | ~(_DWORD)a6);\n    HIDWORD(a11) = a2 ^ a6;\n    LODWORD(a12) = a2 & ~(_DWORD)a6;\n  }\n  a14 = a3;\n  a16 = 0x81E4F3A12F42B4E0uLL;\n  v20 = wmp1_selector18_registry_compare_normal_stack_view(0x24u, &a14, a1, 0x48u);\n  sub_7FF697AECE00(wmp1_protected_010_seed, &loc_7FF697AF4C70, &byte_7FF697BBDBFA);\n  return v20;\n}\n",
+    "sha256": "ad8e5bad965728a5b15856f0d60505bdbd205dfd162375c9c4863ee59ce6e4ed"
+  },
+  "decl": "unsigned int __fastcall wmp1_selector18_call_wrapper(const void *request, unsigned int total_length, void *output_buffer);",
+  "fresh_pseudocode": "unsigned int __fastcall wmp1_selector18_call_wrapper(\n        const void *request,\n        unsigned int total_length,\n        void *output_buffer)\n{\n  unsigned int v7; // esi\n  int i; // [rsp+F4h] [rbp+2Ch]\n  __int64 v9; // [rsp+F8h] [rbp+30h]\n  __int64 v10; // [rsp+100h] [rbp+38h]\n  __int64 v11; // [rsp+108h] [rbp+40h]\n  __int64 v12; // [rsp+110h] [rbp+48h]\n  __int64 v13; // [rsp+118h] [rbp+50h]\n  __int64 v14; // [rsp+120h] [rbp+58h]\n  __int64 v15; // [rsp+128h] [rbp+60h]\n  __int64 v16; // [rsp+130h] [rbp+68h]\n  void *v17; // [rsp+138h] [rbp+70h] BYREF\n  unsigned int v18; // [rsp+140h] [rbp+78h]\n  unsigned __int64 v19; // [rsp+148h] [rbp+80h]\n\n  for ( i = 1224267405; ; i = 12581257 )\n  {\n    while ( 1 )\n    {\n      while ( 1 )\n      {\n        while ( i <= 998930836 )\n        {\n          if ( i > 163474747 )\n          {\n            if ( i == 163474748 )\n            {\n              LODWORD(v13) = ~(total_length | v9);\n              i = 61523599;\n            }\n            else if ( i == 340646874 )\n            {\n              v18 = HIDWORD(v13) + HIDWORD(v16);\n              i = 1808116671;\n            }\n            else\n            {\n              LODWORD(v9) = (HIDWORD(v10) ^ (HIDWORD(v12) - v12 - HIDWORD(v9))) - v10 - v11;\n              i = 163474748;\n            }\n          }\n          else if ( i == 12581257 )\n          {\n            HIDWORD(v15) = 6 * v15;\n            LODWORD(v16) = 6 * (total_length & v9);\n            i = 1915101180;\n          }\n          else if ( i == 61523599 )\n          {\n            i = 1276040231;\n          }\n          else\n          {\n            i = 405119443;\n          }\n        }\n        if ( i > 1276040230 )\n          break;\n        if ( i == 1064871868 )\n        {\n          HIDWORD(v10) = dword_7FF697BBA150;\n          LODWORD(v11) = dword_7FF697BBA150 - 908036891;\n          HIDWORD(v11) = dword_7FF697BBA150 + 1343550879;\n          LODWORD(v12) = dword_7FF697BBA150 - 1987323635;\n          HIDWORD(v9) = dword_7FF697BBA150 - 248527056;\n          i = 1970696460;\n        }\n        else\n        {\n          if ( i != 1224267405 )\n          {\n            v18 = total_length ^ 0x292585D1;\n            v17 = output_buffer;\n            v19 = 0x81E4F3A12F42B4F9uLL;\n            return wmp1_selector18_registry_compare_normal_stack_view(0x17u, &v17, (unsigned __int64)request, 0x32u);\n          }\n          if ( (wmp1_decode_body_if_needed(\n                  (unsigned __int8 *)wmp1_protected_010_seed,\n                  (unsigned __int8 *)&loc_7FF697AF4C70,\n                  &byte_7FF697BBDBFA)\n              & 1) != 0 )\n            i = 1064871868;\n          else\n            i = 998930837;\n        }\n      }\n      if ( i <= 1915101179 )\n        break;\n      if ( i == 1915101180 )\n      {\n        HIDWORD(v16) = HIDWORD(v14) + HIDWORD(v15) + v16 - v14;\n        i = 340646874;\n      }\n      else\n      {\n        LODWORD(v10) = HIDWORD(v9) - 633751686;\n        HIDWORD(v12) = (HIDWORD(v11) ^ 0x93529C0C) - (HIDWORD(v9) - 633751686) - 688825370;\n        i = 113995571;\n      }\n    }\n    if ( i != 1276040231 )\n      break;\n    HIDWORD(v13) = 6 * v13;\n    LODWORD(v14) = 6 * (total_length | ~(_DWORD)v9);\n    HIDWORD(v14) = total_length ^ v9;\n    LODWORD(v15) = total_length & ~(_DWORD)v9;\n  }\n  v17 = output_buffer;\n  v19 = 0x81E4F3A12F42B4E0uLL;\n  v7 = wmp1_selector18_registry_compare_normal_stack_view(0x24u, &v17, (unsigned __int64)request, 0x48u);\n  sub_7FF697AECE00(wmp1_protected_010_seed, &loc_7FF697AF4C70, &byte_7FF697BBDBFA);\n  return v7;\n}\n",
+  "sp": {
+    "states": 193,
+    "conflicts": [],
+    "unknown": [],
+    "returns": [
+      [
+        140697083269398,
+        0
+      ]
+    ],
+    "min": -200
+  },
+  "length_token_proof": {
+    "global_bba150": "0x83d9dfc2",
+    "folded_key": "0x292585d1",
+    "symbolic": "6*~(L|K)+(L^K)+6*(L&~K)+6*(L&K)-6*(L|~K) == L XOR 292585D1 mod2^32",
+    "solver": "unsat"
+  },
+  "comment_journal": [
+    {
+      "ea": "0x7ff697ab4c90",
+      "old": null,
+      "new": "Verified selector18 protected-call wrapper. RCX=request pointer, EDX=validated total byte length, R8=output buffer. Both paths encode total length XOR292585D1 into descriptor+8; decoded-path MBA equivalence UNSAT for all DWORD lengths under captured BBA150=83D9DFC2. No selector-specific length/count bounds added. Called only at B9CAD3 in current xrefs."
+    },
+    {
+      "ea": "0x7ff697b9cad3",
+      "old": null,
+      "new": "Selector18: RCX=validated input pointer; EDX=total length published by header validator, stored atB9C085; R8=output object. Wrapper AB4C90 preserves length via XOR292585D1 encoding; no per-selector minimum/count check in this direct case block."
+    },
+    {
+      "ea": "0x7ff697b9c085",
+      "old": null,
+      "new": "Store total byte length published via R9 output of request-header wrapper. Later selector18 case reads this slot atB9CAC7. Header validator requires supplied total==WORD(request+2)+4, not selector18 minimum144+comparison_count."
+    }
+  ],
+  "upstream_findings": {
+    "single_caller": "0x7ff697b9cad3",
+    "case18_entry": "0x7ff697b9cabf",
+    "length_source": "Computed total WORD(request+2)+4, published through request-header wrapper R9 output, copied B9C07E/B9C085, passed B9CAC7",
+    "bounds_conclusion": "Header self-consistency and selector range do not establish selector18 fixed-offset or variable-component extents; wrapper adds no bounds. Upstream transport allocation/server request invariants still require analysis."
+  },
+  "save_success": true
+}
