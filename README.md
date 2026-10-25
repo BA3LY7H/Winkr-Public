@@ -280,4 +280,6 @@ Reverse-engineering documentation lives in [`Documents/`](Documents/).
 - Windows 10/11 x64
 - Administrator privileges
 - GCC (MinGW-w64) via [MSYS2](https://www.msys2.org/)
+
+
 [- discord ](https://discord.gg/CEDAxVvGRd)
