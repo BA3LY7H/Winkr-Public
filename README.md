@@ -3,7 +3,7 @@
 WoW **Private Classic Era** unlocker + memory dumper, with a full Detour navmesh stack on top.
 Patches the taint/security gates at the machine-code level, exposes a Lua C bridge for mod
 execution, and ships world pathfinding — shift+click the map and the character walks there.
-https://discord.gg/CEDAxVvGRd
+
 ---
 
 > [!CAUTION]
@@ -280,3 +280,4 @@ Reverse-engineering documentation lives in [`Documents/`](Documents/).
 - Windows 10/11 x64
 - Administrator privileges
 - GCC (MinGW-w64) via [MSYS2](https://www.msys2.org/)
+- discord CEDAxVvGRd
